@@ -31,7 +31,7 @@ Shows how to use wxWidgets controls (c++14).
 
 [Form](src/Form) Shows how to create a simple Gtkmm Form with wxFrame.
 
-[GroupBox](src/GroupBox) Shows how to create a simple Gtkmm GroupBox with wxPanel.
+[GroupBox](src/GroupBox) Shows how to create a simple Gtkmm GroupBox with wxRadioBox.
 
 [Panel](src/Panel) Shows how to create a simple Gtkmm Panel with wxPanel.
 
