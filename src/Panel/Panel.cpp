@@ -2,7 +2,7 @@
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "Form example", wxDefaultPosition, wxSize(640, 480)) {
+  Form() : wxFrame(nullptr, wxID_ANY, "Panel example", wxDefaultPosition, wxSize(640, 480)) {
     this->panel1->SetWindowStyle(wxBORDER_SIMPLE);
     this->panel2->SetWindowStyle(wxBORDER_SUNKEN);
   }
