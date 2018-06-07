@@ -16,6 +16,8 @@ public:
         event.Veto();
       }
     });
+    
+    this->Show();
   }
   
 private:
@@ -24,14 +26,7 @@ private:
 };
 
 class Application : public wxApp {
-public:
-  bool OnInit() override {
-    this->form = new Form();
-    this->form->Show(true);
-    return true;
-  }
-private:
-  Form* form;
+  bool OnInit() override {new Form(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

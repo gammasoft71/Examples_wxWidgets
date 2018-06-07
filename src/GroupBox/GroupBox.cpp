@@ -2,8 +2,7 @@
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "Panel example", wxDefaultPosition, wxSize(640, 480)) {
-  }
+  Form() : wxFrame(nullptr, wxID_ANY, "Panel example", wxDefaultPosition, wxSize(640, 480)) {this->Show();}
   
 private:
   wxPanel* panel = new wxPanel(this);
@@ -12,15 +11,7 @@ private:
 };
 
 class Application : public wxApp {
-public:
-  bool OnInit() override {
-    this->form = new Form();
-    this->form->Show(true);
-    return true;
-  }
-  
-private:
-  Form* form;
+  bool OnInit() override {new Form(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);
