@@ -10,6 +10,7 @@ private:
 };
 
 class Application : public wxApp {
+public:
   bool OnInit() override {new Form(); return true;}
 };
 
