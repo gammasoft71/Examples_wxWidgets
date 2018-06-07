@@ -8,7 +8,7 @@ else()
 endif()
 
 # Hello World
-#add_subdirectory("src/HelloWorld")
+add_subdirectory("src/HelloWorld")
 
 # Application and messages
 add_subdirectory("src/Application")
