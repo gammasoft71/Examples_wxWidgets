@@ -1,7 +1,7 @@
 
 # wxWidgets Examples
 
-Shows how to use wxWidgets controls (c++14).
+Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Hello World
 
