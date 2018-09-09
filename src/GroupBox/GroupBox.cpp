@@ -6,8 +6,8 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxRadioBox* groupBox1 = new wxRadioBox(this->panel, wxID_ANY, "GroupBox 1", wxPoint(10, 10), wxSize(305, 440));
-  wxRadioBox* groupBox2 = new wxRadioBox(this->panel, wxID_ANY, "", wxPoint(325, 10), wxSize(305, 440));
+  wxStaticBox* groupBox1 = new wxStaticBox(this->panel, wxID_ANY, "GroupBox 1", wxPoint(10, 10), wxSize(305, 440));
+  wxStaticBox* groupBox2 = new wxStaticBox(this->panel, wxID_ANY, "", wxPoint(325, 10), wxSize(305, 440));
 };
 
 class Application : public wxApp {
