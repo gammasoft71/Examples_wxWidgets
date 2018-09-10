@@ -44,7 +44,12 @@ add_subdirectory("src/FolderBrowserDialog")
 add_subdirectory("src/FontDialog")
 #add_subdirectory("src/MessageBox")
 
+# Events
+add_subdirectory("src/FormClick")
+
 # Other
 #add_subdirectory("src/Drawing")
 add_subdirectory("src/ColoredForms")
 add_subdirectory("src/ColoredTabPages")
+add_subdirectory("src/GroupBoxAndCheckBox")
+add_subdirectory("src/GroupBoxAndRadioButton")
