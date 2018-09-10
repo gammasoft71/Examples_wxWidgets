@@ -1,13 +1,37 @@
+#include <chrono>
 #include <wx/wx.h>
+
+using namespace std::chrono_literals;
+
+class Form : public wxFrame {
+public:
+  Form() : wxFrame(nullptr, wxID_ANY, "", wxDefaultPosition, wxSize(300, 300)) {
+    this->Show();
+  }
+  
+  void OnApplicationIdle() {
+    this->SetLabel(wxString::Format("%d", ++this->counter));
+  }
+  
+private:
+  int counter = 0;
+};
 
 class Application : public wxApp {
 public:
-  bool OnInit() override {(new wxFrame(nullptr, wxID_ANY, ""))->Show(); return true;}
+  bool OnInit() override {this->form = new Form(); return true;}
   bool ProcessIdle() override {
-    static int counter = 0;
-    this->GetTopWindow()->SetLabel(wxString::Format("%d", ++counter));
-    return wxApp::ProcessIdle();
+    static std::chrono::high_resolution_clock::time_point lastIdleTime;
+    std::chrono::milliseconds elapsedTime = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - lastIdleTime);
+    if (elapsedTime >= 100ms) {
+      form->OnApplicationIdle();
+      lastIdleTime = std::chrono::high_resolution_clock::now();
+    }
+    return true;
   }
+  
+private:
+  Form* form;
 };
 
 wxIMPLEMENT_APP(Application);

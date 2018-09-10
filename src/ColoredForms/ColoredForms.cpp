@@ -11,11 +11,12 @@ public:
       wxFrame* form = new wxFrame(this, wxID_ANY, *this->iterator, this->location, wxSize(300, 300));
       form->SetBackgroundColour(wxTheColourDatabase->Find(*this->iterator));
       this->forms.push_back(form);
-      form->Show();
       
       this->iterator++;
       if (this->iterator == colorNames.end()) this->iterator = colorNames.begin();
       location.x = location.y = location.x < 180 ? location.x + 20 : 20;
+
+      form->Show();
     });
     
     this->Show();
