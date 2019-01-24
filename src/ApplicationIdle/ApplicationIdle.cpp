@@ -22,7 +22,7 @@ public:
   bool OnInit() override {this->form = new Form(); return true;}
   bool ProcessIdle() override {
     static std::chrono::high_resolution_clock::time_point lastIdleTime;
-    std::chrono::milliseconds elapsedTime = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - lastIdleTime);
+    std::chrono::high_resolution_clock::duration elapsedTime = std::chrono::high_resolution_clock::now() - lastIdleTime;
     if (elapsedTime >= 100ms) {
       form->OnApplicationIdle();
       lastIdleTime = std::chrono::high_resolution_clock::now();
