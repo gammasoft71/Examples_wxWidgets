@@ -3,7 +3,7 @@
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "Form example", wxDefaultPosition, wxSize(390, 290)) {
+  Form() : wxFrame(nullptr, wxID_ANY, "TabControl example", wxDefaultPosition, wxSize(390, 290)) {
     this->tabControl1->AddPage(new wxNotebookPage(this->tabControl1, wxID_ANY), "tabPage1");
     this->tabControl1->AddPage(new wxNotebookPage(this->tabControl1, wxID_ANY), "tabPage2");
     this->tabControl1->AddPage(new wxNotebookPage(this->tabControl1, wxID_ANY), "tabPage3");

@@ -2,7 +2,7 @@
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "GroupBox and CheckBox example", wxDefaultPosition, wxSize(300, 180)) {
+  Form() : wxFrame(nullptr, wxID_ANY, "GroupBox and RadioButton example", wxDefaultPosition, wxSize(300, 180)) {
     this->radio1->SetValue(true);
     this->radio5->SetValue(true);
     this->Show();

@@ -2,7 +2,7 @@
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "Panel example", wxDefaultPosition, wxSize(640, 480)) {this->Show();}
+  Form() : wxFrame(nullptr, wxID_ANY, "GroupBox example", wxDefaultPosition, wxSize(640, 480)) {this->Show();}
   
 private:
   wxPanel* panel = new wxPanel(this);
