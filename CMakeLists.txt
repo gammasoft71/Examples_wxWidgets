@@ -26,7 +26,7 @@ add_subdirectory("src/Label")
 add_subdirectory("src/PictureBox")
 add_subdirectory("src/ProgressBar")
 add_subdirectory("src/RadioButton")
-#add_subdirectory("src/TextBox")
+add_subdirectory("src/TextBox")
 add_subdirectory("src/TrackBar")
 
 # Containers
@@ -40,7 +40,7 @@ add_subdirectory("src/TabControl")
 #add_subdirectory("src/MainMenu")
 
 # Components
-#add_subdirectory("src/Timer")
+add_subdirectory("src/Timer")
 
 # Dialogs
 add_subdirectory("src/ColorDialog")
