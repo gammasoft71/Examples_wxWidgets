@@ -29,7 +29,7 @@ private:
   wxSplitterWindow* splitContainerRight = new wxSplitterWindow(this->leftPanel2, wxID_ANY, wxPoint(0, 0), wxSize(230, 300), wxSP_NOBORDER);
   wxPanel* rightPanel1 = new wxPanel(this->splitContainerRight);
   wxPanel* rightPanel2 = new wxPanel(this->splitContainerRight);
-  wxSplitterWindow* splitContainerCenter = new wxSplitterWindow(this->leftPanel2, wxID_ANY, wxPoint(0, 0), wxSize(160, 300), wxSP_NOBORDER);
+  wxSplitterWindow* splitContainerCenter = new wxSplitterWindow(this->rightPanel1, wxID_ANY, wxPoint(0, 0), wxSize(160, 300), wxSP_NOBORDER);
   wxPanel* centerPanel1 = new wxPanel(this->splitContainerCenter);
   wxPanel* centerPanel2 = new wxPanel(this->splitContainerCenter);
 };
