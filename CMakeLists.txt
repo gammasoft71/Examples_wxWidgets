@@ -19,7 +19,7 @@ add_subdirectory("src/ApplicationIdle")
 # Common Controls
 add_subdirectory("src/Button")
 add_subdirectory("src/CheckBox")
-add_subdirectory("src/CheckListBox")
+add_subdirectory("src/CheckedListBox")
 add_subdirectory("src/ComboBox")
 add_subdirectory("src/Cursors")
 add_subdirectory("src/Label")
