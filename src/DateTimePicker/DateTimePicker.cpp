@@ -17,7 +17,7 @@ public:
 private:
   wxPanel* panel = new wxPanel(this);
   wxDatePickerCtrl* datePicker1 = new wxDatePickerCtrl(this->panel, wxID_ANY, wxDefaultDateTime, wxPoint(30, 30));
-  wxStaticText* label1 = new wxStaticText(this->panel, wxID_ANY, "", wxPoint(30, 60));
+  wxStaticText* label1 = new wxStaticText(this->panel, wxID_ANY, wxEmptyString, wxPoint(30, 60));
 };
 
 class Application : public wxApp {

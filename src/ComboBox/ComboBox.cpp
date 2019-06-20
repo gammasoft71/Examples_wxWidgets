@@ -13,7 +13,7 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxComboBox* comboBox1 = new wxComboBox(this->panel, wxID_ANY, "", wxPoint(10, 10));
+  wxComboBox* comboBox1 = new wxComboBox(this->panel, wxID_ANY, wxEmptyString, wxPoint(10, 10));
 };
 
 class Application : public wxApp {

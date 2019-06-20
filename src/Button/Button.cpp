@@ -2,7 +2,7 @@
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "", wxDefaultPosition, wxSize(300, 300)) {
+  Form() : wxFrame(nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(300, 300)) {
     this->button1->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       this->label1->SetLabel(wxString::Format("button1 clicked %d times", ++this->button1Clicked));
     });

@@ -6,7 +6,7 @@ class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "FolderBrowserDialog example", wxDefaultPosition, wxSize(300, 300)) {
     this->button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-      wxDirDialog folderBrowserDialog(this, "");
+      wxDirDialog folderBrowserDialog(this, wxEmptyString);
       folderBrowserDialog.SetPath(wxStandardPaths::Get().GetDocumentsDir());
       if (folderBrowserDialog.ShowModal())
         this->label->SetLabel(wxString::Format("Path = %s", folderBrowserDialog.GetPath()));

@@ -13,7 +13,7 @@ public:
 private:
   wxPanel* panel = new wxPanel(this);
   wxButton* buttonShowMessage = new wxButton(this->panel, wxID_ANY, "Message...", wxPoint(10, 10));
-  wxStaticText* labelDialogResult = new wxStaticText(this->panel, wxID_ANY, "", wxPoint(10, 45));
+  wxStaticText* labelDialogResult = new wxStaticText(this->panel, wxID_ANY, wxEmptyString, wxPoint(10, 45));
 };
 
 class Application : public wxApp {
