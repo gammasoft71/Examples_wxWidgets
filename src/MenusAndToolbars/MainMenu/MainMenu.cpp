@@ -45,7 +45,7 @@ public:
       else
         this->listBox1.Append("Unknown");
       if (event.GetId() == wxID_EXIT)
-        wxTheApp->Exit();
+        this->Close();
     });
   }
   

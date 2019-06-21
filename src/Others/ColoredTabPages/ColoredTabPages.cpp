@@ -15,8 +15,6 @@ public:
 
     this->tabControl1->AddPage(new wxNotebookPage(this->tabControl1, wxID_ANY), "Yellow");
     this->tabControl1->GetPage(3)->SetBackgroundColour(wxTheColourDatabase->Find("YELLOW"));
-    
-    this->Show();
   }
   
 private:
@@ -25,8 +23,7 @@ private:
 };
 
 class Application : public wxApp {
-public:
-  bool OnInit() override {new Form(); return true;}
+  bool OnInit() override {return (new Form())->Show();}
 };
 
 wxIMPLEMENT_APP(Application);
