@@ -17,8 +17,6 @@ public:
     this->splitContainerCenter.SplitHorizontally(&centerPanel1, &centerPanel2, 147);
     this->centerPanel1.SetBackgroundColour(wxTheColourDatabase->Find("Pink"));
     this->centerPanel2.SetBackgroundColour(wxColour(0x90, 0xEE, 0x90));
-
-    this->Show();
   }
   
 private:
@@ -35,8 +33,7 @@ private:
 };
 
 class Application : public wxApp {
-public:
-  bool OnInit() override {new Form(); return true;}
+  bool OnInit() override {return (new Form())->Show();}
 };
 
 wxIMPLEMENT_APP(Application);

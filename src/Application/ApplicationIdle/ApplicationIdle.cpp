@@ -5,9 +5,7 @@ using namespace std::chrono_literals;
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(300, 300)) {
-    this->Show();
-  }
+  Form() : wxFrame(nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(300, 300)) {}
   
   void OnApplicationIdle() {
     this->SetLabel(wxString::Format("%d", ++this->counter));
@@ -18,9 +16,11 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {this->form = new Form(); return true;}
+  bool OnInit() override {return (this->form = new Form())->Show();}
+ 
   bool ProcessIdle() override {
     if (!form->IsVisible()) return this->wxApp::ProcessIdle();
+    
     static std::chrono::high_resolution_clock::time_point lastIdleTime;
     std::chrono::high_resolution_clock::duration elapsedTime = std::chrono::high_resolution_clock::now() - lastIdleTime;
     if (elapsedTime >= 100ms) {
@@ -29,8 +29,7 @@ class Application : public wxApp {
     }
     return true;
   }
-  
-private:
+
   Form* form = nullptr;
 };
 

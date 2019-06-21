@@ -6,7 +6,6 @@ public:
     this->checkBox1.Set3StateValue(wxCHK_CHECKED);
     this->checkBox2.Set3StateValue(wxCHK_UNCHECKED);
     this->checkBox3.Set3StateValue(wxCHK_UNDETERMINED);
-    this->Show();
   }
   
 private:
@@ -17,7 +16,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {new Form(); return true;}
+  bool OnInit() override {return (new Form())->Show();}
 };
 
 wxIMPLEMENT_APP(Application);

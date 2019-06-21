@@ -2,7 +2,7 @@
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "Label example", wxDefaultPosition, wxSize(300, 300)) {this->Show();}
+  Form() : wxFrame(nullptr, wxID_ANY, "Label example", wxDefaultPosition, wxSize(300, 300)) {}
   
 private:
   wxPanel panel {this};
@@ -10,7 +10,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {new Form(); return true;}
+  bool OnInit() override {return (new Form())->Show();}
 };
 
 wxIMPLEMENT_APP(Application);

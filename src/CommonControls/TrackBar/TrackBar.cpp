@@ -10,7 +10,6 @@ namespace Examples {
         this->progressBar1.SetValue(this->trackBar1.GetValue());
         this->label1.SetLabel(wxString::Format("%d", this->trackBar1.GetValue()));
       });
-      this->Show();
     }
     
   private:
@@ -21,7 +20,7 @@ namespace Examples {
   };
   
   class Application : public wxApp {
-    bool OnInit() override {new Form(); return true;}
+    bool OnInit() override {return (new Form())->Show();}
   };
 }
 

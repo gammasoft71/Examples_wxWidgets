@@ -10,8 +10,6 @@ public:
     this->button2.Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       this->label2.SetLabel(wxString::Format("button2 clicked %d times", ++this->button2Clicked));
     });
-    
-    this->Show();
   }
   
 private:
@@ -25,7 +23,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {new Form(); return true;}
+  bool OnInit() override {return (new Form())->Show();}
 };
 
 wxIMPLEMENT_APP(Application);

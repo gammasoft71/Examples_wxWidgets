@@ -4,7 +4,6 @@ class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "Control example", wxDefaultPosition, wxSize(300, 300)) {
     this->control1.SetBackgroundColour(wxTheColourDatabase->Find("Spring Green"));
-    this->Show();
   }
   
 private:
@@ -13,7 +12,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {new Form(); return true;}
+  bool OnInit() override {return (new Form())->Show();}
 };
 
 wxIMPLEMENT_APP(Application);

@@ -4,7 +4,6 @@ class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "GroupBox example", wxDefaultPosition) {
     this->SetClientSize(wxSize(640, 480));
-    this->Show();
   }
   
 private:
@@ -14,7 +13,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {new Form(); return true;}
+  bool OnInit() override {return (new Form())->Show();}
 };
 
 wxIMPLEMENT_APP(Application);

@@ -14,8 +14,6 @@ public:
     this->timer.Start(50);
 
     this->progressBar5.Pulse();
-    
-    this->Show();
   }
   
 private:
@@ -29,7 +27,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {new Form(); return true;}
+  bool OnInit() override {return (new Form())->Show();}
 };
 
 wxIMPLEMENT_APP(Application);

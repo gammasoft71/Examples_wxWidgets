@@ -8,7 +8,6 @@ public:
     this->comboBox1.Insert("item2", 1);
     this->comboBox1.Insert("item3", 2);
     this->comboBox1.Select(1);
-    this->Show();
   }
   
 private:
@@ -17,7 +16,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {new Form(); return true;}
+  bool OnInit() override {return (new Form())->Show();}
 };
 
 wxIMPLEMENT_APP(Application);

@@ -12,7 +12,6 @@ public:
       if (this->textBox1.GetValue() != this->textBox2.GetValue())
         this->textBox1.SetValue(this->textBox2.GetValue());
     });
-    this->Show();
   }
   
 private:
@@ -22,7 +21,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {new Form(); return true;}
+  bool OnInit() override {return (new Form())->Show();}
 };
 
 wxIMPLEMENT_APP(Application);

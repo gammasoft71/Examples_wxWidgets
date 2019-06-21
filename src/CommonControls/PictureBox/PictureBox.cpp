@@ -6,8 +6,6 @@ public:
     wxImage::AddHandler(new wxPNGHandler());
     this->pictureBox1.Create(&this->panel, wxID_ANY, wxBitmap("Resources/Logo.png", wxBITMAP_TYPE_PNG), wxPoint(20,10), wxSize(260, 280));
     this->pictureBox1.SetWindowStyle(wxBORDER_SUNKEN);
-
-    this->Show();
   }
   
 private:
@@ -16,7 +14,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {new Form(); return true;}
+  bool OnInit() override {return (new Form())->Show();}
 };
 
 wxIMPLEMENT_APP(Application);

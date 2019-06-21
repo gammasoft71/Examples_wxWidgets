@@ -8,7 +8,6 @@ public:
     this->tabControl1.AddPage(&this->tabpage1, "tabPage1");
     this->tabControl1.AddPage(&this->tabpage2, "tabPage2");
     this->tabControl1.AddPage(&this->tabpage3, "tabPage3");
-    this->Show();
   }
   
 private:
@@ -20,8 +19,7 @@ private:
 };
 
 class Application : public wxApp {
-public:
-  bool OnInit() override {new Form(); return true;}
+  bool OnInit() override {return (new Form())->Show();}
 };
 
 wxIMPLEMENT_APP(Application);

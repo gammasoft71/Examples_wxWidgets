@@ -11,8 +11,6 @@ public:
     });
     
     this->label1.SetLabel(this->domainUpDown.GetValue());
-    
-    this->Show();
   }
   
 private:
@@ -22,7 +20,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {new Form(); return true;}
+  bool OnInit() override {return (new Form())->Show();}
 };
 
 wxIMPLEMENT_APP(Application);
