@@ -1,16 +1,14 @@
 #include <wx/wx.h>
 
-class Application : public wxApp {
-public:
-  bool OnInit() override {(new wxFrame(nullptr, wxID_ANY, wxEmptyString))->Show(); return true;}
-};
+namespace Examples {
+  class Application : public wxApp {
+    bool OnInit() override {(new wxFrame(nullptr, wxID_ANY, wxEmptyString))->Show(); return true;}
+  };
+}
 
-Application& wxGetApp() { return *static_cast<Application*>(wxApp::GetInstance()); }
-
-wxAppInitializer wxTheAppInitializer([]()->wxAppConsole* {
-  wxAppConsole::CheckBuildOptions(WX_BUILD_OPTIONS_SIGNATURE, "your program");
-  return new Application();
-});
+wxAppInitializer wxTheAppInitializer {[] {
+  return static_cast<wxAppConsole*>(new Examples::Application());
+}};
 
 int main(int argc, char* argv[]) {
   return wxEntry(argc, argv);

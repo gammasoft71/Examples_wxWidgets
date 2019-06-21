@@ -2,16 +2,18 @@
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "GroupBox example", wxDefaultPosition, wxSize(640, 480)) {this->Show();}
+  Form() : wxFrame(nullptr, wxID_ANY, "GroupBox example", wxDefaultPosition) {
+    this->SetClientSize(wxSize(640, 480));
+    this->Show();
+  }
   
 private:
-  wxPanel* panel = new wxPanel(this);
-  wxStaticBox* groupBox1 = new wxStaticBox(this->panel, wxID_ANY, "GroupBox 1", wxPoint(10, 10), wxSize(305, 440));
-  wxStaticBox* groupBox2 = new wxStaticBox(this->panel, wxID_ANY, wxEmptyString, wxPoint(325, 10), wxSize(305, 440));
+  wxPanel panel {this};
+  wxStaticBox groupBox1 {&this->panel, wxID_ANY, "GroupBox 1", wxPoint(10, 10), wxSize(305, 460)};
+  wxStaticBox groupBox2 {&this->panel, wxID_ANY, wxEmptyString, wxPoint(325, 10), wxSize(305, 460)};
 };
 
 class Application : public wxApp {
-public:
   bool OnInit() override {new Form(); return true;}
 };
 

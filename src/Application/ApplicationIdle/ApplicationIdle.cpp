@@ -18,9 +18,9 @@ private:
 };
 
 class Application : public wxApp {
-public:
   bool OnInit() override {this->form = new Form(); return true;}
   bool ProcessIdle() override {
+    if (!form->IsVisible()) return this->wxApp::ProcessIdle();
     static std::chrono::high_resolution_clock::time_point lastIdleTime;
     std::chrono::high_resolution_clock::duration elapsedTime = std::chrono::high_resolution_clock::now() - lastIdleTime;
     if (elapsedTime >= 100ms) {
@@ -31,7 +31,7 @@ public:
   }
   
 private:
-  Form* form;
+  Form* form = nullptr;
 };
 
 wxIMPLEMENT_APP(Application);

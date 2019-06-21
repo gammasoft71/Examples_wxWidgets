@@ -5,12 +5,11 @@ public:
   Form() : wxFrame(nullptr, wxID_ANY, "Label example", wxDefaultPosition, wxSize(300, 300)) {this->Show();}
   
 private:
-  wxPanel* panel = new wxPanel(this);
-  wxStaticText* label1 = new wxStaticText(this->panel, wxID_ANY, "label1", wxPoint(10, 10));
+  wxPanel panel {this};
+  wxStaticText label1 {&this->panel, wxID_ANY, "label1", wxPoint(10, 10)};
 };
 
 class Application : public wxApp {
-public:
   bool OnInit() override {new Form(); return true;}
 };
 
