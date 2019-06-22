@@ -35,11 +35,14 @@ public:
     this->mainMenu->Append(this->menuFile, "&File");
     this->mainMenu->Append(this->menuEdit, "&Edit");
     this->mainMenu->Append(this->menuView, "&View");
+    this->mainMenu->Append(this->menuHelp, "&Help");
+
+    this->menuHelp->Append(wxID_ABOUT, "About");
 
     this->SetMenuBar(this->mainMenu);
     
     this->mainMenu->Bind(wxEVT_COMMAND_MENU_SELECTED, [&](wxCommandEvent& event) {
-      static std::map<int, std::string> names = {{wxID_NEW, "File/New"}, {wxID_OPEN, "File/Open..."}, {wxID_OPENRECENT, "File/Open recent"}, {wxID_CLOSE, "File/Close"}, {wxID_SAVE, "File/Save"}, {wxID_SAVEAS, "File/Save as..."}, {wxID_EXIT, "File/Quit"}, {wxID_UNDO, "Edit/Undo"}, {wxID_REDO, "Edit/Redo"}, {wxID_CUT, "Edit/Cut"}, {wxID_COPY, "Edit/Copy"}, {wxID_PASTE, "Edit/Paste"}, {wxID_SELECTALL, "Edit/Select All"}, {wxID_SHOW, "View/Show"}, {wxID_HIDE, "View/Hide"}, {wxID_ANY, "Any"}};
+      static std::map<int, std::string> names = {{wxID_NEW, "File/New"}, {wxID_OPEN, "File/Open..."}, {wxID_OPENRECENT, "File/Open recent"}, {wxID_CLOSE, "File/Close"}, {wxID_SAVE, "File/Save"}, {wxID_SAVEAS, "File/Save as..."}, {wxID_EXIT, "File/Quit"}, {wxID_UNDO, "Edit/Undo"}, {wxID_REDO, "Edit/Redo"}, {wxID_CUT, "Edit/Cut"}, {wxID_COPY, "Edit/Copy"}, {wxID_PASTE, "Edit/Paste"}, {wxID_SELECTALL, "Edit/Select All"}, {wxID_SHOW, "View/Show"}, {wxID_HIDE, "View/Hide"}, {wxID_ABOUT, "Help/About"}, {wxID_ANY, "Any"}};
       if (names.find(event.GetId()) != names.end())
         this->listBox1->Append(names[event.GetId()]);
       else
@@ -55,6 +58,7 @@ private:
   wxMenu* menuFile = new wxMenu();
   wxMenu* menuEdit = new wxMenu();
   wxMenu* menuView = new wxMenu();
+  wxMenu* menuHelp = new wxMenu();
   wxListBox* listBox1 = new wxListBox(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(280, 260));
 };
 
