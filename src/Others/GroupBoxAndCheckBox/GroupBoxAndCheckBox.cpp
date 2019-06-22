@@ -2,10 +2,10 @@
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "GroupBox and CheckBox example", wxDefaultPosition, wxSize(300, 180)) {
+  Form() : wxFrame(nullptr, wxID_ANY, "GroupBox and CheckBox example", wxDefaultPosition) {
+    this->SetClientSize(wxSize(300, 160));
     this->check2->SetValue(true);
     this->check6->SetValue(true);
-    this->Show();
   }
   
 private:
@@ -21,8 +21,7 @@ private:
 };
 
 class Application : public wxApp {
-public:
-  bool OnInit() override {new Form(); return true;}
+  bool OnInit() override {return (new Form())->Show();}
 };
 
 wxIMPLEMENT_APP(Application);
