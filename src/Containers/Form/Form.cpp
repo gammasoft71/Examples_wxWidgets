@@ -3,7 +3,7 @@
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "Form example", wxDefaultPosition, wxSize(640, 480)) {
-    this->button.Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
+    this->button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       this->Close();
     });
     
@@ -19,12 +19,12 @@ public:
   }
   
 private:
-  wxPanel panel {this};
-  wxButton button {&panel, wxID_ANY, "Close", wxPoint(10, 10)};
+  wxPanel* panel = new wxPanel(this);
+  wxButton* button = new wxButton(panel, wxID_ANY, "Close", wxPoint(10, 10));
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (new Form())->Show();}
+  bool OnInit() override {new Form(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

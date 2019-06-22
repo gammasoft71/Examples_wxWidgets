@@ -8,20 +8,20 @@
 class wxDomainSpinCtrl : public wxPanel {
 public:
   wxDomainSpinCtrl(wxWindow* parent, wxWindowID winid = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize) : wxPanel(parent, winid, pos, size) {
-    if (size == wxDefaultSize) this->SetSize(120, this->upDown.GetSize().GetHeight());
+    if (size == wxDefaultSize) this->SetSize(120, this->upDown->GetSize().GetHeight());
 
-    this->textBox.SetPosition(wxPoint(0, 2));
-    this->textBox.SetSize(this->GetSize() - wxSize(this->upDown.GetSize().GetWidth() + 2, 4));
+    this->textBox->SetPosition(wxPoint(0, 2));
+    this->textBox->SetSize(this->GetSize() - wxSize(this->upDown->GetSize().GetWidth() + 2, 4));
 
-    this->upDown.SetPosition(wxPoint(this->GetSize().GetWidth() - this->upDown.GetSize().GetWidth(), (this->GetSize().GetHeight() - this->upDown.GetSize().GetHeight()) / 2));
-    this->upDown.SetRange(0, this->items.GetCount() - 1);
-    this->upDown.Bind(wxEVT_SPIN, [&](wxSpinEvent& event) {
+    this->upDown->SetPosition(wxPoint(this->GetSize().GetWidth() - this->upDown->GetSize().GetWidth(), (this->GetSize().GetHeight() - this->upDown->GetSize().GetHeight()) / 2));
+    this->upDown->SetRange(0, this->items.GetCount() - 1);
+    this->upDown->Bind(wxEVT_SPIN, [&](wxSpinEvent& event) {
       this->SetTextWithSelectedIndex();
     });
 
     this->Bind(wxEVT_SIZE, [&](wxEvent& ev) {
-      this->textBox.SetSize(this->GetSize() - wxSize(this->upDown.GetSize().GetWidth() + 2, 4));
-      this->upDown.SetPosition(wxPoint(this->GetSize().GetWidth() - this->upDown.GetSize().GetWidth(), (this->GetSize().GetHeight() - this->upDown.GetSize().GetHeight()) / 2));
+      this->textBox->SetSize(this->GetSize() - wxSize(this->upDown->GetSize().GetWidth() + 2, 4));
+      this->upDown->SetPosition(wxPoint(this->GetSize().GetWidth() - this->upDown->GetSize().GetWidth(), (this->GetSize().GetHeight() - this->upDown->GetSize().GetHeight()) / 2));
     });
   }
 
@@ -33,13 +33,13 @@ public:
   
   wxArrayString& GetItems() {return this->items;}
   
-  wxString GetValue() const {return this->textBox.GetValue();}
+  wxString GetValue() const {return this->textBox->GetValue();}
 
   void SetItems(const std::vector<wxString>& items) {
     this->items.clear();
     for(auto i : items)
       this->items.Add(i);
-    this->upDown.SetRange(0, this->items.GetCount() - 1);
+    this->upDown->SetRange(0, this->items.GetCount() - 1);
     this->SetTextWithSelectedIndex();
   }
   
@@ -49,19 +49,19 @@ public:
   }
 
   void SetSelectedIndex(size_t index) {
-    this->upDown.SetValue(items.GetCount() - 1 - index);
+    this->upDown->SetValue(items.GetCount() - 1 - index);
     this->SetTextWithSelectedIndex();
   }
   
-  void SetValue(const wxString& value) {this->textBox.SetValue(value);}
+  void SetValue(const wxString& value) {this->textBox->SetValue(value);}
 
 private:
   void SetTextWithSelectedIndex() {
-    if (this->upDown.GetValue() < items.GetCount())
-      this->textBox.SetValue(this->items[items.GetCount() - 1 - this->upDown.GetValue()]);
+    if (this->upDown->GetValue() < items.GetCount())
+      this->textBox->SetValue(this->items[items.GetCount() - 1 - this->upDown->GetValue()]);
   }
   
-  wxTextCtrl textBox {this, wxID_ANY};
-  wxSpinButton upDown {this, wxID_ANY};
+  wxTextCtrl* textBox = new wxTextCtrl(this, wxID_ANY);
+  wxSpinButton* upDown = new wxSpinButton(this, wxID_ANY);
   wxArrayString items;
 };

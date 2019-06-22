@@ -4,22 +4,22 @@
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "Font example", wxDefaultPosition, wxSize(400, 420)) {
-    this->button.Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
+    this->button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       wxFontData fontData;
-      fontData.SetInitialFont(this->label.GetFont());
-      fontData.SetColour(this->label.GetForegroundColour());
+      fontData.SetInitialFont(this->label->GetFont());
+      fontData.SetColour(this->label->GetForegroundColour());
       wxFontDialog fontDialog(this, fontData);
       if (fontDialog.ShowModal()) {
-        this->label.SetFont(fontDialog.GetFontData().GetChosenFont());
-        this->label.SetForegroundColour(fontDialog.GetFontData().GetColour());
+        this->label->SetFont(fontDialog.GetFontData().GetChosenFont());
+        this->label->SetForegroundColour(fontDialog.GetFontData().GetColour());
       }
     });
   }
   
 private:
-  wxPanel panel {this};
-  wxButton button {&this->panel, wxID_ANY, "Font...", wxPoint(10, 10)};
-  wxStaticText label {&this->panel, wxID_ANY,
+  wxPanel* panel = new wxPanel(this);
+  wxButton* button = new wxButton(this->panel, wxID_ANY, "Font...", wxPoint(10, 10));
+  wxStaticText* label = new wxStaticText(this->panel, wxID_ANY,
     "The quick brown fox jumps over the lazy dog.\n"
     "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.\n"
     "0123456789+-*/%~^&|=<>≤≥±÷≠{{[()]}},;:.?¿!¡\n"
@@ -28,7 +28,7 @@ private:
     "\u0410\u0411\u0412\u0413\u0414\u0415\u0416\u0417\u0418\u0419\u041a\u041b\u041c\u041d\u041e\u041f\n"
     "\u4ea0\u4ea1\u4ea2\u4ea3\u4ea4\u4ea5\u4ea6\u4ea7\u4ea8\u4ea9\u4eaa\u4eab\u4eac\u4ead\u4eae\u4eaf\n"
     "\u4eb0\u4eb1\u4eb2\u4eb3\u4eb4\u4eb5\u4eb6\u4eb7\u4eb8\u4eb9\u4eba\u4ebb\u4ebc\u4ebd\u4ebe\u4ebf\n"
-    "\U0001F428", wxPoint(10, 50), wxSize(380, 340)};
+    "\U0001F428", wxPoint(10, 50), wxSize(380, 340));
 };
 
 class Application : public wxApp {
