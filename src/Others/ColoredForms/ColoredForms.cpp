@@ -1,6 +1,6 @@
 #include <vector>
 #include <wx/wx.h>
-#include <wx/Colordlg.h>
+#include <wx/colordlg.h>
 
 using namespace std;
 
@@ -12,13 +12,13 @@ public:
       form->SetBackgroundColour(wxTheColourDatabase->Find(*this->iterator));
       form->Show();
       this->forms.push_back(form);
-      
+
       this->iterator++;
       if (this->iterator == colorNames.end()) this->iterator = colorNames.begin();
       location.x = location.y = location.x < 180 ? location.x + 20 : 20;
     });
   }
-  
+
 private:
   wxPanel* panel = new wxPanel(this);
   wxButton* button = new wxButton(this->panel, wxID_ANY, "Create", wxPoint(10, 10));

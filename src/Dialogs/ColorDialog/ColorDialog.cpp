@@ -1,5 +1,5 @@
 #include <wx/wx.h>
-#include <wx/Colordlg.h>
+#include <wx/colordlg.h>
 
 class Form : public wxFrame {
 public:
@@ -14,7 +14,7 @@ public:
       }
     });
   }
-  
+
 private:
   wxPanel* panel = new wxPanel(this);
   wxButton* button = new wxButton(this->panel, wxID_ANY, "Color...", wxPoint(10, 10));

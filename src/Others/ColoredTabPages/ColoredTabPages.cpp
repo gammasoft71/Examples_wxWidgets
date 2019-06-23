@@ -1,9 +1,10 @@
 #include <wx/wx.h>
-#include <wx/Notebook.h>
+#include <wx/notebook.h>
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "Colored TabPages example", wxDefaultPosition, wxSize(390, 290)) {
+  Form() : wxFrame(nullptr, wxID_ANY, "Colored TabPages example", wxDefaultPosition) {
+  this->SetClientSize(wxSize(390, 270));
     this->tabControl1->AddPage(new wxNotebookPage(this->tabControl1, wxID_ANY), "Red");
     this->tabControl1->GetPage(0)->SetBackgroundColour(wxTheColourDatabase->Find("Red"));
 
@@ -16,7 +17,7 @@ public:
     this->tabControl1->AddPage(new wxNotebookPage(this->tabControl1, wxID_ANY), "Yellow");
     this->tabControl1->GetPage(3)->SetBackgroundColour(wxTheColourDatabase->Find("YELLOW"));
   }
-  
+
 private:
   wxPanel* panel = new wxPanel(this);
   wxNotebook* tabControl1 = new wxNotebook(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(370, 250));
