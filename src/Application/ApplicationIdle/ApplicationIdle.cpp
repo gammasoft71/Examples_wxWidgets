@@ -12,6 +12,7 @@ public:
   }
   
 private:
+  wxPanel* panel = new wxPanel(this);
   int counter = 0;
 };
 
@@ -20,14 +21,17 @@ class Application : public wxApp {
  
   bool ProcessIdle() override {
     if (!form->IsVisible()) return this->wxApp::ProcessIdle();
-    
+
     static std::chrono::high_resolution_clock::time_point lastIdleTime;
     std::chrono::high_resolution_clock::duration elapsedTime = std::chrono::high_resolution_clock::now() - lastIdleTime;
     if (elapsedTime >= 100ms) {
       form->OnApplicationIdle();
       lastIdleTime = std::chrono::high_resolution_clock::now();
     }
+
+    this->wxApp::ProcessIdle();
     return true;
+    ;
   }
 
   Form* form = nullptr;
