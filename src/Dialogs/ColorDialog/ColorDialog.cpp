@@ -9,7 +9,7 @@ public:
       colorData.SetColour(this->GetBackgroundColour());
       wxColourDialog colorDialog(this, &colorData);
       if (colorDialog.ShowModal()) {
-        this->SetBackgroundColour(colorDialog.GetColourData().GetColour());
+        this->panel->SetBackgroundColour(colorDialog.GetColourData().GetColour());
         this->Refresh();
       }
     });
