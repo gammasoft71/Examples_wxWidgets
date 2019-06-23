@@ -3,7 +3,8 @@
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "Font example", wxDefaultPosition, wxSize(400, 420)) {
+  Form() : wxFrame(nullptr, wxID_ANY, "Font example", wxDefaultPosition) {
+    this->SetClientSize(wxSize(400, 400));
     this->button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       wxFontData fontData;
       fontData.SetInitialFont(this->label->GetFont());
@@ -15,7 +16,7 @@ public:
       }
     });
   }
-  
+
 private:
   wxPanel* panel = new wxPanel(this);
   wxButton* button = new wxButton(this->panel, wxID_ANY, "Font...", wxPoint(10, 10));
