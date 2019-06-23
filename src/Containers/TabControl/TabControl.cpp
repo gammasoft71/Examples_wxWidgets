@@ -1,5 +1,5 @@
 #include <wx/wx.h>
-#include <wx/Notebook.h>
+#include <wx/notebook.h>
 
 class Form : public wxFrame {
 public:
@@ -9,7 +9,7 @@ public:
     this->tabControl1->AddPage(this->tabpage2, "tabPage2");
     this->tabControl1->AddPage(this->tabpage3, "tabPage3");
   }
-  
+
 private:
   wxPanel* panel = new wxPanel(this);
   wxNotebook* tabControl1 = new wxNotebook(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(370, 250));
