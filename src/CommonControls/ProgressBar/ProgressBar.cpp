@@ -10,10 +10,10 @@ public:
 
     this->timer.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
       this->progressBar4->SetValue(this->progressBar4->GetValue() < this->progressBar4->GetRange() ? this->progressBar4->GetValue() + 1 : 0);
+      this->progressBar5->Pulse();
     });
     this->timer.Start(50);
 
-    this->progressBar5->Pulse();
   }
   
 private:
