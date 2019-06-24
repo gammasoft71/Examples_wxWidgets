@@ -8,14 +8,12 @@ public:
     this->SetClientSize(wxSize(360, 240));
     for (auto& cursorNamePair : this->cursorNamePairs)
       this->listBoxCursors->Insert(cursorNamePair.Name(), this->listBoxCursors->GetCount(), &cursorNamePair);
-    
+        
+    this->listBoxCursors->SetSelection(3);
     this->listBoxCursors->Bind(wxEVT_COMMAND_LISTBOX_SELECTED, [&](wxCommandEvent& event) {
       this->testZone->SetCursor(static_cast<CursorNamePair*>(this->listBoxCursors->wxItemContainer::GetClientData(this->listBoxCursors->GetSelection()))->Cursor());
     });
-    
-    this->listBoxCursors->SetSelection(3);
-    
-    this->testZone->SetBackgroundColour(wxTheColourDatabase->Find("White"));
+
     this->testZone->SetWindowStyle(wxBORDER_RAISED);
   }
   
