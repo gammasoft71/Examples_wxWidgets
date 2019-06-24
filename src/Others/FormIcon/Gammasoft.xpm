@@ -1,5 +1,5 @@
 /* XPM */
-static char *GammasoftIcon_xpm[] = {
+static const char* GammasoftIcon_xpm[] = {
 /* columns rows colors chars-per-pixel */
 "256 256 137 2 ",
 "   c #000001",
