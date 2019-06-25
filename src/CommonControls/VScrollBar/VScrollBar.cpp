@@ -5,13 +5,13 @@ public:
   Form() : wxFrame(nullptr, wxID_ANY, "HScrollBar example", wxDefaultPosition, wxSize(300, 300)) {
     this->scrollBar2->SetRange(200);
     this->scrollBar2->SetThumbPosition(100);
-    this->scrollBar2->SetSize(220, this->scrollBar2->GetSize().GetHeight());
+    this->scrollBar2->SetSize(this->scrollBar2->GetSize().GetWidth(), 220);
   }
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxScrollBar* scrollBar1 = new wxScrollBar(this->panel, wxID_ANY, wxPoint(30, 10), wxDefaultSize, wxSB_HORIZONTAL);
-  wxScrollBar* scrollBar2 = new wxScrollBar(this->panel, wxID_ANY, wxPoint(70, 10), wxDefaultSize, wxSB_HORIZONTAL);
+  wxScrollBar* scrollBar1 = new wxScrollBar(this->panel, wxID_ANY, wxPoint(30, 10), wxDefaultSize, wxSB_VERTICAL);
+  wxScrollBar* scrollBar2 = new wxScrollBar(this->panel, wxID_ANY, wxPoint(70, 10), wxDefaultSize, wxSB_VERTICAL);
 };
 
 class Application : public wxApp {
