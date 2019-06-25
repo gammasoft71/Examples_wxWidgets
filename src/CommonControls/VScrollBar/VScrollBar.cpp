@@ -2,7 +2,7 @@
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "HScrollBar example", wxDefaultPosition, wxSize(300, 300)) {
+  Form() : wxFrame(nullptr, wxID_ANY, "VScrollBar example", wxDefaultPosition, wxSize(300, 300)) {
     this->scrollBar2->SetRange(200);
     this->scrollBar2->SetThumbPosition(100);
     this->scrollBar2->SetSize(this->scrollBar2->GetSize().GetWidth(), 220);
