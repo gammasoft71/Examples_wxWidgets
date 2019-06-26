@@ -16,10 +16,10 @@ namespace Examples {
   private:
     wxPanel* panel = new wxPanel(this);
     wxStaticLine* lineSeparator1 = new wxStaticLine(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(280, 2), wxLI_HORIZONTAL);
-    wxStaticText* lineRed = new wxStaticText(this->panel, wxID_ANY, wxEmptyString, wxPoint(10, 20), wxSize(2, 250));
-    wxStaticText* lineGreen = new wxStaticText(this->panel, wxID_ANY, wxEmptyString, wxPoint(149, 20), wxSize(2, 250));
-    wxStaticText* lineBlue = new wxStaticText(this->panel, wxID_ANY, wxEmptyString, wxPoint(288, 20), wxSize(2, 250));
-    wxStaticText* lineSeparator2 = new wxStaticText(this->panel, wxID_ANY, wxEmptyString, wxPoint(10, 278), wxSize(280, 2));
+    wxPanel* lineRed = new wxPanel(this->panel, wxID_ANY, wxPoint(10, 20), wxSize(2, 250));
+    wxPanel* lineGreen = new wxPanel(this->panel, wxID_ANY, wxPoint(149, 20), wxSize(2, 250));
+    wxPanel* lineBlue = new wxPanel(this->panel, wxID_ANY, wxPoint(288, 20), wxSize(2, 250));
+    wxPanel* lineSeparator2 = new wxPanel(this->panel, wxID_ANY, wxPoint(10, 278), wxSize(280, 2));
   };
   
   class Application : public wxApp {
