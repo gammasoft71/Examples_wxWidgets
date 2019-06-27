@@ -1,10 +1,16 @@
 #include <wx/wx.h>
 
+#if defined(__APPLE__)
+constexpr double DeviceUnitScaleCorrection =  4.0 / 3.0;
+#else
+constexpr double DeviceUnitScaleCorrection =  1.0;
+#endif
+
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "Timer example", wxDefaultPosition) {
     this->SetClientSize(wxSize(230, 130));
-    this->label->SetFont(wxFont(48, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_NORMAL, false, "Arial"));
+    this->label->SetFont(wxFont(48 * DeviceUnitScaleCorrection, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_NORMAL, false, "Arial"));
     this->label->SetForegroundColour(wxColour(30, 144, 255));
 
     this->timer.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
