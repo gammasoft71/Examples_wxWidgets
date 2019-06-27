@@ -5,7 +5,6 @@ class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "NotifyIcon example", wxDefaultPosition, wxSize(300, 300)) {
     this->notifyIcon1.SetIcon(wxIcon(GammasoftIcon));
-    
     this->notifyIcon1.Bind(wxEVT_TASKBAR_LEFT_DCLICK, [&](wxTaskBarIconEvent& event) {
       if (this->IsShown())
         this->Hide();
