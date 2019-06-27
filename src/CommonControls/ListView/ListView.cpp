@@ -12,7 +12,7 @@
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "ListView example", wxDefaultPosition) {
-    this->SetClientSize(350, 250);
+    this->SetClientSize(350, 260);
 
     this->imageListLarge->Add(wxIcon(aiIcon48));
     this->imageListLarge->Add(wxIcon(aviIcon48));
