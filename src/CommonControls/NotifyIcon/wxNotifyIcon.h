@@ -5,7 +5,7 @@
 
 class wxNotifyIcon : public wxTaskBarIcon {
 public:
-  wxNotifyIcon() {}
+  wxNotifyIcon(wxTaskBarIconType iconType = wxTBI_DEFAULT_TYPE) : wxTaskBarIcon(iconType) {}
   
   wxMenu* CreatePopupMenu() override {
 #if defined(__APPLE__)
