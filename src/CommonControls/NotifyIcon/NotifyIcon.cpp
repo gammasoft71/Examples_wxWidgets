@@ -5,19 +5,17 @@
 
 class wxNotifyIcon : public wxTaskBarIcon {
 public:
-  wxNotifyIcon(wxFrame* frame) : frame(frame) {}
+  wxNotifyIcon(wxWindow* window) : window(window) {}
   
   wxMenu* CreatePopupMenu() override {
-    if (this->frame) {
-      if (this->frame->IsShown())
-        this->frame->Hide();
-      else
-        this->frame->Show();
-    }
-    return nullptr;
+    if (this->window->IsShown())
+      this->window->Hide();
+    else
+      this->window->Show();
+    return this->wxTaskBarIcon::CreatePopupMenu();
   }
 
-  wxFrame* frame = nullptr;
+  wxWindow* window = nullptr;
 };
 
 class Form : public wxFrame {
