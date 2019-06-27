@@ -18,7 +18,7 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxStaticText* label1 = new wxStaticText(this->panel, wxID_ANY, "Hello, World!", wxPoint(5, 100));
+  wxStaticText* label1 = new wxStaticText(this->panel, wxID_ANY, "Hello, World!", wxPoint(5, 100), wxSize(290, 70));
 };
 
 class Application : public wxApp {
