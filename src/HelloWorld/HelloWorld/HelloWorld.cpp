@@ -10,8 +10,8 @@ class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "My first application", wxDefaultPosition) {
     this->SetClientSize(wxSize(300, 300));
-    this->label1->SetFont(wxFont(32 * DeviceUnitScaleCorrection, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_BOLD, false, "Arial"));
-    this->label1->SetForegroundColour(wxTheColourDatabase->Find("FOREST GREEN"));
+    this->label1->SetFont(wxFont(34 * DeviceUnitScaleCorrection, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_BOLD, false, "Arial"));
+    this->label1->SetForegroundColour(wxColour(0, 139, 0));
 
     this->CenterOnScreen();
   }
