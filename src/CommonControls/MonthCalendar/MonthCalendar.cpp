@@ -3,7 +3,7 @@
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "Label example", wxDefaultPosition, wxSize(300, 300)) {
+  Form() : wxFrame(nullptr, wxID_ANY, "MonthCalendar example", wxDefaultPosition, wxSize(300, 300)) {
     this->monthCalendar1->SetDateRange(wxDateTime(5, wxDateTime::Jan, 1971), wxDateTime(5, wxDateTime::Jan, 2071));
   }
   
