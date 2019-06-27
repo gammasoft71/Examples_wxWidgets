@@ -54,15 +54,15 @@ public:
     this->comboBox1->Append("SmallIcon", (void*)wxLC_SMALL_ICON);
     this->comboBox1->Append("List", (void*)wxLC_LIST);
     this->comboBox1->SetSelection(1);
-    this->comboBox1->Bind(wxEVT_COMBOBOX, [&](wxCommandEvent& event) {
+    this->comboBox1->Bind(wxEVT_CHOICE, [&](wxCommandEvent& event) {
       this->listView->SetSingleStyle((long long)this->comboBox1->GetClientData(this->comboBox1->GetSelection()));
     });
   }
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxListCtrl* listView = new wxListCtrl(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(330, 200), wxLC_REPORT | wxSIMPLE_BORDER);
-  wxComboBox* comboBox1 = new wxComboBox(this->panel, wxID_ANY, wxEmptyString, wxPoint(10, 220), wxDefaultSize, 0, nullptr, wxCB_READONLY);
+  wxListView* listView = new wxListView(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(330, 200), wxLC_REPORT | wxSIMPLE_BORDER);
+  wxChoice* comboBox1 = new wxChoice(this->panel, wxID_ANY, wxPoint(10, 220));
   wxImageList* imageListLarge = new wxImageList(48, 48);
   wxImageList* imageListSmall = new wxImageList(16, 16);
 };
