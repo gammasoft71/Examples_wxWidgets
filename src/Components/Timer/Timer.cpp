@@ -28,7 +28,7 @@ public:
 
 private:
   wxPanel* panel = new wxPanel(this);
-  wxStaticText* label = new wxStaticText(this->panel, wxID_ANY, "0.0", wxPoint(10, 10));
+  wxStaticText* label = new wxStaticText(this->panel, wxID_ANY, "0.0", wxPoint(10, 10), wxSize(220, 70));
   wxButton* button = new wxButton(this->panel, wxID_ANY, "Start", wxPoint(10, 90));
   wxTimer timer;
   int counter = 0;
