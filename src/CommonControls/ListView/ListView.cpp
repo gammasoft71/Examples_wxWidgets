@@ -14,15 +14,15 @@ public:
   Form() : wxFrame(nullptr, wxID_ANY, "ListView example", wxDefaultPosition) {
     this->SetClientSize(350, 260);
 
-    this->imageListLarge->Add(wxIcon(aiIcon48));
-    this->imageListLarge->Add(wxIcon(aviIcon48));
-    this->imageListLarge->Add(wxIcon(bmpIcon48));
-    this->listView->SetImageList(this->imageListLarge, wxIMAGE_LIST_NORMAL);
+    this->imageListLarge.Add(wxIcon(aiIcon48));
+    this->imageListLarge.Add(wxIcon(aviIcon48));
+    this->imageListLarge.Add(wxIcon(bmpIcon48));
+    this->listView->SetImageList(&this->imageListLarge, wxIMAGE_LIST_NORMAL);
     
-    this->imageListSmall->Add(wxIcon(aiIcon16));
-    this->imageListSmall->Add(wxIcon(aviIcon16));
-    this->imageListSmall->Add(wxIcon(bmpIcon16));
-    this->listView->SetImageList(this->imageListSmall, wxIMAGE_LIST_SMALL);
+    this->imageListSmall.Add(wxIcon(aiIcon16));
+    this->imageListSmall.Add(wxIcon(aviIcon16));
+    this->imageListSmall.Add(wxIcon(bmpIcon16));
+    this->listView->SetImageList(&this->imageListSmall, wxIMAGE_LIST_SMALL);
 
     this->listView->AppendColumn("Name", wxLIST_FORMAT_LEFT, 80);
     this->listView->AppendColumn("Type", wxLIST_FORMAT_LEFT, 50);
@@ -46,7 +46,6 @@ public:
     this->listView->SetItem(2, 2, "4284");
     this->listView->SetItem(2, 3, "This is the third item");
     this->listView->SetItemImage(2, 2);
-
     this->listView->Update();
     
     this->comboBox1->Append("LargeIcon", (void*)wxLC_ICON);
@@ -61,10 +60,10 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxListView* listView = new wxListView(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(330, 200), wxLC_REPORT | wxSIMPLE_BORDER);
+  wxListCtrl* listView = new wxListCtrl(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(330, 200), wxLC_REPORT | wxSIMPLE_BORDER);
   wxChoice* comboBox1 = new wxChoice(this->panel, wxID_ANY, wxPoint(10, 220));
-  wxImageList* imageListLarge = new wxImageList(48, 48);
-  wxImageList* imageListSmall = new wxImageList(16, 16);
+  wxImageList imageListLarge { 48, 48 };
+  wxImageList imageListSmall { 16, 16 };
 };
 
 class Application : public wxApp {
