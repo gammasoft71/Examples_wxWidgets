@@ -1,6 +1,5 @@
-#include "wxNotifyIcon.h"
-
 #include "Gammasoft.xpm"
+#include "wxNotifyIcon.h"
 
 class Form : public wxFrame {
 public:
