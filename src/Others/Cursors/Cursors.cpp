@@ -7,7 +7,7 @@ public:
   Form() : wxFrame(nullptr, wxID_ANY, "Cursor example", wxDefaultPosition) {
     this->SetClientSize(wxSize(360, 240));
     for (auto& cursorNamePair : this->cursorNamePairs)
-      this->listBoxCursors->Insert(cursorNamePair.Name(), this->listBoxCursors->GetCount(), &cursorNamePair);
+      this->listBoxCursors->Append(cursorNamePair.Name(), &cursorNamePair);
         
     this->listBoxCursors->SetSelection(3);
     this->listBoxCursors->Bind(wxEVT_COMMAND_LISTBOX_SELECTED, [&](wxCommandEvent& event) {
