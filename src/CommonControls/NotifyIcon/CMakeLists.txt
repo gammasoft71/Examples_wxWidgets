@@ -7,4 +7,4 @@ link_libraries(${wxWidgets_LIBRARIES})
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_executable(NotifyIcon WIN32 MACOSX_BUNDLE NotifyIcon.cpp Gammasoft.xpm)
+add_executable(NotifyIcon WIN32 MACOSX_BUNDLE NotifyIcon.cpp wxNotifyIcon.h Gammasoft.xpm)
