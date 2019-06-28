@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 project(WebBrowser)
 
-find_package(wxWidgets COMPONENTS gl core base webview html xml)
+find_package(wxWidgets COMPONENTS base core webview)
 include(${wxWidgets_USE_FILE})
 link_libraries(${wxWidgets_LIBRARIES})
 
