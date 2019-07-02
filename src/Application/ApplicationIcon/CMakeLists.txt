@@ -19,4 +19,5 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Resources/Gammasoft.png ${EXECUTABLE_
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_executable(ApplicationIcon WIN32 MACOSX_BUNDLE ApplicationIcon.cpp)
+add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ApplicationIcon.cpp)
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "Application")

@@ -7,4 +7,5 @@ link_libraries(${wxWidgets_LIBRARIES})
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_executable(DomainUpDown WIN32 MACOSX_BUNDLE DomainUpDown.cpp wxDomainSpinCtrl.h)
+add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE DomainUpDown.cpp wxDomainSpinCtrl.h)
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "CommonControl")

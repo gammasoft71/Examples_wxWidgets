@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.2)
 project(wxWidgetsExamples)
 
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
 if ("${CMAKE_BUILD_TYPE}" STREQUAL "")
   set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})
 else()
