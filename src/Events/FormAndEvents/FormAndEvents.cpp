@@ -7,6 +7,7 @@ public:
   }
   
   bool ProcessEvent (wxEvent &event) override {
+    wxWindow* window = ((wxWindow*)event.GetEventObject());
     if (event.GetEventType() == wxEVT_ACTIVATE_APP) std::cout << "WM_ACTIVATEAPP" << std::endl;
     if (event.GetEventType() == wxEVT_CLOSE_WINDOW) std::cout << "WM_CLOSE" << std::endl;
     if (event.GetEventType() == wxEVT_CREATE) std::cout << "WM_CREATE" << std::endl;
@@ -15,12 +16,12 @@ public:
     if (event.GetEventType() == wxEVT_COMMAND_ENTER) std::cout << "WM_COMMAND" << std::endl;
     //if (event.GetEventType() == wxEVT_ENTER_SIZEMOVE) std::cout << "WM_ENTERSIZEMOVE" << std::endl;
     //if (event.GetEventType() == wxEVT_EXIT_SIZEMOVE) std::cout << "WM_EXITSIZEMOVE" << std::endl;
-    if (event.GetEventType() == wxEVT_MOVE) std::cout << "WM_MOVE {x=" << this->GetPosition().x << ", y=" << this->GetPosition().y << "}" << std::endl;
+    if (event.GetEventType() == wxEVT_MOVE) std::cout << "WM_MOVE {x=" << window->GetPosition().x << ", y=" << window->GetPosition().y << "}" << std::endl;
     if (event.GetEventType() == wxEVT_NULL) std::cout << "WM_MNULL" << std::endl;
     //if (event.GetEventType() == wxEVT_QUIT) std::cout << "WM_QUIT" << std::endl;
     if (event.GetEventType() == wxEVT_TEXT) std::cout << "WM_SETTEXT" << std::endl;
-    if (event.GetEventType() == wxEVT_SHOW) std::cout << "WM_SHOWWINDOW show = " << ((wxWindow*)event.GetEventObject())->IsShown() << std::endl;
-    if (event.GetEventType() == wxEVT_SIZE) std::cout << "WM_SIZE {width=" << this->GetSize().GetWidth() << ", height=" << this->GetSize().GetHeight() << "}" << std::endl;
+    if (event.GetEventType() == wxEVT_SHOW) std::cout << "WM_SHOWWINDOW show = " << window->IsShown() << std::endl;
+    if (event.GetEventType() == wxEVT_SIZE) std::cout << "WM_SIZE {width=" << window->GetSize().GetWidth() << ", height=" << window->GetSize().GetHeight() << "}" << std::endl;
     return this->wxFrame::ProcessEvent(event);
   }
   
