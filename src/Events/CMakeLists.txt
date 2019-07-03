@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.2)
 project(Events)
 
-add_subdirectory("FormClick")
+add_subdirectory(FormClick)
+add_subdirectory(FormAndEvents)
