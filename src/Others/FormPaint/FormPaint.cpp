@@ -91,9 +91,6 @@ namespace Examples {
       wxPoint points[] = {wxPoint(x1, y1), wxPoint(x2, y2), wxPoint(x3, y3), wxPoint(x4, y4)};
       dc.DrawSpline(4, points);
     }
-
-  private:
-    wxPanel* panel = new wxPanel(this);
   };
   
   class Application : public wxApp {
