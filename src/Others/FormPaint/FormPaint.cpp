@@ -28,11 +28,7 @@ namespace Examples {
         DrawEllipse(dc, wxPen(wxColour(0xFF, 0x00, 0x00), 10), 100, 80, 200, 200);
         FillPie(dc, wxColour(0x00, 0x80, 0x00), 120, 100, 160, 160, 45.0f, 270.0f);
         FillPie(dc, wxColour(0x90, 0xEE, 0x90), 120, 100, 160, 160, 270.0f, 180.0f);
-
-        dc.SetBrush(*wxTRANSPARENT_BRUSH);
-        dc.SetPen(wxPen(wxColour(0x00, 0x00, 0x00), 1));
-        wxPoint points[] = {wxPoint(100, 100), wxPoint(150, 150), wxPoint(200, 100), wxPoint(250, 50)};
-        dc.DrawSpline(4, points);
+        DrawBezier(dc, wxPen(wxColour(0x00, 0x00, 0x00), 1), 100, 100, 150, 150, 200, 100, 250, 50);
       });
     }
     
@@ -87,6 +83,13 @@ namespace Examples {
       dc.SetBrush(brush);
       dc.SetPen(*wxTRANSPARENT_PEN);
       dc.DrawEllipticArc(x, y, width, height, startAngle, startAngle + sweepAngle);
+    }
+    
+    static void DrawBezier(wxPaintDC& dc, const wxPen& pen, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
+      dc.SetBrush(*wxTRANSPARENT_BRUSH);
+      dc.SetPen(pen);
+      wxPoint points[] = {wxPoint(x1, y1), wxPoint(x2, y2), wxPoint(x3, y3), wxPoint(x4, y4)};
+      dc.DrawSpline(4, points);
     }
 
   private:
