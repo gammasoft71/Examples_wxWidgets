@@ -9,7 +9,7 @@ void WriteLineDebugString(const wxString& str) {
 #else
 #include <iostream>
 void WriteLineDebugString(const wxString& str) {
-  std::cout << str.c_str() << std::endl;
+  std::wcout << str.wc_str() << std::endl;
 }
 #endif
 
