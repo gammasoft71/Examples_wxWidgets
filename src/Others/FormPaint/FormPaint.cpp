@@ -11,6 +11,7 @@ namespace Examples {
   class Form : public wxFrame {
   public:
     Form() : wxFrame(nullptr, wxID_ANY, "Paint example", wxDefaultPosition, wxSize(300, 300)) {
+      this->SetPosition(wxPoint(100, 100));
       this->SetClientSize(wxSize(640, 480));
       
       this->Bind(wxEVT_PAINT, [&](wxPaintEvent& event) {
@@ -30,8 +31,7 @@ namespace Examples {
 
         dc.SetBrush(*wxTRANSPARENT_BRUSH);
         dc.SetPen(wxPen(wxColour(0x00, 0x00, 0x00), 1));
-        //wxPoint points[] = {wxPoint(100, 100), wxPoint(150, 150), wxPoint(200, 100), wxPoint(250, 50)};
-        wxPoint points[] = {wxPoint(100, 100), wxPoint(150, 125), wxPoint(200, 100), wxPoint(250, 50)};
+        wxPoint points[] = {wxPoint(100, 100), wxPoint(150, 150), wxPoint(200, 100), wxPoint(250, 50)};
         dc.DrawSpline(4, points);
       });
     }
