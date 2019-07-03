@@ -1,5 +1,17 @@
-#include <iostream>
 #include <wx/wx.h>
+
+#if defined(WIN32)
+#include <Windows.h>
+void WriteLineDebugString(const wxString& str) {
+  OutputDebugString(str.wc_str());
+  OutputDebugString(L"\n");
+}
+#else
+#include <iostream>
+void WriteLineDebugString(const wxString& str) {
+  std::cout << str.c_str() << std::endl;
+}
+#endif
 
 class Form : public wxFrame {
 public:
@@ -8,20 +20,21 @@ public:
   
   bool ProcessEvent (wxEvent &event) override {
     wxWindow* window = ((wxWindow*)event.GetEventObject());
-    if (event.GetEventType() == wxEVT_ACTIVATE_APP) std::cout << "WM_ACTIVATEAPP" << std::endl;
-    if (event.GetEventType() == wxEVT_CLOSE_WINDOW) std::cout << "WM_CLOSE" << std::endl;
-    if (event.GetEventType() == wxEVT_CREATE) std::cout << "WM_CREATE" << std::endl;
-    if (event.GetEventType() == wxEVT_DESTROY) std::cout << "WM_DESTROY" << std::endl;
-    //if (event.GetEventType() == wxEVT_ENABLE) std::cout << "WM_ENABLE" << std::endl;
-    if (event.GetEventType() == wxEVT_COMMAND_ENTER) std::cout << "WM_COMMAND" << std::endl;
-    //if (event.GetEventType() == wxEVT_ENTER_SIZEMOVE) std::cout << "WM_ENTERSIZEMOVE" << std::endl;
-    //if (event.GetEventType() == wxEVT_EXIT_SIZEMOVE) std::cout << "WM_EXITSIZEMOVE" << std::endl;
-    if (event.GetEventType() == wxEVT_MOVE) std::cout << "WM_MOVE {x=" << window->GetPosition().x << ", y=" << window->GetPosition().y << "}" << std::endl;
-    if (event.GetEventType() == wxEVT_NULL) std::cout << "WM_MNULL" << std::endl;
-    //if (event.GetEventType() == wxEVT_QUIT) std::cout << "WM_QUIT" << std::endl;
-    if (event.GetEventType() == wxEVT_TEXT) std::cout << "WM_SETTEXT" << std::endl;
-    if (event.GetEventType() == wxEVT_SHOW) std::cout << "WM_SHOWWINDOW show = " << window->IsShown() << std::endl;
-    if (event.GetEventType() == wxEVT_SIZE) std::cout << "WM_SIZE {width=" << window->GetSize().GetWidth() << ", height=" << window->GetSize().GetHeight() << "}" << std::endl;
+    if (event.GetEventType() == wxEVT_ACTIVATE_APP) WriteLineDebugString("WM_ACTIVATEAPP");
+    if (event.GetEventType() == wxEVT_CLOSE_WINDOW) WriteLineDebugString("WM_CLOSE");
+    if (event.GetEventType() == wxEVT_CREATE) WriteLineDebugString("WM_CREATE");
+    if (event.GetEventType() == wxEVT_DESTROY) WriteLineDebugString("WM_DESTROY");
+    //if (event.GetEventType() == wxEVT_ENABLE) WriteLineDebugString("WM_ENABLE");
+    if (event.GetEventType() == wxEVT_COMMAND_ENTER) WriteLineDebugString("WM_COMMAND");
+    //if (event.GetEventType() == wxEVT_ENTER_SIZEMOVE) WriteLineDebugString("WM_ENTERSIZEMOVE");
+    //if (event.GetEventType() == wxEVT_EXIT_SIZEMOVE) WriteLineDebugString("WM_EXITSIZEMOVE");
+    if (event.GetEventType() == wxEVT_MOVE) WriteLineDebugString(wxString::Format("WM_MOVE {x = %d, y= %d}", window->GetPosition().x, window->GetPosition().y));
+    if (event.GetEventType() == wxEVT_NULL) WriteLineDebugString("WM_MNULL");
+    //if (event.GetEventType() == wxEVT_QUIT) WriteLineDebugString("WM_QUIT");
+    if (event.GetEventType() == wxEVT_TEXT) WriteLineDebugString("WM_SETTEXT");
+    if (event.GetEventType() == wxEVT_SHOW) WriteLineDebugString(wxString::Format("WM_SHOWWINDOW show = %d", window->IsShown()));
+    if (event.GetEventType() == wxEVT_SIZE) WriteLineDebugString(wxString::Format("WM_SIZE {width = %d, height= %d}", window->GetSize().GetWidth(), window->GetSize().GetHeight()));
+
     return this->wxFrame::ProcessEvent(event);
   }
   
