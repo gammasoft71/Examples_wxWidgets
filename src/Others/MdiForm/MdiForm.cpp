@@ -1,17 +1,21 @@
+#include <iostream>
 #include <wx/wx.h>
 #include <wx/richtext/richtextctrl.h>
 
 class MdiChildForm : public wxMDIChildFrame {
 public:
-  MdiChildForm(wxMDIParentFrame* parent) : wxMDIChildFrame(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, {300, 300}) {}
+  MdiChildForm(wxMDIParentFrame* parent) : wxMDIChildFrame(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, {300, 300}) {
+    std::cout << "location [x=" << ctrl->GetPosition().x <<  ", y=" << ctrl->GetPosition().y << "]" << std::endl;
+  }
   
 private:
   wxRichTextCtrl* richTextBox = new wxRichTextCtrl(this);
+  wxControl* ctrl = new wxControl(this, wxID_ANY);
 };
 
 class MdiParentForm : public wxMDIParentFrame {
 public:
-  MdiParentForm() : wxMDIParentFrame(nullptr, wxID_ANY, "MDI example", wxDefaultPosition, wxSize(800, 600)) {
+  MdiParentForm() : wxMDIParentFrame(nullptr, wxID_ANY, "Mdi example", wxDefaultPosition, wxSize(800, 600)) {
     this->menuFile->Append(wxID_NEW, "New\tCtrl+N");
     this->menuFile->Append(wxID_CLOSE, "Close\tCtrl+W");
     this->menuFile->AppendSeparator();
