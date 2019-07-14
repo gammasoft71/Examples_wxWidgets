@@ -10,7 +10,7 @@ enum wxOwnedID {
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "MainMenu example", wxDefaultPosition) {
-  this->SetClientSize(wxSize(300, 300));
+    this->SetClientSize(wxSize(300, 300));
     this->menuFile->Append(wxID_NEW, "New\tCtrl+N");
     this->menuFile->Append(wxID_OPEN, "Open...\tCtrl+o");
     this->menuFile->Append(wxID_OPENRECENT, "Open recent");
@@ -42,7 +42,7 @@ public:
 
     this->SetMenuBar(this->mainMenu);
 
-    this->mainMenu->Bind(wxEVT_COMMAND_MENU_SELECTED, [&](wxCommandEvent& event) {
+    this->mainMenu->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
       static std::map<int, std::string> names = {{wxID_NEW, "File/New"}, {wxID_OPEN, "File/Open..."}, {wxID_OPENRECENT, "File/Open recent"}, {wxID_CLOSE, "File/Close"}, {wxID_SAVE, "File/Save"}, {wxID_SAVEAS, "File/Save as..."}, {wxID_EXIT, "File/Quit"}, {wxID_UNDO, "Edit/Undo"}, {wxID_REDO, "Edit/Redo"}, {wxID_CUT, "Edit/Cut"}, {wxID_COPY, "Edit/Copy"}, {wxID_PASTE, "Edit/Paste"}, {wxID_SELECTALL, "Edit/Select All"}, {wxID_SHOW, "View/Show"}, {wxID_HIDE, "View/Hide"}, {wxID_ABOUT, "Help/About"}, {wxID_ANY, "Any"}};
       if (names.find(event.GetId()) != names.end())
         this->listBox1->Append(names[event.GetId()]);
