@@ -9,23 +9,23 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Application and messages
 
-[Application](src/Application) Shows how to create a simple Gtkmm application with wxApp.
+[Application](src/Application/Application) Shows how to create a simple Gtkmm application with wxApp.
 
 ## Common Controls
 
-[Button](src/Button) Shows how to create a Gtkmm Button and Event Click with wxButton.
+[Button](src/CommonControls/Button) Shows how to create a Gtkmm Button and Event Click with wxButton.
 
-[CheckBox](src/CheckBox) Shows how to create a Gtkmm CheckBox with wxCheckButton.
+[CheckBox](src/CommonControls/CheckBox) Shows how to create a Gtkmm CheckBox with wxCheckButton.
 
-[Label](src/Label) Shows how to create a Gtkmm Label with wxStaticText.
+[Label](src/CommonControls/Label) Shows how to create a Gtkmm Label with wxStaticText.
 
-[ProgressBar](src/ProgressBar) Shows how to create a Gtkmm ProgressBar with wxGauge.
+[ProgressBar](src/CommonControls/ProgressBar) Shows how to create a Gtkmm ProgressBar with wxGauge.
 
-[RadioButton](src/RadioButton) Shows how to create a Gtkmm RadioButton with wxRadioButton.
+[RadioButton](src/CommonControls/RadioButton) Shows how to create a Gtkmm RadioButton with wxRadioButton.
 
-[TextBox](src/TextBox) Shows how to create a Gtkmm TextBox with wxTextEntry.
+[TextBox](src/CommonControls/TextBox) Shows how to create a Gtkmm TextBox with wxTextEntry.
 
-[TrackBar](src/TrackBar) Shows how to create a Gtkmm TrackBar with wxSlider.
+[TrackBar](src/CommonControls/TrackBar) Shows how to create a Gtkmm TrackBar with wxSlider.
 
 ## Containers
 
