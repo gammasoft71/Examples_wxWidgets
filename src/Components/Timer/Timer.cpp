@@ -14,7 +14,7 @@ public:
     this->label->SetForegroundColour(wxColour(30, 144, 255));
 
     this->timer.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
-      this->label->SetLabelText(wxString::Format("%.1f", static_cast<double>(++this->counter) / 10));
+      this->label->SetLabelText(wxString::Format("%.1f", ++this->counter / 10.0));
     });
 
     this->button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
