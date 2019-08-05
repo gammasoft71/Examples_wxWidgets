@@ -62,9 +62,15 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [TrackBar](src/CommonControls/TrackBar) Shows how to create a wxWidgets TrackBar with wxSlider.
 
+[TreeView](src/CommonControls/TreeView) Shows how to create a wxWidgets TreeView with wxTreeCtrl.
+
+[VScrollBar](src/CommonControls/VScrollBar) Shows how to create a wxWidgets VScrollBar with wxScrollBar.
+
+[WebBrowser](src/CommonControls/WebBrowser) Shows how to create a wxWidgets WebBrowser with wxWebView.
+
 ## Containers
 
-[Form](src/Form) Shows how to create a simple wxWidgets Form with wxFrame.
+[Form](src/Containers/Form) Shows how to create a simple wxWidgets Form with wxFrame.
 
 [GroupBox](src/GroupBox) Shows how to create a simple wxWidgets GroupBox with wxRadioBox.
 
