@@ -74,6 +74,8 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [Panel](src/Containers/Panel) Shows how to create a simple wxWidgets Panel with wxPanel.
 
+[SplitContainer](src/Containers/SplitContainer) Shows how to create a simple wxWidgets SplitContainer with wxSplitterWindow and wxPanel.
+
 [TabControl](src/Containers/TabControl) Shows how to create a simple wxWidgets TabControl with TabPages with wxNotebook.
 
 ## Menus and toolbars
