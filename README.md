@@ -4,7 +4,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Hello World
 
-["Hello World"](src/HelloWorld) The classic first application HelloWorld with wxStaticText.
+["Hello World"](src/HelloWorld/HelloWorld) The classic first application HelloWorld with wxStaticText.
 
 ## Application and messages
 
