@@ -124,7 +124,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [GroupBoxAndCheckBox](src/Others/GroupBoxAndCheckBox) Shows how to use GroupBox and CheckBoxes.
 
-[GroupBoxAndRadioButton](src/Others/ColoredForms) Shows how to use GroupBox and RadioButtons.
+[GroupBoxAndRadioButton](src/Others/GroupBoxAndRadioButton) Shows how to use GroupBox and RadioButtons.
 
 [MdiForm](src/Others/MdiForm) Shows how to create a MDI (Multiple Document Interface) form.
 
