@@ -46,11 +46,19 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [NotifyIcon](src/CommonControls/NotifyIcon) Shows how to create a wxWidgets NotifyIcon with own [wxNotifyIcon](src/CommonControls/NotifyIcon/wxNotifyIcon.h) (wxTaskBarIcon).
 
+[NumericUpDown](src/CommonControls/NumericUpDown) Shows how to create a wxWidgets NumericUpDown with wxSpinCtrl and wxSpinCtrlDouble.
+
+[PictureBox](src/CommonControls/PictureBox) Shows how to create a wxWidgets CheckBox with wxStaticBitmap.
+
 [ProgressBar](src/CommonControls/ProgressBar) Shows how to create a wxWidgets ProgressBar with wxGauge.
 
 [RadioButton](src/CommonControls/RadioButton) Shows how to create a wxWidgets RadioButton with wxRadioButton.
 
-[TextBox](src/CommonControls/TextBox) Shows how to create a wxWidgets TextBox with wxTextEntry.
+[RichTextBox](src/CommonControls/RichTextBox) Shows how to create a wxWidgets RichTextBox with wxRichTextCtrl.
+
+[TextBox](src/CommonControls/TextBox) Shows how to create a wxWidgets TextBox with wxTextCtrl.
+
+[ToolTip](src/CommonControls/ToolTip) Shows how to create a wxWidgets ToolTip with wxRichToolTip.
 
 [TrackBar](src/CommonControls/TrackBar) Shows how to create a wxWidgets TrackBar with wxSlider.
 
