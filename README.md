@@ -110,9 +110,23 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [NumericTextBox](src/CustomControls/NumericTextBox) Shows how to create a custom control wxNumericTextCtrl from wxTextCtrl.
 
+[Line](src/Others/Line) Shows how to create a custom control wxLine from wxPanel.
+
 ## Others
 
 [ColoredForms](src/Others/ColoredForms) Shows how to create colored background forms.
+
+[ColoredTabPages](src/Others/ColoredTabPages) Shows how to create colored background tab pages.
+
+[Cursors](src/Others/Cursors) Shows how to assign specified cursor to control.
+
+[FormIcon](src/Others/FormIcon) Shows how to assign an icon to form.
+
+[GroupBoxAndCheckBox](src/Others/GroupBoxAndCheckBox) Shows how to use GroupBox and CheckBoxes.
+
+[GroupBoxAndRadioButton](src/Others/ColoredForms) Shows how to use GroupBox and RadioButtons.
+
+[MdiForm](src/Others/MdiForm) Shows how to create a MDI (Multiple Document Interface) form.
 
 ## Download
 
