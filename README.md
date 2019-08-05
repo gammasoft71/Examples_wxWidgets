@@ -36,11 +36,15 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [Label](src/CommonControls/Label) Shows how to create a wxWidgets Label with wxStaticText.
 
-[LinkLabel](src/CommonControls/CheckBox) Shows how to create a wxWidgets LinkLabel with wxHyperLinkCtrl.
+[LinkLabel](src/CommonControls/LinkLabel) Shows how to create a wxWidgets LinkLabel with wxHyperLinkCtrl.
 
-[ListBox](src/CommonControls/CheckBox) Shows how to create a wxWidgets ListBox with wxListBox.
+[ListBox](src/CommonControls/ListBox) Shows how to create a wxWidgets ListBox with wxListBox.
 
-[ListView](src/CommonControls/CheckBox) Shows how to create a wxWidgets ListView with wxListCtrl.
+[ListView](src/CommonControls/ListView) Shows how to create a wxWidgets ListView with wxListCtrl.
+
+[MonthCalendar](src/CommonControls/MonthCalendar) Shows how to create a wxWidgets MonthCalendar with wxCalendarCtrl.
+
+[NotifyIcon](src/CommonControls/NotifyIcon) Shows how to create a wxWidgets NotifyIcon with own [wxNotifyIcon](src/CommonControls/NotifyIcon/NotifyIcon.h) (wxTaskBarIcon).
 
 [ProgressBar](src/CommonControls/ProgressBar) Shows how to create a wxWidgets ProgressBar with wxGauge.
 
