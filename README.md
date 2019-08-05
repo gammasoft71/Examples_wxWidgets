@@ -32,7 +32,15 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [DomainUpDown](src/CommonControls/DomainUpDown) Shows how to create a wxWidgets DomainUpDown with own [wxDomainSpinCtrl](src/CommonControls/DomainUpDown/wxDomainSpinCtrl.h) (wxPanel with wxTextCtrl and wxSpinButton).
 
+[HScrollBar](src/CommonControls/HScrollBar) Shows how to create a wxWidgets HScrollBar with wxScrollBar.
+
 [Label](src/CommonControls/Label) Shows how to create a wxWidgets Label with wxStaticText.
+
+[LinkLabel](src/CommonControls/CheckBox) Shows how to create a wxWidgets LinkLabel with wxHyperLinkCtrl.
+
+[ListBox](src/CommonControls/CheckBox) Shows how to create a wxWidgets ListBox with wxListBox.
+
+[ListView](src/CommonControls/CheckBox) Shows how to create a wxWidgets ListView with wxListCtrl.
 
 [ProgressBar](src/CommonControls/ProgressBar) Shows how to create a wxWidgets ProgressBar with wxGauge.
 
