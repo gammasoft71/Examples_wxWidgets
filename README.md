@@ -72,25 +72,25 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [Form](src/Containers/Form) Shows how to create a simple wxWidgets Form with wxFrame.
 
-[GroupBox](src/GroupBox) Shows how to create a simple wxWidgets GroupBox with wxRadioBox.
+[GroupBox](src/Containers/GroupBox) Shows how to create a simple wxWidgets GroupBox with wxRadioBox.
 
-[Panel](src/Panel) Shows how to create a simple wxWidgets Panel with wxPanel.
+[Panel](src/Containers/Panel) Shows how to create a simple wxWidgets Panel with wxPanel.
 
-[TabControl](src/TabControl) Shows how to create a simple wxWidgets TabControl with TabPages with wxNotebook.
+[TabControl](src/Containers/TabControl) Shows how to create a simple wxWidgets TabControl with TabPages with wxNotebook.
 
 ## Menus and toolbars
 
-[MainMenu](src/MainMenu) Shows how to create a wxWidgets MainMenu with wxMenu.
+[MainMenu](src/MenusAndToolbars/MainMenu) Shows how to create a wxWidgets MainMenu with wxMenu.
 
 ## Components
 
-[Timer](src/Timer) Shows how to create a simple wxWidgets Timer with wxTimer.
+[Timer](src/Componenets/Timer) Shows how to create a simple wxWidgets Timer with wxTimer.
 
 ## Dialogs
 
-[ColorDialog](src/ColorDialog) Shows how to create a ColorDialog with wxColourDialog.
+[ColorDialog](src/Dialogs/ColorDialog) Shows how to create a ColorDialog with wxColourDialog.
 
-[MessageBox](src/MessageBox) Shows how to create a MessageBox with wxMessageBox.
+[MessageBox](src/Dialogs/MessageBox) Shows how to create a MessageBox with wxMessageBox.
 
 ## Download
 
