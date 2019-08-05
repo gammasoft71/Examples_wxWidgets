@@ -98,7 +98,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Custom controls
 
-[NumericTextBox](src/CustomControls/NumercTextBox) Shows how to create a custom control wxNumericTextCtrl from wxTextCtrl.
+[NumericTextBox](src/CustomControls/NumericTextBox) Shows how to create a custom control wxNumericTextCtrl from wxTextCtrl.
 
 ## Others
 
