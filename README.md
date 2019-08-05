@@ -96,6 +96,10 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [FormAndEvents](src/Events/FormAndEvents) Shows how to create a form and catch events.
 
+[FormClick](src/Events/FormClick) Shows how to create a form and catch click event.
+
+[FormPaint](src/Others/FormPaint) Shows how to create a form and catch paint event.
+
 ## Custom controls
 
 [NumericTextBox](src/CustomControls/NumericTextBox) Shows how to create a custom control wxNumericTextCtrl from wxTextCtrl.
