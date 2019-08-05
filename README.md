@@ -6,15 +6,13 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ["Hello World"](src/HelloWorld/HelloWorld) The classic first application HelloWorld with wxStaticText.
 
-## Application and messages
+## Application
 
 [Application](src/Application/Application) Shows how to create a simple wxWidgets application with wxApp.
 
 [ApplicationAndMain](src/Application/ApplicationAndMain) Shows how to create a wxWidgets application and main method with wxApp.
 
 [ApplicationIcon](src/Application/ApplicationIcon) Shows how to create a wxWidgets application and icon with wxApp.
-
-[ApplicationIdle](src/Application/ApplicationIdle) Shows how to create an application and Idle event with wxApp.
 
 ## Common Controls
 
@@ -97,6 +95,10 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 [ApplicationIdle](src/Application/ApplicationIdle) Shows how to create an application and Idle event with wxApp.
 
 [FormAndEvents](src/Events/FormAndEvents) Shows how to create a form and catch events.
+
+## Custom controls
+
+[NumericTextBox](src/CustomControls/NumercTextBox) Shows how to create a custom control wxNumericTextCtrl from wxTextCtrl.
 
 ## Others
 
