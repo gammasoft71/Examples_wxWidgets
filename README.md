@@ -88,6 +88,10 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [ColorDialog](src/Dialogs/ColorDialog) Shows how to create a ColorDialog with wxColourDialog.
 
+[FolderBrowserDialog](src/Dialogs/FolderBrowserDialog) Shows how to create a FolderBrowserDialog with wxDirDialog.
+
+[FontDialog](src/Dialogs/FontDialog) Shows how to create a FontDialog with wxFontDialog.
+
 [MessageBox](src/Dialogs/MessageBox) Shows how to create a MessageBox with wxMessageBox.
 
 ## Events
