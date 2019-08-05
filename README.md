@@ -92,6 +92,17 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [MessageBox](src/Dialogs/MessageBox) Shows how to create a MessageBox with wxMessageBox.
 
+## Events
+
+[ApplicationIdle](src/Application/ApplicationIdle) Shows how to create an application and Idle event with wxApp.
+
+[FormAndMessages](src/Events/FormAndMessages) Shows how to create a form and catch events.
+
+## Others
+
+[ApplicationIdle](src/Application/ApplicationIdle) Shows how to create an application and Idle event with wxApp.
+
+
 ## Download
 
 ``` shell
