@@ -16,7 +16,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [CheckBox](src/CommonControls/CheckBox) Shows how to create a wxWidgets CheckBox with wxCheckButton.
 
-[CheckListBox](src/CommonControls/CheckListBox) Shows how to create a wxWidgets CheckListBox with wxCheckListButton.
+[CheckedListBox](src/CommonControls/CheckedListBox) Shows how to create a wxWidgets CheckListBox with wxCheckListButton.
 
 [Label](src/CommonControls/Label) Shows how to create a wxWidgets Label with wxStaticText.
 
