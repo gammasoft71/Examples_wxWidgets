@@ -84,7 +84,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Components
 
-[Timer](src/Componenets/Timer) Shows how to create a simple wxWidgets Timer with wxTimer.
+[Timer](src/Components/Timer) Shows how to create a simple wxWidgets Timer with wxTimer.
 
 ## Dialogs
 
