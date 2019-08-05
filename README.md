@@ -1,4 +1,3 @@
-
 # wxWidgets Examples
 
 Shows how to use wxWidgets controls only by programming code (c++17).
@@ -9,41 +8,43 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Application and messages
 
-[Application](src/Application/Application) Shows how to create a simple Gtkmm application with wxApp.
+[Application](src/Application/Application) Shows how to create a simple wxWidgets application with wxApp.
 
 ## Common Controls
 
-[Button](src/CommonControls/Button) Shows how to create a Gtkmm Button and Event Click with wxButton.
+[Button](src/CommonControls/Button) Shows how to create a wxWidgets Button and Event Click with wxButton.
 
-[CheckBox](src/CommonControls/CheckBox) Shows how to create a Gtkmm CheckBox with wxCheckButton.
+[CheckBox](src/CommonControls/CheckBox) Shows how to create a wxWidgets CheckBox with wxCheckButton.
 
-[Label](src/CommonControls/Label) Shows how to create a Gtkmm Label with wxStaticText.
+[CheckListBox](src/CommonControls/CheckListBox) Shows how to create a wxWidgets CheckListBox with wxCheckListButton.
 
-[ProgressBar](src/CommonControls/ProgressBar) Shows how to create a Gtkmm ProgressBar with wxGauge.
+[Label](src/CommonControls/Label) Shows how to create a wxWidgets Label with wxStaticText.
 
-[RadioButton](src/CommonControls/RadioButton) Shows how to create a Gtkmm RadioButton with wxRadioButton.
+[ProgressBar](src/CommonControls/ProgressBar) Shows how to create a wxWidgets ProgressBar with wxGauge.
 
-[TextBox](src/CommonControls/TextBox) Shows how to create a Gtkmm TextBox with wxTextEntry.
+[RadioButton](src/CommonControls/RadioButton) Shows how to create a wxWidgets RadioButton with wxRadioButton.
 
-[TrackBar](src/CommonControls/TrackBar) Shows how to create a Gtkmm TrackBar with wxSlider.
+[TextBox](src/CommonControls/TextBox) Shows how to create a wxWidgets TextBox with wxTextEntry.
+
+[TrackBar](src/CommonControls/TrackBar) Shows how to create a wxWidgets TrackBar with wxSlider.
 
 ## Containers
 
-[Form](src/Form) Shows how to create a simple Gtkmm Form with wxFrame.
+[Form](src/Form) Shows how to create a simple wxWidgets Form with wxFrame.
 
-[GroupBox](src/GroupBox) Shows how to create a simple Gtkmm GroupBox with wxRadioBox.
+[GroupBox](src/GroupBox) Shows how to create a simple wxWidgets GroupBox with wxRadioBox.
 
-[Panel](src/Panel) Shows how to create a simple Gtkmm Panel with wxPanel.
+[Panel](src/Panel) Shows how to create a simple wxWidgets Panel with wxPanel.
 
-[TabControl](src/TabControl) Shows how to create a simple Gtkmm TabControl with TabPages with wxNotebook.
+[TabControl](src/TabControl) Shows how to create a simple wxWidgets TabControl with TabPages with wxNotebook.
 
 ## Menus and toolbars
 
-[MainMenu](src/MainMenu) Shows how to create a Gtkmm MainMenu with wxMenu.
+[MainMenu](src/MainMenu) Shows how to create a wxWidgets MainMenu with wxMenu.
 
 ## Components
 
-[Timer](src/Timer) Shows how to create a simple Gtkmm Timer with wxTimer.
+[Timer](src/Timer) Shows how to create a simple wxWidgets Timer with wxTimer.
 
 ## Dialogs
 
@@ -54,7 +55,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 ## Download
 
 ``` shell
-git clone https://github.com/gammasoft71/wxWidgetsExamples wxWidgetsExamples
+git clone https://github.com/gammasoft71/Examples.wxWidgets Examples.wxWidgets
 ```
 
 ## Generate and build
@@ -67,7 +68,7 @@ To build this project, open "Terminal" and type following lines:
 mkdir build
 cd build
 cmake .. -G "Xcode"
-open ./CocoaExamples.xcodeproj
+open ./Examples.wxWidgets.xcodeproj
 ```
 
 
