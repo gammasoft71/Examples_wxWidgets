@@ -70,7 +70,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [Form](src/Containers/Form) Shows how to create a simple wxWidgets Form with wxFrame.
 
-[GroupBox](src/Containers/GroupBox) Shows how to create a simple wxWidgets GroupBox with wxRadioBox.
+[GroupBox](src/Containers/GroupBox) Shows how to create a simple wxWidgets GroupBox with wxStaticBox.
 
 [Panel](src/Containers/Panel) Shows how to create a simple wxWidgets Panel with wxPanel.
 
