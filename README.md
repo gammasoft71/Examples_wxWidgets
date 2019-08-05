@@ -100,8 +100,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Others
 
-[ColoredForms](src/Application/ColoredForms) Shows how to create colored background forms.
-
+[ColoredForms](src/Others/ColoredForms) Shows how to create colored background forms.
 
 ## Download
 
