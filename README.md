@@ -30,7 +30,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [DateTimePicker](src/CommonControls/DateTimePicker) Shows how to create a wxWidgets DateTimePicker with wxDatePicker.
 
-[DomainUpDown](src/CommonControls/DomainUpDown) Shows how to create a wxWidgets DomainUpDown with own wxDomainSpinCtrl (wxPanel with wxTextCtrl and wxSpinButton).
+[DomainUpDown](src/CommonControls/DomainUpDown) Shows how to create a wxWidgets DomainUpDown with own [wxDomainSpinCtrl](src/CommonControls/DomainUpDown/wxDomainSpinCtrl.h) (wxPanel with wxTextCtrl and wxSpinButton).
 
 [Label](src/CommonControls/Label) Shows how to create a wxWidgets Label with wxStaticText.
 
