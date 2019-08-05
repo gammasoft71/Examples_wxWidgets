@@ -62,6 +62,14 @@ git clone https://github.com/gammasoft71/Examples.wxWidgets Examples.wxWidgets
 
 To build this project, open "Terminal" and type following lines:
 
+### Windows
+``` cmake
+mkdir build
+cd build
+cmake ..
+open Examples.wxWidgets.sln
+```
+
 ### macOS :
 
 ``` cmake
