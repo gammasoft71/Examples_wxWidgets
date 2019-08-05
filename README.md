@@ -96,11 +96,11 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [ApplicationIdle](src/Application/ApplicationIdle) Shows how to create an application and Idle event with wxApp.
 
-[FormAndMessages](src/Events/FormAndMessages) Shows how to create a form and catch events.
+[FormAndEvents](src/Events/FormAndEvents) Shows how to create a form and catch events.
 
 ## Others
 
-[ApplicationIdle](src/Application/ApplicationIdle) Shows how to create an application and Idle event with wxApp.
+[ColoredForms](src/Application/ColoredForms) Shows how to create colored background forms.
 
 
 ## Download
