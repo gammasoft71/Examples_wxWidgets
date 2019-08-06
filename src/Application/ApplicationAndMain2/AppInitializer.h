@@ -2,15 +2,15 @@
 #include <memory>
 #include <wx/wx.h>
 
-struct AppIinitializer {
-  AppIinitializer() {
+struct AppInitializer {
+  AppInitializer() {
     if (wxTheApp) return;
     wxApp::SetInstance(new wx_application());
     this->wxinitializer = make_unique<wxInitializer>();
     wxTheApp->CallOnInit();
   }
   
-  ~AppIinitializer() {
+  ~AppInitializer() {
     wxTheApp->OnExit();
     this->wxinitializer = nullptr;
   }
