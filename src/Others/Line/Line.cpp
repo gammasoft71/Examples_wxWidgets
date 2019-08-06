@@ -2,9 +2,9 @@
 #include <wx/statline.h>
 
 namespace Examples {
-  class wxColoredLine : public wxPanel {
+  class wxColouredLine : public wxPanel {
   public:
-    wxColoredLine(wxWindow* parent, wxWindowID id, const wxColour& colour, const wxPoint& position = wxDefaultPosition, const wxSize& size = wxDefaultSize) : wxPanel(parent, id, position, size) {
+    wxColouredLine(wxWindow* parent, wxWindowID id, const wxColour& colour, const wxPoint& position = wxDefaultPosition, const wxSize& size = wxDefaultSize) : wxPanel(parent, id, position, size) {
       this->SetColour(colour);
     }
     
@@ -21,10 +21,10 @@ namespace Examples {
   private:
     wxPanel* panel = new wxPanel(this);
     wxStaticLine* lineSeparator1 = new wxStaticLine(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(280, 2), wxLI_HORIZONTAL);
-    wxColoredLine* lineRed = new wxColoredLine(this->panel, wxID_ANY, wxColour(255, 0, 0), wxPoint(10, 20), wxSize(2, 250));
-    wxColoredLine* lineGreen = new wxColoredLine(this->panel, wxID_ANY, wxColour(0, 143, 0), wxPoint(149, 20), wxSize(2, 250));
-    wxColoredLine* lineBlue = new wxColoredLine(this->panel, wxID_ANY, wxColour(0, 0, 255), wxPoint(288, 20), wxSize(2, 250));
-    wxColoredLine* lineSeparator2 = new wxColoredLine(this->panel, wxID_ANY, wxColour(96, 96, 96), wxPoint(10, 278), wxSize(280, 2));
+    wxColouredLine* lineRed = new wxColouredLine(this->panel, wxID_ANY, wxColour(255, 0, 0), wxPoint(10, 20), wxSize(2, 250));
+    wxColouredLine* lineGreen = new wxColouredLine(this->panel, wxID_ANY, wxColour(0, 143, 0), wxPoint(149, 20), wxSize(2, 250));
+    wxColouredLine* lineBlue = new wxColouredLine(this->panel, wxID_ANY, wxColour(0, 0, 255), wxPoint(288, 20), wxSize(2, 250));
+    wxColouredLine* lineSeparator2 = new wxColouredLine(this->panel, wxID_ANY, wxColour(96, 96, 96), wxPoint(10, 278), wxSize(280, 2));
   };
   
   class Application : public wxApp {
