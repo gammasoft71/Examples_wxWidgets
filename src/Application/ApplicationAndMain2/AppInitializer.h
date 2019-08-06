@@ -5,7 +5,7 @@
 struct AppInitializer {
   AppInitializer() {
     if (wxTheApp) return;
-    wxApp::SetInstance(new wx_application());
+    wxApp::SetInstance(new wxApp());
     this->wxinitializer = make_unique<wxInitializer>();
     wxTheApp->CallOnInit();
   }
