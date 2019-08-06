@@ -20,7 +20,7 @@ namespace Examples {
     
   private:
     wxPanel* panel = new wxPanel(this);
-    wxStaticLine* lineSeparator1 = new wxStaticLine(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(280, 2), wxLI_HORIZONTAL);
+    wxStaticLine* lineSeparator1 = new wxStaticLine(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(280, wxDefaultCoord), wxLI_HORIZONTAL);
     wxColouredLine* lineRed = new wxColouredLine(this->panel, wxID_ANY, wxColour(255, 0, 0), wxPoint(10, 20), wxSize(2, 250));
     wxColouredLine* lineGreen = new wxColouredLine(this->panel, wxID_ANY, wxColour(0, 143, 0), wxPoint(149, 20), wxSize(2, 250));
     wxColouredLine* lineBlue = new wxColouredLine(this->panel, wxID_ANY, wxColour(0, 0, 255), wxPoint(288, 20), wxSize(2, 250));
