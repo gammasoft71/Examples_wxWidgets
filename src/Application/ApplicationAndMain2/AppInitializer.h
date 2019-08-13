@@ -11,6 +11,7 @@ struct AppInitializer {
   }
   
   ~AppInitializer() {
+    if (!this->wxinitializer) return;
     wxTheApp->OnExit();
     this->wxinitializer = nullptr;
   }
