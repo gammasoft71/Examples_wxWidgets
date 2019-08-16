@@ -8,13 +8,9 @@ public:
     });
 
     this->Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
-      if ( event.CanVeto()) {
-        if (wxMessageBox("Are you sure you want exit?", "Close Form", wxICON_QUESTION | wxYES_NO) == wxYES) {
-          this->wxFrame::OnCloseWindow(event);
-          return;
-        }
-        event.Veto();
-      }
+      event.Veto();
+      if (wxMessageBox("Are you sure you want exit?", "Close Form", wxICON_QUESTION | wxYES_NO) == wxYES)
+        this->Destroy();
     });
   }
 
