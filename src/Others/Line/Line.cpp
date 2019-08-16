@@ -9,7 +9,7 @@ namespace Examples {
     }
     
     void SetColour(const wxColour& colour) {this->SetBackgroundColour(colour);}
-    const wxColour& GetColour() const {return this->GetBackgroundColour();}
+    wxColour GetColour() const {return this->GetBackgroundColour();}
   };
   
   class Form : public wxFrame {
