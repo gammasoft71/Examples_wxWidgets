@@ -3,44 +3,33 @@
 #include <wx/button.h>
 #include <wx/frame.h>
 #include <wx/panel.h>
-#include <wx/stattext.h>
-#include <wx/settings.h>
 #include <wx/event.h>
-
-#if defined(WIN32)
-#include <Windows.h>
-void WriteLineDebugString(const wxString& str) {
-  OutputDebugString(str.wc_str());
-  OutputDebugString(L"\n");
-}
-#else
-#include <iostream>
-void WriteLineDebugString(const wxString& str) {
-  std::wcout << str.wc_str() << std::endl;
-}
-#endif
+#include <wx/dcscreen.h>
 
 class Form1 : public wxFrame {
 public:
   Form1() : wxFrame(nullptr, wxID_ANY, "Test gui", wxDefaultPosition, wxDefaultSize) {
+    this->SetBackgroundColour(this->panel1->GetBackgroundColour());
+    this->SetForegroundColour(this->panel1->GetForegroundColour());
     this->panel1->Hide();
-    WriteLineDebugString(wxString::Format("BackColor = 0x%X", wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE).GetRGBA()));
-    WriteLineDebugString(wxString::Format("BackColor = 0x%X", this->GetBackgroundColour().GetRGBA()));
-    wxColour color(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE).OSXGetNSColor());
-    this->SetBackgroundColour(color);
-    this->button1->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent& event) {
-      this->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
+    
+    this->button1->Bind(wxEVT_COMMAND_BUTTON_CLICKED, [&](wxCommandEvent& event) {
+      wxScreenDC screenDC;
+      screenDC.SetFont(wxFont(32, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_BOLD, false, "Arial"));
+      screenDC.SetTextForeground(wxColour(0, 255, 128));
+      screenDC.SetBrush(wxBrush(wxColour(0, 0, 0, 0)));
+      screenDC.DrawRectangle(10, 100, 300, 50);
+      screenDC.DrawText(wxString::Format("cpt click = %d", ++cptClick), { 10, 100 });
     });
-    //this->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
   }
 private:
+  int cptClick = 0;
   wxPanel* panel1 = new wxPanel(this);
-  wxStaticText* label1 = new wxStaticText(this, wxID_ANY, "Button", {10, 10});
-  wxButton* button1 = new wxButton(this, wxID_ANY, "Button", {10, 200});
+  wxButton* button1 = new wxButton(this, wxID_ANY, "Button", { 10, 10 });
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (new Form1())->Show();}
+  bool OnInit() override { return (new Form1())->Show(); }
 };
 
 wxIMPLEMENT_APP(Application);
