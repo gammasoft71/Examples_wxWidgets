@@ -8,8 +8,8 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxPanel* panel1 = new wxPanel(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(305, 460), wxSIMPLE_BORDER);
-  wxPanel* panel2 = new wxPanel(this->panel, wxID_ANY, wxPoint(325, 10), wxSize(305, 460), wxSUNKEN_BORDER);
+  wxPanel* panel1 = new wxPanel(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(305, 460), wxBORDER_SIMPLE);
+  wxPanel* panel2 = new wxPanel(this->panel, wxID_ANY, wxPoint(325, 10), wxSize(305, 460), wxBORDER_THEME);
 };
 
 class Application : public wxApp {
