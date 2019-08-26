@@ -24,7 +24,7 @@ namespace Examples {
         DrawLine(dc, wxPen(wxColour(0xFF, 0x00, 0x00), 1), 0, 0, 1, 1);
         DrawLString(dc, "Draw string", wxFont(34 * DeviceUnitScaleCorrection, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, "Arial"), wxBrush(wxColour(0x90, 0xEE, 0x90)), 20, 0);
         FillRectangle(dc, wxBrush(wxColour(0x20, 0xB2, 0xAA)), 400, 70, 100, 200);
-        DrawArc(dc, wxPen(wxColour(0x00, 0x00, 0x0), 10), 400, 70, 100, 200, 45.0f, 270.0f);
+        DrawArc(dc, wxPen(wxColour(0x00, 0x00, 0x0), 10), 400, 70, 100, 200, 45, 270);
         DrawEllipse(dc, wxPen(wxColour(0xFF, 0x00, 0x00), 10), 100, 80, 200, 200);
         FillPie(dc, wxColour(0x00, 0x80, 0x00), 120, 100, 160, 160, 45.0f, 270.0f);
         FillPie(dc, wxColour(0x90, 0xEE, 0x90), 120, 100, 160, 160, 270.0f, 180.0f);
@@ -67,7 +67,7 @@ namespace Examples {
       dc.DrawText(text, x, y);
     }
     
-    static void DrawArc(wxPaintDC& dc, const wxPen& pen, int x, int y, int width, int height, float startAngle, float sweepAngle) {
+    static void DrawArc(wxPaintDC& dc, const wxPen& pen, int x, int y, int width, int height, int startAngle, int sweepAngle) {
       dc.SetBrush(*wxTRANSPARENT_BRUSH);
       dc.SetPen(pen);
       dc.DrawEllipticArc(x, y, width, height, startAngle, startAngle + sweepAngle);
