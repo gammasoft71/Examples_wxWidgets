@@ -1,16 +1,20 @@
 #include <wx/wx.h>
 
-#if defined(__APPLE__)
-  constexpr double DeviceUnitScaleCorrection =  4.0 / 3.0;
+#if defined(__WXOSX__)
+float points_to_native_font_graphics_untit(float size) {
+  return size / 0.75f;  // font is in pixels and not in points
+}
 #else
-  constexpr double DeviceUnitScaleCorrection =  1.0;
+float points_to_native_font_graphics_untit(float size) {
+  return size;  // font is in points
+}
 #endif
 
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "My first application", wxDefaultPosition) {
     this->SetClientSize(wxSize(300, 300));
-    this->label1->SetFont(wxFont(34 * DeviceUnitScaleCorrection, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_BOLD, false, "Arial"));
+    this->label1->SetFont(wxFont(wxFont(points_to_native_font_graphics_untit(34), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_BOLD, false, "Arial"));
     this->label1->SetForegroundColour(wxColour(0, 139, 0));
 
     this->CenterOnScreen();
