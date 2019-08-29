@@ -3,5 +3,6 @@ project(Application)
 
 add_subdirectory("Application")
 add_subdirectory("ApplicationAndMain")
+add_subdirectory("ApplicationAndMain2")
 add_subdirectory("ApplicationIcon")
 add_subdirectory("ApplicationIdle")
