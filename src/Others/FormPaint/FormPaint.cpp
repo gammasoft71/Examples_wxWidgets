@@ -1,10 +1,14 @@
 #include <wx/wx.h>
 #include <wx/statline.h>
 
-#if defined(__APPLE__)
-constexpr double DeviceUnitScaleCorrection =  4.0 / 3.0;
+#if defined(__WXOSX__)
+float points_to_native_font_graphics_untit(float size) {
+  return size / 0.75f;  // font is in pixels and not in points
+}
 #else
-constexpr double DeviceUnitScaleCorrection =  1.0;
+float points_to_native_font_graphics_untit(float size) {
+  return size;  // font is in points
+}
 #endif
 
 namespace Examples {
@@ -22,7 +26,7 @@ namespace Examples {
         DrawLine(dc, wxPen(wxColour(0x80, 0xC4, 0xDE), 5), 20, 60, 260, 60);
         FillRectangle(dc, wxBrush(wxColour(0xAD, 0xD8, 0xE6)), 50, 300, 400, 50);
         DrawLine(dc, wxPen(wxColour(0xFF, 0x00, 0x00), 1), 0, 0, 1, 1);
-        DrawLString(dc, "Draw string", wxFont(34 * DeviceUnitScaleCorrection, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, "Arial"), wxBrush(wxColour(0x90, 0xEE, 0x90)), 20, 0);
+        DrawLString(dc, "Draw string", wxFont(wxFont(points_to_native_font_graphics_untit(34), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, "Arial"), wxBrush(wxColour(0x90, 0xEE, 0x90)), 20, 0);
         FillRectangle(dc, wxBrush(wxColour(0x20, 0xB2, 0xAA)), 400, 70, 100, 200);
         DrawArc(dc, wxPen(wxColour(0x00, 0x00, 0x0), 10), 400, 70, 100, 200, 45, 270);
         DrawEllipse(dc, wxPen(wxColour(0xFF, 0x00, 0x00), 10), 100, 80, 200, 200);
