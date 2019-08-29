@@ -36,9 +36,16 @@ public:
     this->mainMenu->Append(this->menuFile, "&File");
     this->mainMenu->Append(this->menuEdit, "&Edit");
     this->mainMenu->Append(this->menuView, "&View");
-    this->mainMenu->Append(this->menuHelp, "&Help");
 
+#if defined(__WXOSX__)
+    this->mainMenu->Append(this->menuWindow, "&Window");
+    this->menuWindow->Append(wxID_ABOUT, "About");
+#endif
+
+    this->mainMenu->Append(this->menuHelp, "&Help");
+#if !defined(__WXOSX__)
     this->menuHelp->Append(wxID_ABOUT, "About");
+#endif
 
     this->SetMenuBar(this->mainMenu);
 
@@ -59,6 +66,7 @@ private:
   wxMenu* menuFile = new wxMenu();
   wxMenu* menuEdit = new wxMenu();
   wxMenu* menuView = new wxMenu();
+  wxMenu* menuWindow = new wxMenu();
   wxMenu* menuHelp = new wxMenu();
   wxListBox* listBox1 = new wxListBox(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(280, 260));
 };
