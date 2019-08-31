@@ -2,7 +2,7 @@
 
 #if defined(__WXOSX__)
 float points_to_native_font_graphics_untit(float size) {
-  return size / 0.75f;  // font is in pixels and not in points
+  return size / wxScreenDC().GetPPI().GetHeight() * 96.0f;  // font is in pixels and not in points
 }
 #else
 float points_to_native_font_graphics_untit(float size) {
@@ -32,7 +32,7 @@ public:
 
 private:
   wxPanel* panel = new wxPanel(this);
-  wxStaticText* label = new wxStaticText(this->panel, wxID_ANY, "0.0", wxPoint(10, 10), wxSize(220, 70));
+  wxStaticText* label = new wxStaticText(this->panel, wxID_ANY, "0.0", wxPoint(10, 10));
   wxButton* button = new wxButton(this->panel, wxID_ANY, "Start", wxPoint(10, 90));
   wxTimer timer;
   int counter = 0;
