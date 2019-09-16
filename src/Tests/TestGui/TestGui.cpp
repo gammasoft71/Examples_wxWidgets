@@ -20,10 +20,6 @@ private:
 class Form1 : public wxFrame {
 public:
   Form1() : wxFrame(nullptr, wxID_ANY, "Test gui", wxDefaultPosition, wxSize(800, 450), wxDEFAULT_FRAME_STYLE) {
-    this->SetBackgroundColour(this->panel1->GetBackgroundColour());
-    this->SetForegroundColour(this->panel1->GetForegroundColour());
-    this->panel1->Hide();
-    
     this->Center();
     
     this->button1->Bind(wxEVT_BUTTON, [&](wxCommandEvent& e) {
@@ -32,9 +28,8 @@ public:
     });
   }
 private:
-  wxPanel* panel1 = new wxPanel(this);
-  
-  wxButton* button1 = new wxButton(this, wxID_ANY, "Dialog", wxPoint(10, 10));
+  wxPanel* panel = new wxPanel(this);
+  wxButton* button1 = new wxButton(this->panel, wxID_ANY, "Dialog", wxPoint(10, 10));
 };
 
 class Application : public wxApp {
