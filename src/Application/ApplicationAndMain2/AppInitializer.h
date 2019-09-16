@@ -6,15 +6,16 @@ struct AppInitializer {
   AppInitializer() {
     if (wxTheApp) return;
     wxApp::SetInstance(new wxApp());
-    this->wxinitializer = std::make_unique<wxInitializer>();
+    int argc = 0;
+    wxEntryStart(argc, (wxChar**)NULL);
     wxTheApp->CallOnInit();
   }
   
   ~AppInitializer() {
-    if (!this->wxinitializer) return;
+    if (!wxTheApp) return;
     wxTheApp->OnExit();
-    this->wxinitializer = nullptr;
+    wxEntryCleanup();
+    delete wxTheApp;
+    wxApp::SetInstance(nullptr);
   }
-  
-  std::unique_ptr<wxInitializer> wxinitializer;
 };
