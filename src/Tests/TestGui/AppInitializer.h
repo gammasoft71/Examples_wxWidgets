@@ -10,8 +10,8 @@ struct AppInitializer {
     int argc = 0;
     wxEntryStart(argc, (wxChar**)NULL);
     wxTheApp->CallOnInit();
-    wxTheApp->SetExitOnFrameDelete(false);
 #if __WXOSX__
+    wxTheApp->SetExitOnFrameDelete(false);
     wxMenuBar* menubar = new wxMenuBar();
     wxMenu* menuWindow = new wxMenu();
     wxMenuItem* aboutMenuItem = new wxMenuItem(menuWindow, wxID_ANY, "About");
