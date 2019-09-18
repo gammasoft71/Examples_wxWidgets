@@ -4,14 +4,14 @@
 #include <wx/aboutdlg.h>
 
 struct AppInitializer {
-  AppInitializer() {
+  AppInitializer(bool exit_on_last_frame_closed = true) {
     if (wxTheApp) return;
     wxApp::SetInstance(new wxApp());
     int argc = 0;
     wxEntryStart(argc, (wxChar**)NULL);
     wxTheApp->CallOnInit();
+    wxTheApp->SetExitOnFrameDelete(exit_on_last_frame_closed);
 #if __WXOSX__
-    wxTheApp->SetExitOnFrameDelete(false);
     wxMenuBar* menubar = new wxMenuBar();
     wxMenu* menuWindow = new wxMenu();
     wxMenuItem* aboutMenuItem = new wxMenuItem(menuWindow, wxID_ANY, "About");
