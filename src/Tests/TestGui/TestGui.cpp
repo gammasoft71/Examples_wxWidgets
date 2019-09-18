@@ -1,39 +1,11 @@
-#include <functional>
 #include <wx/wx.h>
-#include <wx/apptrait.h>
+#include "AppInitializer.h"
 
-class UserDialog : public wxDialog {
-public:
-  UserDialog(wxWindow *parent) : wxDialog(parent, wxID_ANY, "Input Dialog") {
-    this->SetClientSize(200, 80);
-    this->CenterOnParent();
-  }
-  
-  wxString GetText() const {return this->text->GetValue();}
-  
-private:
-  wxTextCtrl* text = new wxTextCtrl(this, wxID_ANY, "Input text", wxPoint(10, 10), wxSize(180, 25));
-  wxButton* buttonOk = new wxButton(this, wxID_OK, "OK", wxPoint(10, 50));
-  wxButton* buttonCancel = new wxButton(this, wxID_CANCEL, "Cancel", wxPoint(100, 50));
-};
-
-class Form1 : public wxFrame {
-public:
-  Form1() : wxFrame(nullptr, wxID_ANY, "Test gui", wxDefaultPosition, wxSize(800, 450), wxDEFAULT_FRAME_STYLE) {
-    this->Center();
-    
-    this->button1->Bind(wxEVT_BUTTON, [&](wxCommandEvent& e) {
-      UserDialog dialog(this);
-      wxMessageOutputDebug().Printf("Result = %s, text = \"%s\"", dialog.ShowModal() == wxID_OK ? "wxOK" : "wxCANCEL", dialog.GetText());
-    });
-  }
-private:
-  wxPanel* panel = new wxPanel(this);
-  wxButton* button1 = new wxButton(this->panel, wxID_ANY, "Dialog", wxPoint(10, 10));
-};
-
-class Application : public wxApp {
-  bool OnInit() override {return (new Form1())->Show();}
-};
-
-wxIMPLEMENT_APP(Application);
+int main(int argc, char* argv[]) {
+  AppInitializer appInitializer;
+  wxFrame* form1 = new wxFrame(nullptr, wxID_ANY, "TestGui");
+  form1->Show();
+  wxMessageOutputDebug().Printf("ClientSize = %d, %d", form1->GetClientSize().GetWidth(), form1->GetClientSize().GetHeight());
+  wxMessageOutputDebug().Printf("Size = %d, %d", form1->GetSize().GetWidth(), form1->GetSize().GetHeight());
+  wxTheApp->OnRun();
+}
