@@ -4,13 +4,13 @@
 #include <wx/aboutdlg.h>
 
 struct AppInitializer {
-  AppInitializer() {
+  AppInitializer(bool exit_on_last_frame_closed = true) {
     if (wxTheApp) return;
     wxApp::SetInstance(new wxApp());
     int argc = 0;
     wxEntryStart(argc, (wxChar**)NULL);
     wxTheApp->CallOnInit();
-    wxTheApp->SetExitOnFrameDelete(false);
+    wxTheApp->SetExitOnFrameDelete(exit_on_last_frame_closed);
 #if __WXOSX__
     wxMenuBar* menubar = new wxMenuBar();
     wxMenu* menuWindow = new wxMenu();
@@ -20,12 +20,12 @@ struct AppInitializer {
     menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
       if (event.GetId() == wxID_ABOUT) wxAboutBox(wxAboutDialogInfo());
       if (event.GetId() == wxID_EXIT) {
-        bool cancel_quit = false;
+        bool can_quit = true;
         for (wxWindow* window : wxTopLevelWindows) {
-          cancel_quit = !window->Close();
-          if (cancel_quit) break;
+          can_quit = window->Close();
+          if (!can_quit) break;
         }
-        if (!cancel_quit) wxTheApp->ExitMainLoop();
+        if (can_quit) wxTheApp->ExitMainLoop();
       } else event.Skip();
     });
     
