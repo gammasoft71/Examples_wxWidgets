@@ -3,11 +3,11 @@
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "ColorDialog example", wxDefaultPosition, wxSize(300, 300)) {
+  Form() : wxFrame(nullptr, wxID_ANY, "OpenFileDialog example", wxDefaultPosition, wxSize(300, 300)) {
     this->button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       wxFileDialog openFileDialog(this, wxEmptyString, "", "", "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", wxFD_OPEN|wxFD_FILE_MUST_EXIST);
       if (openFileDialog.ShowModal()) {
-        this->label->SetLabelText(openFileDialog.GetPath());
+        this->label->SetLabelText(wxString::Format("File = %s",  openFileDialog.GetPath()));
       }
     });
   }
