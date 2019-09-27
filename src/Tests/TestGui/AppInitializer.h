@@ -6,6 +6,7 @@
 struct AppInitializer {
   AppInitializer(bool exit_on_last_frame_closed = true) {
     if (wxTheApp) return;
+    wxDISABLE_DEBUG_SUPPORT();
     wxApp::SetInstance(new wxApp());
     int argc = 0;
     wxEntryStart(argc, (wxChar**)NULL);
