@@ -5,7 +5,7 @@ class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "SaveFileDialog example", wxDefaultPosition, wxSize(300, 300)) {
     this->button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-      wxFileDialog saveFileDialog(this, wxEmptyString, "", "MyFile.txt", "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", wxFD_SAVE|wxFD_FILE_MUST_EXIST);
+      wxFileDialog saveFileDialog(this, wxEmptyString, "", "MyFile.txt", "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", wxFD_SAVE);
       if (saveFileDialog.ShowModal()) {
         this->label->SetLabelText(wxString::Format("File = %s",  saveFileDialog.GetPath()));
       }
