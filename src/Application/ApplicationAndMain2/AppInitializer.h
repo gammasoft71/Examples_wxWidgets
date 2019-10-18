@@ -4,9 +4,15 @@
 #include <wx/aboutdlg.h>
 
 struct AppInitializer {
-  AppInitializer(bool exit_on_last_frame_closed = true) {
-    if (wxTheApp) return;
-    wxApp::SetInstance(new wxApp());
+  AppInitializer() : AppInitializer(true, nullptr) {}
+  AppInitializer(bool exit_on_last_frame_closed) : AppInitializer(exit_on_last_frame_closed, nullptr) {}
+  AppInitializer(wxApp* app) : AppInitializer(true, app) {}
+  AppInitializer(bool exit_on_last_frame_closed, wxApp* app) {
+    wxDISABLE_DEBUG_SUPPORT();
+    if (app)
+      wxApp::SetInstance(app);
+    else
+      wxApp::SetInstance(new wxApp());
     int argc = 0;
     wxEntryStart(argc, (wxChar**)NULL);
     wxTheApp->CallOnInit();
