@@ -4,24 +4,24 @@
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "ColorDialog example", wxDefaultPosition, wxSize(300, 300)) {
-    this->button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
+    button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       wxColourData colorData;
-      colorData.SetColour(this->GetBackgroundColour());
+      colorData.SetColour(GetBackgroundColour());
       wxColourDialog colorDialog(this, &colorData);
       if (colorDialog.ShowModal()) {
-        this->panel->SetBackgroundColour(colorDialog.GetColourData().GetColour());
-        this->Refresh();
+        panel->SetBackgroundColour(colorDialog.GetColourData().GetColour());
+        Refresh();
       }
     });
   }
 
 private:
   wxPanel* panel = new wxPanel(this);
-  wxButton* button = new wxButton(this->panel, wxID_ANY, "Color...", wxPoint(10, 10));
+  wxButton* button = new wxButton(panel, wxID_ANY, "Color...", wxPoint(10, 10));
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (new Form())->Show();}
+  bool OnInit() override {(new Form())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

@@ -4,36 +4,36 @@
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "SplitContainer example", wxDefaultPosition) {
-    this->SetClientSize(300, 300);
-    this->splitContainerLeft->SetSplitMode(wxSPLIT_VERTICAL);
-    this->splitContainerLeft->SplitVertically(leftPanel1, leftPanel2, 70);
-    this->leftPanel1->SetBackgroundColour(wxTheColourDatabase->Find("Light Blue"));
+    SetClientSize(300, 300);
+    splitContainerLeft->SetSplitMode(wxSPLIT_VERTICAL);
+    splitContainerLeft->SplitVertically(leftPanel1, leftPanel2, 70);
+    leftPanel1->SetBackgroundColour(wxTheColourDatabase->Find("Light Blue"));
     
-    this->splitContainerRight->SetSplitMode(wxSPLIT_VERTICAL);
-    this->splitContainerRight->SplitVertically(rightPanel1, rightPanel2, 160);
-    this->rightPanel2->SetBackgroundColour(wxColour(0xFF, 0xFF, 0xE0));
+    splitContainerRight->SetSplitMode(wxSPLIT_VERTICAL);
+    splitContainerRight->SplitVertically(rightPanel1, rightPanel2, 160);
+    rightPanel2->SetBackgroundColour(wxColour(0xFF, 0xFF, 0xE0));
     
-    this->splitContainerCenter->SetSplitMode(wxSPLIT_HORIZONTAL);
-    this->splitContainerCenter->SplitHorizontally(centerPanel1, centerPanel2, 147);
-    this->centerPanel1->SetBackgroundColour(wxTheColourDatabase->Find("Pink"));
-    this->centerPanel2->SetBackgroundColour(wxColour(0x90, 0xEE, 0x90));
+    splitContainerCenter->SetSplitMode(wxSPLIT_HORIZONTAL);
+    splitContainerCenter->SplitHorizontally(centerPanel1, centerPanel2, 147);
+    centerPanel1->SetBackgroundColour(wxTheColourDatabase->Find("Pink"));
+    centerPanel2->SetBackgroundColour(wxColour(0x90, 0xEE, 0x90));
   }
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxSplitterWindow* splitContainerLeft = new wxSplitterWindow(this->panel, wxID_ANY, wxPoint(0, 0), wxSize(300, 300), wxSP_NOBORDER);
-  wxPanel* leftPanel1 = new wxPanel(this->splitContainerLeft);
-  wxPanel* leftPanel2 = new wxPanel(this->splitContainerLeft);
-  wxSplitterWindow* splitContainerRight = new wxSplitterWindow(this->leftPanel2, wxID_ANY, wxPoint(0, 0), wxSize(230, 300), wxSP_NOBORDER);
-  wxPanel* rightPanel1 = new wxPanel(this->splitContainerRight);
-  wxPanel* rightPanel2 = new wxPanel(this->splitContainerRight);
-  wxSplitterWindow* splitContainerCenter = new wxSplitterWindow(this->rightPanel1, wxID_ANY, wxPoint(0, 0), wxSize(160, 300), wxSP_NOBORDER);
-  wxPanel* centerPanel1 = new wxPanel(this->splitContainerCenter);
-  wxPanel* centerPanel2 = new wxPanel(this->splitContainerCenter);
+  wxSplitterWindow* splitContainerLeft = new wxSplitterWindow(panel, wxID_ANY, wxPoint(0, 0), wxSize(300, 300), wxSP_NOBORDER);
+  wxPanel* leftPanel1 = new wxPanel(splitContainerLeft);
+  wxPanel* leftPanel2 = new wxPanel(splitContainerLeft);
+  wxSplitterWindow* splitContainerRight = new wxSplitterWindow(leftPanel2, wxID_ANY, wxPoint(0, 0), wxSize(230, 300), wxSP_NOBORDER);
+  wxPanel* rightPanel1 = new wxPanel(splitContainerRight);
+  wxPanel* rightPanel2 = new wxPanel(splitContainerRight);
+  wxSplitterWindow* splitContainerCenter = new wxSplitterWindow(rightPanel1, wxID_ANY, wxPoint(0, 0), wxSize(160, 300), wxSP_NOBORDER);
+  wxPanel* centerPanel1 = new wxPanel(splitContainerCenter);
+  wxPanel* centerPanel2 = new wxPanel(splitContainerCenter);
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (new Form())->Show();}
+  bool OnInit() override {(new Form())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

@@ -4,27 +4,31 @@
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "Colored TabPages example", wxDefaultPosition) {
-  this->SetClientSize(wxSize(390, 270));
-    this->tabControl1->AddPage(new wxNotebookPage(this->tabControl1, wxID_ANY), "Red");
-    this->tabControl1->GetPage(0)->SetBackgroundColour(wxTheColourDatabase->Find("Red"));
+  SetClientSize(wxSize(390, 270));
+    tabControl1->AddPage(tabPageRed, "Red");
+    tabPageRed->SetBackgroundColour(wxTheColourDatabase->Find("Red"));
 
-    this->tabControl1->AddPage(new wxNotebookPage(this->tabControl1, wxID_ANY), "Green");
-    this->tabControl1->GetPage(1)->SetBackgroundColour(wxColour(0, 0x80, 0, 0xFF));
+    tabControl1->AddPage(tabPageGreen, "Green");
+    tabPageGreen->SetBackgroundColour(wxColour(0, 0x80, 0));
 
-    this->tabControl1->AddPage(new wxNotebookPage(this->tabControl1, wxID_ANY), "Blue");
-    this->tabControl1->GetPage(2)->SetBackgroundColour(wxTheColourDatabase->Find("BLUE"));
+    tabControl1->AddPage(tabPageBlue, "Blue");
+    tabPageBlue->SetBackgroundColour(wxTheColourDatabase->Find("Blue"));
 
-    this->tabControl1->AddPage(new wxNotebookPage(this->tabControl1, wxID_ANY), "Yellow");
-    this->tabControl1->GetPage(3)->SetBackgroundColour(wxTheColourDatabase->Find("YELLOW"));
+    tabControl1->AddPage(tabPageYellow, "Yellow");
+    tabPageYellow->SetBackgroundColour(wxTheColourDatabase->Find("Yellow"));
   }
 
 private:
   wxPanel* panel = new wxPanel(this);
-  wxNotebook* tabControl1 = new wxNotebook(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(370, 250));
+  wxNotebook* tabControl1 = new wxNotebook(panel, wxID_ANY, wxPoint(10, 10), wxSize(370, 250));
+  wxNotebookPage* tabPageRed = new wxNotebookPage(tabControl1, wxID_ANY);
+  wxNotebookPage* tabPageGreen = new wxNotebookPage(tabControl1, wxID_ANY);
+  wxNotebookPage* tabPageBlue = new wxNotebookPage(tabControl1, wxID_ANY);
+  wxNotebookPage* tabPageYellow = new wxNotebookPage(tabControl1, wxID_ANY);
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (new Form())->Show();}
+  bool OnInit() override {(new Form())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

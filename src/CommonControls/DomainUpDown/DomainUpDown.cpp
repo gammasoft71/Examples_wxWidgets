@@ -4,23 +4,23 @@
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "DomainUpDown example", wxDefaultPosition, wxSize(300, 300)) {
-    this->domainUpDown->SetItems({"item1", "item2", "item3", "item4"});
-    this->domainUpDown->SetSelectedIndex(1);
-    this->domainUpDown->Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
-      this->label1->SetLabel(this->domainUpDown->GetValue());
+    domainUpDown->SetItems({"item1", "item2", "item3", "item4"});
+    domainUpDown->SetSelectedIndex(1);
+    domainUpDown->Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
+      label1->SetLabel(domainUpDown->GetValue());
     });
     
-    this->label1->SetLabel(this->domainUpDown->GetValue());
+    label1->SetLabel(domainUpDown->GetValue());
   }
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxDomainSpinCtrl* domainUpDown = new wxDomainSpinCtrl(this->panel, wxID_ANY, wxPoint(10, 10));
-  wxStaticText* label1 = new wxStaticText(this->panel, wxID_ANY, wxEmptyString, wxPoint(10, 40));
+  wxDomainSpinCtrl* domainUpDown = new wxDomainSpinCtrl(panel, wxID_ANY, wxPoint(10, 10));
+  wxStaticText* label1 = new wxStaticText(panel, wxID_ANY, wxEmptyString, wxPoint(10, 40));
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (new Form())->Show();}
+  bool OnInit() override {(new Form())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

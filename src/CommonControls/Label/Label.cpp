@@ -6,11 +6,11 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxStaticText* label1 = new wxStaticText(this->panel, wxID_ANY, "label1", wxPoint(10, 10));
+  wxStaticText* label1 = new wxStaticText(panel, wxID_ANY, "label1", wxPoint(10, 10));
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (new Form())->Show();}
+  bool OnInit() override {(new Form())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

@@ -15,14 +15,14 @@ namespace Examples {
   class Form : public wxFrame {
   public:
     Form() : wxFrame(nullptr, wxID_ANY, "Paint example", wxDefaultPosition, wxSize(300, 300)) {
-      this->SetPosition(wxPoint(100, 100));
-      this->SetClientSize(wxSize(640, 480));
+      SetPosition(wxPoint(100, 100));
+      SetClientSize(wxSize(640, 480));
       
-      this->Bind(wxEVT_PAINT, [&](wxPaintEvent& event) {
+      Bind(wxEVT_PAINT, [&](wxPaintEvent& event) {
         wxPaintDC dc(this);
         FillRectangle(dc, wxBrush(wxColour(0x00, 0x00, 0xFF)), 0, 0, 640, 480);
         Clear(dc, wxColour(0xFF, 0xFF, 0xE0));
-        DrawRectangle(dc, wxPen(wxColour(0xFF, 0xB6, 0xC1), 10), this->GetClientRect());
+        DrawRectangle(dc, wxPen(wxColour(0xFF, 0xB6, 0xC1), 10), GetClientRect());
         DrawLine(dc, wxPen(wxColour(0x80, 0xC4, 0xDE), 5), 20, 60, 260, 60);
         FillRectangle(dc, wxBrush(wxColour(0xAD, 0xD8, 0xE6)), 50, 300, 400, 50);
         DrawLine(dc, wxPen(wxColour(0xFF, 0x00, 0x00), 1), 0, 0, 1, 1);
@@ -98,7 +98,7 @@ namespace Examples {
   };
   
   class Application : public wxApp {
-    bool OnInit() override {return (new Form())->Show();}
+    bool OnInit() override {(new Form())->Show(); return true;}
   };
 }
 

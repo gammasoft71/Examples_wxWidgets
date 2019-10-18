@@ -13,33 +13,33 @@ float points_to_native_font_graphics_untit(float size) {
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "Timer example", wxDefaultPosition) {
-    this->SetClientSize(wxSize(230, 130));
-    this->label->SetFont(wxFont(points_to_native_font_graphics_untit(48), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_NORMAL, false, "Arial"));
-    this->label->SetForegroundColour(wxColour(30, 144, 255));
+    SetClientSize(wxSize(230, 130));
+    label->SetFont(wxFont(points_to_native_font_graphics_untit(48), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_NORMAL, false, "Arial"));
+    label->SetForegroundColour(wxColour(30, 144, 255));
 
-    this->timer.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
-      this->label->SetLabelText(wxString::Format("%.1f", ++this->counter / 10.0));
+    timer.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
+      label->SetLabelText(wxString::Format("%.1f", ++counter / 10.0));
     });
 
-    this->button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-      if (this->timer.IsRunning())
-        this->timer.Stop();
+    button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
+      if (timer.IsRunning())
+        timer.Stop();
       else
-        this->timer.Start(100);
-      this->button->SetLabel(this->timer.IsRunning() ? "Stop" : "Start");
+        timer.Start(100);
+      button->SetLabel(timer.IsRunning() ? "Stop" : "Start");
     });
   }
 
 private:
   wxPanel* panel = new wxPanel(this);
-  wxStaticText* label = new wxStaticText(this->panel, wxID_ANY, "0.0", wxPoint(10, 10));
-  wxButton* button = new wxButton(this->panel, wxID_ANY, "Start", wxPoint(10, 90));
+  wxStaticText* label = new wxStaticText(panel, wxID_ANY, "0.0", wxPoint(10, 10));
+  wxButton* button = new wxButton(panel, wxID_ANY, "Start", wxPoint(10, 90));
   wxTimer timer;
   int counter = 0;
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (new Form())->Show();}
+  bool OnInit() override {(new Form())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

@@ -4,23 +4,23 @@
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "Font example", wxDefaultPosition) {
-    this->SetClientSize(wxSize(400, 400));
-    this->button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
+    SetClientSize(wxSize(400, 400));
+    button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       wxFontData fontData;
-      fontData.SetInitialFont(this->label->GetFont());
-      fontData.SetColour(this->label->GetForegroundColour());
+      fontData.SetInitialFont(label->GetFont());
+      fontData.SetColour(label->GetForegroundColour());
       wxFontDialog fontDialog(this, fontData);
-      if (fontDialog.ShowModal()) {
-        this->label->SetFont(fontDialog.GetFontData().GetChosenFont());
-        this->label->SetForegroundColour(fontDialog.GetFontData().GetColour());
+      if (fontDialog.ShowModal() == wxID_OK) {
+        label->SetFont(fontDialog.GetFontData().GetChosenFont());
+        label->SetForegroundColour(fontDialog.GetFontData().GetColour());
       }
     });
   }
 
 private:
   wxPanel* panel = new wxPanel(this);
-  wxButton* button = new wxButton(this->panel, wxID_ANY, "Font...", wxPoint(10, 10));
-  wxStaticText* label = new wxStaticText(this->panel, wxID_ANY,
+  wxButton* button = new wxButton(panel, wxID_ANY, "Font...", wxPoint(10, 10));
+  wxStaticText* label = new wxStaticText(panel, wxID_ANY,
     L"The quick brown fox jumps over the lazy dog.\n"
     L"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.\n"
     L"0123456789+-*/%~^&|=<>≤≥±÷≠{{[()]}},;:.?¿!¡\n"
@@ -33,7 +33,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (new Form())->Show();}
+  bool OnInit() override {(new Form())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

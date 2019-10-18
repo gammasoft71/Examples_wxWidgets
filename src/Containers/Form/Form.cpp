@@ -3,11 +3,11 @@
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "Form example", wxDefaultPosition, wxSize(640, 480)) {
-    this->button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-      this->Close();
+    button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
+      Close();
     });
 
-    this->Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
+    Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
       bool can_cloase = wxMessageBox("Are you sure you want exit?", "Close Form", wxICON_QUESTION | wxYES_NO) == wxYES;
       event.Veto(!can_cloase);
       event.Skip(can_cloase);
@@ -20,7 +20,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (new Form())->Show();}
+  bool OnInit() override {(new Form())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

@@ -10,53 +10,53 @@ enum wxOwnedID {
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "MainMenu example", wxDefaultPosition) {
-    this->SetClientSize(wxSize(300, 300));
-    this->menuFile->Append(wxID_NEW, "New\tCtrl+N");
-    this->menuFile->Append(wxID_OPEN, "Open...\tCtrl+o");
-    this->menuFile->Append(wxID_OPENRECENT, "Open recent");
-    this->menuFile->Append(wxID_CLOSE, "Close\tCtrl+W");
-    this->menuFile->AppendSeparator();
-    this->menuFile->Append(wxID_SAVE, "Save\tCtrl+s");
-    this->menuFile->Append(wxID_SAVEAS, "Save as...");
-    this->menuFile->AppendSeparator();
-    this->menuFile->Append(wxID_EXIT, "Quit\tAlt+F4");
+    SetClientSize(wxSize(300, 300));
+    menuFile->Append(wxID_NEW, "New\tCtrl+N");
+    menuFile->Append(wxID_OPEN, "Open...\tCtrl+o");
+    menuFile->Append(wxID_OPENRECENT, "Open recent");
+    menuFile->Append(wxID_CLOSE, "Close\tCtrl+W");
+    menuFile->AppendSeparator();
+    menuFile->Append(wxID_SAVE, "Save\tCtrl+s");
+    menuFile->Append(wxID_SAVEAS, "Save as...");
+    menuFile->AppendSeparator();
+    menuFile->Append(wxID_EXIT, "Quit\tAlt+F4");
 
-    this->menuEdit->Append(wxID_UNDO, "Undo\tCtrl+z");
-    this->menuEdit->Append(wxID_REDO, "Redo\tCtrl+y");
-    this->menuEdit->AppendSeparator();
-    this->menuEdit->Append(wxID_CUT, "Cut\tCtrl+x");
-    this->menuEdit->Append(wxID_COPY, "Copy\tCtrl+c");
-    this->menuEdit->Append(wxID_PASTE, "Paste\tCtrl+v");
-    this->menuEdit->AppendSeparator();
-    this->menuEdit->Append(wxID_SELECTALL, "Select All\tCtrl+a");
+    menuEdit->Append(wxID_UNDO, "Undo\tCtrl+z");
+    menuEdit->Append(wxID_REDO, "Redo\tCtrl+y");
+    menuEdit->AppendSeparator();
+    menuEdit->Append(wxID_CUT, "Cut\tCtrl+x");
+    menuEdit->Append(wxID_COPY, "Copy\tCtrl+c");
+    menuEdit->Append(wxID_PASTE, "Paste\tCtrl+v");
+    menuEdit->AppendSeparator();
+    menuEdit->Append(wxID_SELECTALL, "Select All\tCtrl+a");
 
-    this->menuView->Append(wxID_SHOW, "Show");
-    this->menuView->Append(wxID_HIDE, "Hide");
+    menuView->Append(wxID_SHOW, "Show");
+    menuView->Append(wxID_HIDE, "Hide");
 
-    this->mainMenu->Append(this->menuFile, "&File");
-    this->mainMenu->Append(this->menuEdit, "&Edit");
-    this->mainMenu->Append(this->menuView, "&View");
+    mainMenu->Append(menuFile, "&File");
+    mainMenu->Append(menuEdit, "&Edit");
+    mainMenu->Append(menuView, "&View");
 
 #if defined(__WXOSX__)
-    this->mainMenu->Append(this->menuWindow, "&Window");
-    this->menuWindow->Append(wxID_ABOUT, "About");
+    mainMenu->Append(menuWindow, "&Window");
+    menuWindow->Append(wxID_ABOUT, "About");
 #endif
 
-    this->mainMenu->Append(this->menuHelp, "&Help");
+    mainMenu->Append(menuHelp, "&Help");
 #if !defined(__WXOSX__)
-    this->menuHelp->Append(wxID_ABOUT, "About");
+    menuHelp->Append(wxID_ABOUT, "About");
 #endif
 
-    this->SetMenuBar(this->mainMenu);
+    SetMenuBar(mainMenu);
 
-    this->mainMenu->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
+    mainMenu->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
       static std::map<int, std::string> names = {{wxID_NEW, "File/New"}, {wxID_OPEN, "File/Open..."}, {wxID_OPENRECENT, "File/Open recent"}, {wxID_CLOSE, "File/Close"}, {wxID_SAVE, "File/Save"}, {wxID_SAVEAS, "File/Save as..."}, {wxID_EXIT, "File/Quit"}, {wxID_UNDO, "Edit/Undo"}, {wxID_REDO, "Edit/Redo"}, {wxID_CUT, "Edit/Cut"}, {wxID_COPY, "Edit/Copy"}, {wxID_PASTE, "Edit/Paste"}, {wxID_SELECTALL, "Edit/Select All"}, {wxID_SHOW, "View/Show"}, {wxID_HIDE, "View/Hide"}, {wxID_ABOUT, "Help/About"}, {wxID_ANY, "Any"}};
       if (names.find(event.GetId()) != names.end())
-        this->listBox1->Append(names[event.GetId()]);
+        listBox1->Append(names[event.GetId()]);
       else
-        this->listBox1->Append("Unknown");
+        listBox1->Append("Unknown");
       if (event.GetId() == wxID_EXIT)
-        this->Close();
+        Close();
     });
   }
 
@@ -68,11 +68,11 @@ private:
   wxMenu* menuView = new wxMenu();
   wxMenu* menuWindow = new wxMenu();
   wxMenu* menuHelp = new wxMenu();
-  wxListBox* listBox1 = new wxListBox(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(280, 260));
+  wxListBox* listBox1 = new wxListBox(panel, wxID_ANY, wxPoint(10, 10), wxSize(280, 260));
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (new Form())->Show();}
+  bool OnInit() override {(new Form())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

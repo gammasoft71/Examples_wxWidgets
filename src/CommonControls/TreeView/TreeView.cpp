@@ -4,24 +4,24 @@
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "TreeView example", wxDefaultPosition, wxSize(300, 300)) {
-    wxTreeItemId rootId = this->treeView->AddRoot("Root");
-    wxTreeItemId firstId = this->treeView->AppendItem(rootId, "First");
-    this->treeView->AppendItem(firstId, "Second");
-    this->treeView->AppendItem(firstId, "Third");
-    wxTreeItemId fourthId = this->treeView->AppendItem(rootId, "Fourth");
-    this->treeView->AppendItem(fourthId, "Fifth");
-    this->treeView->AppendItem(fourthId, "Sixth");
-    this->treeView->AppendItem(fourthId, "Seventh");
-    this->treeView->ExpandAll();
+    wxTreeItemId rootId = treeView->AddRoot("Root");
+    wxTreeItemId firstId = treeView->AppendItem(rootId, "First");
+    treeView->AppendItem(firstId, "Second");
+    treeView->AppendItem(firstId, "Third");
+    wxTreeItemId fourthId = treeView->AppendItem(rootId, "Fourth");
+    treeView->AppendItem(fourthId, "Fifth");
+    treeView->AppendItem(fourthId, "Sixth");
+    treeView->AppendItem(fourthId, "Seventh");
+    treeView->ExpandAll();
   }
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxTreeCtrl* treeView = new wxTreeCtrl(this->panel, wxID_ANY, wxPoint(10, 10), wxSize(150, 200));
+  wxTreeCtrl* treeView = new wxTreeCtrl(panel, wxID_ANY, wxPoint(10, 10), wxSize(150, 200));
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (new Form())->Show();}
+  bool OnInit() override {(new Form())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

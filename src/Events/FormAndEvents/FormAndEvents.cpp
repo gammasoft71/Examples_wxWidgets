@@ -22,7 +22,7 @@ public:
     if (event.GetEventType() == wxEVT_SHOW) wxMessageOutputDebug().Printf("WM_SHOWWINDOW show = %d", window->IsShown());
     if (event.GetEventType() == wxEVT_SIZE) wxMessageOutputDebug().Printf("WM_SIZE {width = %d, height= %d}", window->GetSize().GetWidth(), window->GetSize().GetHeight());
 
-    return this->wxFrame::ProcessEvent(event);
+    return wxFrame::ProcessEvent(event);
   }
   
 private:
@@ -30,7 +30,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (new Form())->Show();}
+  bool OnInit() override {(new Form())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

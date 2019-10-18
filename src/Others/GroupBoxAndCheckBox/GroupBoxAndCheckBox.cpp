@@ -3,25 +3,25 @@
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "GroupBox and CheckBox example", wxDefaultPosition) {
-    this->SetClientSize(wxSize(300, 160));
-    this->check2->SetValue(true);
-    this->check6->SetValue(true);
+    SetClientSize(wxSize(300, 160));
+    check2->SetValue(true);
+    check6->SetValue(true);
   }
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxStaticBox* groupBox1 = new wxStaticBox(this->panel, wxID_ANY, "Group 1", wxPoint(10, 10), wxSize(135, 140));
-  wxStaticBox* groupBox2 = new wxStaticBox(this->panel, wxID_ANY, "Group 2", wxPoint(155, 10), wxSize(135, 140));
-  wxCheckBox* check1 = new wxCheckBox(this->groupBox1, wxID_ANY, "check 1", wxPoint(10, 15));
-  wxCheckBox* check2 = new wxCheckBox(this->groupBox1, wxID_ANY, "check 2", wxPoint(10, 45));
-  wxCheckBox* check3 = new wxCheckBox(this->groupBox1, wxID_ANY, "check 3", wxPoint(10, 75));
-  wxCheckBox* check4 = new wxCheckBox(this->groupBox2, wxID_ANY, "check 1", wxPoint(10, 15));
-  wxCheckBox* check5 = new wxCheckBox(this->groupBox2, wxID_ANY, "check 2", wxPoint(10, 45));
-  wxCheckBox* check6 = new wxCheckBox(this->groupBox2, wxID_ANY, "check 3", wxPoint(10, 75));
+  wxStaticBox* groupBox1 = new wxStaticBox(panel, wxID_ANY, "Group 1", wxPoint(10, 10), wxSize(135, 140));
+  wxStaticBox* groupBox2 = new wxStaticBox(panel, wxID_ANY, "Group 2", wxPoint(155, 10), wxSize(135, 140));
+  wxCheckBox* check1 = new wxCheckBox(groupBox1, wxID_ANY, "check 1", wxPoint(10, 15));
+  wxCheckBox* check2 = new wxCheckBox(groupBox1, wxID_ANY, "check 2", wxPoint(10, 45));
+  wxCheckBox* check3 = new wxCheckBox(groupBox1, wxID_ANY, "check 3", wxPoint(10, 75));
+  wxCheckBox* check4 = new wxCheckBox(groupBox2, wxID_ANY, "check 1", wxPoint(10, 15));
+  wxCheckBox* check5 = new wxCheckBox(groupBox2, wxID_ANY, "check 2", wxPoint(10, 45));
+  wxCheckBox* check6 = new wxCheckBox(groupBox2, wxID_ANY, "check 3", wxPoint(10, 75));
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (new Form())->Show();}
+  bool OnInit() override {(new Form())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

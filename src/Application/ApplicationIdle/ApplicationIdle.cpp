@@ -8,7 +8,7 @@ public:
   Form() : wxFrame(nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(300, 300)) {}
   
   void OnApplicationIdle() {
-    this->SetLabel(wxString::Format("%d", ++this->counter));
+    SetLabel(wxString::Format("%d", ++counter));
   }
   
 private:
@@ -17,10 +17,10 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (this->form = new Form())->Show();}
+  bool OnInit() override {return (form = new Form())->Show();}
  
   bool ProcessIdle() override {
-    if (!form->IsVisible()) return this->wxApp::ProcessIdle();
+    if (!form->IsVisible()) return wxApp::ProcessIdle();
 
     static std::chrono::high_resolution_clock::time_point lastIdleTime;
     std::chrono::high_resolution_clock::duration elapsedTime = std::chrono::high_resolution_clock::now() - lastIdleTime;
@@ -29,7 +29,7 @@ class Application : public wxApp {
       lastIdleTime = std::chrono::high_resolution_clock::now();
     }
 
-    this->wxApp::ProcessIdle();
+    wxApp::ProcessIdle();
     return true;
     ;
   }

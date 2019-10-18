@@ -16,38 +16,38 @@ private:
 class MdiParentForm : public wxMDIParentFrame {
 public:
   MdiParentForm() : wxMDIParentFrame(nullptr, wxID_ANY, "Mdi example", wxDefaultPosition, wxSize(800, 600)) {
-    this->menuFile->Append(wxID_NEW, "New\tCtrl+N");
-    this->menuFile->Append(wxID_CLOSE, "Close\tCtrl+W");
-    this->menuFile->AppendSeparator();
-    this->menuFile->Append(wxID_EXIT, "Quit\tAlt+F4");
+    menuFile->Append(wxID_NEW, "New\tCtrl+N");
+    menuFile->Append(wxID_CLOSE, "Close\tCtrl+W");
+    menuFile->AppendSeparator();
+    menuFile->Append(wxID_EXIT, "Quit\tAlt+F4");
     
-    this->mainMenu->Append(this->menuFile, "&File");
-    this->mainMenu->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
+    mainMenu->Append(menuFile, "&File");
+    mainMenu->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
       switch (event.GetId()) {
-        case wxID_NEW: this->OnMenuFileNewClick(event); break;
-        case wxID_CLOSE: this->OnMenuFileCloseClick(event); break;
-        case wxID_EXIT: this->OnMenuFileQuitClick(event); break;
+        case wxID_NEW: OnMenuFileNewClick(event); break;
+        case wxID_CLOSE: OnMenuFileCloseClick(event); break;
+        case wxID_EXIT: OnMenuFileQuitClick(event); break;
         default: break;
       }
     });
 
-    this->SetMenuBar(this->mainMenu);
+    SetMenuBar(mainMenu);
   }
   
 private:
   void OnMenuFileNewClick(wxCommandEvent& event) {
     MdiChildForm* child = new MdiChildForm(this);
-    child->SetLabel(wxString::Format("Child %d", ++this->childCounter));
+    child->SetLabel(wxString::Format("Child %d", ++childCounter));
     child->Show();
   }
   
   void OnMenuFileCloseClick(wxCommandEvent& event) {
-    if (this->GetActiveChild())
-      this->GetActiveChild()->Close();
+    if (GetActiveChild())
+      GetActiveChild()->Close();
   }
   
   void OnMenuFileQuitClick(wxCommandEvent& event) {
-    this->Close();
+    Close();
   }
   
   wxMenuBar* mainMenu = new wxMenuBar();
@@ -56,7 +56,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (new MdiParentForm())->Show();}
+  bool OnInit() override {(new MdiParentForm())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);
