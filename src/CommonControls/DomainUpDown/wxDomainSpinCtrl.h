@@ -15,7 +15,7 @@ public:
 
     upDown->SetPosition(wxPoint(GetSize().GetWidth() - upDown->GetSize().GetWidth(), 0));
     upDown->SetSize(upDown->GetSize().GetWidth(), GetSize().GetHeight());
-    upDown->SetRange(0, items.GetCount() - 1);
+    upDown->SetRange(0, static_cast<int>(items.GetCount()) - 1);
     upDown->Bind(wxEVT_SPIN, [&](wxSpinEvent& event) {
       SetTextWithSelectedIndex();
       });
@@ -40,7 +40,7 @@ public:
     this->items.clear();
     for (auto i : items)
       this->items.Add(i);
-    upDown->SetRange(0, this->items.GetCount() - 1);
+    upDown->SetRange(0, static_cast<int>(this->items.GetCount()) - 1);
     SetTextWithSelectedIndex();
   }
 
