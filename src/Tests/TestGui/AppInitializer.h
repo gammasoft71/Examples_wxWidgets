@@ -9,10 +9,7 @@ struct AppInitializer {
   AppInitializer(wxApp* app) : AppInitializer(true, app) {}
   AppInitializer(bool exit_on_last_frame_closed, wxApp* app) {
     wxDISABLE_DEBUG_SUPPORT();
-    if (app)
-      wxApp::SetInstance(app);
-    else
-      wxApp::SetInstance(new wxApp());
+    wxApp::SetInstance(app ? app : new wxApp());
     int argc = 0;
     wxEntryStart(argc, (wxChar**)NULL);
     wxTheApp->CallOnInit();
