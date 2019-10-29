@@ -1,18 +1,25 @@
 #include <wx/wx.h>
+#include <wx/generic/statbmpg.h>
 #include "Logo.xpm"
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "PictureBox example", wxDefaultPosition, wxSize(300, 300)) {
+  Form() : wxFrame(nullptr, wxID_ANY, "PictureBox example") {
+    wxInitAllImageHandlers();
     SetClientSize(wxSize(300, 300));
-    wxImage::AddHandler(new wxPNGHandler());
-    pictureBox1 = new wxStaticBitmap(this, wxID_ANY, wxBitmap(Logo_xpm), wxPoint(20,10), wxSize(260, 280));
-    pictureBox1->SetWindowStyle(wxBORDER_SUNKEN);
+
+    boxSizer->Add(pictureBox1, 1, wxEXPAND | wxALL, 20);
+    pictureBox1->SetScaleMode(wxStaticBitmap::Scale_AspectFit);
+    pictureBox1->SetWindowStyle(wxBORDER_SIMPLE);
+    pictureBox1->SetBitmap(wxBitmap(Logo_xpm));
+    pictureBox1->SetSize(260, 260);
+    SetSizerAndFit(boxSizer);
   }
 
 private:
   wxPanel* panel = new wxPanel(this);
-  wxStaticBitmap* pictureBox1;
+  wxBoxSizer* boxSizer = new wxBoxSizer(wxVERTICAL);
+  wxGenericStaticBitmap* pictureBox1 = new wxGenericStaticBitmap(this, wxID_ANY, wxNullBitmap, wxPoint(20, 20), wxSize(100, 50));
 };
 
 class Application : public wxApp {

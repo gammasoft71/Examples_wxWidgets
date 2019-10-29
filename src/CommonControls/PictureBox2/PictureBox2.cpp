@@ -4,18 +4,20 @@ class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "PictureBox2 example", wxDefaultPosition, wxSize(300, 300)) {
     SetClientSize(wxSize(300, 300));
-    wxImage::AddHandler(new wxPNGHandler());
-    pictureBox1 = new wxStaticBitmap(this, wxID_ANY, wxBitmap("Resources/Logo.png", wxBITMAP_TYPE_PNG), wxPoint(20,10), wxSize(260, 280));
-    pictureBox1->SetWindowStyle(wxBORDER_SUNKEN);
+    pictureBox1->SetBitmap(wxBitmap("Resources/Logo.png", wxBITMAP_TYPE_ANY));
+    pictureBox1->SetWindowStyle(wxBORDER_SIMPLE);
   }
 
 private:
   wxPanel* panel = new wxPanel(this);
-  wxStaticBitmap* pictureBox1;
+  wxStaticBitmap* pictureBox1 = new wxStaticBitmap(this, wxID_ANY, wxNullBitmap, wxPoint(20, 20), wxSize(100, 50));;
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {
+    wxInitAllImageHandlers();
+    (new Form())->Show(); return true;
+  }
 };
 
 wxIMPLEMENT_APP(Application);

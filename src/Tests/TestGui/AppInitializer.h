@@ -14,6 +14,7 @@ struct AppInitializer {
     wxEntryStart(argc, (wxChar**)NULL);
     wxTheApp->CallOnInit();
     wxTheApp->SetExitOnFrameDelete(exit_on_last_frame_closed);
+    wxInitAllImageHandlers();
 #if __WXOSX__
     wxMenuBar* menubar = new wxMenuBar();
     wxMenu* menuWindow = new wxMenu();
