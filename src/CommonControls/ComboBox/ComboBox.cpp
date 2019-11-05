@@ -44,7 +44,11 @@ private:
   wxPanel* panel = new wxPanel(this);
   wxComboBox* comboBox1 = new wxComboBox(panel, wxID_ANY, wxEmptyString, wxPoint(10, 10), wxDefaultSize);
   wxComboBox* comboBox2 = new wxComboBox(panel, wxID_ANY, wxEmptyString, wxPoint(10, 50), wxDefaultSize, 0, nullptr, wxCB_READONLY);
+#if defined(__WXMSW__)
+  wxComboBox* comboBox3 = new wxComboBox(panel, wxID_ANY, wxEmptyString, wxPoint(10, 90), wxSize(110, 163), 0, nullptr, wxCB_SIMPLE);
+#else
   wxComboBox* comboBox3 = new wxComboBox(panel, wxID_ANY, wxEmptyString, wxPoint(10, 90), wxDefaultSize, 0, nullptr, wxCB_SIMPLE);
+#endif
 };
 
 class Application : public wxApp {
