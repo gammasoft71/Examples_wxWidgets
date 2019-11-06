@@ -1,5 +1,5 @@
-#include <wx/wx.h>
 #include "wxDomainSpinCtrl.h"
+#include <wx/wx.h>
 
 class Form : public wxFrame {
 public:
@@ -7,6 +7,7 @@ public:
     domainUpDown->SetItems({"item1", "item2", "item3", "item4"});
     domainUpDown->SetSelectedIndex(1);
     domainUpDown->Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
+      wxMessageOutputDebug().Printf("id = %d", event.GetId());
       label1->SetLabel(domainUpDown->GetValue());
     });
     

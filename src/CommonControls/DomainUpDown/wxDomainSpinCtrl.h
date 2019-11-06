@@ -1,9 +1,10 @@
 #pragma once
 #include <vector>
 #include <string>
-#include <wx/wx.h>
-#include <wx/spinctrl.h>
 #include <wx/event.h>
+#include <wx/panel.h>
+#include <wx/spinctrl.h>
+#include <wx/textctrl.h>
 
 class wxDomainSpinCtrl : public wxPanel {
 public:
@@ -60,6 +61,8 @@ private:
   void SetTextWithSelectedIndex() {
     if (upDown->GetValue() < items.GetCount())
       textBox->SetValue(items[items.GetCount() - 1 - upDown->GetValue()]);
+    wxCommandEvent event(wxEVT_TEXT, this->GetId());
+    GetEventHandler()->ProcessEvent(event);
   }
 
   wxTextCtrl* textBox = new wxTextCtrl(this, wxID_ANY);
