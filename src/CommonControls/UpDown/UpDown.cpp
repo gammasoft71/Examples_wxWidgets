@@ -20,7 +20,7 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxSpinButton* upDown1 = new wxSpinButton(panel, wxID_ANY, wxPoint(10, 10));
+  wxSpinButton* upDown1 = new wxSpinButton(panel, wxID_ANY, wxPoint(10, 10), wxSize(18, 34));
   wxStaticText* label1 = new wxStaticText(panel, wxID_ANY, wxEmptyString, wxPoint(10, 50));
 };
 
