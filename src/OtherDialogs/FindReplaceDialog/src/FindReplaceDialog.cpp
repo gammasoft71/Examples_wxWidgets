@@ -11,6 +11,7 @@ public:
       findReplaceDialog = new wxFindReplaceDialog(this, &findReplaceData, "Find and replace", wxFR_REPLACEDIALOG);
       findReplaceDialog->Bind(wxEVT_FIND_CLOSE, [this](wxFindDialogEvent& event) {
         findReplaceDialog->Hide();
+        findReplaceDialog->Destroy();
       });
       findReplaceDialog->Bind(wxEVT_FIND, [](wxFindDialogEvent& event) {
         wxMessageOutputDebug().Printf("Find {%s}", event.GetFindString());
