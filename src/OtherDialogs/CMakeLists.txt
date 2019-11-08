@@ -3,3 +3,4 @@ project(OtherDialogs)
 
 add_subdirectory("FindReplaceDialog")
 add_subdirectory("ProgressDialog")
+add_subdirectory("SymbolPickerDialog")

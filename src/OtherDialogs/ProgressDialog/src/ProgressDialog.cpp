@@ -3,7 +3,7 @@
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "ColorDialog example", wxDefaultPosition, wxSize(300, 300)) {
+  Form() : wxFrame(nullptr, wxID_ANY, "ProgressDialog example", wxDefaultPosition, wxSize(300, 300)) {
     buttonProcess->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
       wxProgressDialog* progressDialog = new wxProgressDialog("Process running", "Please wait...", 20, this, wxPD_APP_MODAL | wxPD_AUTO_HIDE);
       for (int i = 0; i <= progressDialog->GetRange(); i++) {

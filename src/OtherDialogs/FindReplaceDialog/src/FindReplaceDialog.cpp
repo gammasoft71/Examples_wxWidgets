@@ -3,7 +3,7 @@
 
 class Form : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "ColorDialog example", wxDefaultPosition, wxSize(300, 300)) {
+  Form() : wxFrame(nullptr, wxID_ANY, "FindReplaceDialog example", wxDefaultPosition, wxSize(300, 300)) {
     button->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
       findReplaceData.SetFlags(wxFR_WHOLEWORD | wxFR_MATCHCASE | wxFR_DOWN);
       findReplaceData.SetFindString("Gammasoft");
