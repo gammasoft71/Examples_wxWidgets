@@ -4,7 +4,7 @@
 class Form : public wxFrame {
 public:
   Form() : wxFrame(nullptr, wxID_ANY, "Colored TabPages example", wxDefaultPosition) {
-  SetClientSize(wxSize(390, 270));
+    SetClientSize(wxSize(390, 270));
     tabControl1->AddPage(tabPageRed, "Red");
     tabPageRed->SetBackgroundColour(wxTheColourDatabase->Find("Red"));
 

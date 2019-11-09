@@ -4,4 +4,5 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
   cout << wxString::Format("%s", "Hello, World!") << endl;
+  wxPrintf("%s", "Hello, World!\n");
 }

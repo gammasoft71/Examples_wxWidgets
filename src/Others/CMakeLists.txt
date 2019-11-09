@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.2)
 project(Others)
 
+add_subdirectory("AutoScroll")
 add_subdirectory("ColoredForms")
 add_subdirectory("ColoredTabPages")
-add_subdirectory("Cursors")
 add_subdirectory("FormIcon")
 add_subdirectory("FormPaint")
 add_subdirectory("GroupBoxAndCheckBox")
