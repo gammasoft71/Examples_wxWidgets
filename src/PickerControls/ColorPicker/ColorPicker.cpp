@@ -13,7 +13,7 @@ public:
 private:
   wxPanel* panel = new wxPanel(this);
   wxPanel* test_zone = new wxPanel(panel, wxID_ANY, {10, 50}, {200, 100}, wxTAB_TRAVERSAL | wxBORDER_SIMPLE);
-  wxColourPickerCtrl* picker = new wxColourPickerCtrl(panel, wxID_ANY, test_zone->GetBackgroundColour(), {10, 10});
+  wxColourPickerCtrl* picker = new wxColourPickerCtrl(panel, wxID_ANY, test_zone->GetBackgroundColour(), {10, 10}, {75, 25});
 };
 
 class Application : public wxApp {
