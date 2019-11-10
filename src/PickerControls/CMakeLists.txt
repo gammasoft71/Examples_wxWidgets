@@ -3,4 +3,5 @@ project(PickerControls)
 
 add_subdirectory("ColorPicker")
 add_subdirectory("DateTimePicker")
+add_subdirectory("FilePicker")
 add_subdirectory("FontPicker")
