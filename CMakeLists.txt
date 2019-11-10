@@ -11,6 +11,7 @@ endif()
 
 add_subdirectory("src/Application")
 add_subdirectory("src/CommonControls")
+add_subdirectory("src/PickerControls")
 add_subdirectory("src/Components")
 add_subdirectory("src/Containers")
 add_subdirectory("src/CustomControls")
