@@ -5,12 +5,10 @@
 class MdiChildFrame : public wxMDIChildFrame {
 public:
   MdiChildFrame(wxMDIParentFrame* parent) : wxMDIChildFrame(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, {300, 300}) {
-    std::cout << "location [x=" << ctrl->GetPosition().x <<  ", y=" << ctrl->GetPosition().y << "]" << std::endl;
   }
   
 private:
   wxRichTextCtrl* richTextBox = new wxRichTextCtrl(this);
-  wxControl* ctrl = new wxControl(this, wxID_ANY);
 };
 
 class MdiParentFrame : public wxMDIParentFrame {
