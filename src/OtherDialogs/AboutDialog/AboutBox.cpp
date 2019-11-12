@@ -7,9 +7,9 @@ public:
     button->Bind(wxEVT_BUTTON, [](wxCommandEvent& event) {
       wxAboutDialogInfo aboutInfo;
       aboutInfo.SetName(wxTheApp->GetAppName());
-      aboutInfo.SetDescription(L"AboutBox example demonstrates how to use wxAboutBox.");
+      aboutInfo.SetDescription(L"AboutBox example displays an about box dialog.");
       aboutInfo.SetVersion(L"1.0", L"1.0.0");
-      aboutInfo.SetCopyright(L"Copyright © Gammasoft 219");
+      aboutInfo.SetCopyright(L"Copyright \u00A9 Gammasoft 219");
       wxAboutBox(aboutInfo);
     });
   }
