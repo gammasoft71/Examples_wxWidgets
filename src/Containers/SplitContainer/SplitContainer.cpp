@@ -1,9 +1,9 @@
 #include <wx/wx.h>
 #include <wx/splitter.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "SplitContainer example", wxDefaultPosition) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "SplitContainer example", wxDefaultPosition) {
     SetClientSize(300, 300);
     splitContainerLeft->SetSplitMode(wxSPLIT_VERTICAL);
     splitContainerLeft->SplitVertically(leftPanel1, leftPanel2, 70);
@@ -33,7 +33,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

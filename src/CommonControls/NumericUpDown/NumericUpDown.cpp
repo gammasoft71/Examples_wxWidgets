@@ -1,9 +1,9 @@
 #include <wx/wx.h>
 #include <wx/spinctrl.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "NumericUpDown example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "NumericUpDown example", wxDefaultPosition, wxSize(300, 300)) {
     numericUpDown1->SetValue(50);
     
     numericUpDown2->SetRange(10.0, 11.0);
@@ -18,7 +18,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

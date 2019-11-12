@@ -3,9 +3,9 @@
 
 using namespace std::chrono_literals;
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(300, 300)) {}
+  Frame() : wxFrame(nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(300, 300)) {}
   
   void OnApplicationIdle() {
     SetLabel(wxString::Format("%d", ++counter));
@@ -17,7 +17,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (form = new Form())->Show();}
+  bool OnInit() override {return (form = new Frame())->Show();}
  
   bool ProcessIdle() override {
     if (!form->IsVisible()) return wxApp::ProcessIdle();
@@ -34,7 +34,7 @@ class Application : public wxApp {
     ;
   }
 
-  Form* form = nullptr;
+  Frame* form = nullptr;
 };
 
 wxIMPLEMENT_APP(Application);

@@ -1,9 +1,9 @@
 #include <wx/wx.h>
 #include <wx/progdlg.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "ProgressDialog example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "ProgressDialog example", wxDefaultPosition, wxSize(300, 300)) {
     buttonProcess->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
       wxProgressDialog* progressDialog = new wxProgressDialog("Process running", "Please wait...", 20, this, wxPD_APP_MODAL | wxPD_AUTO_HIDE);
       for (int i = 0; i <= progressDialog->GetRange(); i++) {
@@ -31,7 +31,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

@@ -2,9 +2,9 @@
 #include <wx/generic/statbmpg.h>
 #include "Logo.xpm"
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "PictureBox example") {
+  Frame() : wxFrame(nullptr, wxID_ANY, "PictureBox example") {
     wxInitAllImageHandlers();
     SetClientSize(wxSize(300, 300));
 
@@ -23,7 +23,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

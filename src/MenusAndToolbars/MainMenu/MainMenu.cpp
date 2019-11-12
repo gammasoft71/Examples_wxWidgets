@@ -7,9 +7,9 @@ enum wxOwnedID {
   wxID_HIDE,
 };
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "MainMenu example", wxDefaultPosition) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "MainMenu example", wxDefaultPosition) {
     SetClientSize(wxSize(300, 300));
     menuFile->Append(wxID_NEW, "New\tCtrl+N");
     menuFile->Append(wxID_OPEN, "Open...\tCtrl+o");
@@ -72,7 +72,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

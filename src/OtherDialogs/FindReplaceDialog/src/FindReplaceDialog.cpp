@@ -1,9 +1,9 @@
 #include <wx/wx.h>
 #include <wx/fdrepdlg.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "FindReplaceDialog example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "FindReplaceDialog example", wxDefaultPosition, wxSize(300, 300)) {
     button->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
       findReplaceData.SetFlags(wxFR_WHOLEWORD | wxFR_MATCHCASE | wxFR_DOWN);
       findReplaceData.SetFindString("Gammasoft");
@@ -37,7 +37,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

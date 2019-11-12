@@ -1,9 +1,9 @@
 #include <wx/wx.h>
 #include <wx/clrpicker.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "ColorPicker example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "ColorPicker example", wxDefaultPosition, wxSize(300, 300)) {
     picker->Bind(wxEVT_COLOURPICKER_CHANGED, [this](wxColourPickerEvent& event) {
       test_zone->SetBackgroundColour(event.GetColour());
       test_zone->Refresh();
@@ -17,7 +17,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

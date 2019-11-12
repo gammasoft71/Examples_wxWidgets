@@ -1,9 +1,9 @@
 #include <wx/wx.h>
 #include <wx/richtext/richtextctrl.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "RichTextBox example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "RichTextBox example", wxDefaultPosition, wxSize(300, 300)) {
     Bind(wxEVT_SIZING, [&](wxSizeEvent& event) {
       richTextBox->SetSize(GetClientSize());
     });
@@ -27,7 +27,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

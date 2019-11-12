@@ -1,8 +1,8 @@
 #include <wx/wx.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "MessageBox example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "MessageBox example", wxDefaultPosition, wxSize(300, 300)) {
     buttonShowMessage->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       wxMessageDialog messageDialog(this, "Hello, World!", "Message", wxOK | wxCANCEL);
       int dialogResult = messageDialog.ShowModal();
@@ -17,7 +17,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
   class CursorNamePair {
   public:
     CursorNamePair() {}
@@ -17,7 +17,7 @@ class Form : public wxFrame {
   };
 
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "Cursor example", wxDefaultPosition) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "Cursor example", wxDefaultPosition) {
     SetClientSize(wxSize(360, 240));
     for (auto& cursorNamePair : cursorNamePairs)
       listBoxCursors->Append(cursorNamePair.Name(), &cursorNamePair);
@@ -38,7 +38,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

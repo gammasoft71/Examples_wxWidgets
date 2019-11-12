@@ -1,9 +1,16 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/control.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "Control example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "Control example", wxDefaultPosition, wxSize(300, 300)) {
     control1->SetBackgroundColour(wxTheColourDatabase->Find("Spring Green"));
+    control1->Bind(wxEVT_LEFT_DOWN, [this](wxMouseEvent& event) {
+      control1->SetBackgroundColour(control1->GetBackgroundColour() == wxTheColourDatabase->Find("Spring Green") ? wxTheColourDatabase->Find("Orange Red") : wxTheColourDatabase->Find("Spring Green"));
+      control1->Refresh();
+    });
   }
   
 private:
@@ -12,7 +19,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

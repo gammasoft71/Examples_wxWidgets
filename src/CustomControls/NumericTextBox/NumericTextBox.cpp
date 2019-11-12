@@ -27,9 +27,9 @@ private:
   using wxTextCtrl::SetValue;
 };
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "NumericTextBox example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "NumericTextBox example", wxDefaultPosition, wxSize(300, 300)) {
     numericTextBox1->Bind(wxEVT_VALUE, [&](wxCommandEvent& e) {
       std::cout << wxString::Format("ValueChanged [Value==%g]", numericTextBox1->GetNumericValue()) << std::endl;
     });
@@ -41,7 +41,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

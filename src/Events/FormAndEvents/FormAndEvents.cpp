@@ -1,9 +1,9 @@
 #include <wx/wx.h>
 #include <wx/msgout.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "Form and events", wxDefaultPosition, wxSize(300, 300)) {}
+  Frame() : wxFrame(nullptr, wxID_ANY, "Form and events", wxDefaultPosition, wxSize(300, 300)) {}
   
   bool ProcessEvent (wxEvent &event) override {
     wxWindow* window = ((wxWindow*)event.GetEventObject());
@@ -30,7 +30,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

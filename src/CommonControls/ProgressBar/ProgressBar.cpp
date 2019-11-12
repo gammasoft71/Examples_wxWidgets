@@ -1,8 +1,8 @@
 #include <wx/wx.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "ProgressBar example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "ProgressBar example", wxDefaultPosition, wxSize(300, 300)) {
     progressBar2->SetValue(50);
  
     progressBar3->SetRange(300);
@@ -27,7 +27,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

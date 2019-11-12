@@ -1,6 +1,8 @@
 #pragma once
 #include <memory>
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/menu.h>
+#include <wx/menuitem.h>
 #include <wx/aboutdlg.h>
 
 struct AppInitializer {

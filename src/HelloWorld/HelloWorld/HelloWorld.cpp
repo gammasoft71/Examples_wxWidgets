@@ -10,23 +10,23 @@ float points_to_native_font_graphics_untit(float size) {
 }
 #endif
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "My first application", wxDefaultPosition) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "My first application", wxDefaultPosition) {
     SetClientSize(wxSize(300, 300));
-    label1->SetFont(wxFont(points_to_native_font_graphics_untit(32), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_BOLD, false));
-    label1->SetForegroundColour(wxColour(0, 139, 0));
+    staticText1->SetFont(wxFont(points_to_native_font_graphics_untit(32), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_BOLD, false));
+    staticText1->SetForegroundColour(wxColour(0, 139, 0));
 
     CenterOnScreen();
   }
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxStaticText* label1 = new wxStaticText(panel, wxID_ANY, "Hello, World!", wxPoint(5, 100));
+  wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "Hello, World!", wxPoint(5, 100));
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

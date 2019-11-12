@@ -1,9 +1,9 @@
 #include <wx/wx.h>
 #include <wx/fontdlg.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "Font example", wxDefaultPosition) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "Font example", wxDefaultPosition) {
     SetClientSize(wxSize(400, 400));
     button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       wxFontData fontData;
@@ -33,7 +33,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

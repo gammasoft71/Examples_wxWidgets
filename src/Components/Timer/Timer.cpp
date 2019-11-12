@@ -10,9 +10,9 @@ float points_to_native_font_graphics_untit(float size) {
 }
 #endif
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "Timer example", wxDefaultPosition) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "Timer example", wxDefaultPosition) {
     SetClientSize(wxSize(230, 130));
     label->SetFont(wxFont(points_to_native_font_graphics_untit(48), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_NORMAL, false, "Arial"));
     label->SetForegroundColour(wxColour(30, 144, 255));
@@ -39,7 +39,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

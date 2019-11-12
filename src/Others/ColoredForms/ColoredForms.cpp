@@ -4,9 +4,9 @@
 
 using namespace std;
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "Main Form", wxPoint(wxSystemSettings::GetMetric(wxSYS_SCREEN_X) - 320, 20), wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "Main Form", wxPoint(wxSystemSettings::GetMetric(wxSYS_SCREEN_X) - 320, 20), wxSize(300, 300)) {
     button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       wxFrame* form = new wxFrame(this, wxID_ANY, *iterator, location, wxSize(300, 300));
       form->SetBackgroundColour(wxTheColourDatabase->Find(*iterator));
@@ -29,7 +29,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

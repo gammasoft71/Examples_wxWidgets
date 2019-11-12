@@ -1,9 +1,9 @@
 #include <wx/wx.h>
 #include <wx/filedlg.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "SaveFileDialog example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "SaveFileDialog example", wxDefaultPosition, wxSize(300, 300)) {
     button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       wxFileDialog saveFileDialog(this, wxEmptyString, "", "MyFile.txt", "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", wxFD_SAVE);
       if (saveFileDialog.ShowModal()) {
@@ -19,7 +19,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

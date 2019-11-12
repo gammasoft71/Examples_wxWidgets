@@ -1,9 +1,9 @@
 #include <wx/wx.h>
 #include <wx/webview.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "WebBrowser example", wxDefaultPosition) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "WebBrowser example", wxDefaultPosition) {
     Bind(wxEVT_SIZING, [&](wxSizeEvent& event) {
       webBrowser->SetSize(GetClientSize());
     });
@@ -17,7 +17,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

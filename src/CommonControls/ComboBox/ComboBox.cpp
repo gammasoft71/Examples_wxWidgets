@@ -1,8 +1,11 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/combobox.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "ComboBox example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "ComboBox example", wxDefaultPosition, wxSize(300, 300)) {
     comboBox1->Append("item1");
     comboBox1->Append("item2");
     comboBox1->Append("item3");
@@ -52,7 +55,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

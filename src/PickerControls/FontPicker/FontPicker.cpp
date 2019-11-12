@@ -1,9 +1,9 @@
 #include <wx/wx.h>
 #include <wx/fontpicker.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "FontPicker example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "FontPicker example", wxDefaultPosition, wxSize(300, 300)) {
     picker->Bind(wxEVT_FONTPICKER_CHANGED, [this](wxFontPickerEvent& event) {
       label->SetFont(event.GetFont());
     });
@@ -25,7 +25,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

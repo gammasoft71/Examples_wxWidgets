@@ -2,9 +2,9 @@
 #include <wx/dirdlg.h>
 #include <wx/stdpaths.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "FolderBrowserDialog example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "FolderBrowserDialog example", wxDefaultPosition, wxSize(300, 300)) {
     button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       wxDirDialog folderBrowserDialog(this, wxEmptyString);
       folderBrowserDialog.SetPath(wxStandardPaths::Get().GetDocumentsDir());
@@ -20,7 +20,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {(new Form())->Show(); return true;}
+  bool OnInit() override {(new Frame())->Show(); return true;}
 };
 
 wxIMPLEMENT_APP(Application);

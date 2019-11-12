@@ -1,8 +1,8 @@
 #include <wx/wx.h>
 
-class Form : public wxFrame {
+class Frame : public wxFrame {
 public:
-  Form() : wxFrame(nullptr, wxID_ANY, "PictureBox2 example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "PictureBox2 example", wxDefaultPosition, wxSize(300, 300)) {
     SetClientSize(wxSize(300, 300));
     pictureBox1->SetBitmap(wxBitmap("Resources/Logo.png", wxBITMAP_TYPE_ANY));
     pictureBox1->SetWindowStyle(wxBORDER_SIMPLE);
@@ -16,7 +16,7 @@ private:
 class Application : public wxApp {
   bool OnInit() override {
     wxInitAllImageHandlers();
-    (new Form())->Show(); return true;
+    (new Frame())->Show(); return true;
   }
 };
 
