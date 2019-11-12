@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[]) {
   AppInitializer appInitializer;
-  wxFrame* form1 = new wxFrame(nullptr, wxID_ANY, "Form1", wxDefaultPosition, wxSize(300, 300));
-  form1->Show();
+  wxFrame* frame1 = new wxFrame(nullptr, wxID_ANY, "Frame1", wxDefaultPosition, wxSize(300, 300));
+  frame1->Show();
   wxTheApp->OnRun();
 }

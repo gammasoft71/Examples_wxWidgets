@@ -1,4 +1,9 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
+#include <wx/sizer.h>
+#include <wx/radiobut.h>
+#include <wx/stattext.h>
 
 class Frame : public wxFrame {
 public:
