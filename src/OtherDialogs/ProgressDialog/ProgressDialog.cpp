@@ -14,7 +14,7 @@ public:
     });
 
     buttonIndeterminateProcess->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
-      wxProgressDialog* progressDialog = new wxProgressDialog("Indeterminate process running", "Click \“Cancel\" to abort", 10, this, wxPD_APP_MODAL | wxPD_AUTO_HIDE  | wxPD_CAN_ABORT);
+      wxProgressDialog* progressDialog = new wxProgressDialog("Indeterminate process running", "Click \"Cancel\" to abort", 10, this, wxPD_APP_MODAL | wxPD_AUTO_HIDE  | wxPD_CAN_ABORT);
       while(true) {
         if (!progressDialog->Pulse())
           break;

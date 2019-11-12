@@ -17,15 +17,15 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (form = new Frame())->Show();}
+  bool OnInit() override {return (frame = new Frame())->Show();}
  
   bool ProcessIdle() override {
-    if (!form->IsVisible()) return wxApp::ProcessIdle();
+    if (!frame->IsVisible()) return wxApp::ProcessIdle();
 
     static std::chrono::high_resolution_clock::time_point lastIdleTime;
     std::chrono::high_resolution_clock::duration elapsedTime = std::chrono::high_resolution_clock::now() - lastIdleTime;
     if (elapsedTime >= 100ms) {
-      form->OnApplicationIdle();
+      frame->OnApplicationIdle();
       lastIdleTime = std::chrono::high_resolution_clock::now();
     }
 
@@ -34,7 +34,7 @@ class Application : public wxApp {
     ;
   }
 
-  Frame* form = nullptr;
+  Frame* frame = nullptr;
 };
 
 wxIMPLEMENT_APP(Application);

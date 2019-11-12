@@ -12,7 +12,7 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "Double click on Gammasoft tray icon\nto show or hide this form.", wxPoint(10, 10));
+  wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "Double click on Gammasoft tray icon\nto show or hide this frame.", wxPoint(10, 10));
   wxNotifyIcon notifyIcon1;
 };
 
