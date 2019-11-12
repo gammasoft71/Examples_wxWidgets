@@ -9,7 +9,7 @@ public:
       aboutInfo.SetName(wxTheApp->GetAppName());
       aboutInfo.SetDescription(L"AboutBox example displays an about box dialog.");
       aboutInfo.SetVersion(L"1.0", L"1.0.0");
-      aboutInfo.SetCopyright(L"Copyright \u00A9 Gammasoft 219");
+      aboutInfo.SetCopyright(L"Copyright \u00A9 Gammasoft 2109");
       wxAboutBox(aboutInfo);
     });
   }
