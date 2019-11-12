@@ -2,16 +2,14 @@
 #include <wx/aboutdlg.h>
 
 class Frame : public wxFrame {
-  #include "Gammasoft.xpm"
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "About example", wxDefaultPosition, wxSize(300, 300)) {
-    SetIcon(gammasoft_32x32);
+  Frame() : wxFrame(nullptr, wxID_ANY, "AboutBox example", wxDefaultPosition, wxSize(300, 300)) {
     button->Bind(wxEVT_BUTTON, [](wxCommandEvent& event) {
       wxAboutDialogInfo aboutInfo;
       aboutInfo.SetName(wxTheApp->GetAppName());
-      aboutInfo.SetDescription("AboutBox example demonstrates how to use wxAboutBox.");
-      aboutInfo.SetVersion("1.0", "1.0.0");
-      aboutInfo.SetCopyright("Copyright © Gammasoft 219");
+      aboutInfo.SetDescription(L"AboutBox example demonstrates how to use wxAboutBox.");
+      aboutInfo.SetVersion(L"1.0", L"1.0.0");
+      aboutInfo.SetCopyright(L"Copyright © Gammasoft 219");
       wxAboutBox(aboutInfo);
     });
   }
