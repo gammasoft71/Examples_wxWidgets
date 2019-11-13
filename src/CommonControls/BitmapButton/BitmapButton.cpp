@@ -10,7 +10,7 @@ class Frame : public wxFrame {
 public:
   Frame() : wxFrame(nullptr, wxID_ANY, "BitmapButton example", wxDefaultPosition, wxSize(300, 300)) {
     button1->SetBitmapLabel(gammasoft_32x32);
-    button1->SetSize(50, 50);
+    button1->SetSize(40, 40);
     button1->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
       staticText1->SetLabel(wxString::Format("button1 clicked %d times", ++button1Clicked));
     });
