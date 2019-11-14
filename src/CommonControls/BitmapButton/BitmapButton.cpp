@@ -3,25 +3,33 @@
 #include <wx/button.h>
 #include <wx/frame.h>
 #include <wx/panel.h>
+#include "gammasoft_16x16.xpm"
+#include "gammasoft_32x32.xpm"
+#include "gammasoft_64x64.xpm"
 
 class Frame : public wxFrame {
-  #include "Gammasoft-32x32.xpm"
 public:
   Frame() : wxFrame(nullptr, wxID_ANY, "BitmapButton example", wxDefaultPosition, wxSize(300, 300)) {
-    button1->SetBitmapLabel(gammasoft_32x32);
-    button1->SetSize(40, 40);
+    button1->SetSize(100, 25);
     
-    button2->SetSize(40, 40);
+    button2->SetBitmapLabel(gammasoft_16x16);
+    button2->SetBitmapPosition(wxLEFT);
+    button2->SetSize(120, 25);
     
-    button3->SetBitmap(gammasoft_32x32);
-    button3->SetSize(120, 40);
+    button3->SetBitmapLabel(gammasoft_32x32);
+    button3->SetBitmapPosition(wxLEFT);
+    button3->SetSize(140, 40);
+
+    button4->SetBitmapLabel(gammasoft_64x64);
+    button4->SetSize(70, 70);
   }
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxButton* button1 = new wxButton(panel, wxID_ANY, wxEmptyString, wxPoint(50, 50));
-  wxBitmapButton* button2 = new wxBitmapButton(panel, wxID_ANY, gammasoft_32x32, wxPoint(100, 50));
-  wxButton* button3 = new wxButton(panel, wxID_ANY, "Gammasoft", wxPoint(150, 50));
+  wxButton* button1 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 50});
+  wxButton* button2 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 80}, wxDefaultSize, wxBU_RIGHT);
+  wxButton* button3 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 110}, wxDefaultSize, wxBU_RIGHT);
+  wxButton* button4 = new wxButton(panel, wxID_ANY, wxEmptyString, {50, 150}, wxDefaultSize, wxBU_RIGHT);
 };
 
 class Application : public wxApp {
