@@ -27,9 +27,9 @@ public:
 private:
   wxPanel* panel = new wxPanel(this);
   wxButton* button1 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 50});
-  wxButton* button2 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 80}, wxDefaultSize, wxBU_RIGHT);
-  wxButton* button3 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 110}, wxDefaultSize, wxBU_RIGHT);
-  wxButton* button4 = new wxButton(panel, wxID_ANY, wxEmptyString, {50, 150}, wxDefaultSize, wxBU_RIGHT);
+  wxButton* button2 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 80});
+  wxButton* button3 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 110});
+  wxButton* button4 = new wxButton(panel, wxID_ANY, wxEmptyString, {50, 150});
 };
 
 class Application : public wxApp {
