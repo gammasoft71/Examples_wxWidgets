@@ -29,7 +29,7 @@ private:
   wxButton* button1 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 50});
   wxButton* button2 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 80});
   wxButton* button3 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 110});
-  wxButton* button4 = new wxButton(panel, wxID_ANY, wxEmptyString, {50, 150});
+  wxButton* button4 = new wxButton(panel, wxID_ANY, wxEmptyString, {50, 155});
 };
 
 class Application : public wxApp {
