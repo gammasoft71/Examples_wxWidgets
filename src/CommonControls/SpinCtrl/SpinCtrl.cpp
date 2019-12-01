@@ -8,7 +8,7 @@ class Frame : public wxFrame {
 public:
   Frame() : wxFrame(nullptr, wxID_ANY, "SpinCtrl example", wxDefaultPosition, wxSize(300, 300)) {
     spinCtrl1->SetValue(50);
-    spinCtrl1->Bind(wxEVT_SPIN, [this](wxCommandEvent& EVENT) {
+    spinCtrl1->Bind(wxEVT_SPINCTRL, [this](wxCommandEvent& EVENT) {
       wxMessageOutputDebug().Printf("value = %d", spinCtrl1->GetValue());
     });
   }
