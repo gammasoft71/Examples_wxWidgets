@@ -5,9 +5,9 @@ class Frame : public wxFrame {
 public:
   Frame() : wxFrame(nullptr, wxID_ANY, "ProgressDialog example", wxDefaultPosition, wxSize(300, 300)) {
     buttonProcess->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
-      wxProgressDialog* progressDialog = new wxProgressDialog("Process running", "Please wait...", 20, this, wxPD_APP_MODAL | wxPD_AUTO_HIDE);
-      for (int i = 0; i <= progressDialog->GetRange(); i++) {
-        progressDialog->Update(i);
+      wxProgressDialog* progressDialog = new wxProgressDialog("Process running", "Please wait...", 100, this, wxPD_APP_MODAL | wxPD_AUTO_HIDE);
+      for (int step = 1; step <= progressDialog->GetRange(); step++) {
+        progressDialog->Update(step, wxString::Format("Step %d/100", step));
         wxMicroSleep(100000);
       }
       progressDialog->Destroy();

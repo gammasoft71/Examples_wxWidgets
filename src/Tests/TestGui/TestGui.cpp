@@ -9,6 +9,7 @@
 #include <wx/stdpaths.h>
 #include <wx/stattext.h>
 #include <wx/sound.h>
+#include <wx/evtloop.h>
 
 #include <wx/wx.h>
 
@@ -90,6 +91,7 @@ private:
 
 int main(int argc, char* argv[]) {
   AppInitializer appInitializer;
+  
   wxFrame* frame1 = new wxFrame(nullptr, wxID_ANY, "TestGui", wxDefaultPosition, {400, 250});
 
   wxPanel* panelMain = new wxPanel(frame1);
@@ -159,6 +161,17 @@ int main(int argc, char* argv[]) {
   btn->SetBackgroundColour(wxColour(0, 0x255, 0));
   btn->SetPosition({100, 10});
   btn->SetClientSize(65, 25);
+
+  wxStaticText* label = new wxStaticText(panelMain, wxID_ANY, "Value text", {10, 250});
+  
+  wxClientDC dc(label);
+  //dc.SetFont(label->GetFont());
+  dc.SetFont(wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT));
+  wxCoord width, height;
+  dc.GetTextExtent(L"Value text", &width, &height);
+
+  wxMessageOutputDebug().Printf("size    = {%d, %d}", label->GetClientSize().GetWidth(), label->GetClientSize().GetHeight());
+  wxMessageOutputDebug().Printf("measure = {%d, %d}", width, height);
   
   frame1->Show();
 
