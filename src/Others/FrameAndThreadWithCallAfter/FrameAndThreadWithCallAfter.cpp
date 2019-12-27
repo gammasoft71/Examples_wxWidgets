@@ -14,18 +14,18 @@ public:
       event.Skip(true);
     });
     
-    threads = std::vector<std::thread>(std::thread::hardware_concurrency());
     for (int index = 0; index < threads.size(); index++) {
       threads[index] = std::thread([&](int userThreadId) {
-        static int counter = 0;
+        int counter = 0;
         while (!closed) {
           /// simulate work...
-          std::this_thread::sleep_for(500ms);
+          std::this_thread::sleep_for(5ms);
+          counter++;
           /// call CallAfter method to update ui in the main thread.
-          wxTheApp->CallAfter([&] {
-            if (closed) return;
-            listBox->Append(wxString::Format("thread: %d, counter: %d", userThreadId, ++counter));
+          CallAfter([=] {
+            listBox->Append(wxString::Format("thread: %d, counter: %d", userThreadId, counter));
             listBox->SetSelection(listBox->GetCount() - 1);
+            //std::this_thread::sleep_for(5ms);
           });
         }
       }, index);
@@ -35,7 +35,7 @@ public:
 private:
   wxListBox* listBox = new wxListBox(this, wxID_ANY);
   bool closed = false;
-  std::vector<std::thread> threads;
+  std::vector<std::thread> threads {std::thread::hardware_concurrency()};
 };
 
 class Application : public wxApp {

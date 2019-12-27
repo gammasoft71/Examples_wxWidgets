@@ -33,7 +33,7 @@ public:
         state.userThreadId = userThreadId;
         while (!closed) {
           /// simulate work...
-          std::this_thread::sleep_for(500ms);
+          std::this_thread::sleep_for(5ms);
           state.counter++;
           /// call QueueEvent method to send event to the main thread.
           wxThreadEvent* event = new wxThreadEvent(wxEVT_THREAD);

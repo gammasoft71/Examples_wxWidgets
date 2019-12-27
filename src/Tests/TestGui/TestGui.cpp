@@ -96,21 +96,6 @@ int main(int argc, char* argv[]) {
 
   wxPanel* panelMain = new wxPanel(frame1);
  
-  /*
-  wxFilePicker* filePicker = new wxFilePicker(panelMain, wxID_ANY, wxEmptyString, wxStandardPaths::Get().GetDocumentsDir(), "", "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", {10, 10});
-  wxStaticText* staticText = new wxStaticText(panelMain, wxID_ANY, "File = ", {10, 50});
-
-  filePicker->Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
-    staticText->SetLabel(wxString::Format("File = %s", filePicker->GetPath()));
-  });
-  
-  wxButton* buttonClear = new wxButton(panelMain, wxID_ANY, "Clear", {140, 10});
-  buttonClear->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-    filePicker->SetPath(wxEmptyString);
-  });
-   */
-  
-  
   frame1->SetClientSize(300, 300);
   
   wxToolBar* tb = new wxToolBar(frame1, wxID_ANY, wxDefaultPosition, {100, 50});
@@ -126,52 +111,21 @@ int main(int argc, char* argv[]) {
   tb->Realize();
 
   //tb1->SetToggle(false);
+    
+  /*
+   wxFilePicker* filePicker = new wxFilePicker(panelMain, wxID_ANY, wxEmptyString, wxStandardPaths::Get().GetDocumentsDir(), "", "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", {10, 10});
+   wxStaticText* staticText = new wxStaticText(panelMain, wxID_ANY, "File = ", {10, 50});
+   
+   filePicker->Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
+   staticText->SetLabel(wxString::Format("File = %s", filePicker->GetPath()));
+   });
+   
+   wxButton* buttonClear = new wxButton(panelMain, wxID_ANY, "Clear", {140, 10});
+   buttonClear->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
+   filePicker->SetPath(wxEmptyString);
+   });
+   */
   
-  wxListBox* lb = new wxListBox(panelMain, wxID_ANY, { 10, 40 }, {200, 200});
-  wxButton* bt = new wxButton(panelMain, wxID_ANY, "Click", { 10, 10 });
-  bt->Bind(wxEVT_BUTTON, [&](wxCommandEvent& e) {
-    lb->Insert("a", 0);
-    lb->Insert("b", 1);
-    lb->Insert("c", 2);
-    lb->Insert("d", 3);
-    lb->Insert("e", 4);
-    lb->Insert("f", 5);
-
-    for (int j = 0; j < 2; j++) {
-      wxString tmp = lb->GetString(0);
-      for (int i = 0; i < lb->GetCount() - 2; i++)
-        lb->SetString(i, lb->GetString(i + 1));
-      lb->SetString(lb->GetCount() - 1, tmp);
-    }
-  });
-
-  lb->Insert("a", 0);
-  lb->Insert("b", 1);
-  lb->Insert("c", 2);
-  lb->Insert("d", 3);
-
-  for (int j = 0; j < 3; j++) {
-    wxString tmp = lb->GetString(0);
-    for (int i = 0; i < lb->GetCount() - 1; i++)
-      lb->SetString(i, lb->GetString(i + 1));
-    lb->SetString(lb->GetCount() - 1, tmp);
-  }
-
-  wxRadioButton* btn = new wxRadioButton(panelMain, wxID_ANY, "radio 1");
-  btn->SetBackgroundColour(wxColour(0, 0x255, 0));
-  btn->SetPosition({100, 10});
-  btn->SetClientSize(65, 25);
-
-  wxStaticText* label = new wxStaticText(panelMain, wxID_ANY, "Value text", {10, 250});
-  
-  wxClientDC dc(label);
-  //dc.SetFont(label->GetFont());
-  dc.SetFont(wxSystemSettings::GetFont(wxSystemFont::wxSYS_DEFAULT_GUI_FONT));
-  wxCoord width, height;
-  dc.GetTextExtent(L"Value text", &width, &height);
-
-  wxMessageOutputDebug().Printf("size    = {%d, %d}", label->GetClientSize().GetWidth(), label->GetClientSize().GetHeight());
-  wxMessageOutputDebug().Printf("measure = {%d, %d}", width, height);
   
   frame1->Show();
 
