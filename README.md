@@ -16,7 +16,11 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [ApplicationIcon](src/Application/ApplicationIcon) Shows how to create a wxWidgets application and icon with wxApp.
 
+[ApplicationIdle](src/Application/ApplicationIdle) Shows how to create a wxWidgets application and Idle message with wxApp.
+
 ## Common Controls
+
+[BitmapButton](src/CommonControls/BitmapButton) Shows how to create a wxWidgets Button and Bitmap with wxButton.
 
 [Button](src/CommonControls/Button) Shows how to create a wxWidgets Button and Event Click with wxButton.
 
@@ -24,9 +28,15 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [CheckedListBox](src/CommonControls/CheckedListBox) Shows how to create a wxWidgets CheckListBox with wxCheckListButton.
 
+[Choice](src/CommonControls/Choice) Shows how to create a wxWidgets Choice with wxChoice.
+
 [ComboBox](src/CommonControls/ComboBox) Shows how to create a wxWidgets ComboBox with wxComboBox.
 
+[CommandLinkButton](src/CommonControls/CommandLinkButton) Shows how to create a wxWidgets CommandLinkButton with wxCommandLinkButton.
+
 [Control](src/CommonControls/Control) Shows how to create a wxWidgets Control with wwxControl.
+
+[Gauge](src/CommonControls/Gauge) Shows how to create a wxWidgets Gauge with wxGauge.
 
 [DateTimePicker](src/CommonControls/DateTimePicker) Shows how to create a wxWidgets DateTimePicker with wxDatePicker.
 
@@ -50,8 +60,6 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [PictureBox](src/CommonControls/PictureBox) Shows how to create a wxWidgets CheckBox with wxStaticBitmap.
 
-[ProgressBar](src/CommonControls/ProgressBar) Shows how to create a wxWidgets ProgressBar with wxGauge.
-
 [RadioButton](src/CommonControls/RadioButton) Shows how to create a wxWidgets RadioButton with wxRadioButton.
 
 [RichTextBox](src/CommonControls/RichTextBox) Shows how to create a wxWidgets RichTextBox with wxRichTextCtrl.
@@ -67,6 +75,10 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 [VScrollBar](src/CommonControls/VScrollBar) Shows how to create a wxWidgets VScrollBar with wxScrollBar.
 
 [WebBrowser](src/CommonControls/WebBrowser) Shows how to create a wxWidgets WebBrowser with wxWebView.
+
+## Book Controls
+
+[Button](src/CommonControls/Button) Shows how to create a wxWidgets Button and Event Click with wxButton.
 
 ## Containers
 
