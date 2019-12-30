@@ -3,7 +3,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "ProgressDialog example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "ProgressDialog example", wxDefaultPosition, {300, 300}) {
     buttonProcess->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
       wxProgressDialog* progressDialog = new wxProgressDialog("Process running", "Please wait...", 100, this, wxPD_APP_MODAL | wxPD_AUTO_HIDE);
       for (int step = 1; step <= progressDialog->GetRange(); step++) {
@@ -26,7 +26,7 @@ public:
 
 private:
   wxPanel* panel = new wxPanel(this);
-  wxButton* buttonProcess = new wxButton(panel, wxID_ANY, "Process", wxPoint(10, 10));
+  wxButton* buttonProcess = new wxButton(panel, wxID_ANY, "Process", {10, 10});
   wxButton* buttonIndeterminateProcess = new wxButton(panel, wxID_ANY, "Indeterminate Process", wxPoint(100, 10));
 };
 

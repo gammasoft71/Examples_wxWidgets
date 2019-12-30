@@ -8,7 +8,7 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxPanel* panel1 = new wxPanel(panel, wxID_ANY, wxPoint(10, 10), wxSize(305, 460), wxTAB_TRAVERSAL | wxBORDER_SIMPLE);
+  wxPanel* panel1 = new wxPanel(panel, wxID_ANY, {10, 10}, wxSize(305, 460), wxTAB_TRAVERSAL | wxBORDER_SIMPLE);
   wxPanel* panel2 = new wxPanel(panel, wxID_ANY, wxPoint(325, 10), wxSize(305, 460), wxTAB_TRAVERSAL | wxBORDER_THEME);
 };
 

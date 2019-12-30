@@ -3,54 +3,41 @@
 #include <wx/frame.h>
 #include <wx/panel.h>
 
+using namespace std;
+
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "ComboBox example", wxDefaultPosition, wxSize(300, 300)) {
-    comboBox1->Append("item1");
-    comboBox1->Append("item2");
-    comboBox1->Append("item3");
-    comboBox1->Append("item4");
-    comboBox1->Append("item5");
-    comboBox1->Append("item6");
-    comboBox1->Append("item7");
-    comboBox1->Append("item8");
-    comboBox1->Append("item9");
-    comboBox1->Append("item10");
+  Frame() : wxFrame(nullptr, wxID_ANY, "ComboBox example", wxDefaultPosition, {300, 300}) {
+    comboBox1->Append(vector<wxString> {"item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9", "item10"});
     comboBox1->Select(0);
+    comboBox1->Bind(wxEVT_COMBOBOX, [this](wxCommandEvent& e) {
+      comboBox2->SetSelection(comboBox1->GetSelection());
+      comboBox3->SetSelection(comboBox1->GetSelection());
+    });
 
-    comboBox2->Append("item1");
-    comboBox2->Append("item2");
-    comboBox2->Append("item3");
-    comboBox2->Append("item4");
-    comboBox2->Append("item5");
-    comboBox2->Append("item6");
-    comboBox2->Append("item7");
-    comboBox2->Append("item8");
-    comboBox2->Append("item9");
-    comboBox2->Append("item10");
-    comboBox2->Select(1);
+    comboBox2->Append(vector<wxString> {"item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9", "item10"});
+    comboBox2->Select(0);
+    comboBox2->Bind(wxEVT_COMBOBOX, [this](wxCommandEvent& e) {
+      comboBox1->SetSelection(comboBox2->GetSelection());
+      comboBox3->SetSelection(comboBox2->GetSelection());
+    });
 
-    comboBox3->Append("item1");
-    comboBox3->Append("item2");
-    comboBox3->Append("item3");
-    comboBox3->Append("item4");
-    comboBox3->Append("item5");
-    comboBox3->Append("item6");
-    comboBox3->Append("item7");
-    comboBox3->Append("item8");
-    comboBox3->Append("item9");
-    comboBox3->Append("item10");
-    comboBox3->Select(2);
+    comboBox3->Append(vector<wxString> {"item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9", "item10"});
+    comboBox3->Select(0);
+    comboBox3->Bind(wxEVT_COMBOBOX, [this](wxCommandEvent& e) {
+      comboBox1->SetSelection(comboBox3->GetSelection());
+      comboBox2->SetSelection(comboBox3->GetSelection());
+    });
   }
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxComboBox* comboBox1 = new wxComboBox(panel, wxID_ANY, wxEmptyString, wxPoint(10, 10), wxDefaultSize);
-  wxComboBox* comboBox2 = new wxComboBox(panel, wxID_ANY, wxEmptyString, wxPoint(10, 50), wxDefaultSize, 0, nullptr, wxCB_READONLY);
+  wxComboBox* comboBox1 = new wxComboBox(panel, wxID_ANY, wxEmptyString, {10, 10});
+  wxComboBox* comboBox2 = new wxComboBox(panel, wxID_ANY, wxEmptyString, {10, 50}, wxDefaultSize, 0, nullptr, wxCB_READONLY);
 #if defined(__WXMSW__)
-  wxComboBox* comboBox3 = new wxComboBox(panel, wxID_ANY, wxEmptyString, wxPoint(10, 90), wxSize(110, 163), 0, nullptr, wxCB_SIMPLE);
+  wxComboBox* comboBox3 = new wxComboBox(panel, wxID_ANY, wxEmptyString, {10, 90}, {110, 163}, 0, nullptr, wxCB_SIMPLE);
 #else
-  wxComboBox* comboBox3 = new wxComboBox(panel, wxID_ANY, wxEmptyString, wxPoint(10, 90), wxDefaultSize, 0, nullptr, wxCB_SIMPLE);
+  wxComboBox* comboBox3 = new wxComboBox(panel, wxID_ANY, wxEmptyString, {10, 90}, wxDefaultSize, 0, nullptr, wxCB_SIMPLE);
 #endif
 };
 

@@ -12,7 +12,7 @@ public:
 
 private:
   wxPanel* panel = new wxPanel(this, wxID_ANY);
-  wxTextCtrl* text = new wxTextCtrl(panel, wxID_ANY, wxEmptyString, wxPoint(10, 10), wxSize(180, 25));
+  wxTextCtrl* text = new wxTextCtrl(panel, wxID_ANY, wxEmptyString, {10, 10}, wxSize(180, 25));
   wxButton* buttonOk = new wxButton(panel, wxID_OK, "OK", wxPoint(10, 50));
   wxButton* buttonCancel = new wxButton(panel, wxID_CANCEL, "Cancel", wxPoint(100, 50));
 };
@@ -30,7 +30,7 @@ public:
   }
 private:
   wxPanel* panel = new wxPanel(this, wxID_ANY);
-  wxButton* buttonDialog = new wxButton(panel, wxID_ANY, "Dialog", wxPoint(10, 10));
+  wxButton* buttonDialog = new wxButton(panel, wxID_ANY, "Dialog", {10, 10});
   wxStaticText* inputText = new wxStaticText(panel, wxID_ANY, "User input text", wxPoint(10, 50));
 };
 

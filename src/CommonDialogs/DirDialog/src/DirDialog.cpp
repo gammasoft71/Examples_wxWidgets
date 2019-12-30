@@ -4,7 +4,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "DirDialog example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "DirDialog example", wxDefaultPosition, {300, 300}) {
     button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       wxDirDialog folderBrowserDialog(this, wxEmptyString);
       folderBrowserDialog.SetPath(wxStandardPaths::Get().GetDocumentsDir());
@@ -15,7 +15,7 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxButton* button = new wxButton(panel, wxID_ANY, "Folder...", wxPoint(10, 10));
+  wxButton* button = new wxButton(panel, wxID_ANY, "Folder...", {10, 10});
   wxStaticText* label = new wxStaticText(panel, wxID_ANY, "Path = ", wxPoint(10, 40));
 };
 

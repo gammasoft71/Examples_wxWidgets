@@ -5,8 +5,8 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "CheckListBox example", wxDefaultPosition, wxSize(300, 300)) {
-    SetClientSize(200, 240);
+  Frame() : wxFrame(nullptr, wxID_ANY, "CheckListBox example") {
+    SetClientSize({200, 240});
     for (int i = 1; i <= 20; ++i) {
       checkListBox->Append(wxString::Format("Item %d", i));
       checkListBox->Check(i - 1, i % 2 != 0);
@@ -25,7 +25,7 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxCheckListBox* checkListBox = new wxCheckListBox(panel, wxID_ANY, wxPoint(20, 20), wxSize(160, 200));
+  wxCheckListBox* checkListBox = new wxCheckListBox(panel, wxID_ANY, {20, 20}, {160, 200});
 };
 
 class Application : public wxApp {

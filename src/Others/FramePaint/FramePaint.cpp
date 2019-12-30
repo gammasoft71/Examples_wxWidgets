@@ -14,7 +14,7 @@ float points_to_native_font_graphics_untit(float size) {
 namespace Examples {
   class Form : public wxFrame {
   public:
-    Form() : wxFrame(nullptr, wxID_ANY, "Paint example", wxDefaultPosition, wxSize(300, 300)) {
+    Form() : wxFrame(nullptr, wxID_ANY, "Paint example", wxDefaultPosition, {300, 300}) {
       SetPosition(wxPoint(100, 100));
       SetClientSize(wxSize(640, 480));
       

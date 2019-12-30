@@ -3,7 +3,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "SymbolPickerDialog example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "SymbolPickerDialog example", wxDefaultPosition, {300, 300}) {
     button->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
       wxSymbolPickerDialog dialog("*", wxEmptyString, this->GetFont().GetFaceName(), this);
       dialog.SetFontName(labelSymbol->GetFont().GetFaceName());
@@ -18,7 +18,7 @@ public:
 
 private:
   wxPanel* panel = new wxPanel(this);
-  wxButton* button = new wxButton(panel, wxID_ANY, "Symbol...", wxPoint(10, 10));
+  wxButton* button = new wxButton(panel, wxID_ANY, "Symbol...", {10, 10});
   wxStaticText* label = new wxStaticText(panel, wxID_ANY, "Symbol = ", wxPoint(10, 50));
   wxStaticText* labelSymbol = new wxStaticText(panel, wxID_ANY, wxEmptyString, wxPoint(70, 50));
 };

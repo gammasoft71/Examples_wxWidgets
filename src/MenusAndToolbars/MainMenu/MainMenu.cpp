@@ -10,7 +10,7 @@ enum wxOwnedID {
 class Frame : public wxFrame {
 public:
   Frame() : wxFrame(nullptr, wxID_ANY, "MainMenu example", wxDefaultPosition) {
-    SetClientSize(wxSize(300, 300));
+    SetClientSize({300, 300});
     menuFile->Append(wxID_NEW, "New\tCtrl+N");
     menuFile->Append(wxID_OPEN, "Open...\tCtrl+o");
     menuFile->Append(wxID_OPENRECENT, "Open recent");
@@ -68,7 +68,7 @@ private:
   wxMenu* menuView = new wxMenu();
   wxMenu* menuWindow = new wxMenu();
   wxMenu* menuHelp = new wxMenu();
-  wxListBox* listBox1 = new wxListBox(panel, wxID_ANY, wxPoint(10, 10), wxSize(280, 260));
+  wxListBox* listBox1 = new wxListBox(panel, wxID_ANY, {10, 10}, wxSize(280, 260));
 };
 
 class Application : public wxApp {

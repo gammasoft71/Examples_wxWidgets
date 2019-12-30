@@ -3,25 +3,28 @@
 #include <wx/frame.h>
 #include <wx/panel.h>
 
+using namespace std;
+
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "Choice example", wxDefaultPosition, wxSize(300, 300)) {
-    choice->Append("item1");
-    choice->Append("item2");
-    choice->Append("item3");
-    choice->Append("item4");
-    choice->Append("item5");
-    choice->Append("item6");
-    choice->Append("item7");
-    choice->Append("item8");
-    choice->Append("item9");
-    choice->Append("item10");
-    choice->Select(0);
+  Frame() : wxFrame(nullptr, wxID_ANY, "Choice example", wxDefaultPosition, {300, 300}) {
+    choice1->Append(vector<wxString> {"item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9", "item10"});
+    choice1->SetSelection(0);
+    choice1->Bind(wxEVT_CHOICE, [this](wxCommandEvent& e) {
+      choice2->SetSelection(choice1->GetSelection());
+    });
+
+    choice2->Append(vector<wxString> {"item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9", "item10"});
+    choice2->SetSelection(0);
+    choice2->Bind(wxEVT_CHOICE, [this](wxCommandEvent& e) {
+      choice1->SetSelection(choice2->GetSelection());
+    });
   }
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxChoice* choice = new wxChoice(panel, wxID_ANY, wxPoint(10, 10));
+  wxChoice* choice1 = new wxChoice(panel, wxID_ANY, {10, 10});
+  wxChoice* choice2 = new wxChoice(panel, wxID_ANY, {10, 50});
 };
 
 class Application : public wxApp {

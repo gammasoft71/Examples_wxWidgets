@@ -3,7 +3,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "Form and events", wxDefaultPosition, wxSize(300, 300)) {}
+  Frame() : wxFrame(nullptr, wxID_ANY, "Form and events", wxDefaultPosition, {300, 300}) {}
   
   bool ProcessEvent (wxEvent &event) override {
     wxWindow* window = ((wxWindow*)event.GetEventObject());

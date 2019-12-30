@@ -5,11 +5,11 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "StaticText example", wxDefaultPosition, wxSize(300, 300)) {}
+  Frame() : wxFrame(nullptr, wxID_ANY, "StaticText example", wxDefaultPosition, {300, 300}) {}
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "staticText1", wxPoint(10, 10));
+  wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "staticText1", {10, 10});
 };
 
 class Application : public wxApp {

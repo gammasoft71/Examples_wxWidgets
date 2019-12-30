@@ -21,7 +21,7 @@ public:
 
 private:
   wxPanel* panel = new wxPanel(this);
-  wxNotebook* tabControl1 = new wxNotebook(panel, wxID_ANY, wxPoint(10, 10), wxSize(370, 250), wxNB_BOTTOM);
+  wxNotebook* tabControl1 = new wxNotebook(panel, wxID_ANY, {10, 10}, wxSize(370, 250), wxNB_BOTTOM);
   wxNotebookPage* tabPageLightPink = new wxNotebookPage(tabControl1, wxID_ANY);
   wxNotebookPage* tabPageLightGreen = new wxNotebookPage(tabControl1, wxID_ANY);
   wxNotebookPage* tabPageLightBlue = new wxNotebookPage(tabControl1, wxID_ANY);

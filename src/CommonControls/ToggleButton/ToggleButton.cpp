@@ -5,7 +5,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "ToggleButton example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "ToggleButton example", wxDefaultPosition, {300, 300}) {
     toggleButton1->SetValue(true);
     toggleButton1->Bind(wxEVT_TOGGLEBUTTON, [&](wxCommandEvent& event) {
       toggleButton1->SetLabel(toggleButton1->GetValue() ? "Checked" : "Unchecked");
@@ -18,8 +18,8 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxToggleButton* toggleButton1 = new wxToggleButton(panel, wxID_ANY, "Checked", wxPoint(30, 30), wxDefaultSize);
-  wxToggleButton* toggleButton2 = new wxToggleButton(panel, wxID_ANY, "Unchecked", wxPoint(30, 60), wxDefaultSize);
+  wxToggleButton* toggleButton1 = new wxToggleButton(panel, wxID_ANY, "Checked", {30, 30});
+  wxToggleButton* toggleButton2 = new wxToggleButton(panel, wxID_ANY, "Unchecked", {30, 60});
 };
 
 class Application : public wxApp {

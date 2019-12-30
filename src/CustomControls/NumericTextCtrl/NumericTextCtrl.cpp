@@ -29,7 +29,7 @@ private:
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "NumericTextBox example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "NumericTextBox example", wxDefaultPosition, {300, 300}) {
     numericTextBox1->Bind(wxEVT_VALUE, [&](wxCommandEvent& e) {
       std::cout << wxString::Format("ValueChanged [Value==%g]", numericTextBox1->GetNumericValue()) << std::endl;
     });
@@ -37,7 +37,7 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxNumericTextCtrl* numericTextBox1 = new wxNumericTextCtrl(panel, wxID_ANY, 42.2, wxPoint(10, 10));
+  wxNumericTextCtrl* numericTextBox1 = new wxNumericTextCtrl(panel, wxID_ANY, 42.2, {10, 10});
 };
 
 class Application : public wxApp {

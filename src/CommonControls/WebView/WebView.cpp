@@ -3,7 +3,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "WebView example", wxDefaultPosition) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "WebView example") {
     Bind(wxEVT_SIZING, [&](wxSizeEvent& event) {
       webView->SetSize(GetClientSize());
     });

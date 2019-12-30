@@ -3,9 +3,11 @@
 #include <wx/listbox.h>
 #include <wx/panel.h>
 
+using namespace std;
+
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "ListBox example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "ListBox example") {
     SetClientSize(360, 240);
     
     listBoxLeft->SetSize(150, 200);
@@ -22,8 +24,7 @@ public:
       listBoxRight->Delete(listBoxRight->GetSelection());
     });
     
-    for (auto& item : {"draw", "cut", "paste", "delete", "open", "close", "remove", "edit", "find", "increment", "decrement", "write", "read", "post", "build", "make", "release", "create", "choose", "erase"})
-      listBoxLeft->Append(item);
+    listBoxLeft->Append(vector<wxString> {"draw", "cut", "paste", "delete", "open", "close", "remove", "edit", "find", "increment", "decrement", "write", "read", "post", "build", "make", "release", "create", "choose", "erase"});
     listBoxLeft->SetSelection(0);
   }
   

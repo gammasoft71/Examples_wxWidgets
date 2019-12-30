@@ -4,7 +4,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "DatePickerCtrl example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "DatePickerCtrl example", wxDefaultPosition, {300, 300}) {
     datePicker1->SetRange(wxDateTime(4, wxDateTime::Apr, 1975), wxDateTime::Now());
     datePicker1->SetValue(wxDateTime(4, wxDateTime::Apr, 1975));
     datePicker1->Bind(wxEVT_DATE_CHANGED, [&](wxDateEvent& event) {

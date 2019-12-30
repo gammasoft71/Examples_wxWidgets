@@ -6,20 +6,20 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "RichTextCtrl example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "RichTextCtrl example", wxDefaultPosition, {300, 300}) {
     Bind(wxEVT_SIZING, [&](wxSizeEvent& event) {
       richTextCtrl->SetSize(GetClientSize());
     });
     richTextCtrl->SetSize(GetClientSize());
 
     richTextCtrl->WriteText("Colored text :\n");
-    richTextCtrl->BeginTextColour(wxColour(255, 0, 0));
+    richTextCtrl->BeginTextColour({255, 0, 0});
     richTextCtrl->WriteText("  Red\n");
     richTextCtrl->EndTextColour();
-    richTextCtrl->BeginTextColour(wxColour(0, 139, 0));
+    richTextCtrl->BeginTextColour({0, 139, 0});
     richTextCtrl->WriteText("  Green\n");
     richTextCtrl->EndTextColour();
-    richTextCtrl->BeginTextColour(wxColour(0, 0, 255));
+    richTextCtrl->BeginTextColour({0, 0, 255});
     richTextCtrl->WriteText("  Blue\n");
     richTextCtrl->EndTextColour();
   }

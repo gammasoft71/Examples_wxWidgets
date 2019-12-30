@@ -9,7 +9,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "BitmapButton example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "BitmapButton example", wxDefaultPosition, {300, 300}) {
     button1->SetSize(100, 25);
     
     button2->SetBitmapLabel(gammasoft_16x16);

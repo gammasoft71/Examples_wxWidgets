@@ -2,7 +2,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "Click anywhere on the frame", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "Click anywhere on the frame", wxDefaultPosition, {300, 300}) {
     panel->Bind(wxEVT_LEFT_UP, [&](wxMouseEvent& event) {
       wxMessageBox("The frame is clicked", "FrameClick", wxOK) ;
     });

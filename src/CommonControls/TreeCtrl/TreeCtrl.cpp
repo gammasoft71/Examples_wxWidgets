@@ -3,7 +3,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "TreeCtrl example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "TreeCtrl example", wxDefaultPosition, {300, 300}) {
     wxTreeItemId rootId = treeCtrl->AddRoot("Root");
     wxTreeItemId firstId = treeCtrl->AppendItem(rootId, "First");
     treeCtrl->AppendItem(firstId, "Second");
@@ -17,7 +17,7 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxTreeCtrl* treeCtrl = new wxTreeCtrl(panel, wxID_ANY, wxPoint(10, 10), wxSize(150, 200));
+  wxTreeCtrl* treeCtrl = new wxTreeCtrl(panel, wxID_ANY, {10, 10}, {150, 200});
 };
 
 class Application : public wxApp {

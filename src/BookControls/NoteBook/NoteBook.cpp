@@ -12,7 +12,7 @@ public:
 
 private:
   wxPanel* panel = new wxPanel(this);
-  wxNotebook* tabControl1 = new wxNotebook(panel, wxID_ANY, wxPoint(10, 10), wxSize(370, 250));
+  wxNotebook* tabControl1 = new wxNotebook(panel, wxID_ANY, {10, 10}, wxSize(370, 250));
   wxNotebookPage* tabpage1 = new wxNotebookPage(tabControl1, wxID_ANY);
   wxNotebookPage* tabpage2 = new wxNotebookPage(tabControl1, wxID_ANY);
   wxNotebookPage* tabpage3 = new wxNotebookPage(tabControl1, wxID_ANY);

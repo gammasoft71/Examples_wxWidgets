@@ -10,7 +10,7 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxStaticBox* staticBox1 = new wxStaticBox(panel, wxID_ANY, "Group 1", wxPoint(10, 10), wxSize(135, 140));
+  wxStaticBox* staticBox1 = new wxStaticBox(panel, wxID_ANY, "Group 1", {10, 10}, wxSize(135, 140));
   wxStaticBox* staticBox2 = new wxStaticBox(panel, wxID_ANY, "Group 2", wxPoint(155, 10), wxSize(135, 140));
   wxRadioButton* radio1 = new wxRadioButton(staticBox1, wxID_ANY, "radio 1", wxPoint(10, 15));
   wxRadioButton* radio2 = new wxRadioButton(staticBox1, wxID_ANY, "radio 2", wxPoint(10, 45));

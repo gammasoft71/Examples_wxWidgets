@@ -14,7 +14,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "ListView example", wxDefaultPosition) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "ListView example") {
     SetClientSize(350, 260);
 
     imageListLarge.Add(wxIcon(aiIcon48));
@@ -52,22 +52,22 @@ public:
 
     listCtrl->wxWindow::Update();
 
-    choice1->Append("LargeIcon", (void*)wxLC_ICON);
-    choice1->Append("Detail", (void*)wxLC_REPORT);
-    choice1->Append("SmallIcon", (void*)wxLC_SMALL_ICON);
-    choice1->Append("List", (void*)wxLC_LIST);
+    choice1->Append("LargeIcon", reinterpret_cast<void*>(wxLC_ICON));
+    choice1->Append("Detail", reinterpret_cast<void*>(wxLC_REPORT));
+    choice1->Append("SmallIcon", reinterpret_cast<void*>(wxLC_SMALL_ICON));
+    choice1->Append("List", reinterpret_cast<void*>(wxLC_LIST));
     choice1->SetSelection(1);
     choice1->Bind(wxEVT_CHOICE, [&](wxCommandEvent& event) {
-      listCtrl->SetSingleStyle((long long)choice1->GetClientData(choice1->GetSelection()));
+      listCtrl->SetSingleStyle(reinterpret_cast<long long>(choice1->GetClientData(choice1->GetSelection())));
     });
   }
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxListCtrl* listCtrl = new wxListCtrl(panel, wxID_ANY, wxPoint(10, 10), wxSize(330, 200), wxLC_REPORT | wxSIMPLE_BORDER);
-  wxChoice* choice1 = new wxChoice(panel, wxID_ANY, wxPoint(10, 220));
-  wxImageList imageListLarge { 48, 48 };
-  wxImageList imageListSmall { 16, 16 };
+  wxListCtrl* listCtrl = new wxListCtrl(panel, wxID_ANY, {10, 10}, {330, 200}, wxLC_REPORT | wxSIMPLE_BORDER);
+  wxChoice* choice1 = new wxChoice(panel, wxID_ANY, {10, 220});
+  wxImageList imageListLarge {48, 48};
+  wxImageList imageListSmall {16, 16};
 };
 
 class Application : public wxApp {

@@ -10,7 +10,7 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxStaticBox* staticBox1 = new wxStaticBox(panel, wxID_ANY, "Group 1", wxPoint(10, 10), wxSize(135, 140));
+  wxStaticBox* staticBox1 = new wxStaticBox(panel, wxID_ANY, "Group 1", {10, 10}, wxSize(135, 140));
   wxStaticBox* staticBox2 = new wxStaticBox(panel, wxID_ANY, "Group 2", wxPoint(155, 10), wxSize(135, 140));
   wxCheckBox* check1 = new wxCheckBox(staticBox1, wxID_ANY, "check 1", wxPoint(10, 15));
   wxCheckBox* check2 = new wxCheckBox(staticBox1, wxID_ANY, "check 2", wxPoint(10, 45));

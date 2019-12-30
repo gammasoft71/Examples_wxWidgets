@@ -3,7 +3,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "FindReplaceDialog example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "FindReplaceDialog example", wxDefaultPosition, {300, 300}) {
     button->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
       findReplaceData.SetFlags(wxFR_WHOLEWORD | wxFR_MATCHCASE | wxFR_DOWN);
       findReplaceData.SetFindString("Gammasoft");
@@ -31,7 +31,7 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxButton* button = new wxButton(panel, wxID_ANY, "Find...", wxPoint(10, 10));
+  wxButton* button = new wxButton(panel, wxID_ANY, "Find...", {10, 10});
   wxFindReplaceData findReplaceData;
   wxFindReplaceDialog* findReplaceDialog;
 };

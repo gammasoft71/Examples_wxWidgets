@@ -2,7 +2,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "Gauge example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "Gauge example", wxDefaultPosition, {300, 300}) {
     gauge2->SetValue(50);
  
     gauge3->SetRange(300);
@@ -18,11 +18,11 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxGauge* gauge1 = new wxGauge(panel, wxID_ANY, 100, wxPoint(50, 50), wxSize(200, 25));
-  wxGauge* gauge2 = new wxGauge(panel, wxID_ANY, 100, wxPoint(50, 80), wxSize(200, 25));
-  wxGauge* gauge3 = new wxGauge(panel, wxID_ANY, 100, wxPoint(50, 110), wxSize(200, 25));
-  wxGauge* gauge4 = new wxGauge(panel, wxID_ANY, 100, wxPoint(50, 140), wxSize(200, 25));
-  wxGauge* gaude5 = new wxGauge(panel, wxID_ANY, 100, wxPoint(50, 170), wxSize(200, 25));
+  wxGauge* gauge1 = new wxGauge(panel, wxID_ANY, 100, {50, 50}, {200, 25});
+  wxGauge* gauge2 = new wxGauge(panel, wxID_ANY, 100, {50, 80}, {200, 25});
+  wxGauge* gauge3 = new wxGauge(panel, wxID_ANY, 100, {50, 110}, {200, 25});
+  wxGauge* gauge4 = new wxGauge(panel, wxID_ANY, 100, {50, 140}, {200, 25});
+  wxGauge* gaude5 = new wxGauge(panel, wxID_ANY, 100, {50, 170}, {200, 25});
   wxTimer timer;
 };
 

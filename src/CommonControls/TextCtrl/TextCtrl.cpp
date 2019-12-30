@@ -7,7 +7,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "TextCtrl example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "TextCtrl example", wxDefaultPosition, {300, 300}) {
     textCtrl1->Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
       if (textCtrl2->GetValue() != textCtrl1->GetValue())
         textCtrl2->SetValue(textCtrl1->GetValue());
@@ -24,8 +24,8 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxTextCtrl* textCtrl1 = new wxTextCtrl(panel, wxID_ANY, "textBox", wxPoint(10, 10));
-  wxTextCtrl* textCtrl2 = new wxTextCtrl(panel, wxID_ANY, "textBox", wxPoint(10, 50));
+  wxTextCtrl* textCtrl1 = new wxTextCtrl(panel, wxID_ANY, "textBox", {10, 10});
+  wxTextCtrl* textCtrl2 = new wxTextCtrl(panel, wxID_ANY, "textBox", {10, 50});
 };
 
 class Application : public wxApp {

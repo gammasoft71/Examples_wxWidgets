@@ -3,7 +3,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "OpenFileDialog example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "OpenFileDialog example", wxDefaultPosition, {300, 300}) {
     button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       wxFileDialog openFileDialog(this, wxEmptyString, wxEmptyString, wxEmptyString, "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", wxFD_OPEN|wxFD_FILE_MUST_EXIST);
       if (openFileDialog.ShowModal()) {
@@ -14,7 +14,7 @@ public:
 
 private:
   wxPanel* panel = new wxPanel(this);
-  wxButton* button = new wxButton(panel, wxID_ANY, "Open...", wxPoint(10, 10));
+  wxButton* button = new wxButton(panel, wxID_ANY, "Open...", {10, 10});
   wxStaticText* label = new wxStaticText(panel, wxID_ANY, "", wxPoint(10, 40));
 };
 

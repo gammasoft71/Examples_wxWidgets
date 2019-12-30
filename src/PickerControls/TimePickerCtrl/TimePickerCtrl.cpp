@@ -4,7 +4,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "TimePickerCtrl example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "TimePickerCtrl example", wxDefaultPosition, {300, 300}) {
     timePicker1->SetTime(12, 34, 56);
     timePicker1->Bind(wxEVT_TIME_CHANGED, [&](wxDateEvent& event) {
       staticText1->SetLabelText(timePicker1->GetValue().FormatTime());

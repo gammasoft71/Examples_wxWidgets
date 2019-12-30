@@ -16,7 +16,7 @@ public:
 
 private:
   wxPanel* panel = new wxPanel(this);
-  wxButton* button = new wxButton(panel, wxID_ANY, "Close", wxPoint(10, 10));
+  wxButton* button = new wxButton(panel, wxID_ANY, "Close", {10, 10});
 };
 
 class Application : public wxApp {

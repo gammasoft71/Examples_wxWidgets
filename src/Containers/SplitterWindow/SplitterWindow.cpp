@@ -21,7 +21,7 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxSplitterWindow* splitterWindowLeft = new wxSplitterWindow(panel, wxID_ANY, wxPoint(0, 0), wxSize(300, 300), wxSP_NOBORDER);
+  wxSplitterWindow* splitterWindowLeft = new wxSplitterWindow(panel, wxID_ANY, wxPoint(0, 0), {300, 300}, wxSP_NOBORDER);
   wxPanel* leftPanel1 = new wxPanel(splitterWindowLeft);
   wxPanel* leftPanel2 = new wxPanel(splitterWindowLeft);
   wxSplitterWindow* splitterWindowRight = new wxSplitterWindow(leftPanel2, wxID_ANY, wxPoint(0, 0), wxSize(230, 300), wxSP_NOBORDER);

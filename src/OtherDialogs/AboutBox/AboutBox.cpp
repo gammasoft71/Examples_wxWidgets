@@ -3,7 +3,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "AboutBox example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "AboutBox example", wxDefaultPosition, {300, 300}) {
     button->Bind(wxEVT_BUTTON, [](wxCommandEvent& event) {
       wxAboutDialogInfo aboutInfo;
       aboutInfo.SetName(wxTheApp->GetAppName());
@@ -16,7 +16,7 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxButton* button = new wxButton(panel, wxID_ANY, "About...", wxPoint(10, 10));
+  wxButton* button = new wxButton(panel, wxID_ANY, "About...", {10, 10});
 };
 
 class Application : public wxApp {

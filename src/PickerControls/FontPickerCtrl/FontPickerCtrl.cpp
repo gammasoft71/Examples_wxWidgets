@@ -3,7 +3,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "FontPickerCtrl example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "FontPickerCtrl example", wxDefaultPosition, {300, 300}) {
     picker->Bind(wxEVT_FONTPICKER_CHANGED, [this](wxFontPickerEvent& event) {
       label->SetFont(event.GetFont());
     });

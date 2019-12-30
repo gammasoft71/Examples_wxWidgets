@@ -19,7 +19,7 @@ public:
 
 private:
   wxPanel* panel = new wxPanel(this);
-  wxButton* button = new wxButton(panel, wxID_ANY, "Font...", wxPoint(10, 10));
+  wxButton* button = new wxButton(panel, wxID_ANY, "Font...", {10, 10});
   wxStaticText* label = new wxStaticText(panel, wxID_ANY,
     L"The quick brown fox jumps over the lazy dog.\n"
     L"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.\n"

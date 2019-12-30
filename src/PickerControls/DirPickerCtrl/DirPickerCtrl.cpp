@@ -3,7 +3,7 @@
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "DirPickerCtrl example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "DirPickerCtrl example", wxDefaultPosition, {300, 300}) {
     picker->Bind(wxEVT_DIRPICKER_CHANGED, [this](wxFileDirPickerEvent& event) {
       label->SetLabel(wxString::Format("Path = %s", event.GetPath()));
     });

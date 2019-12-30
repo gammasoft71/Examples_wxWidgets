@@ -12,13 +12,13 @@ namespace Examples {
   
   class Form : public wxFrame {
   public:
-    Form() : wxFrame(nullptr, wxID_ANY, "Lines example", wxDefaultPosition, wxSize(300, 300)) {
-      SetClientSize(wxSize(300, 300));
+    Form() : wxFrame(nullptr, wxID_ANY, "Lines example", wxDefaultPosition, {300, 300}) {
+      SetClientSize({300, 300});
     }
     
   private:
     wxPanel* panel = new wxPanel(this);
-    wxColouredLine* lineSeparator = new wxColouredLine(panel, wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW), wxPoint(10, 10), wxSize(280, 2));
+    wxColouredLine* lineSeparator = new wxColouredLine(panel, wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW), {10, 10}, wxSize(280, 2));
     wxColouredLine* lineRed = new wxColouredLine(panel, wxColour(255, 0, 0), wxPoint(10, 20), wxSize(2, 250));
     wxColouredLine* lineGreen = new wxColouredLine(panel, wxColour(0, 143, 0), wxPoint(149, 20), wxSize(2, 250));
     wxColouredLine* lineBlue = new wxColouredLine(panel, wxColour(0, 0, 255), wxPoint(288, 20), wxSize(2, 250));

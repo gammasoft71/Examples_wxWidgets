@@ -8,7 +8,7 @@ public:
   
 private:
   wxPanel* panel = new wxPanel(this);
-  wxStaticBox* staticBox1 = new wxStaticBox(panel, wxID_ANY, "GroupBox 1", wxPoint(10, 10), wxSize(305, 460));
+  wxStaticBox* staticBox1 = new wxStaticBox(panel, wxID_ANY, "GroupBox 1", {10, 10}, wxSize(305, 460));
   wxStaticBox* staticBox2 = new wxStaticBox(panel, wxID_ANY, wxEmptyString, wxPoint(325, 10), wxSize(305, 460));
 };
 

@@ -22,7 +22,7 @@ wxDEFINE_EVENT(WX_EVT_CUSTOM_EVENT, CustomEvent);
 
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "Custom event example", wxDefaultPosition, wxSize(300, 300)) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "Custom event example", wxDefaultPosition, {300, 300}) {
     button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       wxPostEvent(this, CustomEvent());
     });
