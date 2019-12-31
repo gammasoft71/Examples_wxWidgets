@@ -4,14 +4,15 @@
 #include <wx/stattext.h>
 
 using namespace std;
+
 class Frame : public wxFrame {
 public:
   Frame() : wxFrame(nullptr, wxID_ANY, "StaticText and unicode text example") {
     SetClientSize(400, 350);
 
     for (int index = 0; index < languages.size(); ++index) {
-      items[index].first = new wxStaticText(panel, wxID_ANY, {languages[index].first.c_str(), wxConvUTF8}, {10, 10 + index * 30}, {150, wxDefaultCoord});
-      items[index].second = new wxStaticText(panel, wxID_ANY, {languages[index].second.c_str(), wxConvUTF8}, {160, 10 + index * 30}, {220, wxDefaultCoord});
+      items[index].first = new wxStaticText(panel, wxID_ANY, {languages[index].first.c_str(), wxMBConvUTF8()}, {10, 10 + index * 30}, {150, wxDefaultCoord});
+      items[index].second = new wxStaticText(panel, wxID_ANY, {languages[index].second.c_str(), wxMBConvUTF8()}, {160, 10 + index * 30}, {220, wxDefaultCoord});
     }
   }
   
