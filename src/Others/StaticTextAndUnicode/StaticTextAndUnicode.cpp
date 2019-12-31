@@ -10,8 +10,8 @@ public:
     SetClientSize(400, 350);
 
     for (int index = 0; index < languages.size(); ++index) {
-      items[index].first = new wxStaticText(panel, wxID_ANY, languages[index].first, {10, 10 + index * 30}, {150, wxDefaultCoord});
-      items[index].second = new wxStaticText(panel, wxID_ANY, languages[index].second, {160, 10 + index * 30}, {220, wxDefaultCoord});
+      items[index].first = new wxStaticText(panel, wxID_ANY, {languages[index].first.c_str(), wxConvUTF8}, {10, 10 + index * 30}, {150, wxDefaultCoord});
+      items[index].second = new wxStaticText(panel, wxID_ANY, {languages[index].second.c_str(), wxConvUTF8}, {160, 10 + index * 30}, {220, wxDefaultCoord});
     }
   }
   
