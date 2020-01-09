@@ -13,7 +13,6 @@ public:
       gaude5->Pulse();
     });
     timer.Start(50);
-
   }
   
 private:

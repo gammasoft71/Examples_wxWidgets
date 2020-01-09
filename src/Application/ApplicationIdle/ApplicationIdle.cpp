@@ -31,7 +31,6 @@ class Application : public wxApp {
 
     wxApp::ProcessIdle();
     return true;
-    ;
   }
 
   Frame* frame = nullptr;
