@@ -1,39 +1,45 @@
 #include <chrono>
 #include <wx/wx.h>
 
+using namespace std::chrono;
 using namespace std::chrono_literals;
 
-class Frame : public wxFrame {
-public:
-  Frame() : wxFrame(nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, {300, 300}) {}
-  
-  void OnApplicationIdle() {
-    SetLabel(wxString::Format("%d", ++counter));
-  }
-  
-private:
-  wxPanel* panel = new wxPanel(this);
-  int counter = 0;
-};
+namespace Examples {
+  class Frame : public wxFrame {
+  public:
+    Frame() : wxFrame(nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, {300, 300}) {}
+    
+    void OnApplicationIdle() {
+      SetLabel(wxString::Format("%d", ++counter));
+    }
+    
+  private:
+    wxPanel* panel = new wxPanel(this);
+    int counter = 0;
+  };
 
-class Application : public wxApp {
-  bool OnInit() override {return (frame = new Frame())->Show();}
- 
-  bool ProcessIdle() override {
-    if (!frame->IsVisible()) return wxApp::ProcessIdle();
+  class Application : public wxApp {
+    bool OnInit() override {
+      (frame = new Frame())->Show();
+      return true;
+    }
+   
+    bool ProcessIdle() override {
+      if (!frame->IsVisible()) return wxApp::ProcessIdle();
 
-    static std::chrono::high_resolution_clock::time_point lastIdleTime;
-    std::chrono::high_resolution_clock::duration elapsedTime = std::chrono::high_resolution_clock::now() - lastIdleTime;
-    if (elapsedTime >= 100ms) {
-      frame->OnApplicationIdle();
-      lastIdleTime = std::chrono::high_resolution_clock::now();
+      static auto lastIdleTime = high_resolution_clock::now();;
+      auto elapsedTime = high_resolution_clock::now() - lastIdleTime;
+      if (elapsedTime >= 100ms) {
+        frame->OnApplicationIdle();
+        lastIdleTime = high_resolution_clock::now();
+      }
+
+      wxApp::ProcessIdle();
+      return true;
     }
 
-    wxApp::ProcessIdle();
-    return true;
-  }
+    Frame* frame = nullptr;
+  };
+}
 
-  Frame* frame = nullptr;
-};
-
-wxIMPLEMENT_APP(Application);
+wxIMPLEMENT_APP(Examples::Application);
