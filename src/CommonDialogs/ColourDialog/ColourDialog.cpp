@@ -9,7 +9,7 @@ namespace Examples {
         wxColourData colourData;
         colourData.SetColour(GetBackgroundColour());
         wxColourDialog colourDialog(this, &colourData);
-        if (colourDialog.ShowModal()) {
+        if (colourDialog.ShowModal() == wxID_OK) {
           SetBackgroundColour(colourDialog.GetColourData().GetColour());
           Refresh();
         }
