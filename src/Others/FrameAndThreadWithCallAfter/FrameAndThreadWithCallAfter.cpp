@@ -16,16 +16,16 @@ public:
     
     for (int index = 0; index < threads.size(); index++) {
       threads[index] = std::thread([&](int userThreadId) {
-        int counter = 0;
+        static auto counter = 0;
         while (!closed) {
           /// simulate work...
-          std::this_thread::sleep_for(5ms);
+          std::this_thread::sleep_for(50ms);
           counter++;
           /// call CallAfter method to update ui in the main thread.
           CallAfter([=] {
             listBox->Append(wxString::Format("thread: %d, counter: %d", userThreadId, counter));
             listBox->SetSelection(listBox->GetCount() - 1);
-            //std::this_thread::sleep_for(5ms);
+
           });
         }
       }, index);
