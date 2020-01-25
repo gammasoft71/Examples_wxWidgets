@@ -11,7 +11,7 @@ public:
       toggleButton1->SetLabel(toggleButton1->GetValue() ? "Checked" : "Unchecked");
     });
 
-    toggleButton2->Bind(wxEVT_TOGGLEBUTTON, [this](wxCommandEvent& event) {
+    toggleButton2->Bind(wxEVT_TOGGLEBUTTON, [&](wxCommandEvent& event) {
       toggleButton2->SetValue(false);
     });
   }

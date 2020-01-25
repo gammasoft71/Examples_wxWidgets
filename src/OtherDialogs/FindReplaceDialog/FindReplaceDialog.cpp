@@ -4,12 +4,12 @@
 class Frame : public wxFrame {
 public:
   Frame() : wxFrame(nullptr, wxID_ANY, "FindReplaceDialog example", wxDefaultPosition, {300, 300}) {
-    button->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
+    button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       findReplaceData.SetFlags(wxFR_WHOLEWORD | wxFR_MATCHCASE | wxFR_DOWN);
       findReplaceData.SetFindString("Gammasoft");
       findReplaceData.SetReplaceString("Gammasoft71");
       findReplaceDialog = new wxFindReplaceDialog(this, &findReplaceData, "Find and replace", wxFR_REPLACEDIALOG);
-      findReplaceDialog->Bind(wxEVT_FIND_CLOSE, [this](wxFindDialogEvent& event) {
+      findReplaceDialog->Bind(wxEVT_FIND_CLOSE, [&](wxFindDialogEvent& event) {
         findReplaceDialog->Destroy();
       });
       findReplaceDialog->Bind(wxEVT_FIND, [](wxFindDialogEvent& event) {

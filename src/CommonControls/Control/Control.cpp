@@ -7,7 +7,7 @@ class Frame : public wxFrame {
 public:
   Frame() : wxFrame(nullptr, wxID_ANY, "Control example", wxDefaultPosition, {300, 300}) {
     control1->SetBackgroundColour(wxTheColourDatabase->Find("Spring Green"));
-    control1->Bind(wxEVT_LEFT_DOWN, [this](wxMouseEvent& event) {
+    control1->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent& event) {
       control1->SetBackgroundColour(control1->GetBackgroundColour() == wxTheColourDatabase->Find("Spring Green") ? wxTheColourDatabase->Find("Orange Red") : wxTheColourDatabase->Find("Spring Green"));
       control1->Refresh();
     });

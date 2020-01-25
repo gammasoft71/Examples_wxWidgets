@@ -13,7 +13,7 @@ public:
       checkListBox->EnsureVisible(0);
     }
     checkListBox->SetSelection(0);
-    checkListBox->Bind(wxEVT_CHECKLISTBOX, [this](wxCommandEvent& e) {
+    checkListBox->Bind(wxEVT_CHECKLISTBOX, [&](wxCommandEvent& e) {
       wxArrayInt checkedIndexes;
       checkListBox->GetCheckedItems(checkedIndexes);
       wxString checkedItems;

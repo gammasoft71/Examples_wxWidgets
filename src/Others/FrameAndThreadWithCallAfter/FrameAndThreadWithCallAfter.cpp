@@ -6,7 +6,7 @@ using namespace std::literals;
 class Frame : public wxFrame {
 public:
   Frame() : wxFrame(nullptr, wxID_ANY, "Frame and thread example", wxDefaultPosition, {300, 300}) {
-    Bind(wxEVT_CLOSE_WINDOW, [this](wxCloseEvent& event) {
+    Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
       closed = true;
       for (int index = 0; index < threads.size(); index++)
         threads[index].join();

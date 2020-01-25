@@ -11,7 +11,7 @@ public:
     spinCtrlDouble1->SetRange(10.0, 11.0);
     spinCtrlDouble1->SetDigits(2);
     spinCtrlDouble1->SetIncrement(0.01);
-    spinCtrlDouble1->Bind(wxEVT_SPIN, [this](wxCommandEvent& EVENT) {
+    spinCtrlDouble1->Bind(wxEVT_SPIN, [&](wxCommandEvent& EVENT) {
       text->SetLabel(wxString::Format("value = %.02f", spinCtrlDouble1->GetValue()));
     });
   }

@@ -8,7 +8,7 @@ public:
 #if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
     picker->SetSelectedColour(label->GetForegroundColour());
 #endif
-    picker->Bind(wxEVT_FONTPICKER_CHANGED, [this](wxFontPickerEvent& event) {
+    picker->Bind(wxEVT_FONTPICKER_CHANGED, [&](wxFontPickerEvent& event) {
       label->SetFont(picker->GetSelectedFont());
 #if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
       label->SetForegroundColour(picker->GetSelectedColour());

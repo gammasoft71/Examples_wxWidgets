@@ -6,7 +6,7 @@ public:
   Frame() : wxFrame(nullptr, wxID_ANY, "ColourPicker example", wxDefaultPosition, {300, 300}) {
     testZone->SetBackgroundColour(wxTheColourDatabase->Find("Red"));
     picker->SetColour(testZone->GetBackgroundColour());
-    picker->Bind(wxEVT_COLOURPICKER_CHANGED, [this](wxColourPickerEvent& event) {
+    picker->Bind(wxEVT_COLOURPICKER_CHANGED, [&](wxColourPickerEvent& event) {
       testZone->SetBackgroundColour(event.GetColour());
       testZone->Refresh();
     });

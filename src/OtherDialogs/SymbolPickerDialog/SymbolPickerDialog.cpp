@@ -4,7 +4,7 @@
 class Frame : public wxFrame {
 public:
   Frame() : wxFrame(nullptr, wxID_ANY, "SymbolPickerDialog example", wxDefaultPosition, {300, 300}) {
-    button->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
+    button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       wxSymbolPickerDialog dialog("*", wxEmptyString, this->GetFont().GetFaceName(), this);
       dialog.SetFontName(labelSymbol->GetFont().GetFaceName());
       if (dialog.ShowModal() == wxID_OK) {

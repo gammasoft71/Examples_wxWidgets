@@ -12,13 +12,13 @@ public:
 class Frame : public wxFrame {
 public:
   Frame() : wxFrame(nullptr, wxID_ANY, "Frame and thread example", wxDefaultPosition, {300, 300}) {
-    Bind(wxEVT_THREAD, [this](wxThreadEvent& event) {
+    Bind(wxEVT_THREAD, [&](wxThreadEvent& event) {
       thread_state state = event.GetPayload<thread_state>();
       listBox->Append(wxString::Format("thread: %d, counter: %d", state.userThreadId, state.counter));
       listBox->SetSelection(listBox->GetCount() - 1);
     });
     
-    Bind(wxEVT_CLOSE_WINDOW, [this](wxCloseEvent& event) {
+    Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
       closed = true;
       for (int index = 0; index < threads.size(); index++)
         threads[index].join();

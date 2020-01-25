@@ -4,7 +4,7 @@
 class Frame : public wxFrame {
 public:
   Frame() : wxFrame(nullptr, wxID_ANY, "ProgressDialog example", wxDefaultPosition, {300, 300}) {
-    buttonProcess->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
+    buttonProcess->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       wxProgressDialog* progressDialog = new wxProgressDialog("Process running", "Please wait...", 100, this, wxPD_APP_MODAL | wxPD_AUTO_HIDE);
       for (int step = 1; step <= progressDialog->GetRange(); step++) {
         progressDialog->Update(step, wxString::Format("Step %d/100", step));
@@ -13,7 +13,7 @@ public:
       progressDialog->Destroy();
     });
 
-    buttonIndeterminateProcess->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
+    buttonIndeterminateProcess->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       wxProgressDialog* progressDialog = new wxProgressDialog("Indeterminate process running", "Click \"Cancel\" to abort", 10, this, wxPD_APP_MODAL | wxPD_AUTO_HIDE  | wxPD_CAN_ABORT);
       while(true) {
         if (!progressDialog->Pulse())

@@ -16,7 +16,7 @@ public:
     choice1->Append("Scale_AspectFit", reinterpret_cast<void*>(wxStaticBitmap::Scale_AspectFit));
     choice1->Append("Scale_AspectFill", reinterpret_cast<void*>(wxStaticBitmap::Scale_AspectFill));
     choice1->SetSelection(0);
-    choice1->Bind(wxEVT_CHOICE, [this](wxCommandEvent& e) {
+    choice1->Bind(wxEVT_CHOICE, [&](wxCommandEvent& e) {
       staticBitmap1->SetScaleMode(static_cast<wxStaticBitmap::ScaleMode>(reinterpret_cast<long long>(choice1->GetClientData(choice1->GetSelection()))));
     });
 

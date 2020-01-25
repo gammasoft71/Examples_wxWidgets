@@ -10,13 +10,13 @@ public:
   Frame() : wxFrame(nullptr, wxID_ANY, "Choice example", wxDefaultPosition, {300, 300}) {
     choice1->Append(vector<wxString> {"item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9", "item10"});
     choice1->SetSelection(0);
-    choice1->Bind(wxEVT_CHOICE, [this](wxCommandEvent& e) {
+    choice1->Bind(wxEVT_CHOICE, [&](wxCommandEvent& e) {
       choice2->SetSelection(choice1->GetSelection());
     });
 
     choice2->Append(vector<wxString> {"item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9", "item10"});
     choice2->SetSelection(0);
-    choice2->Bind(wxEVT_CHOICE, [this](wxCommandEvent& e) {
+    choice2->Bind(wxEVT_CHOICE, [&](wxCommandEvent& e) {
       choice1->SetSelection(choice2->GetSelection());
     });
   }

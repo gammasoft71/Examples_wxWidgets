@@ -25,7 +25,7 @@ public:
     Bind(wxEVT_MENU, [](wxCommandEvent& event) {
       wxMessageBox("This is a wxWidgets Hello World example", "About Hello World", wxOK | wxICON_INFORMATION);
     }, wxID_ABOUT);
-    Bind(wxEVT_MENU, [this](wxCommandEvent& event) {
+    Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
       Close(true);
     }, wxID_EXIT);
   }
