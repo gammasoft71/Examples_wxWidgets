@@ -24,7 +24,7 @@ public:
     Bind(wxEVT_SIZE, [&](wxEvent& ev) {
       textBox->SetSize(GetSize() - wxSize(upDown->GetSize().GetWidth() + 2, 0));
       upDown->SetPosition(wxPoint(GetSize().GetWidth() - upDown->GetSize().GetWidth(), (GetSize().GetHeight() - upDown->GetSize().GetHeight()) / 2));
-      });
+    });
   }
 
   wxDomainSpinCtrl(wxWindow* parent, wxWindowID winid, const wxPoint& pos, const wxSize& size, const wxArrayString& items) : wxDomainSpinCtrl(parent, winid, pos, size) { SetItems(items); }
