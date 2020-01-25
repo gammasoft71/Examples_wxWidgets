@@ -12,15 +12,15 @@ public:
   Frame() : wxFrame(nullptr, wxID_ANY, "BitmapButton example", wxDefaultPosition, {300, 300}) {
     button1->SetSize(100, 25);
     
-    button2->SetBitmapLabel(gammasoft_16x16);
+    button2->SetBitmapLabel({gammasoft_16x16_xpm});
     button2->SetBitmapPosition(wxLEFT);
     button2->SetSize(120, 25);
     
-    button3->SetBitmapLabel(gammasoft_32x32);
+    button3->SetBitmapLabel({gammasoft_32x32_xpm});
     button3->SetBitmapPosition(wxLEFT);
     button3->SetSize(140, 40);
 
-    button4->SetBitmapLabel(gammasoft_64x64);
+    button4->SetBitmapLabel({gammasoft_64x64_xpm});
     button4->SetSize(70, 70);
   }
   
