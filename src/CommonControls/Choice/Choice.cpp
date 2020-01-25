@@ -7,13 +7,13 @@ namespace Examples {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Choice example", wxDefaultPosition, {300, 300}) {
-      choice1->Append({"item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9", "item10"});
+      choice1->Append({"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
       choice1->SetSelection(0);
       choice1->Bind(wxEVT_CHOICE, [&](wxCommandEvent& e) {
         choice2->SetSelection(choice1->GetSelection());
       });
 
-      choice2->Append({"item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9", "item10"});
+      choice2->Append({"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
       choice2->SetSelection(0);
       choice2->Bind(wxEVT_CHOICE, [&](wxCommandEvent& e) {
         choice1->SetSelection(choice2->GetSelection());
