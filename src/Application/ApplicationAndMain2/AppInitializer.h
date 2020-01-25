@@ -3,7 +3,8 @@
 #include <wx/wx.h>
 #include <wx/aboutdlg.h>
 
-struct AppInitializer {
+class AppInitializer {
+public:
   AppInitializer() : AppInitializer(true, nullptr) {}
   AppInitializer(bool exit_on_last_frame_closed) : AppInitializer(exit_on_last_frame_closed, nullptr) {}
   AppInitializer(wxApp* app) : AppInitializer(true, app) {}
