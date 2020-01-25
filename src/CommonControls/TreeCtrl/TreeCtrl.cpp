@@ -14,6 +14,7 @@ namespace Examples {
       treeCtrl->AppendItem(fourthId, "Sixth");
       treeCtrl->AppendItem(fourthId, "Seventh");
       treeCtrl->ExpandAll();
+      treeCtrl->SelectItem(rootId);
     }
     
   private:
@@ -22,7 +23,10 @@ namespace Examples {
   };
 
   class Application : public wxApp {
-    bool OnInit() override {(new Frame())->Show(); return true;}
+    bool OnInit() override {
+      (new Frame())->Show();
+      return true;
+    }
   };
 }
 
