@@ -7,21 +7,21 @@ namespace Examples {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "ComboBox example", wxDefaultPosition, {300, 300}) {
-      comboBox1->Append({"item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9", "item10"});
+      comboBox1->Append({"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
       comboBox1->Select(0);
       comboBox1->Bind(wxEVT_COMBOBOX, [&](wxCommandEvent& e) {
         comboBox2->SetSelection(comboBox1->GetSelection());
         comboBox3->SetSelection(comboBox1->GetSelection());
       });
 
-      comboBox2->Append({"item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9", "item10"});
+      comboBox2->Append({"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
       comboBox2->Select(0);
       comboBox2->Bind(wxEVT_COMBOBOX, [&](wxCommandEvent& e) {
         comboBox1->SetSelection(comboBox2->GetSelection());
         comboBox3->SetSelection(comboBox2->GetSelection());
       });
 
-      comboBox3->Append({"item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9", "item10"});
+      comboBox3->Append({"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
       comboBox3->Select(0);
       comboBox3->Bind(wxEVT_COMBOBOX, [&](wxCommandEvent& e) {
         comboBox1->SetSelection(comboBox3->GetSelection());
