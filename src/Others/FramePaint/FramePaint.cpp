@@ -1,17 +1,17 @@
 #include <wx/wx.h>
 #include <wx/statline.h>
 
+namespace Examples {
 #if defined(__WXOSX__)
-int PointsToNativeFontGraphicsUntit(int size) {
-  return static_cast<float>(size) / wxScreenDC().GetPPI().GetHeight() * 96.0f;  // font is in pixels and not in points
-}
+  int PointsToNativeFontGraphicsUntit(int size) {
+    return static_cast<float>(size) / wxScreenDC().GetPPI().GetHeight() * 96.0f;  // font is in pixels and not in points
+  }
 #else
-int PointsToNativeFontGraphicsUntit(int size) {
-  return size;  // font is in points
-}
+  int PointsToNativeFontGraphicsUntit(int size) {
+    return size;  // font is in points
+  }
 #endif
 
-namespace Examples {
   class Form : public wxFrame {
   public:
     Form() : wxFrame(nullptr, wxID_ANY, "Paint example") {
