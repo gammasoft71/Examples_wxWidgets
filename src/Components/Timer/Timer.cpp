@@ -2,11 +2,11 @@
 
 namespace Examples {
 #if defined(__WXOSX__)
-  int points_to_native_font_graphics_untit(int size) {
+  int PointsToNativeFontGraphicsUntit(int size) {
     return static_cast<float>(size) / wxScreenDC().GetPPI().GetHeight() * 96.0f;  // font is in pixels and not in points
   }
 #else
-  int points_to_native_font_graphics_untit(int size) {
+  int PointsToNativeFontGraphicsUntit(int size) {
     return size;  // font is in points
   }
 #endif
@@ -15,7 +15,7 @@ namespace Examples {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Timer example", wxDefaultPosition) {
       SetClientSize(230, 130);
-      label->SetFont({points_to_native_font_graphics_untit(48), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_NORMAL, false, "Arial"});
+      label->SetFont({PointsToNativeFontGraphicsUntit(48), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_NORMAL, false, "Arial"});
       label->SetForegroundColour({30, 144, 255});
 
       timer.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {

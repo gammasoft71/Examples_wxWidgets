@@ -3,11 +3,11 @@
 #include <wx/statline.h>
 
 #if defined(__WXOSX__)
-float points_to_native_font_graphics_untit(float size) {
-  return size / wxScreenDC().GetPPI().GetHeight() * 96.0f;  // font is in pixels and not in points
+int PointsToNativeFontGraphicsUntit(int size) {
+  return static_cast<float>(size) / wxScreenDC().GetPPI().GetHeight() * 96.0f;  // font is in pixels and not in points
 }
 #else
-float points_to_native_font_graphics_untit(float size) {
+int PointsToNativeFontGraphicsUntit(int size) {
   return size;  // font is in points
 }
 #endif

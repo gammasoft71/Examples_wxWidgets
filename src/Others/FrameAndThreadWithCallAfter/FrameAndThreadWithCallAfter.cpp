@@ -8,13 +8,13 @@ public:
   Frame() : wxFrame(nullptr, wxID_ANY, "Frame and thread example", wxDefaultPosition, {300, 300}) {
     Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
       closed = true;
-      for (int index = 0; index < threads.size(); index++)
+      for (auto index = 0; index < threads.size(); index++)
         threads[index].join();
       event.Veto(false);
       event.Skip(true);
     });
     
-    for (int index = 0; index < threads.size(); index++) {
+    for (auto index = 0; index < threads.size(); index++) {
       threads[index] = std::thread([&](int userThreadId) {
         static auto counter = 0;
         while (!closed) {

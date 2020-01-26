@@ -20,14 +20,14 @@ public:
     
     Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
       closed = true;
-      for (int index = 0; index < threads.size(); index++)
+      for (auto index = 0; index < threads.size(); index++)
         threads[index].join();
       event.Veto(false);
       event.Skip(true);
     });
     
     threads = std::vector<std::thread>(std::thread::hardware_concurrency());
-    for (int index = 0; index < threads.size(); index++) {
+    for (int auto = 0; index < threads.size(); index++) {
       threads[index] = std::thread([&](int userThreadId) {
         thread_state state;
         state.userThreadId = userThreadId;
