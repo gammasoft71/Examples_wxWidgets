@@ -11,7 +11,7 @@ namespace Examples {
     Frame() : wxFrame(nullptr, wxID_ANY, "ProgressDialog example", wxDefaultPosition, {300, 300}) {
       buttonProcess->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         wxProgressDialog* progressDialog = new wxProgressDialog("Process running", "Please wait...", 100, this, wxPD_APP_MODAL|wxPD_AUTO_HIDE|wxPD_CAN_ABORT);
-        for (int step = 1; step <= progressDialog->GetRange(); step++) {
+        for (auto step = 1; step <= progressDialog->GetRange(); step++) {
           if (!progressDialog->Update(step, wxString::Format("Step %d/100", step))) break;
           this_thread::sleep_for(100ms);
         }
