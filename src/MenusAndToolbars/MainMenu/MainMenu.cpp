@@ -1,4 +1,5 @@
 #include <wx/wx.h>
+#include <wx/artprov.h>
 #include <map>
 
 namespace Examples {
@@ -12,22 +13,33 @@ namespace Examples {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "MainMenu example", wxDefaultPosition) {
       SetClientSize(300, 300);
-      menuFile->Append(wxID_NEW, "New\tCtrl+N");
-      menuFile->Append(wxID_OPEN, "Open...\tCtrl+o");
+      
+      auto menuItemFileNew = menuFile->Append(wxID_NEW, "New\tCtrl+N");
+      menuItemFileNew->SetBitmap(wxArtProvider::GetBitmap(wxART_NEW));
+      auto menuItemFileOpen = menuFile->Append(wxID_OPEN, "Open...\tCtrl+o");
+      menuItemFileOpen->SetBitmap(wxArtProvider::GetBitmap(wxART_FILE_OPEN));
       menuFile->Append(wxID_OPENRECENT, "Open recent");
       menuFile->Append(wxID_CLOSE, "Close\tCtrl+W");
       menuFile->AppendSeparator();
-      menuFile->Append(wxID_SAVE, "Save\tCtrl+s");
-      menuFile->Append(wxID_SAVEAS, "Save as...");
+      auto menuItemFileSave = menuFile->Append(wxID_SAVE, "Save\tCtrl+s");
+      menuItemFileSave->SetBitmap(wxArtProvider::GetBitmap(wxART_FILE_SAVE));
+      auto menuItemFileSaveAs = menuFile->Append(wxID_SAVEAS, "Save as...");
+      menuItemFileSaveAs->SetBitmap(wxArtProvider::GetBitmap(wxART_FILE_SAVE_AS));
       menuFile->AppendSeparator();
-      menuFile->Append(wxID_EXIT, "Quit\tAlt+F4");
+      auto menuItemFileQuit = menuFile->Append(wxID_EXIT, "Quit\tAlt+F4");
+      menuItemFileQuit->SetBitmap(wxArtProvider::GetBitmap(wxART_QUIT));
 
-      menuEdit->Append(wxID_UNDO, "Undo\tCtrl+z");
-      menuEdit->Append(wxID_REDO, "Redo\tCtrl+y");
+      auto menuItemEditUndo = menuEdit->Append(wxID_UNDO, "Undo\tCtrl+z");
+      menuItemEditUndo->SetBitmap(wxArtProvider::GetBitmap(wxART_UNDO));
+      auto menuItemEditRedo = menuEdit->Append(wxID_REDO, "Redo\tCtrl+y");
+      menuItemEditRedo->SetBitmap(wxArtProvider::GetBitmap(wxART_REDO));
       menuEdit->AppendSeparator();
-      menuEdit->Append(wxID_CUT, "Cut\tCtrl+x");
-      menuEdit->Append(wxID_COPY, "Copy\tCtrl+c");
-      menuEdit->Append(wxID_PASTE, "Paste\tCtrl+v");
+      auto menuItemEditCut = menuEdit->Append(wxID_CUT, "Cut\tCtrl+x");
+      menuItemEditCut->SetBitmap(wxArtProvider::GetBitmap(wxART_CUT));
+      auto menuItemEditCopy = menuEdit->Append(wxID_COPY, "Copy\tCtrl+c");
+      menuItemEditCopy->SetBitmap(wxArtProvider::GetBitmap(wxART_COPY));
+      auto menuItemEditPaste = menuEdit->Append(wxID_PASTE, "Paste\tCtrl+v");
+      menuItemEditPaste->SetBitmap(wxArtProvider::GetBitmap(wxART_PASTE));
       menuEdit->AppendSeparator();
       menuEdit->Append(wxID_SELECTALL, "Select All\tCtrl+a");
 
