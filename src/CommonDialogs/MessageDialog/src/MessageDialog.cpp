@@ -6,7 +6,7 @@ namespace Examples {
     Frame() : wxFrame(nullptr, wxID_ANY, "MessageDialog example", wxDefaultPosition, {300, 300}) {
       buttonShowMessage->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         labelDialogResult->SetLabelText("Result = ");
-        wxMessageDialog messageDialog(this, "Hello, World!", "Message", wxOK | wxCANCEL);
+        wxMessageDialog messageDialog(this, "Hello, World!", "Message", wxOK|wxCANCEL);
         auto result = messageDialog.ShowModal();
         labelDialogResult->SetLabelText(wxString::Format("Result = %s", result == wxID_OK ? "wxOK" : "wxCANCEL"));
       });
