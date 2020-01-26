@@ -27,4 +27,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Application);
+wxIMPLEMENT_APP(Exemples::Application);
