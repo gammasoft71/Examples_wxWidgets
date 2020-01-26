@@ -1,43 +1,43 @@
 #include <wx/wx.h>
 #include <wx/statline.h>
 
+namespace Examples {
 #if defined(__WXOSX__)
-int PointsToNativeFontGraphicsUntit(int size) {
-  return static_cast<float>(size) / wxScreenDC().GetPPI().GetHeight() * 96.0f;  // font is in pixels and not in points
-}
+  int PointsToNativeFontGraphicsUntit(int size) {
+    return static_cast<float>(size) / wxScreenDC().GetPPI().GetHeight() * 96.0f;  // font is in pixels and not in points
+  }
 #else
-int PointsToNativeFontGraphicsUntit(int size) {
-  return size;  // font is in points
-}
+  int PointsToNativeFontGraphicsUntit(int size) {
+    return size;  // font is in points
+  }
 #endif
 
-namespace Examples {
   class Form : public wxFrame {
   public:
-    Form() : wxFrame(nullptr, wxID_ANY, "Paint example", wxDefaultPosition, {300, 300}) {
-      SetPosition(wxPoint(100, 100));
-      SetClientSize(wxSize(640, 480));
+    Form() : wxFrame(nullptr, wxID_ANY, "Paint example") {
+      SetPosition({100, 100});
+      SetClientSize(640, 480);
       
       Bind(wxEVT_PAINT, [&](wxPaintEvent& event) {
         wxPaintDC dc(this);
-        FillRectangle(dc, wxBrush(wxColour(0x00, 0x00, 0xFF)), 0, 0, 640, 480);
-        Clear(dc, wxColour(0xFF, 0xFF, 0xE0));
-        DrawRectangle(dc, wxPen(wxColour(0xFF, 0xB6, 0xC1), 10), GetClientRect());
-        DrawLine(dc, wxPen(wxColour(0x80, 0xC4, 0xDE), 5), 20, 60, 260, 60);
-        FillRectangle(dc, wxBrush(wxColour(0xAD, 0xD8, 0xE6)), 50, 300, 400, 50);
-        DrawLine(dc, wxPen(wxColour(0xFF, 0x00, 0x00), 1), 0, 0, 1, 1);
-        DrawLString(dc, "Draw string", wxFont(PointsToNativeFontGraphicsUntit(34), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, "Arial"), wxBrush(wxColour(0x90, 0xEE, 0x90)), 20, 0);
+        FillRectangle(dc, {{0x00, 0x00, 0xFF}, wxBRUSHSTYLE_SOLID}, 0, 0, 640, 480);
+        Clear(dc, {0xFF, 0xFF, 0xE0});
+        DrawRectangle(dc,{{0xFF, 0xB6, 0xC1}, 10, wxPENSTYLE_SOLID}, GetClientRect());
+        DrawLine(dc, {{0x80, 0xC4, 0xDE}, 5, wxPENSTYLE_SOLID}, 20, 60, 260, 60);
+        FillRectangle(dc, {{0xAD, 0xD8, 0xE6}, wxBRUSHSTYLE_SOLID}, 50, 300, 400, 50);
+        DrawLine(dc, {{0xFF, 0x00, 0x00}, 1, wxPENSTYLE_SOLID}, 0, 0, 1, 1);
+        DrawLString(dc, "Draw string", {PointsToNativeFontGraphicsUntit(34), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, "Arial"}, {{0x90, 0xEE, 0x90}, wxBRUSHSTYLE_SOLID}, 20, 0);
         FillRectangle(dc, wxBrush(wxColour(0x20, 0xB2, 0xAA)), 400, 70, 100, 200);
-        DrawArc(dc, wxPen(wxColour(0x00, 0x00, 0x0), 10), 400, 70, 100, 200, 45, 270);
-        DrawEllipse(dc, wxPen(wxColour(0xFF, 0x00, 0x00), 10), 100, 80, 200, 200);
-        FillPie(dc, wxColour(0x00, 0x80, 0x00), 120, 100, 160, 160, 45.0f, 270.0f);
-        FillPie(dc, wxColour(0x90, 0xEE, 0x90), 120, 100, 160, 160, 270.0f, 180.0f);
-        DrawBezier(dc, wxPen(wxColour(0x00, 0x00, 0x00), 1), 100, 100, 150, 150, 200, 100, 250, 50);
+        DrawArc(dc, {{0x00, 0x00, 0x0}, 10, wxPENSTYLE_SOLID}, 400, 70, 100, 200, 45, 270);
+        DrawEllipse(dc, {{0xFF, 0x00, 0x00}, 10, wxPENSTYLE_SOLID}, 100, 80, 200, 200);
+        FillPie(dc, {{0x00, 0x80, 0x00}, wxBRUSHSTYLE_SOLID}, 120, 100, 160, 160, 45.0f, 270.0f);
+        FillPie(dc, {{0x90, 0xEE, 0x90}, wxBRUSHSTYLE_SOLID}, 120, 100, 160, 160, 270.0f, 180.0f);
+        DrawBezier(dc, {{0x00, 0x00, 0x00}, 1, wxPENSTYLE_SOLID}, 100, 100, 150, 150, 200, 100, 250, 50);
       });
     }
     
     static void Clear(wxPaintDC& dc, const wxColour& color) {
-      dc.SetBackground(wxBrush(color));
+      dc.SetBackground({color});
       dc.Clear();
     }
     
@@ -52,13 +52,13 @@ namespace Examples {
       dc.SetPen(pen);
       dc.DrawRectangle(rect);
     }
-
+    
     static void DrawRectangle(wxPaintDC& dc, const wxPen& pen, int x, int y, int width, int height) {
       dc.SetBrush(*wxTRANSPARENT_BRUSH);
       dc.SetPen(pen);
       dc.DrawRectangle(x, y, width, height);
     }
-
+    
     static void FillRectangle(wxPaintDC& dc, const wxBrush& brush, int x, int y, int width, int height) {
       dc.SetBrush(brush);
       dc.SetPen(*wxTRANSPARENT_PEN);
@@ -92,13 +92,16 @@ namespace Examples {
     static void DrawBezier(wxPaintDC& dc, const wxPen& pen, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
       dc.SetBrush(*wxTRANSPARENT_BRUSH);
       dc.SetPen(pen);
-      wxPoint points[] = {wxPoint(x1, y1), wxPoint(x2, y2), wxPoint(x3, y3), wxPoint(x4, y4)};
+      wxPoint points[] = {{x1, y1}, {x2, y2}, {x3, y3}, {x4, y4}};
       dc.DrawSpline(4, points);
     }
   };
-  
+
   class Application : public wxApp {
-    bool OnInit() override {(new Form())->Show(); return true;}
+    bool OnInit() override {
+      (new Form())->Show();
+      return true;
+    }
   };
 }
 
