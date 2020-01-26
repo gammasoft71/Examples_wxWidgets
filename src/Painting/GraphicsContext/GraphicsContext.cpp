@@ -2,26 +2,26 @@
 #include <wx/graphics.h>
 #include <wx/statline.h>
 
+namespace Examples {
 #if defined(__WXOSX__)
-int PointsToNativeFontGraphicsUntit(int size) {
-  return static_cast<float>(size) / wxScreenDC().GetPPI().GetHeight() * 96.0f;  // font is in pixels and not in points
-}
+  int PointsToNativeFontGraphicsUntit(int size) {
+    return static_cast<float>(size) / wxScreenDC().GetPPI().GetHeight() * 96.0f;  // font is in pixels and not in points
+  }
 #else
-int PointsToNativeFontGraphicsUntit(int size) {
-  return size;  // font is in points
-}
+  int PointsToNativeFontGraphicsUntit(int size) {
+    return size;  // font is in points
+  }
 #endif
 
-namespace Examples {
   class Form : public wxFrame {
   public:
-    Form() : wxFrame(nullptr, wxID_ANY, "GraphicsContext example", wxDefaultPosition, {300, 300}) {
-      SetPosition(wxPoint(100, 100));
-      SetClientSize(wxSize(640, 480));
+    Form() : wxFrame(nullptr, wxID_ANY, "GraphicsContext example") {
+      SetPosition({100, 100});
+      SetClientSize(640, 480);
       
       Bind(wxEVT_PAINT, [&](wxPaintEvent& event) {
         wxPaintDC dc(this);
-        wxGraphicsContext* graphics = wxGraphicsContext::Create(dc);
+        auto graphics = wxGraphicsContext::Create(dc);
       
         graphics->SetPen(*wxRED_PEN);
         wxGraphicsPath path = graphics->CreatePath();
@@ -41,7 +41,10 @@ namespace Examples {
   };
   
   class Application : public wxApp {
-    bool OnInit() override {(new Form())->Show(); return true;}
+    bool OnInit() override {
+      (new Form())->Show();
+      return true;
+    }
   };
 }
 
