@@ -15,7 +15,7 @@ namespace Examples {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "My first application") {
       SetClientSize(300, 300);
-      staticText1->SetFont({PointsToNativeFontGraphicsUntit(32), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_BOLD, false});
+      staticText1->SetFont({PointsToNativeFontGraphicsUntit(32), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_BOLD});
       staticText1->SetForegroundColour({0, 139, 0});
 
       CenterOnScreen();
