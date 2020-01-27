@@ -19,14 +19,14 @@ namespace Examples {
       auto menuItemFileOpen = menuFile->Append(wxID_OPEN);
       menuItemFileOpen->SetBitmap(wxArtProvider::GetBitmap(wxART_FILE_OPEN));
       menuFile->Append(wxID_OPENRECENT, "Open recent");
-      menuFile->Append(wxID_CLOSE, "Close\tCTRL+W");
+      menuFile->Append(wxID_CLOSE, "Close\tCtrl+W");
       menuFile->AppendSeparator();
       auto menuItemFileSave = menuFile->Append(wxID_SAVE);
       menuItemFileSave->SetBitmap(wxArtProvider::GetBitmap(wxART_FILE_SAVE));
       auto menuItemFileSaveAs = menuFile->Append(wxID_SAVEAS);
       menuItemFileSaveAs->SetBitmap(wxArtProvider::GetBitmap(wxART_FILE_SAVE_AS));
       menuFile->AppendSeparator();
-      menuFile->Append(wxID_PAGE_SETUP, "Page Setup...\tCTRL+SHIFT+P");
+      menuFile->Append(wxID_PAGE_SETUP, "Page Setup...\tCtrl+Shift+P");
       auto menuItemFilePrint = menuFile->Append(wxID_PRINT);
       menuItemFilePrint->SetBitmap(wxArtProvider::GetBitmap(wxART_PRINT));
       menuFile->AppendSeparator();
