@@ -10,7 +10,7 @@ struct AppInitializer {
   AppInitializer(wxApp* app) : AppInitializer(app, true) {}
   AppInitializer(bool exit_on_last_frame_closed) : AppInitializer(nullptr, exit_on_last_frame_closed) {}
   AppInitializer(wxApp* app, bool exit_on_last_frame_closed) {
-    //wxDISABLE_DEBUG_SUPPORT();
+    wxDISABLE_DEBUG_SUPPORT();
     wxApp::SetInstance(app ? app : new wxApp());
     int argc = 0;
     wxEntryStart(argc, (wxChar**)NULL);
@@ -19,32 +19,21 @@ struct AppInitializer {
     wxInitAllImageHandlers();
 #if __WXOSX__
     wxMenuBar* menubar = new wxMenuBar();
-    wxMenu* menuWindow = new wxMenu();
-    wxMenuItem* aboutMenuItem = new wxMenuItem(menuWindow, wxID_ANY, "About");
-    
-    menubar->Append(menuWindow, "Window");
     menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
-      if (event.GetId() == wxID_ABOUT) wxAboutBox(wxAboutDialogInfo());
       if (event.GetId() == wxID_EXIT) {
-        bool can_quit = true;
-        for (wxWindow* window : wxTopLevelWindows) {
-          can_quit = window->Close();
-          if (!can_quit) break;
-        }
+        auto can_quit = true;
+        for (auto window : wxTopLevelWindows)
+          if (!(can_quit = window->Close())) break;
         if (can_quit) wxTheApp->ExitMainLoop();
       } else event.Skip();
     });
-    
-    wxApp::s_macAboutMenuItemId = aboutMenuItem->GetId();
-#if wxMAJOR_VERSION >= 3 && wxMINOR_VERSION >= 1
-    wxApp::s_macWindowMenuTitleName = "Window";
-#endif
     wxMenuBar::MacSetCommonMenuBar(menubar);
 #endif
   }
   
   ~AppInitializer() {
     if (!wxTheApp) return;
+    wxImage::CleanUpHandlers();
     wxTheApp->OnExit();
     wxEntryCleanup();
     delete wxTheApp;

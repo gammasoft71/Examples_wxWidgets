@@ -5,6 +5,11 @@
 namespace Examples {
   enum wxOwnedID {
     wxID_OPENRECENT = 2,
+    wxID_OPENRECENTFILE1,
+    wxID_OPENRECENTFILE2,
+    wxID_OPENRECENTFILE3,
+    wxID_OPENRECENTFILE4,
+    wxID_OPENRECENTFILE5,
     wxID_SHOW,
     wxID_HIDE,
   };
@@ -18,7 +23,14 @@ namespace Examples {
       menuItemFileNew->SetBitmap(wxArtProvider::GetBitmap(wxART_NEW));
       auto menuItemFileOpen = menuFile->Append(wxID_OPEN);
       menuItemFileOpen->SetBitmap(wxArtProvider::GetBitmap(wxART_FILE_OPEN));
-      menuFile->Append(wxID_OPENRECENT, "Open recent");
+      menuFileOpenRecent->Append(wxID_OPENRECENTFILE1, "File 1");
+      menuFileOpenRecent->Append(wxID_OPENRECENTFILE2, "File 2");
+      menuFileOpenRecent->Append(wxID_OPENRECENTFILE3, "File 3");
+      menuFileOpenRecent->Append(wxID_OPENRECENTFILE4, "File 4");
+      menuFileOpenRecent->Append(wxID_OPENRECENTFILE5, "File 5");
+      auto menuItemFileOpenRecent = menuFile->AppendSubMenu(menuFileOpenRecent, "Open recent");
+      auto menuFileOpenRecent = new wxMenu();
+      menuItemFileOpenRecent->SetSubMenu(menuFileOpenRecent);
       menuFile->Append(wxID_CLOSE, "Close\tCtrl+W");
       menuFile->AppendSeparator();
       auto menuItemFileSave = menuFile->Append(wxID_SAVE);
@@ -79,6 +91,7 @@ namespace Examples {
     wxListBox* listBox1 = new wxListBox(this, wxID_ANY, {10, 10});
     wxMenuBar* mainMenu = new wxMenuBar();
     wxMenu* menuFile = new wxMenu();
+    wxMenu* menuFileOpenRecent = new wxMenu();
     wxMenu* menuEdit = new wxMenu();
     wxMenu* menuView = new wxMenu();
     wxMenu* menuWindow = new wxMenu();
