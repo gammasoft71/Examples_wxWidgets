@@ -23,10 +23,12 @@ int main(int argc, char* argv[]) {
   menuBar->Append(menuFile, "&File");
 
   auto menuWindow = new wxMenu();
+#if defined(__WXOSX__)
+  wxApp::s_macWindowMenuTitleName = "&Window";
+#endif
   menuWindow->AppendSeparator();
   menuWindow->Append(wxID_ANY, "New frame");
   menuWindow->Append(wxID_ANY, "Hide");
-  wxApp::s_macWindowMenuTitleName = "&Window";
   menuBar->Append(menuWindow, "&Window");
 
   auto menuHelp = new wxMenu();
