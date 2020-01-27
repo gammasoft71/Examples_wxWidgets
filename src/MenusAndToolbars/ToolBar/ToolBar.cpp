@@ -31,6 +31,7 @@ namespace Examples {
       });
       
       choice->Append({"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
+      choice->SetSelection(0);
       choice->Bind(wxEVT_CHOICE, [&](wxCommandEvent& e) {
         listBox1->Append(wxString::Format("Choose item : %s", choice->GetStringSelection()));
       });
