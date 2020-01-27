@@ -35,14 +35,12 @@ namespace Examples {
         listBox1->Append(wxString::Format("Choose item : %s", choice->GetStringSelection()));
       });
       
-      listBox1->SetSize(panel->GetSize() - wxSize(20, 20));
     }
 
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxListBox* listBox1 = new wxListBox(this, wxID_ANY, {10, 10});
     wxToolBar* toolBar = new wxToolBar(this, wxID_ANY, wxDefaultPosition, {100, 25});
     wxChoice* choice = new wxChoice(toolBar, wxID_ANY);
-    wxListBox* listBox1 = new wxListBox(panel, wxID_ANY, {10, 10});
   };
 
   class Application : public wxApp {
