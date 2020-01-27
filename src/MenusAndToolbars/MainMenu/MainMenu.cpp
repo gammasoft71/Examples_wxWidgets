@@ -73,18 +73,16 @@ namespace Examples {
         if (event.GetId() == wxID_EXIT) event.Skip();
       });
 
-      listBox1->SetSize(panel->GetSize() - wxSize(20, 20));
     }
 
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxListBox* listBox1 = new wxListBox(this, wxID_ANY, {10, 10});
     wxMenuBar* mainMenu = new wxMenuBar();
     wxMenu* menuFile = new wxMenu();
     wxMenu* menuEdit = new wxMenu();
     wxMenu* menuView = new wxMenu();
     wxMenu* menuWindow = new wxMenu();
     wxMenu* menuHelp = new wxMenu();
-    wxListBox* listBox1 = new wxListBox(panel, wxID_ANY, {10, 10});
   };
 
   class Application : public wxApp {
