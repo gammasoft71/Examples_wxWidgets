@@ -9,19 +9,19 @@ namespace Examples {
       SetClientSize(640, 480);
       SetToolBar(toolBar);
     
-      toolBar->AddTool(wxID_NEW, "&New", wxArtProvider::GetBitmap(wxART_NEW));
-      toolBar->AddTool(wxID_OPEN, "&Open...", wxArtProvider::GetBitmap(wxART_FILE_OPEN));
-      toolBar->AddTool(wxID_SAVE, "&Save", wxArtProvider::GetBitmap(wxART_FILE_SAVE));
+      toolBar->AddTool(wxID_NEW, "&New", wxArtProvider::GetBitmap(wxART_NEW, wxART_TOOLBAR));
+      toolBar->AddTool(wxID_OPEN, "&Open...", wxArtProvider::GetBitmap(wxART_FILE_OPEN, wxART_TOOLBAR));
+      toolBar->AddTool(wxID_SAVE, "&Save", wxArtProvider::GetBitmap(wxART_FILE_SAVE, wxART_TOOLBAR));
       toolBar->AddSeparator();
-      toolBar->AddTool(wxID_CUT, "Cu&t", wxArtProvider::GetBitmap(wxART_CUT));
-      toolBar->AddTool(wxID_COPY, "&Copy", wxArtProvider::GetBitmap(wxART_COPY));
-      toolBar->AddTool(wxID_PASTE, "&Paste", wxArtProvider::GetBitmap(wxART_PASTE));
+      toolBar->AddTool(wxID_CUT, "Cu&t", wxArtProvider::GetBitmap(wxART_CUT, wxART_TOOLBAR));
+      toolBar->AddTool(wxID_COPY, "&Copy", wxArtProvider::GetBitmap(wxART_COPY, wxART_TOOLBAR));
+      toolBar->AddTool(wxID_PASTE, "&Paste", wxArtProvider::GetBitmap(wxART_PASTE, wxART_TOOLBAR));
       toolBar->AddSeparator();
-      toolBar->AddTool(wxID_PRINT, "&Print...", wxArtProvider::GetBitmap(wxART_PRINT));
+      toolBar->AddTool(wxID_PRINT, "&Print...", wxArtProvider::GetBitmap(wxART_PRINT, wxART_TOOLBAR));
       toolBar->AddSeparator();
       toolBar->AddControl(choice);
       toolBar->AddStretchableSpace();
-      toolBar->AddTool(wxID_ABOUT, "&About...", wxArtProvider::GetBitmap(wxART_HELP));
+      toolBar->AddTool(wxID_ABOUT, "&About...", wxArtProvider::GetBitmap(wxART_HELP, wxART_TOOLBAR));
 
       toolBar->Realize();
       toolBar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {

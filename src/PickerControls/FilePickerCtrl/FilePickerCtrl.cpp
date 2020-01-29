@@ -1,5 +1,6 @@
 #include <wx/wx.h>
 #include <wx/filepicker.h>
+#include <wx/sysopt.h>
 
 namespace Examples {
   class Frame : public wxFrame {
@@ -18,6 +19,7 @@ namespace Examples {
 
   class Application : public wxApp {
     bool OnInit() override {
+      wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
       (new Frame())->Show();
       return true;
     }

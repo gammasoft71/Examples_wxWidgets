@@ -1,5 +1,6 @@
 #include <wx/wx.h>
 #include <wx/filedlg.h>
+#include <wx/sysopt.h>
 
 namespace Examples {
   class Frame : public wxFrame {
@@ -7,6 +8,7 @@ namespace Examples {
     Frame() : wxFrame(nullptr, wxID_ANY, "OpenFileDialog example", wxDefaultPosition, {300, 300}) {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         wxFileDialog openFileDialog(this, wxEmptyString, wxEmptyString, wxEmptyString, "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", wxFD_OPEN|wxFD_FILE_MUST_EXIST);
+        openFileDialog.SetFilterIndex(0);
         if (openFileDialog.ShowModal() == wxID_OK) {
           label->SetLabelText(wxString::Format("File = %s",  openFileDialog.GetPath()));
         }
@@ -21,6 +23,7 @@ namespace Examples {
 
   class Application : public wxApp {
     bool OnInit() override {
+      wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
       (new Frame())->Show();
       return true;
     }
