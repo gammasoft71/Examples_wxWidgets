@@ -1,5 +1,7 @@
 #pragma once
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/menu.h>
+#include <wx/sysopt.h>
 
 struct AppInitializer {
   AppInitializer() : AppInitializer(nullptr, true) {}
@@ -7,6 +9,7 @@ struct AppInitializer {
   AppInitializer(bool exit_on_last_frame_closed) : AppInitializer(nullptr, exit_on_last_frame_closed) {}
   AppInitializer(wxApp* app, bool exit_on_last_frame_closed) {
     wxDISABLE_DEBUG_SUPPORT();
+    wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
     wxApp::SetInstance(app ? app : new wxApp());
     int argc = 0;
     wxEntryStart(argc, (wxChar**)NULL);

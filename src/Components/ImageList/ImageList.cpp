@@ -1,6 +1,7 @@
 #include <wx/wx.h>
 #include <wx/filename.h>
 #include <wx/imaglist.h>
+#include <wx/sysopt.h>
 #include <wx/settings.h>
 
 namespace Examples {
@@ -69,6 +70,7 @@ namespace Examples {
 
   class Application : public wxApp {
     bool OnInit() override {
+      wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
       new Frame();
       return true;
     }
