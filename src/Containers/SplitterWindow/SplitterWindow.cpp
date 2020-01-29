@@ -4,7 +4,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "SplitterWindow example", wxDefaultPosition) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "SplitterWindow example") {
       SetClientSize(300, 300);
       splitterWindowLeft->SetSplitMode(wxSPLIT_VERTICAL);
       splitterWindowLeft->SplitVertically(leftPanel1, leftPanel2, 70);

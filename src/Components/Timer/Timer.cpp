@@ -13,7 +13,7 @@ namespace Examples {
 
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Timer example", wxDefaultPosition) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "Timer example") {
       SetClientSize(230, 130);
       label->SetFont({PointsToNativeFontGraphicsUntit(48), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_NORMAL, false, "Arial"});
       label->SetForegroundColour({30, 144, 255});

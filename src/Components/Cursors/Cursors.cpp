@@ -18,7 +18,7 @@ namespace Examples {
     };
 
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Cursor example", wxDefaultPosition) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "Cursor example") {
       SetClientSize(360, 240);
       
       for (auto& cursorNamePair : cursorNamePairs)

@@ -5,7 +5,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Toolbar example", wxDefaultPosition) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "Toolbar example") {
       SetClientSize(640, 480);
       SetToolBar(toolBar);
     
