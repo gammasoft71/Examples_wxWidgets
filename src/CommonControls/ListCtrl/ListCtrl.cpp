@@ -18,14 +18,14 @@ namespace Examples {
     Frame() : wxFrame(nullptr, wxID_ANY, "ListView example") {
       SetClientSize(350, 260);
 
-      imageListLarge.Add({aiIcon48});
-      imageListLarge.Add({aviIcon48});
-      imageListLarge.Add({bmpIcon48});
+      imageListLarge.Add(wxBitmap {aiIcon48});
+      imageListLarge.Add(wxBitmap {aviIcon48});
+      imageListLarge.Add(wxBitmap {bmpIcon48});
       listCtrl->SetImageList(&imageListLarge, wxIMAGE_LIST_NORMAL);
       
-      imageListSmall.Add({aiIcon16});
-      imageListSmall.Add({aviIcon16});
-      imageListSmall.Add({bmpIcon16});
+      imageListSmall.Add(wxBitmap {aiIcon16});
+      imageListSmall.Add(wxBitmap {aviIcon16});
+      imageListSmall.Add(wxBitmap {bmpIcon16});
       listCtrl->SetImageList(&imageListSmall, wxIMAGE_LIST_SMALL);
 
       listCtrl->AppendColumn("Name", wxLIST_FORMAT_LEFT, 80);

@@ -3,6 +3,7 @@
 #include <wx/Slider.h>
 #include <wx/frame.h>
 #include <wx/panel.h>
+#include <wx/stattext.h>
 
 namespace Examples {
   class Frame : public wxFrame {
