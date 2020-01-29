@@ -25,7 +25,8 @@ namespace Examples {
         listBoxRight->Delete(listBoxRight->GetSelection());
       });
       
-      listBoxLeft->Append({"draw", "cut", "paste", "delete", "open", "close", "remove", "edit", "find", "increment", "decrement", "write", "read", "post", "build", "make", "release", "create", "choose", "erase"});
+      for (auto item : {"draw", "cut", "paste", "delete", "open", "close", "remove", "edit", "find", "increment", "decrement", "write", "read", "post", "build", "make", "release", "create", "choose", "erase"})
+        listBoxLeft->Append(item);
       listBoxLeft->SetSelection(0);
     }
     
