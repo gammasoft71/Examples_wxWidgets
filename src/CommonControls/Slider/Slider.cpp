@@ -1,6 +1,6 @@
 #include <wx/app.h>
 #include <wx/gauge.h>
-#include <wx/Slider.h>
+#include <wx/slider.h>
 #include <wx/frame.h>
 #include <wx/panel.h>
 #include <wx/stattext.h>
