@@ -65,7 +65,7 @@ namespace Examples {
     
   private:
     wxPanel* panel = new wxPanel(this);
-    wxListCtrl* listCtrl = new wxListCtrl(panel, wxID_ANY, {10, 10}, {330, 200}, wxLC_REPORT | wxSIMPLE_BORDER);
+    wxListCtrl* listCtrl = new wxListCtrl(panel, wxID_ANY, {10, 10}, {330, 200}, wxLC_REPORT|wxSIMPLE_BORDER);
     wxChoice* choice1 = new wxChoice(panel, wxID_ANY, {10, 220});
     wxImageList imageListLarge {48, 48};
     wxImageList imageListSmall {16, 16};
