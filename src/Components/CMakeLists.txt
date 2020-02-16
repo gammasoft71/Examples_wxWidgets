@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 project(Components)
 
 add_subdirectory("Config")
+add_subdirectory("Config2")
 add_subdirectory("Cursors")
 add_subdirectory("ImageList")
 add_subdirectory("Timer")

@@ -1,11 +1,11 @@
 #include <wx/wx.h>
 #include <wx/clrpicker.h>
-#include <wx/config.h>
+#include "Settings.hpp"
 
-namespace Examples {
+namespace Config2 {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Config example") {
+    Frame() : wxFrame(nullptr, wxID_ANY, Properties::Settings::DefaultSettings().Caption()) {
       reload_config();
       
       colourPicker->Bind(wxEVT_COLOURPICKER_CHANGED, [&](wxColourPickerEvent& event) {
@@ -28,26 +28,23 @@ namespace Examples {
 
   private:
     void reload_config() {
-      auto backgroundColor = panel->GetBackgroundColour();
-      config.Read("BackgroundColor", &backgroundColor, defaultBackgroundColor);
-      panel->SetBackgroundColour(backgroundColor);
-      SetPosition(wxPoint(config.Read("Left", 100), config.Read("Top", 50)));
-      SetSize(config.Read("Width", 360), config.Read("Height", 80));
+      Properties::Settings::DefaultSettings().Reload();
+      SetPosition(Properties::Settings::DefaultSettings().Position());
+      SetSize(Properties::Settings::DefaultSettings().Size());
+      panel->SetBackgroundColour(Properties::Settings::DefaultSettings().BackgroundColour());
+      colourPicker->SetColour(Properties::Settings::DefaultSettings().BackgroundColour());
       Refresh();
-      colourPicker->SetColour(panel->GetBackgroundColour());
     }
     
     void save_config() {
-      config.Write("BackgroundColor", panel->GetBackgroundColour());
-      config.Write("Left", this->GetPosition().x);
-      config.Write("Top", this->GetPosition().y);
-      config.Write("Width", this->GetSize().GetWidth());
-      config.Write("Height", this->GetSize().GetHeight());
-      config.Flush();
+      Properties::Settings::DefaultSettings().Position(GetPosition());
+      Properties::Settings::DefaultSettings().Size(GetSize());
+      Properties::Settings::DefaultSettings().BackgroundColour(panel->GetBackgroundColour());
+      Properties::Settings::DefaultSettings().Save();
     }
     
     void reset_config() {
-      config.DeleteAll();
+      Properties::Settings::DefaultSettings().Reset();
       reload_config();
     }
 
@@ -57,7 +54,6 @@ namespace Examples {
     wxButton* reloadButton = new wxButton(panel, wxID_ANY, "&Reload", {170, 10}, {75, 25});
     wxButton* resetButton = new wxButton(panel, wxID_ANY, "R&eset", {250, 10}, {75, 25});
     wxColour defaultBackgroundColor = panel->GetBackgroundColour();
-    wxConfig config;
   };
 
   class Application : public wxApp {
@@ -68,4 +64,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(Config2::Application);
