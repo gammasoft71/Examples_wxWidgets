@@ -13,7 +13,7 @@ namespace Examples {
   private:
     wxPanel* panel = new wxPanel(this);
     wxStaticText* label = new wxStaticText(panel, wxID_ANY, "Path = ", wxPoint(10, 50));
-    wxDirPickerCtrl* picker = new wxDirPickerCtrl(panel, wxID_ANY, wxEmptyString, wxEmptyString, {10, 10});
+    wxDirPickerCtrl* picker = new wxDirPickerCtrl(panel, wxID_ANY, wxEmptyString, wxEmptyString, {10, 10}, wxDefaultSize, wxDIRP_DEFAULT_STYLE|wxDIRP_SMALL);
   };
 
   class Application : public wxApp {
