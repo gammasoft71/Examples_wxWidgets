@@ -3,3 +3,4 @@ project(HelloWorld)
 
 add_subdirectory(HelloWorld)
 add_subdirectory(HelloWorldInWxWidgets)
+add_subdirectory(HelloWorldMessageDialog)
