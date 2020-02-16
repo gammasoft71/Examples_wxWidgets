@@ -9,7 +9,7 @@ namespace Examples {
       read_config();
       
       colourPicker->Bind(wxEVT_COLOURPICKER_CHANGED, [&](wxColourPickerEvent& event) {
-        SetBackgroundColour(event.GetColour());
+        panel->SetBackgroundColour(event.GetColour());
         Refresh();
       });
       
@@ -28,17 +28,17 @@ namespace Examples {
 
   private:
     void read_config() {
-      auto backgroundColor = GetBackgroundColour();
+      auto backgroundColor = panel->GetBackgroundColour();
       config.Read("BackgroundColor", &backgroundColor, defaultBackgroundColor);
-      wxWindow::SetBackgroundColour(backgroundColor);
+      panel->SetBackgroundColour(backgroundColor);
       SetPosition(wxPoint(config.Read("Left", 100), config.Read("Top", 50)));
       SetSize(config.Read("Width", 360), config.Read("Height", 80));
       Refresh();
-      colourPicker->SetColour(this->GetBackgroundColour());
+      colourPicker->SetColour(panel->GetBackgroundColour());
     }
     
     void save_config() {
-      config.Write("BackgroundColor", GetBackgroundColour());
+      config.Write("BackgroundColor", panel->GetBackgroundColour());
       config.Write("Left", this->GetPosition().x);
       config.Write("Top", this->GetPosition().y);
       config.Write("Width", this->GetSize().GetWidth());
@@ -51,13 +51,13 @@ namespace Examples {
       read_config();
     }
 
-    wxConfig config;
-    wxColour defaultBackgroundColor = GetBackgroundColour();
     wxPanel* panel = new wxPanel(this);
     wxColourPickerCtrl* colourPicker = new wxColourPickerCtrl(panel, wxID_ANY, {0, 0, 0}, {10, 10}, {75, 25});
     wxButton* saveButton = new wxButton(panel, wxID_ANY, "&Save", {90, 10}, {75, 25});
     wxButton* reloadButton = new wxButton(panel, wxID_ANY, "&Reload", {170, 10}, {75, 25});
     wxButton* resetButton = new wxButton(panel, wxID_ANY, "R&eset", {250, 10}, {75, 25});
+    wxColour defaultBackgroundColor = panel->GetBackgroundColour();
+    wxConfig config;
   };
 
   class Application : public wxApp {
