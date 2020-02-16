@@ -28,7 +28,9 @@ namespace Examples {
 
   private:
     void read_config() {
-      SetBackgroundColour(config.Read("BackColor", defaultBackgroundColor.GetAsString()));
+      auto backgroundColor = GetBackgroundColour();
+      config.Read("BackgroundColor", &backgroundColor, defaultBackgroundColor);
+      wxWindow::SetBackgroundColour(backgroundColor);
       SetPosition(wxPoint(config.Read("Left", 100), config.Read("Top", 50)));
       SetSize(config.Read("Width", 360), config.Read("Height", 80));
       Refresh();
@@ -36,7 +38,7 @@ namespace Examples {
     }
     
     void save_config() {
-      config.Write("BackColor", GetBackgroundColour().GetAsString());
+      config.Write("BackgroundColor", GetBackgroundColour());
       config.Write("Left", this->GetPosition().x);
       config.Write("Top", this->GetPosition().y);
       config.Write("Width", this->GetSize().GetWidth());
