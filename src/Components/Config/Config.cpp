@@ -1,6 +1,7 @@
 #include <wx/wx.h>
 #include <wx/clrpicker.h>
 #include <wx/config.h>
+#include <wx/settings.h>
 
 namespace Examples {
   class Frame : public wxFrame {
@@ -29,7 +30,7 @@ namespace Examples {
   private:
     void reload_config() {
       auto backgroundColor = panel->GetBackgroundColour();
-      config.Read("BackgroundColor", &backgroundColor, defaultBackgroundColor);
+      config.Read("BackgroundColor", &backgroundColor, wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
       panel->SetBackgroundColour(backgroundColor);
       SetPosition(wxPoint(config.Read("Left", 100), config.Read("Top", 50)));
       SetSize(config.Read("Width", 360), config.Read("Height", 80));
@@ -56,7 +57,6 @@ namespace Examples {
     wxButton* saveButton = new wxButton(panel, wxID_ANY, "&Save", {90, 10}, {75, 25});
     wxButton* reloadButton = new wxButton(panel, wxID_ANY, "&Reload", {170, 10}, {75, 25});
     wxButton* resetButton = new wxButton(panel, wxID_ANY, "R&eset", {250, 10}, {75, 25});
-    wxColour defaultBackgroundColor = panel->GetBackgroundColour();
     wxConfig config;
   };
 
