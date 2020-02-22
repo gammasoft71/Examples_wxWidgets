@@ -81,7 +81,7 @@ elseif (UNIX)
     "Encoding=UTF-8\n"
     "Comment=${PROJECT_NAME} example\n"
     "Exec=${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}\n"
-    "Icon=Gammasoft.png"
+    "Icon=Gammasoft.png\n"
     "Name=${PROJECT_NAME}\n"
     "NoDisplay=true\n"
     "Terminal=false\n"
