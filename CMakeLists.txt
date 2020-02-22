@@ -2,12 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 project(wxWidgetsExamples)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-
-if ("${CMAKE_BUILD_TYPE}" STREQUAL "")
-  set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR})
-else()
-  set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/${CMAKE_BUILD_TYPE})
-endif()
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/${CMAKE_BUILD_TYPE})
 
 add_subdirectory("src/Application")
 add_subdirectory("src/CommonControls")
