@@ -15,7 +15,7 @@ namespace Examples {
 
   private:
     wxPanel* panel = new wxPanel(this);
-    wxStaticBitmap* staticBitmap1 = new wxStaticBitmap(this, wxID_ANY, wxNullBitmap, {20, 20}, {100, 50});
+    wxStaticBitmap* staticBitmap1 = new wxStaticBitmap(panel, wxID_ANY, wxNullBitmap, {20, 20}, {100, 50});
   };
 
   class Application : public wxApp {
