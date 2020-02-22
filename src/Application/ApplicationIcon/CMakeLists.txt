@@ -75,6 +75,22 @@ elseif (APPLE)
   set_source_files_properties(${CMAKE_CURRENT_SOURCE_DIR}/Resources/Gammasoft.png PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
   set(MACOSX_BUNDLE_ICON_FILE "Gammasoft.icns")
 elseif (UNIX)
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/resources/${PROJECT_NAME}.desktop
+    "[Desktop Entry]\n"
+    "Type=Application\n"
+    "Encoding=UTF-8\n"
+    "Comment=${PROJECT_NAME} example\n"
+    "Exec=${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}\n"
+    "Icon=Gammasoft.png"
+    "Name=${PROJECT_NAME}\n"
+    "NoDisplay=true\n"
+    "Terminal=false\n"
+    "Version=1.0.0\n"
+  )
+  
+  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Resources/Gammasoft.png $ENV{HOME}/.local/share/icons/hicolor/512x512/apps/Gammasoft.png COPYONLY)
+  file(COPY ${CMAKE_CURRENT_BINARY_DIR}/resources/${PROJECT_NAME}.desktop DESTINATION "$ENV{HOME}/.local/share/applications" FILE_PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ)
+  configure_file(${CMAKE_CURRENT_BINARY_DIR}/resources/${PROJECT_NAME}.desktop $ENV{HOME}/.local/share/applications/${PROJECT_NAME}.desktop COPYONLY)
 endif()
 
 set(CMAKE_CXX_STANDARD 17)
