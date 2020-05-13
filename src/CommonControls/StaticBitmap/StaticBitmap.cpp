@@ -21,8 +21,8 @@ namespace Examples {
         staticBitmap1->SetScaleMode(static_cast<wxStaticBitmap::ScaleMode>(reinterpret_cast<long long>(choice1->GetClientData(choice1->GetSelection()))));
       });
 
-      boxSizer->Add(choice1, 0, wxGROW, 20);
-      boxSizer->Add(staticBitmap1, 1, wxEXPAND|wxALL, 20);
+      boxSizer->Add(choice1, 0, wxGROW|wxTOP|wxWEST|wxEAST, 20);
+      boxSizer->Add(staticBitmap1, 1, wxGROW|wxALL, 20);
       staticBitmap1->SetScaleMode(static_cast<wxStaticBitmap::ScaleMode>(reinterpret_cast<long long>(choice1->GetClientData(choice1->GetSelection()))));
       staticBitmap1->SetWindowStyle(wxBORDER_SIMPLE);
       wxInitAllImageHandlers();
