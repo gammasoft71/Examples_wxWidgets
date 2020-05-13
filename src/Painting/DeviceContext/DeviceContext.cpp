@@ -12,9 +12,9 @@ namespace Examples {
   }
 #endif
 
-  class Form : public wxFrame {
+  class Window : public wxFrame {
   public:
-    Form() : wxFrame(nullptr, wxID_ANY, "Paint example") {
+    Window() : wxFrame(nullptr, wxID_ANY, "Paint example") {
       SetPosition({100, 100});
       SetClientSize(640, 480);
       
@@ -99,7 +99,7 @@ namespace Examples {
 
   class Application : public wxApp {
     bool OnInit() override {
-      (new Form())->Show();
+      (new Window())->Show();
       return true;
     }
   };

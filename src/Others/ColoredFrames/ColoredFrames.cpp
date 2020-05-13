@@ -7,7 +7,7 @@ using namespace std;
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Main Form", {wxSystemSettings::GetMetric(wxSYS_SCREEN_X) - 320, 20}, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "Main Window", {wxSystemSettings::GetMetric(wxSYS_SCREEN_X) - 320, 20}, {300, 300}) {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         auto frame = new wxFrame(this, wxID_ANY, *colorNamesIterator, location, {300, 300});
         frame->SetBackgroundColour(wxTheColourDatabase->Find(*colorNamesIterator));

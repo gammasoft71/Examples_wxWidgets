@@ -12,9 +12,9 @@ namespace Examples {
     wxColour GetColour() const {return GetBackgroundColour();}
   };
   
-  class Form : public wxFrame {
+  class Window : public wxFrame {
   public:
-    Form() : wxFrame(nullptr, wxID_ANY, "Lines example", wxDefaultPosition, {300, 300}) {
+    Window() : wxFrame(nullptr, wxID_ANY, "Lines example", wxDefaultPosition, {300, 300}) {
       SetClientSize(300, 300);
     }
     
@@ -29,7 +29,7 @@ namespace Examples {
   
   class Application : public wxApp {
     bool OnInit() override {
-      (new Form())->Show();
+      (new Window())->Show();
       return true;
     }
   };
