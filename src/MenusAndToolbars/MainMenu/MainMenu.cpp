@@ -103,7 +103,11 @@ namespace Examples {
       mainMenu->Append(menuEdit, "&Edit");
       mainMenu->Append(menuView, "&View");
       mainMenu->Append(menuOptions, "&Options");
-      mainMenu->Append(menuWindow, "&Window");
+#if defined(__WXOSX__)
+      // Forces the "Window" menu to be placed in front of the "Help" menu.
+      // If the "Window" menu is not specifiede, it will be created automatically but, in this case, after the "Help" menu.
+      //mainMenu->Append(new wxMenu(), "&Window");
+#endif
       mainMenu->Append(menuHelp, "&Help");
 
       SetMenuBar(mainMenu);
@@ -111,9 +115,8 @@ namespace Examples {
       mainMenu->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
         static std::map<int, std::string> names = {{wxID_NEW, "File/New"}, {wxID_OPEN, "File/Open..."}, {ID_OPENRECENTFILE1, "File/Open recent/File 1"}, {ID_OPENRECENTFILE2, "File/Open recent/File 2"}, {ID_OPENRECENTFILE3, "File/Open recent/File 3"}, {ID_OPENRECENTFILE4, "File/Open recent/File 4"}, {ID_OPENRECENTFILE5, "File/Open recent/File 5"}, {wxID_CLOSE, "File/Close"}, {wxID_SAVE, "File/Save"}, {wxID_SAVEAS, "File/Save as..."}, {wxID_PAGE_SETUP, "File/Page setup..."}, {wxID_PRINT, "File/Print..."}, {wxID_EXIT, "File/Quit"}, {wxID_UNDO, "Edit/Undo"}, {wxID_REDO, "Edit/Redo"}, {wxID_CUT, "Edit/Cut"}, {wxID_COPY, "Edit/Copy"}, {wxID_PASTE, "Edit/Paste"}, {wxID_SELECTALL, "Edit/Select All"}, {wxID_PREFERENCES, "Edit/Preferences"}, {wxID_BACKWARD, "View/Back"}, {wxID_FORWARD, "View/Forward"}, {ID_SHOW, "View/Show"}, {ID_HIDE, "View/Hide"}, {ID_OPTIONA, "Options/Option A"}, {ID_OPTIONB, "Options/Option B"}, {ID_OPTIONC, "Options/Option C"}, {ID_OPTIOND, "Options/Option D"}, {ID_OPTIONE, "Options/Option E"}, {ID_OPTIONF, "Options/Option F"}, {ID_OPTIONG, "Options/Option G"}, {ID_OPTIONH, "Options/Option H"}, {ID_OPTIONI, "Options/Option I"}, {wxID_HELP_CONTEXT, "Help/Context"}, {wxID_HELP_INDEX, "Help/Index"}, {wxID_HELP_SEARCH, "Help/Search"}, {wxID_ABOUT, "Help/About"}, {wxID_ANY, "Any"}};
         listBox1->Append(names.find(event.GetId()) != names.end() ? names[event.GetId()] : "Unknown");
-        event.Skip();
+        event.StopPropagation();
       });
-
     }
 
   private:
@@ -124,7 +127,6 @@ namespace Examples {
     wxMenu* menuEdit = new wxMenu();
     wxMenu* menuView = new wxMenu();
     wxMenu* menuOptions = new wxMenu();
-    wxMenu* menuWindow = new wxMenu();
     wxMenu* menuHelp = new wxMenu();
   };
 
