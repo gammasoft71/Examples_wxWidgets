@@ -16,6 +16,7 @@ namespace Examples {
   public:
     Frame1() : wxFrame(nullptr, wxID_ANY, "Frame1") {
       SetClientSize(300, 300);
+      SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
       auto font = GetFont();
       font.SetPointSize(PointsToNativeFontGraphicsUntit(18));
       font.SetWeight(wxFontWeight::wxFONTWEIGHT_BOLD);
@@ -39,7 +40,6 @@ namespace Examples {
     void AppActive(bool value) {appActive = value;}
 
   private:
-    wxPanel* panel = new wxPanel(this);
     bool appActive = true;
   };
 
