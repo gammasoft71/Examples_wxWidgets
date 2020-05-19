@@ -8,16 +8,16 @@ namespace Examples {
       SetClientSize(390, 270);
       
       tabControl1->AddPage(tabPageLightPink, "Red");
-      tabPageLightPink->SetBackgroundColour(wxColourDatabase().Find("Red"));
+      tabPageLightPink->SetBackgroundColour(wxTheColourDatabase->Find("Red"));
 
       tabControl1->AddPage(tabPageLightGreen, "Green");
-      tabPageLightGreen->SetBackgroundColour(wxColourDatabase().Find("Forest Green"));
+      tabPageLightGreen->SetBackgroundColour(wxTheColourDatabase->Find("Forest Green"));
 
       tabControl1->AddPage(tabPageLightBlue, "Blue");
-      tabPageLightBlue->SetBackgroundColour(wxColourDatabase().Find("Blue"));
+      tabPageLightBlue->SetBackgroundColour(wxTheColourDatabase->Find("Blue"));
 
       tabControl1->AddPage(tabPageLightYellow, "Yellow");
-      tabPageLightYellow->SetBackgroundColour(wxColourDatabase().Find("Yellow"));
+      tabPageLightYellow->SetBackgroundColour(wxTheColourDatabase->Find("Yellow"));
     }
 
   private:

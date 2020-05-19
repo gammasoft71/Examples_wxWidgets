@@ -13,12 +13,10 @@ namespace Examples {
 
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "My first application") {
+    Frame() : wxFrame(nullptr, wxID_ANY, "Hello world (label)") {
       SetClientSize(300, 300);
       staticText1->SetFont({PointsToNativeFontGraphicsUntit(32), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_BOLD});
-      staticText1->SetForegroundColour({0, 139, 0});
-
-      CenterOnScreen();
+      staticText1->SetForegroundColour(wxTheColourDatabase->Find("Forest Green"));
     }
     
   private:
