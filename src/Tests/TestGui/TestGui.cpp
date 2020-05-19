@@ -233,7 +233,7 @@ int main(int argc, char* argv[]) {
   auto frame = new wxFrame(nullptr, wxID_ANY, "TestGui", wxDefaultPosition, {300, 300});
   //auto panelMain = new wxPanel(frame);
  
-  menu_bar menu_bar {
+  frame->SetMenuBar(MakeMenuBar({
     {
       {"&File", {
         {"&New", VK_COMMAND_MODIFIER|VK_N, ToImage(wxART_NEW)},
@@ -293,10 +293,12 @@ int main(int argc, char* argv[]) {
         {"&About"},
       }},
     }
-  };
+  }));
   
-  frame->SetMenuBar(MakeMenuBar(menu_bar));
-  
+  frame->SetMenuBar(MakeMenuBar({}));
+  //frame->SetMenuBar(NULL);
+  frame->SetMenuBar(new wxMenuBar);
+
   context_menu context_menu {
     {
       {"Undo", ToImage(wxART_UNDO)},
