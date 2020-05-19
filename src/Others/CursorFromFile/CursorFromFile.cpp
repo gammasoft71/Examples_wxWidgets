@@ -3,7 +3,9 @@
 #include <wx/filedlg.h>
 #include <wx/frame.h>
 #include <wx/panel.h>
+#include <wx/settings.h>
 #include <wx/sizer.h>
+#include <wx/sysopt.h>
 
 namespace Examples {
   class Frame : public wxFrame {
@@ -27,11 +29,13 @@ namespace Examples {
     wxPanel* panel = new wxPanel(this);
     wxBoxSizer* boxSizer = new wxBoxSizer(wxHORIZONTAL);
     wxButton* buttonOpenCursor = new wxButton(panel, wxID_ANY, "Open cursor");
-    wxPanel* testZone = new wxPanel(panel, wxID_ANY, wxDefaultPosition, {150, 200}, wxBORDER_SUNKEN);
+    wxPanel* testZone = new wxPanel(panel, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxBORDER_SUNKEN);
   };
 
   class Application : public wxApp {
     bool OnInit() override {
+      wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
+      wxInitAllImageHandlers();
       (new Frame())->Show();
       return true;
     }
