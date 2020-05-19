@@ -9,24 +9,25 @@ namespace Examples {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "CursorFromFile example") {
-      boxSizer->Add(buttonOpen, 0, wxGROW|wxTOP|wxWEST|wxEAST, 10);
+      boxSizer->Add(buttonOpenCursor, 0, wxALIGN_CENTER|wxTOP|wxBOTTOM|wxLEFT, 10);
       boxSizer->Add(testZone, 1, wxGROW|wxALL, 10);
-      SetSizerAndFit(boxSizer);
+      panel->SetSizerAndFit(boxSizer);
       
-      buttonOpen->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
+      buttonOpenCursor->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         wxFileDialog openFileDialog(this, wxEmptyString, wxEmptyString, wxEmptyString, "Cursor Files (*.cur;*.ani)|*.cur;*.ani|All Files (*.*)|*.*", wxFD_OPEN|wxFD_FILE_MUST_EXIST);
         openFileDialog.SetFilterIndex(0);
-        if (openFileDialog.ShowModal() == wxID_OK) {
-          testZone->SetCursor(wxCursor(openFileDialog.GetPath()));
-        }
+        if (openFileDialog.ShowModal() == wxID_OK)
+          testZone->SetCursor(wxCursor(openFileDialog.GetPath(), openFileDialog.GetPath().EndsWith(".ani") ? wxBITMAP_TYPE_ANI : wxBITMAP_TYPE_CUR));
       });
+
+      testZone->SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_WINDOW));
     }
     
   private:
     wxPanel* panel = new wxPanel(this);
     wxBoxSizer* boxSizer = new wxBoxSizer(wxHORIZONTAL);
-    wxButton* buttonOpen = new wxButton(this, wxID_ANY, "Choose cursor");
-    wxPanel* testZone = new wxPanel(this, wxID_ANY, wxDefaultPosition, {150, 200}, wxBORDER_SUNKEN);
+    wxButton* buttonOpenCursor = new wxButton(panel, wxID_ANY, "Open cursor");
+    wxPanel* testZone = new wxPanel(panel, wxID_ANY, wxDefaultPosition, {150, 200}, wxBORDER_SUNKEN);
   };
 
   class Application : public wxApp {
