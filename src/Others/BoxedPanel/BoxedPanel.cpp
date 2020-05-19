@@ -6,11 +6,11 @@ namespace Examples {
     Window() : wxFrame(nullptr, wxID_ANY, "Boxed example") {
       SetClientSize(300, 300);
       
-      panel5->SetBackgroundColour({0xFF, 0xA0, 0x7A, 0xFF});
-      panel4->SetBackgroundColour({0xFF, 0xB6, 0xC1, 0xFF});
-      panel3->SetBackgroundColour({0xAD, 0xD8, 0xE6, 0xFF});
-      panel2->SetBackgroundColour({0x90, 0xEE, 0x90, 0xFF});
       panel1->SetBackgroundColour({0xFF, 0xFF, 0xE0, 0xFF});
+      panel2->SetBackgroundColour({0x90, 0xEE, 0x90, 0xFF});
+      panel3->SetBackgroundColour({0xAD, 0xD8, 0xE6, 0xFF});
+      panel4->SetBackgroundColour({0xFF, 0xB6, 0xC1, 0xFF});
+      panel5->SetBackgroundColour({0xFF, 0xA0, 0x7A, 0xFF});
 
       boxSizerVerticalOne->Add(boxSizerHorizontalOne, 1, wxGROW);
       boxSizerVerticalOne->Add(panel5, 0, wxGROW);
