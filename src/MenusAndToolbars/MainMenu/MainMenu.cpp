@@ -105,7 +105,7 @@ namespace Examples {
       mainMenu->Append(menuOptions, "&Options");
 #if defined(__WXOSX__)
       // Forces the "Window" menu to be placed in front of the "Help" menu.
-      // If the "Window" menu is not specifiede, it will be created automatically but, in this case, after the "Help" menu.
+      // If the "Window" menu is not specified, it will be created automatically but, in this case, after the "Help" menu.
       mainMenu->Append(new wxMenu(), "&Window");
 #endif
       mainMenu->Append(menuHelp, "&Help");
