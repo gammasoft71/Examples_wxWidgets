@@ -7,17 +7,17 @@ namespace Examples {
     Frame() : wxFrame(nullptr, wxID_ANY, "Colored TabPages example") {
       SetClientSize(390, 270);
       
-      tabControl1->AddPage(tabPageLightPink, "Pink");
-      tabPageLightPink->SetBackgroundColour({0xFF, 0xB6, 0xC1, 0xFF});
+      tabControl1->AddPage(tabPageLightPink, "Red");
+      tabPageLightPink->SetBackgroundColour(wxColourDatabase().Find("Red"));
 
       tabControl1->AddPage(tabPageLightGreen, "Green");
-      tabPageLightGreen->SetBackgroundColour({0x90, 0xEE, 0x90, 0xFF});
+      tabPageLightGreen->SetBackgroundColour(wxColourDatabase().Find("Forest Green"));
 
       tabControl1->AddPage(tabPageLightBlue, "Blue");
-      tabPageLightBlue->SetBackgroundColour({0xAD, 0xD8, 0xE6, 0xFF});
+      tabPageLightBlue->SetBackgroundColour(wxColourDatabase().Find("Blue"));
 
       tabControl1->AddPage(tabPageLightYellow, "Yellow");
-      tabPageLightYellow->SetBackgroundColour({0xFF, 0xFF, 0xE0, 0xFF});
+      tabPageLightYellow->SetBackgroundColour(wxColourDatabase().Find("Yellow"));
     }
 
   private:
