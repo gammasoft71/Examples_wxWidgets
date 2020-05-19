@@ -21,21 +21,20 @@ namespace Examples {
         staticBitmap1->SetScaleMode(static_cast<wxStaticBitmap::ScaleMode>(reinterpret_cast<long long>(choice1->GetClientData(choice1->GetSelection()))));
       });
 
-      boxSizer->Add(choice1, 0, wxGROW|wxTOP|wxWEST|wxEAST, 20);
+      boxSizer->Add(choice1, 0, wxALIGN_CENTER|wxTOP|wxLEFT|wxRIGHT, 20);
       boxSizer->Add(staticBitmap1, 1, wxGROW|wxALL, 20);
       staticBitmap1->SetScaleMode(static_cast<wxStaticBitmap::ScaleMode>(reinterpret_cast<long long>(choice1->GetClientData(choice1->GetSelection()))));
       staticBitmap1->SetWindowStyle(wxBORDER_SIMPLE);
       wxInitAllImageHandlers();
       staticBitmap1->SetBitmap({Logo_xpm});
-      staticBitmap1->SetSize(260, 260);
-      SetSizerAndFit(boxSizer);
+      panel->SetSizerAndFit(boxSizer);
     }
 
   private:
     wxPanel* panel = new wxPanel(this);
     wxBoxSizer* boxSizer = new wxBoxSizer(wxVERTICAL);
-    wxStaticBitmap* staticBitmap1 = new wxStaticBitmap(this, wxID_ANY, wxNullBitmap, {20, 50}, {100, 50});
-    wxChoice* choice1 = new wxChoice(this, wxID_ANY, {20, 20});
+    wxStaticBitmap* staticBitmap1 = new wxStaticBitmap(panel, wxID_ANY, wxNullBitmap);
+    wxChoice* choice1 = new wxChoice(panel, wxID_ANY, {20, 20});
   };
 
   class Application : public wxApp {
