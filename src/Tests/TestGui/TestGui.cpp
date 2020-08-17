@@ -8,6 +8,8 @@
 #include <wx/msgout.h>
 #include <wx/panel.h>
 #include <wx/menu.h>
+#include <wx/splitter.h>
+#include <wx/sizer.h>
 
 enum class menu_item_kind {
   normal = 0,
@@ -316,6 +318,7 @@ int main(int argc, char* argv[]) {
     frame->PopupMenu(MakeContextMenu(context_menu));
   });
     
+  /*
   auto button = new wxButton(frame, wxID_ANY, "Change Menu", {10, 10});
   button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
     frame->SetMenuBar(MakeMenuBar(::menu_bar {
@@ -330,7 +333,18 @@ int main(int argc, char* argv[]) {
         }},
       }
     }));
+  
   });
+   */
+  
+
+  auto panel = new wxPanel(frame);
+  
+  auto splitter1 = new wxSplitterWindow(panel, wxID_ANY, {10, 10}, {150, 100}, wxSP_LIVE_UPDATE);
+  auto panel1 = new wxPanel(splitter1, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxBORDER_SUNKEN);
+  auto panel2 = new wxPanel(splitter1, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxBORDER_SUNKEN);
+  splitter1->SplitVertically(panel1, panel2, 50);
+  splitter1->SetMinimumPaneSize(1);
 
   frame->Show();
   wxTheApp->OnRun();

@@ -24,17 +24,14 @@ namespace Examples {
     
   private:
     static wxString ToString(wxCheckBoxState state) {
-      switch (state) {
-        case wxCHK_UNCHECKED: return "Unchecked"; break;
-        case wxCHK_CHECKED: return "Checked"; break;
-        case wxCHK_UNDETERMINED: return "Indeterminate"; break;
-        default: return "(unknown)"; break;
-      }
+      if (state == wxCHK_UNCHECKED) return "Unchecked";
+      if (state == wxCHK_CHECKED) return "Checked";
+      return "Indeterminate";
     }
     
     wxPanel* panel = new wxPanel(this);
     wxCheckBox* checkBox1 = new wxCheckBox(panel, wxID_ANY, "Unchecked", {30, 30});
-    wxCheckBox* checkBox2 = new wxCheckBox(panel, wxID_ANY, "Checked", {30, 60});
+    wxCheckBox* checkBox2 = new wxCheckBox(panel, wxID_ANY, "Checked", {30, 60}, {200, wxDefaultCoord});
     wxCheckBox* checkBox3 = new wxCheckBox(panel, wxID_ANY, "Indeterminate", {30, 90}, wxDefaultSize, wxCHK_3STATE | wxCHK_ALLOW_3RD_STATE_FOR_USER);
   };
 
