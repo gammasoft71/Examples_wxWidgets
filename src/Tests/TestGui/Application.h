@@ -35,12 +35,16 @@ public:
   
   ~wxApplication() {
     wxImage::CleanUpHandlers();
-    OnExit();
     wxApp::SetInstance(nullptr);
     wxEntryCleanup();
   }
-  
-  int MainLoop() override {return wxApp::MainLoop();}
+
+  int MainLoop() override {
+    struct CallOnExit {
+      ~CallOnExit() {wxTheApp->OnExit();}
+    } callOnExit;
+    return wxApp::MainLoop();
+  }
   
 private:
   int argc_ = 0;

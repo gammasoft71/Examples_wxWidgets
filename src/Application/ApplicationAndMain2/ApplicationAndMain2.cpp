@@ -1,5 +1,5 @@
-#include <wx/wx.h>
 #include "Application.h"
+#include <wx/wx.h>
 
 int main() {
   auto application = new wxApplication;
