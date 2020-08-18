@@ -1,9 +1,9 @@
 #include <wx/wx.h>
-#include "AppInitializer.h"
+#include "Application.h"
 
-int main(int argc, char* argv[]) {
-  AppInitializer appInitializer;
-  auto frame1 = new wxFrame(nullptr, wxID_ANY, "Frame1", wxDefaultPosition, {300, 300});
+int main() {
+  auto application = new wxApplication;
+  auto frame1 = new wxFrame(nullptr, wxID_ANY, wxEmptyString);
   frame1->Show();
-  wxTheApp->OnRun();
+  return application->MainLoop();
 }

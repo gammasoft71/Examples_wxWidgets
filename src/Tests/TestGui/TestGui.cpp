@@ -1,6 +1,6 @@
 #include <map>
 #include "virtual_keys.hpp"
-#include "AppInitializer.h"
+#include "Application.h"
 #include <wx/app.h>
 #include <wx/artprov.h>
 #include <wx/button.h>
@@ -231,7 +231,7 @@ intptr_t ToImage(wxArtID art) {
 }
 
 int main(int argc, char* argv[]) {
-  AppInitializer appInitializer;
+  auto application = new wxApplication;
   auto frame = new wxFrame(nullptr, wxID_ANY, "TestGui", wxDefaultPosition, {300, 300});
   //auto panelMain = new wxPanel(frame);
  
@@ -347,5 +347,5 @@ int main(int argc, char* argv[]) {
   splitter1->SetMinimumPaneSize(1);
 
   frame->Show();
-  wxTheApp->OnRun();
+  return application->MainLoop();
 }
