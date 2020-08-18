@@ -5,15 +5,17 @@
 
 class wxApplication : public wxApp {
 public:
-  wxApplication() : wxApplication(nullptr, true) {}
-  wxApplication(wxApplication* app) : wxApplication(app, true) {}
-  wxApplication(bool exit_on_last_frame_closed) : wxApplication(nullptr, exit_on_last_frame_closed) {}
-  wxApplication(wxApplication* app, bool exit_on_last_frame_closed) {
-    wxDISABLE_DEBUG_SUPPORT();
+  wxApplication() : wxApplication(nullptr, true, argc_, nullptr) {}
+  wxApplication(wxApplication* app) : wxApplication(app, true, argc_, nullptr) {}
+  wxApplication(bool exit_on_last_frame_closed) : wxApplication(nullptr, exit_on_last_frame_closed, argc_, nullptr) {}
+  wxApplication(wxApplication* app, bool exit_on_last_frame_closed) : wxApplication(app, exit_on_last_frame_closed, argc_, nullptr) {}
+  wxApplication(int& argc, char** argv) : wxApplication(nullptr, true, argc, argv) {}
+  wxApplication(wxApplication* app, int& argc, char** argv) : wxApplication(app, true, argc, argv) {}
+  wxApplication(bool exit_on_last_frame_closed, int& argc, char** argv) : wxApplication(nullptr, exit_on_last_frame_closed, argc, argv) {}
+  wxApplication(wxApplication* app, bool exit_on_last_frame_closed, int& argc, char** argv) {
     wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
     wxApp::SetInstance(app ? app : this);
-    auto argc = 0;
-    wxEntryStart(argc, (wxChar**)NULL);
+    wxEntryStart(argc, argv);
     CallOnInit();
     SetExitOnFrameDelete(exit_on_last_frame_closed);
     wxInitAllImageHandlers();
@@ -39,4 +41,7 @@ public:
   }
   
   int MainLoop() override {return wxApp::MainLoop();}
+  
+private:
+  int argc_ = 0;
 };
