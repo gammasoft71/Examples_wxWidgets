@@ -19,7 +19,6 @@ public:
     CallOnInit();
     SetExitOnFrameDelete(exit_on_last_frame_closed);
     wxInitAllImageHandlers();
-#if __APPLE__
     auto menubar = new wxMenuBar();
     menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
       if (event.GetId() == wxID_EXIT) {
@@ -29,6 +28,7 @@ public:
         if (can_quit) ExitMainLoop();
       } else event.Skip();
     });
+#if __APPLE__
     wxMenuBar::MacSetCommonMenuBar(menubar);
 #endif
   }
