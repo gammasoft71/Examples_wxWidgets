@@ -15,8 +15,8 @@ namespace Examples {
     
   private:
     wxPanel* panel = new wxPanel(this);
-    wxCommandLinkButton* commandLinkButton1 = new wxCommandLinkButton(panel, wxID_ANY, "Link", "Information text", {30, 30}, {150, 40});
-    wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "commandLinkButton1 clicked 0 times", {30, 100}, {200, 20});
+    wxCommandLinkButton* commandLinkButton1 = new wxCommandLinkButton(panel, wxID_ANY, "Command link", "width supplementary text", {30, 30}, {240, 60});
+    wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "commandLinkButton1 clicked 0 times", {30, 100}, {200, 50});
     int commandLinkButton1Clicked = 0;
   };
 
