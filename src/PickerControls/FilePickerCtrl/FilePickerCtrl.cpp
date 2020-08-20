@@ -2,10 +2,11 @@
 #include <wx/filepicker.h>
 #include <wx/sysopt.h>
 
-#if defined(__WXOSX__)
-class wx_file_picker_ctrl : public wxFilePickerCtrl {
+#if defined(__APPLE__)
+// Workaround : with wxWidgets version <= 3.1.4 wxFilePickerCtrl::SetFilterIndex doesn't work on macOS
+class FilePickerCtrl : public wxFilePickerCtrl {
 public:
-  wx_file_picker_ctrl(wxWindow *parent, wxWindowID id, const wxString& path = wxEmptyString, const wxString& message = wxFileSelectorPromptStr, const wxString& wildcard = wxFileSelectorDefaultWildcardStr, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxFLP_DEFAULT_STYLE, const wxValidator& validator = wxDefaultValidator, const wxString& name = wxFilePickerCtrlNameStr) : wxFilePickerCtrl(parent, id, path, message, wildcard, pos, size, style, validator, name) {
+  FilePickerCtrl(wxWindow *parent, wxWindowID id, const wxString& path = wxEmptyString, const wxString& message = wxFileSelectorPromptStr, const wxString& wildcard = wxFileSelectorDefaultWildcardStr, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxFLP_DEFAULT_STYLE, const wxValidator& validator = wxDefaultValidator, const wxString& name = wxFilePickerCtrlNameStr) : wxFilePickerCtrl(parent, id, path, message, wildcard, pos, size, style, validator, name) {
     auto pickerCtrl = GetPickerCtrl();
     auto wx_dialog_style = 0;
     if ((style & wxFLP_OPEN) == wxFLP_OPEN) wx_dialog_style |= wxFD_OPEN;
@@ -24,7 +25,7 @@ public:
   }
 };
 #else
-using wx_file_picker_ctrl = wxFilePickerCtrl;
+using FilePickerCtrl = wxFilePickerCtrl;
 #endif
 
 namespace Examples {
@@ -40,7 +41,7 @@ namespace Examples {
     wxPanel* panel = new wxPanel(this);
     wxStaticText* label = new wxStaticText(panel, wxID_ANY, "File = ", wxPoint(10, 50));
     //wxFilePickerCtrl* picker = new wxFilePickerCtrl(panel, wxID_ANY, wxEmptyString, wxEmptyString, "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", {10, 10}, wxDefaultSize, wxFLP_DEFAULT_STYLE|wxFLP_SMALL);
-    wx_file_picker_ctrl* picker = new wx_file_picker_ctrl(panel, wxID_ANY, wxEmptyString, wxEmptyString, "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", {10, 10}, wxDefaultSize, wxFLP_DEFAULT_STYLE|wxFLP_SMALL);
+    FilePickerCtrl* picker = new FilePickerCtrl(panel, wxID_ANY, wxEmptyString, wxEmptyString, "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", {10, 10}, wxDefaultSize, wxFLP_DEFAULT_STYLE|wxFLP_SMALL);
   };
 
   class Application : public wxApp {
