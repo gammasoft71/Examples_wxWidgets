@@ -2,7 +2,6 @@
 #include <wx/filepicker.h>
 #include <wx/sysopt.h>
 
-#if defined(__APPLE__)
 // Workaround : with wxWidgets version <= 3.1.4 wxFilePickerCtrl::SetFilterIndex doesn't work on macOS
 class FilePickerCtrl : public wxFilePickerCtrl {
 public:
@@ -24,9 +23,6 @@ public:
     });
   }
 };
-#else
-using FilePickerCtrl = wxFilePickerCtrl;
-#endif
 
 namespace Examples {
   class Frame : public wxFrame {

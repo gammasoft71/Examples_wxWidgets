@@ -2,15 +2,10 @@
 #include <wx/statline.h>
 
 namespace Examples {
-#if defined(__WXOSX__)
+  // Workaround : with wxWidgets version <= 3.1.4 font is in pixels and not in points on macOS
   int PointsToNativeFontGraphicsUntit(int size) {
-    return static_cast<float>(size) / wxScreenDC().GetPPI().GetHeight() * 96.0f;  // font is in pixels and not in points
+    return wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh" ? size : static_cast<float>(size) / wxScreenDC().GetPPI().GetHeight() * 96.0f;
   }
-#else
-  int PointsToNativeFontGraphicsUntit(int size) {
-    return size;  // font is in points
-  }
-#endif
 
   class Window : public wxFrame {
   public:

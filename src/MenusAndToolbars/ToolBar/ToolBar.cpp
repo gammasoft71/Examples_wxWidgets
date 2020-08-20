@@ -8,11 +8,8 @@ namespace Examples {
     Frame() : wxFrame(nullptr, wxID_ANY, "Toolbar example") {
       SetClientSize(640, 480);
 
-#if defined(__WXOSX__)
-      wxSize bitmapSize(-1, -1);
-#else
-      wxSize bitmapSize(16, 16);
-#endif
+      // On Windows the default size icon of toolbar is 16x16 and not 32x32...
+      wxSize bitmapSize = wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows" ? wxSize(16, 16) : wxDefaultSize;
       toolBar->SetToolBitmapSize(bitmapSize);
       toolBar->AddTool(wxID_NEW, "&New", wxArtProvider::GetBitmap(wxART_NEW, wxART_TOOLBAR, bitmapSize));
       toolBar->AddTool(wxID_OPEN, "&Open...", wxArtProvider::GetBitmap(wxART_FILE_OPEN, wxART_TOOLBAR, bitmapSize));

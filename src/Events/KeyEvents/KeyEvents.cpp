@@ -28,9 +28,7 @@ namespace Examples {
       if ((modifiers & wxMOD_SHIFT) == wxMOD_SHIFT) result += "Shift, ";
       if ((modifiers & wxMOD_RAW_CONTROL) == wxMOD_RAW_CONTROL) result += "Control, ";
       if ((modifiers & wxMOD_ALT) == wxMOD_ALT) result += "Alt, ";
-#if defined(__WXOSX__)
       if ((modifiers & wxMOD_CONTROL) == wxMOD_CONTROL) result += "Command, ";
-#endif
       if ((modifiers & wxMOD_META) == wxMOD_META) result += "Meta, ";
       if (result.size() > 1) result.resize(result.size() - 2);
        return result;

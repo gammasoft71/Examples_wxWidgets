@@ -6,14 +6,10 @@ namespace Examples {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "FontPickerCtrl example", wxDefaultPosition, {300, 300}) {
       picker->SetSelectedFont(label->GetFont());
-  #if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
       picker->SetSelectedColour(label->GetForegroundColour());
-  #endif
       picker->Bind(wxEVT_FONTPICKER_CHANGED, [&](wxFontPickerEvent& event) {
         label->SetFont(picker->GetSelectedFont());
-  #if wxMAJOR_VERSION > 3 || (wxMAJOR_VERSION == 3 && wxMINOR_VERSION >= 1)
         label->SetForegroundColour(picker->GetSelectedColour());
-  #endif
       });
     }
     

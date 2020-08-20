@@ -19,7 +19,7 @@ public:
     CallOnInit();
     SetExitOnFrameDelete(exit_on_last_frame_closed);
     wxInitAllImageHandlers();
-#if __WXOSX__
+#if __APPLE__
     auto menubar = new wxMenuBar();
     menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
       if (event.GetId() == wxID_EXIT) {

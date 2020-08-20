@@ -3,10 +3,11 @@
 #include <utility>
 #include <vector>
 
-#ifndef __WXMAC__
+// Workaround : with wxWidgets version <= 3.1.4 all defines are not present for all os...
+#if !defined(__APPLE__)
 #  define wxCURSOR_COPY_ARROW wxCURSOR_ARROW
 #endif
-#ifndef __X__
+#if !defined(__X__)
 #  define wxCURSOR_CROSS_REVERSE wxCURSOR_CROSS
 #  define wxCURSOR_DOUBLE_ARROW wxCURSOR_ARROW
 #  define wxCURSOR_BASED_ARROW_UP wxCURSOR_ARROW
