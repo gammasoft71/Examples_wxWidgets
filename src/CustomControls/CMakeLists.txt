@@ -3,4 +3,4 @@ project(CustomControls)
 
 add_subdirectory("Line")
 add_subdirectory("DomainSpinCtrl")
-sadd_subdirectory("NumericTextCtrl")
+add_subdirectory("NumericTextCtrl")
