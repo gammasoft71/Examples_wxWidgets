@@ -27,17 +27,18 @@ namespace Examples {
     Frame() : wxFrame(nullptr, wxID_ANY, "MainMenu example") {
       SetClientSize(640, 480);
       
+      auto menuFile = new wxMenu();
       auto menuItemFileNew = menuFile->Append(wxID_NEW);
       menuItemFileNew->SetBitmap(wxArtProvider::GetBitmap(wxART_NEW, wxART_MENU));
       auto menuItemFileOpen = menuFile->Append(wxID_OPEN);
       menuItemFileOpen->SetBitmap(wxArtProvider::GetBitmap(wxART_FILE_OPEN, wxART_MENU));
+      auto menuFileOpenRecent = new wxMenu();
       menuFileOpenRecent->Append(ID_OPENRECENTFILE1, "File 1");
       menuFileOpenRecent->Append(ID_OPENRECENTFILE2, "File 2");
       menuFileOpenRecent->Append(ID_OPENRECENTFILE3, "File 3");
       menuFileOpenRecent->Append(ID_OPENRECENTFILE4, "File 4");
       menuFileOpenRecent->Append(ID_OPENRECENTFILE5, "File 5");
       auto menuItemFileOpenRecent = menuFile->AppendSubMenu(menuFileOpenRecent, "Open recent");
-      auto menuFileOpenRecent = new wxMenu();
       menuItemFileOpenRecent->SetSubMenu(menuFileOpenRecent);
       menuFile->Append(wxID_CLOSE, "Close\tCtrl+W");
       menuFile->AppendSeparator();
@@ -53,6 +54,7 @@ namespace Examples {
       auto menuItemFileQuit = menuFile->Append(wxID_EXIT);
       menuItemFileQuit->SetBitmap(wxArtProvider::GetBitmap(wxART_QUIT, wxART_MENU));
 
+      auto menuEdit = new wxMenu();
       auto menuItemEditUndo = menuEdit->Append(wxID_UNDO);
       menuItemEditUndo->SetBitmap(wxArtProvider::GetBitmap(wxART_UNDO, wxART_MENU));
       auto menuItemEditRedo = menuEdit->Append(wxID_REDO);
@@ -69,6 +71,7 @@ namespace Examples {
       menuEdit->AppendSeparator();
       menuEdit->Append(wxID_PREFERENCES);
 
+      auto menuView = new wxMenu();
       auto menuItemViewBackward = menuView->Append(wxID_BACKWARD);
       menuItemViewBackward->SetBitmap(wxArtProvider::GetBitmap(wxART_GO_BACK, wxART_MENU));
       auto menuItemViewForward = menuView->Append(wxID_FORWARD);
@@ -77,22 +80,25 @@ namespace Examples {
       menuView->Append(ID_SHOW, "Show");
       menuView->Append(ID_HIDE, "Hide");
 
-      auto menuItemOptionsOptionA = menuOptions->Append(ID_OPTIONA, "Option A\tAlt+1", "", wxITEM_CHECK);
-      menuItemOptionsOptionA->Check(true);
+      auto menuOptions = new wxMenu();
+      menuOptions->Append(ID_OPTIONA, "Option A\tAlt+1", "", wxITEM_CHECK);
       menuOptions->Append(ID_OPTIONB, "Option B\tAlt+2", "", wxITEM_CHECK);
-      auto menuItemOptionsOptionC = menuOptions->Append(ID_OPTIONC, "Option C\tAlt+3", "", wxITEM_CHECK);
-      menuItemOptionsOptionC->Check(true);
+      menuOptions->Append(ID_OPTIONC, "Option C\tAlt+3", "", wxITEM_CHECK);
       menuOptions->AppendSeparator();
       menuOptions->Append(ID_OPTIOND, "Option D\tAlt+4", "", wxITEM_RADIO);
-      auto menuItemOptionsOptionE = menuOptions->Append(ID_OPTIONE, "Option E\tAlt+5", "", wxITEM_RADIO);
-      menuItemOptionsOptionE->Check(true);
+      menuOptions->Append(ID_OPTIONE, "Option E\tAlt+5", "", wxITEM_RADIO);
       menuOptions->Append(ID_OPTIONF, "Option F\tAlt+6", "", wxITEM_RADIO);
       menuOptions->AppendSeparator();
       menuOptions->Append(ID_OPTIONG, "Option G\tAlt+7", "", wxITEM_RADIO);
       menuOptions->Append(ID_OPTIONH, "Option H\tAlt+8", "", wxITEM_RADIO);
-      auto menuItemOptionsOptionI = menuOptions->Append(ID_OPTIONI, "Option I\tAlt+9", "", wxITEM_RADIO);
-      menuItemOptionsOptionI->Check(true);
+      menuOptions->Append(ID_OPTIONI, "Option I\tAlt+9", "", wxITEM_RADIO);
 
+      menuOptions->Check(ID_OPTIONA, true);
+      menuOptions->Check(ID_OPTIONC, true);
+      menuOptions->Check(ID_OPTIONE, true);
+      menuOptions->Check(ID_OPTIONI, true);
+
+      auto menuHelp = new wxMenu();
       menuHelp->Append(wxID_HELP_CONTEXT, "Context");
       menuHelp->Append(wxID_HELP_INDEX, "Index");
       menuHelp->Append(wxID_HELP_SEARCH, "Search");
@@ -103,11 +109,9 @@ namespace Examples {
       mainMenu->Append(menuEdit, "&Edit");
       mainMenu->Append(menuView, "&View");
       mainMenu->Append(menuOptions, "&Options");
-#if defined(__WXOSX__)
       // Forces the "Window" menu to be placed in front of the "Help" menu.
       // If the "Window" menu is not specified, it will be created automatically but, in this case, after the "Help" menu.
-      mainMenu->Append(new wxMenu(), "&Window");
-#endif
+      if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") mainMenu->Append(new wxMenu(), "&Window");
       mainMenu->Append(menuHelp, "&Help");
 
       SetMenuBar(mainMenu);
@@ -120,14 +124,8 @@ namespace Examples {
     }
 
   private:
-    wxListBox* listBox1 = new wxListBox(this, wxID_ANY, {10, 10});
+    wxListBox* listBox1 = new wxListBox(this, wxID_ANY);
     wxMenuBar* mainMenu = new wxMenuBar();
-    wxMenu* menuFile = new wxMenu();
-    wxMenu* menuFileOpenRecent = new wxMenu();
-    wxMenu* menuEdit = new wxMenu();
-    wxMenu* menuView = new wxMenu();
-    wxMenu* menuOptions = new wxMenu();
-    wxMenu* menuHelp = new wxMenu();
   };
 
   class Application : public wxApp {
