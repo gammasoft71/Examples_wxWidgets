@@ -1,4 +1,5 @@
 #include <map>
+#include <string>
 #include <wx/app.h>
 #include <wx/frame.h>
 #include <wx/menu.h>
