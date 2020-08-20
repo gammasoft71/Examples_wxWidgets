@@ -3,5 +3,4 @@ project(CustomControls)
 
 add_subdirectory("Line")
 add_subdirectory("DomainSpinCtrl")
-add_subdirectory("NotifyIcon")
-add_subdirectory("NumericTextCtrl")
+sadd_subdirectory("NumericTextCtrl")
