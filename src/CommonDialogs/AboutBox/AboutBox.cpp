@@ -11,16 +11,14 @@ namespace Examples {
         aboutInfo.SetName(wxTheApp->GetAppName());
         aboutInfo.SetVersion("1.0", "1.0.0");
         aboutInfo.SetDescription("About dialog description.");
-        if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh") {
+        aboutInfo.SetCopyright("Copyright (c) 2019 Gammasoft.\nAll rights reserved.");
+        if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") {
           aboutInfo.AddArtist("Gammasoft");
           aboutInfo.AddDeveloper("Gammasoft");
           aboutInfo.AddDeveloper("Contributors");
           aboutInfo.AddDocWriter("Gammasoft");
           aboutInfo.AddTranslator("Gammasoft");
           aboutInfo.AddTranslator("Contributors");
-        }
-        aboutInfo.SetCopyright("Copyright (c) 2019 Gammasoft.\nAll rights reserved.");
-        if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") {
           aboutInfo.SetIcon({gammasoft_64x64_xpm});
           aboutInfo.SetWebSite("https://gammasoft71.wixsite.com/gammasoft", "Gammasoft");
           aboutInfo.SetLicence("MIT License\n"
