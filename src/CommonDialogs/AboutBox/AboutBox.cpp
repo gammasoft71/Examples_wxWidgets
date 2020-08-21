@@ -9,12 +9,16 @@ namespace Examples {
       button->Bind(wxEVT_BUTTON, [](wxCommandEvent& event) {
         wxAboutDialogInfo aboutInfo;
         aboutInfo.SetName(wxTheApp->GetAppName());
-        aboutInfo.SetDescription("About dialog description.");
         aboutInfo.SetVersion("1.0", "1.0.0");
-        aboutInfo.SetCopyright(u8"Copyright \u00A9 2019 Gammasoft.\nAll rights reserved.");
+        aboutInfo.SetDescription("About dialog description.");
+        aboutInfo.AddArtist("Gammasoft");
+        aboutInfo.AddDeveloper("Gammasoft");
+        aboutInfo.AddDeveloper("Contributors");
+        aboutInfo.AddDocWriter("Gammasoft");
+        aboutInfo.SetCopyright("Copyright (c) 2019 Gammasoft.\nAll rights reserved.");
         if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") {
           aboutInfo.SetIcon({gammasoft_64x64_xpm});
-          aboutInfo.SetWebSite(u8"https://gammasoft71.wixsite.com/gammasoft");
+          aboutInfo.SetWebSite("https://gammasoft71.wixsite.com/gammasoft");
         }
         wxAboutBox(aboutInfo);
       });
