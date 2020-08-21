@@ -19,6 +19,7 @@ namespace Examples {
         if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") {
           aboutInfo.SetIcon({gammasoft_64x64_xpm});
           aboutInfo.SetWebSite("https://gammasoft71.wixsite.com/gammasoft");
+          aboutInfo.SetLicence("MIT");
         }
         wxAboutBox(aboutInfo);
       });
