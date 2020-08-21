@@ -3,6 +3,7 @@ project(CommonDialogs)
 
 add_subdirectory("AboutBox")
 add_subdirectory("AboutBoxGeneric")
+add_subdirectory("AboutBoxSimple")
 add_subdirectory("ColourDialog")
 add_subdirectory("DirDialog")
 add_subdirectory("FontDialog")
