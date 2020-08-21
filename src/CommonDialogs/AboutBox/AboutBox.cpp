@@ -16,11 +16,13 @@ namespace Examples {
           aboutInfo.AddDeveloper("Gammasoft");
           aboutInfo.AddDeveloper("Contributors");
           aboutInfo.AddDocWriter("Gammasoft");
+          aboutInfo.AddTranslator("Gammasoft");
+          aboutInfo.AddTranslator("Contributors");
         }
         aboutInfo.SetCopyright("Copyright (c) 2019 Gammasoft.\nAll rights reserved.");
         if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") {
           aboutInfo.SetIcon({gammasoft_64x64_xpm});
-          aboutInfo.SetWebSite("https://gammasoft71.wixsite.com/gammasoft");
+          aboutInfo.SetWebSite("https://gammasoft71.wixsite.com/gammasoft", "Gammasoft");
           aboutInfo.SetLicence("MIT License\n"
                                "\n"
                                "Copyright (c) 2019 Gammasoft.\n"
