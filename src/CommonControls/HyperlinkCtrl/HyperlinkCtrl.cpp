@@ -1,20 +1,32 @@
+#include <wx/debug.h>
 #include <wx/app.h>
 #include <wx/frame.h>
 #include <wx/hyperlink.h>
 #include <wx/panel.h>
+#include <wx/sizer.h>
 #include <wx/stattext.h>
 
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "HyperlinkCtrl example", wxDefaultPosition, {300, 300}) {}
+    Frame() : wxFrame(nullptr, wxID_ANY, "HyperlinkCtrl example", wxDefaultPosition, {300, 300}) {
+      panel->SetSizer(boxSizerLinks);
+      wxMessageOutputDebug().Printf("Normal color = %s", hyperlinkCtrl1->GetNormalColour().GetAsString());
+      wxMessageOutputDebug().Printf("Hover color = %s", hyperlinkCtrl1->GetHoverColour().GetAsString());
+      wxMessageOutputDebug().Printf("Visited color = %s", hyperlinkCtrl1->GetVisitedColour().GetAsString());
+      boxSizerLinks->Add(hyperlinkCtrl1, 0, wxSTRETCH_NOT, 0);
+      boxSizerLinks->Add(staticText1, 0, wxSTRETCH_NOT, 0);
+      boxSizerLinks->Add(hyperlinkCtrl2, 0, wxSTRETCH_NOT, 0);
+      boxSizerLinks->Add(staticText2, 0, wxSTRETCH_NOT, 0);
+    }
     
   private:
     wxPanel* panel = new wxPanel(this);
-    wxHyperlinkCtrl* staticText1 = new wxHyperlinkCtrl(panel, wxID_ANY, "Gammasoft", "https://gammasoft71.wixsite.com/gammasoft", {10, 10});
-    wxStaticText* staticText2 = new wxStaticText(panel, wxID_ANY, " present ", {staticText1->GetPosition().x + staticText1->GetSize().GetWidth(), 10});
-    wxHyperlinkCtrl* staticText3 = new wxHyperlinkCtrl(panel, wxID_ANY, "wxWidgets", "https://gammasoft71.wixsite.com/gammasoft/wxwidgets", {staticText2->GetPosition().x + staticText2->GetSize().GetWidth(), 10});
-    wxStaticText* staticText4 = new wxStaticText(panel, wxID_ANY, " examples", {staticText3->GetPosition().x + staticText3->GetSize().GetWidth(), 10});
+    wxBoxSizer* boxSizerLinks = new wxBoxSizer(wxHORIZONTAL);
+    wxHyperlinkCtrl* hyperlinkCtrl1 = new wxHyperlinkCtrl(panel, wxID_ANY, "Gammasoft", "https://gammasoft71.wixsite.com/gammasoft");
+    wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, " present ");
+    wxHyperlinkCtrl* hyperlinkCtrl2 = new wxHyperlinkCtrl(panel, wxID_ANY, "wxWidgets", "https://gammasoft71.wixsite.com/gammasoft/wxwidgets");
+    wxStaticText* staticText2 = new wxStaticText(panel, wxID_ANY, " examples");
   };
 
   class Application : public wxApp {
