@@ -1,10 +1,9 @@
 #include "Application.h"
-#include <wx/frame.h>
-#include <wx/panel.h>
+#include <wx/wx.h>
 
 class MainFrame : public wxFrame {
 public:
-  MainFrame() : wxFrame(nullptr, wxID_ANY, "TestGui", wxDefaultPosition, {300, 300}) {
+  MainFrame() : wxFrame(nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, {850, 400}) {
   }
   
 private:
