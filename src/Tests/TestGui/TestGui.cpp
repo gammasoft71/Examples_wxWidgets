@@ -3,16 +3,16 @@
 
 class MainFrame : public wxFrame {
 public:
-  MainFrame() : wxFrame(nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, {850, 400}) {
+  MainFrame() : wxFrame {nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, {850, 400}} {
   }
   
 private:
-  wxPanel* panel = new wxPanel(this);
+  wxPanel* panel = new wxPanel {this};
 };
 
 int main() {
   auto application = new wxApplication;
-  auto frame = new MainFrame();
+  auto frame = new MainFrame;
   frame->Show();
   return application->MainLoop();
 }
