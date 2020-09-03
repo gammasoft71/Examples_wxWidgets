@@ -13,15 +13,15 @@ namespace Examples {
         aboutInfo.SetDescription("About dialog description.");
         aboutInfo.SetCopyright("Copyright (c) 2019 Gammasoft.\nAll rights reserved.");
         if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") {
-          aboutInfo.AddArtist("Gammasoft");
+          aboutInfo.SetIcon({gammasoft_64x64_xpm});
+          aboutInfo.SetWebSite("https://gammasoft71.wixsite.com/gammasoft", "Gammasoft");
           aboutInfo.AddDeveloper("Gammasoft");
           aboutInfo.AddDeveloper("Contributors");
           aboutInfo.AddDocWriter("Gammasoft");
           aboutInfo.AddTranslator("Gammasoft");
           aboutInfo.AddTranslator("Contributors");
-          aboutInfo.SetIcon({gammasoft_64x64_xpm});
-          aboutInfo.SetWebSite("https://gammasoft71.wixsite.com/gammasoft", "Gammasoft");
-          aboutInfo.SetLicence("MIT License\n"
+          aboutInfo.AddArtist("Gammasoft");
+          aboutInfo.SetLicense("MIT License\n"
                                "\n"
                                "Copyright (c) 2019 Gammasoft.\n"
                                "\n"
@@ -44,8 +44,7 @@ namespace Examples {
                                "ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n"
                                "ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n"
                                "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n"
-                               "OR OTHER DEALINGS IN THE SOFTWARE."
-                               );
+                               "OR OTHER DEALINGS IN THE SOFTWARE.\n");
         }
         wxAboutBox(aboutInfo);
       });
