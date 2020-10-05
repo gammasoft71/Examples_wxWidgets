@@ -13,9 +13,9 @@ namespace Examples {
       });
       
       Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
-        bool can_cloase = wxMessageBox("Are you sure you want exit?", "Close Window", wxICON_QUESTION|wxYES_NO) == wxYES;
-        event.Veto(!can_cloase);
-        event.Skip(can_cloase);
+        bool can_close = wxMessageBox("Are you sure you want exit?", "Close Window", wxICON_QUESTION|wxYES_NO) == wxYES;
+        event.Veto(!can_close);
+        event.Skip(can_close);
       });
     }
 
