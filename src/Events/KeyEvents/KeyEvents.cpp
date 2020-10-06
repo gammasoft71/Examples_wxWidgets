@@ -1,12 +1,11 @@
 #include <wx/wx.h>
 #include <wx/display.h>
+#include <wx/log.h>
 
 namespace Examples {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "KeyEvents", wxDefaultPosition, {300, 300}) {
-      logWindow->GetFrame()->SetSize(wxDisplay(wxDisplay::GetFromWindow(this)).GetClientArea().GetLeft(), wxDisplay(wxDisplay::GetFromWindow(this)).GetClientArea().GetTop() + wxDisplay(wxDisplay::GetFromWindow(this)).GetClientArea().GetHeight() - wxDisplay(wxDisplay::GetFromWindow(this)).GetClientArea().GetHeight() / 4, wxDisplay(wxDisplay::GetFromWindow(this)).GetClientArea().GetWidth(), wxDisplay(wxDisplay::GetFromWindow(this)).GetClientArea().GetHeight() / 4);
-      
       panel->Bind(wxEVT_KEY_DOWN, [&](wxKeyEvent& event) {
         wxLogDebug(wxString::Format("KeyDown={KeyCode=0x%04X, Modifiers=[%s]}", event.GetKeyCode(), ModiiersToString(event.GetModifiers())));
         event.Skip();
@@ -36,11 +35,12 @@ namespace Examples {
     }
     
     wxPanel* panel = new wxPanel(this);
-    wxLogWindow* logWindow = new wxLogWindow(this, "Debug");
   };
 
   class Application : public wxApp {
     bool OnInit() override {
+      wxLogWindow* logWindow = new wxLogWindow(nullptr, "Debug");
+      logWindow->GetFrame()->SetSize(wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetLeft(), wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetTop() + wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetHeight() - wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetHeight() / 4, wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetWidth(), wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetHeight() / 4);
       (new Frame())->Show();
       return true;
     }
