@@ -26,12 +26,16 @@ namespace Examples {
       Center();
       
       buttonDialog->Bind(wxEVT_BUTTON, [&](wxCommandEvent& e) {
-        UserInputDialog dialog(this);
-        dialog.SetInputText(inputText->GetLabel());
-        if (dialog.ShowModal() == wxID_OK) inputText->SetLabel(dialog.GetInputText());
+        dialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [&](wxWindowModalDialogEvent& event) {
+          if (event.GetReturnCode() == wxID_OK)
+            inputText->SetLabel(dialog->GetInputText());
+        });
+        dialog->SetInputText(inputText->GetLabel());
+        dialog->ShowWindowModal();
       });
     }
   private:
+    UserInputDialog* dialog = new UserInputDialog(this);
     wxPanel* panel = new wxPanel(this, wxID_ANY);
     wxButton* buttonDialog = new wxButton(panel, wxID_ANY, "Dialog", {10, 10});
     wxStaticText* inputText = new wxStaticText(panel, wxID_ANY, "User input text", {10, 50});
