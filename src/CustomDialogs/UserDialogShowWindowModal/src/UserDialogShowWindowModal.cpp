@@ -16,8 +16,8 @@ namespace Examples {
   private:
     wxPanel* panel = new wxPanel(this, wxID_ANY);
     wxTextCtrl* text = new wxTextCtrl(panel, wxID_ANY, wxEmptyString, {10, 10}, {180, 25});
-    wxButton* buttonCancel = new wxButton(panel, wxID_CANCEL, "Cancel", {10, 50});
-    wxButton* buttonOk = new wxButton(panel, wxID_OK, "OK", {100, 50});
+    wxButton* buttonCancel = new wxButton(panel, wxID_CANCEL, "Cancel", {10, 50}, {85, -1});
+    wxButton* buttonOk = new wxButton(panel, wxID_OK, "OK", {105, 50}, {85, -1});
   };
 
   class Form1 : public wxFrame {

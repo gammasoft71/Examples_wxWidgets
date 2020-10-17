@@ -3,7 +3,7 @@
 
 class MainFrame : public wxFrame {
 public:
-  MainFrame() : wxFrame {nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, {850, 400}} {
+  MainFrame() : wxFrame {nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, {800, 450}} {
   }
   
 private:
