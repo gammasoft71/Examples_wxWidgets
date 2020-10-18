@@ -3,6 +3,7 @@
 #include <wx/imaglist.h>
 #include <wx/sysopt.h>
 #include <wx/settings.h>
+#include <wx/artprov.h>
 
 namespace Examples {
   class Frame : public wxFrame {
@@ -21,20 +22,20 @@ namespace Examples {
         LoadImages();
       });
 
-      buttonPrevious->Enable(false);
-      buttonPrevious->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
+      buttonUp->Enable(false);
+      buttonUp->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         if (currentImageIndex > 0) picture->SetBitmap(pictures->GetBitmap(--currentImageIndex));
         picture->SetSize(150, 150);
-        buttonPrevious->Enable(currentImageIndex > 0);
-        buttonNext->Enable(currentImageIndex < pictures->GetImageCount() - 1);
+        buttonUp->Enable(currentImageIndex > 0);
+        buttonDown->Enable(currentImageIndex < pictures->GetImageCount() - 1);
       });
 
-      buttonNext->Enable(false);
-      buttonNext->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
+      buttonDown->Enable(false);
+      buttonDown->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         if (currentImageIndex < pictures->GetImageCount()) picture->SetBitmap(pictures->GetBitmap(++currentImageIndex));
         picture->SetSize(150, 150);
-        buttonPrevious->Enable(currentImageIndex > 0);
-        buttonNext->Enable(currentImageIndex < pictures->GetImageCount() - 1);
+        buttonUp->Enable(currentImageIndex > 0);
+        buttonDown->Enable(currentImageIndex < pictures->GetImageCount() - 1);
       });
 
       Show();
@@ -55,8 +56,8 @@ namespace Examples {
         currentImageIndex = 0;
         picture->SetBitmap(pictures->GetBitmap(currentImageIndex));
         picture->SetSize(150, 150);
-        buttonPrevious->Enable(currentImageIndex > 0);
-        buttonNext->Enable(currentImageIndex < pictures->GetImageCount() - 1);
+        buttonUp->Enable(currentImageIndex > 0);
+        buttonDown->Enable(currentImageIndex < pictures->GetImageCount() - 1);
       }
     }
     
@@ -64,8 +65,8 @@ namespace Examples {
     wxPanel* panel = new wxPanel(this);
     wxImageList* pictures = new wxImageList(128, 128);
     wxStaticBitmap* picture = new wxStaticBitmap(panel, wxID_ANY, wxNullBitmap, {75, 25}, wxDefaultSize, wxBORDER_SUNKEN);
-    wxButton* buttonPrevious = new wxButton(panel, wxID_ANY, "&<", {75, 200}, {75, 25});
-    wxButton* buttonNext = new wxButton(panel, wxID_ANY, "&>", {150, 200}, {75, 25});
+    wxBitmapButton* buttonUp = new wxBitmapButton(panel, wxID_UP, wxArtProvider::GetBitmap(wxART_GO_UP, wxART_BUTTON), {75, 200}, {75, 25});
+    wxBitmapButton* buttonDown = new wxBitmapButton(panel, wxID_DOWN, wxArtProvider::GetBitmap(wxART_GO_DOWN, wxART_BUTTON), {150, 200}, {75, 25});
   };
 
   class Application : public wxApp {
