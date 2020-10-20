@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.2)
+project(Dialogs)
+
+add_subdirectory("AboutBox")
+add_subdirectory("AboutBoxGeneric")
+add_subdirectory("AboutBoxSimple")
+add_subdirectory("FindReplaceDialog")
+add_subdirectory(MessageDialog)
+add_subdirectory(MessageDialogShowWindowModal)
+add_subdirectory(PrintAbortDialog)
+add_subdirectory("ProgressDialog")

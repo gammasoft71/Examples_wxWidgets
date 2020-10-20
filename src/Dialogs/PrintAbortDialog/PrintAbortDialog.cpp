@@ -1,0 +1,38 @@
+#include <thread>
+#include <wx/wx.h>
+#include <wx/print.h>
+
+using namespace std;
+using namespace std::literals;
+
+namespace Examples {
+  class Frame : public wxFrame {
+  public:
+    Frame() : wxFrame(nullptr, wxID_ANY, "PrintAbortDialog example", wxDefaultPosition, {300, 300}) {
+      button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
+        dialog->ShowWindowModal();
+        wxYield();
+        for (auto step = 0; step <= 10; step++) {
+          dialog->SetProgress(step, 10, 1, 1);
+          wxYield();
+          this_thread::sleep_for(200ms);
+        }
+        dialog->Hide();
+      });
+    }
+
+  private:
+    wxPrintAbortDialog* dialog = new wxPrintAbortDialog(this, "My document");
+    wxPanel* panel = new wxPanel(this);
+    wxButton* button = new wxButton(panel, wxID_ANY, "Print abort...", {10, 10});
+  };
+
+  class Application : public wxApp {
+    bool OnInit() override {
+      (new Frame())->Show();
+      return true;
+    }
+  };
+}
+
+wxIMPLEMENT_APP(Examples::Application);
