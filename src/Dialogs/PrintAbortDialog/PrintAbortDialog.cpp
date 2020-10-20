@@ -10,7 +10,7 @@ namespace Examples {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "PrintAbortDialog example", wxDefaultPosition, {300, 300}) {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-        dialog->ShowWindowModal();
+        dialog->Show();
         wxYield();
         for (auto step = 0; step <= 10; step++) {
           dialog->SetProgress(step, 10, 1, 1);
