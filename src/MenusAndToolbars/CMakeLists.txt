@@ -3,4 +3,5 @@ project(MenusAndToolbars)
 
 add_subdirectory(MainMenu)
 add_subdirectory(Menu)
+add_subdirectory(StatusBar)
 add_subdirectory(ToolBar)
