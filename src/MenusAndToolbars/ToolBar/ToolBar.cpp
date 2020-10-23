@@ -38,8 +38,7 @@ namespace Examples {
       choice->SetSelection(0);
       choice->Bind(wxEVT_CHOICE, [&](wxCommandEvent& e) {
         listBox1->Append(wxString::Format("Choose item : %s", choice->GetStringSelection()));
-      });
-      
+      });      
     }
 
   private:

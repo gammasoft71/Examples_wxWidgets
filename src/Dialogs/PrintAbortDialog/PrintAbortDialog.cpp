@@ -1,6 +1,7 @@
 #include <thread>
 #include <wx/wx.h>
 #include <wx/print.h>
+#include <wx/richtext/richtextprint.h>
 
 using namespace std;
 using namespace std::literals;
