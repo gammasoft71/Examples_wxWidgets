@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 project(AuiManager)
 
-find_package(wxWidgets REQUIRED COMPONENTS base core aui html net qa richtext webview xml xrc)
+find_package(wxWidgets REQUIRED COMPONENTS base core aui)
 include(${wxWidgets_USE_FILE})
 link_libraries(${wxWidgets_LIBRARIES})
 
