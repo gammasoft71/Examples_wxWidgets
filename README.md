@@ -62,7 +62,13 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [RichTextBox](src/CommonControls/RichTextBox) Shows how to create a RichTextBox widget with wxRichTextCtrl.
 
+[RichToolTip](src/CommonControls/RichToolTip) Shows how to create a RichToolTip widget with wxRichToolTip.
+
 [ScrollBar](src/CommonControls/ScrollBar) Shows how to create a ScrollBar widget with wxScrollBar.
+
+[SearchCtrl](src/CommonControls/SearchCtrl) Shows how to create a SearchCtrl widget with wxSearchCtrl.
+
+[Slider](src/CommonControls/Slider) Shows how to create a Slider widget with wxSlider.
 
 [SpinCtrl](src/CommonControls/SpinCtrl) Shows how to create a SpinCtrl widget with wxSpinCtrl.
 
@@ -70,21 +76,19 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [StaticBitmap](src/CommonControls/StaticBitmap) Shows how to create a StaticBitmap widget with wxStaticBitmap.
 
+[StaticBitmap2](src/CommonControls/StaticBitmap2) Shows how to create a StaticBitmap widget with wxStaticBitmap.
+
 [StaticText](src/CommonControls/StaticText) Shows how to create a StaticText widget with wxStaticText.
 
 [TaskBarIcon](src/CommonControls/TaskBarIcon) Shows how to create a TaskBarIcon widget with wxTaskBarIcon.
 
-[TextBox](src/CommonControls/TextBox) Shows how to create a TextBox widget with wxTextCtrl.
+[TextCtrl](src/CommonControls/TextCtrl) Shows how to create a TextCtrl widget with wxTextCtrl.
 
-[ToolTip](src/CommonControls/ToolTip) Shows how to create a ToolTip widget with wxRichToolTip.
+[TobbleButton](src/CommonControls/TobbleButton) Shows how to create a TobbleButton widget and Event Click with wxTobbleButton.
 
-[TrackBar](src/CommonControls/TrackBar) Shows how to create a TrackBar widget with wxSlider.
+[TreeCtrl](src/CommonControls/TreeCtrl) Shows how to create a TreeView widget with wxTreeCtrl.
 
-[TreeView](src/CommonControls/TreeView) Shows how to create a TreeView widget with wxTreeCtrl.
-
-[VScrollBar](src/CommonControls/VScrollBar) Shows how to create a VScrollBar widget with wxScrollBar.
-
-[WebBrowser](src/CommonControls/WebBrowser) Shows how to create a WebBrowser widget with wxWebView.
+[WebView](src/CommonControls/WebView) Shows how to create a WebViewwidget with wxWebView.
 
 ## Book Controls
 
@@ -102,7 +106,15 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Picker Controls
 
+[ColourPickerCtrl](src/PickerControls/ColourPickerCtrl) Shows how to create a ColourPickerCtrl widget with wxColourPickerCtrl.
+
 [DatePickerCtrl](src/PickerControls/DatePickerCtrl) Shows how to create a DatePicker widget with wxDatePickerCtrl.
+
+[DirPickerCtrl](src/PickerControls/DirPickerCtrl) Shows how to create a DirPickerCtrl widget with wxDirPickerCtrl.
+
+[FilePickerCtrl](src/PickerControls/FilePickerCtrl) Shows how to create a FilePickerCtrl widget with wxFilePickerCtrl.
+
+[FontPickerCtrl](src/PickerControls/FontPickerCtrl) Shows how to create a FontPickerCtrl widget with wxFontPickerCtrl.
 
 [TimePickerCtrl](src/PickerControls/TimePickerCtrl) Shows how to create a TimePicker widget with wxTimePickerCtrl.
 
@@ -131,6 +143,8 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 [MainMenu](src/MenusAndToolbars/MainMenu) Shows how to create a wxWidgets MainMenu with wxMenu.
 
 ## Components
+
+[ToolTip](src/Components/ToolTip) Shows how to create a ToolTip component.
 
 [Timer](src/Components/Timer) Shows how to create a simple wxWidgets Timer with wxTimer.
 
