@@ -127,8 +127,12 @@ private:
     
     wxBitmap bmp(size, size);
     wxMemoryDC dc(bmp);
-    dc.SetBackground(wxBrush({255, 245, 245, 220}));
+    dc.SetBackground(wxBrush({245, 245, 220, 255}));
     dc.Clear();
+
+    dc.SetPen(wxPen({205, 205, 185, 255}, 2));
+    dc.DrawRoundedRectangle(0, 0, size, size, 4.0);
+    
     dc.SetPen(*wxRED_PEN);
     dc.SetBrush(*wxRED_BRUSH);
     
