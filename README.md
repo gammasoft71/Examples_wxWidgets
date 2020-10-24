@@ -4,17 +4,17 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Hello World
 
-["Hello World (Emoticons)"](src/HelloWorld/HelloWorldEmoticons) The classic first application HelloWorld with emoticons.
+["Hello World (Emoticons)"](src/HelloWorlds/HelloWorldEmoticons) The classic first application HelloWorld with emoticons.
 
-["Hello World (Label)"](src/HelloWorld/HelloWorldLabel) The classic first application HelloWorld with wxStaticText.
+["Hello World (StaticText)"](src/HelloWorlds/HelloWorldStaticText) The classic first application HelloWorld with wxStaticText.
 
-["Hello World (MessageDialog)"](src/HelloWorld/HelloWorldMessageDialog) The classic first application HelloWorld with wxMessageDialog.
+["Hello World (MessageDialog)"](src/HelloWorlds/HelloWorldMessageDialog) The classic first application HelloWorld with wxMessageDialog.
 
-["Hello World (MessageDialog2)"](src/HelloWorld/HelloWorldMessageDialog2) The classic first application HelloWorld with wxMessageDialog.
+["Hello World (MessageDialog2)"](src/HelloWorlds/HelloWorldMessageDialog2) The classic first application HelloWorld with wxMessageDialog.
 
-["Hello World (Paint)"](src/HelloWorld/HelloWorldPaint) The classic first application HelloWorld with wxEVT_PAINT event.
+["Hello World (Paint)"](src/HelloWorlds/HelloWorldPaint) The classic first application HelloWorld with wxEVT_PAINT event.
 
-["Hello World (wxWidgets)"](src/HelloWorld/HelloWorldInWxWidgets) The classic first application HelloWorld presented as skeleton by wxWidgets.
+["Hello World (wxWidgets)"](src/HelloWorlds/HelloWorldInWxWidgets) The classic first application HelloWorld presented as skeleton by wxWidgets.
 
 ## Application
 
@@ -30,65 +30,77 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Common Controls
 
-[BitmapButton](src/CommonControls/BitmapButton) Shows how to create a wxWidgets Button and Bitmap with wxButton.
+[BitmapButton](src/CommonControls/BitmapButton) Shows how to create a Button widget and Bitmap with wxButton.
 
-[Button](src/CommonControls/Button) Shows how to create a wxWidgets Button and Event Click with wxButton.
+[Button](src/CommonControls/Button) Shows how to create a Button widget and Event Click with wxButton.
 
-[CheckBox](src/CommonControls/CheckBox) Shows how to create a wxWidgets CheckBox with wxCheckBox.
+[CalendarCtrl](src/CommonControls/CalendarCtrl) Shows how to create a CalendarCtrl widget with wxCalendarCtrl.
 
-[CheckedListBox](src/CommonControls/CheckedListBox) Shows how to create a wxWidgets CheckListBox with wxCheckListButton.
+[CheckBox](src/CommonControls/CheckBox) Shows how to create a CheckBox widget with wxCheckBox.
 
-[Choice](src/CommonControls/Choice) Shows how to create a wxWidgets Choice with wxChoice.
+[CheckedListBox](src/CommonControls/CheckedListBox) Shows how to create a CheckListBox widget with wxCheckListButton.
 
-[ComboBox](src/CommonControls/ComboBox) Shows how to create a wxWidgets ComboBox with wxComboBox.
+[Choice](src/CommonControls/Choice) Shows how to create a Choice widget with wxChoice.
 
-[CommandLinkButton](src/CommonControls/CommandLinkButton) Shows how to create a wxWidgets CommandLinkButton with wxCommandLinkButton.
+[ComboBox](src/CommonControls/ComboBox) Shows how to create a ComboBox widget with wxComboBox.
 
-[Control](src/CommonControls/Control) Shows how to create a wxWidgets Control with wwxControl.
+[CommandLinkButton](src/CommonControls/CommandLinkButton) Shows how to create a CommandLinkButton widget with wxCommandLinkButton.
 
-[Gauge](src/CommonControls/Gauge) Shows how to create a wxWidgets Gauge with wxGauge.
+[Control](src/CommonControls/Control) Shows how to create a Control widget with wwxControl.
 
-[DateTimePicker](src/CommonControls/DateTimePicker) Shows how to create a wxWidgets DateTimePicker with wxDatePicker.
+[Gauge](src/CommonControls/Gauge) Shows how to create a Gauge widget with wxGauge.
 
-[DomainUpDown](src/CommonControls/DomainUpDown) Shows how to create a wxWidgets DomainUpDown with own [wxDomainSpinCtrl](src/CommonControls/DomainUpDown/wxDomainSpinCtrl.h) (wxPanel with wxTextCtrl and wxSpinButton).
+[DateTimePicker](src/CommonControls/DateTimePicker) Shows how to create a DateTimePicker widget with wxDatePicker.
 
-[HScrollBar](src/CommonControls/HScrollBar) Shows how to create a wxWidgets HScrollBar with wxScrollBar.
+[DomainUpDown](src/CommonControls/DomainUpDown) Shows how to create a DomainUpDown widget with own [wxDomainSpinCtrl](src/CommonControls/DomainUpDown/wxDomainSpinCtrl.h) (wxPanel with wxTextCtrl and wxSpinButton).
 
-[Label](src/CommonControls/Label) Shows how to create a wxWidgets Label with wxStaticText.
+[GenericStaticBitmap](src/CommonControls/GenericStaticBitmap) Shows how to create a StaticBitmap widget with wxGenericStaticBitmap.
 
-[LinkLabel](src/CommonControls/LinkLabel) Shows how to create a wxWidgets LinkLabel with wxHyperLinkCtrl.
+[HyperlinkCtrl](src/CommonControls/HyperlinkCtrl) Shows how to create an HyperLink widget with wxHyperlinkCtrl.
 
-[ListBox](src/CommonControls/ListBox) Shows how to create a wxWidgets ListBox with wxListBox.
+[ListBox](src/CommonControls/ListBox) Shows how to create a ListBox widget with wxListBox.
 
-[ListView](src/CommonControls/ListView) Shows how to create a wxWidgets ListView with wxListCtrl.
+[ListCtrl](src/CommonControls/ListCtrl) Shows how to create a ListCtrl widget with wxListCtrl.
 
-[MonthCalendar](src/CommonControls/MonthCalendar) Shows how to create a wxWidgets MonthCalendar with wxCalendarCtrl.
+[NotifyIcon](src/CommonControls/NotifyIcon) Shows how to create a NotifyIcon widget with own [wxNotifyIcon](src/CommonControls/NotifyIcon/wxNotifyIcon.h) (wxTaskBarIcon).
 
-[NotifyIcon](src/CommonControls/NotifyIcon) Shows how to create a wxWidgets NotifyIcon with own [wxNotifyIcon](src/CommonControls/NotifyIcon/wxNotifyIcon.h) (wxTaskBarIcon).
+[NumericUpDown](src/CommonControls/NumericUpDown) Shows how to create a NumericUpDown widget with wxSpinCtrl and wxSpinCtrlDouble.
 
-[NumericUpDown](src/CommonControls/NumericUpDown) Shows how to create a wxWidgets NumericUpDown with wxSpinCtrl and wxSpinCtrlDouble.
+[PictureBox](src/CommonControls/PictureBox) Shows how to create a CheckBox widget with wxStaticBitmap.
 
-[PictureBox](src/CommonControls/PictureBox) Shows how to create a wxWidgets CheckBox with wxStaticBitmap.
+[RadioButton](src/CommonControls/RadioButton) Shows how to create a RadioButton widget with wxRadioButton.
 
-[RadioButton](src/CommonControls/RadioButton) Shows how to create a wxWidgets RadioButton with wxRadioButton.
+[RichTextBox](src/CommonControls/RichTextBox) Shows how to create a RichTextBox widget with wxRichTextCtrl.
 
-[RichTextBox](src/CommonControls/RichTextBox) Shows how to create a wxWidgets RichTextBox with wxRichTextCtrl.
+[ScrollBar](src/CommonControls/ScrollBar) Shows how to create a ScrollBar widget with wxScrollBar.
 
-[TextBox](src/CommonControls/TextBox) Shows how to create a wxWidgets TextBox with wxTextCtrl.
+[StaticText](src/CommonControls/StaticText) Shows how to create a StaticText widget with wxStaticText.
 
-[ToolTip](src/CommonControls/ToolTip) Shows how to create a wxWidgets ToolTip with wxRichToolTip.
+[TextBox](src/CommonControls/TextBox) Shows how to create a TextBox widget with wxTextCtrl.
 
-[TrackBar](src/CommonControls/TrackBar) Shows how to create a wxWidgets TrackBar with wxSlider.
+[ToolTip](src/CommonControls/ToolTip) Shows how to create a ToolTip widget with wxRichToolTip.
 
-[TreeView](src/CommonControls/TreeView) Shows how to create a wxWidgets TreeView with wxTreeCtrl.
+[TrackBar](src/CommonControls/TrackBar) Shows how to create a TrackBar widget with wxSlider.
 
-[VScrollBar](src/CommonControls/VScrollBar) Shows how to create a wxWidgets VScrollBar with wxScrollBar.
+[TreeView](src/CommonControls/TreeView) Shows how to create a TreeView widget with wxTreeCtrl.
 
-[WebBrowser](src/CommonControls/WebBrowser) Shows how to create a wxWidgets WebBrowser with wxWebView.
+[VScrollBar](src/CommonControls/VScrollBar) Shows how to create a VScrollBar widget with wxScrollBar.
+
+[WebBrowser](src/CommonControls/WebBrowser) Shows how to create a WebBrowser widget with wxWebView.
 
 ## Book Controls
 
-[Button](src/CommonControls/Button) Shows how to create a wxWidgets Button and Event Click with wxButton.
+[Notebook](src/BookControls/Choicebook) Shows how to create a Choicebook widget with wxChoiceBook.
+
+[Notebook](src/BookControls/Listbook) Shows how to create a Listbook widget with wxListBook.
+
+[Notebook](src/BookControls/Notebook) Shows how to create a Notebook widget with wxNoteBook.
+
+[Notebook](src/BookControls/Simplebook) Shows how to create a Simplebook widget with wxSimplebook.
+
+[Notebook](src/BookControls/Toolbook) Shows how to create a Toolbook widget with wxToolbook.
+
+[Notebook](src/BookControls/Treebook) Shows how to create a Treebook widget with wxTreebook.
 
 ## Containers
 

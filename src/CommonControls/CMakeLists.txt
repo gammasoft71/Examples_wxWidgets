@@ -3,6 +3,7 @@ project(CommonControls)
 
 add_subdirectory(BitmapButton)
 add_subdirectory(Button)
+add_subdirectory(CalendarCtrl)
 add_subdirectory(CheckBox)
 add_subdirectory(CheckListBox)
 add_subdirectory(Choice)
