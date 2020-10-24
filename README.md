@@ -148,6 +148,14 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [ToolBar](src/MenusAndToolbars/ToolBar) Shows how to create a ToolBar widget with wxToolBar.
 
+## Window Docking
+
+[AuiToolbar](src/WindowDocking/AuiToolbar) Shows how to create a AuiToolbar widget with wxAuiToolbar.
+
+[AuiManager](src/WindowDocking/AuiManager) Shows how to create a AuiManager widget with wxAuiManager.
+
+[AuiNotebook](src/WindowDocking/AuiNotebook) Shows how to create a AuiNotebook widget with AuiNotebook.
+
 ## Components
 
 [ArtProvider](src/Components/ArtProvider) Shows how to create a simple ArtProvider component with wxArtProvider.
