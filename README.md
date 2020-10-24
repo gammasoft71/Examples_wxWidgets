@@ -211,7 +211,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 ## Download
 
 ``` shell
-git clone https://github.com/gammasoft71/Examples.wxWidgets Examples.wxWidgets
+git clone https://github.com/gammasoft71/Examples_wxWidgets Examples_wxWidgets
 ```
 
 ## Generate and build
@@ -223,7 +223,7 @@ To build this project, open "Terminal" and type following lines:
 mkdir build
 cd build
 cmake ..
-open Examples.wxWidgets.sln
+open Examples_wxWidgets.sln
 ```
 
 ### macOS :
@@ -232,16 +232,24 @@ open Examples.wxWidgets.sln
 mkdir build
 cd build
 cmake .. -G "Xcode"
-open ./Examples.wxWidgets.xcodeproj
+open ./Examples_wxWidgets.xcodeproj
 ```
 
+### Linux with Code::Blocks :
+
+``` cmake
+mkdir build
+cd build
+cmake .. -G "CodeBlocks - Unix Makefiles"
+xdg-open ./Examples_wxWidgets.cbp > /dev/null 2>&1
+```
 
 ### Linux :
 
 ``` cmake
 mkdir build
 cd build
-cmake .. 
+cmake .. -G "CodeBlocks - Unix Makefiles"
 cmake --build . --config Debug
 ```
 
