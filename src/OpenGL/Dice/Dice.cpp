@@ -1,3 +1,4 @@
+#include <stdexcept>
 #include <array>
 #include <memory>
 #include <wx/wx.h>
@@ -79,7 +80,7 @@ public:
   }
 
   static void CheckGLError() {
-    for(GLenum error = glGetError(); error != GL_NO_ERROR; error = glGetError())
+    for(auto error = glGetError(); error != GL_NO_ERROR; error = glGetError())
       wxLogError("OpenGL error %d", error);
   }
 
@@ -93,7 +94,7 @@ private:
     glEnable(GL_LIGHT0);
     glEnable(GL_TEXTURE_2D);
     
-    std::array<GLfloat, 4> ambient = {0.5, 0.5, 0.5, 0.5};
+    std::vector ambient = {0.5f, 0.5f, 0.5f, 0.5f};
     glLightfv(GL_LIGHT0, GL_AMBIENT, ambient.data());
     
     glMatrixMode(GL_PROJECTION);
@@ -111,7 +112,7 @@ private:
       glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
       glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
       
-      const wxImage img(DrawDice(256, i + 1));
+      auto img = DrawDice(256, i + 1);
       
       glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
       glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, img.GetWidth(), img.GetHeight(), 0, GL_RGB, GL_UNSIGNED_BYTE, img.GetData());
@@ -120,7 +121,7 @@ private:
   }
 
   static wxImage DrawDice(int size, size_t num) {
-    wxASSERT_MSG( num >= 1 && num <= 6, "invalid dice index" );
+    if (num < 1 || num > 6) throw std::invalid_argument("invalid dice index");
     
     const int dot = size / 16;
     const int gap = 5 * size / 32;
@@ -128,7 +129,7 @@ private:
     wxBitmap bmp(size, size);
     wxMemoryDC dc(bmp);
     dc.SetBackground(wxBrush({245, 245, 220, 255}));
-    dc.Clear();    
+    dc.Clear();
     dc.SetPen(*wxRED_PEN);
     dc.SetBrush(*wxRED_BRUSH);
     
@@ -136,15 +137,12 @@ private:
       dc.DrawCircle(gap + dot, gap + dot, dot);
       dc.DrawCircle(size - gap - dot, size - gap - dot, dot);
     }
-    
     if (num % 2)
       dc.DrawCircle(size/2, size/2, dot);
-    
     if (num > 3) {
       dc.DrawCircle(size - gap - dot, gap + dot, dot);
       dc.DrawCircle(gap + dot, size - gap - dot, dot);
     }
-    
     if (num == 6) {
       dc.DrawCircle(gap + dot, size/2, dot);
       dc.DrawCircle(size - gap - dot, size/2, dot);
@@ -152,7 +150,7 @@ private:
     return bmp.ConvertToImage();
   }
 
-  std::array<GLuint, 6> textures;
+  std::array<unsigned int, 6> textures;
 };
 
 class MyFrame : public wxFrame {
@@ -177,12 +175,9 @@ public:
     });
     
     glCanvas->Bind(wxEVT_PAINT, [this](wxPaintEvent& event) {
-      const wxSize clientSize = GetClientSize() * GetContentScaleFactor();
-      
-      TestGLContext& canvas = TestGLContext::Instance(glCanvas);
+      auto clientSize = GetClientSize() * GetContentScaleFactor();
       glViewport(0, 0, clientSize.x, clientSize.y);
-      
-      canvas.DrawRotatedDice(xangle, yangle);
+      TestGLContext::Instance(glCanvas).DrawRotatedDice(xangle, yangle);
       glCanvas->SwapBuffers();
     });
     
