@@ -50,8 +50,6 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [Gauge](src/CommonControls/Gauge) Shows how to create a Gauge widget with wxGauge.
 
-[DateTimePicker](src/CommonControls/DateTimePicker) Shows how to create a DateTimePicker widget with wxDatePicker.
-
 [DomainUpDown](src/CommonControls/DomainUpDown) Shows how to create a DomainUpDown widget with own [wxDomainSpinCtrl](src/CommonControls/DomainUpDown/wxDomainSpinCtrl.h) (wxPanel with wxTextCtrl and wxSpinButton).
 
 [GenericStaticBitmap](src/CommonControls/GenericStaticBitmap) Shows how to create a StaticBitmap widget with wxGenericStaticBitmap.
@@ -101,6 +99,12 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 [Notebook](src/BookControls/Toolbook) Shows how to create a Toolbook widget with wxToolbook.
 
 [Notebook](src/BookControls/Treebook) Shows how to create a Treebook widget with wxTreebook.
+
+## Picker Controls
+
+[DatePicker](src/PickerControls/DatePicker) Shows how to create a DatePicker widget with wxDatePicker.
+
+[TimePicker](src/PickerControls/TimePicker) Shows how to create a TimePicker widget with wxTimePicker.
 
 ## Containers
 
