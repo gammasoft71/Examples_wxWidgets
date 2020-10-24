@@ -26,8 +26,6 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [ApplicationIcon](src/Application/ApplicationIcon) Shows how to create a wxWidgets application and icon with wxApp.
 
-[ApplicationIdle](src/Application/ApplicationIdle) Shows how to create a wxWidgets application and Idle message with wxApp.
-
 ## Common Controls
 
 [BitmapButton](src/CommonControls/BitmapButton) Shows how to create a Button widget and Bitmap with wxButton.
@@ -184,13 +182,19 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Events
 
-[ApplicationIdle](src/Application/ApplicationIdle) Shows how to create an application and catch idle event.
+[ApplicationIdle](src/Events/ApplicationIdle) Shows how to create an application and catch idle event.
 
-[FormAndEvents](src/Events/FormAndEvents) Shows how to create a form and catch events.
+[CustomEvent](src/Events/CustomEvent) Shows how to create a CustomEvent event with wxCommandEvent.
 
-[FormClick](src/Events/FormClick) Shows how to create a form and catch click event.
+[FrameAndEvents](src/Events/FrameAndEvents) Shows how to create a Frame and catch some events.
 
-[FormPaint](src/Others/FormPaint) Shows how to create a form and catch paint event.
+[FrameClick](src/Events/FrameClick) Shows how to create a Frame and catch click event.
+
+[KeyEvents](src/Events/KeyEvents) Shows how to create a Frame and catch key events.
+
+[MouseEvents](src/Events/MouseEvents) Shows how to create a Frame and catch mouse events.
+
+[ProcessEvent](src/Events/ProcessEvent) Shows how to override ProcessEvent method.
 
 ## Others
 
@@ -207,6 +211,10 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 [GroupBoxAndRadioButton](src/Others/GroupBoxAndRadioButton) Shows how to use GroupBox and RadioButtons.
 
 [MdiForm](src/Others/MdiForm) Shows how to create a MDI (Multiple Document Interface) form.
+
+## Painting
+
+[FormPaint](src/Others/FormPaint) Shows how to create a form and catch paint event.
 
 ## Download
 
