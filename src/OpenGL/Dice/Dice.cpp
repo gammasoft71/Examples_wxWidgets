@@ -5,7 +5,7 @@
 
 class TestGLContext : public wxGLContext {
 public:
-  void DrawRotatedCube(float xangle, float yangle) {
+  void DrawRotatedDice(float xangle, float yangle) {
     glClearColor(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE).Red() / 255.0f, wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE).Green() / 255.0f, wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE).Blue() / 255.0f, wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE).Alpha() / 255.0f);
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
@@ -157,7 +157,7 @@ private:
 
 class MyFrame : public wxFrame {
 public:
-  MyFrame() : wxFrame(nullptr, wxID_ANY, "Cube example") {
+  MyFrame() : wxFrame(nullptr, wxID_ANY, "Dice example") {
     auto menu = new wxMenu;
     menu->AppendSeparator();
     menu->Append(wxID_NEW);
@@ -182,7 +182,7 @@ public:
       TestGLContext& canvas = TestGLContext::Instance(glCanvas);
       glViewport(0, 0, clientSize.x, clientSize.y);
       
-      canvas.DrawRotatedCube(xangle, yangle);
+      canvas.DrawRotatedDice(xangle, yangle);
       glCanvas->SwapBuffers();
     });
     
