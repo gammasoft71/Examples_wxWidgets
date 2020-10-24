@@ -14,7 +14,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ["Hello World (Paint)"](src/HelloWorld/HelloWorldPaint) The classic first application HelloWorld with wxEVT_PAINT event.
 
-["Hello World (wxWidgets)"](src/HelloWorld/HelloWorldWxWidgets) The classic first application HelloWorld presented as skeleton by wxWidgets.
+["Hello World (wxWidgets)"](src/HelloWorld/HelloWorldInWxWidgets) The classic first application HelloWorld presented as skeleton by wxWidgets.
 
 ## Application
 
