@@ -128,25 +128,41 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Containers
 
-[Form](src/Containers/Form) Shows how to create a simple wxWidgets Form with wxFrame.
+[Frame](src/Containers/Frame) Shows how to create a simple Frame container with wxFrame.
 
-[GroupBox](src/Containers/GroupBox) Shows how to create a simple wxWidgets GroupBox with wxStaticBox.
+[Panel](src/Containers/Panel) Shows how to create a simple Panel container with wxPanel.
 
-[Panel](src/Containers/Panel) Shows how to create a simple wxWidgets Panel with wxPanel.
+[RadioBox](src/Containers/RadioBox) Shows how to create a simple RadioBox container with wxRadioBox.
 
-[SplitContainer](src/Containers/SplitContainer) Shows how to create a simple wxWidgets SplitContainer with wxSplitterWindow and wxPanel.
+[SplitterWindow](src/Containers/SplitterWindow) Shows how to create a simple SplitterWindow container with wxSplitterWindow and wxPanel.
 
-[TabControl](src/Containers/TabControl) Shows how to create a simple wxWidgets TabControl with TabPages with wxNotebook.
+[StaticBox](src/Containers/StaticBox) Shows how to create a simple StaticBox container with wxStaticBox.
 
 ## Menus and toolbars
 
-[MainMenu](src/MenusAndToolbars/MainMenu) Shows how to create a wxWidgets MainMenu with wxMenu.
+[Menu](src/MenusAndToolbars/Menu) Shows how to create a (contextual) Menu widget with wxMenu.
+
+[MainMenu](src/MenusAndToolbars/MainMenu) Shows how to create a MainMenu widget with wxMenu.
+
+[StatusBar](src/MenusAndToolbars/StatusBar) Shows how to create a StatusBar widget with wxStatusBar.
+
+[ToolBar](src/MenusAndToolbars/ToolBar) Shows how to create a ToolBar widget with wxToolBar.
 
 ## Components
 
-[ToolTip](src/Components/ToolTip) Shows how to create a ToolTip component.
+[ArtProvider](src/Components/ArtProvider) Shows how to create a simple ArtProvider component with wxArtProvider.
 
-[Timer](src/Components/Timer) Shows how to create a simple wxWidgets Timer with wxTimer.
+[Config](src/Components/Config) Shows how to create a simple Config component with wxConfig.
+
+[Config2](src/Components/Config2) Shows how to create a simple Config component with wxConfig.
+
+[Cursor](src/Components/Cursor) Shows how to create a simple Cursor component with wxCursor.
+
+[ImageList](src/Components/ImageList) Shows how to create a simple ImageList component with wxImageList.
+
+[Timer](src/Components/Timer) Shows how to create a simple Timer component with wxTimer.
+
+[ToolTip](src/Components/ToolTip) Shows how to create a ToolTip component.
 
 ## Dialogs
 
