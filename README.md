@@ -102,9 +102,9 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Picker Controls
 
-[DatePicker](src/PickerControls/DatePicker) Shows how to create a DatePicker widget with wxDatePicker.
+[DatePickerCtrl](src/PickerControls/DatePickerCtrl) Shows how to create a DatePicker widget with wxDatePickerCtrl.
 
-[TimePicker](src/PickerControls/TimePicker) Shows how to create a TimePicker widget with wxTimePicker.
+[TimePickerCtrl](src/PickerControls/TimePickerCtrl) Shows how to create a TimePicker widget with wxTimePickerCtrl.
 
 ## Containers
 
