@@ -50,8 +50,6 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [Gauge](src/CommonControls/Gauge) Shows how to create a Gauge widget with wxGauge.
 
-[DomainUpDown](src/CommonControls/DomainUpDown) Shows how to create a DomainUpDown widget with own [wxDomainSpinCtrl](src/CommonControls/DomainUpDown/wxDomainSpinCtrl.h) (wxPanel with wxTextCtrl and wxSpinButton).
-
 [GenericStaticBitmap](src/CommonControls/GenericStaticBitmap) Shows how to create a StaticBitmap widget with wxGenericStaticBitmap.
 
 [HyperlinkCtrl](src/CommonControls/HyperlinkCtrl) Shows how to create an HyperLink widget with wxHyperlinkCtrl.
@@ -60,19 +58,21 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [ListCtrl](src/CommonControls/ListCtrl) Shows how to create a ListCtrl widget with wxListCtrl.
 
-[NotifyIcon](src/CommonControls/NotifyIcon) Shows how to create a NotifyIcon widget with own [wxNotifyIcon](src/CommonControls/NotifyIcon/wxNotifyIcon.h) (wxTaskBarIcon).
-
-[NumericUpDown](src/CommonControls/NumericUpDown) Shows how to create a NumericUpDown widget with wxSpinCtrl and wxSpinCtrlDouble.
-
-[PictureBox](src/CommonControls/PictureBox) Shows how to create a CheckBox widget with wxStaticBitmap.
-
 [RadioButton](src/CommonControls/RadioButton) Shows how to create a RadioButton widget with wxRadioButton.
 
 [RichTextBox](src/CommonControls/RichTextBox) Shows how to create a RichTextBox widget with wxRichTextCtrl.
 
 [ScrollBar](src/CommonControls/ScrollBar) Shows how to create a ScrollBar widget with wxScrollBar.
 
+[SpinCtrl](src/CommonControls/SpinCtrl) Shows how to create a SpinCtrl widget with wxSpinCtrl.
+
+[SpinCtrlDouble](src/CommonControls/SpinCtrlDouble) Shows how to create a SpinCtrlDouble widget with wxSpinCtrlDouble.
+
+[StaticBitmap](src/CommonControls/StaticBitmap) Shows how to create a StaticBitmap widget with wxStaticBitmap.
+
 [StaticText](src/CommonControls/StaticText) Shows how to create a StaticText widget with wxStaticText.
+
+[TaskBarIcon](src/CommonControls/TaskBarIcon) Shows how to create a TaskBarIcon widget with wxTaskBarIcon.
 
 [TextBox](src/CommonControls/TextBox) Shows how to create a TextBox widget with wxTextCtrl.
 
@@ -105,6 +105,14 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 [DatePickerCtrl](src/PickerControls/DatePickerCtrl) Shows how to create a DatePicker widget with wxDatePickerCtrl.
 
 [TimePickerCtrl](src/PickerControls/TimePickerCtrl) Shows how to create a TimePicker widget with wxTimePickerCtrl.
+
+## Custom controls
+
+[NumericTextBox](src/CustomControls/NumericTextBox) Shows how to create a custom control wxNumericTextCtrl from wxTextCtrl.
+
+[Line](src/CustomControls/Line) Shows how to create a custom control wxLine from wxPanel.
+
+[DomainSpinCtrl](src/CustomControls/DomainSpinCtrl) Shows how to create a DomainSpinCtrl widget with own [wxDomainSpinCtrl](src/CustomControls/DomainSpinCtrl/wxDomainSpinCtrl.h) (wxPanel with wxTextCtrl and wxSpinButton).
 
 ## Containers
 
@@ -145,12 +153,6 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 [FormClick](src/Events/FormClick) Shows how to create a form and catch click event.
 
 [FormPaint](src/Others/FormPaint) Shows how to create a form and catch paint event.
-
-## Custom controls
-
-[NumericTextBox](src/CustomControls/NumericTextBox) Shows how to create a custom control wxNumericTextCtrl from wxTextCtrl.
-
-[Line](src/Others/Line) Shows how to create a custom control wxLine from wxPanel.
 
 ## Others
 
