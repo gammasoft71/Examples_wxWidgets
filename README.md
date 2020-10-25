@@ -257,7 +257,7 @@ xdg-open ./Examples_wxWidgets.cbp > /dev/null 2>&1
 ``` shell
 mkdir build
 cd build
-cmake .. -G "CodeBlocks - Unix Makefiles"
+cmake ..
 cmake --build . --config Debug
 ```
 
