@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.2)
 project(CommonControls)
 
+add_subdirectory(ActivityIndicator)
 add_subdirectory(BitmapButton)
 add_subdirectory(Button)
 add_subdirectory(CalendarCtrl)

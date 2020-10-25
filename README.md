@@ -28,6 +28,8 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Common Controls
 
+[ActivityIndicator](src/CommonControls/ActivityIndicator) Shows how to create a ActivityIndicator widget with wxActivityIndicator.
+
 [BitmapButton](src/CommonControls/BitmapButton) Shows how to create a BitmapButton widget with wxBitmapButton.
 
 [Button](src/CommonControls/Button) Shows how to create a Button widget and Event Click with wxButton.
