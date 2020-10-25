@@ -8,14 +8,12 @@ namespace Examples {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "AnimationCtrl example") {
-      bool exists = std::filesystem::exists("Resources/open.gif");
-      bool loaded = animationCtrl->LoadFile("Resources/open.gif", wxANIMATION_TYPE_GIF);
+      SetClientSize(animationCtrl->GetSize());
       animationCtrl->Play();
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
-    wxAnimationCtrl* animationCtrl = new wxAnimationCtrl(panel, wxID_ANY, wxNullAnimation, {10, 10}, {245, 200});
+    wxAnimationCtrl* animationCtrl = new wxAnimationCtrl(this, wxID_ANY, wxAnimation("Resources/load.gif"));
   };
 
   class Application : public wxApp {
