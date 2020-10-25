@@ -7,11 +7,13 @@ namespace Examples {
     Frame() : wxFrame(nullptr, wxID_ANY, "Toolbook example") {
       SetClientSize(390, 270);
       
-      tabControl1->SetImageList(new wxImageList());
-      tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Red")));
-      tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Forest Green")));
-      tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Blue")));
-      tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Yellow")));
+      // On Windows the default size icon of toolbar is 16x16 and not 32x32...
+      auto toolbarIconSize = wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows" ? 16 : 32;
+      tabControl1->SetImageList(new wxImageList(toolbarIconSize, toolbarIconSize));
+      tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Red"), tabControl1->GetImageList()->GetSize()));
+      tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Forest Green"), tabControl1->GetImageList()->GetSize()));
+      tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Blue"), tabControl1->GetImageList()->GetSize()));
+      tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Yellow"), tabControl1->GetImageList()->GetSize()));
       
       tabControl1->AddPage(tabPageRed, "Red", true, 0);
       tabControl1->AddPage(tabPageGreen, "Green", false, 1);
@@ -25,20 +27,16 @@ namespace Examples {
     }
     
   private:
-    wxBitmap CreateImageFromColor(const wxColor& color) {
-      wxImage image(24, 24);
-      image.InitAlpha();
-      for (int y = 0; y < 24; y++)
-        for (int x = 0; x < 24; x++)
-          image.SetAlpha(x, y, 0);
-      wxBitmap result(image);
+    wxBitmap CreateImageFromColor(const wxColor& color, const wxSize& size) {
+      wxBitmap result(size);
       wxMemoryDC memoryDC(result);
       memoryDC.SetBrush(wxBrush(color));
-      memoryDC.DrawEllipse(0, 0, 24, 24);
+      memoryDC.SetPen(*wxBLACK_PEN);
+      memoryDC.DrawRectangle(0, 0, result.GetSize().GetWidth(), result.GetSize().GetHeight());
       return result;
     }
     wxPanel* panel = new wxPanel(this);
-    wxToolbook* tabControl1 = new wxToolbook(panel, wxID_ANY, {10, 10}, {370, 250});
+    wxToolbook* tabControl1 = new wxToolbook(panel, wxID_ANY, {10, 10}, {370, 250}, wxNB_RIGHT);
     wxNotebookPage* tabPageRed = new wxNotebookPage(tabControl1, wxID_ANY);
     wxNotebookPage* tabPageGreen = new wxNotebookPage(tabControl1, wxID_ANY);
     wxNotebookPage* tabPageBlue = new wxNotebookPage(tabControl1, wxID_ANY);
