@@ -90,17 +90,17 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Book Controls
 
-[Notebook](src/BookControls/Choicebook) Shows how to create a Choicebook widget with wxChoiceBook.
+[Choicebook](src/BookControls/Choicebook) Shows how to create a Choicebook widget with wxChoiceBook.
 
-[Notebook](src/BookControls/Listbook) Shows how to create a Listbook widget with wxListBook.
+[Listbook](src/BookControls/Listbook) Shows how to create a Listbook widget with wxListBook.
 
 [Notebook](src/BookControls/Notebook) Shows how to create a Notebook widget with wxNoteBook.
 
-[Notebook](src/BookControls/Simplebook) Shows how to create a Simplebook widget with wxSimplebook.
+[Simplebook](src/BookControls/Simplebook) Shows how to create a Simplebook widget with wxSimplebook.
 
-[Notebook](src/BookControls/Toolbook) Shows how to create a Toolbook widget with wxToolbook.
+[Toolbook](src/BookControls/Toolbook) Shows how to create a Toolbook widget with wxToolbook.
 
-[Notebook](src/BookControls/Treebook) Shows how to create a Treebook widget with wxTreebook.
+[Treebook](src/BookControls/Treebook) Shows how to create a Treebook widget with wxTreebook.
 
 ## Picker Controls
 
