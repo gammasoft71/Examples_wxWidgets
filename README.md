@@ -227,7 +227,7 @@ git clone https://github.com/gammasoft71/Examples_wxWidgets Examples_wxWidgets
 To build this project, open "Terminal" and type following lines:
 
 ### Windows
-``` cmake
+``` shell
 mkdir build
 cd build
 cmake ..
@@ -236,7 +236,7 @@ open Examples_wxWidgets.sln
 
 ### macOS :
 
-``` cmake
+``` shell
 mkdir build
 cd build
 cmake .. -G "Xcode"
@@ -245,7 +245,7 @@ open ./Examples_wxWidgets.xcodeproj
 
 ### Linux with Code::Blocks :
 
-``` cmake
+``` shell
 mkdir build
 cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
@@ -254,7 +254,7 @@ xdg-open ./Examples_wxWidgets.cbp > /dev/null 2>&1
 
 ### Linux :
 
-``` cmake
+``` shell
 mkdir build
 cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
