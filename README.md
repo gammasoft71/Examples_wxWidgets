@@ -28,7 +28,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Common Controls
 
-[BitmapButton](src/CommonControls/BitmapButton) Shows how to create a Button widget and Bitmap with wxButton.
+[BitmapButton](src/CommonControls/BitmapButton) Shows how to create a BitmapButton widget with wxBitmapButton.
 
 [Button](src/CommonControls/Button) Shows how to create a Button widget and Event Click with wxButton.
 
@@ -197,6 +197,8 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 [ProcessEvent](src/Events/ProcessEvent) Shows how to override ProcessEvent method.
 
 ## Others
+
+[BitmapButtonWithLabel](src/Others/BitmapButtonWithLabel) Shows how to create a Button with Bitmap and Label widget with wxButton.
 
 [ColoredForms](src/Others/ColoredForms) Shows how to create colored background forms.
 
