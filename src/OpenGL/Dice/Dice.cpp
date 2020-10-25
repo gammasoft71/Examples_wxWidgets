@@ -161,14 +161,17 @@ public:
     menu->Append(wxID_NEW);
     menu->Append(wxID_CLOSE);
     menu->AppendSeparator();
+    menu->Append(wxID_EXECUTE, "Start\tF5");
+    menu->AppendSeparator();
     menu->Append(wxID_EXIT);
     auto menuBar = new wxMenuBar;
     menuBar->Append(menu, "&Animation");
     SetMenuBar(menuBar);
-    GetMenuBar()->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
+    GetMenuBar()->Bind(wxEVT_MENU, [this](wxCommandEvent& event) {
       switch(event.GetId()) {
         case wxID_CLOSE: Close(true); break;
         case wxID_NEW: new MyFrame(); break;
+        case wxID_EXECUTE: SwapTimereSate(spinTimer); break;
         case wxID_EXIT: wxTheApp->Exit(); break;
         default:break;
       }
@@ -187,8 +190,6 @@ public:
         case WXK_LEFT: Spin(0.0, 1.0f); break;
         case WXK_UP: Spin(1.0f, 0.0f); break;
         case WXK_RIGHT: Spin(0.0, -1.0f); break;
-        case WXK_RETURN:
-        case WXK_SPACE: SwapTimereSate(spinTimer); break;
         default: event.Skip(); break;
       }
     });
@@ -213,9 +214,14 @@ public:
   }
   
 private:
-  static void SwapTimereSate(wxTimer& timer) {
-    if (timer.IsRunning()) timer.Stop();
-    else timer.Start(25);
+  void SwapTimereSate(wxTimer& timer) {
+    if (timer.IsRunning()) {
+      timer.Stop();
+      GetMenuBar()->SetLabel(wxID_EXECUTE, "Start\tF5");
+    } else {
+      timer.Start(25);
+      GetMenuBar()->SetLabel(wxID_EXECUTE, "Stop\tF5");
+    }
   }
   
   void Spin(float xSpin, float ySpin) {
