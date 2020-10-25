@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.2)
 project(BookControls)
 
-add_subdirectory("Notebook")
+add_subdirectory(Choicebook)
+add_subdirectory(Notebook)
