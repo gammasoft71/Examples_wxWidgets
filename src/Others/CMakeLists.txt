@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 project(Others)
 
 add_subdirectory(AutoScroll)
+add_subdirectory(BitmapButtonWithLabel)
 add_subdirectory(BoxedPanel)
 add_subdirectory(ColoredFrames)
 add_subdirectory(ColoredTabPages)
