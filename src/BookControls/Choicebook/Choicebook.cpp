@@ -6,6 +6,7 @@ namespace Examples {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Choicebook example") {
       SetClientSize(390, 270);
+      
       tabControl1->AddPage(tabpageRed, "Red page");
       tabControl1->AddPage(tabpageGreen, "Green page");
       tabControl1->AddPage(tabpageBlue, "Blue page");

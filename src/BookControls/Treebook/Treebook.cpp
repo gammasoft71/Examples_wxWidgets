@@ -1,10 +1,10 @@
 #include <wx/wx.h>
-#include <wx/notebook.h>
+#include <wx/treebook.h>
 
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Notebook example") {
+    Frame() : wxFrame(nullptr, wxID_ANY, "Treebook example") {
       SetClientSize(390, 270);
       
       tabControl1->AddPage(tabPageRed, "Red");
@@ -20,7 +20,7 @@ namespace Examples {
     
   private:
     wxPanel* panel = new wxPanel(this);
-    wxNotebook* tabControl1 = new wxNotebook(panel, wxID_ANY, {10, 10}, {370, 250});
+    wxTreebook* tabControl1 = new wxTreebook(panel, wxID_ANY, {10, 10}, {370, 250});
     wxNotebookPage* tabPageRed = new wxNotebookPage(tabControl1, wxID_ANY);
     wxNotebookPage* tabPageGreen = new wxNotebookPage(tabControl1, wxID_ANY);
     wxNotebookPage* tabPageBlue = new wxNotebookPage(tabControl1, wxID_ANY);

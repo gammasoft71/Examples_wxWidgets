@@ -1,5 +1,5 @@
 #include <wx/wx.h>
-#include <wx/notebook.h>
+#include <wx/listbook.h>
 
 namespace Examples {
   class Frame : public wxFrame {
@@ -20,7 +20,7 @@ namespace Examples {
     
   private:
     wxPanel* panel = new wxPanel(this);
-    wxNotebook* tabControl1 = new wxNotebook(panel, wxID_ANY, {10, 10}, {370, 250});
+    wxListbook* tabControl1 = new wxListbook(panel, wxID_ANY, {10, 10}, {370, 250});
     wxNotebookPage* tabPageRed = new wxNotebookPage(tabControl1, wxID_ANY);
     wxNotebookPage* tabPageGreen = new wxNotebookPage(tabControl1, wxID_ANY);
     wxNotebookPage* tabPageBlue = new wxNotebookPage(tabControl1, wxID_ANY);

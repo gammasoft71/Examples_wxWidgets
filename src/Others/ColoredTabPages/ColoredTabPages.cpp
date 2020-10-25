@@ -7,26 +7,24 @@ namespace Examples {
     Frame() : wxFrame(nullptr, wxID_ANY, "Colored TabPages example") {
       SetClientSize(390, 270);
       
-      tabControl1->AddPage(tabPageLightPink, "Red");
-      tabPageLightPink->SetBackgroundColour(wxTheColourDatabase->Find("Red"));
+      tabControl1->AddPage(tabPageRed, "Red");
+      tabControl1->AddPage(tabPageGreen, "Green");
+      tabControl1->AddPage(tabPageBlue, "Blue");
+      tabControl1->AddPage(tabPageYellow, "Yellow");
 
-      tabControl1->AddPage(tabPageLightGreen, "Green");
-      tabPageLightGreen->SetBackgroundColour(wxTheColourDatabase->Find("Forest Green"));
-
-      tabControl1->AddPage(tabPageLightBlue, "Blue");
-      tabPageLightBlue->SetBackgroundColour(wxTheColourDatabase->Find("Blue"));
-
-      tabControl1->AddPage(tabPageLightYellow, "Yellow");
-      tabPageLightYellow->SetBackgroundColour(wxTheColourDatabase->Find("Yellow"));
+      tabPageRed->SetBackgroundColour(wxTheColourDatabase->Find("Red"));
+      tabPageGreen->SetBackgroundColour(wxTheColourDatabase->Find("Forest Green"));
+      tabPageBlue->SetBackgroundColour(wxTheColourDatabase->Find("Blue"));
+      tabPageYellow->SetBackgroundColour(wxTheColourDatabase->Find("Yellow"));
     }
 
   private:
     wxPanel* panel = new wxPanel(this);
     wxNotebook* tabControl1 = new wxNotebook(panel, wxID_ANY, {10, 10}, {370, 250}, wxNB_BOTTOM);
-    wxNotebookPage* tabPageLightPink = new wxNotebookPage(tabControl1, wxID_ANY);
-    wxNotebookPage* tabPageLightGreen = new wxNotebookPage(tabControl1, wxID_ANY);
-    wxNotebookPage* tabPageLightBlue = new wxNotebookPage(tabControl1, wxID_ANY);
-    wxNotebookPage* tabPageLightYellow = new wxNotebookPage(tabControl1, wxID_ANY);
+    wxNotebookPage* tabPageRed = new wxNotebookPage(tabControl1, wxID_ANY);
+    wxNotebookPage* tabPageGreen = new wxNotebookPage(tabControl1, wxID_ANY);
+    wxNotebookPage* tabPageBlue = new wxNotebookPage(tabControl1, wxID_ANY);
+    wxNotebookPage* tabPageYellow = new wxNotebookPage(tabControl1, wxID_ANY);
   };
 
   class Application : public wxApp {

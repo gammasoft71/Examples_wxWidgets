@@ -94,6 +94,8 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Book Controls
 
+[AuiNotebook](src/WindowDocking/AuiNotebook) Shows how to create a AuiNotebook widget with AuiNotebook.
+
 [Choicebook](src/BookControls/Choicebook) Shows how to create a Choicebook widget with wxChoiceBook.
 
 [Listbook](src/BookControls/Listbook) Shows how to create a Listbook widget with wxListBook.
