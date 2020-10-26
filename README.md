@@ -238,6 +238,8 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [FrameClick](src/Events/FrameClick) Shows how to create a Frame and catch click event.
 
+[FramePaint](src/Events/FramePaint) Shows how to create a Frame and catch paint event.
+
 [KeyEvents](src/Events/KeyEvents) Shows how to create a Frame and catch key events.
 
 [MouseEvents](src/Events/MouseEvents) Shows how to create a Frame and catch mouse events.
@@ -250,11 +252,11 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [GraphicsContext](src/Painting/DeviceContext) Shows how to create a form and catch paint event.
 
-## OpenGL
+## [OpenGL](./OpenGL)
 
 [Dice](src/OpenGL/Dice) Shows how to create a wxGLCanvas and wxGLContext.
 
-## Others
+## [Others](./Others)
 
 [AutoScroll](src/Others/AutoScroll) Shows how to create an auto scroll widget with wxPanel.
 
@@ -268,7 +270,11 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [DirDialogWindowModal](src/Others/DirDialogWindowModal) Shows how to create a DirDialogWindowModal with wxDirDialog.
 
-[FormIcon](src/Others/FormIcon) Shows how to assign an icon to frame.
+[FrameAndThread](src/Others/FrameAndThread) Shows how to dialog with a frame widget from a thread.
+
+[FrameAndThreadWithCallAfter](src/Others/FrameAndThreadWithCallAfter) Shows how to dialog with a frame widget from a thread with CallAfter method.
+
+[FrameIcon](src/Others/FrameIcon) Shows how to assign an icon to frame.
 
 [GroupBoxAndCheckBox](src/Others/GroupBoxAndCheckBox) Shows how to use GroupBox and CheckBoxes.
 
