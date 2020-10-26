@@ -144,9 +144,11 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Menus and toolbars
 
-[Menu](src/MenusAndToolbars/Menu) Shows how to create a (contextual) Menu widget with wxMenu.
+[AuiToolbar](src/WindowDocking/AuiToolbar) Shows how to create a AuiToolbar widget with wxAuiToolbar.
 
 [MainMenu](src/MenusAndToolbars/MainMenu) Shows how to create a MainMenu widget with wxMenu.
+
+[Menu](src/MenusAndToolbars/Menu) Shows how to create a (contextual) Menu widget with wxMenu.
 
 [StatusBar](src/MenusAndToolbars/StatusBar) Shows how to create a StatusBar widget with wxStatusBar.
 
@@ -176,15 +178,55 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [ToolTip](src/Components/ToolTip) Shows how to create a ToolTip component.
 
+## Common Dialogs
+
+[ColorDialog](src/CommonDialogs/ColorDialog) Shows how to create a ColorDialog with wxColourDialog.
+
+[DirDialog](src/CommonDialogs/DirDialog) Shows how to create a DirDialog with wxDirDialog.
+
+[FontDialog](src/CommonDialogs/FontDialog) Shows how to create a FontDialog with wxFontDialog.
+
+[MultiChoiceDialog](src/CommonDialogs/MultiChoiceDialog) Shows how to create a MultiChoiceDialog with wxMultiChoiceDialog.
+
+[NumberEntryDialog](src/CommonDialogs/NumberEntryDialog) Shows how to create a NumberEntryDialog with wxNumberEntryDialog.
+
+[OpenFileDialog](src/CommonDialogs/OpenFileDialog) Shows how to create a OpenFileDialog with wxOpenFileDialog.
+
+[PasswordEntryDialog](src/CommonDialogs/PasswordEntryDialog) Shows how to create a PasswordEntryDialog with wxPasswordEntryDialog.
+
+[RearrangeDialog](src/CommonDialogs/RearrangeDialog) Shows how to create a RearrangeDialog with wxRearrangeDialog.
+
+[SaveFileDialog](src/CommonDialogs/SaveFileDialog) Shows how to create a SaveFileDialog with wxSaveFileDialog.
+
+[SingleChoiceDialog](src/CommonDialogs/SingleChoiceDialog) Shows how to create a DirDialog with wxSingleChoiceDialog.
+
+[SymbolPickerDialog](src/CommonDialogs/SymbolPickerDialog) Shows how to create a SymbolPickerDialog with wxSymbolPickerDialog.
+
+[TextEntryDialog](src/CommonDialogs/TextEntryDialog) Shows how to create a TextEntryDialog with wxTextEntryDialog.
+
 ## Dialogs
 
-[ColorDialog](src/Dialogs/ColorDialog) Shows how to create a ColorDialog with wxColourDialog.
+[AboutBox](src/Dialogs/AboutBox) Shows how to create a AboutBox with wxAboutBox.
 
-[FolderBrowserDialog](src/Dialogs/FolderBrowserDialog) Shows how to create a FolderBrowserDialog with wxDirDialog.
+[BusyInfo](src/Dialogs/BusyInfo) Shows how to create a BusyInfo with wxBusyInfo.
 
-[FontDialog](src/Dialogs/FontDialog) Shows how to create a FontDialog with wxFontDialog.
+[FindReplaceDialog](src/Dialogs/FindReplaceDialog) Shows how to create a FindReplaceDialog with wxFindReplaceDialog.
 
-[MessageBox](src/Dialogs/MessageBox) Shows how to create a MessageBox with wxMessageBox.
+[GenericAboutBox](src/Dialogs/AboutBox) Shows how to create a GenericAboutBox with wxGenericAboutBox.
+
+[GenericProgressDialog](src/Dialogs/AboutBox) Shows how to create a GenericProgressDialog with wxGenericProgressDialog.
+
+[MessageDialog](src/Dialogs/AboutBox) Shows how to create a MessageDialog with wxMessageDialog.
+
+[PrintAbortDialog](src/Dialogs/PrintAbortDialog) Shows how to create a PrintAbortDialog with wxPrintAbortDialog.
+
+[ProgressDialog](src/Dialogs/ProgressDialog) Shows how to create a ProgressDialog with wxProgressDialog.
+
+[Wizard](src/Dialogs/Wizard) Shows how to create a Wizard with wxWizard.
+
+## Custom Dialogs
+
+[UserDialog](src/Dialogs/UserDialog) Shows how to create a UserDialog with wxDialog.
 
 ## Events
 
@@ -202,6 +244,16 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [ProcessEvent](src/Events/ProcessEvent) Shows how to override ProcessEvent method.
 
+## Painting
+
+[DeviceContext](src/Painting/DeviceContext) Shows how to create a form and catch paint event.
+
+[GraphicsContext](src/Painting/DeviceContext) Shows how to create a form and catch paint event.
+
+## OpenGL
+
+[Dice](src/OpenGL/Dice) Shows how to create a wxGLCanvas and wxGLContext.
+
 ## Others
 
 [BitmapButtonWithLabel](src/Others/BitmapButtonWithLabel) Shows how to create a Button with Bitmap and Label widget with wxButton.
@@ -212,6 +264,8 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [Cursors](src/Others/Cursors) Shows how to assign specified cursor to control.
 
+[DirDialogWindowModal](src/Others/DirDialogWindowModal) Shows how to create a DirDialogWindowModal with wxDirDialog.
+
 [FormIcon](src/Others/FormIcon) Shows how to assign an icon to form.
 
 [GroupBoxAndCheckBox](src/Others/GroupBoxAndCheckBox) Shows how to use GroupBox and CheckBoxes.
@@ -220,9 +274,11 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [MdiForm](src/Others/MdiForm) Shows how to create a MDI (Multiple Document Interface) form.
 
-## Painting
+[OpenFileDialogWindowModal](src/Others/OpenFileDialogWindowModal) Shows how to create a OpenFileDialogWindowModal with wxOpenFileDialog.
 
-[FormPaint](src/Others/FormPaint) Shows how to create a form and catch paint event.
+[SaveFileDialogWindowModal](src/Others/SaveFileDialogWindowModal) Shows how to create a SaveFileDialogWindowModal with wxSaveFileDialog.
+
+[UserDialogShowWindowModal](src/Others/UserDialogShowWindowModal) Shows how to create a UserDialogShowWindowModal with wxDialog.
 
 ## Download
 
