@@ -2,7 +2,7 @@
 
 Shows how to use wxWidgets controls only by programming code (c++17).
 
-## Hello World
+## [Hello World](./src/HelloWorlds)
 
 ["Hello World (Emoticons)"](src/HelloWorlds/HelloWorldEmoticons) The classic first application HelloWorld with emoticons.
 
@@ -16,7 +16,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ["Hello World (wxWidgets)"](src/HelloWorlds/HelloWorldInWxWidgets) The classic first application HelloWorld presented as skeleton by wxWidgets.
 
-## Application
+## [Application](./src/Applications)
 
 [Application](src/Application/Application) Shows how to create a simple wxWidgets application with wxApp.
 
@@ -26,7 +26,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [ApplicationIcon](src/Application/ApplicationIcon) Shows how to create a wxWidgets application and icon with wxApp.
 
-## Common Controls
+## [Common Controls](./src/CommonControls)
 
 [ActivityIndicator](src/CommonControls/ActivityIndicator) Shows how to create a ActivityIndicator widget with wxActivityIndicator.
 
@@ -92,7 +92,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [WebView](src/CommonControls/WebView) Shows how to create a WebViewwidget with wxWebView.
 
-## Book Controls
+## [Book Controls](./src/BookControls)
 
 [AuiNotebook](src/WindowDocking/AuiNotebook) Shows how to create a AuiNotebook widget with AuiNotebook.
 
@@ -108,7 +108,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [Treebook](src/BookControls/Treebook) Shows how to create a Treebook widget with wxTreebook.
 
-## Picker Controls
+## [Picker Controls](./src/PickerControls)
 
 [ColourPickerCtrl](src/PickerControls/ColourPickerCtrl) Shows how to create a ColourPickerCtrl widget with wxColourPickerCtrl.
 
@@ -122,7 +122,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [TimePickerCtrl](src/PickerControls/TimePickerCtrl) Shows how to create a TimePicker widget with wxTimePickerCtrl.
 
-## Custom controls
+## [Custom controls](./src/CustomControls)
 
 [Line](src/CustomControls/Line) Shows how to create a custom control Line from wxPanel.
 
@@ -130,7 +130,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [NumericTextCtrl](src/CustomControls/NumericTextCtrl) Shows how to create a custom control NumericTextCtrl from wxTextCtrl.
 
-## Containers
+## [Containers](./src/Containers)
 
 [Frame](src/Containers/Frame) Shows how to create a simple Frame container with wxFrame.
 
@@ -142,7 +142,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [StaticBox](src/Containers/StaticBox) Shows how to create a simple StaticBox container with wxStaticBox.
 
-## Menus and toolbars
+## [Menus and toolbars](./src/MenusAndToolbars)
 
 [AuiToolbar](src/WindowDocking/AuiToolbar) Shows how to create a AuiToolbar widget with wxAuiToolbar.
 
@@ -154,7 +154,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [ToolBar](src/MenusAndToolbars/ToolBar) Shows how to create a ToolBar widget with wxToolBar.
 
-## Window Docking
+## [Window Docking](./src/WindowDocking)
 
 [AuiManager](src/WindowDocking/AuiManager) Shows how to create a AuiManager widget with wxAuiManager.
 
@@ -162,7 +162,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [AuiToolbar](src/WindowDocking/AuiToolbar) Shows how to create a AuiToolbar widget with wxAuiToolbar.
 
-## Components
+## [Components](./src/Components)
 
 [ArtProvider](src/Components/ArtProvider) Shows how to create a simple ArtProvider component with wxArtProvider.
 
@@ -178,7 +178,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [ToolTip](src/Components/ToolTip) Shows how to create a ToolTip component.
 
-## Common Dialogs
+## [Common Dialogs](./src/CommonDialogs)
 
 [ColorDialog](src/CommonDialogs/ColorDialog) Shows how to create a ColorDialog with wxColourDialog.
 
@@ -204,7 +204,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [TextEntryDialog](src/CommonDialogs/TextEntryDialog) Shows how to create a TextEntryDialog with wxTextEntryDialog.
 
-## Dialogs
+## [Dialogs](./src/Dialogs)
 
 [AboutBox](src/Dialogs/AboutBox) Shows how to create a AboutBox with wxAboutBox.
 
@@ -224,11 +224,11 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [Wizard](src/Dialogs/Wizard) Shows how to create a Wizard with wxWizard.
 
-## Custom Dialogs
+## [Custom Dialogs](./src/CustomDialogs)
 
-[UserDialog](src/Dialogs/UserDialog) Shows how to create a UserDialog with wxDialog.
+[UserDialog](src/CustomDialogs/UserDialog) Shows how to create a UserDialog with wxDialog.
 
-## Events
+## [Events](./src/Events)
 
 [ApplicationIdle](src/Events/ApplicationIdle) Shows how to create an application and catch idle event.
 
@@ -246,7 +246,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [ProcessEvent](src/Events/ProcessEvent) Shows how to override ProcessEvent method.
 
-## Painting
+## [Painting](./src/Painting)
 
 [DeviceContext](src/Painting/DeviceContext) Shows how to create a form and catch paint event.
 
