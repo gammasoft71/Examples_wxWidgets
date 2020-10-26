@@ -252,11 +252,11 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [GraphicsContext](src/Painting/DeviceContext) Shows how to create a form and catch paint event.
 
-## [OpenGL](./OpenGL)
+## [OpenGL](./src/OpenGL)
 
 [Dice](src/OpenGL/Dice) Shows how to create a wxGLCanvas and wxGLContext.
 
-## [Others](./Others)
+## [Others](./src/Others)
 
 [AutoScroll](src/Others/AutoScroll) Shows how to create an auto scroll widget with wxPanel.
 
