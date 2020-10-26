@@ -276,6 +276,8 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 [FrameIcon](src/Others/FrameIcon) Shows how to assign an icon to frame.
 
+[FrameShow](src/Others/FrameShow) Shows how to display a frame in different ways.
+
 [GroupBoxAndCheckBox](src/Others/GroupBoxAndCheckBox) Shows how to use GroupBox and CheckBoxes.
 
 [GroupBoxAndRadioButton](src/Others/GroupBoxAndRadioButton) Shows how to use GroupBox and RadioButtons.
