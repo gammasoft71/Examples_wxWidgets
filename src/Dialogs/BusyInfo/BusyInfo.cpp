@@ -1,13 +1,14 @@
 #include <thread>
 #include <wx/wx.h>
+#include <wx/artprov.h>
 #include <wx/busyinfo.h>
 
 namespace Examples {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "BusyInfo example", wxDefaultPosition, {300, 300}) {
-      button->Bind(wxEVT_BUTTON, [](wxCommandEvent& event) {
-        wxBusyInfo busiInfo("Please wait while do something...");
+      button->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
+        wxBusyInfo busiInfo(wxBusyInfoFlags().Title("Application busy").Label("Please wait while do something...").Icon(wxArtProvider::GetIcon(wxART_WARNING)).Background({255, 0, 0}).Foreground({255, 255, 255}).Transparency(192));
         for (auto count = 0; count < 500; ++count) {
           std::this_thread::sleep_for(std::chrono::milliseconds(10));
           wxYield();
