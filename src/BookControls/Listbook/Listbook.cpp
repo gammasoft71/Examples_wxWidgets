@@ -4,7 +4,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Notebook example") {
+    Frame() : wxFrame(nullptr, wxID_ANY, "Listbook example") {
       SetClientSize(390, 270);
       
       tabControl1->AddPage(tabPageRed, "Red");

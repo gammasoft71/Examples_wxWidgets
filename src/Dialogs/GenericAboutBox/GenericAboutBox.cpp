@@ -1,5 +1,6 @@
 #include <wx/wx.h>
 #include <wx/aboutdlg.h>
+#include <wx/generic/aboutdlgg.h>
 #include "gammasoft_64x64.xpm"
 
 namespace Examples {
@@ -45,7 +46,7 @@ namespace Examples {
                              "OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE\n"
                              "OR OTHER DEALINGS IN THE SOFTWARE.\n"
                              );
-        wxAboutBox(aboutInfo);
+        wxGenericAboutBox(aboutInfo);
       });
     }
     
