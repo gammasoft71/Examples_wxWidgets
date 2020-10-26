@@ -6,12 +6,6 @@ namespace Examples {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Notebook example") {
       SetClientSize(390, 270);
-      
-      tabControl1->SetImageList(new wxImageList(16, 16));
-      tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Red"), tabControl1->GetImageList()->GetSize()));
-      tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Forest Green"), tabControl1->GetImageList()->GetSize()));
-      tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Blue"), tabControl1->GetImageList()->GetSize()));
-      tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Yellow"), tabControl1->GetImageList()->GetSize()));
 
       tabControl1->AddPage(tabPageRed, "Red", true, 0);
       tabControl1->AddPage(tabPageGreen, "Green", false, 1);
@@ -25,14 +19,6 @@ namespace Examples {
     }
     
   private:
-    wxBitmap CreateImageFromColor(const wxColor& color, const wxSize& size) {
-      wxBitmap result(size);
-      wxMemoryDC memoryDC(result);
-      memoryDC.SetBrush(wxBrush(color));
-      memoryDC.SetPen(*wxBLACK_PEN);
-      memoryDC.DrawRectangle(0, 0, result.GetSize().GetWidth(), result.GetSize().GetHeight());
-      return result;
-    }
     wxPanel* panel = new wxPanel(this);
     wxNotebook* tabControl1 = new wxNotebook(panel, wxID_ANY, {10, 10}, {370, 250});
     wxNotebookPage* tabPageRed = new wxNotebookPage(tabControl1, wxID_ANY);

@@ -36,7 +36,7 @@ namespace Examples {
       return result;
     }
     wxPanel* panel = new wxPanel(this);
-    wxToolbook* tabControl1 = new wxToolbook(panel, wxID_ANY, {10, 10}, {370, 250}, wxNB_RIGHT);
+    wxToolbook* tabControl1 = new wxToolbook(panel, wxID_ANY, {10, 10}, {370, 250});
     wxNotebookPage* tabPageRed = new wxNotebookPage(tabControl1, wxID_ANY);
     wxNotebookPage* tabPageGreen = new wxNotebookPage(tabControl1, wxID_ANY);
     wxNotebookPage* tabPageBlue = new wxNotebookPage(tabControl1, wxID_ANY);

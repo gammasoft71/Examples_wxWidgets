@@ -256,17 +256,19 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## Others
 
+[AutoScroll](src/Others/AutoScroll) Shows how to create an auto scroll widget with wxPanel.
+
 [BitmapButtonWithLabel](src/Others/BitmapButtonWithLabel) Shows how to create a Button with Bitmap and Label widget with wxButton.
 
-[ColoredForms](src/Others/ColoredForms) Shows how to create colored background forms.
+[BoxedPanel](src/Others/BoxedPanel) Shows how to create boxed panels with wxPanel and wxBoxSizer.
 
-[ColoredTabPages](src/Others/ColoredTabPages) Shows how to create colored background tab pages.
+[ColoredFrames](src/Others/ColoredFrames) Shows how to create colored background forms.
 
-[Cursors](src/Others/Cursors) Shows how to assign specified cursor to control.
+[CursorFromFile](src/Others/CursorFromFile) Shows how to create Cursor from cur or ani file with wxCursor.
 
 [DirDialogWindowModal](src/Others/DirDialogWindowModal) Shows how to create a DirDialogWindowModal with wxDirDialog.
 
-[FormIcon](src/Others/FormIcon) Shows how to assign an icon to form.
+[FormIcon](src/Others/FormIcon) Shows how to assign an icon to frame.
 
 [GroupBoxAndCheckBox](src/Others/GroupBoxAndCheckBox) Shows how to use GroupBox and CheckBoxes.
 
