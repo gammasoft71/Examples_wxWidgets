@@ -13,12 +13,12 @@ namespace Examples {
     wxPanel* panel = new wxPanel(this);
     wxStaticBox* staticBox1 = new wxStaticBox(panel, wxID_ANY, "Group 1", {10, 10}, {135, 140});
     wxStaticBox* staticBox2 = new wxStaticBox(panel, wxID_ANY, "Group 2", {155, 10}, {135, 140});
-    wxCheckBox* check1 = new wxCheckBox(staticBox1, wxID_ANY, "check 1", {10, 15});
-    wxCheckBox* check2 = new wxCheckBox(staticBox1, wxID_ANY, "check 2", {10, 45});
-    wxCheckBox* check3 = new wxCheckBox(staticBox1, wxID_ANY, "check 3", {10, 75});
-    wxCheckBox* check4 = new wxCheckBox(staticBox2, wxID_ANY, "check 1", {10, 15});
-    wxCheckBox* check5 = new wxCheckBox(staticBox2, wxID_ANY, "check 2", {10, 45});
-    wxCheckBox* check6 = new wxCheckBox(staticBox2, wxID_ANY, "check 3", {10, 75});
+    wxCheckBox* check1 = new wxCheckBox(staticBox1, wxID_ANY, "check 1", {20, 10});
+    wxCheckBox* check2 = new wxCheckBox(staticBox1, wxID_ANY, "check 2", {20, 40});
+    wxCheckBox* check3 = new wxCheckBox(staticBox1, wxID_ANY, "check 3", {20, 70});
+    wxCheckBox* check4 = new wxCheckBox(staticBox2, wxID_ANY, "check 1", {20, 10});
+    wxCheckBox* check5 = new wxCheckBox(staticBox2, wxID_ANY, "check 2", {20, 40});
+    wxCheckBox* check6 = new wxCheckBox(staticBox2, wxID_ANY, "check 3", {20, 70});
   };
 
   class Application : public wxApp {
