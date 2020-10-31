@@ -10,17 +10,17 @@ namespace Examples {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "ProgressDialog example", wxDefaultPosition, {300, 300}) {
       buttonProcess->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-        wxProgressDialog progressDialog("Process running", "Please wait...", 100, this, wxPD_APP_MODAL|wxPD_AUTO_HIDE|wxPD_CAN_ABORT);
-        for (auto step = 1; step <= progressDialog.GetRange(); step++) {
-          if (!progressDialog.Update(step, wxString::Format("Step %d/100", step))) break;
+        wxProgressDialog progressDialog("Process running", "Please wait...", 100, this, wxPD_APP_MODAL|wxPD_AUTO_HIDE|wxPD_CAN_SKIP|wxPD_REMAINING_TIME);
+        for (auto step = 1; step <= progressDialog.GetRange(); ++step) {
+          progressDialog.Update(step, wxString::Format("Step %d/%d ==> %s", step, progressDialog.GetRange(), progressDialog.WasSkipped() ? "skipped" : "done"));
           this_thread::sleep_for(100ms);
         }
       });
 
       buttonIndeterminateProcess->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         wxProgressDialog progressDialog("Indeterminate process running", "Click \"Cancel\" to abort", 10, this, wxPD_APP_MODAL|wxPD_CAN_ABORT);
-        while(true) {
-          if (!progressDialog.Pulse()) break;
+        while(!progressDialog.WasCancelled()) {
+          progressDialog.Pulse();
           this_thread::sleep_for(100ms);
         }
       });
