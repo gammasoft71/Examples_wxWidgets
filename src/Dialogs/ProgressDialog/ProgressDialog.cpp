@@ -18,7 +18,7 @@ namespace Examples {
       });
 
       buttonIndeterminateProcess->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-        wxProgressDialog progressDialog("Indeterminate process running", "Click \"Cancel\" to abort", 10, this, wxPD_APP_MODAL|wxPD_CAN_ABORT);
+        wxProgressDialog progressDialog("Indeterminate process running", "Click \"Cancel\" to abort", 10, this, wxPD_APP_MODAL|wxPD_CAN_ABORT|wxPD_ELAPSED_TIME);
         while(!progressDialog.WasCancelled()) {
           progressDialog.Pulse();
           this_thread::sleep_for(100ms);
