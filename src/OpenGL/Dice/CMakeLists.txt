@@ -5,7 +5,7 @@ find_package(OpenGL REQUIRED)
 include_directories(${OPENGL_INCLUDE_DIR})
 link_libraries(${OPENGL_LIBRARIES})
 
-find_package(wxWidgets REQUIRED COMPONENTS base core aui html gl net qa richtext webview xml xrc)
+find_package(wxWidgets REQUIRED COMPONENTS base core gl)
 include(${wxWidgets_USE_FILE})
 link_libraries(${wxWidgets_LIBRARIES})
 
