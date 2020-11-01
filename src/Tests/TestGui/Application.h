@@ -5,10 +5,10 @@
 
 class wxApplication : public wxApp {
 public:
-  wxApplication() : wxApplication(nullptr, true, substitute_argc_, nullptr) {}
-  wxApplication(wxApplication* app) : wxApplication(app, true, substitute_argc_, nullptr) {}
-  wxApplication(bool exit_on_last_frame_closed) : wxApplication(nullptr, exit_on_last_frame_closed, substitute_argc_, nullptr) {}
-  wxApplication(wxApplication* app, bool exit_on_last_frame_closed) : wxApplication(app, exit_on_last_frame_closed, substitute_argc_, nullptr) {}
+  wxApplication() : wxApplication(nullptr, true, substituteArgc, nullptr) {}
+  wxApplication(wxApplication* app) : wxApplication(app, true, substituteArgc, nullptr) {}
+  wxApplication(bool exit_on_last_frame_closed) : wxApplication(nullptr, exit_on_last_frame_closed, substituteArgc, nullptr) {}
+  wxApplication(wxApplication* app, bool exit_on_last_frame_closed) : wxApplication(app, exit_on_last_frame_closed, substituteArgc, nullptr) {}
   wxApplication(int& argc, char** argv) : wxApplication(nullptr, true, argc, argv) {}
   wxApplication(wxApplication* app, int& argc, char** argv) : wxApplication(app, true, argc, argv) {}
   wxApplication(bool exit_on_last_frame_closed, int& argc, char** argv) : wxApplication(nullptr, exit_on_last_frame_closed, argc, argv) {}
@@ -47,5 +47,5 @@ public:
   }
   
 private:
-  int substitute_argc_ = 0;
+  int substituteArgc = 0;
 };
