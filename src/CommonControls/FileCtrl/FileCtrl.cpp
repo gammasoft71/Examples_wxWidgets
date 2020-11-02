@@ -7,7 +7,7 @@
 // Workaround : with wxWidgets version <= 3.1.4 when showHidden is set the check box is not set
 #if __WXGTK__
 #include <wx/filectrl.h>
-using FileCttrl = wxFileCtrl;
+using FileCtrl = wxFileCtrl;
 #else
 #define private public
 #include <wx/filectrl.h>
@@ -40,8 +40,8 @@ namespace Examples {
       SetClientSize({800, 450});
       fileCtrl1->SetPosition({10, 10});
       fileCtrl1->SetSize({780, 390});
-      fileCtrl1->ShowHidden(true);
-      fileCtrl1->Bind(wxEVT_FILECTRL_SELECTIONCHANGED, [&](wxFileCtrlEvent& event) {
+      //fileCtrl1->ShowHidden(true);
+      fileCtrl1->Bind(wxEVT_FILECTRL_FILEACTIVATED, [&](wxFileCtrlEvent& event) {
         staticText1->SetLabel(fileCtrl1->GetFilename());
       });
     }
