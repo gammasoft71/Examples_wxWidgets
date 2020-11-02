@@ -5,13 +5,13 @@
 #include <wx/stdpaths.h>
 
 // Workaround : with wxWidgets version <= 3.1.4 when showHidden is set the check box is not set
-#if !__WXGTK__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wkeyword-macro"
+#if __WXGTK__
+#include <wx/filectrl.h>
+using FileCttrl = wxFileCtrl;
+#else
 #define private public
 #include <wx/filectrl.h>
 #undef private
-#pragma clang diagnostic pop
 #include <wx/checkbox.h>
 class FileCtrl : public wxFileCtrl {
 public:
@@ -31,8 +31,6 @@ public:
     wxFileCtrl::ShowHidden(show);
   }
 };
-#else
-using FileCttrl = wxFileCtrl;
 #endif
 
 namespace Examples {
