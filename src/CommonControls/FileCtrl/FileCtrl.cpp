@@ -7,7 +7,13 @@
 // Workaround : with wxWidgets version <= 3.1.4 when showHidden is set the check box is not set
 #if __WXGTK__
 #include <wx/filectrl.h>
-using FileCtrl = wxFileCtrl;
+class FileCtrl : public wxFileCtrl {
+public:
+  FileCtrl(wxWindow*parent, wxWindowID id, const wxString& defaultDirectory = wxEmptyString, const wxString& defaultFilename = wxEmptyString, const wxString& wildCard = wxFileSelectorDefaultWildcardStr, long style = wxFC_DEFAULT_STYLE, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, const wxString& name = wxFileCtrlNameStr) : wxFileCtrl(parent, id, defaultDirectory, defaultFilename, wildCard, style, pos, size, name) {
+    // Workaround : with wxWidgets version <= 3.1.4 show hidden is true by default on Gtk
+    ShowHidden(false);
+  }
+};
 #else
 #define private public
 #include <wx/filectrl.h>
@@ -40,9 +46,8 @@ namespace Examples {
       SetClientSize({800, 450});
       fileCtrl1->SetPosition({10, 10});
       fileCtrl1->SetSize({780, 390});
-      //fileCtrl1->ShowHidden(true);
-      fileCtrl1->Bind(wxEVT_FILECTRL_FILEACTIVATED, [&](wxFileCtrlEvent& event) {
-        staticText1->SetLabel(fileCtrl1->GetFilename());
+       fileCtrl1->Bind(wxEVT_FILECTRL_FILEACTIVATED, [&](wxFileCtrlEvent& event) {
+        staticText1->SetLabel(event.GetFile());
       });
     }
     
