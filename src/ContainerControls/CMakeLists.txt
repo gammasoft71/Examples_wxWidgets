@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.2)
-project(Containers)
+project(ContainerControls)
 
 add_subdirectory(Frame)
 add_subdirectory(Panel)
