@@ -48,7 +48,7 @@ namespace Examples {
       SetClientSize({800, 450});
       fileCtrl1->SetPosition({10, 10});
       fileCtrl1->SetSize({780, 390});
-       fileCtrl1->Bind(wxEVT_FILECTRL_FILEACTIVATED, [&](wxFileCtrlEvent& event) {
+       fileCtrl1->Bind(wxEVT_FILECTRL_SELECTIONCHANGED, [&](wxFileCtrlEvent& event) {
         staticText1->SetLabel(event.GetFile());
       });
     }
