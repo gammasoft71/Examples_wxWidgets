@@ -30,7 +30,7 @@ public:
     permissions(temp_directory_path()/"say.cmd", perms::owner_all);
 
     button1->Bind(wxEVT_BUTTON, [](wxCommandEvent&) {
-      wxProcess::Open(wxString::Format("%s \"Hello, world!\"", (temp_directory_path()/"say.cmd").string()));
+      wxProcess::Open(wxString::Format("%s \"Hello, World!\"", (temp_directory_path()/"say.cmd").string()));
     });
   }
 
