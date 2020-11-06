@@ -9,8 +9,8 @@ class Frame1 : public wxFrame {
 public:
   Frame1() : wxFrame(nullptr, wxID_ANY, "Hello world (say)") {
     button1->Bind(wxEVT_BUTTON, [](wxCommandEvent&) {
-      if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") wxProcess::Open("say.bat \"Hello world\"", wxEXEC_BLOCK);
-      else wxProcess::Open("say \"Hello world\"", wxEXEC_BLOCK);
+      if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") wxProcess::Open("say.bat \"Hello world\"");
+      else wxProcess::Open("say \"Hello world\"");
       });
   }
 
