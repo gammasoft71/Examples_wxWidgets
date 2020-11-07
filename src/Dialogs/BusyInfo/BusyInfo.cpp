@@ -6,7 +6,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "BusyInfo example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "BusyInfo example") {
       button->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
         wxBusyInfo busiInfo(wxBusyInfoFlags().Title("Application busy").Label("Please wait while do something...").Icon(wxArtProvider::GetIcon(wxART_WARNING)).Background({255, 0, 0}).Foreground({255, 255, 255}).Transparency(192));
         for (auto count = 0; count < 500; ++count) {

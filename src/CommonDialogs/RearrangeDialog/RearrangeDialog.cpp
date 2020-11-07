@@ -5,7 +5,7 @@
 namespace Examples {
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "RearangeDialog example", wxDefaultPosition, {300, 300}) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "RearangeDialog example") {
     for (auto item : {"Red", "Green", "Blue", "Yellow"})
       colors.push_back(item);
     for (auto item : {3, 0, 1, 2})

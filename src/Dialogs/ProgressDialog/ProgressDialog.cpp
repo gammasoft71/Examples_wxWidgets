@@ -8,7 +8,7 @@ using namespace std::literals;
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "ProgressDialog example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "ProgressDialog example") {
       buttonProcess->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         wxProgressDialog progressDialog("Process running", "Please wait...", 100, this, wxPD_APP_MODAL|wxPD_AUTO_HIDE|wxPD_CAN_SKIP|wxPD_REMAINING_TIME);
         for (auto step = 1; step <= progressDialog.GetRange(); ++step) {

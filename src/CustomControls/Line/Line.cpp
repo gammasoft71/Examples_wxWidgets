@@ -14,7 +14,7 @@ namespace Examples {
   
   class Window : public wxFrame {
   public:
-    Window() : wxFrame(nullptr, wxID_ANY, "Lines example", wxDefaultPosition, {300, 300}) {
+    Window() : wxFrame(nullptr, wxID_ANY, "Lines example") {
       SetClientSize(300, 300);
     }
     

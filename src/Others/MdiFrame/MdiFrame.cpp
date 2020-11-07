@@ -5,7 +5,7 @@
 namespace Examples {
   class MdiChildFrame : public wxMDIChildFrame {
   public:
-    MdiChildFrame(wxMDIParentFrame* parent) : wxMDIChildFrame(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, {300, 300}) {
+    MdiChildFrame(wxMDIParentFrame* parent) : wxMDIChildFrame(parent, wxID_ANY, wxEmptyString) {
     }
     
   private:

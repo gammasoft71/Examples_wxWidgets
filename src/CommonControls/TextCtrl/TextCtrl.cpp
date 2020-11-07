@@ -8,7 +8,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "TextCtrl example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "TextCtrl example") {
       textCtrl1->Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
         if (textCtrl2->GetValue() != textCtrl1->GetValue())
           textCtrl2->SetValue(textCtrl1->GetValue());

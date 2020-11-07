@@ -4,7 +4,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "ColourDialog example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "ColourDialog example") {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         wxColourData colourData;
         colourData.SetColour(GetBackgroundColour());

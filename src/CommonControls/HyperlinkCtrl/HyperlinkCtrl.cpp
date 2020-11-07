@@ -9,7 +9,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "HyperlinkCtrl example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "HyperlinkCtrl example") {
       panel->SetSizer(boxSizerLinks);
       wxMessageOutputDebug().Printf("Normal color = %s", hyperlinkCtrl1->GetNormalColour().GetAsString());
       wxMessageOutputDebug().Printf("Hover color = %s", hyperlinkCtrl1->GetHoverColour().GetAsString());

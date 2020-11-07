@@ -4,7 +4,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "TreeCtrl example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "TreeCtrl example") {
       auto rootId = treeCtrl->AddRoot("Root");
       auto firstId = treeCtrl->AppendItem(rootId, "First");
       treeCtrl->AppendItem(firstId, "Second");

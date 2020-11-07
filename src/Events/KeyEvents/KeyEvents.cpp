@@ -5,7 +5,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "KeyEvents", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "KeyEvents") {
       panel->Bind(wxEVT_KEY_DOWN, [&](wxKeyEvent& event) {
         wxLogDebug(wxString::Format("KeyDown={KeyCode=0x%04X, Modifiers=[%s]}", event.GetKeyCode(), ModiiersToString(event.GetModifiers())));
         event.Skip();

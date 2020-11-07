@@ -4,7 +4,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "TextEntryDialog multiline example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "TextEntryDialog multiline example") {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         wxTextEntryDialog textEntryDialog(this, "Message text", "Caption text", label->GetLabel(), wxTextEntryDialogStyle|wxTE_MULTILINE);
         if (textEntryDialog.ShowModal() == wxID_OK)

@@ -6,7 +6,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "StaticText example", wxDefaultPosition, {300, 300}) {}
+    Frame() : wxFrame(nullptr, wxID_ANY, "StaticText example") {}
     
   private:
     wxPanel* panel = new wxPanel(this);

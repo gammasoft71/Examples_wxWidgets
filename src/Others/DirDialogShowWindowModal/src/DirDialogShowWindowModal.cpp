@@ -22,7 +22,7 @@ public:
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "DirDialog (ShowWindowModal) example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "DirDialog (ShowWindowModal) example") {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         wxWindowPtr<DirDialog> folderBrowserDialog(new DirDialog(this, wxEmptyString));
         folderBrowserDialog->SetPath(wxStandardPaths::Get().GetDocumentsDir());

@@ -4,7 +4,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "DirPickerCtrl example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "DirPickerCtrl example") {
       picker->Bind(wxEVT_DIRPICKER_CHANGED, [&](wxFileDirPickerEvent& event) {
         label->SetLabel(wxString::Format("Path = %s", event.GetPath()));
       });

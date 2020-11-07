@@ -22,7 +22,7 @@ namespace Examples {
 
   class Form1 : public wxFrame {
   public:
-    Form1() : wxFrame(nullptr, wxID_ANY, "User dialog example", wxDefaultPosition, {800, 450}, wxDEFAULT_FRAME_STYLE) {
+    Form1() : wxFrame(nullptr, wxID_ANY, "User dialog example", wxDefaultPosition, {800, 450}) {
       Center();
       
       buttonDialog->Bind(wxEVT_BUTTON, [&](wxCommandEvent& e) {

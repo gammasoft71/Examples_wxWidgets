@@ -7,7 +7,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "MouseEvents", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "MouseEvents") {
       panel->Bind(wxEVT_COMMAND_LEFT_CLICK, [&](wxCommandEvent& event) {
         wxLogDebug("Command Left Click");
       });

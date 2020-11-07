@@ -7,7 +7,7 @@ using namespace std::literals;
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Frame and thread example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "Frame and thread with CallAfter example") {
       Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
         closed = true;
         for (auto index = 0; index < threads.size(); index++)

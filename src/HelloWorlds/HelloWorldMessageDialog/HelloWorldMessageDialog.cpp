@@ -2,7 +2,7 @@
 
 class Application : public wxApp {
   bool OnInit() override {
-    auto frame1 = new wxFrame(nullptr, wxID_ANY, "Hello World Frame");
+    auto frame1 = new wxFrame(nullptr, wxID_ANY, "Hello World (message box)");
     
     auto panel1 = new wxPanel(frame1, wxID_ANY);
     

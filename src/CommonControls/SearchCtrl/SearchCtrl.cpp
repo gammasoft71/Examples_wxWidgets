@@ -19,7 +19,6 @@ namespace Examples {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "SearchCtrl example") {
-      SetClientSize(300, 300);
       
       menuSearch->AppendRadioItem(ID_TEXT, "Text");
       menuSearch->AppendRadioItem(ID_REFERENCES, "References");

@@ -4,7 +4,7 @@
 namespace Examples {
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "TooTip example", wxDefaultPosition, {300, 300}) {
+  Frame() : wxFrame(nullptr, wxID_ANY, "TooTip example") {
     button->Bind(wxEVT_ENTER_WINDOW, [&](wxMouseEvent& event) {
       wxRichToolTip toolTipButton("ToolTip title", "button toolTip...");
       toolTipButton.ShowFor(button);

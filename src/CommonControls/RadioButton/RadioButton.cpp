@@ -8,7 +8,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "RadioButton example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "RadioButton example") {
       radioButton1->SetValue(true);
       Bind(wxEVT_RADIOBUTTON, [&](wxCommandEvent& event) {
         staticText1->SetLabel(wxString::Format("radioButton3 state = %s", radioButton3->GetValue() ? "true" : "false"));

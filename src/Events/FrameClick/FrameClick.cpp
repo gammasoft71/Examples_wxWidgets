@@ -3,9 +3,9 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Click anywhere on the frame", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "Click anywhere on the frame") {
       panel->Bind(wxEVT_LEFT_UP, [&](wxMouseEvent& event) {
-        wxMessageBox("The frame is clicked", "FrameClick", wxOK) ;
+        wxMessageBox(wxString::Format("The frame is clicked at {x=%d, y=%d}", event.GetPosition().x, event.GetPosition().y), "FrameClick", wxOK) ;
       });
     }
     

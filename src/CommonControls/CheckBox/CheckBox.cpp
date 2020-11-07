@@ -6,7 +6,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "CheckBox example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "CheckBox example") {
       checkBox1->Bind(wxEVT_CHECKBOX, [&](wxCommandEvent& event) {
         checkBox1->SetValue(false);
       });

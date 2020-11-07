@@ -8,7 +8,6 @@ namespace Examples {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "CommandLinkButton example") {
-      SetClientSize(300, 300);
       commandLinkButton1->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         staticText1->SetLabel(wxString::Format("commandLinkButton1 clicked %d times", ++commandLinkButton1Clicked));
       });

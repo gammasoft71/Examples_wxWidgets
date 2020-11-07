@@ -6,7 +6,6 @@ namespace Examples {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Statusbar example") {
-      SetClientSize(640, 480);
       SetStatusBar(statusBar);
     
       std::vector statusWidths = {80, 80, -1};

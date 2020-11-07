@@ -4,7 +4,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "FindReplaceDialog example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "FindReplaceDialog example") {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         findReplaceData.SetFlags(wxFR_WHOLEWORD | wxFR_MATCHCASE | wxFR_DOWN);
         findReplaceData.SetFindString("Gammasoft");

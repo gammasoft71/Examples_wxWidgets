@@ -8,7 +8,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "SpinCtrlDouble example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "SpinCtrlDouble example") {
       spinCtrlDouble1->SetRange(10.0, 11.0);
       spinCtrlDouble1->SetDigits(2);
       spinCtrlDouble1->SetIncrement(0.01);

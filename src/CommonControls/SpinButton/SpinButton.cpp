@@ -8,7 +8,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "SpinButton example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "SpinButton example") {
       spinButton1->SetRange(10, 20);
       spinButton1->SetValue(15);
       spinButton1->Bind(wxEVT_SPIN, [&](wxCommandEvent& event) {

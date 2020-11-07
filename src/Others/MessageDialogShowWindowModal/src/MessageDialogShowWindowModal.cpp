@@ -21,7 +21,7 @@ public:
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "MessageDialog (ShowWindowModal) example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "MessageDialog (ShowWindowModal) example") {
       buttonShowMessage->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
         wxWindowPtr<MessageDialog> messageDialog(new MessageDialog(this, "Hello, World!", "Message", wxICON_ERROR|wxOK|wxCANCEL));
         messageDialog->Bind(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, [this, messageDialog](wxWindowModalDialogEvent& event) {

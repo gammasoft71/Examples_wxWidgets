@@ -4,7 +4,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "TextEntryDialog as password example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "TextEntryDialog as password example") {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         wxTextEntryDialog textEntryDialog(this, "user: admin", "User password", label->GetLabel(), wxTextEntryDialogStyle|wxTE_PASSWORD);
         if (textEntryDialog.ShowModal() == wxID_OK)

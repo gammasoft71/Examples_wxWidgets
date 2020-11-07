@@ -26,7 +26,7 @@ namespace Examples {
     };
     
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Wizard example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "Wizard example") {
       button->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
         label->SetLabel("Wizard result = (none)");
         wxWizard wizard(this, wxID_ANY, "Wizard demo");

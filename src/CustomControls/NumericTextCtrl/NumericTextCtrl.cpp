@@ -30,7 +30,7 @@ namespace Examples {
 
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "NumericTextBox example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "NumericTextBox example") {
       numericTextBox1->Bind(wxEVT_VALUE, [&](wxCommandEvent& e) {
         std::cout << wxString::Format("ValueChanged [Value==%g]", numericTextBox1->GetNumericValue()) << std::endl;
       });

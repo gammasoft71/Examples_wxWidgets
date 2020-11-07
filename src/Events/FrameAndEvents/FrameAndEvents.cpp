@@ -4,7 +4,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Frame and events", wxDefaultPosition, {300, 300}) {}
+    Frame() : wxFrame(nullptr, wxID_ANY, "Frame and events") {}
     
     bool ProcessEvent (wxEvent &event) override {
       wxWindow* window = ((wxWindow*)event.GetEventObject());

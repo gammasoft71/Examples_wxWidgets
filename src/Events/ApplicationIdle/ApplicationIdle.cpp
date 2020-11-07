@@ -7,7 +7,7 @@ using namespace std::chrono_literals;
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, wxEmptyString, wxDefaultPosition, {300, 300}) {}
+    Frame() : wxFrame(nullptr, wxID_ANY, wxEmptyString) {}
     
     void OnApplicationIdle() {
       SetLabel(wxString::Format("%d", ++counter));

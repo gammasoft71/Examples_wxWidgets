@@ -31,8 +31,6 @@ namespace Examples {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Menu example") {
-      SetClientSize(300, 300);
-      
       listBox1->Append("Right click to show menu");
       listBox1->Bind(wxEVT_RIGHT_DOWN, [&](wxMouseEvent& event) {
         listBox1->PopupMenu(contextualMenu);

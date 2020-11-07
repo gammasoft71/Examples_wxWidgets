@@ -5,7 +5,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "AboutBox example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "AboutBox example") {
       button->Bind(wxEVT_BUTTON, [](wxCommandEvent& event) {
         wxAboutDialogInfo aboutInfo;
         aboutInfo.SetName(wxTheApp->GetAppName());

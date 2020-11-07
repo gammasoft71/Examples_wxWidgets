@@ -21,7 +21,7 @@ public:
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "SaveFileDialog (ShowWindowModal) example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "SaveFileDialog (ShowWindowModal) example") {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         wxWindowPtr<FileDialog> saveFileDialog(new FileDialog(this, wxEmptyString, "", "MyFile.txt", "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", wxFD_SAVE));
         saveFileDialog->ShowWindowModal();

@@ -8,7 +8,7 @@ using namespace std::chrono;
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "DatePickerCtrl example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "DatePickerCtrl example") {
       datePicker1->SetRange({4, wxDateTime::Apr, 1975}, {system_clock::to_time_t(system_clock::now())});
       datePicker1->SetValue({4, wxDateTime::Apr, 1975});
       datePicker1->Bind(wxEVT_DATE_CHANGED, [&](wxDateEvent& event) {

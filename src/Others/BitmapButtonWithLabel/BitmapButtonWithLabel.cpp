@@ -10,7 +10,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "BitmapButton with label example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "BitmapButton with label example") {
       button1->SetSize(100, 25);
       
       button2->SetBitmapLabel({gammasoft_16x16_xpm});
@@ -27,10 +27,10 @@ namespace Examples {
     
   private:
     wxPanel* panel = new wxPanel(this);
-    wxButton* button1 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 50});
-    wxButton* button2 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 80});
-    wxButton* button3 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 110});
-    wxButton* button4 = new wxButton(panel, wxID_ANY, wxEmptyString, {50, 155});
+    wxButton* button1 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 20});
+    wxButton* button2 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 50});
+    wxButton* button3 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 80});
+    wxButton* button4 = new wxButton(panel, wxID_ANY, wxEmptyString, {50, 125});
   };
 
   class Application : public wxApp {

@@ -5,7 +5,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "DirDialog example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "DirDialog example") {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         wxDirDialog folderBrowserDialog(this, wxEmptyString);
         folderBrowserDialog.SetPath(wxStandardPaths::Get().GetDocumentsDir());

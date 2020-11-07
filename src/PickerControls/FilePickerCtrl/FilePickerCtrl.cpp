@@ -27,7 +27,7 @@ public:
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "FilePickerCtrl example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "FilePickerCtrl example") {
       picker->Bind(wxEVT_FILEPICKER_CHANGED, [&](wxFileDirPickerEvent& event) {
         label->SetLabel(wxString::Format("File = %s", picker->GetPath()));
       });

@@ -4,7 +4,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "DomainUpDown example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "DomainUpDown example") {
       domainSpinCtrl->SetItems({"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
       domainSpinCtrl->SetSelectedIndex(1);
       domainSpinCtrl->Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {

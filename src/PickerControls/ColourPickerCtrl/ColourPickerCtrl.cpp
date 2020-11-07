@@ -4,7 +4,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "ColourPicker example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "ColourPicker example") {
       testZone->SetBackgroundColour(wxTheColourDatabase->Find("Red"));
       picker->SetColour(testZone->GetBackgroundColour());
       picker->Bind(wxEVT_COLOURPICKER_CHANGED, [&](wxColourPickerEvent& event) {

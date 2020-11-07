@@ -8,7 +8,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "SpinCtrl example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "SpinCtrl example") {
       spinCtrl1->SetValue(50);
       spinCtrl1->Bind(wxEVT_SPINCTRL, [&](wxCommandEvent& event) {
         text->SetLabel(wxString::Format("value = %d", spinCtrl1->GetValue()));

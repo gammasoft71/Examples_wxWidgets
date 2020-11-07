@@ -3,7 +3,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "MessageDialog example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "MessageDialog example") {
       buttonShowMessage->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         labelDialogResult->SetLabelText("Result = ");
         wxMessageDialog messageDialog(this, "Hello, World!", "Message", wxOK|wxCANCEL);

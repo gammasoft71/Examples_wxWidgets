@@ -32,7 +32,7 @@ private:
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "TaskBarIcon example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "TaskBarIcon example") {
       taskBarIcon.SetIcon({GammasoftIcon});
       taskBarIcon.Bind(wxEVT_TASKBAR_LEFT_DCLICK, [&](wxTaskBarIconEvent& event) {
         Show(!IsShown());

@@ -7,7 +7,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "RichTextCtrl example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "RichTextCtrl example") {
       richTextCtrl->WriteText("Colored text :\n");
       richTextCtrl->BeginTextColour({255, 0, 0});
       richTextCtrl->WriteText("  Red\n");

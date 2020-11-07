@@ -22,7 +22,7 @@ public:
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "OpenFileDialog (ShowWindowModal) example", wxDefaultPosition, {300, 300}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "OpenFileDialog (ShowWindowModal) example") {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         wxWindowPtr<FileDialog> openFileDialog(new FileDialog(this, wxEmptyString, wxEmptyString, wxEmptyString, "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", wxFD_OPEN|wxFD_FILE_MUST_EXIST));
         openFileDialog->SetFilterIndex(0);
