@@ -1,4 +1,5 @@
 #pragma once
+#include <stdexcept>
 #include <wx/app.h>
 #include <wx/menu.h>
 #include <wx/sysopt.h>
@@ -38,14 +39,24 @@ public:
     wxApp::SetInstance(nullptr);
     wxEntryCleanup();
   }
+  
+  bool OnExceptionInMainLoop() override {
+    exceptionStored = std::current_exception();
+    return false;
+  }
 
   int MainLoop() override {
     struct CallOnExit {
-      ~CallOnExit() {wxTheApp->OnExit();}
+      ~CallOnExit() {
+        wxTheApp->OnExit();
+      }
     } callOnExit;
-    return wxApp::MainLoop();
+    auto result = wxApp::MainLoop();
+    if (exceptionStored) std::rethrow_exception(exceptionStored);
+    return result;
   }
   
 private:
   int substituteArgc = 0;
+  std::exception_ptr exceptionStored;
 };
