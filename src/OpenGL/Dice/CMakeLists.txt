@@ -14,3 +14,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE Dice.cpp)
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "OpenGL")
 
+if (APPLE)
+  add_custom_target(NSPrincipalClass ALL plutil -replace NSPrincipalClass -string NSApplication ${CMAKE_BINARY_DIR}/${PROJECT_NAME}.app/Contents/Info.plist DEPENDS ${PROJECT_NAME})
+  add_custom_target(NSHighResolutionCapable ALL plutil -replace NSHighResolutionCapable -bool true ${CMAKE_BINARY_DIR}/${PROJECT_NAME}.app/Contents/Info.plist DEPENDS ${PROJECT_NAME})
+endif()
