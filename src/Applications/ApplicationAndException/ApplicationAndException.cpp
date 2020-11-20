@@ -10,24 +10,24 @@ namespace Examples {
       // uncomment to throw exception
       //throw overflow_error("Creattion object error");
 
-      buttonGenerateHandledException->Bind(wxEVT_BUTTON, [](wxCommandEvent& event) {
-        try {
-          throw invalid_argument("Not a valid argument");
-        } catch (const exception& e) {
-          // Do something...
-        }
-      });
+      buttonGenerateHandledException->Bind(wxEVT_BUTTON, &MainFrame::GenerateHandledException, this);
       
-      buttonGenerateException->Bind(wxEVT_BUTTON, [](wxCommandEvent& event) {
-        throw invalid_argument("Not a valid argument");
-      });
+      buttonGenerateException->Bind(wxEVT_BUTTON, &MainFrame::GenerateException, this);
       
-      buttonGenerateUnknownException->Bind(wxEVT_BUTTON, [](wxCommandEvent& event) {
-        throw "throw unknown type exception";
-      });
+      buttonGenerateUnknownException->Bind(wxEVT_BUTTON, &MainFrame::GenerateUnknownException, this);
     }
     
   private:
+    void GenerateHandledException(wxCommandEvent& event) {
+      try {
+        throw invalid_argument("Exception handled generated");
+      } catch (const exception& e) {
+        wxMessageBox(e.what(), "Exception handled", wxOK);
+      }
+    }
+    void GenerateException(wxCommandEvent& event) {throw invalid_argument("Exception generated");}
+    void GenerateUnknownException(wxCommandEvent& event) {throw "Unknown exception generated";}
+
     wxPanel* panel = new wxPanel {this};
     wxButton* buttonGenerateHandledException = new wxButton(panel, wxID_ANY, "Generate handled exception", {10, 10});
     wxButton* buttonGenerateException = new wxButton(panel, wxID_ANY, "Generate exception", {10, 40});
@@ -39,11 +39,11 @@ namespace Examples {
       try {
         throw;
       } catch(const exception& e) {
-        wxMessageBox(wxString::Format("Message: %s\n", e.what()), "Exception occured", wxOK);
+        return wxMessageBox(wxString::Format("Unhandled exception occured in your application. If you click\nOK, the application will ignore this error and attempt to continue.\nIf you click Cancel, the application will close immediately.\n\n%s", e.what()), "Exception occured", wxOK|wxCANCEL) == wxOK;
       } catch(...) {
-        wxMessageBox("Message: (none)", "Unknown exception occured", wxOK);
+        return wxMessageBox("Unhandled exception occured in your application. If you click\nOK, the application will ignore this error and attempt to continue.\nIf you click Cancel, the application will close immediately.\n\n(Unknown exception)", "Unknown exception occured", wxOK|wxCANCEL) == wxOK;
       }
-      return false; // return true to continue...
+      return false;
     }
 
     bool OnInit() override {
@@ -51,9 +51,11 @@ namespace Examples {
         (new MainFrame)->Show();
         return true;
       } catch(const exception& e) {
-        wxMessageBox(wxString::Format("Message: %s\n", e.what()), "Exception occured", wxOK);
+        wxMessageOutputDebug().Printf("Exception: %s", e.what());
+        wxMessageBox(e.what(), "Exception occured", wxOK);
       } catch(...) {
-        wxMessageBox("Message: (none)", "Unknown exception occured", wxOK);
+        wxMessageOutputDebug().Output("Unknown exception occured");
+        wxMessageBox("(Unknown exception)", "Unknown exception occured", wxOK);
       }
     }
     
