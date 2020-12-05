@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 project(HelloWorld)
 
 add_subdirectory(HelloWorldEmoticons)
+add_subdirectory(HelloWorldGenericStaticText)
 add_subdirectory(HelloWorldInWxWidgets)
 add_subdirectory(HelloWorldMessageDialog)
 add_subdirectory(HelloWorldMessageDialog2)
