@@ -8,15 +8,13 @@ namespace Examples {
   
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Hello world (label)") {
-      SetClientSize(300, 300);
+    Frame() : wxFrame(nullptr, wxID_ANY, "Hello world (Static text)") {
       staticText1->SetFont({PointsToNativeFontGraphicsUntit(32), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_BOLD});
       staticText1->SetForegroundColour(wxTheColourDatabase->Find("Forest Green"));
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
-    wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "Hello, World!", {5, 100});
+    wxStaticText* staticText1 = new wxStaticText(this, wxID_ANY, "Hello, World!", wxDefaultPosition, wxDefaultSize, wxALIGN_CENTER);
   };
 
   class Application : public wxApp {
