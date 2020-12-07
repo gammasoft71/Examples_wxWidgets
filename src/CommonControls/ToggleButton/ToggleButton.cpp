@@ -19,8 +19,8 @@ namespace Examples {
     
   private:
     wxPanel* panel = new wxPanel(this);
-    wxToggleButton* toggleButton1 = new wxToggleButton(panel, wxID_ANY, "Unchecked", {30, 30});
-    wxToggleButton* toggleButton2 = new wxToggleButton(panel, wxID_ANY, "Checked", {30, 60});
+    wxToggleButton* toggleButton1 = new wxToggleButton(panel, wxID_ANY, "Unchecked", {30, 30}, {100, wxDefaultCoord});
+    wxToggleButton* toggleButton2 = new wxToggleButton(panel, wxID_ANY, "Checked", {30, 60}, {100, wxDefaultCoord});
   };
 
   class Application : public wxApp {
