@@ -15,16 +15,22 @@ namespace Examples {
       }
       checkListBox->SetSelection(0);
       checkListBox->Bind(wxEVT_CHECKLISTBOX, [&](wxCommandEvent& e) {
-        wxArrayInt checkedIndexes;
-        checkListBox->GetCheckedItems(checkedIndexes);
-        wxString checkedItems;
-        for (auto index : checkedIndexes)
-          checkedItems.Append(wxString::Format("%s%s", checkedItems != wxEmptyString ? ", " : "", checkListBox->GetString(index)));
-        wxMessageOutputDebug().Printf("checked items = {%s}", checkedItems);
+        wxMessageOutputDebug().Printf("checked items = {%s}", CheckListBoxToString());
       });
+      
+      wxMessageOutputDebug().Printf("checked items = {%s}", CheckListBoxToString());
     }
     
   private:
+    wxString CheckListBoxToString() const {
+      wxArrayInt checkedIndexes;
+      checkListBox->GetCheckedItems(checkedIndexes);
+      wxString checkedItems;
+      for (auto index : checkedIndexes)
+        checkedItems.Append(wxString::Format("%s%s", checkedItems != wxEmptyString ? ", " : "", checkListBox->GetString(index)));
+      return checkedItems;
+    }
+    
     wxPanel* panel = new wxPanel(this);
     wxCheckListBox* checkListBox = new wxCheckListBox(panel, wxID_ANY, {20, 20}, {160, 200});
   };
