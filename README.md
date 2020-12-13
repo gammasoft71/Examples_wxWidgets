@@ -16,7 +16,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ["Hello World (wxWidgets)"](src/HelloWorlds/HelloWorldInWxWidgets) The classic first application HelloWorld presented as skeleton by wxWidgets.
 
-## [Application](./src/Applications)
+## [Applications](./src/Applications)
 
 [Application](src/Application/Application) Shows how to create a simple wxWidgets application with wxApp.
 
