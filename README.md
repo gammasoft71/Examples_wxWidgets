@@ -307,7 +307,7 @@ To build this project, open "Terminal" and type following lines:
 mkdir build
 cd build
 cmake ..
-open Examples_wxWidgets.sln
+start wxWidgetsExamples.sln
 ```
 
 ### macOS :
@@ -316,7 +316,7 @@ open Examples_wxWidgets.sln
 mkdir build
 cd build
 cmake .. -G "Xcode"
-open ./Examples_wxWidgets.xcodeproj
+open ./wxWidgetsExamples.xcodeproj
 ```
 
 ### Linux with Code::Blocks :
@@ -325,7 +325,7 @@ open ./Examples_wxWidgets.xcodeproj
 mkdir build
 cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./Examples_wxWidgets.cbp > /dev/null 2>&1
+xdg-open ./wxWidgetsExamples.cbp > /dev/null 2>&1
 ```
 
 ### Linux :
