@@ -14,7 +14,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 ## [Applications](./src/Applications)
 
 * [Application](src/Application/Application) Shows how to create a simple wxWidgets application with wxApp.
-* [Application_And_Exception](src/Applications/ApplicationAndException) shows how to create a simple wxWidgets application and how to manage exception.
+* [ApplicationAndException](src/Applications/ApplicationAndException) shows how to create a simple wxWidgets application and how to manage exception.
 * [ApplicationAndMain](src/Application/ApplicationAndMain) Shows how to create a wxWidgets application and main method with wxApp.
 * [ApplicationAndMain2](src/Application/ApplicationAndMain2) Shows how to create a wxWidgets application and main method with wxApp.
 * [ApplicationIcon](src/Application/ApplicationIcon) Shows how to create a wxWidgets application and icon with wxApp.
