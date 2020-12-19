@@ -8,7 +8,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * ["Hello World (MessageDialog)"](src/HelloWorlds/HelloWorldMessageDialog) The classic first application HelloWorld with wxMessageDialog.
 * ["Hello World (MessageDialog2)"](src/HelloWorlds/HelloWorldMessageDialog2) The classic first application HelloWorld with wxMessageDialog.
 * ["Hello World (Paint)"](src/HelloWorlds/HelloWorldPaint) The classic first application HelloWorld with wxEVT_PAINT event.
-* ["Hello World (Say)](src/Hello_Worlds/HelloWorldSay) The classic first application "Hello, World!" with Say.
+* ["Hello World (Say)](src/HelloWorlds/HelloWorldSay) The classic first application "Hello, World!" with Say.
 * ["Hello World (StaticText)"](src/HelloWorlds/HelloWorldStaticText) The classic first application HelloWorld with wxStaticText.
 * ["Hello World (wxWidgets)"](src/HelloWorlds/HelloWorldInWxWidgets) The classic first application HelloWorld presented as skeleton by wxWidgets.
 
