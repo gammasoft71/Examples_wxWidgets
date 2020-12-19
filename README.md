@@ -4,13 +4,13 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## [Hello World](./src/HelloWorlds)
 
-* ["Hello World (Emoticons)"](src/HelloWorlds/HelloWorldEmoticons) The classic first application HelloWorld with emoticons.
-* ["Hello World (MessageDialog)"](src/HelloWorlds/HelloWorldMessageDialog) The classic first application HelloWorld with wxMessageDialog.
-* ["Hello World (MessageDialog2)"](src/HelloWorlds/HelloWorldMessageDialog2) The classic first application HelloWorld with wxMessageDialog.
-* ["Hello World (Paint)"](src/HelloWorlds/HelloWorldPaint) The classic first application HelloWorld with wxEVT_PAINT event.
-* ["Hello World (Say)](src/HelloWorlds/HelloWorldSay) The classic first application "Hello, World!" with Say.
-* ["Hello World (StaticText)"](src/HelloWorlds/HelloWorldStaticText) The classic first application HelloWorld with wxStaticText.
-* ["Hello World (wxWidgets)"](src/HelloWorlds/HelloWorldInWxWidgets) The classic first application HelloWorld presented as skeleton by wxWidgets.
+* [HelloWorldEmoticons](src/HelloWorlds/HelloWorldEmoticons) The classic first application HelloWorld with emoticons.
+* [HelloWorldMessageDialog](src/HelloWorlds/HelloWorldMessageDialog) The classic first application HelloWorld with wxMessageDialog.
+* [HelloWorldMessageDialog2](src/HelloWorlds/HelloWorldMessageDialog2) The classic first application HelloWorld with wxMessageDialog.
+* [HelloWorldPaint](src/HelloWorlds/HelloWorldPaint) The classic first application HelloWorld with wxEVT_PAINT event.
+* [HelloWorldSay](src/HelloWorlds/HelloWorldSay) The classic first application "Hello, World!" with Say.
+* [HelloWorldStaticText](src/HelloWorlds/HelloWorldStaticText) The classic first application HelloWorld with wxStaticText.
+* [HelloWorldInWxWidgets](src/HelloWorlds/HelloWorldInWxWidgets) The classic first application HelloWorld presented as skeleton by wxWidgets.
 
 ## [Applications](./src/Applications)
 
