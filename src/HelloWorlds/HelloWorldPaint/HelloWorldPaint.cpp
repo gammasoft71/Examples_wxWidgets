@@ -21,9 +21,6 @@ namespace Examples {
         dc.DrawText(text, {((GetClientSize().GetWidth() - dc.GetTextExtent(text).GetWidth()) / 2) - 2, ((GetClientSize().GetHeight() - dc.GetTextExtent(text).GetHeight()) / 2) - 2});
       });
     }
-    
-  private:
-    wxPanel* panel = new wxPanel(this);
   };
 
   class Application : public wxApp {
