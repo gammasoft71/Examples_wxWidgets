@@ -12,7 +12,7 @@ namespace Examples {
     }
     
   private:
-    wxAnimationCtrl* animationCtrl = new wxAnimationCtrl(this, wxID_ANY, wxAnimation("Resources/load.gif"));
+    wxAnimationCtrl* animationCtrl = new wxAnimationCtrl(this, wxID_ANY, wxAnimation(wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh" ? "Resources/load.gif" : "../Resources/load.gif"));
   };
 
   class Application : public wxApp {

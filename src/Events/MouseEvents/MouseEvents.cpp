@@ -25,71 +25,71 @@ namespace Examples {
       });
       
       panel->Bind(wxEVT_AUX1_DCLICK, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("Aux1DbClick={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("Aux1DbClick", event).c_str());
       });
       
       panel->Bind(wxEVT_AUX1_DOWN, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("Aux1Down={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("Aux1Down", event).c_str());
       });
 
       panel->Bind(wxEVT_AUX1_UP, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("Aux1Up={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("Aux1Up", event).c_str());
       });
 
       panel->Bind(wxEVT_AUX2_DCLICK, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("Aux2DbClick={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("Aux2DbClick", event).c_str());
       });
 
       panel->Bind(wxEVT_AUX2_DOWN, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("Aux2Down={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("Aux2Down", event).c_str());
       });
 
       panel->Bind(wxEVT_AUX2_UP, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("Aux2Up={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("Aux2Up", event).c_str());
       });
 
       panel->Bind(wxEVT_LEFT_DCLICK, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("LeftDbClick={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("LeftDbClick", event).c_str());
       });
 
       panel->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("LeftDown={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("LeftDown", event).c_str());
       });
 
       panel->Bind(wxEVT_LEFT_UP, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("LeftUp={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("LeftUp", event).c_str());
       });
 
       panel->Bind(wxEVT_MIDDLE_DCLICK, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("MiddleDbClick={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("MiddleDbClick", event).c_str());
       });
 
       panel->Bind(wxEVT_MIDDLE_DOWN, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("MiddleDown={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("MiddleDown", event).c_str());
       });
 
       panel->Bind(wxEVT_MIDDLE_UP, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("MiddleUp={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("MiddleUp", event).c_str());
       });
 
       panel->Bind(wxEVT_RIGHT_DCLICK, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("RightDbClick={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("RightDbClick", event).c_str());
       });
 
       panel->Bind(wxEVT_RIGHT_DOWN, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("RightDown={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("RightDown=", event).c_str());
       });
 
       panel->Bind(wxEVT_RIGHT_UP, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("RightUp={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("RightUp", event).c_str());
       });
 
       panel->Bind(wxEVT_MOTION, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("Motion={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("Motion", event).c_str());
       });
 
       panel->Bind(wxEVT_MOUSEWHEEL, [&](wxMouseEvent& event) {
-        wxLogDebug(wxString::Format("MouseWheel={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())));
+        wxLogDebug(MouseEventToString("MouseWheel", event).c_str());
       });
 
       panel->Bind(wxEVT_ENTER_WINDOW, [&](wxMouseEvent& event) {
@@ -102,6 +102,10 @@ namespace Examples {
     }
     
   private:
+    static std::string MouseEventToString(const std::string eventName, wxMouseEvent& event) {
+      return wxString::Format("%s={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", eventName, ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())).ToStdString();
+    }
+
     static std::string ButtonToString(int button) {
       static std::map<int, std::string> buttons {{wxMOUSE_BTN_NONE, "wxMOUSE_BTN_NONE"}, {wxMOUSE_BTN_LEFT, "wxMOUSE_BTN_LEFT"}, {wxMOUSE_BTN_MIDDLE, "wxMOUSE_BTN_MIDDLE"}, {wxMOUSE_BTN_RIGHT, "wxMOUSE_BTN_RIGHT"}, {wxMOUSE_BTN_AUX1, "wxMOUSE_BTN_AUX1"}, {wxMOUSE_BTN_AUX2, "wxMOUSE_BTN_AUX2"}};
       return buttons[button];
