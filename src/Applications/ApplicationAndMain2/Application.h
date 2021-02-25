@@ -19,7 +19,7 @@ public:
     CallOnInit();
     SetExitOnFrameDelete(exit_on_last_frame_closed);
     wxInitAllImageHandlers();
-    auto menubar = new wxMenuBar();
+    menubar = new wxMenuBar();
     menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
       if (event.GetId() == wxID_EXIT) {
         auto can_quit = true;
@@ -33,10 +33,12 @@ public:
 #endif
   }
   
-  ~wxApplication() {
+  int OnExit() override {
+    delete menubar;
     wxImage::CleanUpHandlers();
-    wxApp::SetInstance(nullptr);
     wxEntryCleanup();
+    wxApp::SetInstance(nullptr);
+    return wxApp::OnExit();
   }
   
   int MainLoop() override {
@@ -48,4 +50,5 @@ public:
   
 private:
   int substitute_argc_ = 0;
+  wxMenuBar* menubar;
 };
