@@ -6,7 +6,7 @@ namespace Examples {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Toolbar example") {
-      SetClientSize(640, 480);
+      SetClientSize(820, 500);
 
       // On Windows the default size icon of toolbar is 16x16 and not 32x32...
       wxSize bitmapSize = wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows" ? wxSize(16, 16) : wxDefaultSize;
