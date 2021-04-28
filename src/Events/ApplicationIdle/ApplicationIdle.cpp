@@ -1,7 +1,9 @@
 #include <chrono>
+#include <thread>
 #include <wx/wx.h>
 
 using namespace std::chrono;
+using namespace std::this_thread;
 using namespace std::chrono_literals;
 
 namespace Examples {
@@ -35,6 +37,7 @@ namespace Examples {
       }
 
       wxApp::ProcessIdle();
+      sleep_for(20ms);
       return true;
     }
 
