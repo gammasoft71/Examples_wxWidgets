@@ -2,6 +2,8 @@
 
 Shows how to use wxWidgets controls only by programming code (c++17).
 
+[![wxwidgets](docs/Pictures/wxwidgets_header.png)](https://gammasoft71.wixsite.com/gammasoft/wxwidgets)
+
 ## [Hello World](./src/HelloWorlds)
 
 * [HelloWorldEmoticons](src/HelloWorlds/HelloWorldEmoticons) The classic first application HelloWorld with emoticons.

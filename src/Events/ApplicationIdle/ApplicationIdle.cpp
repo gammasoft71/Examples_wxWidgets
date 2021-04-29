@@ -29,7 +29,7 @@ namespace Examples {
     bool ProcessIdle() override {
       if (!frame->IsVisible()) return wxApp::ProcessIdle();
 
-      static auto lastIdleTime = high_resolution_clock::now();;
+      static auto lastIdleTime = high_resolution_clock::now();
       auto elapsedTime = high_resolution_clock::now() - lastIdleTime;
       if (elapsedTime >= 100ms) {
         frame->OnApplicationIdle();
