@@ -1,10 +1,10 @@
-# ActivityIndicator
+# RadioButton
 
-Shows how to create a ActivityIndicator widget with wxActivityIndicator.
+Shows how to create a RadioButton widget with wxRadioButton.
 
 ## Source
 
-[ActivityIndicator.cpp](ActivityIndicator.cpp)
+[RadioButton.cpp](RadioButton.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -17,30 +17,30 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start ActivityIndicator.sln
+start RadioButton.sln
 ```
 
-Select ActivityIndicator project and type Ctrl+F5 to build and run it.
+Select RadioButton project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./ActivityIndicator.xcodeproj
+open ./RadioButton.xcodeproj
 ```
 
-Select ActivityIndicator project and type Cmd+R to build and run it.
+Select RadioButton project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./ActivityIndicator.cbp > /dev/null 2>&1
+xdg-open ./RadioButton.cbp > /dev/null 2>&1
 ```
 
-Select ActivityIndicator project and type F9 to build and run it.
+Select RadioButton project and type F9 to build and run it.
 
 ### Linux :
 
@@ -48,5 +48,5 @@ Select ActivityIndicator project and type F9 to build and run it.
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
-./ActivityIndicator
+./RadioButton
 ```
