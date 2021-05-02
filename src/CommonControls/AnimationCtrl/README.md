@@ -8,6 +8,8 @@ Shows how to create a AnimationCtrl widget with wxAnimationCtrl.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+[Resources/load.gif](Resources/load.gif)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:
