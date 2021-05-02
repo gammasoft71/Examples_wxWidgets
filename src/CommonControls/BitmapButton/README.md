@@ -8,6 +8,10 @@ Shows how to create a BitmapButton widget with wxBitmapButton.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+[gammasoft_16x16.xpm](gammasoft_16x16.xpm)
+
+[gammasoft_64x64.xpm](gammasoft_64x64.xpm)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:
