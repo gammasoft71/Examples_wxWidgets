@@ -14,7 +14,7 @@ To build this project, open "Terminal" and type following lines:
 
 ### Windows :
 
-``` cmake
+``` shell
 mkdir build && cd build
 cmake .. 
 start HelloWorldEmoticons.sln
@@ -45,7 +45,7 @@ Select HelloWorldEmoticons project and type F9 to build and run it.
 
 ### Linux :
 
-``` cmake
+``` shell
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
