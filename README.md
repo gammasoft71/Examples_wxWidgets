@@ -84,11 +84,11 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## [Containers](./src/Containers)
 
-* [Frame](src/Containers/Frame) shows how to create a simple Frame container with wxFrame.
-* [Panel](src/Containers/Panel) shows how to create a simple Panel container with wxPanel.
-* [RadioBox](src/Containers/RadioBox) shows how to create a simple RadioBox container with wxRadioBox.
-* [SplitterWindow](src/Containers/SplitterWindow) shows how to create a simple SplitterWindow container with wxSplitterWindow and wxPanel.
-* [StaticBox](src/Containers/StaticBox) shows how to create a simple StaticBox container with wxStaticBox.
+* [Frame](src/ContainerControls/Frame) shows how to create a simple Frame container with wxFrame.
+* [Panel](src/ContainerControls/Panel) shows how to create a simple Panel container with wxPanel.
+* [RadioBox](src/ContainerControls/RadioBox) shows how to create a simple RadioBox container with wxRadioBox.
+* [SplitterWindow](src/ContainerControls/SplitterWindow) shows how to create a simple SplitterWindow container with wxSplitterWindow and wxPanel.
+* [StaticBox](src/ContainerControls/StaticBox) shows how to create a simple StaticBox container with wxStaticBox.
 
 ## [Menus and toolbars](./src/MenusAndToolbars)
 
