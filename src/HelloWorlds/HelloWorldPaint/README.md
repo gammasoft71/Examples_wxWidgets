@@ -1,10 +1,10 @@
-# HelloWorldMessageDialog
+# HelloWorldPaint
 
 The classic first application "Hello World" with GDI+drawing objects.
 
 ## Source
 
-[HelloWorldMessageDialog.cpp](HelloWorldMessageDialog.cpp)
+[HelloWorldPaint.cpp](HelloWorldPaint.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -17,30 +17,30 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start HelloWorldMessageDialog.sln
+start HelloWorldPaint.sln
 ```
 
-Select HelloWorldMessageDialog project and type Ctrl+F5 to build and run it.
+Select HelloWorldPaint project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./HelloWorldMessageDialog.xcodeproj
+open ./HelloWorldPaint.xcodeproj
 ```
 
-Select HelloWorldMessageDialog project and type Cmd+R to build and run it.
+Select HelloWorldPaint project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./HelloWorldMessageDialog.cbp > /dev/null 2>&1
+xdg-open ./HelloWorldPaint.cbp > /dev/null 2>&1
 ```
 
-Select HelloWorldMessageDialog project and type F9 to build and run it.
+Select HelloWorldPaint project and type F9 to build and run it.
 
 ### Linux :
 
@@ -48,5 +48,5 @@ Select HelloWorldMessageDialog project and type F9 to build and run it.
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
-./HelloWorldMessageDialog
+./HelloWorldPaint
 ```
