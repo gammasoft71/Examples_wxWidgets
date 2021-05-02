@@ -1,4 +1,4 @@
-# ActivityIndicator
+# CheckListBox
 
 Shows how to create a CheckListBox widget with wxCheckListBox.
 
