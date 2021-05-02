@@ -48,4 +48,5 @@ Select ActivityIndicator project and type F9 to build and run it.
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
-ActivityIndicator```
+ActivityIndicator
+```
