@@ -15,7 +15,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "ListView example") {
+    Frame() : wxFrame(nullptr, wxID_ANY, "ListCtrl example") {
       SetClientSize(350, 260);
 
       imageListLarge.Add(wxBitmap {aiIcon48});
