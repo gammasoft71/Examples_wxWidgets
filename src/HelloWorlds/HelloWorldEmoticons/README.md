@@ -25,8 +25,7 @@ Select HelloWorldEmoticons project and type Ctrl+F5 to build and run it.
 ### macOS :
 
 ``` shell
-mkdir build
-cd build
+mkdir build && cd build
 cmake .. -G "Xcode"
 open ./HelloWorldEmoticons.xcodeproj
 ```
