@@ -18,7 +18,7 @@ To build this project, open "Terminal" and type following lines:
 mkdir build && cd build
 cmake .. 
 start CalendarCtrl.sln
-``´
+```
 
 Select CalendarCtrl project and type Ctrl+F5 to build and run it.
 
