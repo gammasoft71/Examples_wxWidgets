@@ -1,6 +1,6 @@
 # HelloWorldMessageDialog
 
-The classic first application "Hello World" with wxGenericStaticText.
+The classic first application "Hello World" with wxMessageDialog.
 
 ## Source
 
