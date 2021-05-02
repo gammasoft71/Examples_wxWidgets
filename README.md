@@ -192,7 +192,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 git clone https://github.com/gammasoft71/Examples_wxWidgets Examples_wxWidgets
 ```
 
-## Generate and build
+## Build and run
 
 To build this project, open "Terminal" and type following lines:
 
