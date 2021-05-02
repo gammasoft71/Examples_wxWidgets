@@ -27,7 +27,7 @@ Select Application project and type Ctrl+F5 to build and run it.
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./Applicatio .xcodeproj
+open ./Application.xcodeproj
 ```
 
 Select Application project and type Cmd+R to build and run it.
