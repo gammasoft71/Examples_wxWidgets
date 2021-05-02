@@ -16,7 +16,7 @@ Shows how to create a ActivityIndicator widget with wxListCtrl.
 
 [Avi48.xpm](Avi48.xpm)
 
-Bmp16.xpm](Bmp16.xpm)
+[Bmp16.xpm](Bmp16.xpm)
 
 [Bmp48.xpm](Bmp48.xpm)
 
