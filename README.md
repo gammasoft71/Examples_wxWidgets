@@ -26,38 +26,38 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## [Common Controls](./src/CommonControls)
 
-* [ActivityIndicator](src/CommonControls/ActivityIndicator) shows how to create an ActivityIndicator widget with wxActivityIndicator.
-* [AnimationCtrl](src/CommonControls/AnimationCtrl) shows how to create a AnimationCtrl widget with wxAnimationCtrl.
-* [BitmapButton](src/CommonControls/BitmapButton) shows how to create a BitmapButton widget with wxBitmapButton.
-* [Button](src/CommonControls/Button) shows how to create a Button widget and Event Click with wxButton.
-* [CalendarCtrl](src/CommonControls/CalendarCtrl) shows how to create a CalendarCtrl widget with wxCalendarCtrl.
-* [CheckBox](src/CommonControls/CheckBox) shows how to create a CheckBox widget with wxCheckBox.
-* [CheckedListBox](src/CommonControls/CheckedListBox) shows how to create a CheckListBox widget with wxCheckListButton.
-* [Choice](src/CommonControls/Choice) shows how to create a Choice widget with wxChoice.
-* [ComboBox](src/CommonControls/ComboBox) shows how to create a ComboBox widget with wxComboBox.
-* [CommandLinkButton](src/CommonControls/CommandLinkButton) shows how to create a CommandLinkButton widget with wxCommandLinkButton.
-* [Control](src/CommonControls/Control) shows how to create a Control widget with wwxControl.
-* [Gauge](src/CommonControls/Gauge) shows how to create a Gauge widget with wxGauge.
-* [GenericStaticBitmap](src/CommonControls/GenericStaticBitmap) shows how to create a StaticBitmap widget with wxGenericStaticBitmap.
-* [HyperlinkCtrl](src/CommonControls/HyperlinkCtrl) shows how to create an HyperLink widget with wxHyperlinkCtrl.
-* [ListBox](src/CommonControls/ListBox) shows how to create a ListBox widget with wxListBox.
-* [ListCtrl](src/CommonControls/ListCtrl) shows how to create a ListCtrl widget with wxListCtrl.
-* [RadioButton](src/CommonControls/RadioButton) shows how to create a RadioButton widget with wxRadioButton.
-* [RichTextBox](src/CommonControls/RichTextBox) shows how to create a RichTextBox widget with wxRichTextCtrl.
-* [RichToolTip](src/CommonControls/RichToolTip) shows how to create a RichToolTip widget with wxRichToolTip.
-* [ScrollBar](src/CommonControls/ScrollBar) shows how to create a ScrollBar widget with wxScrollBar.
-* [SearchCtrl](src/CommonControls/SearchCtrl) shows how to create a SearchCtrl widget with wxSearchCtrl.
-* [Slider](src/CommonControls/Slider) shows how to create a Slider widget with wxSlider.
-* [SpinCtrl](src/CommonControls/SpinCtrl) shows how to create a SpinCtrl widget with wxSpinCtrl.
-* [SpinCtrlDouble](src/CommonControls/SpinCtrlDouble) shows how to create a SpinCtrlDouble widget with wxSpinCtrlDouble.
-* [StaticBitmap](src/CommonControls/StaticBitmap) shows how to create a StaticBitmap widget with wxStaticBitmap.
-* [StaticBitmap2](src/CommonControls/StaticBitmap2) shows how to create a StaticBitmap widget with wxStaticBitmap.
-* [StaticText](src/CommonControls/StaticText) shows how to create a StaticText widget with wxStaticText.
-* [TaskBarIcon](src/CommonControls/TaskBarIcon) shows how to create a TaskBarIcon widget with wxTaskBarIcon.
-* [TextCtrl](src/CommonControls/TextCtrl) shows how to create a TextCtrl widget with wxTextCtrl.
-* [TobbleButton](src/CommonControls/TobbleButton) shows how to create a TobbleButton widget and Event Click with wxTobbleButton.
-* [TreeCtrl](src/CommonControls/TreeCtrl) shows how to create a TreeView widget with wxTreeCtrl.
-* [WebView](src/CommonControls/WebView) shows how to create a WebViewwidget with wxWebView.
+* [ActivityIndicator](src/CommonControls/ActivityIndicator/README.md) shows how to create an ActivityIndicator widget with wxActivityIndicator.
+* [AnimationCtrl](src/CommonControls/AnimationCtrl/README.md) shows how to create a AnimationCtrl widget with wxAnimationCtrl.
+* [BitmapButton](src/CommonControls/BitmapButton/README.md) shows how to create a BitmapButton widget with wxBitmapButton.
+* [Button](src/CommonControls/Button/README.md) shows how to create a Button widget and Event Click with wxButton.
+* [CalendarCtrl](src/CommonControls/CalendarCtrl/README.md) shows how to create a CalendarCtrl widget with wxCalendarCtrl.
+* [CheckBox](src/CommonControls/CheckBox/README.md) shows how to create a CheckBox widget with wxCheckBox.
+* [CheckedListBox](src/CommonControls/CheckedListBox/README.md) shows how to create a CheckListBox widget with wxCheckListButton.
+* [Choice](src/CommonControls/Choice/README.md) shows how to create a Choice widget with wxChoice.
+* [ComboBox](src/CommonControls/ComboBox/README.md) shows how to create a ComboBox widget with wxComboBox.
+* [CommandLinkButton](src/CommonControls/CommandLinkButton/README.md) shows how to create a CommandLinkButton widget with wxCommandLinkButton.
+* [Control](src/CommonControls/Control/README.md) shows how to create a Control widget with wwxControl.
+* [Gauge](src/CommonControls/Gauge/README.md) shows how to create a Gauge widget with wxGauge.
+* [GenericStaticBitmap](src/CommonControls/GenericStaticBitmap/README.md) shows how to create a StaticBitmap widget with wxGenericStaticBitmap.
+* [HyperlinkCtrl](src/CommonControls/HyperlinkCtrl/README.md) shows how to create an HyperLink widget with wxHyperlinkCtrl.
+* [ListBox](src/CommonControls/ListBox/README.md) shows how to create a ListBox widget with wxListBox.
+* [ListCtrl](src/CommonControls/ListCtrl/README.md) shows how to create a ListCtrl widget with wxListCtrl.
+* [RadioButton](src/CommonControls/RadioButton/README.md) shows how to create a RadioButton widget with wxRadioButton.
+* [RichTextBox](src/CommonControls/RichTextBox/README.md) shows how to create a RichTextBox widget with wxRichTextCtrl.
+* [RichToolTip](src/CommonControls/RichToolTip/README.md) shows how to create a RichToolTip widget with wxRichToolTip.
+* [ScrollBar](src/CommonControls/ScrollBar/README.md) shows how to create a ScrollBar widget with wxScrollBar.
+* [SearchCtrl](src/CommonControls/SearchCtrl/README.md) shows how to create a SearchCtrl widget with wxSearchCtrl.
+* [Slider](src/CommonControls/Slider/README.md) shows how to create a Slider widget with wxSlider.
+* [SpinCtrl](src/CommonControls/SpinCtrl/README.md) shows how to create a SpinCtrl widget with wxSpinCtrl.
+* [SpinCtrlDouble](src/CommonControls/SpinCtrlDouble/README.md) shows how to create a SpinCtrlDouble widget with wxSpinCtrlDouble.
+* [StaticBitmap](src/CommonControls/StaticBitmap/README.md) shows how to create a StaticBitmap widget with wxStaticBitmap.
+* [StaticBitmap2](src/CommonControls/StaticBitmap2/README.md) shows how to create a StaticBitmap widget with wxStaticBitmap.
+* [StaticText](src/CommonControls/StaticText/README.md) shows how to create a StaticText widget with wxStaticText.
+* [TaskBarIcon](src/CommonControls/TaskBarIcon/README.md) shows how to create a TaskBarIcon widget with wxTaskBarIcon.
+* [TextCtrl](src/CommonControls/TextCtrl/README.md) shows how to create a TextCtrl widget with wxTextCtrl.
+* [TobbleButton](src/CommonControls/TobbleButton/README.md) shows how to create a TobbleButton widget and Event Click with wxTobbleButton.
+* [TreeCtrl](src/CommonControls/TreeCtrl/README.md) shows how to create a TreeView widget with wxTreeCtrl.
+* [WebView](src/CommonControls/WebView/README.md) shows how to create a WebViewwidget with wxWebView.
 
 ## [Book Controls](./src/BookControls)
 
