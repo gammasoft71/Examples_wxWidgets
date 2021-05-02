@@ -1,12 +1,24 @@
-# ActivityIndicator
+# ListCtrl
 
-Shows how to create a ActivityIndicator widget with wxActivityIndicator.
+Shows how to create a ActivityIndicator widget with wxListCtrl.
 
 ## Source
 
-[ActivityIndicator.cpp](ActivityIndicator.cpp)
+[ListCtrl.cpp](ListCtrl.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
+
+[Ai16.xpm](Ai16.xpm)
+
+[Ai48.xpm](Ai48.xpm)
+
+[Avi16.xpm](Avi16.xpm)
+
+[Avi48.xpm](Avi48.xpm)
+
+Bmp16.xpm](Bmp16.xpm)
+
+[Bmp48.xpm](Bmp48.xpm)
 
 ## Build and run
 
@@ -17,30 +29,30 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start ActivityIndicator.sln
+start ListCtrl.sln
 ```
 
-Select ActivityIndicator project and type Ctrl+F5 to build and run it.
+Select ListCtrl project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./ActivityIndicator.xcodeproj
+open ./ListCtrl.xcodeproj
 ```
 
-Select ActivityIndicator project and type Cmd+R to build and run it.
+Select ListCtrl project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./ActivityIndicator.cbp > /dev/null 2>&1
+xdg-open ./ListCtrl.cbp > /dev/null 2>&1
 ```
 
-Select ActivityIndicator project and type F9 to build and run it.
+Select ListCtrl project and type F9 to build and run it.
 
 ### Linux :
 
@@ -48,5 +60,5 @@ Select ActivityIndicator project and type F9 to build and run it.
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
-./ActivityIndicator
+./ListCtrl
 ```
