@@ -1,6 +1,6 @@
 # Application
 
-The classic first application "Hello World" with wxApp.
+Shows how to create a simple wxWidgets application with wxApp.
 
 ## Source
 
