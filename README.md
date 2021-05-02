@@ -213,7 +213,7 @@ cmake .. -G "Xcode"
 open ./wxWidgetsExamples.xcodeproj
 ```
 
-Select any project and type CCmd+R to build and run it.
+Select any project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
