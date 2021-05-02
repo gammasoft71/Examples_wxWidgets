@@ -10,11 +10,11 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * [HelloWorldGenericStaticText](src/HelloWorlds/HelloWorldGenericStaticText/README.md) The classic first application HelloWorld with wxGenericStaticText.
 * [HelloWorldInWxWidgets](src/HelloWorlds/HelloWorldInWxWidgets/README.md) The classic first application wxWidgets HelloWorld.
 * [HelloWorldMessageDialog](src/HelloWorlds/HelloWorldMessageDialog/README.md) The classic first application HelloWorld with wxMessageDialog.
-* [HelloWorldMessageDialog2](src/HelloWorlds/HelloWorldMessageDialog2) The classic first application HelloWorld with wxMessageDialog.
-* [HelloWorldPaint](src/HelloWorlds/HelloWorldPaint) The classic first application HelloWorld with wxEVT_PAINT event.
-* [HelloWorldSay](src/HelloWorlds/HelloWorldSay) The classic first application "Hello, World!" with Say.
-* [HelloWorldStaticText](src/HelloWorlds/HelloWorldStaticText) The classic first application HelloWorld with wxStaticText.
-* [HelloWorldInWxWidgets](src/HelloWorlds/HelloWorldInWxWidgets) The classic first application HelloWorld presented as skeleton by wxWidgets.
+* [HelloWorldMessageDialog2](src/HelloWorlds/HelloWorldMessageDialog2/README.md) The classic first application HelloWorld with wxMessageDialog.
+* [HelloWorldPaint](src/HelloWorlds/HelloWorldPaint/README.md) The classic first application HelloWorld with wxEVT_PAINT event.
+* [HelloWorldSay](src/HelloWorlds/HelloWorldSay/README.md) The classic first application "Hello, World!" with Say.
+* [HelloWorldStaticText](src/HelloWorlds/HelloWorldStaticText/README.md) The classic first application HelloWorld with wxStaticText.
+* [HelloWorldInWxWidgets](src/HelloWorlds/HelloWorldInWxWidgets/README.md) The classic first application HelloWorld presented as skeleton by wxWidgets.
 
 ## [Applications](./src/Applications)
 
