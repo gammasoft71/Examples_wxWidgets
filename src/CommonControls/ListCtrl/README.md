@@ -4,10 +4,6 @@ Shows how to create a ActivityIndicator widget with wxListCtrl.
 
 ## Source
 
-[ListCtrl.cpp](ListCtrl.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
-
 [Ai16.xpm](Ai16.xpm)
 
 [Ai48.xpm](Ai48.xpm)
@@ -19,6 +15,10 @@ Shows how to create a ActivityIndicator widget with wxListCtrl.
 [Bmp16.xpm](Bmp16.xpm)
 
 [Bmp48.xpm](Bmp48.xpm)
+
+[ListCtrl.cpp](ListCtrl.cpp)
+
+[CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 
