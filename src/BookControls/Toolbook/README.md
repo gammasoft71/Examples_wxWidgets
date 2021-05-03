@@ -1,10 +1,10 @@
-# WebView
+# Toolbook
 
-Shows how to create a WebView widget with wxWebView.
+Shows how to create a Toolbook widget with wxToolbook.
 
 ## Source
 
-[WebView.cpp](WebView.cpp)
+[Toolbook.cpp](Toolbook.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -17,30 +17,30 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start WebView.sln
+start Toolbook.sln
 ```
 
-Select WebView project and type Ctrl+F5 to build and run it.
+Select Toolbook project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./WebView.xcodeproj
+open ./Toolbook.xcodeproj
 ```
 
-Select WebView project and type Cmd+R to build and run it.
+Select Toolbook project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./WebView.cbp > /dev/null 2>&1
+xdg-open ./Toolbook.cbp > /dev/null 2>&1
 ```
 
-Select WebView project and type F9 to build and run it.
+Select Toolbook project and type F9 to build and run it.
 
 ### Linux :
 
@@ -48,5 +48,5 @@ Select WebView project and type F9 to build and run it.
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
-./WebView
+./Toolbook
 ```
