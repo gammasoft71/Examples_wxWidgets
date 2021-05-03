@@ -17,7 +17,7 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start WebView.sln
+start Treebook.sln
 ```
 
 Select Treebook project and type Ctrl+F5 to build and run it.
