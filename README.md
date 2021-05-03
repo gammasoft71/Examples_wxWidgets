@@ -71,12 +71,12 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## [Picker Controls](./src/PickerControls)
 
-* [ColourPickerCtrl](src/PickerControls/ColourPickerCtrl) shows how to create a ColourPickerCtrl widget with wxColourPickerCtrl.
-* [DatePickerCtrl](src/PickerControls/DatePickerCtrl) shows how to create a DatePicker widget with wxDatePickerCtrl.
-* [DirPickerCtrl](src/PickerControls/DirPickerCtrl) shows how to create a DirPickerCtrl widget with wxDirPickerCtrl.
-* [FilePickerCtrl](src/PickerControls/FilePickerCtrl) shows how to create a FilePickerCtrl widget with wxFilePickerCtrl.
-* [FontPickerCtrl](src/PickerControls/FontPickerCtrl) shows how to create a FontPickerCtrl widget with wxFontPickerCtrl.
-* [TimePickerCtrl](src/PickerControls/TimePickerCtrl) shows how to create a TimePicker widget with wxTimePickerCtrl.
+* [ColourPickerCtrl](src/PickerControls/ColourPickerCtrl/README.md) shows how to create a ColourPickerCtrl widget with wxColourPickerCtrl.
+* [DatePickerCtrl](src/PickerControls/DatePickerCtrl/README.md) shows how to create a DatePicker widget with wxDatePickerCtrl.
+* [DirPickerCtrl](src/PickerControls/DirPickerCtrl/README.md) shows how to create a DirPickerCtrl widget with wxDirPickerCtrl.
+* [FilePickerCtrl](src/PickerControls/FilePickerCtrl/README.md) shows how to create a FilePickerCtrl widget with wxFilePickerCtrl.
+* [FontPickerCtrl](src/PickerControls/FontPickerCtrl/README.md) shows how to create a FontPickerCtrl widget with wxFontPickerCtrl.
+* [TimePickerCtrl](src/PickerControls/TimePickerCtrl/README.md) shows how to create a TimePicker widget with wxTimePickerCtrl.
 
 ## [Custom controls](./src/CustomControls)
 
