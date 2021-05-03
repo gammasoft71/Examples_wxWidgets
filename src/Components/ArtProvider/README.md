@@ -1,6 +1,6 @@
 # ArtProvider
 
-Shows how to create an ArtProvider widget with wxArtProvider.
+Shows how to create an ArtProvider component with wxArtProvider.
 
 ## Source
 
