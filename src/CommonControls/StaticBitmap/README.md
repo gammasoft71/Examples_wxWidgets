@@ -4,11 +4,11 @@ Shows how to create a StaticBitmap widget with wxStaticBitmap.
 
 ## Source
 
+[Logo.xpm](Logo.xpm)
+
 [StaticBitmap.cpp](StaticBitmap.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
-
-[Logo.xpm](Logo.xpm)
 
 ## Build and run
 
