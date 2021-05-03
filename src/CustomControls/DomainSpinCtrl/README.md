@@ -1,10 +1,12 @@
-# ColourPickerCtrl
+# DomainSpinCtrl
 
 Shows how to create a ColourPickerCtrl widget with wxColourPickerCtrl.
 
 ## Source
 
-[ColourPickerCtrl.cpp](ColourPickerCtrl.cpp)
+[DomainSpinCtrl.cpp](DomainSpinCtrl.cpp)
+
+[wxDomainSpinCtrl.h](wxDomainSpinCtrl.h)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -17,30 +19,30 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start ColourPickerCtrl.sln
+start DomainSpinCtrl.sln
 ```
 
-Select ColourPickerCtrl project and type Ctrl+F5 to build and run it.
+Select DomainSpinCtrl project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./ColourPickerCtrl.xcodeproj
+open ./DomainSpinCtrl.xcodeproj
 ```
 
-Select ColourPickerCtrl project and type Cmd+R to build and run it.
+Select DomainSpinCtrl project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./ColourPickerCtrl.cbp > /dev/null 2>&1
+xdg-open ./DomainSpinCtrl.cbp > /dev/null 2>&1
 ```
 
-Select ColourPickerCtrl project and type F9 to build and run it.
+Select DomainSpinCtrl project and type F9 to build and run it.
 
 ### Linux :
 
@@ -48,5 +50,5 @@ Select ColourPickerCtrl project and type F9 to build and run it.
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
-./ColourPickerCtrl
+./DomainSpinCtrl
 ```
