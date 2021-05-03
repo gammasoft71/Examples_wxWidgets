@@ -1,10 +1,10 @@
-# WebView
+# Treebook
 
-Shows how to create a WebView widget with wxWebView.
+Shows how to create a Treebook widget with wxTreebook.
 
 ## Source
 
-[WebView.cpp](WebView.cpp)
+[Treebook.cpp](Treebook.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -20,27 +20,27 @@ cmake ..
 start WebView.sln
 ```
 
-Select WebView project and type Ctrl+F5 to build and run it.
+Select Treebook project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./WebView.xcodeproj
+open ./Treebook.xcodeproj
 ```
 
-Select WebView project and type Cmd+R to build and run it.
+Select Treebook project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./WebView.cbp > /dev/null 2>&1
+xdg-open ./Treebook.cbp > /dev/null 2>&1
 ```
 
-Select WebView project and type F9 to build and run it.
+Select Treebook project and type F9 to build and run it.
 
 ### Linux :
 
@@ -48,5 +48,5 @@ Select WebView project and type F9 to build and run it.
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
-./WebView
+./Treebook
 ```
