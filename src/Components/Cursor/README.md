@@ -1,6 +1,6 @@
 # Cursor
 
-Shows how to create a Cursor widget with wxCursor.
+Shows how to create a Cursor component with wxCursor.
 
 ## Source
 
