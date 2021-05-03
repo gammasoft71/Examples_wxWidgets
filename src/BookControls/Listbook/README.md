@@ -1,10 +1,10 @@
-# WebView
+# Listbook
 
-Shows how to create a WebView widget with wxWebView.
+Shows how to create a Listbook widget with wxListbook.
 
 ## Source
 
-[WebView.cpp](WebView.cpp)
+[Listbook.cpp](Listbook.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -17,30 +17,30 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start WebView.sln
+start Listbook.sln
 ```
 
-Select WebView project and type Ctrl+F5 to build and run it.
+Select Listbook project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./WebView.xcodeproj
+open ./Listbook.xcodeproj
 ```
 
-Select WebView project and type Cmd+R to build and run it.
+Select Listbook project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./WebView.cbp > /dev/null 2>&1
+xdg-open ./Listbook.cbp > /dev/null 2>&1
 ```
 
-Select WebView project and type F9 to build and run it.
+Select Listbook project and type F9 to build and run it.
 
 ### Linux :
 
@@ -48,5 +48,5 @@ Select WebView project and type F9 to build and run it.
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
-./WebView
+./Listbook
 ```
