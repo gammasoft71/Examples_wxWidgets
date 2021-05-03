@@ -43,7 +43,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * [ListBox](src/CommonControls/ListBox/README.md) shows how to create a ListBox widget with wxListBox.
 * [ListCtrl](src/CommonControls/ListCtrl/README.md) shows how to create a ListCtrl widget with wxListCtrl.
 * [RadioButton](src/CommonControls/RadioButton/README.md) shows how to create a RadioButton widget with wxRadioButton.
-* [RichTextBox](src/CommonControls/RichTextBox/README.md) shows how to create a RichTextBox widget with wxRichTextCtrl.
+* [RichTextCtrl](src/CommonControls/RichTextCtrl/README.md) shows how to create a RichTextBox widget with wxRichTextCtrl.
 * [RichToolTip](src/CommonControls/RichToolTip/README.md) shows how to create a RichToolTip widget with wxRichToolTip.
 * [ScrollBar](src/CommonControls/ScrollBar/README.md) shows how to create a ScrollBar widget with wxScrollBar.
 * [SearchCtrl](src/CommonControls/SearchCtrl/README.md) shows how to create a SearchCtrl widget with wxSearchCtrl.
