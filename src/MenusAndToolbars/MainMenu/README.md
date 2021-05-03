@@ -1,6 +1,6 @@
 # MainMenu
 
-Shows how to create a MainMenu widget with wxMainMenu.
+Shows how to create a MainMenu widget with wxMenuBar.
 
 ## Source
 
