@@ -1,6 +1,6 @@
 # Config
 
-Shows how to create a Config widget with wxConfig.
+Shows how to create a Config component with wxConfig.
 
 ## Source
 
