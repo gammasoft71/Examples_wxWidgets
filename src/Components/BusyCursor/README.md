@@ -1,6 +1,6 @@
 # BusyCursor
 
-Shows how to create a BusyCursor widget with wxBusyCursor.
+Shows how to create a BusyCursor component with wxBusyCursor.
 
 ## Source
 
