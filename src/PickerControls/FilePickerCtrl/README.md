@@ -1,10 +1,10 @@
-# Treebook
+# FilePickerCtrl
 
-Shows how to create a Treebook widget with wxTreebook.
+Shows how to create a FilePickerCtrl widget with wxFilePickerCtrl.
 
 ## Source
 
-[Treebook.cpp](Treebook.cpp)
+[FilePickerCtrl.cpp](FilePickerCtrl.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -17,30 +17,30 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start Treebook.sln
+start FilePickerCtrl.sln
 ```
 
-Select Treebook project and type Ctrl+F5 to build and run it.
+Select FilePickerCtrl project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./Treebook.xcodeproj
+open ./FilePickerCtrl.xcodeproj
 ```
 
-Select Treebook project and type Cmd+R to build and run it.
+Select FilePickerCtrl project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./Treebook.cbp > /dev/null 2>&1
+xdg-open ./FilePickerCtrl.cbp > /dev/null 2>&1
 ```
 
-Select Treebook project and type F9 to build and run it.
+Select FilePickerCtrl project and type F9 to build and run it.
 
 ### Linux :
 
@@ -48,5 +48,5 @@ Select Treebook project and type F9 to build and run it.
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
-./Treebook
+./FilePickerCtrl
 ```
