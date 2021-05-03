@@ -61,13 +61,13 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## [Book Controls](./src/BookControls)
 
-* [AuiNotebook](src/WindowDocking/AuiNotebook) shows how to create a AuiNotebook widget with AuiNotebook.
-* [Choicebook](src/BookControls/Choicebook) shows how to create a Choicebook widget with wxChoiceBook.
-* [Listbook](src/BookControls/Listbook) shows how to create a Listbook widget with wxListBook.
-* [Notebook](src/BookControls/Notebook) shows how to create a Notebook widget with wxNoteBook.
-* [Simplebook](src/BookControls/Simplebook) shows how to create a Simplebook widget with wxSimplebook.
-* [Toolbook](src/BookControls/Toolbook) shows how to create a Toolbook widget with wxToolbook.
-* [Treebook](src/BookControls/Treebook) shows how to create a Treebook widget with wxTreebook.
+* [AuiNotebook](src/WindowDocking/AuiNotebook/README.md) shows how to create a AuiNotebook widget with AuiNotebook.
+* [Choicebook](src/BookControls/Choicebook/README.md) shows how to create a Choicebook widget with wxChoiceBook.
+* [Listbook](src/BookControls/Listbook/README.md) shows how to create a Listbook widget with wxListBook.
+* [Notebook](src/BookControls/Notebook/README.md) shows how to create a Notebook widget with wxNoteBook.
+* [Simplebook](src/BookControls/Simplebook/README.md) shows how to create a Simplebook widget with wxSimplebook.
+* [Toolbook](src/BookControls/Toolbook/README.md) shows how to create a Toolbook widget with wxToolbook.
+* [Treebook](src/BookControls/Treebook/README.md) shows how to create a Treebook widget with wxTreebook.
 
 ## [Picker Controls](./src/PickerControls)
 
