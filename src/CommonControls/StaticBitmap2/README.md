@@ -1,12 +1,14 @@
-# ActivityIndicator
+# StaticBitmap2
 
-Shows how to create a ActivityIndicator widget with wxActivityIndicator.
+Shows how to create a StaticBitmap2 widget with wxStaticBitmap.
 
 ## Source
 
-[ActivityIndicator.cpp](ActivityIndicator.cpp)
+[StaticBitmap2.cpp](StaticBitmap2.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
+
+[Resources/Logo.png](Resources/Logo.png)
 
 ## Build and run
 
@@ -17,30 +19,30 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start ActivityIndicator.sln
+start StaticBitmap2.sln
 ```
 
-Select ActivityIndicator project and type Ctrl+F5 to build and run it.
+Select StaticBitmap2 project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./ActivityIndicator.xcodeproj
+open ./StaticBitmap2.xcodeproj
 ```
 
-Select ActivityIndicator project and type Cmd+R to build and run it.
+Select StaticBitmap2 project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./ActivityIndicator.cbp > /dev/null 2>&1
+xdg-open ./StaticBitmap2.cbp > /dev/null 2>&1
 ```
 
-Select ActivityIndicator project and type F9 to build and run it.
+Select StaticBitmap2 project and type F9 to build and run it.
 
 ### Linux :
 
@@ -48,5 +50,5 @@ Select ActivityIndicator project and type F9 to build and run it.
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
-./ActivityIndicator
+./StaticBitmap2
 ```
