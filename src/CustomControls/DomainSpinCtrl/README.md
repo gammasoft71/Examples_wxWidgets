@@ -1,6 +1,6 @@
 # DomainSpinCtrl
 
-Shows how to create a ColourPickerCtrl widget with wxColourPickerCtrl.
+Shows how to create a DomainSpinCtrl widget with own [wxDomainSpinCtrl](wxDomainSpinCtrl.h) (wxPanel with wxTextCtrl and wxSpinButton).
 
 ## Source
 
