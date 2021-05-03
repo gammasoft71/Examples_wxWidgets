@@ -1,6 +1,6 @@
 # StaticBitmap2
 
-Shows how to create a StaticBitmap2 widget with wxStaticBitmap.
+Shows how to create a StaticBitmap widget with wxStaticBitmap.
 
 ## Source
 
