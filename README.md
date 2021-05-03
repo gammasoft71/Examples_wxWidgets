@@ -80,9 +80,9 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## [Custom controls](./src/CustomControls)
 
-* [Line](src/CustomControls/Line) shows how to create a custom control Line from wxPanel.
-* [DomainSpinCtrl](src/CustomControls/DomainSpinCtrl) shows how to create a DomainSpinCtrl widget with own [wxDomainSpinCtrl](src/CustomControls/DomainSpinCtrl/wxDomainSpinCtrl.h) (wxPanel with wxTextCtrl and wxSpinButton).
-* [NumericTextCtrl](src/CustomControls/NumericTextCtrl) shows how to create a custom control NumericTextCtrl from wxTextCtrl.
+* [DomainSpinCtrl](src/CustomControls/DomainSpinCtrl/README.md) shows how to create a DomainSpinCtrl widget with own [wxDomainSpinCtrl](src/CustomControls/DomainSpinCtrl/wxDomainSpinCtrl.h) (wxPanel with wxTextCtrl and wxSpinButton).
+* [Line](src/CustomControls/Line/README.md) shows how to create a custom control Line from wxPanel.
+* [NumericTextCtrl](src/CustomControls/NumericTextCtrl/README.md) shows how to create a custom control NumericTextCtrl from wxTextCtrl.
 
 ## [Containers](./src/Containers)
 
