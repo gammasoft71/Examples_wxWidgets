@@ -1,10 +1,10 @@
-# Line
+# Cursor
 
-Shows how to create a Line widget with wxPanel.
+Shows how to create a Cursor widget with wxCursor.
 
 ## Source
 
-[Line.cpp](Line.cpp)
+[Line.cpp](Cursor.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -17,27 +17,27 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start Line.sln
+start Cursor.sln
 ```
 
-Select Line project and type Ctrl+F5 to build and run it.
+Select Cursor project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./Line.xcodeproj
+open ./Cursor.xcodeproj
 ```
 
-Select Line project and type Cmd+R to build and run it.
+Select Cursor project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./Line.cbp > /dev/null 2>&1
+xdg-open ./Cursor.cbp > /dev/null 2>&1
 ```
 
 Select Line project and type F9 to build and run it.
@@ -48,5 +48,5 @@ Select Line project and type F9 to build and run it.
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
-./Line
+./Cursor
 ```
