@@ -1,10 +1,10 @@
-# Line
+# FrameIcon
 
-Shows how to create a Line widget with wxPanel.
+Shows how to assign an icon to frame.
 
 ## Source
 
-[Line.cpp](Line.cpp)
+[FrameIcon.cpp](FrameIcon.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -17,30 +17,30 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start Line.sln
+start FrameIcon.sln
 ```
 
-Select Line project and type Ctrl+F5 to build and run it.
+Select FrameIcon project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./Line.xcodeproj
+open ./FrameIcon.xcodeproj
 ```
 
-Select Line project and type Cmd+R to build and run it.
+Select FrameIcon project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./Line.cbp > /dev/null 2>&1
+xdg-open ./FrameIcon.cbp > /dev/null 2>&1
 ```
 
-Select Line project and type F9 to build and run it.
+Select FrameIcon project and type F9 to build and run it.
 
 ### Linux :
 
@@ -48,5 +48,5 @@ Select Line project and type F9 to build and run it.
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
-./Line
+./FrameIcon
 ```
