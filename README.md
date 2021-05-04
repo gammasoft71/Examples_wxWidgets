@@ -176,6 +176,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * [BitmapButtonWithLabel](src/Others/BitmapButtonWithLabel/README.md) shows how to create a Button with Bitmap and Label widget with wxButton.
 * [BoxedPanel](src/Others/BoxedPanel/README.md) shows how to create boxed panels with wxPanel and wxBoxSizer.
 * [ColoredFrames](src/Others/ColoredFrames/README.md) shows how to create colored background forms.
+* [Colors](src/Others/Colors/README.md) demonstrates the use of wxControl widget with wxColour..
 * [CursorFromFile](src/Others/CursorFromFile/README.md) shows how to create Cursor from cur or ani file with wxCursor.
 * [DirDialogShowWindowModal](src/Others/DirDialogShowWindowModal/README.md) shows how to create a DirDialogWindowModal with wxDirDialog.
 * [FrameAndThread](src/Others/FrameAndThread/README.md) shows how to dialog with a frame widget from a thread.
