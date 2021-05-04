@@ -1,6 +1,6 @@
 # StaticBoxAndCheckBox
 
-Shows how to use StaticBox and CheckBoxes.
+Shows how to use wxStaticBox and wxCheckBox.
 
 ## Source
 
