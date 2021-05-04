@@ -1,6 +1,6 @@
 # wxWidgetsHelloWorld
 
-The classic first application wxWidgets "Hello World".
+The classic first application HelloWorld presented as skeleton by wxWidgets.
 
 ## Source
 
