@@ -184,6 +184,8 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * [FrameShow](src/Others/FrameShow/README.md) shows how to display a frame in different ways.
 * [MdiFrame](src/Others/MdiFrame/README.md) shows how to create a MDI (Multiple Document Interface) frame.
 * [MessageDialogShowWindowModal](src/Others/MessageDialogShowWindowModal/README.md) shows how to create a MessageDialog dialog with wxMessageDialog using ShowWindowModal method.
+* [OpenFileDialogShowWindowModal](src/Others/OpenFileDialogShowWindowModal/README.md) shows how to create a OpenFileDialogShowWindowModal dialog with wxFileDialog using ShowWindowModal method.
+* [SaveFileDialogShowWindowModal](src/Others/SaveFileDialogShowWindowModal/README.md) shows how to create a SaveFileDialogShowWindowModal dialog with wxFileDialog using ShowWindowModal method.
 * [OpenFileDialogWindowModal](src/Others/OpenFileDialogWindowModal/README.md) shows how to create a OpenFileDialogWindowModal with wxOpenFileDialog.
 * [SaveFileDialogWindowModal](src/Others/SaveFileDialogWindowModal/README.md) shows how to create a SaveFileDialogWindowModal with wxSaveFileDialog.
 * [StaticBoxAndCheckBox](src/Others/StaticBoxAndCheckBox/README.md) shows how to use GroupBox and CheckBoxes.
