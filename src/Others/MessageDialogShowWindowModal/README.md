@@ -1,6 +1,6 @@
 # MessageDialogShowWindowModal
 
-Shows how to create a MessageDialog dialog with wxMessageDialog using ShowWwindowModal method.
+Shows how to create a MessageDialog dialog with wxMessageDialog using ShowWindowModal method.
 
 ## Source
 
