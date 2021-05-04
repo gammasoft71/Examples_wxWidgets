@@ -1,6 +1,6 @@
 # StaticBoxAndCheckBox
 
-shows how to use StaticBox and CheckBoxes.
+Shows how to use StaticBox and CheckBoxes.
 
 ## Source
 
