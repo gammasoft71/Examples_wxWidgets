@@ -177,7 +177,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * [BoxedPanel](src/Others/BoxedPanel/README.md) shows how to create boxed panels with wxPanel and wxBoxSizer.
 * [ColoredFrames](src/Others/ColoredFrames/README.md) shows how to create colored background forms.
 * [CursorFromFile](src/Others/CursorFromFile/README.md) shows how to create Cursor from cur or ani file with wxCursor.
-* [DirDialogWindowModal](src/Others/DirDialogWindowModal/README.md) shows how to create a DirDialogWindowModal with wxDirDialog.
+* [DirDialogShowWindowModal](src/Others/DirDialogShowWindowModal/README.md) shows how to create a DirDialogWindowModal with wxDirDialog.
 * [FrameAndThread](src/Others/FrameAndThread/README.md) shows how to dialog with a frame widget from a thread.
 * [FrameAndThreadWithCallAfter](src/Others/FrameAndThreadWithCallAfter/README.md) shows how to dialog with a frame widget from a thread with CallAfter method.
 * [FrameIcon](src/Others/FrameIcon/README.md) shows how to assign an icon to frame.
