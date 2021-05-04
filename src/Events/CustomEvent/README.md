@@ -1,10 +1,10 @@
-# Line
+# CustomEvent
 
-Shows how to create a Line widget with wxPanel.
+shows how to create a CustomEvent event with wxCommandEvent.
 
 ## Source
 
-[Line.cpp](Line.cpp)
+[CustomEvent.cpp](CustomEvent.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -17,30 +17,30 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start Line.sln
+start CustomEvent.sln
 ```
 
-Select Line project and type Ctrl+F5 to build and run it.
+Select CustomEvent project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./Line.xcodeproj
+open ./CustomEvent.xcodeproj
 ```
 
-Select Line project and type Cmd+R to build and run it.
+Select CustomEvent project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./Line.cbp > /dev/null 2>&1
+xdg-open ./CustomEvent.cbp > /dev/null 2>&1
 ```
 
-Select Line project and type F9 to build and run it.
+Select CustomEvent project and type F9 to build and run it.
 
 ### Linux :
 
@@ -48,5 +48,5 @@ Select Line project and type F9 to build and run it.
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
-./Line
+./CustomEvent
 ```
