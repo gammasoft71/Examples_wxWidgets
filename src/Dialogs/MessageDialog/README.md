@@ -1,10 +1,10 @@
-# Line
+# MessageDialog
 
-Shows how to create a Line widget with wxPanel.
+Shows how to create a MessageDialog dialog with wxMessageDialog.
 
 ## Source
 
-[Line.cpp](Line.cpp)
+[MessageDialog.cpp](MessageDialog.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -17,30 +17,30 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start Line.sln
+start MessageDialog.sln
 ```
 
-Select Line project and type Ctrl+F5 to build and run it.
+Select MessageDialog project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./Line.xcodeproj
+open ./MessageDialog.xcodeproj
 ```
 
-Select Line project and type Cmd+R to build and run it.
+Select MessageDialog project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./Line.cbp > /dev/null 2>&1
+xdg-open ./MessageDialog.cbp > /dev/null 2>&1
 ```
 
-Select Line project and type F9 to build and run it.
+Select MessageDialog project and type F9 to build and run it.
 
 ### Linux :
 
@@ -48,57 +48,5 @@ Select Line project and type F9 to build and run it.
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
-./Line
-```
-# Line
-
-Shows how to create a Line widget with wxPanel.
-
-## Source
-
-[Line.cpp](Line.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
-
-## Build and run
-
-To build this project, open "Terminal" and type following lines:
-
-### Windows :
-
-``` shell
-mkdir build && cd build
-cmake .. 
-start Line.sln
-```
-
-Select Line project and type Ctrl+F5 to build and run it.
-
-### macOS :
-
-``` shell
-mkdir build && cd build
-cmake .. -G "Xcode"
-open ./Line.xcodeproj
-```
-
-Select Line project and type Cmd+R to build and run it.
-
-### Linux with Code::Blocks :
-
-``` shell
-mkdir build && cd build
-cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./Line.cbp > /dev/null 2>&1
-```
-
-Select Line project and type F9 to build and run it.
-
-### Linux :
-
-``` shell
-mkdir build && cd build
-cmake .. 
-cmake --build . --config Debug
-./Line
+./MessageDialog
 ```
