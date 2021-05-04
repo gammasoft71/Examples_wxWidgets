@@ -192,6 +192,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * [StaticBoxAndCheckBox](src/Others/StaticBoxAndCheckBox/README.md) shows how to use wxStaticBox and wxCheckBox.
 * [StaticBoxAndRadioButton](src/Others/StaticBoxAndRadioButton/README.md) shows how to use wxStaticBox and wxRadioButton.
 * [StaticTextAndUnicode](src/Others/StaticTextAndUnicode/README.md) demonstrates the use of wxStaticText widget and Unicode text.
+* [TextCtrlMultiline](src/Others/TextCtrlMultiline/README.md) shows how to create a multiline TextCtrl widget with multiline wxTextCtrl.
 * [UserDialogShowWindowModal](src/Others/UserDialogShowWindowModal/README.md) shows how to create a UserDialogShowWindowModal with wxDialog using ShowWindowModal method.
 
 ## Download
