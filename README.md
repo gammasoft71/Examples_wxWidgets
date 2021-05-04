@@ -182,7 +182,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * [FrameAndThreadWithCallAfter](src/Others/FrameAndThreadWithCallAfter/README.md) shows how to dialog with a frame widget from a thread with CallAfter method.
 * [FrameIcon](src/Others/FrameIcon/README.md) shows how to assign an icon to frame.
 * [FrameShow](src/Others/FrameShow/README.md) shows how to display a frame in different ways.
-* [MdiForm](src/Others/MdiForm/README.md) shows how to create a MDI (Multiple Document Interface) frame.
+* [MdiFrame](src/Others/MdiFrame/README.md) shows how to create a MDI (Multiple Document Interface) frame.
 * [OpenFileDialogWindowModal](src/Others/OpenFileDialogWindowModal/README.md) shows how to create a OpenFileDialogWindowModal with wxOpenFileDialog.
 * [SaveFileDialogWindowModal](src/Others/SaveFileDialogWindowModal/README.md) shows how to create a SaveFileDialogWindowModal with wxSaveFileDialog.
 * [StaticBoxAndCheckBox](src/Others/StaticBoxAndCheckBox/README.md) shows how to use GroupBox and CheckBoxes.
