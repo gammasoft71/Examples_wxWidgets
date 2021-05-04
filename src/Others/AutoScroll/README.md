@@ -1,10 +1,10 @@
-# Line
+# AutoScroll
 
-Shows how to create a Line widget with wxPanel.
+Shows how to create an auto scroll widget with wxPanel.
 
 ## Source
 
-[Line.cpp](Line.cpp)
+[AutoScroll.cpp](AutoScroll.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -17,30 +17,30 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start Line.sln
+start AutoScroll.sln
 ```
 
-Select Line project and type Ctrl+F5 to build and run it.
+Select AutoScroll project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./Line.xcodeproj
+open ./AutoScroll.xcodeproj
 ```
 
-Select Line project and type Cmd+R to build and run it.
+Select AutoScroll project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./Line.cbp > /dev/null 2>&1
+xdg-open ./AutoScroll.cbp > /dev/null 2>&1
 ```
 
-Select Line project and type F9 to build and run it.
+Select AutoScroll project and type F9 to build and run it.
 
 ### Linux :
 
@@ -48,5 +48,5 @@ Select Line project and type F9 to build and run it.
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
-./Line
+./AutoScroll
 ```
