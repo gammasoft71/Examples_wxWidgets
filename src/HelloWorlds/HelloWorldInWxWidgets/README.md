@@ -1,10 +1,10 @@
-# HelloWorldInWxWidgets
+# wxWidgetsHelloWorld
 
 The classic first application wxWidgets "Hello World".
 
 ## Source
 
-[HelloWorldInWxWidgets.cpp](HelloWorldInWxWidgets.cpp)
+[wxWidgetsHelloWorld.cpp](wxWidgetsHelloWorld.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -17,30 +17,30 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start HelloWorldInWxWidgets.sln
+start wxWidgetsHelloWorld.sln
 ```
 
-Select HelloWorldInWxWidgets project and type Ctrl+F5 to build and run it.
+Select wxWidgetsHelloWorld project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./HelloWorldInWxWidgets.xcodeproj
+open ./wxWidgetsHelloWorld.xcodeproj
 ```
 
-Select HelloWorldInWxWidgets project and type Cmd+R to build and run it.
+Select wxWidgetsHelloWorld project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./HelloWorldInWxWidgets.cbp > /dev/null 2>&1
+xdg-open ./wxWidgetsHelloWorld.cbp > /dev/null 2>&1
 ```
 
-Select HelloWorldInWxWidgets project and type F9 to build and run it.
+Select wxWidgetsHelloWorld project and type F9 to build and run it.
 
 ### Linux :
 
@@ -48,5 +48,5 @@ Select HelloWorldInWxWidgets project and type F9 to build and run it.
 mkdir build && cd build
 cmake .. 
 cmake --build . --config Debug
-./HelloWorldInWxWidgets
+./wxWidgetsHelloWorld
 ```
