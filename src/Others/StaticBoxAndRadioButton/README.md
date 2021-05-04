@@ -1,6 +1,6 @@
 # StaticBoxAndRadioButton
 
-Shows how to use StaticBox and RadioButtons.
+Shows how to use wxStaticBox and wxRadioButton.
 
 ## Source
 
