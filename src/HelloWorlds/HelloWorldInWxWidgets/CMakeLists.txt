@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.0)
-project(HelloWorldInWxWidgets)
+project(wxWidgetsHelloWorld)
 
 find_package(wxWidgets REQUIRED)
 include(${wxWidgets_USE_FILE})
-set(SOURCES HelloWorldInWxWidgets.cpp)
+set(SOURCES wxWidgetsHelloWorld.cpp)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)
