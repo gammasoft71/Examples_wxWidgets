@@ -191,6 +191,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * [SaveFileDialogWindowModal](src/Others/SaveFileDialogWindowModal/README.md) shows how to create a SaveFileDialogWindowModal with wxSaveFileDialog.
 * [StaticBoxAndCheckBox](src/Others/StaticBoxAndCheckBox/README.md) shows how to use wxStaticBox and wxCheckBox.
 * [StaticBoxAndRadioButton](src/Others/StaticBoxAndRadioButton/README.md) shows how to use wxStaticBox and wxRadioButton.
+* [StaticTextAndUnicode](src/Others/StaticTextAndUnicode/README.md) demonstrates the use of wxStaticText widget and Unicode text.
 * [UserDialogShowWindowModal](src/Others/UserDialogShowWindowModal/README.md) shows how to create a UserDialogShowWindowModal with wxDialog using ShowWindowModal method.
 
 ## Download
