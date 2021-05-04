@@ -1,6 +1,6 @@
 # StaticTextAndUnicode
 
-Shows how to create a Line widget with wxPanel.
+Demonstrates the use of wxStaticText widget and Unicode text.
 
 ## Source
 
