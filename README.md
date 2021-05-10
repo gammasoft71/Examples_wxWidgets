@@ -32,7 +32,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * [Button](src/CommonControls/Button/README.md) shows how to create a Button widget and Event Click with wxButton.
 * [CalendarCtrl](src/CommonControls/CalendarCtrl/README.md) shows how to create a CalendarCtrl widget with wxCalendarCtrl.
 * [CheckBox](src/CommonControls/CheckBox/README.md) shows how to create a CheckBox widget with wxCheckBox.
-* [CheckedListBox](src/CommonControls/CheckedListBox/README.md) shows how to create a CheckListBox widget with wxCheckListButton.
+* [CheckListBox](src/CommonControls/CheckListBox/README.md) shows how to create a CheckListBox widget with wxCheckListButton.
 * [Choice](src/CommonControls/Choice/README.md) shows how to create a Choice widget with wxChoice.
 * [ComboBox](src/CommonControls/ComboBox/README.md) shows how to create a ComboBox widget with wxComboBox.
 * [CommandLinkButton](src/CommonControls/CommandLinkButton/README.md) shows how to create a CommandLinkButton widget with wxCommandLinkButton.
