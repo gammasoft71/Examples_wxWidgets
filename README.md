@@ -37,8 +37,8 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * [ComboBox](src/CommonControls/ComboBox/README.md) shows how to create a ComboBox widget with wxComboBox.
 * [CommandLinkButton](src/CommonControls/CommandLinkButton/README.md) shows how to create a CommandLinkButton widget with wxCommandLinkButton.
 * [Control](src/CommonControls/Control/README.md) shows how to create a Control widget with wxControl.
-* [DirCtrl](src/CommonControls/DirCtrl/README.md) shows how to create a Directories Control widget with wxDirCtrl.
-* [FileCtrl](src/CommonControls/FileCtrl/README.md) shows how to create a Files Control widget with wxFileCtrl.
+* [DirCtrl](src/CommonControls/DirCtrl/README.md) shows how to create a Directory Control widget with wxDirCtrl.
+* [FileCtrl](src/CommonControls/FileCtrl/README.md) shows how to create a File Control widget with wxFileCtrl.
 * [Gauge](src/CommonControls/Gauge/README.md) shows how to create a Gauge widget with wxGauge.
 * [GenericStaticBitmap](src/CommonControls/GenericStaticBitmap/README.md) shows how to create a StaticBitmap widget with wxGenericStaticBitmap.
 * [HyperlinkCtrl](src/CommonControls/HyperlinkCtrl/README.md) shows how to create an HyperLink widget with wxHyperlinkCtrl.
