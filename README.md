@@ -251,4 +251,4 @@ cmake --build . --config Debug
 
 ## Remarks
 
-This project run with [wxWidgets](https://www.wxwidgets.org) and [CMake](https://cmake.org).
+This project run with [wxWidgets](https://www.wxwidgets.org) 3.1.4 or above and [CMake](https://cmake.org) 3.0 or above.
