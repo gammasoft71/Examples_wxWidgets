@@ -6,6 +6,8 @@ Shows how to create a wxWidgets application and main method with wxApp.
 
 [ApplicationAndMain2.cpp](ApplicationAndMain2.cpp)
 
+[Application.h](Application.h)
+
 [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
