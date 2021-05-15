@@ -5,8 +5,10 @@ find_package(OpenGL REQUIRED)
 include_directories(${OPENGL_INCLUDE_DIR})
 link_libraries(${OPENGL_LIBRARIES})
 
+if("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
 find_package(wxWidgets REQUIRED COMPONENTS base core gl)
 include(${wxWidgets_USE_FILE})
+endif()
 link_libraries(${wxWidgets_LIBRARIES})
 
 set(CMAKE_CXX_STANDARD 17)
