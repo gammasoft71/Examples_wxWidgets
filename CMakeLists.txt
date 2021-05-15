@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.2)
 project(wxWidgetsExamples)
 
+# CMP0072
+set(OpenGL_GL_PREFERENCE GLVND)
+
+find_package(wxWidgets REQUIRED core richtext ribbon aui gl)
+include(${wxWidgets_USE_FILE})
+
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 add_subdirectory(src/HelloWorlds)

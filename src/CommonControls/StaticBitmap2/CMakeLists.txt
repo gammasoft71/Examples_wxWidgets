@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.0)
 project(StaticBitmap2)
 
+if("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
 find_package(wxWidgets REQUIRED)
 include(${wxWidgets_USE_FILE})
+endif()
 link_libraries(${wxWidgets_LIBRARIES})
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Resources/Logo.png ${CMAKE_CURRENT_BINARY_DIR}/Resources/Logo.png COPYONLY)
