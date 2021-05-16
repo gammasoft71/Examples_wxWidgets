@@ -1,6 +1,8 @@
+#include <memory>
 #include <stdexcept>
 #include "Application.h"
 #include <wx/wx.h>
+#include <wx/graphics.h>
 
 class MainFrame : public wxFrame {
 public:
@@ -22,27 +24,138 @@ public:
 
       auto stippleBrush = wxBrush(wxColour {0, 255, 0});
       stippleBrush.SetStyle(wxBrushStyle::wxBRUSHSTYLE_STIPPLE);
-      stippleBrush.SetStipple(CreateHorizontalTexture(wxColour {0, 0, 255}, wxColour {255, 255, 0}));
+      stippleBrush.SetStipple(CreateHorizontalTexture2(image, wxColour {255, 0, 0}, wxColour {255, 255, 0}));
       dc.SetBrush(stippleBrush);
       dc.DrawRectangle(230, 10, 100, 100);
     });
   }
-  
+
 private:
-  wxBitmap CreateHorizontalTexture(const wxColor& foreColor, const wxColor& backColor) {
-    wxBitmap result(wxSize{8, 8});
-    result.UseAlpha();
-    wxMemoryDC memoryDC(result);
-    memoryDC.SetBrush({backColor});
-    memoryDC.SetPen(*wxTRANSPARENT_PEN);
-    memoryDC.DrawRectangle(0, 0, result.GetWidth(), result.GetHeight());
-    memoryDC.SetBrush(*wxTRANSPARENT_BRUSH);
-    memoryDC.SetPen(foreColor);
-    memoryDC.DrawLine(0, 5, result.GetWidth(), 5);
-    return result;
+
+  wxImage& Clear(wxImage& image, const wxColor& backColor) {
+    wxBitmap bitmap(image);
+    wxMemoryDC memoryDC(bitmap);
+    wxGraphicsContext* g = wxGraphicsContext::Create(memoryDC);
+    g->SetBrush({backColor});
+    auto path = g->CreatePath();
+    path.AddRectangle(0, 0, 8, 8);
+    g->FillPath(path);
+    g->Flush();
+    image = bitmap.ConvertToImage();
+    return image;
+  }
+
+  wxImage& DrawPointOne(wxImage& image, const wxColor& foreColor) {
+    wxBitmap bitmap(image);
+    wxMemoryDC memoryDC(bitmap);
+    wxGraphicsContext* g = wxGraphicsContext::Create(memoryDC);
+    g->SetBrush({foreColor});
+    auto path = g->CreatePath();
+    path.AddRectangle(1, 1, 1, 1);
+    g->FillPath(path);
+    g->Flush();
+    image = bitmap.ConvertToImage();
+    return image;
+  }
+
+  wxImage& DrawPointTwo(wxImage& image, const wxColor& foreColor) {
+    wxBitmap bitmap(image);
+    wxMemoryDC memoryDC(bitmap);
+    wxGraphicsContext* g = wxGraphicsContext::Create(memoryDC);
+    g->SetBrush({foreColor});
+    auto path = g->CreatePath();
+    path.AddRectangle(1, 5, 1, 1);
+    g->FillPath(path);
+    g->Flush();
+    image = bitmap.ConvertToImage();
+    return image;
+  }
+
+  wxImage& DrawPointThree(wxImage& image, const wxColor& foreColor) {
+    wxBitmap bitmap(image);
+    wxMemoryDC memoryDC(bitmap);
+    wxGraphicsContext* g = wxGraphicsContext::Create(memoryDC);
+    g->SetBrush({foreColor});
+    auto path = g->CreatePath();
+    path.AddRectangle(5, 1, 1, 1);
+    g->FillPath(path);
+    image = bitmap.ConvertToImage();
+    return image;
+  }
+
+  wxImage& DrawPointFour(wxImage& image, const wxColor& foreColor) {
+    wxBitmap bitmap(image);
+    wxMemoryDC memoryDC(bitmap);
+    wxGraphicsContext* g = wxGraphicsContext::Create(memoryDC);
+    g->SetBrush({foreColor});
+    auto path = g->CreatePath();
+    path.AddRectangle(5, 5, 1, 1);
+    g->FillPath(path);
+    g->Flush();
+    image = bitmap.ConvertToImage();
+    return image;
+  }
+
+  wxImage& CreateHorizontalTexture(wxImage& image, const wxColor& foreColor, const wxColor& backColor) {
+    Clear(image, backColor);
+    DrawPointOne(image, foreColor);
+    DrawPointTwo(image, foreColor);
+    DrawPointThree(image, foreColor);
+    DrawPointFour(image, foreColor);
+    return image;
+  }
+
+  wxImage& CreateHorizontalTexture2(wxImage& image, const wxColor& foreColor, const wxColor& backColor) {
+    wxBitmap bitmap(image);
+    {
+      wxGraphicsContext* g = wxGraphicsContext::Create(wxMemoryDC(bitmap));
+      g->SetBrush({backColor});
+      auto path = g->CreatePath();
+      path.AddRectangle(0, 0, 8, 8);
+      g->FillPath(path);
+      image = bitmap.ConvertToImage();
+    }
+
+    {
+      wxGraphicsContext* g = wxGraphicsContext::Create(wxMemoryDC(bitmap));
+      g->SetBrush({foreColor});
+      auto path = g->CreatePath();
+      path.AddRectangle(1, 1, 1, 1);
+      g->FillPath(path);
+      image = bitmap.ConvertToImage();
+    }
+
+    {
+    wxGraphicsContext* g = wxGraphicsContext::Create(wxMemoryDC(bitmap));
+      g->SetBrush({foreColor});
+      auto path = g->CreatePath();
+      path.AddRectangle(1, 5, 1, 1);
+      g->FillPath(path);
+      image = bitmap.ConvertToImage();
+    }
+
+    {
+    wxGraphicsContext* g = wxGraphicsContext::Create(wxMemoryDC(bitmap));
+      g->SetBrush({foreColor});
+      auto path = g->CreatePath();
+      path.AddRectangle(5, 1, 1, 1);
+      g->FillPath(path);
+      image = bitmap.ConvertToImage();
+    }
+
+    {
+      wxGraphicsContext* g = wxGraphicsContext::Create(wxMemoryDC(bitmap));
+      g->SetBrush({foreColor});
+      auto path = g->CreatePath();
+      path.AddRectangle(5, 5, 1, 1);
+      g->FillPath(path);
+      image = bitmap.ConvertToImage();
+    }
+    return image;
   }
 
   wxPanel* panel = new wxPanel {this};
+  wxImage image {8, 8};
 };
 
 int main() {
