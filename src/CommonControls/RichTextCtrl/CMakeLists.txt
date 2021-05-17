@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.0)
 project(RichTextCtrl)
 
-if("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
-find_package(wxWidgets COMPONENTS base core html xml richtext)
-include(${wxWidgets_USE_FILE})
-endif()
+if ("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
+  find_package(wxWidgets COMPONENTS base core html xml richtext)
+  include(${wxWidgets_USE_FILE})
+endif ()
 link_libraries(${wxWidgets_LIBRARIES})
 
 set(CMAKE_CXX_STANDARD 17)

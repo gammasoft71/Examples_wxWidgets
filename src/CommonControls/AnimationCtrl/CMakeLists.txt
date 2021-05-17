@@ -2,10 +2,10 @@ cmake_minimum_required(VERSION 3.0)
 
 # Project
 project(AnimationCtrl)
-if("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
-find_package(wxWidgets REQUIRED)
-include(${wxWidgets_USE_FILE})
-endif()
+if ("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
+  find_package(wxWidgets REQUIRED)
+  include(${wxWidgets_USE_FILE})
+endif ()
 set(SOURCES AnimationCtrl.cpp)
 
 # Resources
@@ -16,7 +16,7 @@ else ()
   configure_file(Resources/load.gif ${CMAKE_CURRENT_BINARY_DIR}/Resources/load.gif COPYONLY)
   configure_file(Resources/load.gif ${CMAKE_CURRENT_BINARY_DIR}/Debug/Resources/load.gif COPYONLY)
   configure_file(Resources/load.gif ${CMAKE_CURRENT_BINARY_DIR}/Release/Resources/load.gif COPYONLY)
-endif()
+endif ()
 
 # Options
 set(CMAKE_CXX_STANDARD 17)

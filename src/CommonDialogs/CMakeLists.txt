@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.2)
 project(CommonDialogs)
 
+if ("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
+  find_package(wxWidgets REQUIRED core richtext ribbon aui gl)
+  include(${wxWidgets_USE_FILE})
+endif ()
+
 add_subdirectory(ColourDialog)
 add_subdirectory(DirDialog)
 add_subdirectory(FontDialog)

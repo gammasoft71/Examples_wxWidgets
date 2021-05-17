@@ -2,10 +2,10 @@ cmake_minimum_required(VERSION 3.0)
 
 # Project
 project(ApplicationIcon)
-if("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
-find_package(wxWidgets REQUIRED)
-include(${wxWidgets_USE_FILE})
-endif()
+if ("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
+  find_package(wxWidgets REQUIRED)
+  include(${wxWidgets_USE_FILE})
+endif ()
 set(SOURCES ApplicationIcon.cpp)
 
 # Resources
@@ -84,7 +84,7 @@ elseif (UNIX)
   configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Resources/Gammasoft.png $ENV{HOME}/.local/share/icons/hicolor/512x512/apps/Gammasoft.png COPYONLY)
   file(COPY ${CMAKE_CURRENT_BINARY_DIR}/resources/${PROJECT_NAME}.desktop DESTINATION "$ENV{HOME}/.local/share/applications" FILE_PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ)
   configure_file(${CMAKE_CURRENT_BINARY_DIR}/resources/${PROJECT_NAME}.desktop $ENV{HOME}/.local/share/applications/${PROJECT_NAME}.desktop COPYONLY)
-endif()
+endif ()
 
 # Options
 set(CMAKE_CXX_STANDARD 17)
