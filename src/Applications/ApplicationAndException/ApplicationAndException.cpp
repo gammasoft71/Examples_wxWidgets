@@ -39,9 +39,9 @@ namespace Examples {
       try {
         throw;
       } catch(const exception& e) {
-        return wxMessageBox(wxString::Format("Unhandled exception occured in your application. If you click\nOK, the application will ignore this error and attempt to continue.\nIf you click Cancel, the application will close immediately.\n\n%s", e.what()), "Exception occured", wxOK|wxCANCEL|wxICON_ERROR) == wxOK;
+        return ShowExceptiionError(e) == wxOK;
       } catch(...) {
-        return wxMessageBox("Unhandled exception occured in your application. If you click\nOK, the application will ignore this error and attempt to continue.\nIf you click Cancel, the application will close immediately.\n\n(Unknown exception)", "Unknown exception occured", wxOK|wxCANCEL|wxICON_ERROR) == wxOK;
+        return ShowExceptiionError() == wxOK;
       }
       return false;
     }
@@ -51,12 +51,18 @@ namespace Examples {
         (new MainFrame)->Show();
         return true;
       } catch(const exception& e) {
-        wxMessageOutputDebug().Printf("Exception: %s", e.what());
-        wxMessageBox(e.what(), "Exception occured", wxOK);
+        ShowExceptiionError(e);
       } catch(...) {
-        wxMessageOutputDebug().Output("Unknown exception occured");
-        wxMessageBox("(Unknown exception)", "Unknown exception occured", wxOK);
+        ShowExceptiionError();
       }
+    }
+
+    static int ShowExceptiionError(const std::exception& e) {
+      return wxMessageBox(wxString::Format("Unhandled exception occured in your application. If you click\nOK, the application will ignore this error and attempt to continue.\nIf you click Cancel, the application will close immediately.\n\n%s", e.what()), "Exception occured", wxOK|wxCANCEL|wxICON_ERROR);
+    }
+    
+    static int ShowExceptiionError() {
+      return wxMessageBox("Unhandled exception occured in your application. If you click\nOK, the application will ignore this error and attempt to continue.\nIf you click Cancel, the application will close immediately.\n\n(Unknown exception)", "Unknown exception occured", wxOK|wxCANCEL|wxICON_ERROR);
     }
     
   private:
