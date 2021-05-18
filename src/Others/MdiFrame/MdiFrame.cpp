@@ -14,7 +14,7 @@ namespace Examples {
 
   class MdiParentFrame : public wxMDIParentFrame {
   public:
-    MdiParentFrame() : wxMDIParentFrame(nullptr, wxID_ANY, "Mdi example", wxDefaultPosition, {800, 600}) {
+    MdiParentFrame() : wxMDIParentFrame(nullptr, wxID_ANY, "Mdi example") {
       menuFile->Append(wxID_NEW, "New\tCtrl+N");
       menuFile->Append(wxID_CLOSE, "Close\tCtrl+W");
       menuFile->AppendSeparator();
