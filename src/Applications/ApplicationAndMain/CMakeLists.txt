@@ -2,16 +2,17 @@ cmake_minimum_required(VERSION 3.0)
 
 # Project
 project(ApplicationAndMain)
-if ("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
-  find_package(wxWidgets REQUIRED)
-  include(${wxWidgets_USE_FILE})
-endif ()
+
+find_package(wxWidgets REQUIRED)
+include(${wxWidgets_USE_FILE})
+
 set(SOURCES ApplicationAndMain.cpp)
 
 # Options
 if (MSVC)
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup")
 endif ()
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 

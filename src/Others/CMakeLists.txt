@@ -1,16 +1,11 @@
 cmake_minimum_required(VERSION 3.2)
 project(Others)
 
-if ("${CMAKE_CURRENT_SOURCE_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
-  find_package(wxWidgets REQUIRED core richtext ribbon aui gl)
-  include(${wxWidgets_USE_FILE})
-endif ()
-
 add_subdirectory(AutoScroll)
 add_subdirectory(BitmapButtonWithLabel)
 add_subdirectory(BoxedPanel)
 add_subdirectory(ColoredFrames)
-#add_subdirectory(Colors)
+add_subdirectory(Colors)
 add_subdirectory(CursorFromFile)
 add_subdirectory(DirDialogShowWindowModal)
 add_subdirectory(FrameAndThread)
