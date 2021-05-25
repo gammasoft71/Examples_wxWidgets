@@ -7,7 +7,7 @@ public:
   }
 
 private:
-  wxPanel* panel = new wxPanel {this};
+  wxPanel* mainPanel = new wxPanel {this};
 };
 
 int main() {
