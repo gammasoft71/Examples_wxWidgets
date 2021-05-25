@@ -39,30 +39,22 @@ namespace Examples {
       try {
         throw;
       } catch(const exception& e) {
-        return ShowExceptiionError(e) == wxOK;
+        wxFAIL_MSG_AT(e.what(), __FILE__, __LINE__, __func__);
       } catch(...) {
-        return ShowExceptiionError() == wxOK;
+        wxFAIL_MSG_AT("Unknown exception occured", __FILE__, __LINE__, __func__);
       }
-      return false;
+      return true;
     }
 
     bool OnInit() override {
       try {
         (new MainFrame)->Show();
-        return true;
       } catch(const exception& e) {
-        ShowExceptiionError(e);
+        wxFAIL_MSG_AT(e.what(), __FILE__, __LINE__, __func__);
       } catch(...) {
-        ShowExceptiionError();
+        wxFAIL_MSG_AT("Unknown exception occured", __FILE__, __LINE__, __func__);
       }
-    }
-
-    static int ShowExceptiionError(const std::exception& e) {
-      return wxMessageBox(wxString::Format("Unhandled exception occured in your application. If you click\nOK, the application will ignore this error and attempt to continue.\nIf you click Cancel, the application will close immediately.\n\n%s", e.what()), "Exception occured", wxOK|wxCANCEL|wxICON_ERROR);
-    }
-    
-    static int ShowExceptiionError() {
-      return wxMessageBox("Unhandled exception occured in your application. If you click\nOK, the application will ignore this error and attempt to continue.\nIf you click Cancel, the application will close immediately.\n\n(Unknown exception)", "Unknown exception occured", wxOK|wxCANCEL|wxICON_ERROR);
+      return true;
     }
     
   private:
