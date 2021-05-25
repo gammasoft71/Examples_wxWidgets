@@ -1,39 +1,32 @@
 #pragma once
-#include <stdexcept>
 #include <wx/app.h>
 #include <wx/menu.h>
 #include <wx/sysopt.h>
 
 class wxApplication : public wxApp {
 public:
-  wxApplication() : wxApplication(nullptr, true, substituteArgc, nullptr) {}
-  wxApplication(wxApplication* app) : wxApplication(app, true, substituteArgc, nullptr) {}
-  wxApplication(bool exit_on_last_frame_closed) : wxApplication(nullptr, exit_on_last_frame_closed, substituteArgc, nullptr) {}
-  wxApplication(wxApplication* app, bool exit_on_last_frame_closed) : wxApplication(app, exit_on_last_frame_closed, substituteArgc, nullptr) {}
-  wxApplication(int& argc, char** argv) : wxApplication(nullptr, true, argc, argv) {}
-  wxApplication(wxApplication* app, int& argc, char** argv) : wxApplication(app, true, argc, argv) {}
-  wxApplication(bool exit_on_last_frame_closed, int& argc, char** argv) : wxApplication(nullptr, exit_on_last_frame_closed, argc, argv) {}
-  wxApplication(wxApplication* app, bool exit_on_last_frame_closed, int& argc, char** argv) {
-    wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
-    wxApp::SetInstance(app ? app : this);
+  wxApplication(bool exitOnLastFrameClosed = true) : wxApplication(exitOnLastFrameClosed, substituteArgc, nullptr) {}
+  wxApplication(int& argc, char** argv) : wxApplication(true, argc, argv) {}
+  wxApplication(bool exitOnLastFrameClosed, int& argc, char** argv) {
+    wxApp::SetInstance(this);
     wxEntryStart(argc, argv);
     CallOnInit();
-    SetExitOnFrameDelete(exit_on_last_frame_closed);
+    SetExitOnFrameDelete(exitOnLastFrameClosed);
     wxInitAllImageHandlers();
-    auto menubar = new wxMenuBar();
+    menubar = new wxMenuBar();
     menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
       if (event.GetId() == wxID_EXIT) {
-        auto can_quit = true;
+        auto canExit = true;
         for (auto window : wxTopLevelWindows)
-          if (!(can_quit = window->Close())) break;
-        if (can_quit) ExitMainLoop();
+          if (!(canExit = window->Close())) break;
+        if (canExit) ExitMainLoop();
       } else event.Skip();
     });
 #if __APPLE__
     wxMenuBar::MacSetCommonMenuBar(menubar);
 #endif
   }
-
+  
   int MainLoop(wxWindow* window) {
     struct CallOnExit {
       ~CallOnExit() {wxTheApp->OnExit();}
@@ -43,19 +36,8 @@ public:
   }
   
   int MainLoop() override {return MainLoop(GetTopWindow());}
-
-protected:
-  bool OnExceptionInMainLoop() override {
-    try {
-      throw;
-    } catch(const std::exception& e) {
-      wxFAIL_MSG(e.what());
-    } catch(...) {
-      wxFAIL_MSG("Unknown exception occured");
-    }
-    return true;
-  }
   
+protected:
   int OnExit() override {
     delete menubar;
     wxImage::CleanUpHandlers();
@@ -63,7 +45,7 @@ protected:
     wxApp::SetInstance(nullptr);
     return wxApp::OnExit();
   }
-
+  
 private:
   int substituteArgc = 0;
   wxMenuBar* menubar = nullptr;
