@@ -3,7 +3,7 @@
 namespace Examples {
   class Frame : public wxFrame {
     enum wxOwnedID {
-      ID_Hello = 1
+      ID_Hello = 2
     };
 
   public:
