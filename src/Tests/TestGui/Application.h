@@ -33,30 +33,38 @@ public:
     wxMenuBar::MacSetCommonMenuBar(menubar);
 #endif
   }
-  
-  ~wxApplication() {
-    wxImage::CleanUpHandlers();
-    wxApp::SetInstance(nullptr);
-    wxEntryCleanup();
+
+  int MainLoop(wxWindow* window) {
+    struct CallOnExit {
+      ~CallOnExit() {wxTheApp->OnExit();}
+    } callOnExit;
+    if (window) window->Show();
+    return wxApp::MainLoop();
   }
   
+  int MainLoop() override {return MainLoop(GetTopWindow());}
+
+protected:
   bool OnExceptionInMainLoop() override {
-    exceptionStored = std::current_exception();
-    return false;
+    try {
+      throw;
+    } catch(const std::exception& e) {
+      wxFAIL_MSG(e.what());
+    } catch(...) {
+      wxFAIL_MSG("Unknown exception occured");
+    }
+    return true;
+  }
+  
+  int OnExit() override {
+    delete menubar;
+    wxImage::CleanUpHandlers();
+    wxEntryCleanup();
+    wxApp::SetInstance(nullptr);
+    return wxApp::OnExit();
   }
 
-  int MainLoop() override {
-    struct CallOnExit {
-      ~CallOnExit() {
-        wxTheApp->OnExit();
-      }
-    } callOnExit;
-    auto result = wxApp::MainLoop();
-    if (exceptionStored) std::rethrow_exception(exceptionStored);
-    return result;
-  }
-  
 private:
   int substituteArgc = 0;
-  std::exception_ptr exceptionStored;
+  wxMenuBar* menubar = nullptr;
 };

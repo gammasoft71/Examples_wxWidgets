@@ -1,4 +1,5 @@
 #pragma once
+#include <stdexcept>
 #include <wx/app.h>
 #include <wx/menu.h>
 #include <wx/sysopt.h>
@@ -33,6 +34,28 @@ public:
 #endif
   }
   
+  int MainLoop(wxWindow* window) {
+    struct CallOnExit {
+      ~CallOnExit() {wxTheApp->OnExit();}
+    } callOnExit;
+    if (window) window->Show();
+    return wxApp::MainLoop();
+  }
+  
+  int MainLoop() override {return MainLoop(GetTopWindow());}
+
+protected:
+  bool OnExceptionInMainLoop() override {
+    try {
+      throw;
+    } catch(const std::exception& e) {
+      wxFAIL_MSG(e.what());
+    } catch(...) {
+      wxFAIL_MSG("Unknown exception occured");
+    }
+    return true;
+  }
+  
   int OnExit() override {
     delete menubar;
     wxImage::CleanUpHandlers();
@@ -40,15 +63,8 @@ public:
     wxApp::SetInstance(nullptr);
     return wxApp::OnExit();
   }
-  
-  int MainLoop() override {
-    struct CallOnExit {
-      ~CallOnExit() {wxTheApp->OnExit();}
-    } callOnExit;
-    return wxApp::MainLoop();
-  }
-  
+
 private:
   int substitute_argc_ = 0;
-  wxMenuBar* menubar;
+  wxMenuBar* menubar = nullptr;
 };
