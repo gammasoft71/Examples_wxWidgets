@@ -4,7 +4,7 @@
 
 namespace Examples {
   enum wxOwnedID {
-    ID_OPENRECENTFILE1 = 1,
+    ID_OPENRECENTFILE1 = 2,
     ID_OPENRECENTFILE2,
     ID_OPENRECENTFILE3,
     ID_OPENRECENTFILE4,
