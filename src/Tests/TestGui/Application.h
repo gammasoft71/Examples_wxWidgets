@@ -34,7 +34,6 @@ public:
     if (window) window->Show();
     return wxApp::MainLoop();
   }
-  
   int MainLoop() override {return MainLoop(GetTopWindow());}
   
 protected:
