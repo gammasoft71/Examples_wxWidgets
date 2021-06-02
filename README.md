@@ -143,7 +143,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * [GenericAboutBox](src/Dialogs/AboutBox/README.md) shows how to create a GenericAboutBox with wxGenericAboutBox.
 * [GenericFindReplaceDialog](src/Dialogs/GenericFindReplaceDialog/README.md) shows how to create a GenericFindReplaceDialog with wxGeenericFindReplaceDialog.
 * [GenericProgressDialog](src/Dialogs/AboutBox/README.md) shows how to create a GenericProgressDialog with wxGenericProgressDialog.
-* [MessageDialog](src/Dialogs/AboutBox/README.md) shows how to create a MessageDialog with wxMessageDialog.
+* [MessageDialog](src/Dialogs/MessageDialog/README.md) shows how to create a MessageDialog with wxMessageDialog.
 * [PrintAbortDialog](src/Dialogs/PrintAbortDialog/README.md) shows how to create a PrintAbortDialog with wxPrintAbortDialog.
 * [ProgressDialog](src/Dialogs/ProgressDialog/README.md) shows how to create a ProgressDialog with wxProgressDialog.
 * [Wizard](src/Dialogs/Wizard/README.md) shows how to create a Wizard with wxWizard.
