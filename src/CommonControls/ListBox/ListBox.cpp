@@ -2,6 +2,7 @@
 #include <wx/frame.h>
 #include <wx/listbox.h>
 #include <wx/panel.h>
+#include <wx/sizer.h>
 
 using namespace std;
 
@@ -11,20 +12,23 @@ namespace Examples {
     Frame() : wxFrame(nullptr, wxID_ANY, "ListBox example") {
       SetClientSize(360, 240);
       
-      listBoxLeft->SetSize(150, 200);
       listBoxLeft->Bind(wxEVT_LISTBOX_DCLICK, [&](wxCommandEvent& event) {
         listBoxRight->Append(listBoxLeft->GetStringSelection());
         listBoxRight->SetSelection(0);
         listBoxLeft->Delete(listBoxLeft->GetSelection());
       });
 
-      listBoxRight->SetSize(150, 200);
       listBoxRight->Bind(wxEVT_LISTBOX_DCLICK, [&](wxCommandEvent& event) {
         listBoxLeft->Append(listBoxRight->GetStringSelection());
         listBoxLeft->SetSelection(0);
         listBoxRight->Delete(listBoxRight->GetSelection());
       });
       
+      boxSizer->Add(listBoxLeft, wxSizerFlags(1).Expand().Border(wxALL, 20));
+      boxSizer->Add(listBoxRight, wxSizerFlags(1).Expand().Border(wxALL, 20));
+      
+      panel->SetSizerAndFit(boxSizer);
+
       for (auto item : {"draw", "cut", "paste", "delete", "open", "close", "remove", "edit", "find", "increment", "decrement", "write", "read", "post", "build", "make", "release", "create", "choose", "erase"})
         listBoxLeft->Append(item);
       listBoxLeft->SetSelection(0);
@@ -32,8 +36,9 @@ namespace Examples {
     
   private:
     wxPanel* panel = new wxPanel(this);
-    wxListBox* listBoxLeft = new wxListBox(panel, wxID_ANY, wxPoint(20, 20));
-    wxListBox* listBoxRight = new wxListBox(panel, wxID_ANY, wxPoint(190, 20), wxDefaultSize, 0, nullptr, wxLB_SORT);
+    wxBoxSizer* boxSizer = new wxBoxSizer(wxHORIZONTAL);
+    wxListBox* listBoxLeft = new wxListBox(panel, wxID_ANY, wxDefaultPosition);
+    wxListBox* listBoxRight = new wxListBox(panel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, wxLB_SORT);
   };
 
   class Application : public wxApp {
