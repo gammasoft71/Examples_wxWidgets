@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 project(Applications)
 
 add_subdirectory(Application)
+add_subdirectory(ApplicationAndAssert)
 add_subdirectory(ApplicationAndException)
 add_subdirectory(ApplicationAndMain)
 add_subdirectory(ApplicationAndMain2)
