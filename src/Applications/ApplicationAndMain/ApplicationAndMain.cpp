@@ -10,6 +10,7 @@ namespace Examples {
 }
 
 int main(int argc, char* argv[]) {
+  wxDISABLE_DEBUG_SUPPORT();
   new Examples::Application();
   return wxEntry(argc, argv);
 }
