@@ -28,25 +28,8 @@ namespace Examples {
   };
   
   class Application : public wxApp {
-    bool OnExceptionInMainLoop() override {
-      try {
-        throw;
-      } catch(const exception& e) {
-        wxFAIL_MSG_AT(e.what(), __FILE__, __LINE__, __func__);
-      } catch(...) {
-        wxFAIL_MSG_AT("Unknown exception occured", __FILE__, __LINE__, __func__);
-      }
-      return true;
-    }
-
     bool OnInit() override {
-      try {
-        (new MainFrame)->Show();
-      } catch(const exception& e) {
-        wxFAIL_MSG_AT(e.what(), __FILE__, __LINE__, __func__);
-      } catch(...) {
-        wxFAIL_MSG_AT("Unknown exception occured", __FILE__, __LINE__, __func__);
-      }
+      (new MainFrame)->Show();
       return true;
     }
     
