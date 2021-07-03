@@ -12,10 +12,14 @@ namespace Examples {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "StaticText and unicode text example") {
       SetClientSize(400, 350);
+      SetBackgroundColour(wxTheColourDatabase->Find(("Cyan")));
+      SetForegroundColour(wxTheColourDatabase->Find(("Black")));
 
       for (auto index = 0; index < languages.size(); ++index) {
         items[index].first = new wxStaticText(panel, wxID_ANY, {languages[index].first.c_str(), wxMBConvUTF8()}, {10, 10 + index * 30}, {150, wxDefaultCoord});
+        items[index].first->SetForegroundColour(wxTheColourDatabase->Find(("Black")));
         items[index].second = new wxStaticText(panel, wxID_ANY, {languages[index].second.c_str(), wxMBConvUTF8()}, {160, 10 + index * 30}, {220, wxDefaultCoord});
+        items[index].second->SetForegroundColour(wxTheColourDatabase->Find(("Black")));
       }
     }
     
