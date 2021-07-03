@@ -6,9 +6,9 @@ using namespace std;
 namespace Examples {
   class MainFrame : public wxFrame {
   public:
-    MainFrame() : wxFrame {nullptr, wxID_ANY, wxEmptyString} {
+    MainFrame() : wxFrame {nullptr, wxID_ANY, "Application and exception example"} {
       // uncomment to throw exception
-      //throw overflow_error("Creattion object error");
+      //throw overflow_error("Creation object error");
 
       buttonGenerateHandledException->Bind(wxEVT_BUTTON, &MainFrame::GenerateHandledException, this);
       
@@ -39,9 +39,9 @@ namespace Examples {
       try {
         throw;
       } catch(const exception& e) {
-        wxFAIL_MSG_AT(e.what(), __FILE__, __LINE__, __func__);
+        return ShowExceptiionError(e) == wxOK;
       } catch(...) {
-        wxFAIL_MSG_AT("Unknown exception occured", __FILE__, __LINE__, __func__);
+        return ShowExceptiionError() == wxOK;
       }
       return true;
     }
@@ -50,13 +50,23 @@ namespace Examples {
       try {
         (new MainFrame)->Show();
       } catch(const exception& e) {
-        wxFAIL_MSG_AT(e.what(), __FILE__, __LINE__, __func__);
+        ShowExceptiionError(e);
+        return false;
       } catch(...) {
-        wxFAIL_MSG_AT("Unknown exception occured", __FILE__, __LINE__, __func__);
+        ShowExceptiionError();
+        return false;
       }
       return true;
     }
+
+    static int ShowExceptiionError(const std::exception& e) {
+      return wxMessageBox(wxString::Format("Unhandled exception occured in your application. If you click\nOK, the application will ignore this error and attempt to continue.\nIf you click Cancel, the application will close immediately.\n\n%s", e.what()), "Exception occured", wxOK|wxCANCEL|wxICON_ERROR);
+    }
     
+    static int ShowExceptiionError() {
+      return wxMessageBox("Unhandled exception occured in your application. If you click\nOK, the application will ignore this error and attempt to continue.\nIf you click Cancel, the application will close immediately.\n\n(Unknown exception)", "Unknown exception occured", wxOK|wxCANCEL|wxICON_ERROR);
+    }
+
   private:
     std::exception_ptr exceptionStored;
   };
