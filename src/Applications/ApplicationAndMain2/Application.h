@@ -8,6 +8,7 @@ public:
   wxApplication(bool exitOnLastFrameClosed = true) : wxApplication(exitOnLastFrameClosed, substituteArgc, nullptr) {}
   wxApplication(int& argc, char** argv) : wxApplication(true, argc, argv) {}
   wxApplication(bool exitOnLastFrameClosed, int& argc, char** argv) {
+    wxDISABLE_DEBUG_SUPPORT();
     wxApp::SetInstance(this);
     wxEntryStart(argc, argv);
     CallOnInit();
