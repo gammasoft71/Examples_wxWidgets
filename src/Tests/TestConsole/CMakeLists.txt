@@ -6,7 +6,7 @@ project(TestConsole)
 find_package(wxWidgets REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES TestConsole.cpp)
+set(SOURCES Console.h TestConsole.cpp)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)
