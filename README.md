@@ -19,6 +19,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 ## [Applications](./src/Applications)
 
 * [Application](src/Applications/Application/README.md) shows how to create a simple wxWidgets application with wxApp.
+* [ApplicationAndException](src/Applications/ApplicationAndAssert/README.md) shows how to create a simple wxWidgets application and how to manage assert.
 * [ApplicationAndException](src/Applications/ApplicationAndException/README.md) shows how to create a simple wxWidgets application and how to manage exception.
 * [ApplicationAndMain](src/Applications/ApplicationAndMain/README.md) shows how to create a wxWidgets application and main method with wxApp.
 * [ApplicationAndMain2](src/Applications/ApplicationAndMain2/README.md) shows how to create a wxWidgets application and main method with wxApp.
@@ -181,6 +182,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * [Colors](src/Others/Colors/README.md) demonstrates the use of wxControl widget with wxColour..
 * [CursorFromFile](src/Others/CursorFromFile/README.md) shows how to create Cursor from cur or ani file with wxCursor.
 * [DirDialogShowWindowModal](src/Others/DirDialogShowWindowModal/README.md) shows how to create a DirDialogWindowModal with wxDirDialog.
+* [DisplayInformations](src/Others/DisplayInformations/README.md) shows how to get screen information of wxDisplay.
 * [FrameAndThread](src/Others/FrameAndThread/README.md) shows how to dialog with a frame widget from a thread.
 * [FrameAndThreadWithCallAfter](src/Others/FrameAndThreadWithCallAfter/README.md) shows how to dialog with a frame widget from a thread with CallAfter method.
 * [FrameIcon](src/Others/FrameIcon/README.md) shows how to assign an icon to frame.
