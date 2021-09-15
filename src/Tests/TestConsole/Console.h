@@ -1,5 +1,6 @@
 #pragma once
 #include <wx/app.h>
+#include <wx/image.h>
 
 class wxConsole : protected wxApp {
 public:
