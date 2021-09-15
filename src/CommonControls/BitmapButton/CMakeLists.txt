@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 # Project
 project(BitmapButton)
 
-find_package(wxWidgets REQUIRED)
+find_package(wxWidgets 3.1.4 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
 set(SOURCES BitmapButton.cpp gammasoft_16x16.xpm gammasoft_64x64.xpm)

@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 # Project
 project(DirCtrl)
 
-find_package(wxWidgets REQUIRED)
+find_package(wxWidgets 3.1.4 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
 set(SOURCES DirCtrl.cpp)
