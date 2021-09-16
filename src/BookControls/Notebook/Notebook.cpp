@@ -7,10 +7,10 @@ namespace Examples {
     Frame() : wxFrame(nullptr, wxID_ANY, "Notebook example") {
       SetClientSize(390, 270);
 
-      tabControl1->AddPage(tabPageRed, "Red", true, 0);
-      tabControl1->AddPage(tabPageGreen, "Green", false, 1);
-      tabControl1->AddPage(tabPageBlue, "Blue", false, 2);
-      tabControl1->AddPage(tabPageYellow, "Yellow", false, 3);
+      tabControl1->AddPage(tabPageRed, "Red", true);
+      tabControl1->AddPage(tabPageGreen, "Green");
+      tabControl1->AddPage(tabPageBlue, "Blue");
+      tabControl1->AddPage(tabPageYellow, "Yellow");
       
       tabPageRed->SetBackgroundColour(wxTheColourDatabase->Find("Red"));
       tabPageGreen->SetBackgroundColour(wxTheColourDatabase->Find("Forest Green"));
