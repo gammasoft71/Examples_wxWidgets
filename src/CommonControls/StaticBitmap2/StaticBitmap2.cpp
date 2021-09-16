@@ -2,6 +2,8 @@
 #include <wx/frame.h>
 #include <wx/statbmp.h>
 #include <wx/panel.h>
+#include <wx/filename.h>
+#include <wx/stdpaths.h>
 
 namespace Examples {
   class Frame : public wxFrame {
@@ -9,7 +11,17 @@ namespace Examples {
     Frame() : wxFrame(nullptr, wxID_ANY, "StaticBitmap2 example") {
       SetClientSize(300, 300);
       wxInitAllImageHandlers();
-      staticBitmap1->SetBitmap({"Resources/Logo.png", wxBITMAP_TYPE_ANY});
+      wxFileName imagePath(wxStandardPaths::Get().GetExecutablePath());
+      if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") {
+        imagePath.AppendDir("..");
+        imagePath.AppendDir("..");
+        imagePath.AppendDir("..");
+      }
+      
+      imagePath.AppendDir("Resources");
+      imagePath.SetFullName("Logo");
+      imagePath.SetExt("png");
+      staticBitmap1->SetBitmap({imagePath.GetFullPath(), wxBITMAP_TYPE_ANY});
       staticBitmap1->SetWindowStyle(wxBORDER_SIMPLE);
     }
 
