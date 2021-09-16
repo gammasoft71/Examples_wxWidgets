@@ -10,12 +10,15 @@ namespace Examples {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Hello world (emoticons)") {
       staticText1->SetFont({PointsToNativeFontGraphicsUntit(72), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL});
+      staticText1->SetSize(wxClientDC(staticText1).GetTextExtent(staticText1->GetLabel()));
       SetClientSize(staticText1->GetSize());
+      SetMaxSize(GetSize());
+      SetMinSize(GetSize());
     }
     
   private:
     wxPanel* panel = new wxPanel(this);
-    wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, L"\U0001F44B, \U0001F30E\U00002757");
+    wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, wxT("\U0001F44B, \U0001F30E\U00002757"));
   };
 
   class Application : public wxApp {
