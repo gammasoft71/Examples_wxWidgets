@@ -7,7 +7,7 @@ namespace Examples {
   public:
     wxNumericTextCtrl(wxWindow* parent, wxWindowID id, double value = .0, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0, const wxValidator& validator = wxDefaultValidator,  const wxString& name = wxTextCtrlNameStr) : wxTextCtrl(parent, id, wxString::Format("%g", value), pos, size, style, validator, name)  {
       Bind(wxEVT_CHAR, [&](wxKeyEvent& event) {
-        event.Skip((std::isdigit(event.GetUnicodeKey()) || event.GetUnicodeKey() == '.') && (event.GetUnicodeKey() != '.' || GetValue().Find('.') == std::string::npos));
+        event.Skip((std::iscntrl(event.GetUnicodeKey()) || std::isdigit(event.GetUnicodeKey()) || event.GetUnicodeKey() == '.') && (event.GetUnicodeKey() != '.' || GetValue().Find('.') == std::string::npos));
       });
       
       Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
