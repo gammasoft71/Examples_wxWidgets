@@ -34,7 +34,7 @@ namespace Examples {
       return result;
     }
     
-    wxPanel* panel = new wxPanel(this);
+    wxControl* panel = new wxControl(this, wxID_ANY);
   };
 
   class Application : public wxApp {
