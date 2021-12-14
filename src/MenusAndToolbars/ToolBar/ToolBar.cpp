@@ -8,18 +8,16 @@ namespace Examples {
     Frame() : wxFrame(nullptr, wxID_ANY, "Toolbar example") {
       SetClientSize(820, 500);
 
-      // On Windows the default size icon of toolbar is 16x16 and not 32x32...
-      wxSize bitmapSize = wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows" ? wxSize(16, 16) : wxDefaultSize;
-      toolBar->SetToolBitmapSize(bitmapSize);
+      // On Windows the default size icon of toolbar is 16x16 and not 24x24...
+      wxSize bitmapSize = wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows" ? wxSize(16, 16) : wxSize(24, 24);
       toolBar->AddTool(wxID_NEW, "&New", wxArtProvider::GetBitmap(wxART_NEW, wxART_TOOLBAR, bitmapSize));
       toolBar->AddTool(wxID_OPEN, "&Open...", wxArtProvider::GetBitmap(wxART_FILE_OPEN, wxART_TOOLBAR, bitmapSize));
       toolBar->AddTool(wxID_SAVE, "&Save", wxArtProvider::GetBitmap(wxART_FILE_SAVE, wxART_TOOLBAR, bitmapSize));
+      toolBar->AddTool(wxID_PRINT, "&Print...", wxArtProvider::GetBitmap(wxART_PRINT, wxART_TOOLBAR, bitmapSize));
       toolBar->AddSeparator();
       toolBar->AddTool(wxID_CUT, "Cu&t", wxArtProvider::GetBitmap(wxART_CUT, wxART_TOOLBAR, bitmapSize));
       toolBar->AddTool(wxID_COPY, "&Copy", wxArtProvider::GetBitmap(wxART_COPY, wxART_TOOLBAR, bitmapSize));
       toolBar->AddTool(wxID_PASTE, "&Paste", wxArtProvider::GetBitmap(wxART_PASTE, wxART_TOOLBAR, bitmapSize));
-      toolBar->AddSeparator();
-      toolBar->AddTool(wxID_PRINT, "&Print...", wxArtProvider::GetBitmap(wxART_PRINT, wxART_TOOLBAR, bitmapSize));
       toolBar->AddSeparator();
       toolBar->AddControl(choice);
       toolBar->AddStretchableSpace();
@@ -29,7 +27,8 @@ namespace Examples {
       toolBar->Realize();
       toolBar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
         static std::map<int, std::string> names = {{wxID_NEW, "New"}, {wxID_OPEN, "Open..."}, {wxID_SAVE, "Save"}, {wxID_EXIT, "Quit"}, {wxID_CUT, "Cut"}, {wxID_COPY, "Copy"}, {wxID_PASTE, "Paste"}, {wxID_PRINT, "Print..."}, {wxID_ABOUT, "About..."}, {wxID_ANY, "Any"}};
-        listBox1->Append(names.find(event.GetId()) != names.end() ? names[event.GetId()] : "Unknown");
+        listBox1->Append(wxString::Format("%s clicked", names.find(event.GetId()) != names.end() ? names[event.GetId()] : "Unknown"));
+        listBox1->Select(listBox1->GetCount() - 1);
         if (event.GetId() == wxID_EXIT) Close();
       });
       
@@ -38,7 +37,8 @@ namespace Examples {
       choice->SetSelection(0);
       choice->Bind(wxEVT_CHOICE, [&](wxCommandEvent& e) {
         listBox1->Append(wxString::Format("Choose item : %s", choice->GetStringSelection()));
-      });      
+        listBox1->Select(listBox1->GetCount() - 1);
+      });
     }
 
   private:
