@@ -15,12 +15,16 @@ namespace Examples {
   class MdiParentFrame : public wxMDIParentFrame {
   public:
     MdiParentFrame() : wxMDIParentFrame(nullptr, wxID_ANY, "Mdi example") {
+      //SetWindowMenu(nullptr);
       menuFile->Append(wxID_NEW, "New\tCtrl+N");
       menuFile->Append(wxID_CLOSE, "Close\tCtrl+W");
       menuFile->AppendSeparator();
       menuFile->Append(wxID_EXIT, "Quit\tAlt+F4");
       
       mainMenu->Append(menuFile, "&File");
+#if (__APPLE__)
+      mainMenu->Append(new wxMenu, "&View");
+#endif
       mainMenu->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
         switch (event.GetId()) {
           case wxID_NEW: OnMenuFileNewClick(event); break;
