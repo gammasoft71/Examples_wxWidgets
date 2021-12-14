@@ -3,6 +3,7 @@ project(Others)
 
 add_subdirectory(AutoScroll)
 add_subdirectory(BitmapButtonWithLabel)
+add_subdirectory(BorderStyle)
 add_subdirectory(BoxedPanel)
 add_subdirectory(ColoredFrames)
 add_subdirectory(Colors)
