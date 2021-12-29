@@ -18,8 +18,7 @@ namespace Examples {
     wxGenericStaticText* staticTextWithSimpleBorder = new wxGenericStaticText(panel, wxID_ANY, "Simple", {360, 20}, {150, 50}, wxALIGN_CENTER|wxBORDER_SIMPLE);
     wxGenericStaticText* staticTextWithRaisedBorder = new wxGenericStaticText(panel, wxID_ANY, "Raised", {530, 20}, {150, 50}, wxALIGN_CENTER|wxBORDER_RAISED);
     wxGenericStaticText* staticTextWithSunkenBorder = new wxGenericStaticText(panel, wxID_ANY, "Sunken", {20, 90}, {150, 50}, wxALIGN_CENTER|wxBORDER_SUNKEN);
-    wxGenericStaticText* staticTextWithDoubleBorder = new wxGenericStaticText(panel, wxID_ANY, "Double", {190, 90}, {150, 50}, wxALIGN_CENTER|wxBORDER_DOUBLE);
-    wxGenericStaticText* staticTextWithThemeBorder = new wxGenericStaticText(panel, wxID_ANY, "Theme", {360, 90}, {150, 50}, wxALIGN_CENTER|wxBORDER_THEME);
+    wxGenericStaticText* staticTextWithThemeBorder = new wxGenericStaticText(panel, wxID_ANY, "Theme", {190, 90}, {150, 50}, wxALIGN_CENTER|wxBORDER_THEME);
   };
 
   class Application : public wxApp {
