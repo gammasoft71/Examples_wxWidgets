@@ -9,25 +9,22 @@ namespace Examples {
       SetClientSize(820, 500);
       
       // On Windows the default size icon of toolbar is 16x16, on macOS is 32x32 and on gtk is 24x24...
-      if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows")
-        bitmapSize = wxSize(16, 16);
-      else if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh")
-        bitmapSize = wxSize(32, 32);
-      else
-        bitmapSize = wxSize(24, 24);
-      toolBar->AddTool(wxID_NEW, "&New", wxArtProvider::GetBitmap(wxART_NEW, wxART_TOOLBAR, bitmapSize));
-      toolBar->AddTool(wxID_OPEN, "&Open...", wxArtProvider::GetBitmap(wxART_FILE_OPEN, wxART_TOOLBAR, bitmapSize));
-      toolBar->AddTool(wxID_SAVE, "&Save", wxArtProvider::GetBitmap(wxART_FILE_SAVE, wxART_TOOLBAR, bitmapSize));
-      toolBar->AddTool(wxID_PRINT, "&Print...", wxArtProvider::GetBitmap(wxART_PRINT, wxART_TOOLBAR, bitmapSize));
+      if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") toolBar->SetToolBitmapSize({16, 16});
+      else if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") toolBar->SetToolBitmapSize({32, 32});
+      else toolBar->SetToolBitmapSize({24, 24});
+      toolBar->AddTool(wxID_NEW, "&New", wxArtProvider::GetBitmap(wxART_NEW, wxART_TOOLBAR));
+      toolBar->AddTool(wxID_OPEN, "&Open...", wxArtProvider::GetBitmap(wxART_FILE_OPEN, wxART_TOOLBAR));
+      toolBar->AddTool(wxID_SAVE, "&Save", wxArtProvider::GetBitmap(wxART_FILE_SAVE, wxART_TOOLBAR));
+      toolBar->AddTool(wxID_PRINT, "&Print...", wxArtProvider::GetBitmap(wxART_PRINT, wxART_TOOLBAR));
       toolBar->AddSeparator();
-      toolBar->AddTool(wxID_CUT, "Cu&t", wxArtProvider::GetBitmap(wxART_CUT, wxART_TOOLBAR, bitmapSize));
-      toolBar->AddTool(wxID_COPY, "&Copy", wxArtProvider::GetBitmap(wxART_COPY, wxART_TOOLBAR, bitmapSize));
-      toolBar->AddTool(wxID_PASTE, "&Paste", wxArtProvider::GetBitmap(wxART_PASTE, wxART_TOOLBAR, bitmapSize));
+      toolBar->AddTool(wxID_CUT, "Cu&t", wxArtProvider::GetBitmap(wxART_CUT, wxART_TOOLBAR));
+      toolBar->AddTool(wxID_COPY, "&Copy", wxArtProvider::GetBitmap(wxART_COPY, wxART_TOOLBAR));
+      toolBar->AddTool(wxID_PASTE, "&Paste", wxArtProvider::GetBitmap(wxART_PASTE, wxART_TOOLBAR));
       toolBar->AddSeparator();
       toolBar->AddControl(choice, "Items");
       toolBar->AddStretchableSpace();
       /// Does not works on macOS : No DropDown menu supported !
-      toolBar->AddTool(wxID_HELP, "&Help", wxArtProvider::GetBitmap(wxART_HELP, wxART_TOOLBAR, bitmapSize), wxEmptyString, wxITEM_DROPDOWN);
+      toolBar->AddTool(wxID_HELP, "&Help", wxArtProvider::GetBitmap(wxART_HELP, wxART_TOOLBAR), wxEmptyString, wxITEM_DROPDOWN);
       toolBar->SetDropdownMenu(wxID_HELP, menuHelp);
       
       SetToolBar(toolBar);
@@ -59,7 +56,6 @@ namespace Examples {
     }
     
   private:
-    wxSize bitmapSize {24, 24};
     wxListBox* listBox1 = new wxListBox(this, wxID_ANY);
     wxToolBar* toolBar = new wxToolBar(this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTB_HORIZONTAL);
     wxChoice* choice = new wxChoice(toolBar, wxID_ANY);
