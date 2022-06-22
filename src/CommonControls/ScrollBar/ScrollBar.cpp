@@ -6,11 +6,18 @@ namespace Examples {
     Frame() : wxFrame(nullptr, wxID_ANY, "ScrollBar example") {
       SetClientSize(300, 300);
       
-      scrollBar1->SetScrollbar(100, 1, 200, 1);
+      scrollBar1->SetScrollbar(10, 1, 20, 1);
       scrollBar1->SetSize(220, scrollBar1->GetSize().GetHeight());
+      scrollBar1->Bind(wxEVT_SCROLLBAR, [&](wxCommandEvent& e){
+        wxMessageOutputDebug().Printf("wxEVT_SCROLL_TOP {position %d}", scrollBar1->GetThumbPosition());
+      });
 
-      scrollBar3->SetScrollbar(100, 1, 200, 1);
+      scrollBar2->SetScrollbar(0, 1, 100, 1);
+
+      scrollBar3->SetScrollbar(10, 1, 20, 1);
       scrollBar3->SetSize(scrollBar3->GetSize().GetWidth(), 220);
+
+      scrollBar4->SetScrollbar(0, 1, 100, 1);
     }
     
   private:
