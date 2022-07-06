@@ -101,6 +101,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * [MainMenu](src/MenusAndToolbars/MainMenu/README.md) shows how to create a MainMenu widget with wxMenu.
 * [Menu](src/MenusAndToolbars/Menu/README.md) shows how to create a (contextual) Menu widget with wxMenu.
 * [StatusBar](src/MenusAndToolbars/StatusBar/README.md) shows how to create a StatusBar widget with wxStatusBar.
+* [StatusBarWithoutPanels](src/MenusAndToolbars/StatusBarWithoutPanels/README.md) shows how to create a StatusBar widget with wxStatusBar.
 * [ToolBar](src/MenusAndToolbars/ToolBar/README.md) shows how to create a ToolBar widget with wxToolBar.
 
 ## [Window Docking](./src/WindowDocking)

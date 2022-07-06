@@ -2,35 +2,64 @@
 #include <wx/wx.h>
 #include <wx/display.h>
 #include <wx/log.h>
+#include <wx/msgout.h>
 
-class MainFrame : public wxFrame {
+class Frame1 : public wxFrame {
 public:
-  MainFrame() : wxFrame {nullptr, wxID_ANY, wxEmptyString} {
-    red_panel->SetBackgroundColour({255, 0, 0});
-    green_panel->SetBackgroundColour({0, 128, 0});
-    blue_panel->SetBackgroundColour({0, 0, 255});
-    yellow_panel->SetBackgroundColour({255, 255, 0});
+  Frame1() : wxFrame {nullptr, wxID_ANY, wxEmptyString} {
+    Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& e) {
+      wxTheApp->Exit();
+    });
+
+    closeButton->Bind(wxEVT_BUTTON, [&](wxCommandEvent&) {
+      if (frame2 != nullptr) frame2->Close();
+    });
     
-    wxSizerFlags sizerFlags = wxSizerFlags(1).Expand().Border(wxDOWN, 5);
-    boxSizerVertical->Add(red_panel, sizerFlags);
-    boxSizerVertical->Add(green_panel, sizerFlags);
-    boxSizerVertical->Add(blue_panel, sizerFlags);
-    boxSizerVertical->Add(yellow_panel, sizerFlags);
+    showButton->Bind(wxEVT_BUTTON, [&](wxCommandEvent&) {
+      CreateFrame2();
+      frame2->Show();
+    });
     
-    SetSizerAndFit(boxSizerVertical);
-    SetSize(300, 300);
+    hideButton->Bind(wxEVT_BUTTON, [&](wxCommandEvent&) {
+      CreateFrame2();
+      frame2->Hide();
+    });
+    
+    CreateFrame2();
   }
 
 private:
-  wxBoxSizer* boxSizerVertical = new wxBoxSizer(wxVERTICAL);
-
-  wxPanel* red_panel = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxDefaultSize);
-  wxPanel* green_panel = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxDefaultSize);
-  wxPanel* blue_panel = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxDefaultSize);
-  wxPanel* yellow_panel = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxDefaultSize);
+  void CreateFrame2() {
+    if (frame2 == nullptr) frame2 = new wxFrame(nullptr, wxID_ANY, wxString::Format("CloseCount = %d", closeCount));
+    
+    frame2->Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& e) {
+      if (cancelCloseButton->IsChecked()) {
+        e.SetCanVeto(true);
+        e.Veto();
+      } else {
+        closeCount++;
+        frame2 = nullptr;
+        e.Skip();
+      }
+    });
+  }
+  wxPanel* panel = new wxPanel(this);
+  wxButton* closeButton = new wxButton(panel, wxID_ANY, "Close", {10, 10}, {100, 40});
+  wxButton* showButton = new wxButton(panel, wxID_ANY, "Show", {10, 60}, {100, 40});
+  wxButton* hideButton = new wxButton(panel, wxID_ANY, "Hide", {10, 110}, {100, 40});
+  wxCheckBox* cancelCloseButton = new wxCheckBox(panel, wxID_ANY, "Cancel close", {10, 160}, {100, 40});
+  wxFrame* frame2 = new wxFrame(nullptr, wxID_ANY, "CloseCount = 0");
+  int closeCount = 0;
 };
 
-int main() {
-  auto application = new wxApplication;
-  application->MainLoop(new MainFrame);
-}
+class Application : public wxApp {
+  bool OnInit() override {
+    auto frame1 = new Frame1();
+    frame1->Show();
+    wxTheApp->SetTopWindow(frame1);
+
+    return true;
+  }
+};
+
+wxIMPLEMENT_APP(Application);
