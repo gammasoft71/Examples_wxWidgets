@@ -7,9 +7,10 @@ namespace Examples {
     Frame() : wxFrame(nullptr, wxID_ANY, "Toolbook example") {
       SetClientSize(390, 270);
       
-      // On Windows the default size icon of toolbar is 16x16 and not 32x32...
-      auto toolbarIconSize = wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows" ? 16 : 32;
-      tabControl1->SetImageList(new wxImageList(toolbarIconSize, toolbarIconSize));
+      // On Windows the default size icon of toolbar is 16x16, on macOS is 32x32 and on gtk is 24x24...
+      if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") tabControl1->SetImageList(new wxImageList(16, 16));
+      else if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") tabControl1->SetImageList(new wxImageList(32, 32));
+      else tabControl1->SetImageList(new wxImageList(24, 24));
       tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Red"), tabControl1->GetImageList()->GetSize()));
       tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Forest Green"), tabControl1->GetImageList()->GetSize()));
       tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Blue"), tabControl1->GetImageList()->GetSize()));
@@ -28,15 +29,21 @@ namespace Examples {
     
   private:
     wxBitmap CreateImageFromColor(const wxColor& color, const wxSize& size) {
-      wxBitmap result(size);
+      wxImage image(size.GetWidth(), size.GetHeight());
+      image.InitAlpha();
+      for (auto y = 0; y < size.GetHeight(); y++)
+        for (auto x = 0; x < size.GetWidth(); x++)
+          image.SetAlpha(x, y, 0);
+      wxBitmap result(image);
       wxMemoryDC memoryDC(result);
       memoryDC.SetBrush(wxBrush(color));
-      memoryDC.SetPen(*wxBLACK_PEN);
-      memoryDC.DrawRectangle(0, 0, result.GetSize().GetWidth(), result.GetSize().GetHeight());
+      memoryDC.SetPen(wxPen(color));
+      memoryDC.DrawEllipse(1, 1, result.GetSize().GetWidth() - 3, result.GetSize().GetHeight() - 3);
       return result;
     }
+
     wxPanel* panel = new wxPanel(this);
-    wxToolbook* tabControl1 = new wxToolbook(panel, wxID_ANY, {10, 10}, {370, 250});
+    wxToolbook* tabControl1 = new wxToolbook(panel, wxID_ANY, {10, 10}, {370, 250}, /*wxTBK_BUTTONBAR|*/wxTBK_HORZ_LAYOUT);
     wxNotebookPage* tabPageRed = new wxNotebookPage(tabControl1, wxID_ANY);
     wxNotebookPage* tabPageGreen = new wxNotebookPage(tabControl1, wxID_ANY);
     wxNotebookPage* tabPageBlue = new wxNotebookPage(tabControl1, wxID_ANY);
