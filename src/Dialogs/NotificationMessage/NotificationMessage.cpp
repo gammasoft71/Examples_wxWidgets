@@ -39,6 +39,7 @@ namespace Examples {
       if (timeout == Timeout_Auto) {
         autoCloseTimer.StartOnce(timeoutValue);
       }
+      return true;
     }
     
   private:
