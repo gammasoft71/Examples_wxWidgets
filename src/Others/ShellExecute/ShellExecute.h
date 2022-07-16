@@ -6,7 +6,7 @@
 #if __WXMSW__
 #include <Windows.h>
 long wxShellExecute(const wxString& command, const wxString& arguments = wxEmptyString, const wxString& workingDirectory = wxEmptyString) {
-  return ShellExecute(nullptr, nullptr, command.wc_str(), arguments.wc_str(), workingDirectory != wxEmptyString ? workingDirectory.wc_str() : nullptr, SW_NORMAL) > 32 ? return 0 : -1;
+  return ShellExecute(nullptr, nullptr, command.wc_str(), arguments.wc_str(), workingDirectory != wxEmptyString ? workingDirectory.wc_str() : nullptr, SW_NORMAL) > 32 ? 0 : -1;
 }
 #else
 long wxShellExecute(const wxString& command, const wxString& arguments = wxEmptyString, const wxString& workingDirectory = wxEmptyString) {
