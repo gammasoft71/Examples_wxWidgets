@@ -15,7 +15,7 @@ namespace Examples {
   private:
     void GenerateAssert(wxCommandEvent& event) {
       auto index = 0;
-      wxASSERT_MSG(index > 0, "Index must be greather than 0.");
+      wxASSERT_MSG(index > 0, "Index must be greater than 0.");
     }
     
     void GenerateFail(wxCommandEvent& event) {
