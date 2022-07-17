@@ -11,7 +11,7 @@ namespace Examples {
       
     private:
       wxWizardPage* previousPage = nullptr;
-      wxStaticText* label = new wxStaticText(this, wxID_ANY, "Wizard pagee 2...", {10, 10});
+      wxStaticText* label = new wxStaticText(this, wxID_ANY, "Wizard page 2...", {10, 10});
     };
     
     class WizardPage1 : public wxWizardPage {
@@ -22,7 +22,7 @@ namespace Examples {
       
     private:
       wxWizard* parent = nullptr;
-      wxStaticText* label = new wxStaticText(this, wxID_ANY, "Wizard pagee 1...", {10, 10});
+      wxStaticText* label = new wxStaticText(this, wxID_ANY, "Wizard page 1...", {10, 10});
     };
     
   public:
