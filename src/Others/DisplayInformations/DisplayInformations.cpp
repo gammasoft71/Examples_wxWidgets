@@ -4,7 +4,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Display informations example") {
+    Frame() : wxFrame(nullptr, wxID_ANY, "Display information example") {
       SetClientSize(450, 300);
       
       screenInformationsTextCtrl->SetBackgroundColour({wxTheColourDatabase->Find("Navy")});

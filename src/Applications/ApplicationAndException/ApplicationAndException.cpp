@@ -60,11 +60,11 @@ namespace Examples {
     }
 
     static int ShowExceptiionError(const std::exception& e) {
-      return wxMessageBox(wxString::Format("Unhandled exception occured in your application. If you click\nOK, the application will ignore this error and attempt to continue.\nIf you click Cancel, the application will close immediately.\n\n%s", e.what()), "Exception occured", wxOK|wxCANCEL|wxICON_ERROR);
+      return wxMessageBox(wxString::Format("Unhandled exception occurred in your application. If you click\nOK, the application will ignore this error and attempt to continue.\nIf you click Cancel, the application will close immediately.\n\n%s", e.what()), "Exception occurred", wxOK|wxCANCEL|wxICON_ERROR);
     }
     
     static int ShowExceptiionError() {
-      return wxMessageBox("Unhandled exception occured in your application. If you click\nOK, the application will ignore this error and attempt to continue.\nIf you click Cancel, the application will close immediately.\n\n(Unknown exception)", "Unknown exception occured", wxOK|wxCANCEL|wxICON_ERROR);
+      return wxMessageBox("Unhandled exception occurred in your application. If you click\nOK, the application will ignore this error and attempt to continue.\nIf you click Cancel, the application will close immediately.\n\n(Unknown exception)", "Unknown exception occurred", wxOK|wxCANCEL|wxICON_ERROR);
     }
 
   private:
