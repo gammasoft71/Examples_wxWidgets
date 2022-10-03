@@ -2,18 +2,13 @@
 #include <wx/msgout.h>
 
 namespace Examples {
-  // Workaround : with wxWidgets version <= 3.1.4 font is in pixels and not in points on macOS
-  int PointsToNativeFontGraphicsUntit(int size) {
-    return wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh" ? size : static_cast<float>(size) / wxScreenDC().GetPPI().GetHeight() * 96.0f;
-  }
-
   class Frame1 : public wxFrame {
   public:
     Frame1() : wxFrame(nullptr, wxID_ANY, "Frame1") {
       SetClientSize(300, 300);
       SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
       auto font = GetFont();
-      font.SetPointSize(PointsToNativeFontGraphicsUntit(18));
+      font.SetPointSize(18);
       font.SetWeight(wxFontWeight::wxFONTWEIGHT_BOLD);
       SetFont(font);
       Bind(wxEVT_PAINT, [&](wxPaintEvent& event) {

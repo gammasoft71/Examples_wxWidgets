@@ -1,17 +1,12 @@
 #include <wx/wx.h>
 
 namespace Examples {
-  // Workaround : with wxWidgets version <= 3.1.4 font is in pixels and not in points on macOS
-  int PointsToNativeFontGraphicsUntit(int size) {
-    return wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh" ? size : static_cast<float>(size) / wxScreenDC().GetPPI().GetHeight() * 96.0f;
-  }
-
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Hello world (paint)") {
       Bind(wxEVT_PAINT, [&](wxPaintEvent& event) {
         wxPaintDC dc(this);
-        dc.SetFont({PointsToNativeFontGraphicsUntit(32), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_BOLD});
+        dc.SetFont({32, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_BOLD});
         auto text = "Hello,World!";
         dc.SetBackground({{0x0, 0x20, 0x10}, wxBRUSHSTYLE_SOLID});
         dc.Clear();

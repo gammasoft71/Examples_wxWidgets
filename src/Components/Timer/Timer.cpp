@@ -1,16 +1,11 @@
 #include <wx/wx.h>
 
 namespace Examples {
-  // Workaround : with wxWidgets version <= 3.1.4 font is in pixels and not in points on macOS
-  int PointsToNativeFontGraphicsUntit(int size) {
-    return wxPlatformInfo::Get().GetOperatingSystemFamilyName() != "Macintosh" ? size : static_cast<float>(size) / wxScreenDC().GetPPI().GetHeight() * 96.0f;
-  }
-
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Timer example") {
       SetClientSize(230, 130);
-      label->SetFont({PointsToNativeFontGraphicsUntit(48), wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_NORMAL, false, "Arial"});
+      label->SetFont({48, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_NORMAL, false, "Arial"});
       label->SetForegroundColour({30, 144, 255});
 
       timer.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
