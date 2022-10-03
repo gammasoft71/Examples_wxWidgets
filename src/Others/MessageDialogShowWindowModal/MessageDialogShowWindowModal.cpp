@@ -2,7 +2,7 @@
 #include <wx/wx.h>
 #include <wx/windowptr.h>
 
-// Workaround : with wxWidgets version <= 3.1.4 wxMessageDialog ShowWindowModal method doesn't exists on other platform that macOS
+// Workaround : with wxWidgets version <= 3.2.0 wxMessageDialog ShowWindowModal method doesn't exists on other platform that macOS
 #if defined(__APPLE__)
 using MessageDialog = wxMessageDialog;
 #else

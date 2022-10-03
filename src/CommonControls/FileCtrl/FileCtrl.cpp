@@ -4,13 +4,13 @@
 #include <wx/stattext.h>
 #include <wx/stdpaths.h>
 
-// Workaround : with wxWidgets version <= 3.1.4 when showHidden is set the check box is not set
+// Workaround : with wxWidgets version <= 3.2.0 when showHidden is set the check box is not set
 #if __WXGTK__
 #include <wx/filectrl.h>
 class FileCtrl : public wxFileCtrl {
 public:
   FileCtrl(wxWindow*parent, wxWindowID id, const wxString& defaultDirectory = wxEmptyString, const wxString& defaultFilename = wxEmptyString, const wxString& wildCard = wxFileSelectorDefaultWildcardStr, long style = wxFC_DEFAULT_STYLE, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, const wxString& name = wxFileCtrlNameStr) : wxFileCtrl(parent, id, defaultDirectory, defaultFilename, wildCard, style, pos, size, name) {
-    // Workaround : with wxWidgets version <= 3.1.4 show hidden is true by default on Gtk
+    // Workaround : with wxWidgets version <= 3.2.0 show hidden is true by default on Gtk
     ShowHidden(false);
   }
 };
@@ -22,7 +22,7 @@ public:
 class FileCtrl : public wxFileCtrl {
 public:
   FileCtrl(wxWindow*parent, wxWindowID id, const wxString& defaultDirectory = wxEmptyString, const wxString& defaultFilename = wxEmptyString, const wxString& wildCard = wxFileSelectorDefaultWildcardStr, long style = wxFC_DEFAULT_STYLE, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, const wxString& name = wxFileCtrlNameStr) : wxFileCtrl(parent, id, defaultDirectory, defaultFilename, wildCard, style, pos, size, name) {
-    // Workaround : with wxWidgets version <= 3.1.4 folder, executable and link are set with specific color (respectively Blue, red and middle gray) on macOS (not standard)
+    // Workaround : with wxWidgets version <= 3.2.0 folder, executable and link are set with specific color (respectively Blue, red and middle gray) on macOS (not standard)
 #if __APPLE__
     for (int i = 0; i < GetFileList()->GetItemCount(); i++)
       GetFileList()->SetItemTextColour(i, GetForegroundColour());

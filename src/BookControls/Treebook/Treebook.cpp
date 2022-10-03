@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/treebook.h>
 
-// Workaround : with wxWidgets version <= 3.1.4 Tree position and size are failed on macOS (and Linux)
+// Workaround : with wxWidgets version <= 3.2.0 Tree position and size are failed on macOS (and Linux)
 #if defined(__APPLE__) || defined(__UNIX__)
 #include <wx/treectrl.h>
 class TreeBook : public wxTreebook {

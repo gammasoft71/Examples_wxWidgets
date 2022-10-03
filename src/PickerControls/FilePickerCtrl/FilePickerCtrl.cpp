@@ -2,7 +2,7 @@
 #include <wx/filepicker.h>
 #include <wx/sysopt.h>
 
-// Workaround : with wxWidgets version <= 3.1.4 wxFilePickerCtrl::SetFilterIndex doesn't work on macOS
+// Workaround : with wxWidgets version <= 3.2.0 wxFilePickerCtrl::SetFilterIndex doesn't work on macOS
 class FilePickerCtrl : public wxFilePickerCtrl {
 public:
   FilePickerCtrl(wxWindow *parent, wxWindowID id, const wxString& path = wxEmptyString, const wxString& message = wxFileSelectorPromptStr, const wxString& wildcard = wxFileSelectorDefaultWildcardStr, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxFLP_DEFAULT_STYLE, const wxValidator& validator = wxDefaultValidator, const wxString& name = wxFilePickerCtrlNameStr) : wxFilePickerCtrl(parent, id, path, message, wildcard, pos, size, style, validator, name) {

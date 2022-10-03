@@ -3,7 +3,7 @@
 #include <wx/stdpaths.h>
 #include <wx/windowptr.h>
 
-// Workaround : with wxWidgets version <= 3.1.4 wxDirDialog ShowWindowModal method doesn't exists on other platform that macOS
+// Workaround : with wxWidgets version <= 3.2.0 wxDirDialog ShowWindowModal method doesn't exists on other platform that macOS
 #if defined(__APPLE__)
 using DirDialog = wxDirDialog;
 #else
