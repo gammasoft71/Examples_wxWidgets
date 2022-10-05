@@ -2,11 +2,15 @@
 #include <wx/filepicker.h>
 #include <wx/sysopt.h>
 
-// Workaround : with wxWidgets version <= 3.2.0 wxFilePickerCtrl::SetFilterIndex doesn't work on macOS
+// Workaround : with wxWidgets version <= 3.1.4 wxFilePickerCtrl::SetFilterIndex doesn't work on macOS
+#if !defined(__APPLE__)
+using FilePickerCtrl = wxFilePickerCtrl;
+#else
 class FilePickerCtrl : public wxFilePickerCtrl {
 public:
   FilePickerCtrl(wxWindow *parent, wxWindowID id, const wxString& path = wxEmptyString, const wxString& message = wxFileSelectorPromptStr, const wxString& wildcard = wxFileSelectorDefaultWildcardStr, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxFLP_DEFAULT_STYLE, const wxValidator& validator = wxDefaultValidator, const wxString& name = wxFilePickerCtrlNameStr) : wxFilePickerCtrl(parent, id, path, message, wildcard, pos, size, style, validator, name) {
     auto pickerCtrl = GetPickerCtrl();
+    if (size == wxDefaultSize) SetSize(150, GetSize().GetHeight());
     auto wx_dialog_style = 0;
     if ((style & wxFLP_OPEN) == wxFLP_OPEN) wx_dialog_style |= wxFD_OPEN;
     if ((style & wxFLP_SAVE) == wxFLP_SAVE) wx_dialog_style |= wxFD_SAVE;
@@ -23,6 +27,7 @@ public:
     });
   }
 };
+#endif
 
 namespace Examples {
   class Frame : public wxFrame {
@@ -36,7 +41,6 @@ namespace Examples {
   private:
     wxPanel* panel = new wxPanel(this);
     wxStaticText* label = new wxStaticText(panel, wxID_ANY, "File = ", wxPoint(10, 50));
-    //wxFilePickerCtrl* picker = new wxFilePickerCtrl(panel, wxID_ANY, wxEmptyString, wxEmptyString, "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", {10, 10}, wxDefaultSize, wxFLP_DEFAULT_STYLE|wxFLP_SMALL);
     FilePickerCtrl* picker = new FilePickerCtrl(panel, wxID_ANY, wxEmptyString, wxEmptyString, "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", {10, 10}, wxDefaultSize, wxFLP_DEFAULT_STYLE|wxFLP_SMALL);
   };
 
