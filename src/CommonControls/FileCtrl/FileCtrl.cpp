@@ -30,8 +30,6 @@ public:
       GetFileList()->SetItemTextColour(event.GetIndex(), GetForegroundColour());
     });
 #endif
-    //m_static->Hide();
-    //m_check->Hide();
   }
   
   void ShowHidden(bool show) override {
