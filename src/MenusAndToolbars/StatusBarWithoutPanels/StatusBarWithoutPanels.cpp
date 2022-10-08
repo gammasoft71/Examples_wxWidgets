@@ -1,13 +1,16 @@
-#include <vector>
 #include <wx/wx.h>
-#include <wx/artprov.h>
 
 namespace Examples {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Statusbar without panels example") {
-      SetStatusBar(statusBar);    
-      statusBar->SetStatusText("Shows status information without panels...");
+      SetBackgroundColour({0xFF, 0xFF, 0xFF, 0x10});
+      SetStatusBar(statusBar);
+      Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent& e) {
+        statusBar->SetStatusText(wxString::Format("Mouse click at position : {x=%d, y=%d}", e.GetX(), e.GetY()));
+      });
+      
+      statusBar->SetStatusText("Click anywhere on the client frame...");
     }
 
   private:
