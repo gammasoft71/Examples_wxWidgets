@@ -6,18 +6,26 @@
 class Frame1 : public wxFrame {
 public:
   Frame1() : wxFrame(nullptr, wxID_ANY, "Hello world (say)") {
-    if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") wxFile(sayCmdFile.GetFullPath(), wxFile::write).Write("@echo Set Speaker=CreateObject(\"sapi.spvoice\") > %TEMP%\\say.vbs\n@echo Speaker.Speak \"%*\" >> %TEMP%\\say.vbs\n@%TEMP%\\say.vbs");
-    else if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") wxFile(sayCmdFile.GetFullPath(), wxFile::write).Write("say \"$*\"");
-    else wxFile(sayCmdFile.GetFullPath(), wxFile::write).Write("spd-say \"$*\"");
-    sayCmdFile.SetPermissions(wxPOSIX_USER_READ | wxPOSIX_USER_WRITE | wxPOSIX_USER_EXECUTE);
-
     button1->Bind(wxEVT_BUTTON, [&](wxCommandEvent&) {
-      wxProcess::Open(wxString::Format("%s Hello, World!", sayCmdFile.GetFullPath()));
+      Speak("Hello, World!");
     });
   }
 
 private:
-  wxFileName sayCmdFile {wxStandardPaths::Get().GetTempDir(), "say", "cmd"};
+  // Very basic speech synthesizer using the command line.
+  void Speak(const wxString& text) {
+    static bool initialized = false;
+    static wxFileName sayCmdFile {wxStandardPaths::Get().GetTempDir(), "say", "cmd"};
+    if (!initialized) {
+      if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") wxFile(sayCmdFile.GetFullPath(), wxFile::write).Write("@echo Set Speaker=CreateObject(\"sapi.spvoice\") > %TEMP%\\say.vbs\n@echo Speaker.Speak \"%*\" >> %TEMP%\\say.vbs\n@%TEMP%\\say.vbs");
+      else if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") wxFile(sayCmdFile.GetFullPath(), wxFile::write).Write("say \"$*\"");
+      else wxFile(sayCmdFile.GetFullPath(), wxFile::write).Write("spd-say \"$*\"");
+      sayCmdFile.SetPermissions(wxPOSIX_USER_READ | wxPOSIX_USER_WRITE | wxPOSIX_USER_EXECUTE);
+      initialized = true;
+    }
+    wxProcess::Open(wxString::Format("%s %s", sayCmdFile.GetFullPath(), text));
+  }
+
   wxPanel* panel1 = new wxPanel(this, wxID_ANY);
   wxButton* button1 = new wxButton(panel1, wxID_ANY, "Say...", {10, 10});
 };
