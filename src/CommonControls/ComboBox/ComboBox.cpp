@@ -2,7 +2,6 @@
 #include <wx/combobox.h>
 #include <wx/frame.h>
 #include <wx/panel.h>
-#include <wx/platinfo.h>
 
 namespace Examples {
   class Frame : public wxFrame {
@@ -19,9 +18,6 @@ namespace Examples {
       comboBox3->Append({"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
       comboBox3->Select(0);
       comboBox3->Bind(wxEVT_COMBOBOX, &Frame::OnComboBoxClick, this);
-      
-      auto name = wxPlatformInfo::Get().GetOperatingSystemFamilyName();
-      std::cout << name << std::endl;
     }
     
   private:
