@@ -57,7 +57,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * [StaticText](src/CommonControls/StaticText/README.md) shows how to create a StaticText widget with wxStaticText.
 * [TaskBarIcon](src/CommonControls/TaskBarIcon/README.md) shows how to create a TaskBarIcon widget with wxTaskBarIcon.
 * [TextCtrl](src/CommonControls/TextCtrl/README.md) shows how to create a TextCtrl widget with wxTextCtrl.
-* [TobbleButton](src/CommonControls/TobbleButton/README.md) shows how to create a TobbleButton widget and Event Click with wxTobbleButton.
+* [TobbleButton](src/CommonControls/ToggleButton/README.md) shows how to create a ToggleButton widget and Event Click with wxToggleButton.
 * [TreeCtrl](src/CommonControls/TreeCtrl/README.md) shows how to create a TreeView widget with wxTreeCtrl.
 * [WebView](src/CommonControls/WebView/README.md) shows how to create a WebViewwidget with wxWebView.
 
