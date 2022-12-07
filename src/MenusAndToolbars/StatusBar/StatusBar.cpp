@@ -11,9 +11,9 @@ namespace Examples {
       std::vector statusWidths = {80, 80, -1};
       std::vector statusStyles = {wxSB_SUNKEN, wxSB_SUNKEN, wxSB_SUNKEN};
       
-      statusBar->SetFieldsCount(statusWidths.size());
-      statusBar->SetStatusWidths(statusWidths.size(), statusWidths.data());
-      statusBar->SetStatusStyles(statusStyles.size(), statusStyles.data());
+      statusBar->SetFieldsCount(static_cast<int>(statusWidths.size()));
+      statusBar->SetStatusWidths(static_cast<int>(statusWidths.size()), statusWidths.data());
+      statusBar->SetStatusStyles(static_cast<int>(statusStyles.size()), statusStyles.data());
       
       statusBar->SetStatusText("Status One");
       statusBar->SetStatusText("Status Two", 1);

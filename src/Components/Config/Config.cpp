@@ -32,8 +32,8 @@ namespace Examples {
       auto backgroundColor = panel->GetBackgroundColour();
       config.Read("BackgroundColor", &backgroundColor, wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
       panel->SetBackgroundColour(backgroundColor);
-      SetPosition(wxPoint(config.Read("Left", 100), config.Read("Top", 50)));
-      SetSize(config.Read("Width", 360), config.Read("Height", 80));
+      SetPosition(wxPoint(static_cast<int>(config.Read("Left", 100)), static_cast<int>(config.Read("Top", 50))));
+      SetSize(static_cast<int>(config.Read("Width", 360)), static_cast<int>(config.Read("Height", 80)));
       Refresh();
       colourPicker->SetColour(panel->GetBackgroundColour());
     }

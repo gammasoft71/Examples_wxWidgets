@@ -51,7 +51,7 @@ public:
   }
 
   void SetSelectedIndex(size_t index) {
-    upDown->SetValue(items.GetCount() - 1 - index);
+    upDown->SetValue(static_cast<int>(items.GetCount() - 1 - index));
     SetTextWithSelectedIndex();
   }
 

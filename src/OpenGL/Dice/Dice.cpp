@@ -101,7 +101,7 @@ private:
     glLoadIdentity();
     glFrustum(-0.5f, 0.5f, -0.5f, 0.5f, 1.0f, 3.0f);
     
-    glGenTextures(textures.size(), textures.data());
+    glGenTextures(static_cast<GLsizei>(textures.size()), textures.data());
     
     for (size_t i = 0; i < textures.size(); i++) {
       glBindTexture(GL_TEXTURE_2D, textures[i]);

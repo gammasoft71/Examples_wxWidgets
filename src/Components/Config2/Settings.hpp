@@ -27,10 +27,10 @@ namespace Config2 {
       
       void Reload() {
         backgroundColour = config->Read("BackgroundColour", backgroundColour);
-        position.x = config->Read("X", position.x);
-        position.y = config->Read("Y", position.y);
-        size.SetWidth(config->Read("Width", size.GetWidth()));
-        size.SetHeight(config->Read("Height", size.GetHeight()));
+        position.x = static_cast<int>(config->Read("X", position.x));
+        position.y = static_cast<int>(config->Read("Y", position.y));
+        size.SetWidth(static_cast<int>(config->Read("Width", size.GetWidth())));
+        size.SetHeight(static_cast<int>(config->Read("Height", size.GetHeight())));
       }
       
       void Reset() {

@@ -21,7 +21,7 @@ namespace Examples {
       imagePath.AppendDir("Resources");
       imagePath.SetFullName("Logo");
       imagePath.SetExt("png");
-      staticBitmap1->SetBitmap({imagePath.GetFullPath(), wxBITMAP_TYPE_ANY});
+      staticBitmap1->SetBitmap(wxBitmapBundle {wxBitmap {imagePath.GetFullPath(), wxBITMAP_TYPE_ANY}});
       staticBitmap1->SetWindowStyle(wxBORDER_SIMPLE);
     }
 
