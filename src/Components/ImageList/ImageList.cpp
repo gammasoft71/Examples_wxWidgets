@@ -51,7 +51,7 @@ namespace Examples {
         pictures->RemoveAll();
         for (auto filename : filenames) {
           auto image = wxImage(openFileDialog.GetDirectory() + wxFileName::GetPathSeparator() + filename);
-          pictures->Add(wxBitmap(image.Scale(128, 128)));
+          pictures->Add(wxBitmap(image.Rescale(128, 128, wxIMAGE_QUALITY_HIGH)));
         }
         currentImageIndex = 0;
         picture->SetBitmap(pictures->GetBitmap(currentImageIndex));
