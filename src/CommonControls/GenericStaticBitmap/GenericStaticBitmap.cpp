@@ -25,7 +25,7 @@ namespace Examples {
       boxSizer->Add(staticBitmap1, 1, wxGROW|wxALL, 20);
       staticBitmap1->SetScaleMode(static_cast<wxStaticBitmap::ScaleMode>(reinterpret_cast<long long>(choice1->GetClientData(choice1->GetSelection()))));
       staticBitmap1->SetWindowStyle(wxBORDER_SIMPLE);
-      staticBitmap1->SetBitmap({Logo_xpm});
+      staticBitmap1->SetBitmap(wxBitmap {Logo_xpm});
       panel->SetSizerAndFit(boxSizer);
     }
     
