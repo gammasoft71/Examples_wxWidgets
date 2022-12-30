@@ -1,3 +1,4 @@
+#undef NDEBUG
 #include <stdexcept>
 #include <wx/wx.h>
 
