@@ -14,12 +14,12 @@ namespace Examples {
     wxPanel* panel = new wxPanel(this);
     wxStaticBox* staticBox1 = new wxStaticBox(panel, wxID_ANY, "Group 1", {10, 10}, {135, 140});
     wxStaticBox* staticBox2 = new wxStaticBox(panel, wxID_ANY, "Group 2", {155, 10}, {135, 140});
-    wxCheckBox* check1 = new wxCheckBox(staticBox1->GetMainWindowOfCompositeControl(), wxID_ANY, "check 1", {20, 10});
-    wxCheckBox* check2 = new wxCheckBox(staticBox1->GetMainWindowOfCompositeControl(), wxID_ANY, "check 2", {20, 40});
-    wxCheckBox* check3 = new wxCheckBox(staticBox1->GetMainWindowOfCompositeControl(), wxID_ANY, "check 3", {20, 70});
-    wxCheckBox* check4 = new wxCheckBox(staticBox2->GetMainWindowOfCompositeControl(), wxID_ANY, "check 4", {20, 10});
-    wxCheckBox* check5 = new wxCheckBox(staticBox2->GetMainWindowOfCompositeControl(), wxID_ANY, "check 5", {20, 40});
-    wxCheckBox* check6 = new wxCheckBox(staticBox2->GetMainWindowOfCompositeControl(), wxID_ANY, "check 6", {20, 70});
+    wxCheckBox* check1 = new wxCheckBox(staticBox1->GetMainWindowOfCompositeControl(), wxID_ANY, "check 1", {20, 20});
+    wxCheckBox* check2 = new wxCheckBox(staticBox1->GetMainWindowOfCompositeControl(), wxID_ANY, "check 2", {20, 50});
+    wxCheckBox* check3 = new wxCheckBox(staticBox1->GetMainWindowOfCompositeControl(), wxID_ANY, "check 3", {20, 80});
+    wxCheckBox* check4 = new wxCheckBox(staticBox2->GetMainWindowOfCompositeControl(), wxID_ANY, "check 4", {20, 20});
+    wxCheckBox* check5 = new wxCheckBox(staticBox2->GetMainWindowOfCompositeControl(), wxID_ANY, "check 5", {20, 50});
+    wxCheckBox* check6 = new wxCheckBox(staticBox2->GetMainWindowOfCompositeControl(), wxID_ANY, "check 6", {20, 80});
   };
   
   class Application : public wxApp {
