@@ -8,6 +8,10 @@ Shows how to create a MessageDialog dialog with wxMessageDialog.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/MessageDialog.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

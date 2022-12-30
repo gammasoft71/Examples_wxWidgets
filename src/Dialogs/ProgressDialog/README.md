@@ -8,6 +8,10 @@ Shows how to create a ProgressDialog dialog with wxProgressDialog.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/ProgressDialog.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

@@ -8,6 +8,10 @@ Shows how to create a GenericProgressDialog dialog with wxGenericProgressDialog.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/GenericProgressDialog.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

@@ -8,6 +8,10 @@ Shows how to create a PrintAbortDialog dialog with wxPrintAbortDialog.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/PrintAbortDialog.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

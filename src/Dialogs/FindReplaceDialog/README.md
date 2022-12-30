@@ -8,6 +8,10 @@ Shows how to create a FindReplaceDialog dialog with wxFindReplaceDialog.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/FindReplaceDialog.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

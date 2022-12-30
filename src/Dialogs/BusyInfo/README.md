@@ -8,6 +8,10 @@ Shows how to create a BusyInfo dialog with wxBusyInfo.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/BusyInfo.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:
