@@ -25,7 +25,7 @@ namespace Examples {
       boxSizer->Add(buttonOpenCalculator, 1, wxGROW);
 
       buttonWeb->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-        wxShellExecute("/Applications/Safari.app", "https://gammasoft71.wixsite.com/gammasoft");
+        wxShellExecute("https://gammasoft71.wixsite.com/gammasoft");
       });
       
       buttonWriteMail->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {

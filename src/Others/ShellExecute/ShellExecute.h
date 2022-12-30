@@ -3,10 +3,11 @@
 #include <wx/string.h>
 #include <wx/utils.h>
 
-#if __WXMSW__
+#if defined(__WXMSW__)
+#include <WinSock2.h>
 #include <Windows.h>
 long wxShellExecute(const wxString& command, const wxString& arguments = wxEmptyString, const wxString& workingDirectory = wxEmptyString) {
-  return ShellExecute(nullptr, nullptr, command.wc_str(), arguments.wc_str(), workingDirectory != wxEmptyString ? workingDirectory.wc_str() : nullptr, SW_NORMAL) > 32 ? 0 : -1;
+  return ShellExecute(nullptr, nullptr, command.wc_str(), arguments.wc_str(), workingDirectory != wxEmptyString ? workingDirectory.wc_str() : nullptr, SW_NORMAL) > reinterpret_cast<HINSTANCE>(32) ? 0 : -1;
 }
 #else
 long wxShellExecute(const wxString& command, const wxString& arguments = wxEmptyString, const wxString& workingDirectory = wxEmptyString) {
