@@ -15,6 +15,9 @@ namespace Examples {
         dc.SetTextForeground({0x00, 0xFF, 0x7F});
         dc.DrawText(text, {((GetClientSize().GetWidth() - dc.GetTextExtent(text).GetWidth()) / 2) - 2, ((GetClientSize().GetHeight() - dc.GetTextExtent(text).GetHeight()) / 2) - 2});
       });
+      Bind(wxEVT_SIZING, [&](wxSizeEvent& e) {
+        Refresh();
+      });
     }
   };
 
