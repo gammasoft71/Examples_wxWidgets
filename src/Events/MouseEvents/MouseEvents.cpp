@@ -1,3 +1,4 @@
+#undef NDEBUG
 #include <map>
 #include <string>
 #include <wx/wx.h>
