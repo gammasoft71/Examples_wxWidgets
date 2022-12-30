@@ -10,7 +10,7 @@ Shows how to create a GenericStaticBitmap widget with wxGenericStaticBitmap.
 
 ## Output
 
-![output](../../../docs/Pictures/GebericStaticBitmap.png)
+![output](../../../docs/Pictures/GenericStaticBitmap.png)
 
 ## Build and run
 
