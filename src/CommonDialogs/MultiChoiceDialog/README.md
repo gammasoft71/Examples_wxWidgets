@@ -8,6 +8,10 @@ Shows how to create a MultiChoiceDialog dialog with wxMultiChoiceDialog.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/MultiChoiceDialog.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

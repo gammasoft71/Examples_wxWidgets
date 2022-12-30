@@ -8,6 +8,10 @@ Shows how to create a NumberEntryDialog dialog with wxNumberEntryDialog.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/NumericEntryDialog.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

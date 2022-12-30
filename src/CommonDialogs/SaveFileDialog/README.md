@@ -8,6 +8,10 @@ Shows how to create a SaveFileDialog dialog with wxFileDialog.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/SaveFileDialog.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

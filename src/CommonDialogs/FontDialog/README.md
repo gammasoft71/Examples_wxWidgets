@@ -8,6 +8,10 @@ Shows how to create a FontDialog dialog with wxFontDialog.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/FontDialog.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

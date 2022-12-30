@@ -8,6 +8,10 @@ Shows how to create a RearrangeDialog dialog with wxRearrangeDialog.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/RearangeDialog.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

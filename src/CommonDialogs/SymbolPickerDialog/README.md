@@ -8,6 +8,10 @@ Shows how to create a SymbolPickerDialog dialog with wxSymbolPickerDialog.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/SymbolPickerDialog.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

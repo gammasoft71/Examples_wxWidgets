@@ -8,6 +8,10 @@ Shows how to create a TextEntryDialog dialog with wxTextEntryDialog.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/TextEntryDialog.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:
