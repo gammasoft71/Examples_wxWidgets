@@ -10,7 +10,7 @@ Shows how to create a NumberEntryDialog dialog with wxNumberEntryDialog.
 
 ## Output
 
-![output](../../../docs/Pictures/NumericEntryDialog.png)
+![output](../../../docs/Pictures/NumberEntryDialog.png)
 
 ## Build and run
 
