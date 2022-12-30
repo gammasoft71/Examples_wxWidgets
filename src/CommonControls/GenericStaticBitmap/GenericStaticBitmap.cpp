@@ -27,6 +27,10 @@ namespace Examples {
       staticBitmap1->SetWindowStyle(wxBORDER_SIMPLE);
       staticBitmap1->SetBitmap(wxBitmap {Logo_xpm});
       panel->SetSizerAndFit(boxSizer);
+
+      Bind(wxEVT_SIZING, [&](wxSizeEvent& e) {
+        staticBitmap1->Refresh();
+      });
     }
     
   private:
