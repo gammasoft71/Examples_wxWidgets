@@ -6,7 +6,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "StaticText example") {
+    Frame() : wxFrame(nullptr, wxID_ANY, "BannerWindow example") {
       banner->SetText("Banner caption", "Banner message text");
       banner->SetForegroundColour({0, 0, 0});
     }
