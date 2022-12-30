@@ -8,6 +8,10 @@ Shows how to create a simple wxWidgets application and how to manage assert.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/ApplicationAndAssert.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

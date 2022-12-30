@@ -8,7 +8,7 @@ Shows how to create a simple wxWidgets application with wxApp.
 
 [CMakeLists.txt](CMakeLists.txt)
 
-# Output
+## Output
 
 ![output](../../../docs/Pictures/Application.png)
 

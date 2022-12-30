@@ -8,6 +8,10 @@ The classic first application "Hello World" with wxButton.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/HelloWorldSay.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

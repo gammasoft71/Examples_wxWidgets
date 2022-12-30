@@ -14,6 +14,10 @@ Shows how to create a simple wxWidgets application and icon with wxApp.
 
 [Resources/Gammasoft.png](Resources/Gammasoft.png)
 
+## Output
+
+![output](../../../docs/Pictures/ApplicationIcon.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

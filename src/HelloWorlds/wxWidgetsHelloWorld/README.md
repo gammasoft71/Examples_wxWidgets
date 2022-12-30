@@ -8,6 +8,10 @@ The classic first application HelloWorld presented as skeleton by wxWidgets.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/wxWidgetsHelloWorld.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

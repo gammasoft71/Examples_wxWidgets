@@ -8,6 +8,10 @@ The classic first application "Hello World" with GDI+drawing objects.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/HelloWorldPaint.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

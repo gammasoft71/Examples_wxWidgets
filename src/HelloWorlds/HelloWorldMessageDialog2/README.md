@@ -8,6 +8,10 @@ The classic first application "Hello World" with wxMessageDialog.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/HelloWorldMessageDialog2.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

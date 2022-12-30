@@ -8,6 +8,10 @@ Shows how to create a wxWidgets application and main method with wxApp.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/ApplicationAndMain.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:
