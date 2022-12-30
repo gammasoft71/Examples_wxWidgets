@@ -46,7 +46,6 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * [ListCtrl](src/CommonControls/ListCtrl/README.md) shows how to create a ListCtrl widget with wxListCtrl.
 * [RadioButton](src/CommonControls/RadioButton/README.md) shows how to create a RadioButton widget with wxRadioButton.
 * [RichTextCtrl](src/CommonControls/RichTextCtrl/README.md) shows how to create a RichTextBox widget with wxRichTextCtrl.
-* [RichToolTip](src/CommonControls/RichToolTip/README.md) shows how to create a RichToolTip widget with wxRichToolTip.
 * [ScrollBar](src/CommonControls/ScrollBar/README.md) shows how to create a ScrollBar widget with wxScrollBar.
 * [SearchCtrl](src/CommonControls/SearchCtrl/README.md) shows how to create a SearchCtrl widget with wxSearchCtrl.
 * [Slider](src/CommonControls/Slider/README.md) shows how to create a Slider widget with wxSlider.
@@ -118,6 +117,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 * [Config2](src/Components/Config2/README.md) shows how to create a simple Config component with wxConfig.
 * [Cursor](src/Components/Cursor/README.md) shows how to create a simple Cursor component with wxCursor.
 * [ImageList](src/Components/ImageList/README.md) shows how to create a simple ImageList component with wxImageList.
+* [RichToolTip](src/Components/RichToolTip/README.md) shows how to create a RichToolTip widget with wxRichToolTip.
 * [Timer](src/Components/Timer/README.md) shows how to create a simple Timer component with wxTimer.
 * [ToolTip](src/Components/ToolTip/README.md) shows how to create a ToolTip component.
 
