@@ -8,6 +8,10 @@ Shows how to create a NumericTextCtrl widget with wxTextCtrl.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/NumericTextBox.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

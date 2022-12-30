@@ -10,6 +10,10 @@ Shows how to create a DomainSpinCtrl widget with own [wxDomainSpinCtrl](wxDomain
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/DomainSpinCtrl.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:
