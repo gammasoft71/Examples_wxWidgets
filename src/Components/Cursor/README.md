@@ -8,6 +8,10 @@ Shows how to create a Cursor component with wxCursor.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/Cursor.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

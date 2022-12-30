@@ -8,6 +8,10 @@ Shows how to create a BusyCursor component with wxBusyCursor.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/BusyCursor.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

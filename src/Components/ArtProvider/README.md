@@ -8,6 +8,10 @@ Shows how to create an ArtProvider component with wxArtProvider.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/ArtProvider.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:
