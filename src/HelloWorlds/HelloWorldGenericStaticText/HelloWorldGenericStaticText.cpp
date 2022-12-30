@@ -7,6 +7,9 @@ namespace Examples {
     Frame() : wxFrame(nullptr, wxID_ANY, "Hello world (Generic static text)") {
       staticText1->SetFont({32, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_BOLD});
       staticText1->SetForegroundColour(wxTheColourDatabase->Find("Forest Green"));
+      Bind(wxEVT_SIZING, [&](wxSizeEvent& e) {
+        staticText1->Refresh();
+      });
     }
     
   private:
