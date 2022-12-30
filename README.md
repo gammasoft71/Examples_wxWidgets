@@ -123,7 +123,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## [Common Dialogs](./src/CommonDialogs)
 
-* [ColorDialog](src/CommonDialogs/ColorDialog/README.md) shows how to create a ColorDialog with wxColourDialog.
+* [ColourDialog](src/CommonDialogs/ColourDialog/README.md) shows how to create a ColourDialog with wxColourDialog.
 * [DirDialog](src/CommonDialogs/DirDialog/README.md) shows how to create a DirDialog with wxDirDialog.
 * [FontDialog](src/CommonDialogs/FontDialog/README.md) shows how to create a FontDialog with wxFontDialog.
 * [MultiChoiceDialog](src/CommonDialogs/MultiChoiceDialog/README.md) shows how to create a MultiChoiceDialog with wxMultiChoiceDialog.
