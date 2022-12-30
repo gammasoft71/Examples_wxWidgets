@@ -1,3 +1,4 @@
+#undef NDEBUG
 #include <wx/wx.h>
 #include <wx/display.h>
 #include <wx/log.h>
