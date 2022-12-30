@@ -12,21 +12,25 @@ namespace Examples {
       buttonProcess->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         wxGenericProgressDialog progressDialog("Process running", "Please wait...", 100, this, wxPD_APP_MODAL|wxPD_AUTO_HIDE|wxPD_CAN_SKIP|wxPD_REMAINING_TIME);
         progressDialog.Hide();
-        progressDialog.ShowWindowModal();
+        Enable(false);
+        progressDialog.Show();
         for (auto step = 1; step <= progressDialog.GetRange(); ++step) {
           progressDialog.Update(step, wxString::Format("Step %d/%d ==> %s", progressDialog.GetValue(), progressDialog.GetRange(), progressDialog.WasSkipped() ? "skipped" : "done"));
           this_thread::sleep_for(100ms);
         }
+        Enable(true);
       });
 
       buttonIndeterminateProcess->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         wxProgressDialog progressDialog("Indeterminate process running", "Click \"Cancel\" to abort", 10, this, wxPD_APP_MODAL|wxPD_CAN_ABORT|wxPD_ELAPSED_TIME);
         progressDialog.Hide();
-        progressDialog.ShowWindowModal();
+        Enable(false);
+        progressDialog.Show();
         while(!progressDialog.WasCancelled()) {
           progressDialog.Pulse();
           this_thread::sleep_for(100ms);
         }
+        Enable(true);
       });
     }
 
