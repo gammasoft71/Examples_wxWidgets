@@ -8,6 +8,10 @@ Shows how to create a Control widget with wxControl.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/Control.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

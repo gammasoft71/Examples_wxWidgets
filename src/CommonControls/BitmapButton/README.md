@@ -12,6 +12,10 @@ Shows how to create a BitmapButton widget with wxBitmapButton.
 
 [gammasoft_64x64.xpm](gammasoft_64x64.xpm)
 
+## Output
+
+![output](../../../docs/Pictures/BitmapButton.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

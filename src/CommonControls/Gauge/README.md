@@ -8,6 +8,10 @@ Shows how to create a Gauge widget with wxGauge.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/Gauge.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

@@ -8,6 +8,10 @@ Shows how to create a GenericStaticBitmap widget with wxGenericStaticBitmap.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/GebericStaticBitmap.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

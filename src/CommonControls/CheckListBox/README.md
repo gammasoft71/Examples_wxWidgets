@@ -8,6 +8,10 @@ Shows how to create a CheckListBox widget with wxCheckListBox.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/CheckListBox.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

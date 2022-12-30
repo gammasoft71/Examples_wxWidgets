@@ -10,6 +10,10 @@ Shows how to create a StaticBitmap widget with wxStaticBitmap.
 
 [Resources/Logo.png](Resources/Logo.png)
 
+## Output
+
+![output](../../../docs/Pictures/StaticBitmap2.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

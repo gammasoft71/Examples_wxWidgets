@@ -8,6 +8,10 @@ Shows how to create a WebView widget with wxWebView.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/WebView.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

@@ -8,6 +8,10 @@ Shows how to create a RichToolTip widget with wxRichToolTip.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/RichToolTip.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

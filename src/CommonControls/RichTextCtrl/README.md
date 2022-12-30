@@ -8,6 +8,10 @@ Shows how to create a RichTextCtrl widget with wxRichTextCtrl.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/RichTextCtrl.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

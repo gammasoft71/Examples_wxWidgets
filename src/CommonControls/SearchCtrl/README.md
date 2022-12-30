@@ -8,6 +8,10 @@ Shows how to create a SearchCtrl widget with wxSearchCtrl.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/SearchCtrl.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

@@ -8,6 +8,10 @@ Shows how to create a TreeCtrl widget with wxTreeCtrl.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/TreeCtrl.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

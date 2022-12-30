@@ -8,6 +8,10 @@ Shows how to create a HyperlinkCtrl widget with wxHyperlinkCtrl.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/HyperlinkCtrl.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

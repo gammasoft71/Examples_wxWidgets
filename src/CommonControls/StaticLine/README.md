@@ -8,6 +8,10 @@ Shows how to create a StaticLine widget with wxStaticLine.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/StaticLine.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

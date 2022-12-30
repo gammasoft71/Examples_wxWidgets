@@ -8,6 +8,10 @@ Shows how to create a TaskBarIcon widget with wxTaskBarIcon.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/TaskBarIcon.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

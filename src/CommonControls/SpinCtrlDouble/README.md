@@ -8,6 +8,10 @@ Shows how to create a SpinCtrlDouble widget with wxSpinCtrlDouble.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/SpinCtrlDouble.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

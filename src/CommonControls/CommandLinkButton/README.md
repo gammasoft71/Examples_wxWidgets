@@ -8,6 +8,10 @@ Shows how to create a CommandLinkButton widget with wxCommandLinkButton.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/CommandLinkButton.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

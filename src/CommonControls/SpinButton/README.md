@@ -8,6 +8,10 @@ Shows how to create a SpinButton widget with wxSpinButton.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/SpinButton.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

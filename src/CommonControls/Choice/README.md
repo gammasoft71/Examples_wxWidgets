@@ -8,6 +8,10 @@ Shows how to create a Choice widget with wxChoice.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/Choice.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

@@ -8,6 +8,10 @@ Shows how to create a ScrollBar widget with wxScrollBar.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/ScrollBar.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

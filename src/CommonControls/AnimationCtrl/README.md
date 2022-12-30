@@ -10,6 +10,10 @@ Shows how to create a AnimationCtrl widget with wxAnimationCtrl.
 
 [Resources/load.gif](Resources/load.gif)
 
+## Output
+
+![output](../../../docs/Pictures/AnimationCtrl.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:
