@@ -3,7 +3,7 @@
 namespace Examples {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Statusbar without panels example") {
+    Frame() : wxFrame(nullptr, wxID_ANY, "StatusBar without panels example") {
       SetBackgroundColour({0xFF, 0xFF, 0xFF, 0x10});
       SetStatusBar(statusBar);
       Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent& e) {
