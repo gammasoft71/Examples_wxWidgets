@@ -33,7 +33,7 @@ namespace Examples {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "TaskBarIcon example") {
-      taskBarIcon.SetIcon({GammasoftIcon});
+      taskBarIcon.SetIcon(wxBitmap {GammasoftIcon});
       taskBarIcon.Bind(wxEVT_TASKBAR_LEFT_DCLICK, [&](wxTaskBarIconEvent& event) {
         Show(!IsShown());
       });
