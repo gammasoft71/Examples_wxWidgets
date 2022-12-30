@@ -8,6 +8,10 @@ Shows how to create a Listbook widget with wxListbook.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/Listbook.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

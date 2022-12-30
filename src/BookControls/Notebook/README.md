@@ -8,6 +8,10 @@ Shows how to create a Notebook widget with wxNotebook.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/Notebook.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

@@ -8,6 +8,10 @@ Shows how to create a Treebook widget with wxTreebook.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/Treebook.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:
