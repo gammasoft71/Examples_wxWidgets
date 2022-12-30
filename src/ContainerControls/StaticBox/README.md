@@ -8,6 +8,10 @@ Shows how to create a StaticBox widget with wxStaticBox.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/StaticBox.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

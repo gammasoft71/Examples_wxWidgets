@@ -8,6 +8,10 @@ Shows how to create a StaticBoxSizerVertical widget with wxStaticBoxSizer.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/StaticBoxSizerVertical.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

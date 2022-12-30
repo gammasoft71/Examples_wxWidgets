@@ -8,6 +8,10 @@ Shows how to create a Panel widget with wxPanel.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/Panel.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:
