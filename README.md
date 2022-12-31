@@ -20,7 +20,7 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 * [Events](src/Events/README.md) contains events examples.
 * [Painting](src/Painting/README.md) contains painting examples.
 * [Window Docking](src/WindowDocking/README.md) contains windows docking examples.
-* [OpenGL](src/OpenGL/README.md) contains openGL examples.
+* [OpenGL](src/OpenGL/README.md) contains OpenGL examples.
 * [User controls](src/UserControls/README.md) contains user controls examples.
 * [User Dialogs](src/UserDialogs/README.md) contains user dialogs examples.
 * [Others](src/Others/README.md) contains others examples.
