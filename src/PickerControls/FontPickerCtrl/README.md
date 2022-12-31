@@ -8,6 +8,10 @@ Shows how to create a FontPickerCtrl widget with wxFontPickerCtrl.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/FontPickerCtrl.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

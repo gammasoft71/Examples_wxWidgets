@@ -8,6 +8,10 @@ Shows how to create a ColourPickerCtrl widget with wxColourPickerCtrl.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/ColourPickerCtrl.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

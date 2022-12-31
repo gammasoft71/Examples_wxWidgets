@@ -8,6 +8,10 @@ Shows how to create a TimePickerCtrl widget with wxTimePickerCtrl.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/TimePickerCtrl.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

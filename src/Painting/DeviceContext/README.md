@@ -8,6 +8,10 @@ Shows how to create a form and catch paint event.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/DeviceContext.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

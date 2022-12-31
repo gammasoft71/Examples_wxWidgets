@@ -8,6 +8,10 @@ Shows how to create a DatePickerCtrl widget with wxDatePickerCtrl.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/DatePickerCtrl.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:
