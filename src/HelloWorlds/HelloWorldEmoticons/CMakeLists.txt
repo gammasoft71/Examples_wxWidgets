@@ -6,7 +6,7 @@ project(HelloWorldEmoticons)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES HelloWorldEmoticons.cpp)
+set(SOURCES README.md HelloWorldEmoticons.cpp)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)

@@ -6,7 +6,7 @@ project(HelloWorldGenericStaticText)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES HelloWorldGenericStaticText.cpp)
+set(SOURCES README.md HelloWorldGenericStaticText.cpp)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)

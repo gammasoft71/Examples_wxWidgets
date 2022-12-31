@@ -6,7 +6,7 @@ project(ApplicationAndMain)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES ApplicationAndMain.cpp)
+set(SOURCES README.md ApplicationAndMain.cpp)
 
 # Options
 if (MSVC)

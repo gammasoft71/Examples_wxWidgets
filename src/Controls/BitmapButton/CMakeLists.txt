@@ -6,7 +6,7 @@ project(BitmapButton)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES BitmapButton.cpp gammasoft_16x16.xpm gammasoft_64x64.xpm)
+set(SOURCES README.md BitmapButton.cpp gammasoft_16x16.xpm gammasoft_64x64.xpm)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)

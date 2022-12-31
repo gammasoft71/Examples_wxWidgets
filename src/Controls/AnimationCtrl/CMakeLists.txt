@@ -6,7 +6,7 @@ project(AnimationCtrl)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES AnimationCtrl.cpp)
+set(SOURCES README.md AnimationCtrl.cpp)
 
 # Resources
 set(RESOURCES Resources/load.gif)

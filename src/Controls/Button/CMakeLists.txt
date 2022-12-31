@@ -6,7 +6,7 @@ project(Button)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES Button.cpp)
+set(SOURCES README.md Button.cpp)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)

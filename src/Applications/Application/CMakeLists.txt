@@ -6,7 +6,7 @@ project(Application)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES Application.cpp)
+set(SOURCES README.md Application.cpp)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)

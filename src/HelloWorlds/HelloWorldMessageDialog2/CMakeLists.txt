@@ -6,7 +6,7 @@ project(HelloWorldMessageDialog2)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES HelloWorldMessageDialog2.cpp)
+set(SOURCES README.md HelloWorldMessageDialog2.cpp)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)

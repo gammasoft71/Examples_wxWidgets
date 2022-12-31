@@ -6,11 +6,11 @@ project(ApplicationIcon)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES ApplicationIcon.cpp)
+set(SOURCES README.md ApplicationIcon.cpp)
 
 # Resources
 if (MSVC)
-  set(SOURCES ${SOURCES} ${CMAKE_CURRENT_BINARY_DIR}/resources/${PROJECT_NAME}.rc)
+  set(SOURCES README.md ${SOURCES} ${CMAKE_CURRENT_BINARY_DIR}/resources/${PROJECT_NAME}.rc)
   set(RESOURCES Resources/Gammasoft.ico)
   get_filename_component(ABSOLUTE_PATH_FILE_ICON "${CMAKE_CURRENT_SOURCE_DIR}/Resources/Gammasoft.ico" REALPATH BASE_DIR "${CMAKE_CURRENT_SOURCE_DIR}")
   string(REPLACE "/" "\\\\" ABSOLUTE_PATH_FILE_ICON ${ABSOLUTE_PATH_FILE_ICON})

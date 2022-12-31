@@ -6,7 +6,7 @@ project(CalendarCtrl)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES CalendarCtrl.cpp)
+set(SOURCES README.md CalendarCtrl.cpp)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)

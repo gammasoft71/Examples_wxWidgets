@@ -6,7 +6,7 @@ project(CommandLinkButton)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES CommandLinkButton.cpp)
+set(SOURCES README.md CommandLinkButton.cpp)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)

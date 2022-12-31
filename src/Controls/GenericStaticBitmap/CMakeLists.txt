@@ -6,7 +6,7 @@ project(GenericStaticBitmap)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES GenericStaticBitmap.cpp Logo.xpm)
+set(SOURCES README.md GenericStaticBitmap.cpp Logo.xpm)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)

@@ -6,7 +6,7 @@ project(Gauge)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES Gauge.cpp)
+set(SOURCES README.md Gauge.cpp)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)

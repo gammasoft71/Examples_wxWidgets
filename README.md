@@ -6,26 +6,24 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## wxWidgets
 
-* [Hello World](src/HelloWorlds) contains wxWidgets "Hello, World!" examples.
-* [Applications](src/Applications) contains applications examples.
-* [Dialogs](src/Dialogs) contains dialogs examples.
-* [Frames](src/Frames) contains frames examples.
-* [Menus and toolbars](src/MenusAndToolbars) contains menus and toolbars examples.
-* [Containers](src/Containers) contains containers examples.
-* [Controls](src/Controls) contains common controls examples.
-* [Book Controls](src/BookControls) contains book controls examples.
-* [Picker Controls](src/PickerControls) contains picker controls examples.
-* [Components](src/Components) contains components examples.
-* [Printing](src/Printing) contains printing examples.
-* [Events](src/Events) contains events examples.
-* [Painting](src/Painting) contains painting examples.
-* [Window Docking](src/WindowDocking) contains windows docking examples.
-* [OpenGL](src/OpenGL) contains openGL examples.
-* [User controls](src/UserControls) contains user controls examples.
-* [User Dialogs](src/UserDialogs) contains user dialogs examples.
-* [Others](src/Others) contains others examples.
-
-
+* [Hello World](src/HelloWorlds/README.md) contains wxWidgets "Hello, World!" examples.
+* [Applications](src/Applications/README.md) contains applications examples.
+* [Dialogs](src/Dialogs/README.md) contains dialogs examples.
+* [Frames](src/Frames/README.md) contains frames examples.
+* [Menus and toolbars](src/MenusAndToolbars/README.md) contains menus and toolbars examples.
+* [Containers](src/Containers/README.md) contains containers examples.
+* [Controls](src/Controls/README.md) contains common controls examples.
+* [Book Controls](src/BookControls/README.md) contains book controls examples.
+* [Picker Controls](src/PickerControls/README.md) contains picker controls examples.
+* [Components](src/Components/README.md) contains components examples.
+* [Printing](src/Printing/README.md) contains printing examples.
+* [Events](src/Events/README.md) contains events examples.
+* [Painting](src/Painting/README.md) contains painting examples.
+* [Window Docking](src/WindowDocking/README.md) contains windows docking examples.
+* [OpenGL](src/OpenGL/README.md) contains openGL examples.
+* [User controls](src/UserControls/README.md) contains user controls examples.
+* [User Dialogs](src/UserDialogs/README.md) contains user dialogs examples.
+* [Others](src/Others/README.md) contains others examples.
 * [All](src/README.md) contains all examples.
 
 ## Download

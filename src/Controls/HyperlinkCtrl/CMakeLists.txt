@@ -6,7 +6,7 @@ project(HyperlinkCtrl)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES HyperlinkCtrl.cpp)
+set(SOURCES README.md HyperlinkCtrl.cpp)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)

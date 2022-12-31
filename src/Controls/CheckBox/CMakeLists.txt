@@ -6,7 +6,7 @@ project(CheckBox)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES CheckBox.cpp)
+set(SOURCES README.md CheckBox.cpp)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)

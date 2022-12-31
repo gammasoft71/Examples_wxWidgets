@@ -5,7 +5,7 @@ project(wxWidgetsHelloWorld)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES wxWidgetsHelloWorld.cpp)
+set(SOURCES README.md wxWidgetsHelloWorld.cpp)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)

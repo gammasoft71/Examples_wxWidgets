@@ -9,7 +9,7 @@ include_directories(${OPENGL_INCLUDE_DIR})
 find_package(wxWidgets 3.2 REQUIRED COMPONENTS base core gl)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES Dice.cpp)
+set(SOURCES README.md Dice.cpp)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)

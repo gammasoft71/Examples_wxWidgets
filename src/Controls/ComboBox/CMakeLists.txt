@@ -6,7 +6,7 @@ project(ComboBox)
 find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
-set(SOURCES ComboBox.cpp)
+set(SOURCES README.md ComboBox.cpp)
 
 # Options
 set(CMAKE_CXX_STANDARD 17)
