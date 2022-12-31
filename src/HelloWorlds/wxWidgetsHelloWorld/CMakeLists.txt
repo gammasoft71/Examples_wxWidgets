@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 project(wxWidgetsHelloWorld)
 
 
-find_package(wxWidgets 3.1.4 REQUIRED)
+find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
 set(SOURCES wxWidgetsHelloWorld.cpp)

@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 # Project
 project(Colors)
 
-find_package(wxWidgets 3.1.4 REQUIRED)
+find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 
 set(SOURCES Colors.cpp)
