@@ -1,8 +1,8 @@
 # wxWidgets Examples
 
-Shows how to use wxWidgets controls only by programming code (c++17).
+Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by programming code (c++17).
 
-[![wxwidgets](docs/Pictures/wxwidgets_header.png)](https://gammasoft71.wixsite.com/gammasoft/wxwidgets)
+[![wxwidgets](docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
 
 ## wxWidgets
 
