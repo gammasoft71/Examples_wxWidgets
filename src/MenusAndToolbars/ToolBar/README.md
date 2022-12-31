@@ -8,6 +8,10 @@ Shows how to create a ToolBar widget with wxToolBar.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/ToolBar.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

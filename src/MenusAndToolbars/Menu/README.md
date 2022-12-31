@@ -8,6 +8,10 @@ Shows how to create a Menu widget with wxMenu.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/Menu.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:
