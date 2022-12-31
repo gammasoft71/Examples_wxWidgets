@@ -6,26 +6,27 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 ## wxWidgets
 
-* [Hello World](src/HelloWorlds)
-* [Applications](src/Applications)
-* [Dialogs](src/Dialogs)
-* [Frames](src/Frames)
-* [Menus and toolbars](src/MenusAndToolbars)
-* [Containers](src/Containers)
-* [Controls](src/Controls)
-* [Book Controls](src/BookControls)
-* [Picker Controls](src/PickerControls)
-* [Components](src/Components)
-* [Printing](src/Printing)
-* [Events](src/Events)
-* [Painting](src/Painting)
-* [Window Docking](src/WindowDocking)
-* [OpenGL](src/OpenGL)
-* [User controls](src/UserControls)
-* [User Dialogs](src/UserDialogs)
-* [Others](src/Others)
+* [Hello World](src/HelloWorlds) contains wxWidgets "Hello, World!" examples.
+* [Applications](src/Applications) contains applications examples.
+* [Dialogs](src/Dialogs) contains dialogs examples.
+* [Frames](src/Frames) contains frames examples.
+* [Menus and toolbars](src/MenusAndToolbars) contains menus and toolbars examples.
+* [Containers](src/Containers) contains containers examples.
+* [Controls](src/Controls) contains common controls examples.
+* [Book Controls](src/BookControls) contains book controls examples.
+* [Picker Controls](src/PickerControls) contains picker controls examples.
+* [Components](src/Components) contains components examples.
+* [Printing](src/Printing) contains printing examples.
+* [Events](src/Events) contains events examples.
+* [Painting](src/Painting) contains painting examples.
+* [Window Docking](src/WindowDocking) contains windows docking examples.
+* [OpenGL](src/OpenGL) contains openGL examples.
+* [User controls](src/UserControls) contains user controls examples.
+* [User Dialogs](src/UserDialogs) contains user dialogs examples.
+* [Others](src/Others) contains others examples.
 
-* [All](src/README.md)
+
+* [All](src/README.md) contains all examples.
 
 ## Download
 
