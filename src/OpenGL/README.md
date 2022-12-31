@@ -2,4 +2,4 @@
 
 [This folder](.) contains OpenGL examples.
 
-* [Dice](OpenGL/Dice/README.md) shows how to create a wxGLCanvas and wxGLContext.
+* [Dice](Dice/README.md) shows how to create a wxGLCanvas and wxGLContext.
