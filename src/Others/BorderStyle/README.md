@@ -1,10 +1,10 @@
-# StaticText
+# BorderStyle
 
-Shows how to create a StaticText widget with StaticText.
+Demonstrates how to set border style with wxStyle argument.
 
 ## Source
 
-[StaticText.cpp](StaticText.cpp)
+[BorderStyle.cpp](BorderStyle.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -17,30 +17,30 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start StaticText.sln
+start BorderStyle.sln
 ```
 
-Select StaticText project and type Ctrl+F5 to build and run it.
+Select BorderStyle project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./StaticText.xcodeproj
+open ./BorderStyle.xcodeproj
 ```
 
-Select StaticText project and type Cmd+R to build and run it.
+Select BorderStyle project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./StaticText.cbp > /dev/null 2>&1
+xdg-open ./BorderStyle.cbp > /dev/null 2>&1
 ```
 
-Select StaticText project and type F9 to build and run it.
+Select BorderStyle project and type F9 to build and run it.
 
 ### Linux :
 
