@@ -8,6 +8,10 @@ Shows how to create a Frame and catch mouse events.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/MouseEvents.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

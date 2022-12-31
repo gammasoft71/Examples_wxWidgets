@@ -8,6 +8,10 @@ shows how to create a CustomEvent event with wxCommandEvent.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/CustomEvent.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:
