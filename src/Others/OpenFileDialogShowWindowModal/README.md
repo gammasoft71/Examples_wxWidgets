@@ -1,10 +1,10 @@
-# Line
+# OpenFileDialogShowWindowModal
 
-Shows how to create a Line widget with wxPanel.
+Shows how to create a OpenFileDialogShowWindowModal dialog with wxFileDialog using ShowWindowModal method.
 
 ## Source
 
-[Line.cpp](Line.cpp)
+[OpenFileDialogShowWindowModal.cpp](OpenFileDialogShowWindowModal.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
@@ -17,7 +17,7 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake .. 
-start Line.sln
+start OpenFileDialogShowWindowModal.sln
 ```
 
 Select Line project and type Ctrl+F5 to build and run it.
@@ -27,7 +27,7 @@ Select Line project and type Ctrl+F5 to build and run it.
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./Line.xcodeproj
+open ./OpenFileDialogShowWindowModal.xcodeproj
 ```
 
 Select Line project and type Cmd+R to build and run it.
@@ -37,7 +37,7 @@ Select Line project and type Cmd+R to build and run it.
 ``` shell
 mkdir build && cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./Line.cbp > /dev/null 2>&1
+xdg-open ./OpenFileDialogShowWindowModal.cbp > /dev/null 2>&1
 ```
 
 Select Line project and type F9 to build and run it.
