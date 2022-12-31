@@ -10,7 +10,7 @@ Shows how to create a password TextEntryDialog dialog with wxTextEntryDialog.
 
 ## Output
 
-![output](../../../docs/Pictures/TextEntryDialogAsPassword.png)
+![output](../../../docs/Pictures/TextEntryDialogPassword.png)
 
 ## Build and run
 

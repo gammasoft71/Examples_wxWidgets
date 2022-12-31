@@ -10,7 +10,7 @@ Shows how to create a MessageDialog dialog with wxMessageDialog using ShowWindow
 
 ## Output
 
-![output](../../../docs/Pictures/MessageDialogShowWindowMadal.png)
+![output](../../../docs/Pictures/MessageDialogShowWindowModal.png)
 
 ## Build and run
 

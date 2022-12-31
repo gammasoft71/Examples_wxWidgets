@@ -10,7 +10,7 @@ Shows how to create a OpenFileDialogShowWindowModal dialog with wxFileDialog usi
 
 ## Output
 
-![output](../../../docs/Pictures/OpenFileDialodShowWindowModal.png)
+![output](../../../docs/Pictures/OpenFileDialogShowWindowModal.png)
 
 ## Build and run
 

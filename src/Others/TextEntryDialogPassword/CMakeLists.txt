@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(TextEntryDialogAsPassword)
+project(TextEntryDialogPassword)
 
 
 find_package(wxWidgets 3.1.4 REQUIRED)
@@ -9,5 +9,5 @@ link_libraries(${wxWidgets_LIBRARIES})
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE TextEntryDialogAsPassword.cpp)
+add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE TextEntryDialogPassword.cpp)
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "Others")
