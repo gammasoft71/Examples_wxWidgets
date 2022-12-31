@@ -178,6 +178,7 @@ Shows how to use wxWidgets controls only by programming code (c++17).
 
 * [AutoScroll](src/Others/AutoScroll/README.md) shows how to create an auto scroll widget with wxPanel.
 * [BitmapButtonWithLabel](src/Others/BitmapButtonWithLabel/README.md) shows how to create a Button with Bitmap and Label widget with wxButton.
+* [BorderStyle](src/Others/BorderStyle/README.md) demonstrates how to set border style with wxStyle argument.
 * [BoxedPanel](src/Others/BoxedPanel/README.md) shows how to create boxed panels with wxPanel and wxBoxSizer.
 * [ColoredFrames](src/Others/ColoredFrames/README.md) shows how to create colored background forms.
 * [Colors](src/Others/Colors/README.md) demonstrates the use of wxControl widget with wxColour..
