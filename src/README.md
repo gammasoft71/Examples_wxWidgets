@@ -109,7 +109,6 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 
 ## [Book Controls](BookControls)
 
-* [AuiNotebook](WindowDocking/AuiNotebook/README.md) shows how to create a AuiNotebook widget with AuiNotebook.
 * [Choicebook](BookControls/Choicebook/README.md) shows how to create a Choicebook widget with wxChoiceBook.
 * [Listbook](BookControls/Listbook/README.md) shows how to create a Listbook widget with wxListBook.
 * [Notebook](BookControls/Notebook/README.md) shows how to create a Notebook widget with wxNoteBook.
