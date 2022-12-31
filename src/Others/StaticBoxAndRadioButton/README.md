@@ -8,6 +8,10 @@ Shows how to use wxStaticBox and wxRadioButton.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/StaticBoxAndRadioButton.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

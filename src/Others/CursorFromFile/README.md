@@ -8,6 +8,10 @@ Shows how to create Cursor from cur or ani file with wxCursor.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/CursorFromFile.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

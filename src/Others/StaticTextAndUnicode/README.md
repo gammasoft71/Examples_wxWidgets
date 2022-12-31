@@ -8,6 +8,10 @@ Demonstrates the use of wxStaticText widget and Unicode text.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/StaticTextAndUnicode.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

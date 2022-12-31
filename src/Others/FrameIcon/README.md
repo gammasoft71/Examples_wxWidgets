@@ -8,6 +8,10 @@ Shows how to assign an icon to frame.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/FrameIcon.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

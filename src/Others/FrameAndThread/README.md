@@ -8,6 +8,10 @@ Shows how to dialog with a frame widget from a thread.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/FrameAndThread.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

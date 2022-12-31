@@ -8,6 +8,10 @@ Shows how to create a SaveFileDialogShowWindowModal dialog with wxFileDialog usi
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/SaveFileDialogShowWindowModal.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

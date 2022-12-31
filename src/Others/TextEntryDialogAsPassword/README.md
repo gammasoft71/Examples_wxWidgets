@@ -8,6 +8,10 @@ Shows how to create a password TextEntryDialog dialog with wxTextEntryDialog.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/TextEntryDialogAsPassword.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

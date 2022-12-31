@@ -8,6 +8,10 @@ Shows how to use wxStaticBox and wxCheckBox.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/StaticBoxAndCheckBox.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

@@ -8,6 +8,10 @@ shows how to create a MDI (Multiple Document Interface) frame.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/MdiFrame.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

@@ -8,6 +8,10 @@ Shows how to display a frame in different ways.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/FrameShow.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

@@ -8,6 +8,10 @@ shows how to create boxed panels with wxPanel and wxBoxSizer.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/BoxedPanel.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

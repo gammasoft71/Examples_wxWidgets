@@ -8,6 +8,10 @@ Shows how to dialog with a frame widget from a thread with CallAfter method.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/FrameAndThreadWithCallAfter.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

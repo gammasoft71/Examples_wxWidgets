@@ -8,6 +8,10 @@ shows how to create colored background forms.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/ColoredFrames.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

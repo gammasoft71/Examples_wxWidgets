@@ -8,6 +8,10 @@ Shows how to create a DirDialogWindowModal with wxDirDialog.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/DirDialogShowWindowModal.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

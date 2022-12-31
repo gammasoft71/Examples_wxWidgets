@@ -8,6 +8,10 @@ Demonstrates how to set border style with wxStyle argument.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/BorderStyle.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

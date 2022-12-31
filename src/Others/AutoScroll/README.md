@@ -8,6 +8,10 @@ Shows how to create an auto scroll widget with wxPanel.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/AutoScroll.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

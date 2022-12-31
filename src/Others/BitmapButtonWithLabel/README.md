@@ -8,6 +8,10 @@ Shows how to create a Button with Bitmap and Label widget with wxButton.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/BitmapButtonWithLabel.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

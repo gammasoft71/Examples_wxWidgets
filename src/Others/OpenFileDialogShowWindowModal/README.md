@@ -8,6 +8,10 @@ Shows how to create a OpenFileDialogShowWindowModal dialog with wxFileDialog usi
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/OpenFileDialodShowWindowModal.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:

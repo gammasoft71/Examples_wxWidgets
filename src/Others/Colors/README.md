@@ -8,6 +8,10 @@ demonstrates the use of wxControl widget with wxColour.
 
 [CMakeLists.txt](CMakeLists.txt)
 
+## Output
+
+![output](../../../docs/Pictures/Colors.png)
+
 ## Build and run
 
 To build this project, open "Terminal" and type following lines:
