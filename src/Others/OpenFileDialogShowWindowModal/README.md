@@ -20,7 +20,7 @@ cmake ..
 start OpenFileDialogShowWindowModal.sln
 ```
 
-Select Line project and type Ctrl+F5 to build and run it.
+Select OpenFileDialogShowWindowModal project and type Ctrl+F5 to build and run it.
 
 ### macOS :
 
@@ -30,7 +30,7 @@ cmake .. -G "Xcode"
 open ./OpenFileDialogShowWindowModal.xcodeproj
 ```
 
-Select Line project and type Cmd+R to build and run it.
+Select OpenFileDialogShowWindowModal project and type Cmd+R to build and run it.
 
 ### Linux with Code::Blocks :
 
@@ -40,7 +40,7 @@ cmake .. -G "CodeBlocks - Unix Makefiles"
 xdg-open ./OpenFileDialogShowWindowModal.cbp > /dev/null 2>&1
 ```
 
-Select Line project and type F9 to build and run it.
+Select OpenFileDialogShowWindowModal project and type F9 to build and run it.
 
 ### Linux :
 
