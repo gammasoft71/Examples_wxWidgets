@@ -3,7 +3,7 @@
 namespace Examples {
   class Frame : public wxFrame {
     enum wxOwnedID {
-      ID_Hello = 2
+      ID_Hello = 1
     };
 
   public:
@@ -15,21 +15,31 @@ namespace Examples {
       
       auto menuHelp = new wxMenu();
       menuHelp->Append(wxID_ABOUT);
-      auto menuBar = new wxMenuBar();
       
+      auto menuBar = new wxMenuBar();
       menuBar->Append(menuFile, "&File");
       menuBar->Append(menuHelp, "&Help");
       SetMenuBar(menuBar);
       
       CreateStatusBar();
       SetStatusText("Welcome to wxWidgets!");
-      
-      menuBar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
-        if (event.GetId() == ID_Hello) wxLogMessage("Hello world from wxWidgets!");
-        else if (event.GetId() == wxID_ABOUT) wxMessageBox("This is a wxWidgets Hello World example", "About Hello World", wxOK|wxICON_INFORMATION);
-        else if (event.GetId() == wxID_EXIT) Close(true);
-        else event.Skip();
-      });
+
+      Bind(wxEVT_MENU, &Frame::OnHello, this, ID_Hello);
+      Bind(wxEVT_MENU, &Frame::OnAbout, this, wxID_ABOUT);
+      Bind(wxEVT_MENU, &Frame::OnExit, this, wxID_EXIT);
+    }
+    
+  private:
+    void OnExit(wxCommandEvent& event) {
+      Close(true);
+    }
+    
+    void OnAbout(wxCommandEvent& event) {
+      wxMessageBox("This is a wxWidgets Hello World example", "About Hello World", wxOK | wxICON_INFORMATION);
+    }
+    
+    void OnHello(wxCommandEvent& event) {
+      wxLogMessage("Hello world from wxWidgets!");
     }
   };
 
