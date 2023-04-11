@@ -1,6 +1,6 @@
 #include <wx/wx.h>
 
-namespace Examples {
+namespace BoxedPanelExample {
   class Window : public wxFrame {
   public:
     Window() : wxFrame(nullptr, wxID_ANY, "Boxed example") {
@@ -50,4 +50,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(BoxedPanelExample::Application);

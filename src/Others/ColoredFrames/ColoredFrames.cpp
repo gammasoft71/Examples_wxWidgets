@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace Examples {
+namespace ColoredFramesExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Main Window", {wxSystemSettings::GetMetric(wxSYS_SCREEN_X) - 420, 40}) {
@@ -37,4 +37,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ColoredFramesExample::Application);

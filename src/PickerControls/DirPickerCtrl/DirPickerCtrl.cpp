@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/filepicker.h>
 
-namespace Examples {
+namespace DirPickerCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "DirPickerCtrl example") {
@@ -24,4 +24,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(DirPickerCtrlExample::Application);

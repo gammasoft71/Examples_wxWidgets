@@ -29,7 +29,7 @@ public:
 };
 #endif
 
-namespace Examples {
+namespace FilePickerCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "FilePickerCtrl example") {
@@ -53,4 +53,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(FilePickerCtrlExample::Application);

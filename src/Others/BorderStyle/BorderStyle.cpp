@@ -4,7 +4,7 @@
 #include <wx/stattext.h>
 #include <wx/generic/stattextg.h>
 
-namespace Examples {
+namespace BorderStyleExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Border style example") {
@@ -29,4 +29,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(BorderStyleExample::Application);

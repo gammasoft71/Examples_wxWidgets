@@ -2,26 +2,7 @@
 #include <wx/artprov.h>
 #include <map>
 
-namespace Examples {
-  enum wxOwnedID {
-    ID_OPENRECENTFILE1 = 2,
-    ID_OPENRECENTFILE2,
-    ID_OPENRECENTFILE3,
-    ID_OPENRECENTFILE4,
-    ID_OPENRECENTFILE5,
-    ID_SHOW,
-    ID_HIDE,
-    ID_OPTIONA,
-    ID_OPTIONB,
-    ID_OPTIONC,
-    ID_OPTIOND,
-    ID_OPTIONE,
-    ID_OPTIONF,
-    ID_OPTIONG,
-    ID_OPTIONH,
-    ID_OPTIONI,
-  };
-
+namespace MainMenuExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "MainMenu example") {
@@ -124,6 +105,23 @@ namespace Examples {
   private:
     wxListBox* listBox1 = new wxListBox(this, wxID_ANY);
     wxMenuBar* mainMenu = new wxMenuBar();
+    
+    inline static const int ID_OPENRECENTFILE1 = 1;
+    inline static const int ID_OPENRECENTFILE2 = 2;
+    inline static const int ID_OPENRECENTFILE3 = 3;
+    inline static const int ID_OPENRECENTFILE4 = 4;
+    inline static const int ID_OPENRECENTFILE5 = 5;
+    inline static const int ID_SHOW = 6;
+    inline static const int ID_HIDE = 7;
+    inline static const int ID_OPTIONA = 8;
+    inline static const int ID_OPTIONB = 9;
+    inline static const int ID_OPTIONC = 10;
+    inline static const int ID_OPTIOND = 11;
+    inline static const int ID_OPTIONE = 12;
+    inline static const int ID_OPTIONF = 13;
+    inline static const int ID_OPTIONG = 14;
+    inline static const int ID_OPTIONH = 15;
+    inline static const int ID_OPTIONI = 16;
   };
 
   class Application : public wxApp {
@@ -134,4 +132,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(MainMenuExample::Application);

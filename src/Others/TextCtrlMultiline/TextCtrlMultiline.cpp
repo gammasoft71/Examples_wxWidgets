@@ -3,7 +3,7 @@
 #include <wx/sizer.h>
 #include <wx/textctrl.h>
 
-namespace Examples {
+namespace TextCtrlMultilineExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "TextCtrl multiline example") {
@@ -24,4 +24,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(TextCtrlMultilineExample::Application);

@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/msgout.h>
 
-namespace Examples {
+namespace FrameAndEventsExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Frame and events") {}
@@ -34,4 +34,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(FrameAndEventsExample::Application);

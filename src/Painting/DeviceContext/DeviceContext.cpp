@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/statline.h>
 
-namespace Examples {
+namespace DeviceContextExample {
   class Window : public wxFrame {
   public:
     Window() : wxFrame(nullptr, wxID_ANY, "Paint example") {
@@ -95,4 +95,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(DeviceContextExample::Application);

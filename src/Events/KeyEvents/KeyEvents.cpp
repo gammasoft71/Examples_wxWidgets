@@ -3,7 +3,7 @@
 #include <wx/display.h>
 #include <wx/log.h>
 
-namespace Examples {
+namespace KeyEventsExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "KeyEvents") {
@@ -48,4 +48,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(KeyEventsExample::Application);

@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/msgout.h>
 
-namespace Examples {
+namespace ProcessEventExample {
   class Frame1 : public wxFrame {
   public:
     Frame1() : wxFrame(nullptr, wxID_ANY, "Frame1") {
@@ -54,4 +54,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ProcessEventExample::Application);

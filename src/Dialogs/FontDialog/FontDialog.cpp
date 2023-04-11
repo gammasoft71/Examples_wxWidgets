@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/fontdlg.h>
 
-namespace Examples {
+namespace FontDialogExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Font example") {
@@ -41,4 +41,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(FontDialogExample::Application);

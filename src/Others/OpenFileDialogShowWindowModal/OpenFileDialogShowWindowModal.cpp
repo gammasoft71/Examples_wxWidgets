@@ -19,7 +19,7 @@ public:
 };
 #endif
 
-namespace Examples {
+namespace OpenFileDialogShowWindowModalExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "OpenFileDialog (ShowWindowModal) example") {
@@ -50,4 +50,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(OpenFileDialogShowWindowModalExample::Application);

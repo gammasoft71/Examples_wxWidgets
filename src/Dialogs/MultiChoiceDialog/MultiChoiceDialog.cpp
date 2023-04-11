@@ -2,7 +2,7 @@
 #include <wx/wx.h>
 #include <wx/textdlg.h>
 
-namespace Examples {
+namespace MultiChoiceDialogExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "MultiChoiceDialog example") {
@@ -34,4 +34,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(MultiChoiceDialogExample::Application);

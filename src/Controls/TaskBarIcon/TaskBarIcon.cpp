@@ -29,7 +29,7 @@ private:
   wxTimer timer;
 };
 
-namespace Examples {
+namespace TaskBarIconExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "TaskBarIcon example") {
@@ -54,4 +54,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(TaskBarIconExample::Application);

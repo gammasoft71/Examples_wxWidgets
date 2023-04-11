@@ -6,7 +6,7 @@
 #include "gammasoft_16x16.xpm"
 #include "gammasoft_64x64.xpm"
 
-namespace Examples {
+namespace BitmapButtonExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "BitmapButton example") {
@@ -37,4 +37,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(BitmapButtonExample::Application);

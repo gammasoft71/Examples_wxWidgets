@@ -6,7 +6,7 @@ using namespace std::chrono;
 using namespace std::this_thread;
 using namespace std::chrono_literals;
 
-namespace Examples {
+namespace ApplictionIdleExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, wxEmptyString) {}
@@ -45,4 +45,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ApplictionIdleExample::Application);

@@ -3,7 +3,7 @@
 #include <wx/generic/aboutdlgg.h>
 #include "gammasoft_64x64.xpm"
 
-namespace Examples {
+namespace GenericAboutBoxExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "GenericAboutBox example") {
@@ -63,4 +63,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(GenericAboutBoxExample::Application);

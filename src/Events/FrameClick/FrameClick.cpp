@@ -1,6 +1,6 @@
 #include <wx/wx.h>
 
-namespace Examples {
+namespace FrameClickExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Click anywhere on the frame") {
@@ -21,4 +21,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(FrameClickExample::Application);

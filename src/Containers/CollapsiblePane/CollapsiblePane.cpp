@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/collpane.h>
 
-namespace Examples {
+namespace CollapsiblePaneExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "CollapsiblePanel example") {
@@ -55,4 +55,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(CollapsiblePaneExample::Application);

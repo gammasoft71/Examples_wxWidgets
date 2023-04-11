@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include "Gammasoft.xpm"
 
-namespace Examples {
+namespace FrameIconExample {
   class Application : public wxApp {
     bool OnInit() override {
       wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "Window Icon example");
@@ -11,4 +11,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(FrameIconExample::Application);

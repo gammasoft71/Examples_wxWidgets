@@ -1,6 +1,6 @@
 #include <wx/wx.h>
 
-namespace Examples {
+namespace StaticBoxAndCheckBoxExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "StaticBox and CheckBox example") {
@@ -30,4 +30,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(StaticBoxAndCheckBoxExample::Application);

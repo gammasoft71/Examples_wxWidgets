@@ -5,7 +5,7 @@
 #include <wx/panel.h>
 #include <wx/stattext.h>
 
-namespace Examples {
+namespace SpinButtonExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "SpinButton example") {
@@ -30,4 +30,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(SpinButtonExample::Application);

@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/clrpicker.h>
 
-namespace Examples {
+namespace ColourPickerCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "ColourPicker example") {
@@ -27,4 +27,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ColourPickerCtrlExample::Application);

@@ -1,6 +1,6 @@
 #include <wx/wx.h>
 
-namespace Examples {
+namespace NumericTextCtrlExample {
   wxDEFINE_EVENT(wxEVT_VALUE, wxCommandEvent);
 
   class wxNumericTextCtrl : public wxTextCtrl {
@@ -49,4 +49,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(NumericTextCtrlExample::Application);

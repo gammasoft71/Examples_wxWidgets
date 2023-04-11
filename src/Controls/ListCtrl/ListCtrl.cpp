@@ -12,7 +12,7 @@
 #include "Bmp16.xpm"
 #include "Bmp48.xpm"
 
-namespace Examples {
+namespace ListCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "ListCtrl example") {
@@ -79,4 +79,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ListCtrlExample::Application);

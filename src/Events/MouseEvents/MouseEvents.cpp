@@ -5,7 +5,7 @@
 #include <wx/display.h>
 #include <wx/log.h>
 
-namespace Examples {
+namespace MouseEventsExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "MouseEvents") {
@@ -141,4 +141,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(MouseEventsExample::Application);

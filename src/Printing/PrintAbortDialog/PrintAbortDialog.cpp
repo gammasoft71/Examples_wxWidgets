@@ -6,7 +6,7 @@
 using namespace std;
 using namespace std::literals;
 
-namespace Examples {
+namespace PrintAbortDialogExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "PrintAbortDialog example") {
@@ -36,4 +36,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(PrintAbortDialogExample::Application);

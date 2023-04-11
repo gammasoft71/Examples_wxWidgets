@@ -3,7 +3,7 @@
 #include <wx/panel.h>
 #include <wx/bannerwindow.h>
 
-namespace Examples {
+namespace BannerWindowExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "BannerWindow example") {
@@ -24,4 +24,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(BannerWindowExample::Application);

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace Examples {
+namespace ApplicationAndExceptionExample {
   class MainFrame : public wxFrame {
   public:
     MainFrame() : wxFrame {nullptr, wxID_ANY, "Application and exception example"} {
@@ -72,4 +72,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ApplicationAndExceptionExample::Application);

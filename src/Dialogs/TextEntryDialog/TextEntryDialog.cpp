@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/textdlg.h>
 
-namespace Examples {
+namespace TextEntryDialogExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "TextEntryDialog example") {
@@ -26,4 +26,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(TextEntryDialogExample::Application);

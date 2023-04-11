@@ -1,7 +1,7 @@
 #include <any>
 #include <wx/wx.h>
 
-namespace Examples {
+namespace CustomEventExample {
   class CustomEvent;
   wxDECLARE_EVENT(WX_EVT_CUSTOM_EVENT, CustomEvent);
 
@@ -47,4 +47,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(CustomEventExample::Application);

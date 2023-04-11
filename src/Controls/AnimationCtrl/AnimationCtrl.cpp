@@ -5,7 +5,7 @@
 #include <wx/filename.h>
 #include <wx/stdpaths.h>
 
-namespace Examples {
+namespace AnimationCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "AnimationCtrl example") {
@@ -31,4 +31,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(AnimationCtrlExample::Application);

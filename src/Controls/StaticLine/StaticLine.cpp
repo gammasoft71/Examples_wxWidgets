@@ -3,7 +3,7 @@
 #include <wx/panel.h>
 #include <wx/statline.h>
 
-namespace Examples {
+namespace StaticLineExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "StaticLine example") {
@@ -26,4 +26,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(StaticLineExample::Application);

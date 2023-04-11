@@ -18,7 +18,7 @@ public:
 };
 #endif
 
-namespace Examples {
+namespace SaveFileDialogShowWindowModalExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "SaveFileDialog (ShowWindowModal) example") {
@@ -47,4 +47,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(SaveFileDialogShowWindowModalExample::Application);

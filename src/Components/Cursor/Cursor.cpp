@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace Examples {
+namespace CursorExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Cursors example") {
@@ -37,4 +37,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(CursorExample::Application);

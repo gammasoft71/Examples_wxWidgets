@@ -61,7 +61,7 @@ private:
 using TreeBook = wxTreebook;
 #endif
 
-namespace Examples {
+namespace TreebookExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Treebook example") {
@@ -96,4 +96,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(TreebookExample::Application);

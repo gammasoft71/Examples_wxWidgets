@@ -1,6 +1,6 @@
 #include <wx/wx.h>
 
-namespace Examples {
+namespace TimerExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Timer example") {
@@ -37,4 +37,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(TimerExample::Application);

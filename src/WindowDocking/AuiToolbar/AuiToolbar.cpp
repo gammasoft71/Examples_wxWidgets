@@ -5,7 +5,7 @@
 #include <wx/aui/framemanager.h>
 #include <wx/aui/auibar.h>
 
-namespace Examples {
+namespace AuiToolbarExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "AuiToolbar example") {
@@ -77,4 +77,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(AuiToolbarExample::Application);

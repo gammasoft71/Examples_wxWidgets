@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/generic/stattextg.h>
 
-namespace Examples {
+namespace HelloWorldGenericStaticTextExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Hello world (Generic static text)") {
@@ -24,4 +24,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(HelloWorldGenericStaticTextExample::Application);

@@ -1,6 +1,6 @@
 #include <wx/wx.h>
 
-namespace Examples {
+namespace ApplicationExample {
   class Application : public wxApp {
     bool OnInit() override {
       (new wxFrame(nullptr, wxID_ANY, wxEmptyString))->Show();
@@ -9,4 +9,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ApplicationExample::Application);

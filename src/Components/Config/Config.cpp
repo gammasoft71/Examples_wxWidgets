@@ -3,7 +3,7 @@
 #include <wx/config.h>
 #include <wx/settings.h>
 
-namespace Examples {
+namespace ConfigExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Config example") {
@@ -68,4 +68,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ConfigExample::Application);

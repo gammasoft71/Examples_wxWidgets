@@ -3,7 +3,7 @@
 #include <wx/artprov.h>
 #include <wx/busyinfo.h>
 
-namespace Examples {
+namespace BusyInfoExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "BusyInfo example") {
@@ -29,4 +29,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(BusyInfoExample::Application);

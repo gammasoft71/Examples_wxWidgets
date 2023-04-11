@@ -3,7 +3,7 @@
 #include <wx/frame.h>
 #include <wx/panel.h>
 
-namespace Examples {
+namespace ChoiceExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Choice example") {
@@ -34,4 +34,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ChoiceExample::Application);

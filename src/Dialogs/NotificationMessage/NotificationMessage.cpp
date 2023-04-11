@@ -3,7 +3,7 @@
 #include <wx/generic/notifmsg.h>
 #include <wx/msgout.h>
 
-namespace Examples {
+namespace NotificationMessageExample {
 #if defined(__APPLE__)
   using wxOwnNotificationMessageBase = wxGenericNotificationMessage;
 #else
@@ -76,11 +76,7 @@ namespace Examples {
       Bind(wxEVT_DESTROY, [&](wxCommandEvent& e) {
         notificationMessage->Close();
         delete notificationMessage;
-      });
-      
-    }
-    
-    ~MainFrame() {
+      });      
     }
     
   private:
@@ -97,4 +93,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(NotificationMessageExample::Application);

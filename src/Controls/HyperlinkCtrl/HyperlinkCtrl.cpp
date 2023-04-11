@@ -6,7 +6,7 @@
 #include <wx/sizer.h>
 #include <wx/stattext.h>
 
-namespace Examples {
+namespace HyperlinkCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "HyperlinkCtrl example") {
@@ -34,4 +34,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(HyperlinkCtrlExample::Application);

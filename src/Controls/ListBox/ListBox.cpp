@@ -6,7 +6,7 @@
 
 using namespace std;
 
-namespace Examples {
+namespace ListBoxExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "ListBox example") {
@@ -49,4 +49,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ListBoxExample::Application);

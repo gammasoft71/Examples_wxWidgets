@@ -8,14 +8,7 @@
 #include <wx/srchctrl.h>
 #include <wx/stattext.h>
 
-enum FruitID {
-  ID_TEXT = 1,
-  ID_REFERENCES,
-  ID_DEFINITIONS,
-  ID_REGULAR_EXPRESSION
-};
-
-namespace Examples {
+namespace SearchCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "SearchCtrl example") {
@@ -49,6 +42,11 @@ namespace Examples {
     wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "Mode : Text", {10, 50}, {280, 20});
     wxStaticText* staticText2 = new wxStaticText(panel, wxID_ANY, "Search for : ", {10, 80}, {280, 50});
     wxMenu* menuSearch = new wxMenu();
+    
+    inline static const int ID_TEXT = 1;
+    inline static const int ID_REFERENCES = 2;
+    inline static const int ID_DEFINITIONS = 3;
+    inline static const int ID_REGULAR_EXPRESSION = 4;
   };
 
   class Application : public wxApp {
@@ -59,4 +57,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(SearchCtrlExample::Application);

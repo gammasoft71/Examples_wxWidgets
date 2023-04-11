@@ -3,7 +3,7 @@
 #include <wx/panel.h>
 #include <wx/stattext.h>
 
-namespace Examples {
+namespace StaticTextExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "StaticText example") {
@@ -34,4 +34,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(StaticTextExample::Application);

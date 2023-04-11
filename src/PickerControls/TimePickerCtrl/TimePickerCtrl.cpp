@@ -2,7 +2,7 @@
 #include <wx/timectrl.h>
 #include <wx/dateevt.h>
 
-namespace Examples {
+namespace TimePickerCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "TimePickerCtrl example") {
@@ -27,4 +27,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(TimePickerCtrlExample::Application);

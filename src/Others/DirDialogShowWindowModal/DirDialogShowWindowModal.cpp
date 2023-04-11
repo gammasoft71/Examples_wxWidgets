@@ -19,7 +19,7 @@ public:
 };
 #endif
 
-namespace Examples {
+namespace DirDialogShowWindowModalExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "DirDialog (ShowWindowModal) example") {
@@ -48,4 +48,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(DirDialogShowWindowModalExample::Application);

@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/settings.h>
 
-namespace Examples {
+namespace LineExample {
   class wxColouredLine : public wxPanel {
   public:
     wxColouredLine(wxWindow* parent, const wxColour& colour, const wxPoint& position = wxDefaultPosition, const wxSize& size = wxDefaultSize) : wxPanel(parent, wxID_ANY, position, size) {
@@ -35,4 +35,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(LineExample::Application);

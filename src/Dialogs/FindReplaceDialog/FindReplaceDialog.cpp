@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/fdrepdlg.h>
 
-namespace Examples {
+namespace FindReplaceDialogExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "FindReplaceDialog example") {
@@ -45,4 +45,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(FindReplaceDialogExample::Application);

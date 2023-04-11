@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/richtext/richtextsymboldlg.h>
 
-namespace Examples {
+namespace SymbolPickerDialogExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "SymbolPickerDialog example") {
@@ -32,4 +32,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(SymbolPickerDialogExample::Application);

@@ -5,7 +5,7 @@
 using namespace std;
 using namespace std::literals;
 
-namespace Examples {
+namespace GenericProgressDialogExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "GenericProgressDialog example") {
@@ -48,4 +48,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(GenericProgressDialogExample::Application);

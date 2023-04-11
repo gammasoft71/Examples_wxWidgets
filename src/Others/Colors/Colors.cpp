@@ -3,7 +3,7 @@
 #include <vector>
 #include <wx/wx.h>
 
-namespace Examples {
+namespace ColorsExample {
   class PanelColor : public wxPanel {
   public:
     PanelColor(wxWindow* parent, const wxColour& color, const std::string& name) : wxPanel(parent) {
@@ -95,4 +95,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ColorsExample::Application);

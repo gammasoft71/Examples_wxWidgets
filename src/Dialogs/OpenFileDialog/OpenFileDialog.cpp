@@ -2,7 +2,7 @@
 #include <wx/filedlg.h>
 #include <wx/sysopt.h>
 
-namespace Examples {
+namespace OpnFileDialogExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "OpenFileDialog example") {
@@ -30,4 +30,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(OpnFileDialogExample::Application);

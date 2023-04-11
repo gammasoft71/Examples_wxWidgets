@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/toolbook.h>
 
-namespace Examples {
+namespace ToolbookExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Toolbook example") {
@@ -58,4 +58,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ToolbookExample::Application);

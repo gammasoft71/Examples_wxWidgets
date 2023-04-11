@@ -2,7 +2,7 @@
 #include <wx/clrpicker.h>
 #include "Settings.hpp"
 
-namespace Config2 {
+namespace Config2Example {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, Properties::Settings::DefaultSettings().Caption()) {
@@ -64,4 +64,4 @@ namespace Config2 {
   };
 }
 
-wxIMPLEMENT_APP(Config2::Application);
+wxIMPLEMENT_APP(Config2Example::Application);

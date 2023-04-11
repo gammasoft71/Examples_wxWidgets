@@ -2,7 +2,7 @@
 #include <wx/aboutdlg.h>
 #include "gammasoft_64x64.xpm"
 
-namespace Examples {
+namespace AboutBoxExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "AboutBox example") {
@@ -63,4 +63,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(AboutBoxExample::Application);

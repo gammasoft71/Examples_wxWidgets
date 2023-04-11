@@ -5,7 +5,7 @@
 using namespace std::chrono;
 using namespace std::this_thread;
 
-namespace Examples {
+namespace BusyCursorExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "BusyCursor example") {
@@ -31,4 +31,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(BusyCursorExample::Application);

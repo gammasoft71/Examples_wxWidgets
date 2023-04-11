@@ -1,6 +1,6 @@
 #include <wx/wx.h>
 
-namespace Examples {
+namespace AutoScrollExample {
   class Window : public wxFrame {
   public:
     Window() : wxFrame(nullptr, wxID_ANY, "AutoScroll example", wxDefaultPosition, {400, 250}) {
@@ -39,4 +39,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(AutoScrollExample::Application);

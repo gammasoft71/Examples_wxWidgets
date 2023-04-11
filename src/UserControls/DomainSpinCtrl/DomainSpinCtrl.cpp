@@ -1,7 +1,7 @@
 #include "wxDomainSpinCtrl.h"
 #include <wx/wx.h>
 
-namespace Examples {
+namespace DomainSpinCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "DomainSpinCtrl example") {
@@ -29,4 +29,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(DomainSpinCtrlExample::Application);

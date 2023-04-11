@@ -4,7 +4,7 @@
 using namespace std;
 using namespace std::literals;
 
-namespace Examples {
+namespace FrameAndThreadExample {
   class thread_state {
   public:
     int userThreadId = -1;
@@ -60,4 +60,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(FrameAndThreadExample::Application);

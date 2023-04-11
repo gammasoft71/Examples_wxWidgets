@@ -6,7 +6,7 @@
 
 using namespace std::chrono;
 
-namespace Examples {
+namespace CalendarCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "MonthCalendar example") {
@@ -44,4 +44,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(CalendarCtrlExample::Application);

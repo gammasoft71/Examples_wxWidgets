@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/filedlg.h>
 
-namespace Examples {
+namespace SaveFileDialogExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "SaveFileDialog example") {
@@ -27,4 +27,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(SaveFileDialogExample::Application);

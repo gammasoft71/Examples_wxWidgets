@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/fontpicker.h>
 
-namespace Examples {
+namespace FontPickerCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "FontPickerCtrl example") {
@@ -37,4 +37,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(FontPickerCtrlExample::Application);

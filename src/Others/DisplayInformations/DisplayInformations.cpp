@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/display.h>
 
-namespace Examples {
+namespace DiasplayInformationsExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Display information example") {
@@ -38,4 +38,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(DiasplayInformationsExample::Application);

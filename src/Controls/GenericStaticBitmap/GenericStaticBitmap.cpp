@@ -6,7 +6,7 @@
 #include <wx/sizer.h>
 #include "Logo.xpm"
 
-namespace Examples {
+namespace GenericStaticBitmapExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "GenericStaticBitmap example") {
@@ -48,4 +48,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(GenericStaticBitmapExample::Application);

@@ -8,7 +8,7 @@
 using namespace std;
 using namespace std::filesystem;
 
-namespace Examples {
+namespace ShellExecuteExample {
   class Window : public wxFrame {
   public:
     Window() : wxFrame(nullptr, wxID_ANY, "Shell execute example") {
@@ -69,4 +69,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ShellExecuteExample::Application);

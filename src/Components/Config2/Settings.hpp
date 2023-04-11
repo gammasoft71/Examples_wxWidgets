@@ -3,7 +3,7 @@
 #include <wx/config.h>
 #include <wx/settings.h>
 
-namespace Config2 {
+namespace Config2Example {
   namespace Properties {
     class Settings {
     public:

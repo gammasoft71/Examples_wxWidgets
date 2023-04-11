@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/treectrl.h>
 
-namespace Examples {
+namespace TreeCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "TreeCtrl example") {
@@ -30,4 +30,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(TreeCtrlExample::Application);

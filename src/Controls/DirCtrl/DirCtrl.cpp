@@ -5,7 +5,7 @@
 #include <wx/stdpaths.h>
 #include <wx/dirctrl.h>
 
-namespace Examples {
+namespace DirCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "DirCtrl example") {
@@ -32,4 +32,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(DirCtrlExample::Application);

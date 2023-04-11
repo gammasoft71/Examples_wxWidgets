@@ -3,7 +3,7 @@
 #include <wx/frame.h>
 #include <wx/panel.h>
 
-namespace Examples {
+namespace ToggleButtonExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "ToggleButton example") {
@@ -31,4 +31,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ToggleButtonExample::Application);

@@ -2,7 +2,7 @@
 #include <wx/wx.h>
 #include <wx/artprov.h>
 
-namespace Examples {
+namespace ToolBarExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "ToolBar example") {
@@ -70,4 +70,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ToolBarExample::Application);

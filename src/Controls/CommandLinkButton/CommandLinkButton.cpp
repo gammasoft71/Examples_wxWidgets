@@ -4,7 +4,7 @@
 #include <wx/panel.h>
 #include <wx/stattext.h>
 
-namespace Examples {
+namespace CommandLinkButtonExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "CommandLinkButton example") {
@@ -28,4 +28,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(CommandLinkButtonExample::Application);

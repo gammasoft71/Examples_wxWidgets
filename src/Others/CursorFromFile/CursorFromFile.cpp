@@ -7,7 +7,7 @@
 #include <wx/sizer.h>
 #include <wx/sysopt.h>
 
-namespace Examples {
+namespace CursorFromFileExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "CursorFromFile example") {
@@ -42,4 +42,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(CursorFromFileExample::Application);

@@ -2,7 +2,7 @@
 #include <wx/wx.h>
 #include <wx/numdlg.h>
 
-namespace Examples {
+namespace NumberEntryDialogExample {
 class Frame : public wxFrame {
 public:
   Frame() : wxFrame(nullptr, wxID_ANY, "NumberEntryDialog example") {
@@ -28,4 +28,4 @@ class Application : public wxApp {
 };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(NumberEntryDialogExample::Application);

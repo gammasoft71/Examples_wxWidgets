@@ -2,7 +2,7 @@
 #include <wx/wx.h>
 #include <wx/richtext/richtextctrl.h>
 
-namespace Examples {
+namespace MdiFrameExample {
   class MdiChildFrame : public wxMDIChildFrame {
   public:
     MdiChildFrame(wxMDIParentFrame* parent) : wxMDIChildFrame(parent, wxID_ANY, wxEmptyString) {
@@ -66,4 +66,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(MdiFrameExample::Application);

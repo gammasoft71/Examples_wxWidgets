@@ -5,7 +5,7 @@
 #include <wx/radiobut.h>
 #include <wx/textctrl.h>
 
-namespace Examples {
+namespace TextCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "TextCtrl example") {
@@ -37,4 +37,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(TextCtrlExample::Application);

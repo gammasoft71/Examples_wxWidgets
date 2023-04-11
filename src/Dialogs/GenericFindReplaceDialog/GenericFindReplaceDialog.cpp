@@ -2,7 +2,7 @@
 #include <wx/fdrepdlg.h>
 #include <wx/generic/fdrepdlg.h>
 
-namespace Examples {
+namespace GenericFindReplaceDialogExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "GenericFindReplaceDialog example") {
@@ -51,4 +51,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(GenericFindReplaceDialogExample::Application);

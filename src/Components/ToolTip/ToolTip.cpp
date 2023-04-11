@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/richtooltip.h>
 
-namespace Examples {
+namespace ToolTipExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "TooTip example") {
@@ -26,4 +26,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ToolTipExample::Application);

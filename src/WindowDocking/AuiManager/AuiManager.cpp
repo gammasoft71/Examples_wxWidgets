@@ -4,7 +4,7 @@
 #include <wx/aui/auibar.h>
 #include <wx/aui/dockart.h>
 
-namespace Examples {
+namespace AuiManagerExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "AuiManager example") {
@@ -41,4 +41,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(AuiManagerExample::Application);

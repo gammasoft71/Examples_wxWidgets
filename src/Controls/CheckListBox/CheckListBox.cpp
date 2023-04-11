@@ -3,7 +3,7 @@
 #include <wx/frame.h>
 #include <wx/panel.h>
 
-namespace Examples {
+namespace ChackListBoxExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "CheckListBox example") {
@@ -43,4 +43,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ChackListBoxExample::Application);

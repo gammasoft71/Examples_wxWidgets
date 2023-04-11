@@ -4,7 +4,7 @@
 #include <wx/panel.h>
 #include <wx/stattext.h>
 
-namespace Examples {
+namespace ButtonExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, wxEmptyString) {
@@ -35,4 +35,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ButtonExample::Application);

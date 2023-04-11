@@ -3,7 +3,7 @@
 #include <wx/frame.h>
 #include <wx/panel.h>
 
-namespace Examples {
+namespace ComboBoxExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "ComboBox example") {
@@ -41,4 +41,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ComboBoxExample::Application);

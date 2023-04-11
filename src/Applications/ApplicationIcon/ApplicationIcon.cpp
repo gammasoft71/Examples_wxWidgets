@@ -2,7 +2,7 @@
 #include <wx/filename.h>
 #include <wx/stdpaths.h>
 
-namespace Examples {
+namespace ApplicationIconExample {
   class Application : public wxApp {
     bool OnInit() override {
       wxFrame* frame = new wxFrame(nullptr, wxID_ANY, wxEmptyString);
@@ -18,4 +18,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ApplicationIconExample::Application);

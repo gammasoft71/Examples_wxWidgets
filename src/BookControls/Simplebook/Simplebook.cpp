@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/simplebook.h>
 
-namespace Examples {
+namespace SimplebookExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Simplebook example") {
@@ -51,4 +51,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(SimplebookExample::Application);

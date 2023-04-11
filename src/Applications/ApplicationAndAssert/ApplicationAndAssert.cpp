@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace Examples {
+namespace ApplicationAndAssertExample {
   class MainFrame : public wxFrame {
   public:
     MainFrame() : wxFrame {nullptr, wxID_ANY, "Application and assert example"} {
@@ -39,4 +39,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ApplicationAndAssertExample::Application);

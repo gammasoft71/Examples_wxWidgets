@@ -2,7 +2,7 @@
 #include <wx/dirdlg.h>
 #include <wx/stdpaths.h>
 
-namespace Examples {
+namespace DirDialogExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "DirDialog example") {
@@ -28,4 +28,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(DirDialogExample::Application);

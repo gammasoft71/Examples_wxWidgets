@@ -39,7 +39,7 @@ public:
 };
 #endif
 
-namespace Examples {
+namespace FileCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "FileCtrl example") {
@@ -65,4 +65,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(FileCtrlExample::Application);

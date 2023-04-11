@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/notebook.h>
 
-namespace Examples {
+namespace NotebookExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Notebook example") {
@@ -35,4 +35,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(NotebookExample::Application);

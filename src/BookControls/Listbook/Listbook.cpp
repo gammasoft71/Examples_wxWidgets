@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/listbook.h>
 
-namespace Examples {
+namespace ListbookExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Listbook example") {
@@ -35,4 +35,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ListbookExample::Application);

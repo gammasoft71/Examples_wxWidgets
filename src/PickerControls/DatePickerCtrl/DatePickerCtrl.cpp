@@ -5,7 +5,7 @@
 
 using namespace std::chrono;
 
-namespace Examples {
+namespace DatePickerCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "DatePickerCtrl example") {
@@ -31,4 +31,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(DatePickerCtrlExample::Application);

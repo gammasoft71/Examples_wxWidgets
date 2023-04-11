@@ -8,7 +8,7 @@
 
 using namespace std;
 
-namespace Examples {
+namespace ArtProviderExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "ArtProvider example") {
@@ -62,4 +62,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ArtProviderExample::Application);

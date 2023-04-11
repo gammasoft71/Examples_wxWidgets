@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/choicebk.h>
 
-namespace Examples {
+namespace ChoicebookExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Choicebook example") {
@@ -35,4 +35,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ChoicebookExample::Application);

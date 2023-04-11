@@ -4,7 +4,7 @@
 
 using namespace std;
 
-namespace Examples {
+namespace ColourDialogExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "ColourDialog example") {
@@ -37,4 +37,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ColourDialogExample::Application);

@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace Examples {
+namespace StaticTextAndUnicodeExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "StaticText and unicode text example") {
@@ -49,4 +49,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(StaticTextAndUnicodeExample::Application);

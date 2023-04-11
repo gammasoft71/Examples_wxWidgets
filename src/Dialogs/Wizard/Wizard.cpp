@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 #include <wx/wizard.h>
 
-namespace Examples {
+namespace WizardExample {
   class Frame : public wxFrame {
     class WizardPage2 : public wxWizardPage {
     public:
@@ -50,4 +50,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(WizardExample::Application);

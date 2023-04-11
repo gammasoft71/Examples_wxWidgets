@@ -4,7 +4,7 @@
 #include <wx/sizer.h>
 #include <wx/richtext/richtextctrl.h>
 
-namespace Examples {
+namespace RichTextCtrlExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "RichTextCtrl example") {
@@ -32,4 +32,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(RichTextCtrlExample::Application);

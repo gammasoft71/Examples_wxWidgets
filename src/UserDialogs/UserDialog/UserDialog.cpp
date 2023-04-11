@@ -1,7 +1,7 @@
 #include <string>
 #include <wx/wx.h>
 
-namespace Examples {
+namespace UserDialogExample {
   class UserInputDialog : public wxDialog {
   public:
     UserInputDialog(wxWindow *parent) : wxDialog(parent, wxID_ANY, "Input Dialog") {
@@ -44,4 +44,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(UserDialogExample::Application);

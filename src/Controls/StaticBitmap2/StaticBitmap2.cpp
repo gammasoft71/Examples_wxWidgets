@@ -5,7 +5,7 @@
 #include <wx/filename.h>
 #include <wx/stdpaths.h>
 
-namespace Examples {
+namespace StaticBitmap2Example {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "StaticBitmap2 example") {
@@ -38,4 +38,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(StaticBitmap2Example::Application);

@@ -3,7 +3,7 @@
 #include <wx/panel.h>
 #include <wx/activityindicator.h>
 
-namespace Examples {
+namespace ActivityIndicatorExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "ActivityIndicator example") {
@@ -23,4 +23,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(ActivityIndicatorExample::Application);

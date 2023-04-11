@@ -3,7 +3,7 @@
 #include <wx/aui/framemanager.h>
 #include <wx/aui/auibook.h>
 
-namespace Examples {
+namespace AuiNotebookExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "AuiNotebook example") {
@@ -36,4 +36,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(AuiNotebookExample::Application);

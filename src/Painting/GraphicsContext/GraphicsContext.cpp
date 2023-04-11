@@ -2,7 +2,7 @@
 #include <wx/graphics.h>
 #include <wx/statline.h>
 
-namespace Examples {
+namespace GraphicContextExample {
   class Window : public wxFrame {
   public:
     Window() : wxFrame(nullptr, wxID_ANY, "GraphicsContext example") {
@@ -38,4 +38,4 @@ namespace Examples {
   };
 }
 
-wxIMPLEMENT_APP(Examples::Application);
+wxIMPLEMENT_APP(GraphicContextExample::Application);
