@@ -8,15 +8,15 @@ namespace ComboBoxExample {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "ComboBox example") {
       SetClientSize(400, 270);
-      comboBox1->Append({"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
+      comboBox1->Append(std::vector {"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
       comboBox1->Select(0);
       comboBox1->Bind(wxEVT_COMBOBOX, &Frame::OnComboBoxClick, this);
 
-      comboBox2->Append({"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
+      comboBox2->Append(std::vector {"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
       comboBox2->Select(0);
       comboBox2->Bind(wxEVT_COMBOBOX, &Frame::OnComboBoxClick, this);
 
-      comboBox3->Append({"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
+      comboBox3->Append(std::vector {"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
       comboBox3->Select(0);
       comboBox3->Bind(wxEVT_COMBOBOX, &Frame::OnComboBoxClick, this);
     }

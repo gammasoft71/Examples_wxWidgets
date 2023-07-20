@@ -7,11 +7,11 @@ namespace ChoiceExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Choice example") {
-      choice1->Append({"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
+      choice1->Append(std::vector {"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
       choice1->SetSelection(0);
       choice1->Bind(wxEVT_CHOICE, &Frame::OnChoicClick, this);
 
-      choice2->Append({"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
+      choice2->Append(std::vector {"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
       choice2->SetSelection(0);
       choice2->Bind(wxEVT_CHOICE, &Frame::OnChoicClick, this);
     }
