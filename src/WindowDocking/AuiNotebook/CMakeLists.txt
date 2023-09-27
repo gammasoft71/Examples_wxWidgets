@@ -1,8 +1,8 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.5)
 project(AuiNotebook)
 
 
-find_package(wxWidgets 3.2 REQUIRED COMPONENTS base core aui)
+find_package(wxWidgets REQUIRED COMPONENTS base core aui)
 include(${wxWidgets_USE_FILE})
 
 link_libraries(${wxWidgets_LIBRARIES})

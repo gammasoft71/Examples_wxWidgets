@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.5)
 
 # Project
 project(Dice)
@@ -6,7 +6,7 @@ project(Dice)
 set(OpenGL_GL_PREFERENCE GLVND)
 find_package(OpenGL REQUIRED)
 include_directories(${OPENGL_INCLUDE_DIR})
-find_package(wxWidgets 3.2 REQUIRED COMPONENTS base core gl)
+find_package(wxWidgets REQUIRED COMPONENTS base core gl)
 include(${wxWidgets_USE_FILE})
 
 set(SOURCES README.md Dice.cpp)
