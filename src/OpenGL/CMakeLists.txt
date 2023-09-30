@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.5)
 project(OpenGL)
 
 set(OpenGL_GL_PREFERENCE GLVND)

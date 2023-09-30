@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.5)
 
 # Project
 project(ApplicationAndMain2)
 
-find_package(wxWidgets 3.2 REQUIRED)
+find_package(wxWidgets REQUIRED)
 include(${wxWidgets_USE_FILE})
 
 set(SOURCES
