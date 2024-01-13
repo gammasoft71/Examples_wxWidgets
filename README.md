@@ -4,7 +4,7 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 
 [![wxwidgets](docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
 
-## wxWidgets
+## [wxWidgets](src/README.md)
 
 * [Hello World](src/HelloWorlds/README.md) contains wxWidgets "Hello, World!" examples.
 * [Applications](src/Applications/README.md) contains applications examples.
@@ -24,7 +24,6 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 * [User controls](src/UserControls/README.md) contains user controls examples.
 * [User Dialogs](src/UserDialogs/README.md) contains user dialogs examples.
 * [Others](src/Others/README.md) contains others examples.
-* [All](src/README.md) contains all examples.
 
 ## Download
 
