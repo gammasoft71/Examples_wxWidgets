@@ -1,6 +1,6 @@
 # wxAUI Examples
 
-Shows how to use wxAUI library.
+Shows how to use Advanced User Interface docking library.
 
 [![wxwidgets](../docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
 
