@@ -213,7 +213,7 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake ..
-start src.sln
+start wxCore.sln
 ```
 
 Select any project and type Ctrl+F5 to build and run it.
@@ -223,7 +223,7 @@ Select any project and type Ctrl+F5 to build and run it.
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./src.xcodeproj
+open ./wxCore.xcodeproj
 ```
 
 Select any project and type Cmd+R to build and run it.
@@ -234,7 +234,7 @@ Select any project and type Cmd+R to build and run it.
 mkdir build
 cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./src.cbp > /dev/null 2>&1
+xdg-open ./wxCore.cbp > /dev/null 2>&1
 ```
 
 Select any project and type F10 to build and run it.
