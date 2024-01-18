@@ -1,6 +1,4 @@
-#include <iostream>
 #include <wx/wx.h>
-#include <wx/richtext/richtextctrl.h>
 
 namespace MdiFrameExample {
   class MdiChildFrame : public wxMDIChildFrame {
@@ -9,7 +7,7 @@ namespace MdiFrameExample {
     }
     
   private:
-    wxRichTextCtrl* richTextBox = new wxRichTextCtrl(this);
+    wxTextCtrl* textBox = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE);
   };
 
   class MdiParentFrame : public wxMDIParentFrame {
