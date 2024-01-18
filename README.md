@@ -23,7 +23,6 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 * [Printing](wxCore/Printing/README.md) contains printing examples.
 * [Events](wxCore/Events/README.md) contains events examples.
 * [Painting](wxCore/Painting/README.md) contains painting examples.
-* [OpenGL](wxCore/OpenGL/README.md) contains OpenGL examples.
 * [User controls](wxCore/UserControls/README.md) contains user controls examples.
 * [User Dialogs](wxCore/UserDialogs/README.md) contains user dialogs examples.
 * [Others](wxCore/Others/README.md) contains others examples.
@@ -34,6 +33,10 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 * [Menus and toolbars](wxAUI/MenusAndToolbars/README.md) contains AUI menus and toolbars examples.
 * [Containers](wxAUI/Containers/README.md) contains AUI containers examples.
 * [Book Controls](wxAUI/BookControls/README.md) contains AUI book controls examples.
+
+## [wxGL](wxGL/README.md) contains wxGL (Open GL) examples.
+
+* [Controls](wxGL/Controls/README.md) contains GL common controls examples.
 
 ## Download
 
