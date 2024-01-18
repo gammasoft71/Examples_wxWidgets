@@ -1,6 +1,6 @@
 # wxBase examples
 
-Shows how to use console classes such as wxString classes portability classes that abstract differences between platforms.
+[This folder](.) contains console and base classes  examples.
 
 [![wxwidgets](../docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
 

@@ -1,6 +1,6 @@
 # wxCore examples
 
-Shows how to use basic GUI classes such as GDI classes and controls.
+[This folder](.) contains the basic GUI classes such as GDI classes and controls examples.
 
 [![wxwidgets](../docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
 

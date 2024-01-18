@@ -1,6 +1,6 @@
 # wxRichText examples
 
-Shows how to use wxRichTextCanvas class for integrating OpenGL library.
+[This folder](.) contains rch text examples.
 
 [![wxwidgets](../docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
 

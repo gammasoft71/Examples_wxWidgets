@@ -1,6 +1,6 @@
 # wxGL examples
 
-Shows how to use wxGLCanvas class for integrating OpenGL library.
+[This folder](.) contains OpenGL examples.
 
 [![wxwidgets](../docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
 
