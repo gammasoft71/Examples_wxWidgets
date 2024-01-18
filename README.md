@@ -6,7 +6,7 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 
 ## [wxBase](wxBase/README.md) contains wxBase (Console) examples.
 
-* [HelloWorlds](HelloWorlds/README.md)
+* [HelloWorlds](wxBase/HelloWorlds/README.md)
 
 ## [wxCore](wxCore/README.md) contains wxCore (GUI) examples.
 
