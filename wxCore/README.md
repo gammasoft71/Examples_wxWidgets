@@ -71,6 +71,15 @@ Shows how to use basic GUI classes such as GDI classes and controls.
 * [StaticBox](Containers/StaticBox/README.md) shows how to create a simple StaticBox container with wxStaticBox.
 * [StaticBoxSizerVertical](Containers/StaticBoxSizerVertical/README.md) shows how to create a StaticBoxSizerVertical widget with wxStaticBoxSizer.
 
+## [Book Controls](BookControls/README.md)
+
+* [Choicebook](BookControls/Choicebook/README.md) shows how to create a Choicebook widget with wxChoiceBook.
+* [Listbook](BookControls/Listbook/README.md) shows how to create a Listbook widget with wxListBook.
+* [Notebook](BookControls/Notebook/README.md) shows how to create a Notebook widget with wxNoteBook.
+* [Simplebook](BookControls/Simplebook/README.md) shows how to create a Simplebook widget with wxSimplebook.
+* [Toolbook](BookControls/Toolbook/README.md) shows how to create a Toolbook widget with wxToolbook.
+* [Treebook](BookControls/Treebook/README.md) shows how to create a Treebook widget with wxTreebook.
+
 ## [Controls](Controls/README.md)
 
 * [ActivityIndicator](Controls/ActivityIndicator/README.md) shows how to create an ActivityIndicator widget with wxActivityIndicator.
@@ -107,15 +116,6 @@ Shows how to use basic GUI classes such as GDI classes and controls.
 * [ToggleButton](Controls/ToggleButton/README.md) shows how to create a ToggleButton widget and Event Click with wxToggleButton.
 * [TreeCtrl](Controls/TreeCtrl/README.md) shows how to create a TreeView widget with wxTreeCtrl.
 * [WebView](Controls/WebView/README.md) shows how to create a WebViewwidget with wxWebView.
-
-## [Book Controls](BookControls/README.md)
-
-* [Choicebook](BookControls/Choicebook/README.md) shows how to create a Choicebook widget with wxChoiceBook.
-* [Listbook](BookControls/Listbook/README.md) shows how to create a Listbook widget with wxListBook.
-* [Notebook](BookControls/Notebook/README.md) shows how to create a Notebook widget with wxNoteBook.
-* [Simplebook](BookControls/Simplebook/README.md) shows how to create a Simplebook widget with wxSimplebook.
-* [Toolbook](BookControls/Toolbook/README.md) shows how to create a Toolbook widget with wxToolbook.
-* [Treebook](BookControls/Treebook/README.md) shows how to create a Treebook widget with wxTreebook.
 
 ## [Picker Controls](PickerControls/README.md)
 
