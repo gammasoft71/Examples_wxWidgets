@@ -1,10 +1,6 @@
-# wxAUI examples
+# Window Docking
 
-Shows how to use Advanced User Interface docking library.
-
-[![wxwidgets](../docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
-
-[This folder](.) contains window docking examples.
+Shows how to use window docking examples.
 
 * [AuiManager](AuiManager/README.md) shows how to create a AuiManager widget with wxAuiManager.
 * [AuiNotebook](AuiNotebook/README.md) shows how to create a AuiNotebook widget with AuiNotebook.
