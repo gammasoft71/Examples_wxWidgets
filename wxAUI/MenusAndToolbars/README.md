@@ -1,9 +1,7 @@
-# Window Docking
+# Menus and toolbars Examples
 
-Shows how to use window docking examples.
+Shows how to use AUI menus and toolbars examples.
 
-* [AuiManager](AuiManager/README.md) shows how to create a AuiManager widget with wxAuiManager.
-* [AuiNotebook](AuiNotebook/README.md) shows how to create a AuiNotebook widget with AuiNotebook.
 * [AuiToolbar](AuiToolbar/README.md) shows how to create a AuiToolbar widget with wxAuiToolbar.
 
 ## Build and run
@@ -14,7 +12,7 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake ..
-start WindowDocking.sln
+start MenusAndToolbars.sln
 ```
 
 Select any project and type Ctrl+F5 to build and run it.
@@ -24,7 +22,7 @@ Select any project and type Ctrl+F5 to build and run it.
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./WindowDocking.xcodeproj
+open ./MenusAndToolbars.xcodeproj
 ```
 
 Select any project and type Cmd+R to build and run it.
@@ -35,7 +33,7 @@ Select any project and type Cmd+R to build and run it.
 mkdir build
 cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./WindowDocking.cbp > /dev/null 2>&1
+xdg-open ./MenusAndToolbars.cbp > /dev/null 2>&1
 ```
 
 Select any project and type F10 to build and run it.

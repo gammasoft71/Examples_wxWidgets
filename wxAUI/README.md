@@ -4,11 +4,17 @@ Shows how to use Advanced User Interface docking library.
 
 [![wxwidgets](../docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
 
-## [Window Docking](WindowDocking/README.md)
+## [Menus and toolbars](MenusAndToolbars/README.md)
 
-* [AuiManager](WindowDocking/AuiManager/README.md) shows how to create a AuiManager widget with wxAuiManager.
-* [AuiNotebook](WindowDocking/AuiNotebook/README.md) shows how to create a AuiNotebook widget with AuiNotebook.
 * [AuiToolbar](WindowDocking/AuiToolbar/README.md) shows how to create a AuiToolbar widget with wxAuiToolbar.
+
+## [Containers](Containers/README.md)
+
+* [AuiManager](Containers/AuiManager/README.md) shows how to create a AuiManager widget with wxAuiManager.
+
+## [Book Controls](BookControls/README.md)
+
+* [AuiNotebook](BookControls/AuiNotebook/README.md) shows how to create a AuiNotebook widget with AuiNotebook.
 
 ## Build and run
 

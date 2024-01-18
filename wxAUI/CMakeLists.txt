@@ -3,4 +3,6 @@ project(wxAUI)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-add_subdirectory(WindowDocking)
+add_subdirectory(MenusAndToolbars)
+add_subdirectory(Containers)
+add_subdirectory(BookControls)
