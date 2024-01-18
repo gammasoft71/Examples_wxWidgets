@@ -31,7 +31,7 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 * [All](wxCore/README.md) contains all examples.
 
 ``` shell
-git clone https://github.com/gammasoft71/Examples_wxWidgets Examples_wxWidgets
+git clone https://github.com/gammasoft71/Examples_wxWidgets
 ```
 
 ## Build and run
