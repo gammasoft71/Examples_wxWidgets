@@ -21,7 +21,6 @@
 * [RearrangeDialog](RearrangeDialog/README.md) shows how to create a RearrangeDialog with wxRearrangeDialog.
 * [SaveFileDialog](SaveFileDialog/README.md) shows how to create a SaveFileDialog with wxSaveFileDialog.
 * [SingleChoiceDialog](SingleChoiceDialog/README.md) shows how to create a DirDialog with wxSingleChoiceDialog.
-* [SymbolPickerDialog](SymbolPickerDialog/README.md) shows how to create a SymbolPickerDialog with wxSymbolPickerDialog.
 * [TextEntryDialog](TextEntryDialog/README.md) shows how to create a TextEntryDialog with wxTextEntryDialog.
 * [Wizard](Wizard/README.md) shows how to create a Wizard with wxWizard.
 

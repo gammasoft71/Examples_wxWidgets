@@ -45,7 +45,6 @@ Shows how to use basic GUI classes such as GDI classes and controls.
 * [RearrangeDialog](Dialogs/RearrangeDialog/README.md) shows how to create a RearrangeDialog with wxRearrangeDialog.
 * [SaveFileDialog](Dialogs/SaveFileDialog/README.md) shows how to create a SaveFileDialog with wxSaveFileDialog.
 * [SingleChoiceDialog](Dialogs/SingleChoiceDialog/README.md) shows how to create a DirDialog with wxSingleChoiceDialog.
-* [SymbolPickerDialog](Dialogs/SymbolPickerDialog/README.md) shows how to create a SymbolPickerDialog with wxSymbolPickerDialog.
 * [TextEntryDialog](Dialogs/TextEntryDialog/README.md) shows how to create a TextEntryDialog with wxTextEntryDialog.
 * [Wizard](Dialogs/Wizard/README.md) shows how to create a Wizard with wxWizard.
 
@@ -102,7 +101,6 @@ Shows how to use basic GUI classes such as GDI classes and controls.
 * [ListBox](Controls/ListBox/README.md) shows how to create a ListBox widget with wxListBox.
 * [ListCtrl](Controls/ListCtrl/README.md) shows how to create a ListCtrl widget with wxListCtrl.
 * [RadioButton](Controls/RadioButton/README.md) shows how to create a RadioButton widget with wxRadioButton.
-* [RichTextCtrl](Controls/RichTextCtrl/README.md) shows how to create a RichTextBox widget with wxRichTextCtrl.
 * [ScrollBar](Controls/ScrollBar/README.md) shows how to create a ScrollBar widget with wxScrollBar.
 * [SearchCtrl](Controls/SearchCtrl/README.md) shows how to create a SearchCtrl widget with wxSearchCtrl.
 * [Slider](Controls/Slider/README.md) shows how to create a Slider widget with wxSlider.

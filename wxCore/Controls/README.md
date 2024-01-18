@@ -22,7 +22,6 @@
 * [ListBox](ListBox/README.md) shows how to create a ListBox widget with wxListBox.
 * [ListCtrl](ListCtrl/README.md) shows how to create a ListCtrl widget with wxListCtrl.
 * [RadioButton](RadioButton/README.md) shows how to create a RadioButton widget with wxRadioButton.
-* [RichTextCtrl](RichTextCtrl/README.md) shows how to create a RichTextBox widget with wxRichTextCtrl.
 * [ScrollBar](ScrollBar/README.md) shows how to create a ScrollBar widget with wxScrollBar.
 * [SearchCtrl](SearchCtrl/README.md) shows how to create a SearchCtrl widget with wxSearchCtrl.
 * [Slider](Slider/README.md) shows how to create a Slider widget with wxSlider.

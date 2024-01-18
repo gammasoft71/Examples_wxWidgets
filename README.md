@@ -17,7 +17,7 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 * [Menus and toolbars](wxCore/MenusAndToolbars/README.md) contains menus and toolbars examples.
 * [Containers](wxCore/Containers/README.md) contains containers examples.
 * [Book Controls](wxCore/BookControls/README.md) contains book controls examples.
-* [Controls](wxCore/Controls/README.md) contains common controls examples.
+* [Controls](wxCore/Controls/README.md) contains controls examples.
 * [Picker Controls](wxCore/PickerControls/README.md) contains picker controls examples.
 * [Components](wxCore/Components/README.md) contains components examples.
 * [Printing](wxCore/Printing/README.md) contains printing examples.
@@ -26,13 +26,17 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 * [User controls](wxCore/UserControls/README.md) contains user controls examples.
 * [User Dialogs](wxCore/UserDialogs/README.md) contains user dialogs examples.
 * [Others](wxCore/Others/README.md) contains others examples.
-* [All](wxCore/README.md) contains all examples.
 
 ## [wxAUI](wxAUI/README.md) contains wxAUI (Advanced User Interface docking) examples.
 
 * [Menus and toolbars](wxAUI/MenusAndToolbars/README.md) contains AUI menus and toolbars examples.
 * [Containers](wxAUI/Containers/README.md) contains AUI containers examples.
 * [Book Controls](wxAUI/BookControls/README.md) contains AUI book controls examples.
+
+## [wxRichText](wxRichText/README.md) contains wxRichText (Rich Text) examples.
+
+* [Dialogs](wxRichText/Dialogs/README.md) contains rich text dialogs examples.
+* [Controls](wxRichText/Controls/README.md) contains rich text controls examples.
 
 ## [wxGL](wxGL/README.md) contains wxGL (Open GL) examples.
 
