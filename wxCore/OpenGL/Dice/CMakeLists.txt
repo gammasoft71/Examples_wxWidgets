@@ -18,4 +18,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Target
 add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})
 target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES} ${wxWidgets_LIBRARIES})
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "wxCore/OpenGL")
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "wxGL/OpenGL")
