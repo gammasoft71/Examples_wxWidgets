@@ -1,8 +1,8 @@
-# OpenGL Examples
+# Control Examples
 
-[This folder](.) contains OpenGL examples.
+[This folder](.) contains GL control examples.
 
-* [Dice](Dice/README.md) shows how to create a wxGLCanvas and wxGLContext.
+* [GLCanvas](GLCanvas/README.md) shows how to create an open GL caneva with wxGLCanvas and wxGLContext.
 
 ## Build and run
 
@@ -12,7 +12,7 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake ..
-start OpenGL.sln
+start Controls.sln
 ```
 
 Select any project and type Ctrl+F5 to build and run it.
@@ -22,7 +22,7 @@ Select any project and type Ctrl+F5 to build and run it.
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./OpenGL.xcodeproj
+open ./Controls.xcodeproj
 ```
 
 Select any project and type Cmd+R to build and run it.
@@ -33,7 +33,7 @@ Select any project and type Cmd+R to build and run it.
 mkdir build
 cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./OpenGL.cbp > /dev/null 2>&1
+xdg-open ./Controls.cbp > /dev/null 2>&1
 ```
 
 Select any project and type F10 to build and run it.

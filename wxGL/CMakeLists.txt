@@ -3,4 +3,11 @@ project(wxGL)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-#add_subdirectory(HelloWorlds)
+set(OpenGL_GL_PREFERENCE GLVND)
+find_package(OpenGL)
+
+if(OPENGL_FOUND)
+  add_subdirectory(Controls)
+else()
+  message(WARNING "OpenGL not found : Install OpenGL to generate wxGL examples")
+endif()

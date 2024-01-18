@@ -158,10 +158,6 @@ Shows how to use basic GUI classes such as GDI classes and controls.
 * [DeviceContext](Painting/DeviceContext/README.md) shows how to create a form and catch paint event.
 * [GraphicsContext](Painting/DeviceContext/README.md) shows how to create a form and catch paint event.
 
-## [OpenGL](OpenGL/README.md)
-
-* [Dice](OpenGL/Dice/README.md) shows how to create a wxGLCanvas and wxGLContext.
-
 ## [User controls](UserControls/README.md)
 
 * [DomainSpinCtrl](UserControls/DomainSpinCtrl/README.md) shows how to create a DomainSpinCtrl widget with own [wxDomainSpinCtrl](UserControls/DomainSpinCtrl/wxDomainSpinCtrl.h) (wxPanel with wxTextCtrl and wxSpinButton).

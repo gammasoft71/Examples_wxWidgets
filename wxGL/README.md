@@ -4,9 +4,9 @@ Shows how to use wxGLCanvas class for integrating OpenGL library.
 
 [![wxwidgets](../docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
 
-## [HelloWorlds](HelloWorlds/README.md)
+## [Controls](Controls/README.md)
 
-* [HelloWorldOpenGL](HelloWorlds/HelloWorldOpenGL/README.md) The classic first application "Hello, World!".
+* [GLCanvas](GLCanvas/HelloWorldOpenGL/README.md) shows how to create an open GL caneva with wxGLCanvas and wxGLContext.
 
 ## Build and run
 
