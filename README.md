@@ -44,6 +44,7 @@ git clone https://github.com/gammasoft71/Examples_wxWidgets
 To build this project, open "Terminal" and type following lines:
 
 ### Windows
+
 ``` shell
 mkdir build && cd build
 cmake ..
