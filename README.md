@@ -16,8 +16,8 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 * [Frames](wxCore/Frames/README.md) contains frames examples.
 * [Menus and toolbars](wxCore/MenusAndToolbars/README.md) contains menus and toolbars examples.
 * [Containers](wxCore/Containers/README.md) contains containers examples.
-* [Controls](wxCore/Controls/README.md) contains common controls examples.
 * [Book Controls](wxCore/BookControls/README.md) contains book controls examples.
+* [Controls](wxCore/Controls/README.md) contains common controls examples.
 * [Picker Controls](wxCore/PickerControls/README.md) contains picker controls examples.
 * [Components](wxCore/Components/README.md) contains components examples.
 * [Printing](wxCore/Printing/README.md) contains printing examples.
@@ -31,7 +31,9 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 
 ## [wxAUI](wxAUI/README.md) contains wxAUI (Advanced User Interface docking) examples.
 
-* [Window Docking](wxAUI/WindowDocking/README.md) contains windows docking examples.
+* [Menus and toolbars](wxAUI/MenusAndToolbars/README.md) contains AUI menus and toolbars examples.
+* [Containers](wxAUI/Containers/README.md) contains AUI containers examples.
+* [Book Controls](wxAUI/BookControls/README.md) contains AUI book controls examples.
 
 ## Download
 
