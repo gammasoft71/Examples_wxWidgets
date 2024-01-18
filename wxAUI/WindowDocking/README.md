@@ -1,4 +1,8 @@
-# Window docking Examples
+# wxAUI examples
+
+Shows how to use Advanced User Interface docking library.
+
+[![wxwidgets](../docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
 
 [This folder](.) contains window docking examples.
 

@@ -1,6 +1,6 @@
-# wxWidgets Examples
+# wxCore examples
 
-Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by programming code ([c++17](https://en.cppreference.com/w/)).
+Shows how to use basic GUI classes such as GDI classes and controls.
 
 [![wxwidgets](../docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
 
@@ -157,12 +157,6 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 
 * [DeviceContext](Painting/DeviceContext/README.md) shows how to create a form and catch paint event.
 * [GraphicsContext](Painting/DeviceContext/README.md) shows how to create a form and catch paint event.
-
-## [Window Docking](WindowDocking/README.md)
-
-* [AuiManager](WindowDocking/AuiManager/README.md) shows how to create a AuiManager widget with wxAuiManager.
-* [AuiNotebook](WindowDocking/AuiNotebook/README.md) shows how to create a AuiNotebook widget with AuiNotebook.
-* [AuiToolbar](WindowDocking/AuiToolbar/README.md) shows how to create a AuiToolbar widget with wxAuiToolbar.
 
 ## [OpenGL](OpenGL/README.md)
 

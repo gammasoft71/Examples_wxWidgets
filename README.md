@@ -23,12 +23,15 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 * [Printing](wxCore/Printing/README.md) contains printing examples.
 * [Events](wxCore/Events/README.md) contains events examples.
 * [Painting](wxCore/Painting/README.md) contains painting examples.
-* [Window Docking](wxCore/WindowDocking/README.md) contains windows docking examples.
 * [OpenGL](wxCore/OpenGL/README.md) contains OpenGL examples.
 * [User controls](wxCore/UserControls/README.md) contains user controls examples.
 * [User Dialogs](wxCore/UserDialogs/README.md) contains user dialogs examples.
 * [Others](wxCore/Others/README.md) contains others examples.
 * [All](wxCore/README.md) contains all examples.
+
+## [wxAUI](wxAUI/README.md) contains wxAUI (Advanced User Interface docking) examples.
+
+* [Window Docking](wxAUI/WindowDocking/README.md) contains windows docking examples.
 
 ``` shell
 git clone https://github.com/gammasoft71/Examples_wxWidgets
