@@ -2,7 +2,7 @@
 
 Shows how to use wxBase library.
 
-[![wxwidgets](docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
+[![wxwidgets](../docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
 
 ## [HelloWorlds](HelloWorlds/README.md)
 
