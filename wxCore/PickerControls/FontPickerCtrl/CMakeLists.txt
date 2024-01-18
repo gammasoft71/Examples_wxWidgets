@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 project(FontPickerCtrl)
 
 
-find_package(wxWidgets REQUIRED)
+find_package(wxWidgets REQUIRED COMPONENTS base core)
 include(${wxWidgets_USE_FILE})
 
 link_libraries(${wxWidgets_LIBRARIES})
