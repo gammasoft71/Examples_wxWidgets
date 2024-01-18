@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 project(WebView)
 
 
-find_package(wxWidgets COMPONENTS base core webview)
+find_package(wxWidgets REQUIRED COMPONENTS base core webview)
 include(${wxWidgets_USE_FILE})
 
 link_libraries(${wxWidgets_LIBRARIES})

@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.20)
 # Project
 project(HelloWorldConsole)
 
-find_package(wxWidgets COMPONENTS base REQUIRED)
+find_package(wxWidgets REQUIRED COMPONENTS base)
 include(${wxWidgets_USE_FILE})
 
 set(SOURCES README.md HelloWorldConsole.cpp)
