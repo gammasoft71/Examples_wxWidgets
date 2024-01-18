@@ -4,11 +4,15 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 
 [![wxwidgets](docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
 
-## [wxBase](wxBase/README.md) contains wxBase (Console) examples.
+## [wxBase](wxBase/README.md) 
+
+[wxBase examples](wxBase/README.md) contains wxBase (Console) examples.
 
 * [HelloWorlds](wxBase/HelloWorlds/README.md)
 
-## [wxCore](wxCore/README.md) contains wxCore (GUI) examples.
+## [wxCore](wxCore/README.md)
+
+[wxCore examples](wxCore/README.md) contains wxCore (GUI) examples.
 
 * [Hello World](wxCore/HelloWorlds/README.md) contains wxWidgets "Hello, World!" examples.
 * [Applications](wxCore/Applications/README.md) contains applications examples.
@@ -27,18 +31,24 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 * [User Dialogs](wxCore/UserDialogs/README.md) contains user dialogs examples.
 * [Others](wxCore/Others/README.md) contains others examples.
 
-## [wxAUI](wxAUI/README.md) contains wxAUI (Advanced User Interface docking) examples.
+## [wxAUI](wxAUI/README.md)
+
+[wxAUI examples](wxAUI/README.md) contains wxAUI (Advanced User Interface docking) examples.
 
 * [Menus and toolbars](wxAUI/MenusAndToolbars/README.md) contains AUI menus and toolbars examples.
 * [Containers](wxAUI/Containers/README.md) contains AUI containers examples.
 * [Book Controls](wxAUI/BookControls/README.md) contains AUI book controls examples.
 
-## [wxRichText](wxRichText/README.md) contains wxRichText (Rich Text) examples.
+## [wxRichText](wxRichText/README.md)
+
+[wxRichText examples](wxRichText/README.md) contains wxRichText (Rich Text) examples.
 
 * [Dialogs](wxRichText/Dialogs/README.md) contains rich text dialogs examples.
 * [Controls](wxRichText/Controls/README.md) contains rich text controls examples.
 
-## [wxGL](wxGL/README.md) contains wxGL (Open GL) examples.
+## [wxGL](wxGL/README.md)
+
+[wxGL examples](wxGL/README.md) contains wxGL (Open GL) examples.
 
 * [Controls](wxGL/Controls/README.md) contains GL common controls examples.
 
