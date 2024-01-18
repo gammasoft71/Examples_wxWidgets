@@ -4,29 +4,31 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 
 [![wxwidgets](docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
 
-## wxWidgets
+## [wxBase](wxBase/README.md) contains wxBase (Console) examples.
 
-* [Hello World](src/HelloWorlds/README.md) contains wxWidgets "Hello, World!" examples.
-* [Applications](src/Applications/README.md) contains applications examples.
-* [Dialogs](src/Dialogs/README.md) contains dialogs examples.
-* [Frames](src/Frames/README.md) contains frames examples.
-* [Menus and toolbars](src/MenusAndToolbars/README.md) contains menus and toolbars examples.
-* [Containers](src/Containers/README.md) contains containers examples.
-* [Controls](src/Controls/README.md) contains common controls examples.
-* [Book Controls](src/BookControls/README.md) contains book controls examples.
-* [Picker Controls](src/PickerControls/README.md) contains picker controls examples.
-* [Components](src/Components/README.md) contains components examples.
-* [Printing](src/Printing/README.md) contains printing examples.
-* [Events](src/Events/README.md) contains events examples.
-* [Painting](src/Painting/README.md) contains painting examples.
-* [Window Docking](src/WindowDocking/README.md) contains windows docking examples.
-* [OpenGL](src/OpenGL/README.md) contains OpenGL examples.
-* [User controls](src/UserControls/README.md) contains user controls examples.
-* [User Dialogs](src/UserDialogs/README.md) contains user dialogs examples.
-* [Others](src/Others/README.md) contains others examples.
-* [All](src/README.md) contains all examples.
+* [HelloWorlds](HelloWorlds/README.md)
 
-## Download
+## [wxCore](wxCore/README.md) contains wxCore (GUI) examples.
+
+* [Hello World](wxCore/HelloWorlds/README.md) contains wxWidgets "Hello, World!" examples.
+* [Applications](wxCore/Applications/README.md) contains applications examples.
+* [Dialogs](wxCore/Dialogs/README.md) contains dialogs examples.
+* [Frames](wxCore/Frames/README.md) contains frames examples.
+* [Menus and toolbars](wxCore/MenusAndToolbars/README.md) contains menus and toolbars examples.
+* [Containers](wxCore/Containers/README.md) contains containers examples.
+* [Controls](wxCore/Controls/README.md) contains common controls examples.
+* [Book Controls](wxCore/BookControls/README.md) contains book controls examples.
+* [Picker Controls](wxCore/PickerControls/README.md) contains picker controls examples.
+* [Components](wxCore/Components/README.md) contains components examples.
+* [Printing](wxCore/Printing/README.md) contains printing examples.
+* [Events](wxCore/Events/README.md) contains events examples.
+* [Painting](wxCore/Painting/README.md) contains painting examples.
+* [Window Docking](wxCore/WindowDocking/README.md) contains windows docking examples.
+* [OpenGL](wxCore/OpenGL/README.md) contains OpenGL examples.
+* [User controls](wxCore/UserControls/README.md) contains user controls examples.
+* [User Dialogs](wxCore/UserDialogs/README.md) contains user dialogs examples.
+* [Others](wxCore/Others/README.md) contains others examples.
+* [All](wxCore/README.md) contains all examples.
 
 ``` shell
 git clone https://github.com/gammasoft71/Examples_wxWidgets Examples_wxWidgets
