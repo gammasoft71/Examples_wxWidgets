@@ -48,7 +48,7 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 
 ## [wxWebView](wxWebView/README.md)
 
-[wxGL examples](wxWebView/README.md) contains wxWebView (web view) examples.
+[wxWebView examples](wxWebView/README.md) contains wxWebView (web view) examples.
 
 * [Controls](wxWebView/Controls/README.md) contains web view controls examples.
 
