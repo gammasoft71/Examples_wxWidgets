@@ -2,7 +2,7 @@
 
 [This folder](.) contains web view control examples.
 
-* [WebViewwidget](WebViewwidget/README.md) shows how to create a WebView with wxWebView.
+* [WebVieww](WebVieww/README.md) shows how to create a WebView with wxWebView.
 
 ## Build and run
 
