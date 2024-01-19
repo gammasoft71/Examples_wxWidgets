@@ -7,7 +7,7 @@ namespace WebViewExample {
     Frame() : wxFrame(nullptr, wxID_ANY, "WebView example", wxDefaultPosition, {1024, 768}) {}
     
   private:
-    wxWebView* webView = wxWebView::New(this, wxID_ANY, "https://gammasoft71.wixsite.com/gammasoft");
+    wxWebView* webView = wxWebView::New(this, wxID_ANY, "https://docs.wxwidgets.org/latest/");
   };
 
   class Application : public wxApp {
