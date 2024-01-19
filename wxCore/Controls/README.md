@@ -34,7 +34,6 @@
 * [TextCtrl](TextCtrl/README.md) shows how to create a TextCtrl widget with wxTextCtrl.
 * [ToggleButton](ToggleButton/README.md) shows how to create a ToggleButton widget and Event Click with wxToggleButton.
 * [TreeCtrl](TreeCtrl/README.md) shows how to create a TreeView widget with wxTreeCtrl.
-* [WebView](WebView/README.md) shows how to create a WebViewwidget with wxWebView.
 
 ## Build and run
 

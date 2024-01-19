@@ -1,16 +1,8 @@
-# wxRichText examples
+# Control Examples
 
-[This folder](.) contains rich text examples.
+[This folder](.) contains web view control examples.
 
-[![wxwidgets](../docs/Pictures/wxwidgets_header.png)](https://www.wxwidgets.org/)
-
-## [Dialogs](Dialogs/README.md)
-
-* [SymbolPickerDialog](Dialogs/SymbolPickerDialog/README.md) shows how to create a SymbolPickerDialog with wxSymbolPickerDialog.
-
-## [Controls](Controls/README.md)
-
-* [RichTextCtrl](Controls/RichTextCtrl/README.md) shows how to create a RichTextBox widget with wxRichTextCtrl.
+* [WebViewwidget](WebViewwidget/README.md) shows how to create a WebView with wxWebView.
 
 ## Build and run
 
@@ -20,7 +12,7 @@ To build this project, open "Terminal" and type following lines:
 ``` shell
 mkdir build && cd build
 cmake ..
-start wxRichText.sln
+start Controls.sln
 ```
 
 Select any project and type Ctrl+F5 to build and run it.
@@ -30,7 +22,7 @@ Select any project and type Ctrl+F5 to build and run it.
 ``` shell
 mkdir build && cd build
 cmake .. -G "Xcode"
-open ./wxRichText.xcodeproj
+open ./Controls.xcodeproj
 ```
 
 Select any project and type Cmd+R to build and run it.
@@ -41,7 +33,7 @@ Select any project and type Cmd+R to build and run it.
 mkdir build
 cd build
 cmake .. -G "CodeBlocks - Unix Makefiles"
-xdg-open ./wxRichText.cbp > /dev/null 2>&1
+xdg-open ./Controls.cbp > /dev/null 2>&1
 ```
 
 Select any project and type F10 to build and run it.
