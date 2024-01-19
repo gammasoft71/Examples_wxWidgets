@@ -46,11 +46,17 @@ Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by program
 * [Dialogs](wxRichText/Dialogs/README.md) contains rich text dialogs examples.
 * [Controls](wxRichText/Controls/README.md) contains rich text controls examples.
 
+## [wxWebView](wxWebView/README.md)
+
+[wxGL examples](wxWebView/README.md) contains wxWebView (web view) examples.
+
+* [Controls](wxWebView/Controls/README.md) contains web view controls examples.
+
 ## [wxGL](wxGL/README.md)
 
 [wxGL examples](wxGL/README.md) contains wxGL (Open GL) examples.
 
-* [Controls](wxGL/Controls/README.md) contains GL common controls examples.
+* [Controls](wxGL/Controls/README.md) contains Open GL controls examples.
 
 ## Download
 
