@@ -17,8 +17,9 @@ namespace FrameExample {
       });
 
       Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
-        if (wxMessageBox("Are you sure you want exit?", "Close Window", wxICON_QUESTION|wxYES_NO) != wxYES) event.Veto();
-        else event.Skip();
+        auto closed = wxMessageBox("Are you sure you want exit?", "Close Window", wxICON_QUESTION|wxYES_NO) == wxYES;
+        event.Veto(!closed);
+        event.Skip(closed);
       });
     }
 
