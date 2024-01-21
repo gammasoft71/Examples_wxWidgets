@@ -181,6 +181,7 @@
 * [FrameAndThreadWithCallAfter](Others/FrameAndThreadWithCallAfter/README.md) shows how to dialog with a frame widget from a thread with CallAfter method.
 * [FrameIcon](Others/FrameIcon/README.md) shows how to assign an icon to frame.
 * [FrameShow](Others/FrameShow/README.md) shows how to display a frame in different ways.
+* [FrameShowHide](Others/FrameShowHide/README.md) demonstrates the use of wxFrame Show, Hide and Close methods.
 * [MessageDialogShowWindowModal](Others/MessageDialogShowWindowModal/README.md) shows how to create a MessageDialog dialog with wxMessageDialog using ShowWindowModal method.
 * [OpenFileDialogShowWindowModal](Others/OpenFileDialogShowWindowModal/README.md) shows how to create a OpenFileDialogShowWindowModal dialog with wxFileDialog using ShowWindowModal method.
 * [SaveFileDialogShowWindowModal](Others/SaveFileDialogShowWindowModal/README.md) shows how to create a SaveFileDialogShowWindowModal dialog with wxFileDialog using ShowWindowModal method.
