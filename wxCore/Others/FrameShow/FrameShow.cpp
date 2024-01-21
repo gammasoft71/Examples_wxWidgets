@@ -17,22 +17,22 @@ namespace FrameShowExample {
       boxSizer->Add(buttonModal, 1, wxGROW|wxALL, 5);
       
       buttonNormal->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-        wxDialog* dialog = new wxDialog(nullptr, wxID_ANY, "dialog show normal", wxDefaultPosition, {250, 100});
-        dialog->Show();
+        wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "dialog show normal", wxDefaultPosition, {250, 100});
+        frame->Show();
       });
       
       buttonModeless->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-        wxDialog* dialog = new wxDialog(this, wxID_ANY, "dialog show modeless", wxDefaultPosition, {250, 100}, wxDEFAULT_DIALOG_STYLE|wxFRAME_FLOAT_ON_PARENT);
-        dialog->Show();
+        wxFrame* frame = new wxFrame(this, wxID_ANY, "dialog show modeless", wxDefaultPosition, {250, 100}, wxDEFAULT_FRAME_STYLE|wxFRAME_FLOAT_ON_PARENT);
+        frame->Show();
       });
       
       buttonStayOnTop->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-        wxDialog* dialog = new wxDialog(nullptr, wxID_ANY, "dialog stay on top", wxDefaultPosition, {250, 100}, wxDEFAULT_DIALOG_STYLE|wxSTAY_ON_TOP);
-        dialog->Show();
+        wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "dialog stay on top", wxDefaultPosition, {250, 100}, wxDEFAULT_FRAME_STYLE|wxSTAY_ON_TOP);
+        frame->Show();
       });
 
       buttonModal->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-        wxDialog* dialog = new wxDialog(this, wxID_ANY, "dialog show modal", wxDefaultPosition, {250, 100});
+        wxDialog* dialog = new wxDialog(this, wxID_ANY, "dialog show modal", wxDefaultPosition, {250, 100}, wxDEFAULT_FRAME_STYLE);
         dialog->ShowModal();
       });
     }
