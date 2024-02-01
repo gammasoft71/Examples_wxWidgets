@@ -57,7 +57,7 @@ namespace GenericAboutBoxExample {
 
   class Application : public wxApp {
     bool OnInit() override {
-      (new Frame())->Show();
+      (new Frame)->Show();
       return true;
     }
   };

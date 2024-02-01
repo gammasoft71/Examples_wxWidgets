@@ -1,9 +1,10 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/frame.h>
 
 namespace ApplicationExample {
   class Application : public wxApp {
     bool OnInit() override {
-      (new wxFrame(nullptr, wxID_ANY, wxEmptyString))->Show();
+      (new wxFrame {})->Show();
       return true;
     }
   };
