@@ -14,7 +14,7 @@ public:
     CallOnInit();
     SetExitOnFrameDelete(exitOnLastFrameClosed);
     wxInitAllImageHandlers();
-    menubar = new wxMenuBar();
+    menubar = new wxMenuBar;
     menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
       if (event.GetId() == wxID_EXIT) {
         auto canExit = true;
