@@ -14,8 +14,8 @@ public:
 private:
   // Very basic speech synthesizer using the command line.
   void Speak(const wxString& text) {
-    static bool initialized = false;
-    static wxFileName sayCmdFile {wxStandardPaths::Get().GetTempDir(), "say", "cmd"};
+    static auto initialized = false;
+    static auto sayCmdFile = wxFileName {wxStandardPaths::Get().GetTempDir(), "say", "cmd"};
     if (!initialized) {
       if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") wxFile(sayCmdFile.GetFullPath(), wxFile::write).Write("@echo Set Speaker=CreateObject(\"sapi.spvoice\") > %TEMP%\\say.vbs\n@echo Speaker.Speak \"%*\" >> %TEMP%\\say.vbs\n@%TEMP%\\say.vbs");
       else if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") wxFile(sayCmdFile.GetFullPath(), wxFile::write).Write("say \"$*\"");
