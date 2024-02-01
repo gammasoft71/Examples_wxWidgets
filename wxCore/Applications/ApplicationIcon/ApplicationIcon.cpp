@@ -9,7 +9,7 @@ namespace ApplicationIconExample {
     bool OnInit() override {
       auto frame = new wxFrame;
       wxImage::AddHandler(new wxPNGHandler);
-      wxFileName imagePath(wxStandardPaths::Get().GetExecutablePath());
+      auto imagePath = wxFileName {wxStandardPaths::Get().GetExecutablePath()};
       if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") imagePath.AppendDir("..");
       imagePath.AppendDir("Resources");
       imagePath.SetFullName("Gammasoft");
