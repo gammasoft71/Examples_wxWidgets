@@ -1,6 +1,8 @@
 #undef NDEBUG
-#include <stdexcept>
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/button.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
 
 using namespace std;
 
@@ -24,8 +26,8 @@ namespace ApplicationAndAssertExample {
     }
 
     wxPanel* panel = new wxPanel {this};
-    wxButton* buttonGenerateAssert = new wxButton(panel, wxID_ANY, "Generate assert", {10, 10});
-    wxButton* buttonGenerateFail = new wxButton(panel, wxID_ANY, "Generate fail", {10, 40});
+    wxButton* buttonGenerateAssert = new wxButton {panel, wxID_ANY, "Generate assert", {10, 10}};
+    wxButton* buttonGenerateFail = new wxButton {panel, wxID_ANY, "Generate fail", {10, 40}};
   };
   
   class Application : public wxApp {
