@@ -1,5 +1,5 @@
 #include "Console.h"
-#include <wx/wx.h>
+#include <iostream>
 
 using namespace std;
 
