@@ -1,5 +1,8 @@
-#include <wx/wx.h>
 #include <wx/aboutdlg.h>
+#include <wx/app.h>
+#include <wx/button.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
 #include "gammasoft_64x64.xpm"
 
 namespace AboutBoxExample {
@@ -7,7 +10,7 @@ namespace AboutBoxExample {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "AboutBox example") {
       button->Bind(wxEVT_BUTTON, [](wxCommandEvent& event) {
-        wxAboutDialogInfo aboutInfo;
+        auto aboutInfo = wxAboutDialogInfo {};
         aboutInfo.SetName(wxTheApp->GetAppName());
         aboutInfo.SetVersion("1.0", "1.0.0");
         aboutInfo.SetDescription("About dialog description.");
@@ -51,8 +54,8 @@ namespace AboutBoxExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
-    wxButton* button = new wxButton(panel, wxID_ABOUT, wxEmptyString, {10, 10});
+    wxPanel* panel = new wxPanel {this};
+    wxButton* button = new wxButton {panel, wxID_ABOUT, wxEmptyString, {10, 10}};
   };
 
   class Application : public wxApp {
