@@ -3,6 +3,7 @@ project(Events)
 
 add_subdirectory(ApplicationIdle)
 add_subdirectory(CustomEvent)
+add_subdirectory(EvtHandlerFilterEvent)
 add_subdirectory(FrameAndEvents)
 add_subdirectory(FrameClick)
 add_subdirectory(FramePaint)

@@ -144,6 +144,7 @@
 
 * [ApplicationIdle](Events/ApplicationIdle/README.md) shows how to create an application and catch idle event.
 * [CustomEvent](Events/CustomEvent/README.md) shows how to create a CustomEvent event with wxCommandEvent.
+* [EvtHandlerFilterEvent](Events/EvtHandlerFilterEvent/README.md) shows how to use EvtHandler::FilterEvent method.
 * [FrameAndEvents](Events/FrameAndEvents/README.md) shows how to create a Frame and catch some events.
 * [FrameClick](Events/FrameClick/README.md) shows how to create a Frame and catch click event.
 * [FramePaint](Events/FramePaint/README.md) shows how to create a Frame and catch paint event.
