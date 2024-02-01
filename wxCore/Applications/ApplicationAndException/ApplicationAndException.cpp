@@ -1,5 +1,8 @@
-#include <stdexcept>
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/button.h>
+#include <wx/frame.h>
+#include <wx/msgdlg.h>
+#include <wx/panel.h>
 
 using namespace std;
 
@@ -29,9 +32,9 @@ namespace ApplicationAndExceptionExample {
     void GenerateUnknownException(wxCommandEvent& event) {throw "Unknown exception generated";}
 
     wxPanel* panel = new wxPanel {this};
-    wxButton* buttonGenerateHandledException = new wxButton(panel, wxID_ANY, "Generate handled exception", {10, 10});
-    wxButton* buttonGenerateException = new wxButton(panel, wxID_ANY, "Generate exception", {10, 40});
-    wxButton* buttonGenerateUnknownException = new wxButton(panel, wxID_ANY, "Generate unknown exception", {10, 70});
+    wxButton* buttonGenerateHandledException = new wxButton {panel, wxID_ANY, "Generate handled exception", {10, 10}};
+    wxButton* buttonGenerateException = new wxButton {panel, wxID_ANY, "Generate exception", {10, 40}};
+    wxButton* buttonGenerateUnknownException = new wxButton {panel, wxID_ANY, "Generate unknown exception", {10, 70}};
   };
   
   class Application : public wxApp {
