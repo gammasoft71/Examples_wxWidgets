@@ -1,7 +1,13 @@
-#include <wx/wx.h>
-#include <wx/notifmsg.h>
-#include <wx/generic/notifmsg.h>
+#include <wx/app.h>
+#include <wx/button.h>
+#include <wx/frame.h>
 #include <wx/msgout.h>
+#include <wx/notifmsg.h>
+#include <wx/panel.h>
+#include <wx/timer.h>
+#if defined(__APPLE__)
+#include <wx/generic/notifmsg.h>
+#endif
 
 namespace NotificationMessageExample {
 #if defined(__APPLE__)
@@ -81,8 +87,8 @@ namespace NotificationMessageExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxButton* button = new wxButton(panel, wxID_ANY, "Close", {10, 10}, {160, 50});
-    wxOwnNotificationMessage* notificationMessage = new wxOwnNotificationMessage("Notification", "This is a notification message", this, wxICON_ERROR);
+    wxButton* button = new wxButton {panel, wxID_ANY, "Close", {10, 10}, {160, 50}};
+    wxOwnNotificationMessage* notificationMessage = new wxOwnNotificationMessage {"Notification", "This is a notification message", this, wxICON_ERROR};
   };
   
   class Application : public wxApp {
