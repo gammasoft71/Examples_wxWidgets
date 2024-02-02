@@ -17,7 +17,7 @@ namespace SpinButtonExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxSpinButton* spinButton1 = new wxSpinButton(panel, wxID_ANY, {10, 10}, wxDefaultSize, wxSP_VERTICAL|wxSP_WRAP);
     wxStaticText* text = new wxStaticText(panel, wxID_ANY, "value = 15", {10, 50});
   };

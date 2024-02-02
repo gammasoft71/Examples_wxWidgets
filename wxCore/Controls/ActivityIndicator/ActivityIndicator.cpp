@@ -11,7 +11,7 @@ namespace ActivityIndicatorExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxActivityIndicator* activityIndicator = new wxActivityIndicator(panel, wxID_ANY, {10, 10});
   };
 

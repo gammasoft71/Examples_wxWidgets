@@ -17,7 +17,7 @@ namespace GaugeExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxGauge* gauge1 = new wxGauge(panel, wxID_ANY, 100, {90, 30}, {200, 25});
     wxGauge* gauge2 = new wxGauge(panel, wxID_ANY, 100, {90, 60}, {200, 25});
     wxGauge* gauge3 = new wxGauge(panel, wxID_ANY, 100, {90, 90}, {200, 25});

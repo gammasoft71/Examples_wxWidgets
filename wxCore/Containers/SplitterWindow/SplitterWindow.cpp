@@ -21,7 +21,7 @@ namespace SplitterWindowExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxSplitterWindow* splitterWindowLeft = new wxSplitterWindow(panel, wxID_ANY, {0, 0}, {300, 300}, wxSP_NOBORDER);
     wxPanel* leftPanel1 = new wxPanel(splitterWindowLeft);
     wxPanel* leftPanel2 = new wxPanel(splitterWindowLeft);

@@ -19,7 +19,7 @@ namespace FontDialogExample {
     }
 
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxButton* button = new wxButton(panel, wxID_ANY, "Font...", {10, 10});
     wxStaticText* label = new wxStaticText(panel, wxID_ANY,
       "The quick brown fox jumps over the lazy dog.\n"

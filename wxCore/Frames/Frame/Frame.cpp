@@ -24,7 +24,7 @@ namespace FrameExample {
     }
 
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxButton* buttonClose = new wxButton(panel, wxID_ANY, "Close", {10, 10});
     wxButton* buttonExit = new wxButton(panel, wxID_ANY, "Exit", {100, 10});
     wxButton* buttonExitMainLoop = new wxButton(panel, wxID_ANY, "ExitMainLoop", {190, 10});

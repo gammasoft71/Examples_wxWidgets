@@ -19,7 +19,7 @@ namespace ChoicebookExample {
     }
 
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxChoicebook* tabControl1 = new wxChoicebook(panel, wxID_ANY, {10, 10}, {370, 250});
     wxNotebookPage* tabpageRed = new wxNotebookPage(tabControl1, wxID_ANY);
     wxNotebookPage* tabpageGreen = new wxNotebookPage(tabControl1, wxID_ANY);

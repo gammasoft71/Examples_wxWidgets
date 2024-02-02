@@ -15,7 +15,7 @@ namespace RadioBoxExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     std::vector<wxString> choices1 = {"Radio 1", "Radio 2", "Radio 3"};
     std::vector<wxString> choices2 = {"Radio 4", "Radio 5", "Radio 6"};
     wxRadioBox* radioBox1 = new wxRadioBox(panel, wxID_ANY, "RadioBox 1", {10, 10}, wxDefaultSize, static_cast<int>(choices1.size()), choices1.data(), 0, wxRA_SPECIFY_ROWS);

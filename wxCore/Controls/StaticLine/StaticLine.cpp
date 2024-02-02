@@ -11,7 +11,7 @@ namespace StaticLineExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxStaticLine* staticLine1 = new wxStaticLine(panel, wxID_ANY, {20, 15}, {255, wxDefaultCoord});
     wxStaticLine* staticLine2 = new wxStaticLine(panel, wxID_ANY, {285, 20}, {wxDefaultCoord, 255}, wxLI_VERTICAL);
     wxStaticLine* staticLine3 = new wxStaticLine(panel, wxID_ANY, {20, 285}, {255, wxDefaultCoord});

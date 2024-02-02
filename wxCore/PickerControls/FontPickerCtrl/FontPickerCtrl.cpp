@@ -15,7 +15,7 @@ namespace FontPickerCtrlExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxStaticText* label = new wxStaticText(panel, wxID_ANY,
       "The quick brown fox jumps over the lazy dog.\n"
       "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.\n"

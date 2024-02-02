@@ -52,7 +52,7 @@ namespace ShellExecuteExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxBoxSizer* boxSizer = new wxBoxSizer(wxVERTICAL);
     wxButton* buttonWeb = new wxButton(panel, wxID_ANY, "Open Gammasoft website...", wxDefaultPosition, wxDefaultSize, wxBORDER_SIMPLE);
     wxButton* buttonWriteMail = new wxButton(panel, wxID_ANY, "Write mail...", wxDefaultPosition, wxDefaultSize, wxBORDER_SIMPLE);

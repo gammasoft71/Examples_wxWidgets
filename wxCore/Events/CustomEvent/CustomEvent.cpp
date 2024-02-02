@@ -35,7 +35,7 @@ namespace CustomEventExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxButton* button = new wxButton(panel, wxID_ANY, "Send Event", {10, 10});
   };
 

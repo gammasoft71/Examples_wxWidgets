@@ -40,7 +40,7 @@ namespace FrameShowExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxBoxSizer* boxSizer = new wxBoxSizer(wxVERTICAL);
     wxButton* buttonNormal = new wxButton(panel, wxID_ANY, "Show normal", wxDefaultPosition, wxDefaultSize, wxBORDER_SIMPLE);
     wxButton* buttonModeless = new wxButton(panel, wxID_ANY, "Show modeless", wxDefaultPosition, wxDefaultSize, wxBORDER_SIMPLE);

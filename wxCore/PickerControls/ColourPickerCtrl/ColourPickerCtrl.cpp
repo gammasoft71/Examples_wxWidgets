@@ -14,7 +14,7 @@ namespace ColourPickerCtrlExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxPanel* testZone = new wxPanel(panel, wxID_ANY, {10, 50}, {200, 100}, wxTAB_TRAVERSAL | wxBORDER_SUNKEN);
     wxColourPickerCtrl* picker = new wxColourPickerCtrl(panel, wxID_ANY, {0, 0, 0}, {10, 10}, wxDefaultSize, wxCLRP_SHOW_ALPHA);
   };

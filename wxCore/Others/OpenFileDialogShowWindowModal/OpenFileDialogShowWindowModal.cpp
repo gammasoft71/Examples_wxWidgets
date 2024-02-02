@@ -36,7 +36,7 @@ namespace OpenFileDialogShowWindowModalExample {
     }
 
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxButton* button = new wxButton(panel, wxID_ANY, "Open...", {10, 10});
     wxStaticText* label = new wxStaticText(panel, wxID_ANY, "", {10, 40});
   };

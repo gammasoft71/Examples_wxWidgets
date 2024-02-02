@@ -15,7 +15,7 @@ namespace ControlExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxControl* control1 = new wxControl(panel, wxID_ANY, {50, 50}, {100, 50});
   };
 

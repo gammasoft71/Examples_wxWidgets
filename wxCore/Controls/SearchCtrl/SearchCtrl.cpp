@@ -37,7 +37,7 @@ namespace SearchCtrlExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxSearchCtrl* searchCtrl1 = new wxSearchCtrl(panel, wxID_ANY, wxEmptyString, {10, 10}, {280, wxDefaultCoord});
     wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "Mode : Text", {10, 50}, {280, 20});
     wxStaticText* staticText2 = new wxStaticText(panel, wxID_ANY, "Search for : ", {10, 80}, {280, 50});

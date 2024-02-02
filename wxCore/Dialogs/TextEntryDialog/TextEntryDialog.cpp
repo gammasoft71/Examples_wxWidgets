@@ -13,7 +13,7 @@ namespace TextEntryDialogExample {
     }
 
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxButton* button = new wxButton(panel, wxID_ANY, "Text...", {10, 10});
     wxStaticText* label = new wxStaticText(panel, wxID_ANY, "Default value", {10, 50});
   };

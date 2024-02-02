@@ -16,7 +16,7 @@ namespace ApplictionIdleExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     int counter = 0;
   };
 

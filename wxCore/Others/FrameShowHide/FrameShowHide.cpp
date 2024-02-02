@@ -44,7 +44,7 @@ private:
     }
   }
   
-  wxPanel* panel = new wxPanel(this);
+  wxPanel* panel = new wxPanel {this};
   wxButton* closeButton = new wxButton(panel, wxID_ANY, "Close", {10, 10}, {100, 40});
   wxButton* showButton = new wxButton(panel, wxID_ANY, "Show", {10, 60}, {100, 40});
   wxButton* hideButton = new wxButton(panel, wxID_ANY, "Hide", {10, 110}, {100, 40});

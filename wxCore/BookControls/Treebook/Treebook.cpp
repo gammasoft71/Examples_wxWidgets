@@ -80,7 +80,7 @@ namespace TreebookExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     TreeBook* tabControl1 = new TreeBook(panel, wxID_ANY, {10, 10}, {370, 250});
     wxNotebookPage* tabPageRed = new wxNotebookPage(tabControl1, wxID_ANY);
     wxNotebookPage* tabPageGreen = new wxNotebookPage(tabControl1, wxID_ANY);

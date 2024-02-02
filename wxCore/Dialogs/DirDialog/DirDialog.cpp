@@ -15,7 +15,7 @@ namespace DirDialogExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxButton* button = new wxButton(panel, wxID_ANY, "Folder...", {10, 10});
     wxStaticText* label = new wxStaticText(panel, wxID_ANY, "Path = ", {10, 40});
   };

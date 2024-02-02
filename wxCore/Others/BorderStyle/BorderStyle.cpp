@@ -12,7 +12,7 @@ namespace BorderStyleExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxGenericStaticText* staticTextWithNoneBorder = new wxGenericStaticText(panel, wxID_ANY, "None", {20, 20}, {150, 50}, wxALIGN_CENTER|wxBORDER_NONE);
     wxGenericStaticText* staticTextWithStaticBorder = new wxGenericStaticText(panel, wxID_ANY, "Static", {190, 20}, {150, 50}, wxALIGN_CENTER|wxBORDER_STATIC);
     wxGenericStaticText* staticTextWithSimpleBorder = new wxGenericStaticText(panel, wxID_ANY, "Simple", {360, 20}, {150, 50}, wxALIGN_CENTER|wxBORDER_SIMPLE);

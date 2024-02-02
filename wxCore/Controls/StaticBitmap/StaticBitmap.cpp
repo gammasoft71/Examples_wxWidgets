@@ -31,7 +31,7 @@ namespace StaticBitmapExample {
     }
 
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxBoxSizer* boxSizer = new wxBoxSizer(wxVERTICAL);
     wxStaticBitmap* staticBitmap1 = new wxStaticBitmap(panel, wxID_ANY, wxNullBitmap);
     wxChoice* choice1 = new wxChoice(panel, wxID_ANY);

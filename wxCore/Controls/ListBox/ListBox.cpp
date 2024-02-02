@@ -35,7 +35,7 @@ namespace ListBoxExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxBoxSizer* boxSizer = new wxBoxSizer(wxHORIZONTAL);
     wxListBox* listBoxLeft = new wxListBox(panel, wxID_ANY, wxDefaultPosition);
     wxListBox* listBoxRight = new wxListBox(panel, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, nullptr, wxLB_SORT);

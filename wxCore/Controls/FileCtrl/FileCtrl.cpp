@@ -52,7 +52,7 @@ namespace FileCtrlExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     FileCtrl* fileCtrl1 = new FileCtrl(panel, wxID_ANY, wxStandardPaths::Get().GetDocumentsDir(), wxEmptyString, "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", wxFC_DEFAULT_STYLE);
     wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "", {10, 410});
   };

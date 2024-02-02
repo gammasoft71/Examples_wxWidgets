@@ -35,7 +35,7 @@ namespace GenericProgressDialogExample {
     }
 
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxButton* buttonProcess = new wxButton(panel, wxID_ANY, "Process", {10, 10});
     wxButton* buttonIndeterminateProcess = new wxButton(panel, wxID_ANY, "Indeterminate Process", {100, 10});
   };

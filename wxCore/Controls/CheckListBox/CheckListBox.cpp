@@ -31,7 +31,7 @@ namespace ChackListBoxExample {
       return checkedItems;
     }
     
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxCheckListBox* checkListBox = new wxCheckListBox(panel, wxID_ANY, {20, 20}, {160, 200});
   };
 

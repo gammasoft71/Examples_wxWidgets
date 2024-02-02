@@ -37,7 +37,7 @@ namespace NumericTextCtrlExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxNumericTextCtrl* numericTextBox1 = new wxNumericTextCtrl(panel, wxID_ANY, 42.2, {10, 10});
   };
 

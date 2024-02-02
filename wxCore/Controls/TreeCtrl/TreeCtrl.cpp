@@ -18,7 +18,7 @@ namespace TreeCtrlExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxTreeCtrl* treeCtrl = new wxTreeCtrl(panel, wxID_ANY, {10, 10}, {150, 200});
   };
 

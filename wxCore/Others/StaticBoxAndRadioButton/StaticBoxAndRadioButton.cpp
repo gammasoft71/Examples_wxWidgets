@@ -23,7 +23,7 @@ namespace StaticBoxAndRadioButtonExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxBoxSizer* boxSizer = new wxBoxSizer(wxHORIZONTAL);
     wxStaticBoxSizer* staticBoxSizer1 = new wxStaticBoxSizer(wxVERTICAL, panel, "Group 1");
     wxStaticBoxSizer* staticBoxSizer2 = new wxStaticBoxSizer(wxVERTICAL, panel, "Group 2");

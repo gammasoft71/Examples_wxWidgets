@@ -12,7 +12,7 @@ namespace BannerWindowExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxBannerWindow* banner = new wxBannerWindow(panel, wxID_ANY, wxTOP, wxDefaultPosition, {800, 50}, wxALIGN_CENTRE_HORIZONTAL);
   };
 

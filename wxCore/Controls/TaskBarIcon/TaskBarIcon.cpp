@@ -40,7 +40,7 @@ namespace TaskBarIconExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "Double click on Gammasoft tray icon\nto show or hide this frame.", {10, 10});
     //wxTaskBarIcon taskBarIcon;
     TaskBarIcon taskBarIcon;

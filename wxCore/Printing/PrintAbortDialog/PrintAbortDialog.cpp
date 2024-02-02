@@ -24,7 +24,7 @@ namespace PrintAbortDialogExample {
 
   private:
     wxPrintAbortDialog* dialog = new wxPrintAbortDialog(this, "My document");
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxButton* button = new wxButton(panel, wxID_ANY, "Print abort...", {10, 10});
   };
 

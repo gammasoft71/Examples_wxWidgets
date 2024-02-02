@@ -37,7 +37,7 @@ namespace CollapsiblePaneExample {
     
   private:
     int count = 0;
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxBoxSizer* boxSizer = new wxBoxSizer(wxVERTICAL);
     wxCollapsiblePane* collapsiblePane1 = new wxCollapsiblePane(panel, wxID_ANY, "CollapsiblePane1");
     wxCollapsiblePane* collapsiblePane2 = new wxCollapsiblePane(panel, wxID_ANY, "CollapsiblePane2");

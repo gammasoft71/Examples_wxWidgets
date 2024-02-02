@@ -10,7 +10,7 @@ namespace FrameClickExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
   };
 
   class Application : public wxApp {

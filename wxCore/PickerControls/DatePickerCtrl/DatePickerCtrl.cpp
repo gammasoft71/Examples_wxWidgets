@@ -18,7 +18,7 @@ namespace DatePickerCtrlExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxDatePickerCtrl* datePicker1 = new wxDatePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, {30, 30}, wxDefaultSize, wxDP_DROPDOWN | wxDP_SHOWCENTURY);
     wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, wxEmptyString, {30, 70});
   };

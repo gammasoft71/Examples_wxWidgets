@@ -20,7 +20,7 @@ namespace SliderExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxSlider* slider1 = new wxSlider(panel, wxID_ANY, 100, 0, 200, {50, 50}, {25, 200}, wxSL_VERTICAL|wxSL_INVERSE);
     wxGauge* gauge1 = new wxGauge(panel, wxID_ANY, 200, {80, 50}, {25, 200}, wxGA_VERTICAL);
     wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, wxEmptyString, {150, 50});

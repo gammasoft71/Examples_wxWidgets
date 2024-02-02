@@ -18,7 +18,7 @@ namespace RadioButtonExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxRadioButton* radioButton1 = new wxRadioButton(panel, wxID_ANY, "radioButton 1", {30, 30});
     wxRadioButton* radioButton2 = new wxRadioButton(panel, wxID_ANY, "radioButton 2", {30, 60});
     wxRadioButton* radioButton3 = new wxRadioButton(panel, wxID_ANY, "radioButton 3", {30, 90});

@@ -52,7 +52,7 @@ namespace ConfigExample {
       reload_config();
     }
 
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxColourPickerCtrl* colourPicker = new wxColourPickerCtrl(panel, wxID_ANY, {0, 0, 0}, {10, 10}, {75, 25});
     wxButton* saveButton = new wxButton(panel, wxID_ANY, "&Save", {90, 10}, {75, 25});
     wxButton* reloadButton = new wxButton(panel, wxID_ANY, "&Reload", {170, 10}, {75, 25});

@@ -128,7 +128,7 @@ namespace MouseEventsExample {
       return result;
     }
     
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
   };
 
   class Application : public wxApp {

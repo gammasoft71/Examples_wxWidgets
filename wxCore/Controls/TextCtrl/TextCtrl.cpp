@@ -24,7 +24,7 @@ namespace TextCtrlExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxTextCtrl* textCtrl1 = new wxTextCtrl(panel, wxID_ANY, "textBox", {10, 10});
     wxTextCtrl* textCtrl2 = new wxTextCtrl(panel, wxID_ANY, "textBox", {10, 50});
   };

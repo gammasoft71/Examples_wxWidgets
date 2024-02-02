@@ -18,7 +18,7 @@ namespace HyperlinkCtrlExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxBoxSizer* boxSizerLinks = new wxBoxSizer(wxHORIZONTAL);
     wxHyperlinkCtrl* hyperlinkCtrl1 = new wxHyperlinkCtrl(panel, wxID_ANY, "Gammasoft", "https://gammasoft71.wixsite.com/gammasoft");
     wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, " presents ");

@@ -12,7 +12,7 @@ namespace MessageDialogExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxButton* buttonShowMessage = new wxButton(panel, wxID_ANY, "Message...", {10, 10});
     wxStaticText* labelDialogResult = new wxStaticText(panel, wxID_ANY, "Result = ", {10, 45});
   };

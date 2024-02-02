@@ -18,7 +18,7 @@ namespace SpinCtrlDoubleExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxSpinCtrlDouble* spinCtrlDouble1 = new wxSpinCtrlDouble(panel, wxID_ANY, wxEmptyString, {80, 50});
     wxStaticText* text = new wxStaticText(panel, wxID_ANY, "value = 10.00", {80, 100});
   };

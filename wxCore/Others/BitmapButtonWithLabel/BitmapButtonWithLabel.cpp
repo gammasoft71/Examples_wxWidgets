@@ -26,7 +26,7 @@ namespace BitmapButtonWithLabelExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxButton* button1 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 20});
     wxButton* button2 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 50});
     wxButton* button3 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 80});

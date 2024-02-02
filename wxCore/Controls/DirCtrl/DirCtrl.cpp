@@ -19,7 +19,7 @@ namespace DirCtrlExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxGenericDirCtrl* dirCtrl1 = new wxGenericDirCtrl(panel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDIRCTRL_DIR_ONLY|wxDIRCTRL_EDIT_LABELS);
     wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "", {10, 410});
   };

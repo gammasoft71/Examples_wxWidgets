@@ -11,7 +11,7 @@ namespace StaticBoxAndCheckBoxExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxStaticBox* staticBox1 = new wxStaticBox(panel, wxID_ANY, "Group 1", {10, 10}, {135, 140});
     wxStaticBox* staticBox2 = new wxStaticBox(panel, wxID_ANY, "Group 2", {155, 10}, {135, 140});
     wxCheckBox* check1 = new wxCheckBox(staticBox1->GetMainWindowOfCompositeControl(), wxID_ANY, "check 1", {20, 20});

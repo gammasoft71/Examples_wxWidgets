@@ -21,7 +21,7 @@ namespace ScrollBarExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxScrollBar* scrollBar1 = new wxScrollBar(panel, wxID_ANY, {10, 10}, wxDefaultSize, wxSB_HORIZONTAL);
     wxScrollBar* scrollBar2 = new wxScrollBar(panel, wxID_ANY, {10, 40}, wxDefaultSize, wxSB_HORIZONTAL);
     wxScrollBar* scrollBar3 = new wxScrollBar(panel, wxID_ANY, {270, 70}, wxDefaultSize, wxSB_VERTICAL);

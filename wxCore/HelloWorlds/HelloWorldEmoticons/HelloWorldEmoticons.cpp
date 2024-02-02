@@ -12,7 +12,7 @@ namespace HelloWorldEmoticonsExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "\U0001F44B, \U0001F30E\U00002757");
   };
 

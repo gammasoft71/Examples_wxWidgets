@@ -19,7 +19,7 @@ namespace StaticTextExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "Lorem ipsum", {10, 50}, {100, 23}, wxST_NO_AUTORESIZE);
     wxStaticText* staticText2 = new wxStaticText(panel, wxID_ANY, "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", {10, 100}, wxDefaultSize, 0);
     wxStaticText* staticText3 = new wxStaticText(panel, wxID_ANY, "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", {10, 150}, {100, 23}, wxST_NO_AUTORESIZE | wxST_ELLIPSIZE_END);

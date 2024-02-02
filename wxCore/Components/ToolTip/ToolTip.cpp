@@ -12,7 +12,7 @@ namespace ToolTipExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxButton* button = new wxButton(panel, wxID_ANY, "button", {10, 10});
     wxCheckBox* check = new wxCheckBox(panel, wxID_ANY, "check", {10, 40});
     wxStaticText* label = new wxStaticText(panel, wxID_ANY, "label", {10, 70});

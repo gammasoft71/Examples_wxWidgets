@@ -39,7 +39,7 @@ namespace FilePickerCtrlExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxStaticText* label = new wxStaticText(panel, wxID_ANY, "File = ", wxPoint(10, 50));
     FilePickerCtrl* picker = new FilePickerCtrl(panel, wxID_ANY, wxEmptyString, wxEmptyString, "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", {10, 10}, wxDefaultSize, wxFLP_DEFAULT_STYLE|wxFLP_SMALL);
   };

@@ -38,7 +38,7 @@ namespace StaticTextAndUnicodeExample {
       {"Russian", "\u0420\u0443\u0441\u0441\u043A\u0438\u0439 \u044F\u0437\u044B\u043A"}
     };
     vector<pair<wxStaticText*, wxStaticText*>> items {languages.size()};
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
   };
 
   class Application : public wxApp {

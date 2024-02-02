@@ -42,7 +42,7 @@ namespace ToolbookExample {
       return result;
     }
 
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxToolbook* tabControl1 = new wxToolbook(panel, wxID_ANY, {10, 10}, {370, 250}, /*wxTBK_BUTTONBAR|*/wxTBK_HORZ_LAYOUT);
     wxNotebookPage* tabPageRed = new wxNotebookPage(tabControl1, wxID_ANY);
     wxNotebookPage* tabPageGreen = new wxNotebookPage(tabControl1, wxID_ANY);

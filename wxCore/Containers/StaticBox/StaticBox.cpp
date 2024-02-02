@@ -8,7 +8,7 @@ namespace StaticBoxExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxStaticBox* staticBox1 = new wxStaticBox(panel, wxID_ANY, "GroupBox 1", {10, 10}, {305, 460});
     wxStaticBox* staticBox2 = new wxStaticBox(panel, wxID_ANY, wxEmptyString, {325, 10}, {305, 460});
   };

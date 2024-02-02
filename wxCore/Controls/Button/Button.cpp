@@ -18,7 +18,7 @@ namespace ButtonExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxButton* button1 = new wxButton(panel, wxID_ANY, "button1", {50, 10});
     wxButton* button2 = new wxButton(panel, wxID_ANY, "button2", {50, 60}, {200, 75}, wxBORDER_SIMPLE);
     wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "button1 clicked 0 times", {50, 150}, {200, 20});

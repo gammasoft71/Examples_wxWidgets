@@ -62,7 +62,7 @@ namespace ImageListExample {
     }
     
     int currentImageIndex = 0;
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxImageList* pictures = new wxImageList(128, 128);
     wxStaticBitmap* picture = new wxStaticBitmap(panel, wxID_ANY, wxNullBitmap, {75, 25}, wxDefaultSize, wxBORDER_SUNKEN);
     wxBitmapButton* buttonUp = new wxBitmapButton(panel, wxID_UP, wxArtProvider::GetBitmap(wxART_GO_UP, wxART_BUTTON), {75, 200}, {75, 25});

@@ -32,7 +32,7 @@ namespace CalendarCtrlExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxCalendarCtrl* calendarCtrl1 = new wxCalendarCtrl(panel, wxID_ANY, {system_clock::to_time_t(system_clock::now())}, {10, 10});
   };
 

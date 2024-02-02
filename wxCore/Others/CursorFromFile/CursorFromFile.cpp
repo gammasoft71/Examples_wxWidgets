@@ -26,7 +26,7 @@ namespace CursorFromFileExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxBoxSizer* boxSizer = new wxBoxSizer(wxHORIZONTAL);
     wxButton* buttonOpenCursor = new wxButton(panel, wxID_ANY, "Open cursor");
     wxPanel* testZone = new wxPanel(panel, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxBORDER_SUNKEN);

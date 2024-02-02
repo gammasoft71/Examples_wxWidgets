@@ -22,7 +22,7 @@ namespace TimerExample {
     }
 
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxStaticText* label = new wxStaticText(panel, wxID_ANY, "0.0", {10, 10});
     wxButton* button = new wxButton(panel, wxID_ANY, "Start", {10, 90});
     wxTimer timer;

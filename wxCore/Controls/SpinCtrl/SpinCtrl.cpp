@@ -16,7 +16,7 @@ namespace SpinCtrlExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxSpinCtrl* spinCtrl1 = new wxSpinCtrl(panel, 100, wxEmptyString, {80, 50});
     wxStaticText* text = new wxStaticText(panel, wxID_ANY, "value = 50", {80, 100});
   };

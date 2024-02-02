@@ -14,7 +14,7 @@ namespace TimePickerCtrlExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxTimePickerCtrl* timePicker1 = new wxTimePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, {30, 30});
     wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, wxEmptyString, {30, 70});
   };

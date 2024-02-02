@@ -19,7 +19,7 @@ namespace LineExample {
     }
     
   private:
-    wxPanel* panel = new wxPanel(this);
+    wxPanel* panel = new wxPanel {this};
     wxColouredLine* lineSeparator = new wxColouredLine(panel, wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW), {10, 10}, {280, 2});
     wxColouredLine* lineRed = new wxColouredLine(panel, {255, 0, 0}, {10, 20}, {2, 250});
     wxColouredLine* lineGreen = new wxColouredLine(panel, {0, 143, 0}, {149, 20}, {2, 250});
