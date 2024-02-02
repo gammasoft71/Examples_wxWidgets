@@ -1,5 +1,9 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/button.h>
 #include <wx/filedlg.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
+#include <wx/stattext.h>
 #include <wx/sysopt.h>
 
 namespace OpnFileDialogExample {
@@ -7,18 +11,18 @@ namespace OpnFileDialogExample {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "OpenFileDialog example") {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-        wxFileDialog openFileDialog(this, wxEmptyString, wxEmptyString, wxEmptyString, "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", wxFD_OPEN|wxFD_FILE_MUST_EXIST);
+        auto openFileDialog = wxFileDialog {this, wxEmptyString, wxEmptyString, wxEmptyString, "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", wxFD_OPEN|wxFD_FILE_MUST_EXIST};
         openFileDialog.SetFilterIndex(0);
         if (openFileDialog.ShowModal() == wxID_OK) {
-          label->SetLabelText(wxString::Format("File = %s",  openFileDialog.GetPath()));
+          label->SetLabelText(wxString::Format("File = %s", openFileDialog.GetPath()));
         }
       });
     }
 
   private:
     wxPanel* panel = new wxPanel {this};
-    wxButton* button = new wxButton(panel, wxID_ANY, "Open...", {10, 10});
-    wxStaticText* label = new wxStaticText(panel, wxID_ANY, "", {10, 40});
+    wxButton* button = new wxButton {panel, wxID_ANY, "Open...", {10, 10}};
+    wxStaticText* label = new wxStaticText {panel, wxID_ANY, "", {10, 40}};
   };
 
   class Application : public wxApp {
