@@ -1,4 +1,8 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/button.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
+#include <wx/stattext.h>
 #include <wx/textdlg.h>
 
 namespace PasswordEntryDialogExample {
@@ -6,7 +10,7 @@ namespace PasswordEntryDialogExample {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "PasswordEntryDialog example") {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-        wxPasswordEntryDialog passwordEntryDialog(this, "User password", "user: admin", label->GetLabel());
+        auto passwordEntryDialog = wxPasswordEntryDialog {this, "User password", "user: admin", label->GetLabel()};
         if (passwordEntryDialog.ShowModal() == wxID_OK)
           label->SetLabel(passwordEntryDialog.GetValue());
       });
@@ -14,8 +18,8 @@ namespace PasswordEntryDialogExample {
 
   private:
     wxPanel* panel = new wxPanel {this};
-    wxButton* button = new wxButton(panel, wxID_ANY, "Password...", {10, 10});
-    wxStaticText* label = new wxStaticText(panel, wxID_ANY, "sysad47@74dasys", {10, 50});
+    wxButton* button = new wxButton {panel, wxID_ANY, "Password...", {10, 10}};
+    wxStaticText* label = new wxStaticText {panel, wxID_ANY, "sysad47@74dasys", {10, 50}};
   };
 
   class Application : public wxApp {
