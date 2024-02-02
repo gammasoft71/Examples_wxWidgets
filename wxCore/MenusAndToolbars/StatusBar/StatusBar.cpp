@@ -1,6 +1,5 @@
-#include <vector>
-#include <wx/wx.h>
-#include <wx/artprov.h>
+#include <wx/app.h>
+#include <wx/frame.h>
 
 namespace StatusBarExample {
   class Frame : public wxFrame {
