@@ -8,8 +8,8 @@ namespace StatusBarExample {
     Frame() : wxFrame(nullptr, wxID_ANY, "StatusBar example") {
       SetStatusBar(statusBar);
     
-      std::vector statusWidths = {80, 80, -1};
-      std::vector statusStyles = {wxSB_SUNKEN, wxSB_SUNKEN, wxSB_SUNKEN};
+      auto statusWidths = std::vector {80, 80, -1};
+      auto statusStyles = std::vector {wxSB_SUNKEN, wxSB_SUNKEN, wxSB_SUNKEN};
       
       statusBar->SetFieldsCount(static_cast<int>(statusWidths.size()));
       statusBar->SetStatusWidths(static_cast<int>(statusWidths.size()), statusWidths.data());
@@ -21,7 +21,7 @@ namespace StatusBarExample {
     }
 
   private:
-    wxStatusBar* statusBar = new wxStatusBar(this);
+    wxStatusBar* statusBar = new wxStatusBar {this};
   };
 
   class Application : public wxApp {
