@@ -4,7 +4,6 @@
 #include <wx/frame.h>
 #include <wx/listbox.h>
 #include <wx/menu.h>
-#include <wx/toolbar.h>
 #include <map>
 
 namespace ToolBarExample {
