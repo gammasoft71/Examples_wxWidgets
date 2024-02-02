@@ -1,4 +1,5 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/frame.h>
 
 namespace StatusBarWithoutPanelsExample {
   class Frame : public wxFrame {
