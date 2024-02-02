@@ -6,12 +6,12 @@ namespace MainMenuExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "MainMenu example") {
-      auto menuFile = new wxMenu();
+      auto menuFile = new wxMenu;
       auto menuItemFileNew = menuFile->Append(wxID_NEW);
       menuItemFileNew->SetBitmap(wxArtProvider::GetBitmap(wxART_NEW, wxART_MENU));
       auto menuItemFileOpen = menuFile->Append(wxID_OPEN);
       menuItemFileOpen->SetBitmap(wxArtProvider::GetBitmap(wxART_FILE_OPEN, wxART_MENU));
-      auto menuFileOpenRecent = new wxMenu();
+      auto menuFileOpenRecent = new wxMenu;
       menuFileOpenRecent->Append(ID_OPENRECENTFILE1, "File 1");
       menuFileOpenRecent->Append(ID_OPENRECENTFILE2, "File 2");
       menuFileOpenRecent->Append(ID_OPENRECENTFILE3, "File 3");
@@ -33,7 +33,7 @@ namespace MainMenuExample {
       auto menuItemFileQuit = menuFile->Append(wxID_EXIT);
       menuItemFileQuit->SetBitmap(wxArtProvider::GetBitmap(wxART_QUIT, wxART_MENU));
 
-      auto menuEdit = new wxMenu();
+      auto menuEdit = new wxMenu;
       auto menuItemEditUndo = menuEdit->Append(wxID_UNDO);
       menuItemEditUndo->SetBitmap(wxArtProvider::GetBitmap(wxART_UNDO, wxART_MENU));
       auto menuItemEditRedo = menuEdit->Append(wxID_REDO);
@@ -48,9 +48,9 @@ namespace MainMenuExample {
       menuEdit->AppendSeparator();
       menuEdit->Append(wxID_SELECTALL);
       menuEdit->AppendSeparator();
-      menuEdit->Append(wxID_PREFERENCES);
+      menuEdit->Append(wxID_PREFERENCES, "&Settings...\tCtrl+,");
 
-      auto menuView = new wxMenu();
+      auto menuView = new wxMenu;
       auto menuItemViewBackward = menuView->Append(wxID_BACKWARD);
       menuItemViewBackward->SetBitmap(wxArtProvider::GetBitmap(wxART_GO_BACK, wxART_MENU));
       auto menuItemViewForward = menuView->Append(wxID_FORWARD);
@@ -59,7 +59,7 @@ namespace MainMenuExample {
       menuView->Append(ID_SHOW, "Show");
       menuView->Append(ID_HIDE, "Hide");
 
-      auto menuOptions = new wxMenu();
+      auto menuOptions = new wxMenu;
       menuOptions->Append(ID_OPTIONA, "Option A\tAlt+1", "", wxITEM_CHECK);
       menuOptions->Append(ID_OPTIONB, "Option B\tAlt+2", "", wxITEM_CHECK);
       menuOptions->Append(ID_OPTIONC, "Option C\tAlt+3", "", wxITEM_CHECK);
@@ -77,7 +77,7 @@ namespace MainMenuExample {
       menuOptions->Check(ID_OPTIONE, true);
       menuOptions->Check(ID_OPTIONI, true);
 
-      auto menuHelp = new wxMenu();
+      auto menuHelp = new wxMenu;
       menuHelp->Append(wxID_HELP_CONTEXT, "Context");
       menuHelp->Append(wxID_HELP_INDEX, "Index");
       menuHelp->Append(wxID_HELP_SEARCH, "Search");
@@ -88,23 +88,20 @@ namespace MainMenuExample {
       mainMenu->Append(menuEdit, "&Edit");
       mainMenu->Append(menuView, "&View");
       mainMenu->Append(menuOptions, "&Options");
-      // Forces the "Window" menu to be placed in front of the "Help" menu.
-      // If the "Window" menu is not specified, it will be created automatically but, in this case, after the "Help" menu.
-      if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") mainMenu->Append(new wxMenu(), "&Window");
       mainMenu->Append(menuHelp, "&Help");
 
       SetMenuBar(mainMenu);
 
       mainMenu->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
-        static std::map<int, std::string> names = {{wxID_NEW, "File/New"}, {wxID_OPEN, "File/Open..."}, {ID_OPENRECENTFILE1, "File/Open recent/File 1"}, {ID_OPENRECENTFILE2, "File/Open recent/File 2"}, {ID_OPENRECENTFILE3, "File/Open recent/File 3"}, {ID_OPENRECENTFILE4, "File/Open recent/File 4"}, {ID_OPENRECENTFILE5, "File/Open recent/File 5"}, {wxID_CLOSE, "File/Close"}, {wxID_SAVE, "File/Save"}, {wxID_SAVEAS, "File/Save as..."}, {wxID_PAGE_SETUP, "File/Page setup..."}, {wxID_PRINT, "File/Print..."}, {wxID_EXIT, "File/Quit"}, {wxID_UNDO, "Edit/Undo"}, {wxID_REDO, "Edit/Redo"}, {wxID_CUT, "Edit/Cut"}, {wxID_COPY, "Edit/Copy"}, {wxID_PASTE, "Edit/Paste"}, {wxID_SELECTALL, "Edit/Select All"}, {wxID_PREFERENCES, "Edit/Preferences"}, {wxID_BACKWARD, "View/Back"}, {wxID_FORWARD, "View/Forward"}, {ID_SHOW, "View/Show"}, {ID_HIDE, "View/Hide"}, {ID_OPTIONA, "Options/Option A"}, {ID_OPTIONB, "Options/Option B"}, {ID_OPTIONC, "Options/Option C"}, {ID_OPTIOND, "Options/Option D"}, {ID_OPTIONE, "Options/Option E"}, {ID_OPTIONF, "Options/Option F"}, {ID_OPTIONG, "Options/Option G"}, {ID_OPTIONH, "Options/Option H"}, {ID_OPTIONI, "Options/Option I"}, {wxID_HELP_CONTEXT, "Help/Context"}, {wxID_HELP_INDEX, "Help/Index"}, {wxID_HELP_SEARCH, "Help/Search"}, {wxID_ABOUT, "Help/About"}, {wxID_ANY, "Any"}};
+        static auto names = std::map<int, std::string> {{wxID_NEW, "File/New"}, {wxID_OPEN, "File/Open..."}, {ID_OPENRECENTFILE1, "File/Open recent/File 1"}, {ID_OPENRECENTFILE2, "File/Open recent/File 2"}, {ID_OPENRECENTFILE3, "File/Open recent/File 3"}, {ID_OPENRECENTFILE4, "File/Open recent/File 4"}, {ID_OPENRECENTFILE5, "File/Open recent/File 5"}, {wxID_CLOSE, "File/Close"}, {wxID_SAVE, "File/Save"}, {wxID_SAVEAS, "File/Save as..."}, {wxID_PAGE_SETUP, "File/Page setup..."}, {wxID_PRINT, "File/Print..."}, {wxID_EXIT, "File/Quit"}, {wxID_UNDO, "Edit/Undo"}, {wxID_REDO, "Edit/Redo"}, {wxID_CUT, "Edit/Cut"}, {wxID_COPY, "Edit/Copy"}, {wxID_PASTE, "Edit/Paste"}, {wxID_SELECTALL, "Edit/Select All"}, {wxID_PREFERENCES, "Edit/Settings..."}, {wxID_BACKWARD, "View/Back"}, {wxID_FORWARD, "View/Forward"}, {ID_SHOW, "View/Show"}, {ID_HIDE, "View/Hide"}, {ID_OPTIONA, "Options/Option A"}, {ID_OPTIONB, "Options/Option B"}, {ID_OPTIONC, "Options/Option C"}, {ID_OPTIOND, "Options/Option D"}, {ID_OPTIONE, "Options/Option E"}, {ID_OPTIONF, "Options/Option F"}, {ID_OPTIONG, "Options/Option G"}, {ID_OPTIONH, "Options/Option H"}, {ID_OPTIONI, "Options/Option I"}, {wxID_HELP_CONTEXT, "Help/Context"}, {wxID_HELP_INDEX, "Help/Index"}, {wxID_HELP_SEARCH, "Help/Search"}, {wxID_ABOUT, "Help/About"}, {wxID_ANY, "Any"}};
         listBox1->Append(names.find(event.GetId()) != names.end() ? names[event.GetId()] : "Unknown");
         event.StopPropagation();
       });
     }
 
   private:
-    wxListBox* listBox1 = new wxListBox(this, wxID_ANY);
-    wxMenuBar* mainMenu = new wxMenuBar();
+    wxListBox* listBox1 = new wxListBox {this, wxID_ANY};
+    wxMenuBar* mainMenu = new wxMenuBar;
     
     inline static const int ID_OPENRECENTFILE1 = 1;
     inline static const int ID_OPENRECENTFILE2 = 2;
