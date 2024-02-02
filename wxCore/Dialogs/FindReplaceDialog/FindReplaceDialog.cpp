@@ -1,5 +1,8 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/button.h>
 #include <wx/fdrepdlg.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
 
 namespace FindReplaceDialogExample {
   class Frame : public wxFrame {
