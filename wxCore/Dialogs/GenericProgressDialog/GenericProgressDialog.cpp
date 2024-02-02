@@ -1,6 +1,9 @@
-#include <thread>
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/button.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
 #include <wx/progdlg.h>
+#include <thread>
 
 using namespace std;
 using namespace std::literals;
@@ -10,7 +13,7 @@ namespace GenericProgressDialogExample {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "GenericProgressDialog example") {
       buttonProcess->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-        wxGenericProgressDialog progressDialog("Process running", "Please wait...", 100, this, wxPD_APP_MODAL|wxPD_AUTO_HIDE|wxPD_CAN_SKIP|wxPD_REMAINING_TIME);
+        auto progressDialog = wxGenericProgressDialog {"Process running", "Please wait...", 100, this, wxPD_APP_MODAL|wxPD_AUTO_HIDE|wxPD_CAN_SKIP|wxPD_REMAINING_TIME};
         progressDialog.Hide();
         Enable(false);
         progressDialog.Show();
@@ -22,7 +25,7 @@ namespace GenericProgressDialogExample {
       });
 
       buttonIndeterminateProcess->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-        wxProgressDialog progressDialog("Indeterminate process running", "Click \"Cancel\" to abort", 10, this, wxPD_APP_MODAL|wxPD_CAN_ABORT|wxPD_ELAPSED_TIME);
+        auto progressDialog = wxProgressDialog {"Indeterminate process running", "Click \"Cancel\" to abort", 10, this, wxPD_APP_MODAL|wxPD_CAN_ABORT|wxPD_ELAPSED_TIME};
         progressDialog.Hide();
         Enable(false);
         progressDialog.Show();
@@ -36,8 +39,8 @@ namespace GenericProgressDialogExample {
 
   private:
     wxPanel* panel = new wxPanel {this};
-    wxButton* buttonProcess = new wxButton(panel, wxID_ANY, "Process", {10, 10});
-    wxButton* buttonIndeterminateProcess = new wxButton(panel, wxID_ANY, "Indeterminate Process", {100, 10});
+    wxButton* buttonProcess = new wxButton {panel, wxID_ANY, "Process", {10, 10}};
+    wxButton* buttonIndeterminateProcess = new wxButton {panel, wxID_ANY, "Indeterminate Process", {100, 10}};
   };
 
   class Application : public wxApp {
