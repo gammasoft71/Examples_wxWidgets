@@ -7,7 +7,7 @@ namespace DirDialogExample {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "DirDialog example") {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-        wxDirDialog folderBrowserDialog(this, wxEmptyString);
+        auto folderBrowserDialog = wxDirDialog {this, wxEmptyString};
         folderBrowserDialog.SetPath(wxStandardPaths::Get().GetDocumentsDir());
         if (folderBrowserDialog.ShowModal() == wxID_OK)
           label->SetLabel(wxString::Format("Path = %s", folderBrowserDialog.GetPath()));
@@ -16,8 +16,8 @@ namespace DirDialogExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxButton* button = new wxButton(panel, wxID_ANY, "Folder...", {10, 10});
-    wxStaticText* label = new wxStaticText(panel, wxID_ANY, "Path = ", {10, 40});
+    wxButton* button = new wxButton {panel, wxID_ANY, "Folder...", {10, 10}};
+    wxStaticText* label = new wxStaticText {panel, wxID_ANY, "Path = ", {10, 40}};
   };
 
   class Application : public wxApp {
