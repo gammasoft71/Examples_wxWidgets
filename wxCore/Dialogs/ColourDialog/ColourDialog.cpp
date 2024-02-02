@@ -1,6 +1,9 @@
-#include <vector>
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/button.h>
 #include <wx/colordlg.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
+#include <vector>
 
 using namespace std;
 
