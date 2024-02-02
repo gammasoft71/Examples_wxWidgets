@@ -9,7 +9,7 @@ namespace FindReplaceDialogExample {
         findReplaceData.SetFlags(wxFR_WHOLEWORD | wxFR_MATCHCASE | wxFR_DOWN);
         findReplaceData.SetFindString("Gammasoft");
         findReplaceData.SetReplaceString("Gammasoft71");
-        findReplaceDialog = new wxFindReplaceDialog(this, &findReplaceData, "Find and replace", wxFR_REPLACEDIALOG);
+        findReplaceDialog = new wxFindReplaceDialog {this, &findReplaceData, "Find and replace", wxFR_REPLACEDIALOG};
         findReplaceDialog->Bind(wxEVT_FIND_CLOSE, [&](wxFindDialogEvent& event) {
           findReplaceDialog->Destroy();
         });
@@ -32,7 +32,7 @@ namespace FindReplaceDialogExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxButton* button = new wxButton(panel, wxID_ANY, "Find...", {10, 10});
+    wxButton* button = new wxButton {panel, wxID_ANY, "Find...", {10, 10}};
     wxFindReplaceData findReplaceData;
     wxFindReplaceDialog* findReplaceDialog;
   };
