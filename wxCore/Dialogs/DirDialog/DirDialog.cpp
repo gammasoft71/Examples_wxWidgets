@@ -1,5 +1,9 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/button.h>
 #include <wx/dirdlg.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
+#include <wx/stattext.h>
 #include <wx/stdpaths.h>
 
 namespace DirDialogExample {
