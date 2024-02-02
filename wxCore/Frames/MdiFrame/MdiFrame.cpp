@@ -7,7 +7,7 @@ namespace MdiFrameExample {
     }
     
   private:
-    wxTextCtrl* textBox = new wxTextCtrl(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE);
+    wxTextCtrl* textBox = new wxTextCtrl {this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE};
   };
 
   class MdiParentFrame : public wxMDIParentFrame {
@@ -20,9 +20,6 @@ namespace MdiFrameExample {
       menuFile->Append(wxID_EXIT, "Quit\tAlt+F4");
       
       mainMenu->Append(menuFile, "&File");
-#if (__APPLE__)
-      mainMenu->Append(new wxMenu, "&View");
-#endif
       mainMenu->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
         switch (event.GetId()) {
           case wxID_NEW: OnMenuFileNewClick(event); break;
@@ -37,22 +34,21 @@ namespace MdiFrameExample {
     
   private:
     void OnMenuFileNewClick(wxCommandEvent& event) {
-      auto child = new MdiChildFrame(this);
+      auto child = new MdiChildFrame {this};
       child->SetLabel(wxString::Format("Child %d", ++childCounter));
       child->Show();
     }
     
     void OnMenuFileCloseClick(wxCommandEvent& event) {
-      if (GetActiveChild())
-        GetActiveChild()->Close();
+      if (GetActiveChild()) GetActiveChild()->Close();
     }
     
     void OnMenuFileQuitClick(wxCommandEvent& event) {
       Close();
     }
     
-    wxMenuBar* mainMenu = new wxMenuBar();
-    wxMenu* menuFile = new wxMenu();
+    wxMenuBar* mainMenu = new wxMenuBar;
+    wxMenu* menuFile = new wxMenu;
     int childCounter = 0;
   };
 
