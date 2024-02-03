@@ -1,10 +1,13 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/button.h>
+#include <wx/frame.h>
 #include <wx/simplebook.h>
+#include <wx/panel.h>
 
 namespace SimplebookExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Simplebook example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Simplebook example"} {
       SetClientSize(390, 305);
       
       tabControl1->AddPage(tabPageRed, "Red");
@@ -34,13 +37,13 @@ namespace SimplebookExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxSimplebook* tabControl1 = new wxSimplebook(panel, wxID_ANY, {10, 10}, {370, 250});
-    wxNotebookPage* tabPageRed = new wxNotebookPage(tabControl1, wxID_ANY);
-    wxNotebookPage* tabPageGreen = new wxNotebookPage(tabControl1, wxID_ANY);
-    wxNotebookPage* tabPageBlue = new wxNotebookPage(tabControl1, wxID_ANY);
-    wxNotebookPage* tabPageYellow = new wxNotebookPage(tabControl1, wxID_ANY);
-    wxButton* buttonPrev = new wxButton(panel, wxID_ANY, "<", {10, 270}, {75, 25});
-    wxButton* buttonNext = new wxButton(panel, wxID_ANY, ">", {305, 270}, {75, 25});
+    wxSimplebook* tabControl1 = new wxSimplebook {panel, wxID_ANY, {10, 10}, {370, 250}};
+    wxNotebookPage* tabPageRed = new wxNotebookPage {tabControl1, wxID_ANY};
+    wxNotebookPage* tabPageGreen = new wxNotebookPage {tabControl1, wxID_ANY};
+    wxNotebookPage* tabPageBlue = new wxNotebookPage {tabControl1, wxID_ANY};
+    wxNotebookPage* tabPageYellow = new wxNotebookPage {tabControl1, wxID_ANY};
+    wxButton* buttonPrev = new wxButton {panel, wxID_ANY, "<", {10, 270}, {75, 25}};
+    wxButton* buttonNext = new wxButton {panel, wxID_ANY, ">", {305, 270}, {75, 25}};
   };
 
   class Application : public wxApp {
