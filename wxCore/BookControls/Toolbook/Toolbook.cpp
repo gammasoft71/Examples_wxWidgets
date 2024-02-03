@@ -1,4 +1,7 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/dcmemory.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
 #include <wx/toolbook.h>
 
 namespace ToolbookExample {
@@ -8,9 +11,9 @@ namespace ToolbookExample {
       SetClientSize(390, 270);
       
       // On Windows the default size icon of toolbar is 16x16, on macOS is 32x32 and on gtk is 24x24...
-      if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") tabControl1->SetImageList(new wxImageList(16, 16));
-      else if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") tabControl1->SetImageList(new wxImageList(32, 32));
-      else tabControl1->SetImageList(new wxImageList(24, 24));
+      if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") tabControl1->SetImageList(new wxImageList {16, 16});
+      else if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") tabControl1->SetImageList(new wxImageList {32, 32});
+      else tabControl1->SetImageList(new wxImageList {24, 24});
       tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Red"), tabControl1->GetImageList()->GetSize()));
       tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Forest Green"), tabControl1->GetImageList()->GetSize()));
       tabControl1->GetImageList()->Add(CreateImageFromColor(wxTheColourDatabase->Find("Blue"), tabControl1->GetImageList()->GetSize()));
@@ -43,11 +46,11 @@ namespace ToolbookExample {
     }
 
     wxPanel* panel = new wxPanel {this};
-    wxToolbook* tabControl1 = new wxToolbook(panel, wxID_ANY, {10, 10}, {370, 250}, /*wxTBK_BUTTONBAR|*/wxTBK_HORZ_LAYOUT);
-    wxNotebookPage* tabPageRed = new wxNotebookPage(tabControl1, wxID_ANY);
-    wxNotebookPage* tabPageGreen = new wxNotebookPage(tabControl1, wxID_ANY);
-    wxNotebookPage* tabPageBlue = new wxNotebookPage(tabControl1, wxID_ANY);
-    wxNotebookPage* tabPageYellow = new wxNotebookPage(tabControl1, wxID_ANY);
+    wxToolbook* tabControl1 = new wxToolbook {panel, wxID_ANY, {10, 10}, {370, 250}, /*wxTBK_BUTTONBAR|*/wxTBK_HORZ_LAYOUT};
+    wxNotebookPage* tabPageRed = new wxNotebookPage {tabControl1, wxID_ANY};
+    wxNotebookPage* tabPageGreen = new wxNotebookPage {tabControl1, wxID_ANY};
+    wxNotebookPage* tabPageBlue = new wxNotebookPage {tabControl1, wxID_ANY};
+    wxNotebookPage* tabPageYellow = new wxNotebookPage {tabControl1, wxID_ANY};
   };
 
   class Application : public wxApp {
