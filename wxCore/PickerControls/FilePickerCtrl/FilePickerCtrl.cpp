@@ -47,8 +47,7 @@ namespace FilePickerCtrlExample {
   class Application : public wxApp {
     bool OnInit() override {
       wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
-      (new Frame)->Show();
-      return true;
+      return (new Frame)->Show();
     }
   };
 }

@@ -42,10 +42,7 @@ namespace UserDialogShowWindowModalExample {
   };
 
   class Application : public wxApp {
-    bool OnInit() override {
-      (new Form1())->Show();
-      return true;
-    }
+    bool OnInit() override {return (new Form1())->Show();}
   };
 }
 

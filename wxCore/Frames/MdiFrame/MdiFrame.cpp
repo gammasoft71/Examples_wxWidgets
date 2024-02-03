@@ -53,10 +53,7 @@ namespace MdiFrameExample {
   };
 
   class Application : public wxApp {
-    bool OnInit() override {
-      (new MdiParentFrame())->Show();
-      return true;
-    }
+    bool OnInit() override {return (new MdiParentFrame())->Show();}
   };
 }
 

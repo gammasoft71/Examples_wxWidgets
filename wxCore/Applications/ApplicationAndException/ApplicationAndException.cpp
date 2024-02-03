@@ -51,15 +51,13 @@ namespace ApplicationAndExceptionExample {
 
     bool OnInit() override {
       try {
-        (new MainFrame)->Show();
+        return (new MainFrame)->Show();
       } catch(const exception& e) {
         ShowExceptiionError(e);
-        return false;
       } catch(...) {
         ShowExceptiionError();
-        return false;
       }
-      return true;
+      return false;
     }
 
     static int ShowExceptiionError(const std::exception& e) {

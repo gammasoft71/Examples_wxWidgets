@@ -20,10 +20,7 @@ namespace ColourPickerCtrlExample {
   };
 
   class Application : public wxApp {
-    bool OnInit() override {
-      (new Frame)->Show();
-      return true;
-    }
+    bool OnInit() override {return (new Frame)->Show();}
   };
 }
 

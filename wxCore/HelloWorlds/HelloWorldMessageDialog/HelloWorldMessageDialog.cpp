@@ -11,8 +11,7 @@ class Application : public wxApp {
       wxMessageDialog(nullptr, "Hello, World!").ShowModal();
     });
     
-    frame1->Show();
-    return true;
+    return frame1->Show();
   }
 };
 

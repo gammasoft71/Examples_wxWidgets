@@ -3,10 +3,7 @@
 
 namespace ApplicationExample {
   class Application : public wxApp {
-    bool OnInit() override {
-      (new wxFrame {})->Show();
-      return true;
-    }
+    bool OnInit() override {return (new wxFrame {})->Show();}
   };
 }
 

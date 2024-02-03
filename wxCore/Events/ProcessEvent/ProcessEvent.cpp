@@ -46,8 +46,7 @@ namespace ProcessEventExample {
 
     bool OnInit() override {
       frame1 = new Frame1();
-      frame1->Show();
-      return true;
+      return frame1->Show();
     }
     
     Frame1* frame1 = nullptr;

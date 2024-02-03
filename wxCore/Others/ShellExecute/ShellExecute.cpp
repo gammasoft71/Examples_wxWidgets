@@ -62,10 +62,7 @@ namespace ShellExecuteExample {
   };
   
   class Application : public wxApp {
-    bool OnInit() override {
-      (new Window())->Show();
-      return true;
-    }
+    bool OnInit() override {return (new Window())->Show();}
   };
 }
 
