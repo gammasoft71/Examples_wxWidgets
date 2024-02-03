@@ -9,7 +9,7 @@
 namespace GenericAboutBoxExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "GenericAboutBox example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "GenericAboutBox example"} {
       button->Bind(wxEVT_BUTTON, [](wxCommandEvent& event) {
         auto aboutInfo = wxAboutDialogInfo {};
         aboutInfo.SetName(wxTheApp->GetAppName());

@@ -5,7 +5,7 @@
 namespace MainMenuExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "MainMenu example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "MainMenu example"} {
       auto menuFile = new wxMenu;
       auto menuItemFileNew = menuFile->Append(wxID_NEW);
       menuItemFileNew->SetBitmap(wxArtProvider::GetBitmap(wxART_NEW, wxART_MENU));

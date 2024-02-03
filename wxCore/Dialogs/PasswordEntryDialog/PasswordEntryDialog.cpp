@@ -8,7 +8,7 @@
 namespace PasswordEntryDialogExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "PasswordEntryDialog example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "PasswordEntryDialog example"} {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         auto passwordEntryDialog = wxPasswordEntryDialog {this, "User password", "user: admin", label->GetLabel()};
         if (passwordEntryDialog.ShowModal() == wxID_OK)

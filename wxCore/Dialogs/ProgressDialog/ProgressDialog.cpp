@@ -11,7 +11,7 @@ using namespace std::literals;
 namespace ProgressDialogExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "ProgressDialog example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "ProgressDialog example"} {
       buttonProcess->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         auto progressDialog = wxProgressDialog {"Process running", "Please wait...", 100, this, wxPD_APP_MODAL|wxPD_AUTO_HIDE|wxPD_CAN_SKIP|wxPD_REMAINING_TIME};
         for (auto step = 1; step <= progressDialog.GetRange(); ++step) {

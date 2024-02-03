@@ -3,7 +3,7 @@
 namespace MdiFrameExample {
   class MdiChildFrame : public wxMDIChildFrame {
   public:
-    MdiChildFrame(wxMDIParentFrame* parent) : wxMDIChildFrame(parent, wxID_ANY, wxEmptyString) {
+    MdiChildFrame(wxMDIParentFrame* parent) : wxMDIChildFrame {parent, wxID_ANY, wxEmptyString} {
     }
     
   private:
@@ -12,7 +12,7 @@ namespace MdiFrameExample {
 
   class MdiParentFrame : public wxMDIParentFrame {
   public:
-    MdiParentFrame() : wxMDIParentFrame(nullptr, wxID_ANY, "Mdi example") {
+    MdiParentFrame() : wxMDIParentFrame {nullptr, wxID_ANY, "Mdi example"} {
       //SetWindowMenu(nullptr);
       menuFile->Append(wxID_NEW, "New\tCtrl+N");
       menuFile->Append(wxID_CLOSE, "Close\tCtrl+W");

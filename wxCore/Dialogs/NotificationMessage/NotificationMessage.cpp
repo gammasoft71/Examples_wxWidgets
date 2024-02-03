@@ -18,8 +18,8 @@ namespace NotificationMessageExample {
   
   class wxOwnNotificationMessage : public wxOwnNotificationMessageBase {
   public:
-    wxOwnNotificationMessage() : wxOwnNotificationMessage(wxString())  {}
-    wxOwnNotificationMessage(const wxString& title, const wxString& message = wxString(), wxWindow *parent = nullptr, int flags = wxICON_INFORMATION) : wxOwnNotificationMessageBase(title, message, parent, flags) {
+    wxOwnNotificationMessage() : wxOwnNotificationMessage {wxString()}  {}
+    wxOwnNotificationMessage(const wxString& title, const wxString& message = wxString(), wxWindow *parent = nullptr, int flags = wxICON_INFORMATION) : wxOwnNotificationMessageBase {title, message, parent, flags} {
       autoCloseTimer.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
         autoCloseTimer.Stop();
         Close();
@@ -55,7 +55,7 @@ namespace NotificationMessageExample {
   
   class MainFrame : public wxFrame {
   public:
-    MainFrame() : wxFrame(nullptr, wxID_ANY, "Notification message example") {
+    MainFrame() : wxFrame {nullptr, wxID_ANY, "Notification message example"} {
       notificationMessage->AddAction(wxID_OK, "Ok");
       notificationMessage->AddAction(wxID_CANCEL, "Cancel");
       notificationMessage->Bind(wxEVT_NOTIFICATION_MESSAGE_ACTION, [&](wxCommandEvent& e) {

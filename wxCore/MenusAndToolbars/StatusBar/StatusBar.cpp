@@ -4,7 +4,7 @@
 namespace StatusBarExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "StatusBar example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "StatusBar example"} {
       SetStatusBar(statusBar);
     
       auto statusWidths = std::vector {80, 80, -1};

@@ -9,7 +9,7 @@
 namespace MenuExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Menu example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Menu example"} {
       listBox1->Append("Right click to show menu");
       listBox1->Bind(wxEVT_RIGHT_DOWN, [&](wxMouseEvent& event) {
         listBox1->PopupMenu(contextualMenu);

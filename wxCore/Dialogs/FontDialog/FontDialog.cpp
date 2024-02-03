@@ -8,7 +8,7 @@
 namespace FontDialogExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Font example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Font example"} {
       SetClientSize(400, 400);
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         auto fontData = wxFontData {};

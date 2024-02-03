@@ -8,7 +8,7 @@
 namespace NumberEntryDialogExample {
 class Frame : public wxFrame {
 public:
-  Frame() : wxFrame(nullptr, wxID_ANY, "NumberEntryDialog example") {
+  Frame() : wxFrame {nullptr, wxID_ANY, "NumberEntryDialog example"} {
     button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
       label->SetLabel("Number = ");
       auto dialog = wxNumberEntryDialog {this, "Message text", "Prompt text", "Caption text", 50, 10, 100};

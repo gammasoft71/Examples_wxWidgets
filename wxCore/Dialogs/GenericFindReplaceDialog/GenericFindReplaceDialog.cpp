@@ -5,7 +5,7 @@
 namespace GenericFindReplaceDialogExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "GenericFindReplaceDialog example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "GenericFindReplaceDialog example"} {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
 #if !defined(__WXMSW__)
         findReplaceData.SetFlags(wxFR_WHOLEWORD | wxFR_MATCHCASE | wxFR_DOWN);

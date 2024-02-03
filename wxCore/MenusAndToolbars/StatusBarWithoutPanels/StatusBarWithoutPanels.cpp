@@ -4,7 +4,7 @@
 namespace StatusBarWithoutPanelsExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "StatusBar without panels example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "StatusBar without panels example"} {
       SetStatusBar(statusBar);
       Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent& e) {statusBar->SetStatusText(wxString::Format("Mouse click at position : {x=%d, y=%d}", e.GetX(), e.GetY()));});
       

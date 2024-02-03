@@ -9,7 +9,7 @@
 namespace OpnFileDialogExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "OpenFileDialog example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "OpenFileDialog example"} {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         auto openFileDialog = wxFileDialog {this, wxEmptyString, wxEmptyString, wxEmptyString, "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", wxFD_OPEN|wxFD_FILE_MUST_EXIST};
         openFileDialog.SetFilterIndex(0);

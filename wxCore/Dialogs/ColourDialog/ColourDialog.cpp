@@ -10,7 +10,7 @@ using namespace std;
 namespace ColourDialogExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "ColourDialog example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "ColourDialog example"} {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         auto colourData = wxColourData {};
         colourData.SetColour(GetBackgroundColour());

@@ -5,7 +5,7 @@
 namespace PanelExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Panel example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Panel example"} {
       SetClientSize(640, 480);
     }
     

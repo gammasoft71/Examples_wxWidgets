@@ -8,7 +8,7 @@
 namespace TextEntryDialogExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "TextEntryDialog example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "TextEntryDialog example"} {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         auto textEntryDialog = wxTextEntryDialog {this, "Message text", "Caption text", label->GetLabel(), wxTextEntryDialogStyle};
         if (textEntryDialog.ShowModal() == wxID_OK)

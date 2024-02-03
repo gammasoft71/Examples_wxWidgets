@@ -9,7 +9,7 @@
 namespace ToolBarExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "ToolBar example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "ToolBar example"} {
       SetClientSize(820, 500);
       
       // On Windows the default size icon of toolbar is 16x16, on macOS is 32x32 and on gtk is 24x24...

@@ -8,7 +8,7 @@
 namespace SaveFileDialogExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "SaveFileDialog example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "SaveFileDialog example"} {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         auto saveFileDialog = wxFileDialog {this, wxEmptyString, wxEmptyString, "MyFile.txt", "Text Files (*.txt)|*.txt|All Files (*.*)|*.*", wxFD_SAVE};
         if (saveFileDialog.ShowModal() == wxID_OK) {

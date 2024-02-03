@@ -9,7 +9,7 @@
 namespace DirDialogExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "DirDialog example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "DirDialog example"} {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         auto folderBrowserDialog = wxDirDialog {this, wxEmptyString};
         folderBrowserDialog.SetPath(wxStandardPaths::Get().GetDocumentsDir());

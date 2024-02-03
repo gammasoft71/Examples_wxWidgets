@@ -9,7 +9,7 @@
 namespace RearrangeDialogExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "RearangeDialog example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "RearangeDialog example"} {
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         label->SetLabel("");
         auto dialog = wxRearrangeDialog {nullptr, "You can also uncheck the colors you don't like at all.", "Sort the colors in order of preference", order, colors};

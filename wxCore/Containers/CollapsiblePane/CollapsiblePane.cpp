@@ -9,7 +9,7 @@
 namespace CollapsiblePaneExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "CollapsiblePanel example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "CollapsiblePanel example"} {
       boxSizer->Add(collapsiblePane1, wxSizerFlags(0).Expand());
       boxSizer->Add(collapsiblePane2, wxSizerFlags(1).Expand());
       panel->SetSizerAndFit(boxSizer);

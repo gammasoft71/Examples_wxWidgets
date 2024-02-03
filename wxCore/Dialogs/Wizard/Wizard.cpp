@@ -5,7 +5,7 @@ namespace WizardExample {
   class Frame : public wxFrame {
     class WizardPage1 : public wxWizardPage {
     public:
-      explicit WizardPage1(wxWizard* parent) : wxWizardPage(parent) {}
+      explicit WizardPage1(wxWizard* parent) : wxWizardPage {parent} {}
  
       wxWizardPage* GetPrev() const override {return nullptr;}
       wxWizardPage* GetNext() const override {return next;}
@@ -19,7 +19,7 @@ namespace WizardExample {
 
     class WizardPage2 : public wxWizardPage {
     public:
-      explicit WizardPage2(wxWizard* parent) : wxWizardPage(parent) {}
+      explicit WizardPage2(wxWizard* parent) : wxWizardPage {parent} {}
       
       wxWizardPage* GetPrev() const override {return prev;}
       wxWizardPage* GetNext() const override {return next;}
@@ -35,7 +35,7 @@ namespace WizardExample {
 
     class WizardPage3 : public wxWizardPage {
     public:
-      explicit WizardPage3(wxWizard* parent) : wxWizardPage(parent) {}
+      explicit WizardPage3(wxWizard* parent) : wxWizardPage {parent} {}
       
       wxWizardPage* GetPrev() const override {return prev;}
       wxWizardPage* GetNext() const override {return nullptr;}
@@ -48,7 +48,7 @@ namespace WizardExample {
     };
 
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Wizard example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Wizard example"} {
       button->Bind(wxEVT_BUTTON, [this](wxCommandEvent& event) {
         label->SetLabel("Wizard result = (none)");
         auto wizard = new wxWizard {this, wxID_ANY, "Wizard demo"};

@@ -6,7 +6,7 @@
 namespace RadioBoxExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "RadioBox example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "RadioBox example"} {
       radioBox1->Bind(wxEVT_RADIOBOX, [&](wxCommandEvent& event) {
         wxMessageOutputDebug().Printf("(RadioBox 1) checked item = {%s}", choices1[event.GetInt()]);
       });

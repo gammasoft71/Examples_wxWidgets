@@ -7,7 +7,7 @@
 namespace FrameExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Window example", wxDefaultPosition, {640, 480}) {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Window example", wxDefaultPosition, {640, 480}} {
       buttonClose->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {Close();});
       buttonExit->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {wxTheApp->Exit();});
       buttonExitMainLoop->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {wxTheApp->ExitMainLoop();});
