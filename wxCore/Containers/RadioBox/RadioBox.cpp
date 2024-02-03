@@ -1,4 +1,7 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
+#include <wx/radiobox.h>
 
 namespace RadioBoxExample {
   class Frame : public wxFrame {
@@ -18,8 +21,8 @@ namespace RadioBoxExample {
     wxPanel* panel = new wxPanel {this};
     std::vector<wxString> choices1 = {"Radio 1", "Radio 2", "Radio 3"};
     std::vector<wxString> choices2 = {"Radio 4", "Radio 5", "Radio 6"};
-    wxRadioBox* radioBox1 = new wxRadioBox(panel, wxID_ANY, "RadioBox 1", {10, 10}, wxDefaultSize, static_cast<int>(choices1.size()), choices1.data(), 0, wxRA_SPECIFY_ROWS);
-    wxRadioBox* radioBox2 = new wxRadioBox(panel, wxID_ANY, "RadioBox 2", {130, 10}, wxDefaultSize, static_cast<int>(choices2.size()), choices2.data(), 0, wxRA_SPECIFY_ROWS);
+    wxRadioBox* radioBox1 = new wxRadioBox {panel, wxID_ANY, "RadioBox 1", {10, 10}, wxDefaultSize, static_cast<int>(choices1.size()), choices1.data(), 0, wxRA_SPECIFY_ROWS};
+    wxRadioBox* radioBox2 = new wxRadioBox {panel, wxID_ANY, "RadioBox 2", {130, 10}, wxDefaultSize, static_cast<int>(choices2.size()), choices2.data(), 0, wxRA_SPECIFY_ROWS};
   };
 
   class Application : public wxApp {
