@@ -1,15 +1,15 @@
+#include <wx/animate.h>
 #include <wx/app.h>
+#include <wx/filename.h>
 #include <wx/frame.h>
 #include <wx/panel.h>
-#include <wx/animate.h>
-#include <wx/filename.h>
 #include <wx/stdpaths.h>
 
 namespace AnimationCtrlExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "AnimationCtrl example") {
-      wxFileName imagePath(wxStandardPaths::Get().GetExecutablePath());
+    Frame() : wxFrame {nullptr, wxID_ANY, "AnimationCtrl example"} {
+      auto imagePath = wxFileName {wxStandardPaths::Get().GetExecutablePath()};
       if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") imagePath.AppendDir("..");
       imagePath.AppendDir("Resources");
       imagePath.SetFullName("load");
@@ -20,7 +20,7 @@ namespace AnimationCtrlExample {
     }
     
   private:
-    wxAnimationCtrl* animationCtrl = new wxAnimationCtrl(this, wxID_ANY, wxAnimation());
+    wxAnimationCtrl* animationCtrl = new wxAnimationCtrl {this, wxID_ANY, wxAnimation {}};
   };
 
   class Application : public wxApp {
