@@ -6,7 +6,7 @@
 namespace ChackBoxExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "CheckBox example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "CheckBox example"} {
       checkBox1->Bind(wxEVT_CHECKBOX, [&](wxCommandEvent& event) {
         checkBox1->SetValue(false);
       });
@@ -30,9 +30,9 @@ namespace ChackBoxExample {
     }
     
     wxPanel* panel = new wxPanel {this};
-    wxCheckBox* checkBox1 = new wxCheckBox(panel, wxID_ANY, "Unchecked", {30, 30});
-    wxCheckBox* checkBox2 = new wxCheckBox(panel, wxID_ANY, "Checked", {30, 60}, {200, wxDefaultCoord});
-    wxCheckBox* checkBox3 = new wxCheckBox(panel, wxID_ANY, "Indeterminate", {30, 90}, wxDefaultSize, wxCHK_3STATE | wxCHK_ALLOW_3RD_STATE_FOR_USER);
+    wxCheckBox* checkBox1 = new wxCheckBox {panel, wxID_ANY, "Unchecked", {30, 30}};
+    wxCheckBox* checkBox2 = new wxCheckBox {panel, wxID_ANY, "Checked", {30, 60}, {200, wxDefaultCoord}};
+    wxCheckBox* checkBox3 = new wxCheckBox {panel, wxID_ANY, "Indeterminate", {30, 90}, wxDefaultSize, wxCHK_3STATE | wxCHK_ALLOW_3RD_STATE_FOR_USER};
   };
 
   class Application : public wxApp {
