@@ -6,7 +6,7 @@
 namespace ControlExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Control example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Control example"} {
       control1->SetBackgroundColour(wxTheColourDatabase->Find("Spring Green"));
       control1->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent& event) {
         control1->SetBackgroundColour(control1->GetBackgroundColour() == wxTheColourDatabase->Find("Spring Green") ? wxTheColourDatabase->Find("Orange Red") : wxTheColourDatabase->Find("Spring Green"));
@@ -16,7 +16,7 @@ namespace ControlExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxControl* control1 = new wxControl(panel, wxID_ANY, {50, 50}, {100, 50});
+    wxControl* control1 = new wxControl {panel, wxID_ANY, {50, 50}, {100, 50}};
   };
 
   class Application : public wxApp {
