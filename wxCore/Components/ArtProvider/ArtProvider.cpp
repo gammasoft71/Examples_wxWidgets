@@ -49,8 +49,8 @@ namespace ArtProviderExample {
     wxPanel* panel = new wxPanel {this};
     wxStaticBitmap* picture = new wxStaticBitmap(panel, wxID_ANY, wxNullBitmap, {75, 25}, wxDefaultSize, wxBORDER_SUNKEN);
     wxStaticText* name = new wxStaticText(panel, wxID_ANY, wxEmptyString, {75, 200}, {150, wxDefaultCoord}, wxALIGN_CENTRE_HORIZONTAL);
-    wxButton* buttonPrevious = new wxButton(panel, wxID_ANY, "&<", {75, 240}, {75, 25});
-    wxButton* buttonNext = new wxButton(panel, wxID_ANY, "&>", {150, 240}, {75, 25});
+    wxButton* buttonPrevious = new wxButton(panel, wxID_ANY, "&<", {75, 240}, {75, 25}, wxBORDER_SIMPLE);
+    wxButton* buttonNext = new wxButton(panel, wxID_ANY, "&>", {150, 240}, {75, 25}, wxBORDER_SIMPLE);
   };
 
   class Application : public wxApp {

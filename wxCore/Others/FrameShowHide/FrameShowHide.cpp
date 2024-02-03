@@ -45,9 +45,9 @@ private:
   }
   
   wxPanel* panel = new wxPanel {this};
-  wxButton* closeButton = new wxButton(panel, wxID_ANY, "Close", {10, 10}, {100, 40});
-  wxButton* showButton = new wxButton(panel, wxID_ANY, "Show", {10, 60}, {100, 40});
-  wxButton* hideButton = new wxButton(panel, wxID_ANY, "Hide", {10, 110}, {100, 40});
+  wxButton* closeButton = new wxButton(panel, wxID_ANY, "Close", {10, 10}, {100, 40}, wxBORDER_SIMPLE);
+  wxButton* showButton = new wxButton(panel, wxID_ANY, "Show", {10, 60}, {100, 40}, wxBORDER_SIMPLE);
+  wxButton* hideButton = new wxButton(panel, wxID_ANY, "Hide", {10, 110}, {100, 40}, wxBORDER_SIMPLE);
   wxCheckBox* cancelCloseButton = new wxCheckBox(panel, wxID_ANY, "cancel close", {10, 160}, {100, 40});
   wxFrame* frame2 = nullptr;
   int closeCount = 0;

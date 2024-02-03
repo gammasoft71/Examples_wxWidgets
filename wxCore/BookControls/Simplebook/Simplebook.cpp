@@ -42,8 +42,8 @@ namespace SimplebookExample {
     wxNotebookPage* tabPageGreen = new wxNotebookPage {tabControl1, wxID_ANY};
     wxNotebookPage* tabPageBlue = new wxNotebookPage {tabControl1, wxID_ANY};
     wxNotebookPage* tabPageYellow = new wxNotebookPage {tabControl1, wxID_ANY};
-    wxButton* buttonPrev = new wxButton {panel, wxID_ANY, "<", {10, 270}, {75, 25}};
-    wxButton* buttonNext = new wxButton {panel, wxID_ANY, ">", {305, 270}, {75, 25}};
+    wxButton* buttonPrev = new wxButton {panel, wxID_ANY, "<", {10, 270}, {75, 25}, wxBORDER_SIMPLE};
+    wxButton* buttonNext = new wxButton {panel, wxID_ANY, ">", {305, 270}, {75, 25}, wxBORDER_SIMPLE};
   };
 
   class Application : public wxApp {

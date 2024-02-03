@@ -87,7 +87,7 @@ namespace NotificationMessageExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxButton* button = new wxButton {panel, wxID_ANY, "Close", {10, 10}, {160, 50}};
+    wxButton* button = new wxButton {panel, wxID_ANY, "Close", {10, 10}, {160, 50}, wxBORDER_SIMPLE};
     wxOwnNotificationMessage* notificationMessage = new wxOwnNotificationMessage {"Notification", "This is a notification message", this, wxICON_ERROR};
   };
   

@@ -50,9 +50,9 @@ namespace Config2Example {
 
     wxPanel* panel = new wxPanel {this};
     wxColourPickerCtrl* colourPicker = new wxColourPickerCtrl(panel, wxID_ANY, {0, 0, 0}, {10, 10}, {75, 25});
-    wxButton* saveButton = new wxButton(panel, wxID_ANY, "&Save", {90, 10}, {75, 25});
-    wxButton* reloadButton = new wxButton(panel, wxID_ANY, "&Reload", {170, 10}, {75, 25});
-    wxButton* resetButton = new wxButton(panel, wxID_ANY, "R&eset", {250, 10}, {75, 25});
+    wxButton* saveButton = new wxButton(panel, wxID_ANY, "&Save", {90, 10}, {75, 25}, wxBORDER_SIMPLE);
+    wxButton* reloadButton = new wxButton(panel, wxID_ANY, "&Reload", {170, 10}, {75, 25}, wxBORDER_SIMPLE);
+    wxButton* resetButton = new wxButton(panel, wxID_ANY, "R&eset", {250, 10}, {75, 25}, wxBORDER_SIMPLE);
     wxColour defaultBackgroundColor = panel->GetBackgroundColour();
   };
 
