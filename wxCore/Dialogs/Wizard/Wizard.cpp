@@ -24,8 +24,8 @@ namespace WizardExample {
       wxWizardPage* GetPrev() const override {return prev;}
       wxWizardPage* GetNext() const override {return next;}
       
-      void SetNext(wxWizardPage *next) noexcept {this->next = next;}
-      void SetPrev(wxWizardPage *prev) noexcept {this->prev = prev;}
+      void SetNext(wxWizardPage* next) noexcept {this->next = next;}
+      void SetPrev(wxWizardPage* prev) noexcept {this->prev = prev;}
 
     private:
       wxStaticText* label = new wxStaticText {this, wxID_ANY, "Wizard page 2...", {10, 10}};
@@ -40,7 +40,7 @@ namespace WizardExample {
       wxWizardPage* GetPrev() const override {return prev;}
       wxWizardPage* GetNext() const override {return nullptr;}
       
-      void SetPrev(wxWizardPage *prev) noexcept {this->prev = prev;}
+      void SetPrev(wxWizardPage* prev) noexcept {this->prev = prev;}
       
     private:
       wxStaticText* label = new wxStaticText {this, wxID_ANY, "Wizard page 3...", {10, 10}};

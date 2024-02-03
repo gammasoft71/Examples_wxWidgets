@@ -23,9 +23,9 @@ namespace ComboBoxExample {
 
   private:
     void OnComboBoxSelectionChanged(wxCommandEvent& e) {
-      comboBox1->SetSelection(static_cast<wxComboBox *>(e.GetEventObject())->GetSelection());
-      comboBox2->SetSelection(static_cast<wxComboBox *>(e.GetEventObject())->GetSelection());
-      comboBox3->SetSelection(static_cast<wxComboBox *>(e.GetEventObject())->GetSelection());
+      comboBox1->SetSelection(static_cast<wxComboBox*>(e.GetEventObject())->GetSelection());
+      comboBox2->SetSelection(static_cast<wxComboBox*>(e.GetEventObject())->GetSelection());
+      comboBox3->SetSelection(static_cast<wxComboBox*>(e.GetEventObject())->GetSelection());
     }
     wxPanel* panel = new wxPanel {this};
     wxComboBox* comboBox1 = new wxComboBox {panel, wxID_ANY, wxEmptyString, {10, 10}};

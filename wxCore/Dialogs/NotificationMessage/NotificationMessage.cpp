@@ -19,7 +19,7 @@ namespace NotificationMessageExample {
   class wxOwnNotificationMessage : public wxOwnNotificationMessageBase {
   public:
     wxOwnNotificationMessage() : wxOwnNotificationMessage {wxString()}  {}
-    wxOwnNotificationMessage(const wxString& title, const wxString& message = wxString(), wxWindow *parent = nullptr, int flags = wxICON_INFORMATION) : wxOwnNotificationMessageBase {title, message, parent, flags} {
+    wxOwnNotificationMessage(const wxString& title, const wxString& message = wxString(), wxWindow* parent = nullptr, int flags = wxICON_INFORMATION) : wxOwnNotificationMessageBase {title, message, parent, flags} {
       autoCloseTimer.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
         autoCloseTimer.Stop();
         Close();

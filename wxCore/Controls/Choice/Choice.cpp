@@ -18,8 +18,8 @@ namespace ChoiceExample {
 
   private:
     void OnChoicClick(wxCommandEvent& e) {
-      choice1->SetSelection(static_cast<wxChoice *>(e.GetEventObject())->GetSelection());
-      choice2->SetSelection(static_cast<wxChoice *>(e.GetEventObject())->GetSelection());
+      choice1->SetSelection(static_cast<wxChoice*>(e.GetEventObject())->GetSelection());
+      choice2->SetSelection(static_cast<wxChoice*>(e.GetEventObject())->GetSelection());
     }
     wxPanel* panel = new wxPanel {this};
     wxChoice* choice1 = new wxChoice {panel, wxID_ANY, {10, 10}};

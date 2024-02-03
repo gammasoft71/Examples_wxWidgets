@@ -8,7 +8,7 @@ using MessageDialog = wxMessageDialog;
 #else
 class MessageDialog : public wxMessageDialog {
 public:
-  MessageDialog(wxWindow *parent, const wxString& message, const wxString& caption = wxMessageBoxCaptionStr, long style = wxOK|wxCENTRE, const wxPoint& pos = wxDefaultPosition) : wxMessageDialog(parent, message, caption, style, pos) {}
+  MessageDialog(wxWindow* parent, const wxString& message, const wxString& caption = wxMessageBoxCaptionStr, long style = wxOK|wxCENTRE, const wxPoint& pos = wxDefaultPosition) : wxMessageDialog(parent, message, caption, style, pos) {}
   void ShowWindowModal() {
     ShowModal();
     wxWindowModalDialogEvent event(wxEVT_WINDOW_MODAL_DIALOG_CLOSED, this->GetId());

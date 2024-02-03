@@ -8,7 +8,7 @@ using FilePickerCtrl = wxFilePickerCtrl;
 #else
 class FilePickerCtrl : public wxFilePickerCtrl {
 public:
-  FilePickerCtrl(wxWindow *parent, wxWindowID id, const wxString& path = wxEmptyString, const wxString& message = wxFileSelectorPromptStr, const wxString& wildcard = wxFileSelectorDefaultWildcardStr, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxFLP_DEFAULT_STYLE, const wxValidator& validator = wxDefaultValidator, const wxString& name = wxFilePickerCtrlNameStr) : wxFilePickerCtrl(parent, id, path, message, wildcard, pos, size, style, validator, name) {
+  FilePickerCtrl(wxWindow* parent, wxWindowID id, const wxString& path = wxEmptyString, const wxString& message = wxFileSelectorPromptStr, const wxString& wildcard = wxFileSelectorDefaultWildcardStr, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxFLP_DEFAULT_STYLE, const wxValidator& validator = wxDefaultValidator, const wxString& name = wxFilePickerCtrlNameStr) : wxFilePickerCtrl(parent, id, path, message, wildcard, pos, size, style, validator, name) {
     auto pickerCtrl = GetPickerCtrl();
     if (size == wxDefaultSize) SetSize(150, GetSize().GetHeight());
     auto wx_dialog_style = 0;

@@ -9,29 +9,29 @@
 #include <wx/treectrl.h>
 class TreeBook : public wxTreebook {
 public:
-  TreeBook(wxWindow *parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxBK_DEFAULT, const wxString& name = wxEmptyString) : wxTreebook {parent, id, pos, size, style, name} {}
+  TreeBook(wxWindow* parent, wxWindowID id, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxBK_DEFAULT, const wxString& name = wxEmptyString) : wxTreebook {parent, id, pos, size, style, name} {}
   
-  bool AddPage(wxWindow *page, const wxString& text, bool bSelect = false, int imageId = NO_IMAGE) override {
+  bool AddPage(wxWindow* page, const wxString& text, bool bSelect = false, int imageId = NO_IMAGE) override {
     auto backup = save_context {this, bSelect};
     auto result = wxTreebook::AddPage(page, text, true, imageId);
     InternalFixTreeBookCreattion();
     return result;
   }
   
-  bool AddSubPage(wxWindow *page, const wxString& text, bool bSelect = false, int imageId = NO_IMAGE) override {
+  bool AddSubPage(wxWindow* page, const wxString& text, bool bSelect = false, int imageId = NO_IMAGE) override {
     auto backup = save_context {this, bSelect};
     auto result = wxTreebook::AddSubPage(page, text, true, imageId);
     return result;
   }
 
-  bool InsertPage(size_t pos, wxWindow *page, const wxString& text, bool bSelect = false, int imageId = NO_IMAGE) override {
+  bool InsertPage(size_t pos, wxWindow* page, const wxString& text, bool bSelect = false, int imageId = NO_IMAGE) override {
     auto backup = save_context {this, bSelect};
     auto result = wxTreebook::InsertPage(pos, page, text, true, imageId);
     InternalFixTreeBookCreattion();
     return result;
   }
   
-  bool InsertSubPage(size_t pos, wxWindow *page, const wxString& text, bool bSelect = false, int imageId = NO_IMAGE) override {
+  bool InsertSubPage(size_t pos, wxWindow* page, const wxString& text, bool bSelect = false, int imageId = NO_IMAGE) override {
     auto backup = save_context {this, bSelect};
     auto result = wxTreebook::InsertSubPage(pos, page, text, true, imageId);
     InternalFixTreeBookCreattion();

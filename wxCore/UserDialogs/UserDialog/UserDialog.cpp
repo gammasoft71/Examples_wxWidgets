@@ -4,7 +4,7 @@
 namespace UserDialogExample {
   class UserInputDialog : public wxDialog {
   public:
-    UserInputDialog(wxWindow *parent) : wxDialog(parent, wxID_ANY, "Input Dialog") {
+    UserInputDialog(wxWindow* parent) : wxDialog(parent, wxID_ANY, "Input Dialog") {
       SetClientSize(200, 80);
       CenterOnParent();
       buttonOk->SetDefault();
