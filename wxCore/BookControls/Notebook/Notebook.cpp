@@ -1,10 +1,12 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/frame.h>
 #include <wx/notebook.h>
+#include <wx/panel.h>
 
 namespace NotebookExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Notebook example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Notebook example"} {
       SetClientSize(390, 270);
 
       tabControl1->AddPage(tabPageRed, "Red", true);
@@ -20,11 +22,11 @@ namespace NotebookExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxNotebook* tabControl1 = new wxNotebook(panel, wxID_ANY, {10, 10}, {370, 250});
-    wxNotebookPage* tabPageRed = new wxNotebookPage(tabControl1, wxID_ANY);
-    wxNotebookPage* tabPageGreen = new wxNotebookPage(tabControl1, wxID_ANY);
-    wxNotebookPage* tabPageBlue = new wxNotebookPage(tabControl1, wxID_ANY);
-    wxNotebookPage* tabPageYellow = new wxNotebookPage(tabControl1, wxID_ANY);
+    wxNotebook* tabControl1 = new wxNotebook {panel, wxID_ANY, {10, 10}, {370, 250}};
+    wxNotebookPage* tabPageRed = new wxNotebookPage {tabControl1, wxID_ANY};
+    wxNotebookPage* tabPageGreen = new wxNotebookPage {tabControl1, wxID_ANY};
+    wxNotebookPage* tabPageBlue = new wxNotebookPage {tabControl1, wxID_ANY};
+    wxNotebookPage* tabPageYellow = new wxNotebookPage {tabControl1, wxID_ANY};
   };
 
   class Application : public wxApp {
