@@ -34,7 +34,7 @@ namespace ProcessEventExample {
   };
 
   class Application : public wxApp {
-    bool ProcessEvent (wxEvent &event) override {
+    bool ProcessEvent (wxEvent& event) override {
       if (event.GetEventType() == wxEVT_ACTIVATE_APP) {
         frame1->AppActive(dynamic_cast<wxActivateEvent&>(event).GetActive());
         wxMessageOutputDebug().Printf("wxEVT_ACTIVATE_APP [active=%s]", frame1->AppActive() ? "true" : "false");

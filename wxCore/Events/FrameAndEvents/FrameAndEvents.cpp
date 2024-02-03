@@ -6,7 +6,7 @@ namespace FrameAndEventsExample {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "Frame and events") {}
     
-    bool ProcessEvent (wxEvent &event) override {
+    bool ProcessEvent (wxEvent& event) override {
       wxWindow* window = ((wxWindow*)event.GetEventObject());
       if (event.GetEventType() == wxEVT_ACTIVATE_APP) wxMessageOutputDebug().Output("wxEVT_ACTIVATE_APP");
       if (event.GetEventType() == wxEVT_CLOSE_WINDOW) wxMessageOutputDebug().Output("wxEVT_CLOSE_WINDOW");
