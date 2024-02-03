@@ -1,15 +1,15 @@
-#include <wx/app.h>
-#include <wx/combobox.h>
-#include <wx/frame.h>
+#include "Logo.xpm"
 #include <wx/generic/statbmpg.h>
+#include <wx/app.h>
+#include <wx/choice.h>
+#include <wx/frame.h>
 #include <wx/panel.h>
 #include <wx/sizer.h>
-#include "Logo.xpm"
 
 namespace GenericStaticBitmapExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "GenericStaticBitmap example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "GenericStaticBitmap example"} {
       SetClientSize(300, 340);
       
       choice1->Append("Scale_None", reinterpret_cast<void*>(wxStaticBitmap::Scale_None));
@@ -21,7 +21,7 @@ namespace GenericStaticBitmapExample {
         staticBitmap1->SetScaleMode(static_cast<wxStaticBitmap::ScaleMode>(reinterpret_cast<long long>(choice1->GetClientData(choice1->GetSelection()))));
       });
       
-      boxSizer->Add(choice1, 0, wxALIGN_CENTER|wxTOP|wxLEFT|wxRIGHT, 20);
+      boxSizer->Add(choice1, 0, wxGROW|wxTOP|wxLEFT|wxRIGHT, 20);
       boxSizer->Add(staticBitmap1, 1, wxGROW|wxALL, 20);
       staticBitmap1->SetScaleMode(static_cast<wxStaticBitmap::ScaleMode>(reinterpret_cast<long long>(choice1->GetClientData(choice1->GetSelection()))));
       staticBitmap1->SetWindowStyle(wxBORDER_SIMPLE);
@@ -35,9 +35,9 @@ namespace GenericStaticBitmapExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxBoxSizer* boxSizer = new wxBoxSizer(wxVERTICAL);
-    wxGenericStaticBitmap* staticBitmap1 = new wxGenericStaticBitmap(panel, wxID_ANY, wxNullBitmap);
-    wxChoice* choice1 = new wxChoice(panel, wxID_ANY);
+    wxBoxSizer* boxSizer = new wxBoxSizer {wxVERTICAL};
+    wxGenericStaticBitmap* staticBitmap1 = new wxGenericStaticBitmap {panel, wxID_ANY, wxNullBitmap};
+    wxChoice* choice1 = new wxChoice {panel, wxID_ANY};
   };
 
   class Application : public wxApp {
