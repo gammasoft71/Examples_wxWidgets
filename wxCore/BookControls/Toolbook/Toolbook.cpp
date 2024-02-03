@@ -7,7 +7,7 @@
 namespace ToolbookExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Toolbook example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Toolbook example"} {
       SetClientSize(390, 270);
       
       // On Windows the default size icon of toolbar is 16x16, on macOS is 32x32 and on gtk is 24x24...
@@ -34,8 +34,8 @@ namespace ToolbookExample {
     wxBitmap CreateImageFromColor(const wxColor& color, const wxSize& size) {
       wxImage image(size.GetWidth(), size.GetHeight());
       image.InitAlpha();
-      for (auto y = 0; y < size.GetHeight(); y++)
-        for (auto x = 0; x < size.GetWidth(); x++)
+      for (auto y = 0; y < size.GetHeight(); ++y)
+        for (auto x = 0; x < size.GetWidth(); ++x)
           image.SetAlpha(x, y, 0);
       wxBitmap result(image);
       wxMemoryDC memoryDC(result);
