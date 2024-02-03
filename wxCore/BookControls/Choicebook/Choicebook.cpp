@@ -1,10 +1,12 @@
-#include <wx/wx.h>
+#include <wx/app.h>
 #include <wx/choicebk.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
 
 namespace ChoicebookExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Choicebook example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Choicebook example"} {
       SetClientSize(390, 270);
       
       tabControl1->AddPage(tabpageRed, "Red page");
@@ -20,11 +22,11 @@ namespace ChoicebookExample {
 
   private:
     wxPanel* panel = new wxPanel {this};
-    wxChoicebook* tabControl1 = new wxChoicebook(panel, wxID_ANY, {10, 10}, {370, 250});
-    wxNotebookPage* tabpageRed = new wxNotebookPage(tabControl1, wxID_ANY);
-    wxNotebookPage* tabpageGreen = new wxNotebookPage(tabControl1, wxID_ANY);
-    wxNotebookPage* tabpageBlue = new wxNotebookPage(tabControl1, wxID_ANY);
-    wxNotebookPage* tabpageYellow = new wxNotebookPage(tabControl1, wxID_ANY);
+    wxChoicebook* tabControl1 = new wxChoicebook {panel, wxID_ANY, {10, 10}, {370, 250}};
+    wxNotebookPage* tabpageRed = new wxNotebookPage {tabControl1, wxID_ANY};
+    wxNotebookPage* tabpageGreen = new wxNotebookPage {tabControl1, wxID_ANY};
+    wxNotebookPage* tabpageBlue = new wxNotebookPage {tabControl1, wxID_ANY};
+    wxNotebookPage* tabpageYellow = new wxNotebookPage {tabControl1, wxID_ANY};
   };
 
   class Application : public wxApp {
