@@ -6,11 +6,11 @@
 namespace ChackListBoxExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "CheckListBox example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "CheckListBox example"} {
       SetClientSize({200, 240});
-      for (auto i = 1; i <= 20; ++i) {
-        checkListBox->Append(wxString::Format("Item %d", i));
-        checkListBox->Check(i - 1, i % 2 != 0);
+      for (auto index = 1; index <= 20; ++index) {
+        checkListBox->Append(wxString::Format("Item %d", index));
+        checkListBox->Check(index - 1, index % 2 != 0);
         checkListBox->EnsureVisible(0);
       }
       checkListBox->SetSelection(0);
@@ -22,17 +22,17 @@ namespace ChackListBoxExample {
     }
     
   private:
-    wxString CheckListBoxToString() const {
-      wxArrayInt checkedIndexes;
+    wxString CheckListBoxToString() const noexcept {
+      auto checkedIndexes = wxArrayInt {};
       checkListBox->GetCheckedItems(checkedIndexes);
-      wxString checkedItems;
+      auto checkedItems = wxString {};
       for (auto index : checkedIndexes)
         checkedItems.Append(wxString::Format("%s%s", checkedItems != wxEmptyString ? ", " : "", checkListBox->GetString(index)));
       return checkedItems;
     }
     
     wxPanel* panel = new wxPanel {this};
-    wxCheckListBox* checkListBox = new wxCheckListBox(panel, wxID_ANY, {20, 20}, {160, 200});
+    wxCheckListBox* checkListBox = new wxCheckListBox {panel, wxID_ANY, {20, 20}, {160, 200}};
   };
 
   class Application : public wxApp {
