@@ -8,8 +8,8 @@
 namespace DirCtrlExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "DirCtrl example") {
-      SetClientSize({ 350, 450 });
+    Frame() : wxFrame {nullptr, wxID_ANY, "DirCtrl example"} {
+      SetClientSize({350, 450});
       dirCtrl1->SetPosition({10, 10});
       dirCtrl1->SetSize({330, 390});
       dirCtrl1->Bind(wxEVT_DIRCTRL_SELECTIONCHANGED, [&](wxTreeEvent& event) {
@@ -20,8 +20,8 @@ namespace DirCtrlExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxGenericDirCtrl* dirCtrl1 = new wxGenericDirCtrl(panel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDIRCTRL_DIR_ONLY|wxDIRCTRL_EDIT_LABELS);
-    wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "", {10, 410});
+    wxGenericDirCtrl* dirCtrl1 = new wxGenericDirCtrl {panel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDIRCTRL_DIR_ONLY|wxDIRCTRL_EDIT_LABELS};
+    wxStaticText* staticText1 = new wxStaticText {panel, wxID_ANY, "", {10, 410}};
   };
 
   class Application : public wxApp {
