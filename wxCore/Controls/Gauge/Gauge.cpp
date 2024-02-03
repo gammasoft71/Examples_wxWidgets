@@ -1,9 +1,13 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/frame.h>
+#include <wx/gauge.h>
+#include <wx/panel.h>
+#include <wx/timer.h>
 
 namespace GaugeExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Gauge example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Gauge example"} {
       gauge2->SetValue(50);
    
       gauge3->SetRange(300);
@@ -18,11 +22,11 @@ namespace GaugeExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxGauge* gauge1 = new wxGauge(panel, wxID_ANY, 100, {90, 30}, {200, 25});
-    wxGauge* gauge2 = new wxGauge(panel, wxID_ANY, 100, {90, 60}, {200, 25});
-    wxGauge* gauge3 = new wxGauge(panel, wxID_ANY, 100, {90, 90}, {200, 25});
-    wxGauge* gauge4 = new wxGauge(panel, wxID_ANY, 100, {90, 120}, {200, 25});
-    wxGauge* gaude5 = new wxGauge(panel, wxID_ANY, 100, {90, 150}, {200, 25});
+    wxGauge* gauge1 = new wxGauge {panel, wxID_ANY, 100, {90, 30}, {200, 25}};
+    wxGauge* gauge2 = new wxGauge {panel, wxID_ANY, 100, {90, 60}, {200, 25}};
+    wxGauge* gauge3 = new wxGauge {panel, wxID_ANY, 100, {90, 90}, {200, 25}};
+    wxGauge* gauge4 = new wxGauge {panel, wxID_ANY, 100, {90, 120}, {200, 25}};
+    wxGauge* gaude5 = new wxGauge {panel, wxID_ANY, 100, {90, 150}, {200, 25}};
     wxTimer timer;
   };
 
