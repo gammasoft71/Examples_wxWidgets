@@ -3,7 +3,7 @@
 namespace HelloWorldEmoticonsExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Hello world (emoticons)") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Hello world (emoticons)"} {
       staticText1->SetFont({72, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL});
       staticText1->SetSize(wxClientDC(staticText1).GetTextExtent(staticText1->GetLabel()));
       SetClientSize(staticText1->GetSize());

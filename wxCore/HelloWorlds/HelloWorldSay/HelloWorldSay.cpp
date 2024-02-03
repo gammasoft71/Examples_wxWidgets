@@ -5,7 +5,7 @@
 
 class Frame1 : public wxFrame {
 public:
-  Frame1() : wxFrame(nullptr, wxID_ANY, "Hello world (say)") {
+  Frame1() : wxFrame {nullptr, wxID_ANY, "Hello world (say)"} {
     button1->Bind(wxEVT_BUTTON, [&](wxCommandEvent&) {
       Speak("Hello, World!");
     });

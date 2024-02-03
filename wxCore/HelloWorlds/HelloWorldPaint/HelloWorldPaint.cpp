@@ -3,7 +3,7 @@
 namespace HelloWorldPaintExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Hello world (paint)") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Hello world (paint)"} {
       Bind(wxEVT_PAINT, [&](wxPaintEvent& event) {
         wxPaintDC dc(this);
         dc.SetFont({32, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_ITALIC, wxFONTWEIGHT_BOLD});
@@ -15,9 +15,7 @@ namespace HelloWorldPaintExample {
         dc.SetTextForeground({0x00, 0xFF, 0x7F});
         dc.DrawText(text, {((GetClientSize().GetWidth() - dc.GetTextExtent(text).GetWidth()) / 2) - 2, ((GetClientSize().GetHeight() - dc.GetTextExtent(text).GetHeight()) / 2) - 2});
       });
-      Bind(wxEVT_SIZING, [&](wxSizeEvent& e) {
-        Refresh();
-      });
+      Bind(wxEVT_SIZING, [&](wxSizeEvent& e) {Refresh();});
     }
   };
 
