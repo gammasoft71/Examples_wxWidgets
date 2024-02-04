@@ -1,14 +1,17 @@
-#include <chrono>
-#include <wx/wx.h>
+#include <wx/app.h>
 #include <wx/datectrl.h>
 #include <wx/dateevt.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
+#include <wx/stattext.h>
+#include <chrono>
 
 using namespace std::chrono;
 
 namespace DatePickerCtrlExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "DatePickerCtrl example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "DatePickerCtrl example"} {
       datePicker1->SetRange({4, wxDateTime::Apr, 1975}, {system_clock::to_time_t(system_clock::now())});
       datePicker1->SetValue({4, wxDateTime::Apr, 1975});
       datePicker1->Bind(wxEVT_DATE_CHANGED, [&](wxDateEvent& event) {
@@ -19,8 +22,8 @@ namespace DatePickerCtrlExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxDatePickerCtrl* datePicker1 = new wxDatePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, {30, 30}, wxDefaultSize, wxDP_DROPDOWN | wxDP_SHOWCENTURY);
-    wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, wxEmptyString, {30, 70});
+    wxDatePickerCtrl* datePicker1 = new wxDatePickerCtrl {panel, wxID_ANY, wxDefaultDateTime, {30, 30}, wxDefaultSize, wxDP_DROPDOWN | wxDP_SHOWCENTURY};
+    wxStaticText* staticText1 = new wxStaticText {panel, wxID_ANY, wxEmptyString, {30, 70}};
   };
 
   class Application : public wxApp {
