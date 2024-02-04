@@ -6,7 +6,7 @@
 namespace StaticTextExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "StaticText example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "StaticText example"} {
       SetClientSize(370, 360);
       
       Bind(wxEVT_SIZING, [&](wxEvent&) {
