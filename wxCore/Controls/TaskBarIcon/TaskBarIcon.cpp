@@ -8,7 +8,9 @@
 #include <wx/timer.h>
 
 // Workaround : with wxWidgets version <= 3.2.0 wxTaskBarIcon mouse double click doesn't work on macOS
-#if __APPLE__
+#if !defined(__APPLE__)
+using TaskBarIcon = wxTaskBarIcon;
+#else
 class TaskBarIcon : public wxTaskBarIcon {
 public:
   TaskBarIcon(wxTaskBarIconType iconType = wxTBI_DEFAULT_TYPE) : wxTaskBarIcon {iconType} {
@@ -28,8 +30,6 @@ protected:
 private:
   wxTimer timer;
 };
-#else
-using TaskBarIcon = wxTaskBarIcon;
 #endif
 
 namespace TaskBarIconExample {

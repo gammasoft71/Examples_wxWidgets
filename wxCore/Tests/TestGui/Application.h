@@ -21,7 +21,7 @@ public:
     CallOnInit();
     SetExitOnFrameDelete(exitOnLastFrameClosed);
     wxInitAllImageHandlers();
-#if __APPLE__
+#if defined(__APPLE__)
     wxMenuBar::MacSetCommonMenuBar(CreateDefaultMenuBar());
 #endif
   }

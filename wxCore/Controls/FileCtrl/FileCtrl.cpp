@@ -23,7 +23,7 @@ class FileCtrl : public wxFileCtrl {
 public:
   FileCtrl(wxWindow*parent, wxWindowID id, const wxString& defaultDirectory = wxEmptyString, const wxString& defaultFilename = wxEmptyString, const wxString& wildCard = wxFileSelectorDefaultWildcardStr, long style = wxFC_DEFAULT_STYLE, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, const wxString& name = wxFileCtrlNameStr) : wxFileCtrl {parent, id, defaultDirectory, defaultFilename, wildCard, style, pos, size, name} {
     // Workaround : with wxWidgets version <= 3.2.0 folder, executable and link are set with specific color (respectively Blue, red and middle gray) on macOS (not standard)
-#if __APPLE__
+#if defined(__APPLE__)
     for (auto i = 0; i < GetFileList()->GetItemCount(); i++)
       GetFileList()->SetItemTextColour(i, GetForegroundColour());
     GetFileList()->Bind(wxEVT_LIST_INSERT_ITEM, [&](wxListEvent& event) {

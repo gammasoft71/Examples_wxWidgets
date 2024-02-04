@@ -23,7 +23,7 @@ public:
         if (canExit) ExitMainLoop();
       } else event.Skip();
     });
-#if __APPLE__
+#if defined(__APPLE__)
     wxMenuBar::MacSetCommonMenuBar(menubar);
 #endif
   }
