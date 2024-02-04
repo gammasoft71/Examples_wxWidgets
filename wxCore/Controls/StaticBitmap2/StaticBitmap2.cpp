@@ -1,17 +1,17 @@
 #include <wx/app.h>
 #include <wx/frame.h>
-#include <wx/statbmp.h>
 #include <wx/panel.h>
 #include <wx/filename.h>
 #include <wx/stdpaths.h>
+#include <wx/statbmp.h>
 
 namespace StaticBitmap2Example {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "StaticBitmap2 example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "StaticBitmap2 example"} {
       SetClientSize(300, 300);
       wxInitAllImageHandlers();
-      wxFileName imagePath(wxStandardPaths::Get().GetExecutablePath());
+      auto imagePath = wxFileName {wxStandardPaths::Get().GetExecutablePath()};
       if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") {
         imagePath.AppendDir("..");
         imagePath.AppendDir("..");
@@ -27,7 +27,7 @@ namespace StaticBitmap2Example {
 
   private:
     wxPanel* panel = new wxPanel {this};
-    wxStaticBitmap* staticBitmap1 = new wxStaticBitmap(panel, wxID_ANY, wxNullBitmap, {20, 20}, {100, 50});
+    wxStaticBitmap* staticBitmap1 = new wxStaticBitmap {panel, wxID_ANY, wxNullBitmap, {20, 20}, {100, 50}};
   };
 
   class Application : public wxApp {
