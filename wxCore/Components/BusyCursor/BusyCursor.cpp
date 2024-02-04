@@ -1,18 +1,17 @@
-#include <thread>
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/button.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
 #include <wx/utils.h>
-
-using namespace std::chrono;
-using namespace std::this_thread;
 
 namespace BusyCursorExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "BusyCursor example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "BusyCursor example"} {
       button->Bind(wxEVT_BUTTON, [](wxCommandEvent& event) {
-        wxBusyCursor busyCursor;
+        auto busyCursor = wxBusyCursor {};
         for (auto count = 0; count < 500; ++count) {
-          sleep_for(milliseconds(10)); // Simulate work...
+          wxMilliSleep(10); // Simulate work...
           wxYield();
         }
       });
@@ -20,7 +19,7 @@ namespace BusyCursorExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxButton* button = new wxButton(panel, wxID_ANY, "Do something...", {10, 10});
+    wxButton* button = new wxButton {panel, wxID_ANY, "Do something...", {10, 10}};
   };
 
   class Application : public wxApp {

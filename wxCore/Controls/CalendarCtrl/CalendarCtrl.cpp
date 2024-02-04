@@ -2,9 +2,6 @@
 #include <wx/calctrl.h>
 #include <wx/frame.h>
 #include <wx/panel.h>
-#include <chrono>
-
-using namespace std::chrono;
 
 namespace CalendarCtrlExample {
   class Frame : public wxFrame {
@@ -30,7 +27,7 @@ namespace CalendarCtrlExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxCalendarCtrl* calendarCtrl1 = new wxCalendarCtrl {panel, wxID_ANY, {system_clock::to_time_t(system_clock::now())}, {10, 10}};
+    wxCalendarCtrl* calendarCtrl1 = new wxCalendarCtrl {panel, wxID_ANY, wxDateTime::Now(), {10, 10}};
   };
 
   class Application : public wxApp {

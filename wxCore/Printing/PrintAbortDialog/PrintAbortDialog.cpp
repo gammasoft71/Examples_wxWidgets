@@ -1,4 +1,3 @@
-#include <thread>
 #include <wx/wx.h>
 #include <wx/print.h>
 #include <wx/richtext/richtextprint.h>
@@ -16,7 +15,7 @@ namespace PrintAbortDialogExample {
         for (auto step = 0; step <= 10; step++) {
           dialog->SetProgress(step, 10, 1, 1);
           wxYield();
-          this_thread::sleep_for(200ms);
+          wxMilliSleep(200);
         }
         dialog->Hide();
       });

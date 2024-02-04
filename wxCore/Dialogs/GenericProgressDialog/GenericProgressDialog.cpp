@@ -3,10 +3,6 @@
 #include <wx/frame.h>
 #include <wx/panel.h>
 #include <wx/progdlg.h>
-#include <thread>
-
-using namespace std;
-using namespace std::literals;
 
 namespace GenericProgressDialogExample {
   class Frame : public wxFrame {
@@ -19,7 +15,7 @@ namespace GenericProgressDialogExample {
         progressDialog.Show();
         for (auto step = 1; step <= progressDialog.GetRange(); ++step) {
           progressDialog.Update(step, wxString::Format("Step %d/%d ==> %s", progressDialog.GetValue(), progressDialog.GetRange(), progressDialog.WasSkipped() ? "skipped" : "done"));
-          this_thread::sleep_for(100ms);
+          wxMilliSleep(100);
         }
         Enable(true);
       });
@@ -31,7 +27,7 @@ namespace GenericProgressDialogExample {
         progressDialog.Show();
         while(!progressDialog.WasCancelled()) {
           progressDialog.Pulse();
-          this_thread::sleep_for(100ms);
+          wxMilliSleep(100);
         }
         Enable(true);
       });
