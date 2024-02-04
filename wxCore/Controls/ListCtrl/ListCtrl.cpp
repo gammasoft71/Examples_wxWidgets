@@ -1,3 +1,9 @@
+#include "Ai16.xpm"
+#include "Ai48.xpm"
+#include "Avi16.xpm"
+#include "Avi48.xpm"
+#include "Bmp16.xpm"
+#include "Bmp48.xpm"
 #include <wx/app.h>
 #include <wx/choice.h>
 #include <wx/frame.h>
@@ -5,17 +11,10 @@
 #include <wx/listctrl.h>
 #include <wx/panel.h>
 
-#include "Ai16.xpm"
-#include "Ai48.xpm"
-#include "Avi16.xpm"
-#include "Avi48.xpm"
-#include "Bmp16.xpm"
-#include "Bmp48.xpm"
-
 namespace ListCtrlExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "ListCtrl example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "ListCtrl example"} {
       SetClientSize(350, 260);
 
       imageListLarge.Add(wxBitmap {aiIcon48});
@@ -60,13 +59,14 @@ namespace ListCtrlExample {
       choice1->SetSelection(1);
       choice1->Bind(wxEVT_CHOICE, [&](wxCommandEvent& event) {
         listCtrl->SetSingleStyle(reinterpret_cast<long long>(choice1->GetClientData(choice1->GetSelection())));
+        listCtrl->RecreateWindow();
       });
     }
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxListCtrl* listCtrl = new wxListCtrl(panel, wxID_ANY, {10, 10}, {330, 200}, wxLC_REPORT|wxSIMPLE_BORDER);
-    wxChoice* choice1 = new wxChoice(panel, wxID_ANY, {10, 220});
+    wxListCtrl* listCtrl = new wxListCtrl {panel, wxID_ANY, {10, 10}, {330, 200}, wxLC_REPORT|wxSIMPLE_BORDER};
+    wxChoice* choice1 = new wxChoice {panel, wxID_ANY, {10, 220}};
     wxImageList imageListLarge {48, 48};
     wxImageList imageListSmall {16, 16};
   };
