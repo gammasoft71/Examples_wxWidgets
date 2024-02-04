@@ -2,7 +2,6 @@
 #include <wx/button.h>
 #include <wx/frame.h>
 #include <wx/panel.h>
-#include <wx/utils.h>
 
 namespace BusyCursorExample {
   class Frame : public wxFrame {
