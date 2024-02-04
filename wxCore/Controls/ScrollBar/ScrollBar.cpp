@@ -1,9 +1,12 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
+#include <wx/scrolbar.h>
 
 namespace ScrollBarExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "ScrollBar example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "ScrollBar example"} {
       SetClientSize(300, 300);
       
       scrollBar1->SetScrollbar(10, 1, 20, 1);
@@ -22,10 +25,10 @@ namespace ScrollBarExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxScrollBar* scrollBar1 = new wxScrollBar(panel, wxID_ANY, {10, 10}, wxDefaultSize, wxSB_HORIZONTAL);
-    wxScrollBar* scrollBar2 = new wxScrollBar(panel, wxID_ANY, {10, 40}, wxDefaultSize, wxSB_HORIZONTAL);
-    wxScrollBar* scrollBar3 = new wxScrollBar(panel, wxID_ANY, {270, 70}, wxDefaultSize, wxSB_VERTICAL);
-    wxScrollBar* scrollBar4 = new wxScrollBar(panel, wxID_ANY, {240, 190}, wxDefaultSize, wxSB_VERTICAL);
+    wxScrollBar* scrollBar1 = new wxScrollBar {panel, wxID_ANY, {10, 10}, wxDefaultSize, wxSB_HORIZONTAL};
+    wxScrollBar* scrollBar2 = new wxScrollBar {panel, wxID_ANY, {10, 40}, wxDefaultSize, wxSB_HORIZONTAL};
+    wxScrollBar* scrollBar3 = new wxScrollBar {panel, wxID_ANY, {270, 70}, wxDefaultSize, wxSB_VERTICAL};
+    wxScrollBar* scrollBar4 = new wxScrollBar {panel, wxID_ANY, {240, 190}, wxDefaultSize, wxSB_VERTICAL};
   };
 
   class Application : public wxApp {
