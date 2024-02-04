@@ -1,11 +1,16 @@
 #include "Gammasoft.xpm"
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
+#include <wx/settings.h>
+#include <wx/stattext.h>
 #include <wx/taskbar.h>
+#include <wx/timer.h>
 
 // Workaround : with wxWidgets version <= 3.2.0 wxTaskBarIcon mouse double click doesn't work on macOS
 class TaskBarIcon : public wxTaskBarIcon {
 public:
-  TaskBarIcon(wxTaskBarIconType iconType = wxTBI_DEFAULT_TYPE) : wxTaskBarIcon(iconType) {
+  TaskBarIcon(wxTaskBarIconType iconType = wxTBI_DEFAULT_TYPE) : wxTaskBarIcon {iconType} {
     timer.Bind(wxEVT_TIMER, [&](wxTimerEvent& event) {
       wxPostEvent(this, wxTaskBarIconEvent(wxEVT_TASKBAR_LEFT_DOWN, this));
       wxPostEvent(this, wxTaskBarIconEvent(wxEVT_TASKBAR_LEFT_UP, this));
@@ -15,9 +20,8 @@ public:
 protected:
   wxMenu* CreatePopupMenu() override {
     if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") {
-      if (!timer.IsRunning()) {
-        timer.StartOnce(wxSystemSettings::GetMetric(wxSYS_DCLICK_MSEC));
-      } else {
+      if (!timer.IsRunning()) timer.StartOnce(wxSystemSettings::GetMetric(wxSYS_DCLICK_MSEC));
+      else {
         timer.Stop();
         wxPostEvent(this, wxTaskBarIconEvent(wxEVT_TASKBAR_LEFT_DCLICK, this));
       }
@@ -32,7 +36,7 @@ private:
 namespace TaskBarIconExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "TaskBarIcon example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "TaskBarIcon example"} {
       taskBarIcon.SetIcon(wxBitmap {GammasoftIcon});
       taskBarIcon.Bind(wxEVT_TASKBAR_LEFT_DCLICK, [&](wxTaskBarIconEvent& event) {
         Show(!IsShown());
@@ -41,7 +45,7 @@ namespace TaskBarIconExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, "Double click on Gammasoft tray icon\nto show or hide this frame.", {10, 10});
+    wxStaticText* staticText1 = new wxStaticText {panel, wxID_ANY, "Double click on Gammasoft tray icon\nto show or hide this frame.", {10, 10}};
     //wxTaskBarIcon taskBarIcon;
     TaskBarIcon taskBarIcon;
   };
