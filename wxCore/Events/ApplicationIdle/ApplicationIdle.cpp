@@ -1,13 +1,12 @@
-#include <chrono>
-#include <wx/wx.h>
-
-using namespace std::chrono;
-using namespace std::chrono_literals;
+#include <wx/app.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
+#include <wx/stopwatch.h>
 
 namespace ApplictionIdleExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, wxEmptyString) {}
+    Frame() : wxFrame {nullptr, wxID_ANY, wxEmptyString} {}
     
     void OnApplicationIdle() {
       SetLabel(wxString::Format("%d", ++counter));
@@ -24,18 +23,21 @@ namespace ApplictionIdleExample {
     bool ProcessIdle() override {
       if (!frame->IsVisible()) return wxApp::ProcessIdle();
 
-      static auto lastIdleTime = high_resolution_clock::now();
-      auto elapsedTime = high_resolution_clock::now() - lastIdleTime;
-      if (elapsedTime >= 100ms) {
+      static auto stopWatch = [] {
+        auto value = wxStopWatch {};
+        value.Start();
+        return value;
+      }();
+      
+      if (stopWatch.Time() >= 100) {
         frame->OnApplicationIdle();
-        lastIdleTime = high_resolution_clock::now();
+        stopWatch.Start();
       }
-
       wxApp::ProcessIdle();
       wxMilliSleep(20);
       return true;
     }
-
+    
     Frame* frame = nullptr;
   };
 }
