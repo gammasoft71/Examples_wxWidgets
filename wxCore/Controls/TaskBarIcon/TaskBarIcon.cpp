@@ -8,6 +8,7 @@
 #include <wx/timer.h>
 
 // Workaround : with wxWidgets version <= 3.2.0 wxTaskBarIcon mouse double click doesn't work on macOS
+#if __APPLE__
 class TaskBarIcon : public wxTaskBarIcon {
 public:
   TaskBarIcon(wxTaskBarIconType iconType = wxTBI_DEFAULT_TYPE) : wxTaskBarIcon {iconType} {
@@ -19,19 +20,17 @@ public:
   
 protected:
   wxMenu* CreatePopupMenu() override {
-    if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") {
-      if (!timer.IsRunning()) timer.StartOnce(wxSystemSettings::GetMetric(wxSYS_DCLICK_MSEC));
-      else {
-        timer.Stop();
-        wxPostEvent(this, wxTaskBarIconEvent(wxEVT_TASKBAR_LEFT_DCLICK, this));
-      }
-    }
+    if (!timer.IsRunning()) timer.StartOnce(wxSystemSettings::GetMetric(wxSYS_DCLICK_MSEC));
+    else wxPostEvent(this, wxTaskBarIconEvent(wxEVT_TASKBAR_LEFT_DCLICK, this));
     return wxTaskBarIcon::CreatePopupMenu();
   }
   
 private:
   wxTimer timer;
 };
+#else
+using TaskBarIcon = wxTaskBarIcon;
+#endif
 
 namespace TaskBarIconExample {
   class Frame : public wxFrame {
@@ -46,7 +45,6 @@ namespace TaskBarIconExample {
   private:
     wxPanel* panel = new wxPanel {this};
     wxStaticText* staticText1 = new wxStaticText {panel, wxID_ANY, "Double click on Gammasoft tray icon\nto show or hide this frame.", {10, 10}};
-    //wxTaskBarIcon taskBarIcon;
     TaskBarIcon taskBarIcon;
   };
 
