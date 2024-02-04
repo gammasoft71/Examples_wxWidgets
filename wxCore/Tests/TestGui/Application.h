@@ -5,8 +5,8 @@
 
 class wxApplication : public wxApp {
 public:
-  wxApplication(bool exitOnLastFrameClosed = true) : wxApplication(exitOnLastFrameClosed, substituteArgc, nullptr) {}
-  wxApplication(int& argc, char** argv) : wxApplication(true, argc, argv) {}
+  wxApplication(bool exitOnLastFrameClosed = true) : wxApplication {exitOnLastFrameClosed, substituteArgc, nullptr} {}
+  wxApplication(int& argc, char** argv) : wxApplication {true, argc, argv} {}
   wxApplication(bool exitOnLastFrameClosed, int& argc, char** argv) {
 #ifdef _MSC_VER
     _CrtSetDbgFlag(_CRTDBG_CHECK_DEFAULT_DF);
@@ -26,8 +26,8 @@ public:
 #endif
   }
   
-  bool AssertEnabled() {return assertEnabled;}
-  void AssertEnabled(bool enabled) {assertEnabled = enabled;}
+  bool AssertEnabled() const noexcept {return assertEnabled;}
+  void AssertEnabled(bool enabled) noexcept {assertEnabled = enabled;}
 
   int MainLoop(wxWindow* window) {
     struct CallOnExit {
@@ -39,7 +39,7 @@ public:
   int MainLoop() override {return MainLoop(GetTopWindow());}
   
   static wxMenuBar* CreateDefaultMenuBar() {
-    wxMenuBar* menubar = new wxMenuBar();
+    auto menubar = new wxMenuBar();
     menubar->Bind(wxEVT_MENU, &OnMenuClick);
     return menubar;
   }
