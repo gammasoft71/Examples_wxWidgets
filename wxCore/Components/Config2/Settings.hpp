@@ -1,13 +1,12 @@
-#include <memory>
-#include <wx/wx.h>
 #include <wx/config.h>
 #include <wx/settings.h>
+#include <memory>
 
 namespace Config2Example {
   namespace Properties {
     class Settings {
     public:
-      Settings() : Settings(true) {}
+      Settings() : Settings {true} {}
 
       static Settings& DefaultSettings() {
         static Settings defaultSettings;
@@ -53,7 +52,7 @@ namespace Config2Example {
       std::shared_ptr<wxConfig> config = std::make_shared<wxConfig>();
       wxString backgroundColour = wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE).GetAsString();
       wxPoint position {100, 50};
-      wxSize size {360, 80};
+      wxSize size {335, 45};
     };
   }
 }
