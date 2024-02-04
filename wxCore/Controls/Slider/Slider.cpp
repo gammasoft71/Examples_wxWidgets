@@ -1,14 +1,14 @@
 #include <wx/app.h>
-#include <wx/gauge.h>
-#include <wx/slider.h>
 #include <wx/frame.h>
+#include <wx/gauge.h>
 #include <wx/panel.h>
+#include <wx/slider.h>
 #include <wx/stattext.h>
 
 namespace SliderExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Slider example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Slider example"} {
       SetClientSize(300, 300);
       
       gauge1->SetValue(100);
@@ -21,9 +21,9 @@ namespace SliderExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxSlider* slider1 = new wxSlider(panel, wxID_ANY, 100, 0, 200, {50, 50}, {25, 200}, wxSL_VERTICAL|wxSL_INVERSE);
-    wxGauge* gauge1 = new wxGauge(panel, wxID_ANY, 200, {80, 50}, {25, 200}, wxGA_VERTICAL);
-    wxStaticText* staticText1 = new wxStaticText(panel, wxID_ANY, wxEmptyString, {150, 50});
+    wxSlider* slider1 = new wxSlider {panel, wxID_ANY, 100, 0, 200, {50, 50}, {25, 200}, wxSL_VERTICAL|wxSL_INVERSE};
+    wxGauge* gauge1 = new wxGauge {panel, wxID_ANY, 200, {80, 50}, {25, 200}, wxGA_VERTICAL};
+    wxStaticText* staticText1 = new wxStaticText {panel, wxID_ANY, wxEmptyString, {150, 50}};
   };
 
   class Application : public wxApp {
