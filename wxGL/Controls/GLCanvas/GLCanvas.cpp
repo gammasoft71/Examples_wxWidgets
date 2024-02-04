@@ -210,7 +210,6 @@ public:
     });
 
     SetClientSize(400, 400);
-    Show();
   }
   
 private:
@@ -237,10 +236,7 @@ private:
 };
 
 class MyApp : public wxApp {
-  bool OnInit() override {
-    new MyFrame();
-    return true;
-  }
+  bool OnInit() override {return (new MyFrame)->Show();}
 };
 
 wxIMPLEMENT_APP(MyApp);

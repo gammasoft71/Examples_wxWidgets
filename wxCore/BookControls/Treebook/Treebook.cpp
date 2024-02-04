@@ -72,7 +72,6 @@ namespace TreebookExample {
   public:
     Frame() : wxFrame {nullptr, wxID_ANY, "Treebook example"} {
       SetClientSize(390, 270);
-      Show();
       
       tabControl1->AddPage(tabPageRed, "Red");
       tabControl1->AddSubPage(tabPageGreen, "Green");
@@ -95,10 +94,7 @@ namespace TreebookExample {
   };
 
   class Application : public wxApp {
-    bool OnInit() override {
-      (new Frame)->Show();
-      return true;
-    }
+    bool OnInit() override {return (new Frame)->Show();}
   };
 }
 
