@@ -1,12 +1,15 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/button.h>
 #include <wx/clrpicker.h>
 #include <wx/config.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
 #include <wx/settings.h>
 
 namespace ConfigExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Config example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Config example"} {
       reload_config();
       
       colourPicker->Bind(wxEVT_COLOURPICKER_CHANGED, [&](wxColourPickerEvent& event) {
@@ -32,18 +35,18 @@ namespace ConfigExample {
       auto backgroundColor = panel->GetBackgroundColour();
       config.Read("BackgroundColor", &backgroundColor, wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
       panel->SetBackgroundColour(backgroundColor);
-      SetPosition(wxPoint(static_cast<int>(config.Read("Left", 100)), static_cast<int>(config.Read("Top", 50))));
-      SetSize(static_cast<int>(config.Read("Width", 360)), static_cast<int>(config.Read("Height", 80)));
+      SetPosition({static_cast<int>(config.Read("Left", 100)), static_cast<int>(config.Read("Top", 50))});
+      SetClientSize({static_cast<int>(config.Read("Width", 335)), static_cast<int>(config.Read("Height", 45))});
       Refresh();
       colourPicker->SetColour(panel->GetBackgroundColour());
     }
     
     void save_config() {
       config.Write("BackgroundColor", panel->GetBackgroundColour());
-      config.Write("Left", this->GetPosition().x);
-      config.Write("Top", this->GetPosition().y);
-      config.Write("Width", this->GetSize().GetWidth());
-      config.Write("Height", this->GetSize().GetHeight());
+      config.Write("Left", GetPosition().x);
+      config.Write("Top", GetPosition().y);
+      config.Write("Width", GetSize().GetWidth());
+      config.Write("Height", GetSize().GetHeight());
       config.Flush();
     }
     
@@ -53,10 +56,10 @@ namespace ConfigExample {
     }
 
     wxPanel* panel = new wxPanel {this};
-    wxColourPickerCtrl* colourPicker = new wxColourPickerCtrl(panel, wxID_ANY, {0, 0, 0}, {10, 10}, {75, 25});
-    wxButton* saveButton = new wxButton(panel, wxID_ANY, "&Save", {90, 10}, {75, 25}, wxBORDER_SIMPLE);
-    wxButton* reloadButton = new wxButton(panel, wxID_ANY, "&Reload", {170, 10}, {75, 25}, wxBORDER_SIMPLE);
-    wxButton* resetButton = new wxButton(panel, wxID_ANY, "R&eset", {250, 10}, {75, 25}, wxBORDER_SIMPLE);
+    wxColourPickerCtrl* colourPicker = new wxColourPickerCtrl {panel, wxID_ANY, {0, 0, 0}, {10, 10}, {75, 25}};
+    wxButton* saveButton = new wxButton {panel, wxID_ANY, "&Save", {90, 10}, {75, 25}};
+    wxButton* reloadButton = new wxButton {panel, wxID_ANY, "&Reload", {170, 10}, {75, 25}};
+    wxButton* resetButton = new wxButton {panel, wxID_ANY, "R&eset", {250, 10}, {75, 25}};
     wxConfig config;
   };
 
