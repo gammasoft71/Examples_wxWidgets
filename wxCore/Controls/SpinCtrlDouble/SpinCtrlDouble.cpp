@@ -1,14 +1,13 @@
 #include <wx/app.h>
-#include <wx/spinctrl.h>
 #include <wx/frame.h>
-#include <wx/msgout.h>
 #include <wx/panel.h>
+#include <wx/spinctrl.h>
 #include <wx/stattext.h>
 
 namespace SpinCtrlDoubleExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "SpinCtrlDouble example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "SpinCtrlDouble example"} {
       spinCtrlDouble1->SetRange(10.0, 11.0);
       spinCtrlDouble1->SetDigits(2);
       spinCtrlDouble1->SetIncrement(0.01);
@@ -19,8 +18,8 @@ namespace SpinCtrlDoubleExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxSpinCtrlDouble* spinCtrlDouble1 = new wxSpinCtrlDouble(panel, wxID_ANY, wxEmptyString, {80, 50});
-    wxStaticText* text = new wxStaticText(panel, wxID_ANY, "value = 10.00", {80, 100});
+    wxSpinCtrlDouble* spinCtrlDouble1 = new wxSpinCtrlDouble {panel, wxID_ANY, wxEmptyString, {80, 50}};
+    wxStaticText* text = new wxStaticText {panel, wxID_ANY, "value = 10.00", {80, 100}};
   };
 
   class Application : public wxApp {
