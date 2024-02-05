@@ -29,7 +29,8 @@ namespace ListBoxExample {
       
       panel->SetSizerAndFit(boxSizer);
 
-      listBoxLeft->Append(vector {"draw", "cut", "paste", "delete", "open", "close", "remove", "edit", "find", "increment", "decrement", "write", "read", "post", "build", "make", "release", "create", "choose", "erase"});
+      auto items = vector<wxString> {"draw", "cut", "paste", "delete", "open", "close", "remove", "edit", "find", "increment", "decrement", "write", "read", "post", "build", "make", "release", "create", "choose", "erase"};
+      listBoxLeft->Append(static_cast<int>(items.size()), items.data());
       listBoxLeft->SetSelection(0);
     }
     

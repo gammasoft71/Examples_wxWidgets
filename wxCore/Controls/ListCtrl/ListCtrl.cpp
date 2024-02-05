@@ -59,7 +59,6 @@ namespace ListCtrlExample {
       choice1->SetSelection(1);
       choice1->Bind(wxEVT_CHOICE, [&](wxCommandEvent& event) {
         listCtrl->SetSingleStyle(reinterpret_cast<long long>(choice1->GetClientData(choice1->GetSelection())));
-        listCtrl->RecreateWindow();
       });
     }
     

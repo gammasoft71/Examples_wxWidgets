@@ -3,6 +3,7 @@
 #include <wx/frame.h>
 #include <wx/msgdlg.h>
 #include <wx/panel.h>
+#include <stdexcept>
 
 using namespace std;
 

@@ -11,6 +11,12 @@ namespace RearrangeDialogExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame {nullptr, wxID_ANY, "RearangeDialog example"} {
+      auto colorItemss = vector<wxString> {"Red", "Green", "Blue", "Yellow"};
+      colors = wxArrayString {colorItemss.size(), colorItemss.data()};
+      for (auto item : {3, 0, 1, 2})
+        order.push_back(item);
+
+
       button->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         label->SetLabel("");
         auto dialog = wxRearrangeDialog {nullptr, "You can also uncheck the colors you don't like at all.", "Sort the colors in order of preference", order, colors};
@@ -28,8 +34,8 @@ namespace RearrangeDialogExample {
     }
     
   private:
-    vector<wxString> colors = {"Red", "Green", "Blue", "Yellow"};
-    wxArrayInt order = {3, 0, 1, 2};
+    wxArrayString colors;
+    wxArrayInt order;
     wxPanel* panel = new wxPanel {this};
     wxButton* button = new wxButton {panel, wxID_ANY, "Rearange...", {10, 10}};
     wxStaticText* label = new wxStaticText {panel, wxID_ANY, "(none)", {10, 50}};

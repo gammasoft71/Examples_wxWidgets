@@ -4,6 +4,7 @@
 #include <wx/frame.h>
 #include <wx/listbox.h>
 #include <wx/menu.h>
+#include <wx/toolbar.h>
 #include <map>
 
 using namespace std;
@@ -46,7 +47,8 @@ namespace ToolBarExample {
         listBox1->Append(wxString::Format("DropDown clicked"));
       });
 
-      choice->Append(vector {"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
+      auto items = vector<wxString> {"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"};
+      choice->Append(static_cast<int>(items.size()), items.data());
       choice->SetSelection(0);
       choice->Bind(wxEVT_CHOICE, [&](wxCommandEvent& e) {
         listBox1->Append(wxString::Format("Choose item : %s", choice->GetStringSelection()));

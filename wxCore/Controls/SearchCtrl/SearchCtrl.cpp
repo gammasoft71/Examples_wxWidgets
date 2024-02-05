@@ -18,7 +18,8 @@ namespace SearchCtrlExample {
       menuSearch->AppendRadioItem(ID_DEFINITIONS, "Definitions");
       menuSearch->AppendRadioItem(ID_REGULAR_EXPRESSION, "Regular expression");
 
-      searchCtrl1->AutoComplete(vector {"Apple", "Banana", "Pear", "Raspberry"});
+      auto items = vector<wxString> {"Apple", "Banana", "Pear", "Raspberry"};
+      searchCtrl1->AutoComplete(wxArrayString(static_cast<int>(items.size()), items.data()));
       searchCtrl1->ShowCancelButton(true);
       searchCtrl1->SetMenu(menuSearch);
       searchCtrl1->Bind(wxEVT_SEARCH, [&](wxCommandEvent& event) {

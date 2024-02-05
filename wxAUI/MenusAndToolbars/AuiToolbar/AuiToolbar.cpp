@@ -58,7 +58,8 @@ namespace AuiToolbarExample {
       auiManager->Update();
       
       gauge->SetValue(50);
-      choice->Append(vector {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
+      auto items = vector<wxString> {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"};
+      choice->Append(static_cast<int>(items.size()), items.data());
       choice->SetSelection(0);
       choice->Bind(wxEVT_CHOICE, [&](wxCommandEvent&) {listBox1->Append(wxString::Format("Choose item : %s", choice->GetStringSelection()));});
     }
