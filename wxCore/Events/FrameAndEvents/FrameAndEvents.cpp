@@ -1,13 +1,15 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/frame.h>
 #include <wx/msgout.h>
+#include <wx/panel.h>
 
 namespace FrameAndEventsExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Frame and events") {}
+    Frame() : wxFrame {nullptr, wxID_ANY, "Frame and events"} {}
     
     bool ProcessEvent (wxEvent& event) override {
-      wxWindow* window = ((wxWindow*)event.GetEventObject());
+      auto window = static_cast<Frame*>(event.GetEventObject());
       if (event.GetEventType() == wxEVT_ACTIVATE_APP) wxMessageOutputDebug().Output("wxEVT_ACTIVATE_APP");
       if (event.GetEventType() == wxEVT_CLOSE_WINDOW) wxMessageOutputDebug().Output("wxEVT_CLOSE_WINDOW");
       if (event.GetEventType() == wxEVT_CREATE) wxMessageOutputDebug().Output("wxEVT_CREATE");
