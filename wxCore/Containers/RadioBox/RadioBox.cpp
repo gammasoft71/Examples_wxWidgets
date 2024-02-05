@@ -23,8 +23,8 @@ namespace RadioBoxExample {
     wxPanel* panel = new wxPanel {this};
     vector<wxString> choices1 = {"Radio 1", "Radio 2", "Radio 3"};
     vector<wxString> choices2 = {"Radio 4", "Radio 5", "Radio 6"};
-    wxRadioBox* radioBox1 = new wxRadioBox {panel, wxID_ANY, "RadioBox 1", {10, 10}, wxDefaultSize, choices1, 0, wxRA_SPECIFY_ROWS};
-    wxRadioBox* radioBox2 = new wxRadioBox {panel, wxID_ANY, "RadioBox 2", {130, 10}, wxDefaultSize, choices2, 0, wxRA_SPECIFY_COLS};
+    wxRadioBox* radioBox1 = new wxRadioBox {panel, wxID_ANY, "RadioBox 1", {10, 10}, wxDefaultSize, static_cast<int>(choices1.size()), choices1.data(), 0, wxRA_SPECIFY_ROWS};
+    wxRadioBox* radioBox2 = new wxRadioBox {panel, wxID_ANY, "RadioBox 2", {130, 10}, wxDefaultSize, static_cast<int>(choices2.size()), choices2.data(), 0, wxRA_SPECIFY_COLS};
   };
 
   class Application : public wxApp {
