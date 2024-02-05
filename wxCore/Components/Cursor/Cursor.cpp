@@ -1,5 +1,8 @@
-#include <wx/wx.h>
-#include <string>
+#include <wx/app.h>
+#include <wx/frame.h>
+#include <wx/listbox.h>
+#include <wx/panel.h>
+#include <wx/settings.h>
 #include <utility>
 #include <vector>
 
@@ -8,14 +11,14 @@ using namespace std;
 namespace CursorExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Cursors example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Cursors example"} {
       SetClientSize(360, 240);
       
       for (auto& cursorPair : cursorPairs)
-        listBoxCursors->Append(cursorPair.second, &cursorPair.first);
+        listBoxCursors->Append(cursorPair.first, &cursorPair.second);
           
       listBoxCursors->SetSelection(0);
-      listBoxCursors->Bind(wxEVT_COMMAND_LISTBOX_SELECTED, [&](wxCommandEvent& event) {
+      listBoxCursors->Bind(wxEVT_LISTBOX, [&](wxCommandEvent& event) {
         testZone->SetCursor(*static_cast<wxStockCursor*>(listBoxCursors->wxItemContainer::GetClientData(listBoxCursors->GetSelection())));
       });
       
@@ -23,10 +26,10 @@ namespace CursorExample {
     }
     
   private:
-    vector<pair<wxStockCursor, wxString>> cursorPairs = {{wxCURSOR_ARROW, "Arrow"}, {wxCURSOR_RIGHT_ARROW, "Right arrow"}, {wxCURSOR_BULLSEYE, "Bulls eye"}, {wxCURSOR_CHAR, "Char"}, {wxCURSOR_CROSS, "Cross"}, {wxCURSOR_HAND, "Hand"}, {wxCURSOR_IBEAM, "IBeam"}, {wxCURSOR_LEFT_BUTTON, "Left button"}, {wxCURSOR_MAGNIFIER, "Magnifier"}, {wxCURSOR_MIDDLE_BUTTON, "Middle button"}, {wxCURSOR_NO_ENTRY, "No entry"}, {wxCURSOR_PAINT_BRUSH, "Paint brush"}, {wxCURSOR_PENCIL, "Pencil"}, {wxCURSOR_POINT_LEFT, "Point left"}, {wxCURSOR_POINT_RIGHT, "Point right"}, {wxCURSOR_QUESTION_ARROW, "Question arrow"}, {wxCURSOR_RIGHT_BUTTON, "Right button"}, {wxCURSOR_SIZENESW, "sizenorth-east south-west"}, {wxCURSOR_SIZENS, "size north south"}, {wxCURSOR_SIZENWSE, "Size north-west south-east"}, {wxCURSOR_SIZEWE, "Size west east"}, {wxCURSOR_SIZING, "Sizing"}, {wxCURSOR_SPRAYCAN, "Spraycan"}, {wxCURSOR_WAIT, "Wait"}, {wxCURSOR_WATCH, "Watch"}, {wxCURSOR_BLANK, "Blank"}, {wxCURSOR_DEFAULT, "Default"}, {wxCURSOR_ARROWWAIT, "Arrow wait"}, {wxCURSOR_OPEN_HAND, "Open hand"}, {wxCURSOR_CLOSED_HAND, "Closed hand"}};
+    vector<pair<wxString, wxStockCursor>> cursorPairs = {{"Default", wxCURSOR_DEFAULT}, {"Arrow", wxCURSOR_ARROW}, {"Right arrow", wxCURSOR_RIGHT_ARROW}, {"Bulls eye", wxCURSOR_BULLSEYE}, {"Char", wxCURSOR_CHAR}, {"Cross", wxCURSOR_CROSS}, {"Hand", wxCURSOR_HAND}, {"IBeam", wxCURSOR_IBEAM}, {"Left button", wxCURSOR_LEFT_BUTTON}, {"Magnifier", wxCURSOR_MAGNIFIER}, {"Middle button", wxCURSOR_MIDDLE_BUTTON}, {"No entry", wxCURSOR_NO_ENTRY}, {"Paint brush", wxCURSOR_PAINT_BRUSH}, {"Pencil", wxCURSOR_PENCIL}, {"Point left", wxCURSOR_POINT_LEFT}, {"Point right", wxCURSOR_POINT_RIGHT}, {"Question arrow", wxCURSOR_QUESTION_ARROW}, {"Right button", wxCURSOR_RIGHT_BUTTON}, {"sizenorth-east south-west", wxCURSOR_SIZENESW}, {"size north south", wxCURSOR_SIZENS}, {"Size north-west south-east", wxCURSOR_SIZENWSE}, {"Size west east", wxCURSOR_SIZEWE}, {"Sizing", wxCURSOR_SIZING}, {"Spraycan", wxCURSOR_SPRAYCAN}, {"Wait", wxCURSOR_WAIT}, {"Watch", wxCURSOR_WATCH}, {"Blank", wxCURSOR_BLANK}, {"Arrow wait", wxCURSOR_ARROWWAIT}, {"Open hand", wxCURSOR_OPEN_HAND}, {"Closed hand", wxCURSOR_CLOSED_HAND}};
     wxPanel* panel = new wxPanel {this};
-    wxListBox* listBoxCursors = new wxListBox(panel, wxID_ANY, {20, 20}, {150, 200});
-    wxPanel* testZone = new wxPanel(panel, wxID_ANY, {190, 20}, {150, 200}, wxBORDER_SUNKEN);
+    wxListBox* listBoxCursors = new wxListBox {panel, wxID_ANY, {20, 20}, {150, 200}};
+    wxPanel* testZone = new wxPanel {panel, wxID_ANY, {190, 20}, {150, 200}, wxBORDER_SUNKEN};
   };
 
   class Application : public wxApp {
