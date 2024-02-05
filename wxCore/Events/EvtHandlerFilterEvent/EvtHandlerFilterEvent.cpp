@@ -1,16 +1,16 @@
 #include <wx/app.h>
 #include <wx/button.h>
 #include <wx/checkbox.h>
-#include <wx/frame.h>
 #include <wx/display.h>
+#include <wx/frame.h>
 #include <wx/log.h>
 #include <wx/panel.h>
 
 namespace EvtHandlerFilterEventExample {
   class Frame : public wxFrame, public wxEventFilter {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "Event handler add filter example") {
-      logWindow->GetFrame()->SetSize(wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetLeft(), wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetTop() + wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetHeight() - wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetHeight() / 4, wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetWidth(), wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetHeight() / 4);
+    Frame() : wxFrame {nullptr, wxID_ANY, "Event handler add filter example"} {
+      logWindow->GetFrame()->SetSize(wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetLeft(), wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetTop() + wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetHeight() - wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetHeight() / 4, wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetWidth(), wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetHeight() / 4);
       wxEvtHandler::AddFilter(this);
       mainPanel->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent& e) {wxLogDebug(wxString::Format("(Frame.Bind) wxEVT_LEFT_DOWN x=%d, y=%d", wxGetMousePosition().x, wxGetMousePosition().y));});
       panel->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent& e) {wxLogDebug(wxString::Format("(Panel.Bind) wxEVT_LEFT_DOWN x=%d, y=%d", wxGetMousePosition().x, wxGetMousePosition().y));});
@@ -32,7 +32,7 @@ namespace EvtHandlerFilterEventExample {
       return skipButtonEventCheckBox->IsChecked() && event.GetEventType() == wxEVT_LEFT_DOWN &&  event.GetEventObject() == button ? Event_Ignore : Event_Skip;
     }
     
-    wxLogWindow* logWindow = new wxLogWindow(nullptr, "Debug");
+    wxLogWindow* logWindow = new wxLogWindow {nullptr, "Debug"};
     wxPanel* mainPanel = new wxPanel {this};
     wxPanel* panel = new wxPanel {mainPanel, wxID_ANY, {10, 10}, {200, 100}, wxTAB_TRAVERSAL|wxBORDER_SIMPLE};
     wxButton* button = new wxButton {panel, wxID_ANY, "Click me", {10, 10}};
