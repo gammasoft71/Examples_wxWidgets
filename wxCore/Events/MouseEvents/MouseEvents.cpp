@@ -28,71 +28,71 @@ namespace MouseEventsExample {
       });
       
       panel->Bind(wxEVT_AUX1_DCLICK, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("Aux1DbClick", event).c_str());
+        wxLogDebug(MouseEventToString("Aux1DbClick", event));
       });
       
       panel->Bind(wxEVT_AUX1_DOWN, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("Aux1Down", event).c_str());
+        wxLogDebug(MouseEventToString("Aux1Down", event));
       });
 
       panel->Bind(wxEVT_AUX1_UP, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("Aux1Up", event).c_str());
+        wxLogDebug(MouseEventToString("Aux1Up", event));
       });
 
       panel->Bind(wxEVT_AUX2_DCLICK, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("Aux2DbClick", event).c_str());
+        wxLogDebug(MouseEventToString("Aux2DbClick", event));
       });
 
       panel->Bind(wxEVT_AUX2_DOWN, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("Aux2Down", event).c_str());
+        wxLogDebug(MouseEventToString("Aux2Down", event));
       });
 
       panel->Bind(wxEVT_AUX2_UP, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("Aux2Up", event).c_str());
+        wxLogDebug(MouseEventToString("Aux2Up", event));
       });
 
       panel->Bind(wxEVT_LEFT_DCLICK, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("LeftDbClick", event).c_str());
+        wxLogDebug(MouseEventToString("LeftDbClick", event));
       });
 
       panel->Bind(wxEVT_LEFT_DOWN, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("LeftDown", event).c_str());
+        wxLogDebug(MouseEventToString("LeftDown", event));
       });
 
       panel->Bind(wxEVT_LEFT_UP, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("LeftUp", event).c_str());
+        wxLogDebug(MouseEventToString("LeftUp", event));
       });
 
       panel->Bind(wxEVT_MIDDLE_DCLICK, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("MiddleDbClick", event).c_str());
+        wxLogDebug(MouseEventToString("MiddleDbClick", event));
       });
 
       panel->Bind(wxEVT_MIDDLE_DOWN, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("MiddleDown", event).c_str());
+        wxLogDebug(MouseEventToString("MiddleDown", event));
       });
 
       panel->Bind(wxEVT_MIDDLE_UP, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("MiddleUp", event).c_str());
+        wxLogDebug(MouseEventToString("MiddleUp", event));
       });
 
       panel->Bind(wxEVT_RIGHT_DCLICK, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("RightDbClick", event).c_str());
+        wxLogDebug(MouseEventToString("RightDbClick", event));
       });
 
       panel->Bind(wxEVT_RIGHT_DOWN, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("RightDown=", event).c_str());
+        wxLogDebug(MouseEventToString("RightDown=", event));
       });
 
       panel->Bind(wxEVT_RIGHT_UP, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("RightUp", event).c_str());
+        wxLogDebug(MouseEventToString("RightUp", event));
       });
 
       panel->Bind(wxEVT_MOTION, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("Motion", event).c_str());
+        wxLogDebug(MouseEventToString("Motion", event));
       });
 
       panel->Bind(wxEVT_MOUSEWHEEL, [&](wxMouseEvent& event) {
-        wxLogDebug(MouseEventToString("MouseWheel", event).c_str());
+        wxLogDebug(MouseEventToString("MouseWheel", event));
       });
 
       panel->Bind(wxEVT_ENTER_WINDOW, [&](wxMouseEvent& event) {
