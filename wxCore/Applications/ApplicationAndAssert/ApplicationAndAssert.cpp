@@ -34,7 +34,7 @@ namespace ApplicationAndAssertExample {
     bool OnInit() override {return (new MainFrame)->Show();}
     
   private:
-    std::exception_ptr exceptionStored;
+    exception_ptr exceptionStored;
   };
 }
 

@@ -7,6 +7,8 @@
 #include <wx/stattext.h>
 #include <map>
 
+using namespace std;
+
 namespace SearchCtrlExample {
   class Frame : public wxFrame {
   public:
@@ -16,7 +18,7 @@ namespace SearchCtrlExample {
       menuSearch->AppendRadioItem(ID_DEFINITIONS, "Definitions");
       menuSearch->AppendRadioItem(ID_REGULAR_EXPRESSION, "Regular expression");
 
-      searchCtrl1->AutoComplete(wxArrayString {"Apple", "Banana", "Pear", "Raspberry"});
+      searchCtrl1->AutoComplete(vector {"Apple", "Banana", "Pear", "Raspberry"});
       searchCtrl1->ShowCancelButton(true);
       searchCtrl1->SetMenu(menuSearch);
       searchCtrl1->Bind(wxEVT_SEARCH, [&](wxCommandEvent& event) {
@@ -24,7 +26,7 @@ namespace SearchCtrlExample {
       });
       
       searchCtrl1->GetMenu()->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
-        static auto modes = std::map<int, wxString> {{ID_TEXT, "Text"}, {ID_REFERENCES, "References"}, {ID_DEFINITIONS, "Definitions"}, {ID_REGULAR_EXPRESSION, "Regular expression"}};
+        static auto modes = map<int, wxString> {{ID_TEXT, "Text"}, {ID_REFERENCES, "References"}, {ID_DEFINITIONS, "Definitions"}, {ID_REGULAR_EXPRESSION, "Regular expression"}};
         staticText1->SetLabel(wxString::Format("Mode : %s", modes[event.GetId()]));
       });
     }

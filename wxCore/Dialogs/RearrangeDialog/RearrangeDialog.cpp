@@ -4,7 +4,8 @@
 #include <wx/panel.h>
 #include <wx/rearrangectrl.h>
 #include <wx/stattext.h>
-#include <vector>
+
+using namespace std;
 
 namespace RearrangeDialogExample {
   class Frame : public wxFrame {
@@ -27,7 +28,7 @@ namespace RearrangeDialogExample {
     }
     
   private:
-    wxArrayString colors = {"Red", "Green", "Blue", "Yellow"};
+    vector<wxString> colors = {"Red", "Green", "Blue", "Yellow"};
     wxArrayInt order = {3, 0, 1, 2};
     wxPanel* panel = new wxPanel {this};
     wxButton* button = new wxButton {panel, wxID_ANY, "Rearange...", {10, 10}};

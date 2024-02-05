@@ -1,12 +1,12 @@
-#include <map>
-#include <string>
-#include <vector>
 #include <wx/wx.h>
+#include <map>
+
+using namespace std;
 
 namespace ColorsExample {
   class PanelColor : public wxPanel {
   public:
-    PanelColor(wxWindow* parent, const wxColour& color, const std::string& name) : wxPanel(parent) {
+    PanelColor(wxWindow* parent, const wxColour& color, const wxString& name) : wxPanel(parent) {
       SetMinSize(wxSize(100, 50));
       SetBackgroundColour(color);
       staticTextColorName->SetLabel(name);
@@ -35,7 +35,7 @@ namespace ColorsExample {
       boxSizerMain->Add(panelColor3, 0, wxGROW);
       panelColors.push_back(panelColor3);
       
-      std::map<wxSystemColour, std::string> colors = {
+      map<wxSystemColour, wxString> colors = {
         {wxSYS_COLOUR_SCROLLBAR, "wxSYS_COLOUR_SCROLLBAR"},
         {wxSYS_COLOUR_DESKTOP, "wxSYS_COLOUR_DESKTOP"},
         {wxSYS_COLOUR_ACTIVECAPTION, "wxSYS_COLOUR_ACTIVECAPTION"},
@@ -84,7 +84,7 @@ namespace ColorsExample {
   private:
     wxBoxSizer* boxSizerMain = new wxBoxSizer(wxVERTICAL);
     wxScrolled<wxPanel>* panelMain = new wxScrolled<wxPanel>(this);
-    std::vector<PanelColor*> panelColors;
+    vector<PanelColor*> panelColors;
   };
 
   class Application : public wxApp {

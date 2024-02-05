@@ -4,6 +4,8 @@
 #include <wx/wx.h>
 #include <wx/glcanvas.h>
 
+using namespace std;
+
 class TestGLContext : public wxGLContext {
 public:
   void DrawRotatedDice(float xangle, float yangle) {
@@ -74,7 +76,7 @@ public:
   }
   
   static TestGLContext& Instance(wxGLCanvas* canvas) {
-    static std::unique_ptr<TestGLContext> glContext {new TestGLContext(canvas)};
+    static unique_ptr<TestGLContext> glContext {new TestGLContext(canvas)};
     glContext->SetCurrent(*canvas);
     return *glContext;
   }
@@ -94,7 +96,7 @@ private:
     glEnable(GL_LIGHT0);
     glEnable(GL_TEXTURE_2D);
     
-    std::vector ambient = {0.5f, 0.5f, 0.5f, 0.5f};
+    vector ambient = {0.5f, 0.5f, 0.5f, 0.5f};
     glLightfv(GL_LIGHT0, GL_AMBIENT, ambient.data());
     
     glMatrixMode(GL_PROJECTION);
@@ -121,7 +123,7 @@ private:
   }
 
   static wxImage DrawDice(int size, size_t num) {
-    if (num < 1 || num > 6) throw std::invalid_argument("invalid dice index");
+    if (num < 1 || num > 6) throw invalid_argument("invalid dice index");
     
     const int dot = size / 16;
     const int gap = 5 * size / 32;
@@ -150,7 +152,7 @@ private:
     return bmp.ConvertToImage();
   }
 
-  std::array<unsigned int, 6> textures;
+  array<unsigned int, 6> textures;
 };
 
 class MyFrame : public wxFrame {

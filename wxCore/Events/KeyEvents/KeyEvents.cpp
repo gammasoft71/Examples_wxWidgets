@@ -23,9 +23,9 @@ namespace KeyEventsExample {
     }
     
   private:
-    static std::string ModiiersToString(int modifiers) {
+    static wxString ModiiersToString(int modifiers) {
       if (!modifiers) return "None";
-      std::string result;
+      wxString result;
       if ((modifiers & wxMOD_SHIFT) == wxMOD_SHIFT) result += "Shift, ";
       if ((modifiers & wxMOD_RAW_CONTROL) == wxMOD_RAW_CONTROL) result += "Control, ";
       if ((modifiers & wxMOD_ALT) == wxMOD_ALT) result += "Alt, ";

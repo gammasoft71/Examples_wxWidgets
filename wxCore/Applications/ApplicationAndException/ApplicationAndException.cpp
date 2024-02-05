@@ -60,7 +60,7 @@ namespace ApplicationAndExceptionExample {
       return false;
     }
 
-    static int ShowExceptiionError(const std::exception& e) {
+    static int ShowExceptiionError(const exception& e) {
       return wxMessageBox(wxString::Format("Unhandled exception occurred in your application. If you click\nOK, the application will ignore this error and attempt to continue.\nIf you click Cancel, the application will close immediately.\n\n%s", e.what()), "Exception occurred", wxOK|wxCANCEL|wxICON_ERROR);
     }
     
@@ -69,7 +69,7 @@ namespace ApplicationAndExceptionExample {
     }
 
   private:
-    std::exception_ptr exceptionStored;
+    exception_ptr exceptionStored;
   };
 }
 

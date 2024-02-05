@@ -1,9 +1,7 @@
-#include <thread>
 #include <wx/wx.h>
+#include <thread>
 
 using namespace std;
-using namespace std::literals;
-using namespace std::this_thread;
 
 namespace FrameAndThreadExample {
   class thread_state {
@@ -36,7 +34,7 @@ namespace FrameAndThreadExample {
           state.userThreadId = userThreadId;
           while (!closed) {
             /// simulate work...
-            sleep_for(50ms);
+            wxMilliSleep(50);
             state.counter++;
             /// call QueueEvent method to send event to the main thread.
             wxThreadEvent* event = new wxThreadEvent(wxEVT_THREAD);

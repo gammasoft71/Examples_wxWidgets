@@ -1,14 +1,16 @@
 #include <wx/app.h>
 #include <wx/frame.h>
 
+using namespace std;
+
 namespace StatusBarExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame {nullptr, wxID_ANY, "StatusBar example"} {
       SetStatusBar(statusBar);
     
-      auto statusWidths = std::vector {80, 80, -1};
-      auto statusStyles = std::vector {wxSB_SUNKEN, wxSB_SUNKEN, wxSB_SUNKEN};
+      auto statusWidths = vector {80, 80, -1};
+      auto statusStyles = vector {wxSB_SUNKEN, wxSB_SUNKEN, wxSB_SUNKEN};
       
       statusBar->SetFieldsCount(static_cast<int>(statusWidths.size()));
       statusBar->SetStatusWidths(static_cast<int>(statusWidths.size()), statusWidths.data());

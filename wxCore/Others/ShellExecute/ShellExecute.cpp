@@ -47,7 +47,7 @@ namespace ShellExecuteExample {
         if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Windows") wxShellExecute("calc.exe");
         else if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Macintosh") wxShellExecute("/System/Applications/Calculator.app");
         else if (wxPlatformInfo::Get().GetOperatingSystemFamilyName() == "Unix") wxShellExecute("gnome-calculator");
-        else throw std::invalid_argument("Calculator not found.");
+        else throw invalid_argument("Calculator not found.");
       });
     }
     

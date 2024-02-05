@@ -5,6 +5,8 @@
 #include <wx/display.h>
 #include <wx/log.h>
 
+using namespace std;
+
 namespace MouseEventsExample {
   class Frame : public wxFrame {
   public:
@@ -103,22 +105,22 @@ namespace MouseEventsExample {
     }
     
   private:
-    static std::string MouseEventToString(const std::string eventName, wxMouseEvent& event) {
+    static wxString MouseEventToString(const wxString eventName, wxMouseEvent& event) {
       return wxString::Format("%s={Button=%s, ClickCount=%d, WheelDelta=%d, wheelAxis=%s, location[x=%d, y=%d], ModifiersKey=[%s]}", eventName, ButtonToString(event.GetButton()), event.GetClickCount(), event.GetWheelDelta(), WheelAxisToString(event.GetWheelAxis()), event.GetPosition().x, event.GetPosition().y, ModiiersToString(event.GetModifiers())).ToStdString();
     }
 
-    static std::string ButtonToString(int button) {
-      static std::map<int, std::string> buttons {{wxMOUSE_BTN_NONE, "wxMOUSE_BTN_NONE"}, {wxMOUSE_BTN_LEFT, "wxMOUSE_BTN_LEFT"}, {wxMOUSE_BTN_MIDDLE, "wxMOUSE_BTN_MIDDLE"}, {wxMOUSE_BTN_RIGHT, "wxMOUSE_BTN_RIGHT"}, {wxMOUSE_BTN_AUX1, "wxMOUSE_BTN_AUX1"}, {wxMOUSE_BTN_AUX2, "wxMOUSE_BTN_AUX2"}};
+    static wxString ButtonToString(int button) {
+      static map<int, wxString> buttons {{wxMOUSE_BTN_NONE, "wxMOUSE_BTN_NONE"}, {wxMOUSE_BTN_LEFT, "wxMOUSE_BTN_LEFT"}, {wxMOUSE_BTN_MIDDLE, "wxMOUSE_BTN_MIDDLE"}, {wxMOUSE_BTN_RIGHT, "wxMOUSE_BTN_RIGHT"}, {wxMOUSE_BTN_AUX1, "wxMOUSE_BTN_AUX1"}, {wxMOUSE_BTN_AUX2, "wxMOUSE_BTN_AUX2"}};
       return buttons[button];
     }
     
-    static std::string WheelAxisToString(int wheelAxis) {
+    static wxString WheelAxisToString(int wheelAxis) {
       return wheelAxis == wxMOUSE_WHEEL_HORIZONTAL ? "wxMOUSE_WHEEL_HORIZONTAL" :  "wxMOUSE_WHEEL_VERTICAL";
     }
     
-    static std::string ModiiersToString(int modifiers) {
+    static wxString ModiiersToString(int modifiers) {
       if (!modifiers) return "None";
-      std::string result;
+      wxString result;
       if ((modifiers & wxMOD_SHIFT) == wxMOD_SHIFT) result += "Shift, ";
       if ((modifiers & wxMOD_RAW_CONTROL) == wxMOD_RAW_CONTROL) result += "Control, ";
       if ((modifiers & wxMOD_ALT) == wxMOD_ALT) result += "Alt, ";

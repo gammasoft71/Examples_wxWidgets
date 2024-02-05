@@ -1,6 +1,8 @@
 #include <any>
 #include <wx/wx.h>
 
+using namespace std;
+
 namespace CustomEventExample {
   class CustomEvent;
   wxDECLARE_EVENT(WX_EVT_CUSTOM_EVENT, CustomEvent);
@@ -10,11 +12,11 @@ namespace CustomEventExample {
     CustomEvent(wxEventType commandType = WX_EVT_CUSTOM_EVENT, int id = 0) : wxCommandEvent(commandType, id) { }
     CustomEvent(const CustomEvent& event) : wxCommandEvent(event), tag_(event.tag_) {}
     
-    std::any tag() const {return tag_;}
-    void tag(const std::any& value) {tag_ = value;}
+    any tag() const {return tag_;}
+    void tag(const any& value) {tag_ = value;}
     
   private:
-    std::any tag_;
+    any tag_;
   };
 
   wxDEFINE_EVENT(WX_EVT_CUSTOM_EVENT, CustomEvent);
@@ -30,7 +32,7 @@ namespace CustomEventExample {
       });
       
       Bind(WX_EVT_CUSTOM_EVENT, [&](CustomEvent& event) {
-        wxMessageBox(wxString::Format("Receive CustomEvent event (%d)", std::any_cast<int>(event.tag())), "CustomEVent", wxOK);
+        wxMessageBox(wxString::Format("Receive CustomEvent event (%d)", any_cast<int>(event.tag())), "CustomEVent", wxOK);
       });
     }
     

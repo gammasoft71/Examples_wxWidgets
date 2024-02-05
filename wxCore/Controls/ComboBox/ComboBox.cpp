@@ -3,20 +3,22 @@
 #include <wx/frame.h>
 #include <wx/panel.h>
 
+using namespace std;
+
 namespace ComboBoxExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "ComboBox example") {
       SetClientSize(400, 270);
-      comboBox1->Append(wxArrayString {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
+      comboBox1->Append(vector {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
       comboBox1->Select(0);
       comboBox1->Bind(wxEVT_COMBOBOX, &Frame::OnComboBoxSelectionChanged, this);
 
-      comboBox2->Append(wxArrayString {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
+      comboBox2->Append(vector {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
       comboBox2->Select(0);
       comboBox2->Bind(wxEVT_COMBOBOX, &Frame::OnComboBoxSelectionChanged, this);
 
-      comboBox3->Append(wxArrayString {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
+      comboBox3->Append(vector {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
       comboBox3->Select(0);
       comboBox3->Bind(wxEVT_COMBOBOX, &Frame::OnComboBoxSelectionChanged, this);
     }

@@ -8,6 +8,8 @@
 #include <wx/listbox.h>
 #include <map>
 
+using namespace std;
+
 namespace AuiToolbarExample {
   class Frame : public wxFrame {
   public:
@@ -32,7 +34,7 @@ namespace AuiToolbarExample {
       toolBar1->AddTool(wxID_ABOUT, "&About...", wxArtProvider::GetBitmap(wxART_HELP, wxART_TOOLBAR, bitmapSize));
       toolBar1->Realize();
       toolBar1->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
-        static auto names = std::map<int, wxString> {{wxID_NEW, "New"}, {wxID_OPEN, "Open..."}, {wxID_SAVE, "Save"}, {wxID_EXIT, "Quit"}, {wxID_CUT, "Cut"}, {wxID_COPY, "Copy"}, {wxID_PASTE, "Paste"}, {wxID_PRINT, "Print..."}, {wxID_ABOUT, "About..."}, {wxID_ANY, "Any"}};
+        static auto names = map<int, wxString> {{wxID_NEW, "New"}, {wxID_OPEN, "Open..."}, {wxID_SAVE, "Save"}, {wxID_EXIT, "Quit"}, {wxID_CUT, "Cut"}, {wxID_COPY, "Copy"}, {wxID_PASTE, "Paste"}, {wxID_PRINT, "Print..."}, {wxID_ABOUT, "About..."}, {wxID_ANY, "Any"}};
         auto iterator = names.find(event.GetId());
         listBox1->Append(iterator != names.end() ? iterator->second : "(Unknown)");
         if (event.GetId() == wxID_EXIT) Close();
@@ -45,7 +47,7 @@ namespace AuiToolbarExample {
       toolBar2->AddControl(gauge);
       toolBar2->Realize();
       toolBar2->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
-        static std::map<int, std::string> names = {{wxID_UNDO, "Undo..."}, {wxID_REDO, "Redo..."}, {wxID_SELECTALL, "Select all..."}, {wxID_ANY, "Any"}};
+        static map<int, wxString> names = {{wxID_UNDO, "Undo..."}, {wxID_REDO, "Redo..."}, {wxID_SELECTALL, "Select all..."}, {wxID_ANY, "Any"}};
         if (names.find(event.GetId()) != names.end()) listBox1->Append(names[event.GetId()]);
         if (event.GetId() == wxID_EXIT) Close();
       });
@@ -56,7 +58,7 @@ namespace AuiToolbarExample {
       auiManager->Update();
       
       gauge->SetValue(50);
-      choice->Append(wxArrayString {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
+      choice->Append(vector {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
       choice->SetSelection(0);
       choice->Bind(wxEVT_CHOICE, [&](wxCommandEvent&) {listBox1->Append(wxString::Format("Choose item : %s", choice->GetStringSelection()));});
     }

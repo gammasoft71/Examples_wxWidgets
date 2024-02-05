@@ -6,6 +6,8 @@
 #include <wx/menu.h>
 #include <map>
 
+using namespace std;
+
 namespace ToolBarExample {
   class Frame : public wxFrame {
   public:
@@ -34,7 +36,7 @@ namespace ToolBarExample {
       SetToolBar(toolBar);
       toolBar->Realize();
       toolBar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
-        static auto names = std::map<int, std::string> {{wxID_NEW, "New"}, {wxID_OPEN, "Open..."}, {wxID_SAVE, "Save"}, {wxID_EXIT, "Quit"}, {wxID_CUT, "Cut"}, {wxID_COPY, "Copy"}, {wxID_PASTE, "Paste"}, {wxID_PRINT, "Print..."}, {wxID_HELP, "Help"}, {wxID_HELP_CONTEXT, "Help context"}, {wxID_HELP_INDEX, "Help index"}, {wxID_HELP_SEARCH, "Help search"}, {wxID_ABOUT, "About..."}, {wxID_ANY, "Any"}};
+        static auto names = map<int, wxString> {{wxID_NEW, "New"}, {wxID_OPEN, "Open..."}, {wxID_SAVE, "Save"}, {wxID_EXIT, "Quit"}, {wxID_CUT, "Cut"}, {wxID_COPY, "Copy"}, {wxID_PASTE, "Paste"}, {wxID_PRINT, "Print..."}, {wxID_HELP, "Help"}, {wxID_HELP_CONTEXT, "Help context"}, {wxID_HELP_INDEX, "Help index"}, {wxID_HELP_SEARCH, "Help search"}, {wxID_ABOUT, "About..."}, {wxID_ANY, "Any"}};
         listBox1->Append(wxString::Format("%s clicked", names.find(event.GetId()) != names.end() ? names[event.GetId()] : "Unknown"));
         listBox1->Select(listBox1->GetCount() - 1);
         if (event.GetId() == wxID_EXIT) Close();
@@ -44,7 +46,7 @@ namespace ToolBarExample {
         listBox1->Append(wxString::Format("DropDown clicked"));
       });
 
-      choice->Append(wxArrayString {"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
+      choice->Append(vector {"item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10"});
       choice->SetSelection(0);
       choice->Bind(wxEVT_CHOICE, [&](wxCommandEvent& e) {
         listBox1->Append(wxString::Format("Choose item : %s", choice->GetStringSelection()));

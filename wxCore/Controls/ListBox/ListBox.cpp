@@ -29,7 +29,7 @@ namespace ListBoxExample {
       
       panel->SetSizerAndFit(boxSizer);
 
-      listBoxLeft->Append(wxArrayString {"draw", "cut", "paste", "delete", "open", "close", "remove", "edit", "find", "increment", "decrement", "write", "read", "post", "build", "make", "release", "create", "choose", "erase"});
+      listBoxLeft->Append(vector {"draw", "cut", "paste", "delete", "open", "close", "remove", "edit", "find", "increment", "decrement", "write", "read", "post", "build", "make", "release", "create", "choose", "erase"});
       listBoxLeft->SetSelection(0);
     }
     

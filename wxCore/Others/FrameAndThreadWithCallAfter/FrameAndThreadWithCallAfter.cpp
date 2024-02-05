@@ -1,9 +1,7 @@
-#include <thread>
 #include <wx/wx.h>
+#include <thread>
 
 using namespace std;
-using namespace std::literals;
-using namespace std::this_thread;
 
 namespace FrameAndThreadWithCallAfterExample {
   class Frame : public wxFrame {
@@ -22,7 +20,7 @@ namespace FrameAndThreadWithCallAfterExample {
           auto counter = 0;
           while (!closed) {
             /// simulate work...
-            sleep_for(50ms);
+            wxMilliSleep(50);
             counter++;
             /// call CallAfter method to update ui in the main thread.
             CallAfter([=] {

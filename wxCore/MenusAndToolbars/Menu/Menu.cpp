@@ -6,6 +6,8 @@
 #include <wx/listbox.h>
 #include <wx/menu.h>
 
+using namespace std;
+
 namespace MenuExample {
   class Frame : public wxFrame {
   public:
@@ -100,7 +102,7 @@ namespace MenuExample {
       contextualMenu->AppendSubMenu(menuHelp, "&Help");
 
       contextualMenu->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
-        static auto names = std::map<int, std::string> {{wxID_NEW, "File/New"}, {wxID_OPEN, "File/Open..."}, {ID_OPENRECENTFILE1, "File/Open recent/File 1"}, {ID_OPENRECENTFILE2, "File/Open recent/File 2"}, {ID_OPENRECENTFILE3, "File/Open recent/File 3"}, {ID_OPENRECENTFILE4, "File/Open recent/File 4"}, {ID_OPENRECENTFILE5, "File/Open recent/File 5"}, {wxID_CLOSE, "File/Close"}, {wxID_SAVE, "File/Save"}, {wxID_SAVEAS, "File/Save as..."}, {wxID_PAGE_SETUP, "File/Page setup..."}, {wxID_PRINT, "File/Print..."}, {ID_EXIT, "File/Quit"}, {wxID_UNDO, "Edit/Undo"}, {wxID_REDO, "Edit/Redo"}, {wxID_CUT, "Edit/Cut"}, {wxID_COPY, "Edit/Copy"}, {wxID_PASTE, "Edit/Paste"}, {wxID_SELECTALL, "Edit/Select All"}, {wxID_PREFERENCES, "Edit/Settings..."}, {wxID_BACKWARD, "View/Back"}, {wxID_FORWARD, "View/Forward"}, {ID_SHOW, "View/Show"}, {ID_HIDE, "View/Hide"}, {ID_OPTIONA, "Options/Option A"}, {ID_OPTIONB, "Options/Option B"}, {ID_OPTIONC, "Options/Option C"}, {ID_OPTIOND, "Options/Option D"}, {ID_OPTIONE, "Options/Option E"}, {ID_OPTIONF, "Options/Option F"}, {ID_OPTIONG, "Options/Option G"}, {ID_OPTIONH, "Options/Option H"}, {ID_OPTIONI, "Options/Option I"}, {wxID_HELP_CONTEXT, "Help/Context"}, {wxID_HELP_INDEX, "Help/Index"}, {wxID_HELP_SEARCH, "Help/Search"}, {ID_ABOUT, "Help/About"}, {wxID_ANY, "Any"}};
+        static auto names = map<int, wxString> {{wxID_NEW, "File/New"}, {wxID_OPEN, "File/Open..."}, {ID_OPENRECENTFILE1, "File/Open recent/File 1"}, {ID_OPENRECENTFILE2, "File/Open recent/File 2"}, {ID_OPENRECENTFILE3, "File/Open recent/File 3"}, {ID_OPENRECENTFILE4, "File/Open recent/File 4"}, {ID_OPENRECENTFILE5, "File/Open recent/File 5"}, {wxID_CLOSE, "File/Close"}, {wxID_SAVE, "File/Save"}, {wxID_SAVEAS, "File/Save as..."}, {wxID_PAGE_SETUP, "File/Page setup..."}, {wxID_PRINT, "File/Print..."}, {ID_EXIT, "File/Quit"}, {wxID_UNDO, "Edit/Undo"}, {wxID_REDO, "Edit/Redo"}, {wxID_CUT, "Edit/Cut"}, {wxID_COPY, "Edit/Copy"}, {wxID_PASTE, "Edit/Paste"}, {wxID_SELECTALL, "Edit/Select All"}, {wxID_PREFERENCES, "Edit/Settings..."}, {wxID_BACKWARD, "View/Back"}, {wxID_FORWARD, "View/Forward"}, {ID_SHOW, "View/Show"}, {ID_HIDE, "View/Hide"}, {ID_OPTIONA, "Options/Option A"}, {ID_OPTIONB, "Options/Option B"}, {ID_OPTIONC, "Options/Option C"}, {ID_OPTIOND, "Options/Option D"}, {ID_OPTIONE, "Options/Option E"}, {ID_OPTIONF, "Options/Option F"}, {ID_OPTIONG, "Options/Option G"}, {ID_OPTIONH, "Options/Option H"}, {ID_OPTIONI, "Options/Option I"}, {wxID_HELP_CONTEXT, "Help/Context"}, {wxID_HELP_INDEX, "Help/Index"}, {wxID_HELP_SEARCH, "Help/Search"}, {ID_ABOUT, "Help/About"}, {wxID_ANY, "Any"}};
         listBox1->Append(names.find(event.GetId()) != names.end() ? names[event.GetId()] : "Unknown");
         event.StopPropagation();
       });

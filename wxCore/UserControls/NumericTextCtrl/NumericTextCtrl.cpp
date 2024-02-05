@@ -1,5 +1,7 @@
 #include <wx/wx.h>
 
+using namespace std;
+
 namespace NumericTextCtrlExample {
   wxDEFINE_EVENT(wxEVT_VALUE, wxCommandEvent);
 
@@ -7,7 +9,7 @@ namespace NumericTextCtrlExample {
   public:
     wxNumericTextCtrl(wxWindow* parent, wxWindowID id, double value = .0, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0, const wxValidator& validator = wxDefaultValidator,  const wxString& name = wxTextCtrlNameStr) : wxTextCtrl(parent, id, wxString::Format("%g", value), pos, size, style, validator, name)  {
       Bind(wxEVT_CHAR, [&](wxKeyEvent& event) {
-        event.Skip((std::iscntrl(event.GetUnicodeKey()) || std::isdigit(event.GetUnicodeKey()) || event.GetUnicodeKey() == '.') && (event.GetUnicodeKey() != '.' || GetValue().Find('.') == std::string::npos));
+        event.Skip((iscntrl(event.GetUnicodeKey()) || isdigit(event.GetUnicodeKey()) || event.GetUnicodeKey() == '.') && (event.GetUnicodeKey() != '.' || GetValue().Find('.') == wxString::npos));
       });
       
       Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
@@ -32,7 +34,7 @@ namespace NumericTextCtrlExample {
   public:
     Frame() : wxFrame(nullptr, wxID_ANY, "NumericTextBox example") {
       numericTextBox1->Bind(wxEVT_VALUE, [&](wxCommandEvent& e) {
-        std::cout << wxString::Format("ValueChanged [Value==%g]", numericTextBox1->GetNumericValue()) << std::endl;
+        cout << wxString::Format("ValueChanged [Value==%g]", numericTextBox1->GetNumericValue()) << endl;
       });
     }
     

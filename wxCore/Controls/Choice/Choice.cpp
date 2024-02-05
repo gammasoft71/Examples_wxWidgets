@@ -3,15 +3,17 @@
 #include <wx/frame.h>
 #include <wx/panel.h>
 
+using namespace std;
+
 namespace ChoiceExample {
   class Frame : public wxFrame {
   public:
     Frame() : wxFrame {nullptr, wxID_ANY, "Choice example"} {
-      choice1->Append(wxArrayString {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
+      choice1->Append(vector {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
       choice1->SetSelection(0);
       choice1->Bind(wxEVT_CHOICE, &Frame::OnChoicClick, this);
 
-      choice2->Append(wxArrayString {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
+      choice2->Append(vector {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"});
       choice2->SetSelection(0);
       choice2->Bind(wxEVT_CHOICE, &Frame::OnChoicClick, this);
     }

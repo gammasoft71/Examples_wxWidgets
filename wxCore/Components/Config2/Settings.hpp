@@ -22,7 +22,7 @@ namespace Config2Example {
       wxSize Size() const {return size;}
       void Size(const wxSize& size) {this->size = size;}
       
-      std::string Caption() const {return "Config2 example";}
+      wxString Caption() const {return "Config2 example";}
       
       void Reload() {
         backgroundColour = config->Read("BackgroundColour", backgroundColour);
