@@ -1,16 +1,17 @@
 #undef NDEBUG
-#include <map>
-#include <string>
-#include <wx/wx.h>
+#include <wx/app.h>
 #include <wx/display.h>
+#include <wx/frame.h>
 #include <wx/log.h>
+#include <wx/panel.h>
+#include <map>
 
 using namespace std;
 
 namespace MouseEventsExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "MouseEvents") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "MouseEvents"} {
       panel->Bind(wxEVT_COMMAND_LEFT_CLICK, [&](wxCommandEvent& event) {
         wxLogDebug("Command Left Click");
       });
@@ -110,7 +111,7 @@ namespace MouseEventsExample {
     }
 
     static wxString ButtonToString(int button) {
-      static map<int, wxString> buttons {{wxMOUSE_BTN_NONE, "wxMOUSE_BTN_NONE"}, {wxMOUSE_BTN_LEFT, "wxMOUSE_BTN_LEFT"}, {wxMOUSE_BTN_MIDDLE, "wxMOUSE_BTN_MIDDLE"}, {wxMOUSE_BTN_RIGHT, "wxMOUSE_BTN_RIGHT"}, {wxMOUSE_BTN_AUX1, "wxMOUSE_BTN_AUX1"}, {wxMOUSE_BTN_AUX2, "wxMOUSE_BTN_AUX2"}};
+      static auto buttons = map<int, wxString> {{wxMOUSE_BTN_NONE, "wxMOUSE_BTN_NONE"}, {wxMOUSE_BTN_LEFT, "wxMOUSE_BTN_LEFT"}, {wxMOUSE_BTN_MIDDLE, "wxMOUSE_BTN_MIDDLE"}, {wxMOUSE_BTN_RIGHT, "wxMOUSE_BTN_RIGHT"}, {wxMOUSE_BTN_AUX1, "wxMOUSE_BTN_AUX1"}, {wxMOUSE_BTN_AUX2, "wxMOUSE_BTN_AUX2"}};
       return buttons[button];
     }
     
@@ -120,7 +121,7 @@ namespace MouseEventsExample {
     
     static wxString ModiiersToString(int modifiers) {
       if (!modifiers) return "None";
-      wxString result;
+      auto result = wxString {};
       if ((modifiers & wxMOD_SHIFT) == wxMOD_SHIFT) result += "Shift, ";
       if ((modifiers & wxMOD_RAW_CONTROL) == wxMOD_RAW_CONTROL) result += "Control, ";
       if ((modifiers & wxMOD_ALT) == wxMOD_ALT) result += "Alt, ";
@@ -135,8 +136,8 @@ namespace MouseEventsExample {
 
   class Application : public wxApp {
     bool OnInit() override {
-      wxLogWindow* logWindow = new wxLogWindow(nullptr, "Debug");
-      logWindow->GetFrame()->SetSize(wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetLeft(), wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetTop() + wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetHeight() - wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetHeight() / 4, wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetWidth(), wxDisplay(wxDisplay::GetFromWindow(logWindow->GetFrame())).GetClientArea().GetHeight() / 4);
+      wxLogWindow* logWindow = new wxLogWindow {nullptr, "Debug"};
+      logWindow->GetFrame()->SetSize(wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetLeft(), wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetTop() + wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetHeight() - wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetHeight() / 4, wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetWidth(), wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetHeight() / 4);
       return (new Frame)->Show();
     }
   };
