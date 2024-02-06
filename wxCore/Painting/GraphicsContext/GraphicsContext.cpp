@@ -1,20 +1,21 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/dcclient.h>
+#include <wx/frame.h>
 #include <wx/graphics.h>
-#include <wx/statline.h>
 
 namespace GraphicContextExample {
-  class Window : public wxFrame {
+  class Frame : public wxFrame {
   public:
-    Window() : wxFrame(nullptr, wxID_ANY, "GraphicsContext example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "GraphicsContext example"} {
       SetPosition({100, 100});
       SetClientSize(640, 480);
       
       Bind(wxEVT_PAINT, [&](wxPaintEvent& event) {
-        wxPaintDC dc(this);
+        auto dc = wxPaintDC {this};
         auto graphics = wxGraphicsContext::Create(dc);
       
         graphics->SetPen(*wxRED_PEN);
-        wxGraphicsPath path = graphics->CreatePath();
+        auto path = graphics->CreatePath();
         
         path.AddCircle( 50.0, 50.0, 50.0 );
         path.MoveToPoint(0.0, 50.0);
@@ -31,7 +32,7 @@ namespace GraphicContextExample {
   };
   
   class Application : public wxApp {
-    bool OnInit() override {return (new Window())->Show();}
+    bool OnInit() override {return (new Frame)->Show();}
   };
 }
 
