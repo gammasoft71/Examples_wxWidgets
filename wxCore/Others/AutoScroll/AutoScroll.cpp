@@ -1,9 +1,13 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
+#include <wx/scrolwin.h>
+#include <wx/sizer.h>
 
 namespace AutoScrollExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "AutoScroll example", wxDefaultPosition, {400, 250}) {
+    Frame() : wxFrame {nullptr, wxID_ANY, "AutoScroll example", wxDefaultPosition, {400, 250}} {
       panel1->SetBackgroundColour({0x90, 0xEE, 0x90, 0xFF});
       panel2->SetBackgroundColour({0xFF, 0xB6, 0xC1, 0xFF});
       panel3->SetBackgroundColour({0xAD, 0xD8, 0xE6, 0xFF});
@@ -22,13 +26,13 @@ namespace AutoScrollExample {
     }
     
   private:
-    wxScrolled<wxPanel>* panelMain = new wxScrolled<wxPanel>(this);
-    wxBoxSizer* boxSizerMain = new wxBoxSizer(wxVERTICAL);
-    wxPanel* panel1 = new wxPanel(panelMain, wxID_ANY, wxDefaultPosition, {100, 100}, wxTAB_TRAVERSAL|wxBORDER_SIMPLE);
-    wxPanel* panel2 = new wxPanel(panelMain, wxID_ANY, wxDefaultPosition, {100, 100}, wxTAB_TRAVERSAL|wxBORDER_SIMPLE);
-    wxPanel* panel3 = new wxPanel(panelMain, wxID_ANY, wxDefaultPosition, {100, 100}, wxTAB_TRAVERSAL|wxBORDER_SIMPLE);
-    wxPanel* panel4 = new wxPanel(panelMain, wxID_ANY, wxDefaultPosition, {100, 100}, wxTAB_TRAVERSAL|wxBORDER_SIMPLE);
-    wxPanel* panel5 = new wxPanel(panelMain, wxID_ANY, wxDefaultPosition, {100, 100}, wxTAB_TRAVERSAL|wxBORDER_SIMPLE);
+    wxScrolled<wxPanel>* panelMain = new wxScrolled<wxPanel> {this};
+    wxBoxSizer* boxSizerMain = new wxBoxSizer {wxVERTICAL};
+    wxPanel* panel1 = new wxPanel {panelMain, wxID_ANY, wxDefaultPosition, {100, 100}, wxTAB_TRAVERSAL|wxBORDER_SIMPLE};
+    wxPanel* panel2 = new wxPanel {panelMain, wxID_ANY, wxDefaultPosition, {100, 100}, wxTAB_TRAVERSAL|wxBORDER_SIMPLE};
+    wxPanel* panel3 = new wxPanel {panelMain, wxID_ANY, wxDefaultPosition, {100, 100}, wxTAB_TRAVERSAL|wxBORDER_SIMPLE};
+    wxPanel* panel4 = new wxPanel {panelMain, wxID_ANY, wxDefaultPosition, {100, 100}, wxTAB_TRAVERSAL|wxBORDER_SIMPLE};
+    wxPanel* panel5 = new wxPanel {panelMain, wxID_ANY, wxDefaultPosition, {100, 100}, wxTAB_TRAVERSAL|wxBORDER_SIMPLE};
   };
 
   class Application : public wxApp {
