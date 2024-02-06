@@ -16,9 +16,9 @@ namespace ColorsExample {
     wxStaticText* staticTextColorName = new wxStaticText(this, wxID_ANY, wxEmptyString);
   };
 
-  class Window : public wxFrame {
+  class Frame : public wxFrame {
   public:
-    Window() : wxFrame(nullptr, wxID_ANY, "Colors example", wxDefaultPosition, {400, 250}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "Colors example", wxDefaultPosition, {400, 250}) {
       panelMain->SetScrollRate(10, 10);
       panelMain->SetSizerAndFit(boxSizerMain);
       panelMain->SetVirtualSize(boxSizerMain->GetSize());
@@ -88,7 +88,7 @@ namespace ColorsExample {
   };
 
   class Application : public wxApp {
-    bool OnInit() override {return (new Window())->Show();}
+    bool OnInit() override {return (new Frame)->Show();}
   };
 }
 

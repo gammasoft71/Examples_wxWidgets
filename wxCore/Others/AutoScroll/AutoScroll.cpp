@@ -1,9 +1,9 @@
 #include <wx/wx.h>
 
 namespace AutoScrollExample {
-  class Window : public wxFrame {
+  class Frame : public wxFrame {
   public:
-    Window() : wxFrame(nullptr, wxID_ANY, "AutoScroll example", wxDefaultPosition, {400, 250}) {
+    Frame() : wxFrame(nullptr, wxID_ANY, "AutoScroll example", wxDefaultPosition, {400, 250}) {
       panel1->SetBackgroundColour({0x90, 0xEE, 0x90, 0xFF});
       panel2->SetBackgroundColour({0xFF, 0xB6, 0xC1, 0xFF});
       panel3->SetBackgroundColour({0xAD, 0xD8, 0xE6, 0xFF});
@@ -32,7 +32,7 @@ namespace AutoScrollExample {
   };
 
   class Application : public wxApp {
-    bool OnInit() override {return (new Window())->Show();}
+    bool OnInit() override {return (new Frame)->Show();}
   };
 }
 

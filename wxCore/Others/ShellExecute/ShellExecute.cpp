@@ -9,9 +9,9 @@ using namespace std;
 using namespace std::filesystem;
 
 namespace ShellExecuteExample {
-  class Window : public wxFrame {
+  class Frame : public wxFrame {
   public:
-    Window() : wxFrame(nullptr, wxID_ANY, "Shell execute example") {
+    Frame() : wxFrame(nullptr, wxID_ANY, "Shell execute example") {
       SetClientSize(300, 450);
       Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
         wxTheApp->Exit();
@@ -62,7 +62,7 @@ namespace ShellExecuteExample {
   };
   
   class Application : public wxApp {
-    bool OnInit() override {return (new Window())->Show();}
+    bool OnInit() override {return (new Frame)->Show();}
   };
 }
 

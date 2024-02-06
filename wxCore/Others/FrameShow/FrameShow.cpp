@@ -2,9 +2,9 @@
 #include <wx/statline.h>
 
 namespace FrameShowExample {
-  class Window : public wxFrame {
+  class Frame : public wxFrame {
   public:
-    Window() : wxFrame(nullptr, wxID_ANY, "Frame show example") {
+    Frame() : wxFrame(nullptr, wxID_ANY, "Frame show example") {
       SetClientSize(320, 400);
       Bind(wxEVT_CLOSE_WINDOW, [&](wxCloseEvent& event) {
         wxTheApp->Exit();
@@ -49,7 +49,7 @@ namespace FrameShowExample {
   };
   
   class Application : public wxApp {
-    bool OnInit() override {return (new Window())->Show();}
+    bool OnInit() override {return (new Frame)->Show();}
   };
 }
 

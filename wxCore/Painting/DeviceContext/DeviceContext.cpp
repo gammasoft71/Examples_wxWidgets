@@ -3,9 +3,9 @@
 #include <wx/frame.h>
 
 namespace DeviceContextExample {
-  class Window : public wxFrame {
+  class Frame : public wxFrame {
   public:
-    Window() : wxFrame {nullptr, wxID_ANY, "Paint example"} {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Paint example"} {
       SetPosition({100, 100});
       SetClientSize(640, 480);
       
@@ -89,7 +89,7 @@ namespace DeviceContextExample {
   };
 
   class Application : public wxApp {
-    bool OnInit() override {return (new Window())->Show();}
+    bool OnInit() override {return (new Frame)->Show();}
   };
 }
 

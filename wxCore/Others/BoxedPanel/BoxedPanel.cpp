@@ -1,9 +1,9 @@
 #include <wx/wx.h>
 
 namespace BoxedPanelExample {
-  class Window : public wxFrame {
+  class Frame : public wxFrame {
   public:
-    Window() : wxFrame(nullptr, wxID_ANY, "Boxed example") {
+    Frame() : wxFrame(nullptr, wxID_ANY, "Boxed example") {
       SetClientSize(300, 300);
       
       panel1->SetBackgroundColour({0xFF, 0xFF, 0xE0, 0xFF});
@@ -43,7 +43,7 @@ namespace BoxedPanelExample {
   };
 
   class Application : public wxApp {
-    bool OnInit() override {return (new Window())->Show();}
+    bool OnInit() override {return (new Frame)->Show();}
   };
 }
 
