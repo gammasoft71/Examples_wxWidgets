@@ -1,10 +1,11 @@
-#include <wx/wx.h>
-#include <wx/statline.h>
+#include <wx/app.h>
+#include <wx/dcclient.h>
+#include <wx/frame.h>
 
 namespace DeviceContextExample {
   class Window : public wxFrame {
   public:
-    Window() : wxFrame(nullptr, wxID_ANY, "Paint example") {
+    Window() : wxFrame {nullptr, wxID_ANY, "Paint example"} {
       SetPosition({100, 100});
       SetClientSize(640, 480);
       
@@ -17,7 +18,7 @@ namespace DeviceContextExample {
         FillRectangle(dc, {{0xAD, 0xD8, 0xE6}, wxBRUSHSTYLE_SOLID}, 50, 300, 400, 50);
         DrawLine(dc, {{0xFF, 0x00, 0x00}, 1, wxPENSTYLE_SOLID}, 0, 0, 1, 1);
         DrawLString(dc, "Draw string", {34, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, "Arial"}, {{0x90, 0xEE, 0x90}, wxBRUSHSTYLE_SOLID}, 20, 0);
-        FillRectangle(dc, wxBrush(wxColour(0x20, 0xB2, 0xAA)), 400, 70, 100, 200);
+        FillRectangle(dc, {wxColour {0x20, 0xB2, 0xAA}}, 400, 70, 100, 200);
         DrawArc(dc, {{0x00, 0x00, 0x0}, 10, wxPENSTYLE_SOLID}, 400, 70, 100, 200, 45, 270);
         DrawEllipse(dc, {{0xFF, 0x00, 0x00}, 10, wxPENSTYLE_SOLID}, 100, 80, 200, 200);
         FillPie(dc, {{0x00, 0x80, 0x00}, wxBRUSHSTYLE_SOLID}, 120, 100, 160, 160, 45.0f, 270.0f);
