@@ -21,8 +21,8 @@ namespace BitmapButtonExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxBitmapButton* button1 = new wxBitmapButton {panel, wxID_ANY, wxBitmapBundle {wxBitmap {gammasoft_16x16_xpm}}, { 50, 10 }};
-    wxBitmapButton* button2 = new wxBitmapButton {panel, wxID_ANY, wxBitmapBundle {wxBitmap {gammasoft_64x64_xpm}}, { 50, 60 }};
+    wxBitmapButton* button1 = new wxBitmapButton {panel, wxID_ANY, wxBitmapBundle {wxBitmap {gammasoft_16x16_xpm}}, {50, 10}, {85, -1}};
+    wxBitmapButton* button2 = new wxBitmapButton {panel, wxID_ANY, wxBitmapBundle {wxBitmap {gammasoft_64x64_xpm}}, {50, 60}, {200, 75}, wxBORDER_SIMPLE};
     wxStaticText* staticText1 = new wxStaticText {panel, wxID_ANY, "button1 clicked 0 times", {50, 150}, {200, 20}};
     wxStaticText* staticText2 = new wxStaticText {panel, wxID_ANY, "button2 clicked 0 times", {50, 180}, {200, 20}};
     int button1Clicked = 0;

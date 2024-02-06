@@ -1,16 +1,15 @@
-#include <wx/app.h>
-#include <wx/bmpbuttn.h>
-#include <wx/button.h>
-#include <wx/frame.h>
-#include <wx/panel.h>
 #include "gammasoft_16x16.xpm"
 #include "gammasoft_32x32.xpm"
 #include "gammasoft_64x64.xpm"
+#include <wx/app.h>
+#include <wx/button.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
 
 namespace BitmapButtonWithLabelExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "BitmapButton with label example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "BitmapButton with label example"} {
       button1->SetSize(100, 25);
       
       button2->SetBitmapLabel(wxBitmap {gammasoft_16x16_xpm});
@@ -27,10 +26,10 @@ namespace BitmapButtonWithLabelExample {
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxButton* button1 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 20});
-    wxButton* button2 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 50});
-    wxButton* button3 = new wxButton(panel, wxID_ANY, "Gammasoft", {50, 80});
-    wxButton* button4 = new wxButton(panel, wxID_ANY, wxEmptyString, {50, 125});
+    wxButton* button1 = new wxButton {panel, wxID_ANY, "Gammasoft", {50, 20}};
+    wxButton* button2 = new wxButton {panel, wxID_ANY, "Gammasoft", {50, 50}};
+    wxButton* button3 = new wxButton {panel, wxID_ANY, "Gammasoft", {50, 80}};
+    wxButton* button4 = new wxButton {panel, wxID_ANY, wxEmptyString, {50, 125}};
   };
 
   class Application : public wxApp {

@@ -6,11 +6,11 @@ Shows how to create a BitmapButton widget with wxBitmapButton.
 
 [BitmapButton.cpp](BitmapButton.cpp)
 
-[CMakeLists.txt](CMakeLists.txt)
-
 [gammasoft_16x16.xpm](gammasoft_16x16.xpm)
 
 [gammasoft_64x64.xpm](gammasoft_64x64.xpm)
+
+[CMakeLists.txt](CMakeLists.txt)
 
 ## Output
 
