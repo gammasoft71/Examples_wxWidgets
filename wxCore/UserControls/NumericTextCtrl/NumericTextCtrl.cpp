@@ -1,29 +1,30 @@
-#include <wx/wx.h>
-
-using namespace std;
+#include <wx/app.h>
+#include <wx/frame.h>
+#include <wx/textctrl.h>
+#include <wx/panel.h>
 
 namespace NumericTextCtrlExample {
   wxDEFINE_EVENT(wxEVT_VALUE, wxCommandEvent);
 
   class wxNumericTextCtrl : public wxTextCtrl {
   public:
-    wxNumericTextCtrl(wxWindow* parent, wxWindowID id, double value = .0, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0, const wxValidator& validator = wxDefaultValidator,  const wxString& name = wxTextCtrlNameStr) : wxTextCtrl(parent, id, wxString::Format("%g", value), pos, size, style, validator, name)  {
+    wxNumericTextCtrl(wxWindow* parent, wxWindowID id, double value = .0, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0, const wxValidator& validator = wxDefaultValidator,  const wxString& name = wxTextCtrlNameStr) : wxTextCtrl {parent, id, wxString::FromDouble(value), pos, size, style, validator, name}  {
       Bind(wxEVT_CHAR, [&](wxKeyEvent& event) {
         event.Skip((iscntrl(event.GetUnicodeKey()) || isdigit(event.GetUnicodeKey()) || event.GetUnicodeKey() == '.') && (event.GetUnicodeKey() != '.' || GetValue().Find('.') == wxString::npos));
       });
       
       Bind(wxEVT_TEXT, [&](wxCommandEvent& event) {
-        wxQueueEvent(this, new wxCommandEvent(wxEVT_VALUE));
+        wxQueueEvent(this, new wxCommandEvent {wxEVT_VALUE});
       });
     }
     
     double GetNumericValue() const {
       auto value = .0;
-      wxTextCtrl::GetValue().ToCDouble(&value);
+      wxTextCtrl::GetValue().ToDouble(&value);
       return value;
     }
     
-    void SetNumericValue(double value) {wxTextCtrl::SetValue(wxString::Format("%g", value));}
+    void SetNumericValue(double value) {wxTextCtrl::SetValue(wxString::FromDouble(value));}
     
   private:
     using wxTextCtrl::GetValue;
@@ -32,15 +33,15 @@ namespace NumericTextCtrlExample {
 
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame(nullptr, wxID_ANY, "NumericTextBox example") {
+    Frame() : wxFrame {nullptr, wxID_ANY, "NumericTextBox example"} {
       numericTextBox1->Bind(wxEVT_VALUE, [&](wxCommandEvent& e) {
-        cout << wxString::Format("ValueChanged [Value==%g]", numericTextBox1->GetNumericValue()) << endl;
+        wxMessageOutputDebug().Printf("ValueChanged [Value=%s]", wxString::FromDouble(numericTextBox1->GetNumericValue()));
       });
     }
     
   private:
     wxPanel* panel = new wxPanel {this};
-    wxNumericTextCtrl* numericTextBox1 = new wxNumericTextCtrl(panel, wxID_ANY, 42.2, {10, 10});
+    wxNumericTextCtrl* numericTextBox1 = new wxNumericTextCtrl {panel, wxID_ANY, 42.2, {10, 10}};
   };
 
   class Application : public wxApp {
