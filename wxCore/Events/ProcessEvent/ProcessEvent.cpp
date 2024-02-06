@@ -1,10 +1,13 @@
-#include <wx/wx.h>
+#include <wx/app.h>
+#include <wx/frame.h>
 #include <wx/msgout.h>
+#include <wx/dcclient.h>
+#include <wx/settings.h>
 
 namespace ProcessEventExample {
   class Frame1 : public wxFrame {
   public:
-    Frame1() : wxFrame(nullptr, wxID_ANY, "Frame1") {
+    Frame1() : wxFrame {nullptr, wxID_ANY, "Frame1"} {
       SetClientSize(300, 300);
       SetBackgroundColour(wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_BTNFACE));
       auto font = GetFont();
@@ -12,7 +15,7 @@ namespace ProcessEventExample {
       font.SetWeight(wxFontWeight::wxFONTWEIGHT_BOLD);
       SetFont(font);
       Bind(wxEVT_PAINT, [&](wxPaintEvent& event) {
-        wxPaintDC dc(this);
+        auto dc = wxPaintDC {this};
         dc.SetPen(*wxTRANSPARENT_PEN);
         if (AppActive()) {
           dc.SetBrush({wxSystemSettings::GetColour(wxSystemColour::wxSYS_COLOUR_MENUHILIGHT)});
@@ -26,17 +29,17 @@ namespace ProcessEventExample {
       });
     }
 
-    bool AppActive() const {return appActive;}
-    void AppActive(bool value) {appActive = value;}
+    bool AppActive() const noexcept {return appActive;}
+    void AppActive(bool value) noexcept {appActive = value;}
 
   private:
     bool appActive = true;
   };
 
   class Application : public wxApp {
-    bool ProcessEvent (wxEvent& event) override {
+    bool ProcessEvent(wxEvent& event) override {
       if (event.GetEventType() == wxEVT_ACTIVATE_APP) {
-        frame1->AppActive(dynamic_cast<wxActivateEvent&>(event).GetActive());
+        frame1->AppActive(static_cast<wxActivateEvent&>(event).GetActive());
         wxMessageOutputDebug().Printf("wxEVT_ACTIVATE_APP [active=%s]", frame1->AppActive() ? "true" : "false");
         frame1->Refresh();
       }
@@ -45,7 +48,7 @@ namespace ProcessEventExample {
     }
 
     bool OnInit() override {
-      frame1 = new Frame1();
+      frame1 = new Frame1;
       return frame1->Show();
     }
     
