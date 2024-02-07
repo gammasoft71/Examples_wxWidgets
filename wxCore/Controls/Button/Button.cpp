@@ -7,7 +7,7 @@
 namespace ButtonExample {
   class Frame : public wxFrame {
   public:
-    Frame() : wxFrame {nullptr, wxID_ANY, wxEmptyString} {
+    Frame() : wxFrame {nullptr, wxID_ANY, "Button example"} {
       button1->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
         staticText1->SetLabel(wxString::Format("button1 clicked %d times", ++button1Clicked));
       });

@@ -16,10 +16,10 @@ public:
 
     upDown->SetPosition(wxPoint(GetSize().GetWidth() - upDown->GetSize().GetWidth(), 0));
     upDown->SetSize(upDown->GetSize().GetWidth(), GetSize().GetHeight());
-    upDown->SetRange(0, static_cast<int>(items.GetCount()) - 1);
+    upDown->SetRange(0, static_cast<int>(items.size()) - 1);
     upDown->Bind(wxEVT_SPIN, [&](wxSpinEvent& event) {
       SetTextWithSelectedIndex();
-      });
+    });
 
     Bind(wxEVT_SIZE, [&](wxEvent& ev) {
       textBox->SetSize(GetSize() - wxSize(upDown->GetSize().GetWidth() + 2, 0));
@@ -27,31 +27,31 @@ public:
     });
   }
 
-  wxDomainSpinCtrl(wxWindow* parent, wxWindowID winid, const wxPoint& pos, const wxSize& size, const wxArrayString& items) : wxDomainSpinCtrl(parent, winid, pos, size) { SetItems(items); }
-
   wxDomainSpinCtrl(wxWindow* parent, wxWindowID winid, const wxPoint& pos, const wxSize& size, const std::vector<wxString>& items) : wxDomainSpinCtrl(parent, winid, pos, size) { SetItems(items); }
 
-  const wxArrayString& GetItems() const { return items; }
+  const std::vector<wxString>& GetItems() const { return items; }
 
-  wxArrayString& GetItems() { return items; }
+  std::vector<wxString>& GetItems() { return items; }
 
   wxString GetValue() const { return textBox->GetValue(); }
 
-  void SetItems(const std::vector<wxString>& items) {
+  template<typename char_t>
+  void SetItems(const std::vector<const char_t*>& items) {
     this->items.clear();
     for (auto i : items)
-      this->items.Add(i);
-    upDown->SetRange(0, static_cast<int>(this->items.GetCount()) - 1);
+      this->items.push_back(i);
+    upDown->SetRange(0, static_cast<int>(this->items.size()) - 1);
     SetTextWithSelectedIndex();
   }
-
-  void SetItems(const wxArrayString& items) {
+  
+  void SetItems(const std::vector<wxString>& items) {
     this->items = items;
+    upDown->SetRange(0, static_cast<int>(this->items.size()) - 1);
     SetTextWithSelectedIndex();
   }
 
   void SetSelectedIndex(size_t index) {
-    upDown->SetValue(static_cast<int>(items.GetCount() - 1 - index));
+    upDown->SetValue(static_cast<int>(items.size() - 1 - index));
     SetTextWithSelectedIndex();
   }
 
@@ -59,13 +59,13 @@ public:
 
 private:
   void SetTextWithSelectedIndex() {
-    if (upDown->GetValue() < items.GetCount())
-      textBox->SetValue(items[items.GetCount() - 1 - upDown->GetValue()]);
+    if (upDown->GetValue() < items.size())
+      textBox->SetValue(items[items.size() - 1 - upDown->GetValue()]);
     wxCommandEvent event(wxEVT_TEXT, this->GetId());
     GetEventHandler()->ProcessEvent(event);
   }
 
   wxTextCtrl* textBox = new wxTextCtrl(this, wxID_ANY);
   wxSpinButton* upDown = new wxSpinButton(this, wxID_ANY);
-  wxArrayString items;
+  std::vector<wxString> items;
 };
