@@ -51,11 +51,16 @@ namespace AboutBoxExample {
         }
         wxAboutBox(aboutInfo);
       });
+ 
+      buttonWxWidgets->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
+        wxInfoMessageBox(this);
+      });
     }
     
   private:
     wxPanel* panel = new wxPanel {this};
     wxButton* button = new wxButton {panel, wxID_ABOUT, wxEmptyString, {10, 10}};
+    wxButton* buttonWxWidgets = new wxButton {panel, wxID_ANY, "About wxWidgets", {130, 10}};
   };
 
   class Application : public wxApp {
