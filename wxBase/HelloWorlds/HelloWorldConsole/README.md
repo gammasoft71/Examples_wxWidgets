@@ -1,6 +1,6 @@
 # HelloWorldConsole
 
-The classic first application "Hello World" with emoticons.
+The classic first application "Hello World" console application.
 
 ## Source
 
