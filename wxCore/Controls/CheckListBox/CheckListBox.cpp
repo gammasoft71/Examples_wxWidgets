@@ -8,7 +8,7 @@ namespace ChackListBoxExample {
   public:
     Frame() : wxFrame {nullptr, wxID_ANY, "CheckListBox example"} {
       SetClientSize({200, 240});
-      for (auto index = 1; index <= 20; ++index) {
+      for (auto index = 1; index <= 10; ++index) {
         checkListBox->Append(wxString::Format("Item %d", index));
         checkListBox->Check(index - 1, index % 2 != 0);
         checkListBox->EnsureVisible(0);
