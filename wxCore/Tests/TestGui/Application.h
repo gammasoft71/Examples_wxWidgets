@@ -5,15 +5,15 @@
 
 class wxApplication : public wxApp {
 public:
-  wxApplication(bool exitOnLastFrameClosed = true) : wxApplication {exitOnLastFrameClosed, substituteArgc, nullptr} {}
-  wxApplication(int& argc, char** argv) : wxApplication {true, argc, argv} {}
-  wxApplication(bool exitOnLastFrameClosed, int& argc, char** argv) {
+  wxApplication(bool exitOnLastFrameClosed = true, wxLogLevelValues logLevel = wxLogLevelValues::wxLOG_Max) : wxApplication {exitOnLastFrameClosed, logLevel, substituteArgc, nullptr} {}
+  wxApplication(int& argc, char** argv) : wxApplication {true, wxLogLevelValues::wxLOG_Max, argc, argv} {}
+  wxApplication(bool exitOnLastFrameClosed, wxLogLevelValues logLevel, int& argc, char** argv) {
 #ifdef _MSC_VER
     _CrtSetDbgFlag(_CRTDBG_CHECK_DEFAULT_DF);
 #endif
     wxDISABLE_DEBUG_SUPPORT();
     wxSetAssertHandler(&NewAssertHandler);
-    wxLog::SetLogLevel(wxLOG_Info);
+    wxLog::SetLogLevel(logLevel);
     wxSystemOptions::SetOption("gtk.tlw.can-set-transparent", 1);
     wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
     wxApp::SetInstance(this);
