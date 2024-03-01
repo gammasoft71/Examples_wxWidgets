@@ -19,7 +19,7 @@ namespace ColourPickerCtrlExample {
       
       testZone->Bind(wxEVT_PAINT, [&] (wxPaintEvent& event) {
         auto dc = wxPaintDC {testZone};
-        PaintCheckerBoardPattern(dc, {0x54, 0x54, 0x54}, {0xA8, 0xA8, 0xA8});
+        PaintCheckerBoardPattern(dc, {0x66, 0x66, 0x66}, {0x99, 0x99, 0x99});
         dc.SetBrush({picker->GetColour()});
         dc.DrawRectangle({0, 0}, dc.GetSize());
       });

@@ -7,13 +7,15 @@ namespace ColorsExample {
   class PanelColor : public wxPanel {
   public:
     PanelColor(wxWindow* parent, const wxColour& color, const wxString& name) : wxPanel(parent) {
-      SetMinSize(wxSize(100, 50));
-      SetBackgroundColour(color);
-      staticTextColorName->SetLabel(name);
+      SetMinSize(wxSize(200, 40));
+      colourPanel->SetBackgroundColour(color);
+      //colourNameStaticText->SetForegroundColour(color.GetLuminance() < 0.5 ? *wxWHITE : *wxBLACK);
+      colourNameStaticText->SetLabel(name);
     }
     
   private:
-    wxStaticText* staticTextColorName = new wxStaticText(this, wxID_ANY, wxEmptyString);
+    wxPanel* colourPanel = new wxPanel(this, wxID_ANY, {5, 4}, {100, 32});
+    wxStaticText* colourNameStaticText = new wxStaticText(this, wxID_ANY, wxEmptyString, {115, 15});
   };
 
   class Frame : public wxFrame {
@@ -23,19 +25,15 @@ namespace ColorsExample {
       panelMain->SetSizerAndFit(boxSizerMain);
       panelMain->SetVirtualSize(boxSizerMain->GetSize());
       
-      PanelColor* panelColor = new PanelColor(panelMain, wxColor(255, 0, 0), "Red");
-      boxSizerMain->Add(panelColor, 0, wxGROW);
-      panelColors.push_back(panelColor);
-      
-      PanelColor* panelColor2 = new PanelColor(panelMain, wxColor(0, 255, 0), "Green");
-      boxSizerMain->Add(panelColor2, 0, wxGROW);
-      panelColors.push_back(panelColor2);
-      
-      PanelColor* panelColor3 = new PanelColor(panelMain, wxColor(0, 0, 255), "Blue");
-      boxSizerMain->Add(panelColor3, 0, wxGROW);
-      panelColors.push_back(panelColor3);
-      
-      map<wxSystemColour, wxString> colors = {
+      auto colours = wxTheColourDatabase->GetAllNames();
+      std::sort(colours.begin(), colours.end());
+      for (auto color : colours) {
+        PanelColor* panelColor = new PanelColor(panelMain, wxColour {color}, color);
+        boxSizerMain->Add(panelColor, 0, wxGROW);
+        panelColors.push_back(panelColor);
+      }
+
+      auto colors = map<wxSystemColour, wxString> {
         {wxSYS_COLOUR_SCROLLBAR, "wxSYS_COLOUR_SCROLLBAR"},
         {wxSYS_COLOUR_DESKTOP, "wxSYS_COLOUR_DESKTOP"},
         {wxSYS_COLOUR_ACTIVECAPTION, "wxSYS_COLOUR_ACTIVECAPTION"},
@@ -75,9 +73,8 @@ namespace ColorsExample {
         PanelColor* panelColor = new PanelColor(panelMain, wxSystemSettings::GetColour(color.first), color.second);
         boxSizerMain->Add(panelColor, 0, wxGROW);
         panelColors.push_back(panelColor);
-        wxMessageOutputDebug().Printf("%s => 0x%X", color.second, wxSystemSettings::GetColour(color.first).GetRGBA());
       }
-
+      
       panelMain->Layout();
     }
     
