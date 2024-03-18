@@ -1,7 +1,6 @@
 #pragma once
 #include <wx/app.h>
 #include <wx/menu.h>
-#include <wx/sysopt.h>
 
 class wxApplication : public wxApp {
 public:
@@ -11,23 +10,27 @@ public:
     wxDISABLE_DEBUG_SUPPORT();
     wxApp::SetInstance(this);
     wxEntryStart(argc, argv);
+#if defined(__APPLE__)
+    static auto init = false; // Workaround : On macOS, call only one wxApp::CallOnInit because after calling wxApp::CleanUp, calling wxApp::CallOnInit again is blocking...
+    if (!init) CallOnInit();
+    init = true;
+    wxMenuBar::MacSetCommonMenuBar(CreateDefaultMenuBar());
+#else
     CallOnInit();
+#endif
     SetExitOnFrameDelete(exitOnLastFrameClosed);
     wxInitAllImageHandlers();
-    menubar = new wxMenuBar;
-    menubar->Bind(wxEVT_MENU, [&](wxCommandEvent& event) {
-      if (event.GetId() == wxID_EXIT) {
-        auto canExit = true;
-        for (auto window : wxTopLevelWindows)
-          if (!(canExit = window->Close())) break;
-        if (canExit) ExitMainLoop();
-      } else event.Skip();
-    });
-#if defined(__APPLE__)
-    wxMenuBar::MacSetCommonMenuBar(menubar);
-#endif
   }
-  
+
+  ~wxApplication() {
+#if defined(__APPLE__)
+    delete wxMenuBar::MacGetCommonMenuBar();
+#endif
+    wxImage::CleanUpHandlers();
+    CleanUp();
+    SetInstance(nullptr);
+  }
+
   int MainLoop(wxWindow* window) {
     struct CallOnExit {
       ~CallOnExit() {wxTheApp->OnExit();}
@@ -37,16 +40,21 @@ public:
   }
   int MainLoop() override {return MainLoop(GetTopWindow());}
 
-protected:
-  int OnExit() override {
-    delete menubar;
-    wxImage::CleanUpHandlers();
-    wxEntryCleanup();
-    wxApp::SetInstance(nullptr);
-    return wxApp::OnExit();
-  }
-
 private:
+  static wxMenuBar* CreateDefaultMenuBar() {
+    auto menubar = new wxMenuBar;
+    menubar->Bind(wxEVT_MENU, &OnMenuClick);
+    return menubar;
+  }
+  
+  static void OnMenuClick(wxCommandEvent& event) {
+    if (event.GetId() != wxID_EXIT) {
+      auto canExit = true;
+      for (auto window : wxTopLevelWindows)
+        if (!(canExit = window->Close())) break;
+      if (canExit) wxTheApp->ExitMainLoop();
+    } else event.Skip();
+  }
+  
   int substituteArgc = 0;
-  wxMenuBar* menubar = nullptr;
 };
