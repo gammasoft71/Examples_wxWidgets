@@ -2,6 +2,6 @@
 #include <wx/frame.h>
 
 int main() {
-  auto application = new wxApplication;
-  application->MainLoop(new wxFrame);
+  auto application = wxApplication {};
+  application.MainLoop(new wxFrame {nullptr, wxID_ANY, wxEmptyString});
 }
