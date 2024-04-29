@@ -18,12 +18,25 @@ public:
     wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
     wxApp::SetInstance(this);
     wxEntryStart(argc, argv);
+#if defined(__APPLE__)
+    static auto init = false; // Workaround : On macOS, call only one wxApp::CallOnInit because after calling wxApp::CleanUp, calling wxApp::CallOnInit again is blocking...
+    if (!init) CallOnInit();
+    init = true;
+    wxMenuBar::MacSetCommonMenuBar(CreateDefaultMenuBar());
+#else
     CallOnInit();
+#endif
     SetExitOnFrameDelete(exitOnLastFrameClosed);
     wxInitAllImageHandlers();
+  }
+
+  ~wxApplication() {
 #if defined(__APPLE__)
-    wxMenuBar::MacSetCommonMenuBar(CreateDefaultMenuBar());
+    delete wxMenuBar::MacGetCommonMenuBar();
 #endif
+    wxImage::CleanUpHandlers();
+    CleanUp();
+    SetInstance(nullptr);
   }
   
   bool AssertEnabled() const noexcept {return assertEnabled;}
@@ -38,21 +51,13 @@ public:
   }
   int MainLoop() override {return MainLoop(GetTopWindow());}
   
+private:
   static wxMenuBar* CreateDefaultMenuBar() {
-    auto menubar = new wxMenuBar();
+    auto menubar = new wxMenuBar;
     menubar->Bind(wxEVT_MENU, &OnMenuClick);
     return menubar;
   }
-  
-protected:
-  int OnExit() override {
-    wxImage::CleanUpHandlers();
-    wxEntryCleanup();
-    wxApp::SetInstance(nullptr);
-    return wxApp::OnExit();
-  }
-  
-private:
+
   static void OnMenuClick(wxCommandEvent& event) {
     if (event.GetId() == wxID_EXIT) {
       auto canExit = true;

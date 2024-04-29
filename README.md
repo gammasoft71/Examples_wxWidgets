@@ -1,4 +1,4 @@
-# wxWidgets Examples
+# wxWidgets examples
 
 Shows how to use [wxWidgets](https://www.wxwidgets.org) controls only by programming code ([c++17](https://en.cppreference.com/w/)).
 
