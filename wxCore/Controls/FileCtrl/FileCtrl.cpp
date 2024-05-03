@@ -26,7 +26,7 @@ public:
 #if defined(__APPLE__)
     for (auto i = 0; i < GetFileList()->GetItemCount(); i++)
       GetFileList()->SetItemTextColour(i, GetForegroundColour());
-    GetFileList()->Bind(wxEVT_LIST_INSERT_ITEM, [&](wxListEvent& event) {
+      GetFileList()->Bind(wxEVT_LIST_INSERT_ITEM, [&](wxListEvent& event) {
       GetFileList()->SetItemTextColour(event.GetIndex(), GetForegroundColour());
     });
 #endif
