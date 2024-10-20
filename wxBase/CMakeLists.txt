@@ -5,3 +5,4 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 add_subdirectory(HelloWorlds)
 #add_subdirectory(Console)
+add_subdirectory(StackWalker)
