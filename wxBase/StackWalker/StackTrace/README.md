@@ -16,7 +16,7 @@ Stack Trace :
    at method2() [0x00000000] in StackTrace.cpp:line 68
    at method1() [0x00000000] in StackTrace.cpp:line 72
    at main [0x00000000] in StackTrace.cpp:line 76
-
+   at start [0x00000000] in :line 0
 ```
 
 ## Build and run

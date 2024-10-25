@@ -27,4 +27,4 @@ auto main()->int {
 //    at method2() [0x00000000] in StackTrace.cpp:line 12
 //    at method1() [0x00000000] in StackTrace.cpp:line 16
 //    at main [0x00000000] in StackTrace.cpp:line 21
-
+//    at start [0x00000000] in :line 0

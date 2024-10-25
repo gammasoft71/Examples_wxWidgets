@@ -15,7 +15,6 @@ public:
   wxStackTrace(SizeType skipFrames, bool needFileInfo) noexcept : wxStackWalker {}, needFileInfo {needFileInfo} {
     try {
       Walk(skipFrames + internalOffset);
-      if (frames.size() > 0 && frames[frames.size() - 1].GetName() == "start") frames.pop_back();
     } catch(...) {
       frames.clear();
     }
