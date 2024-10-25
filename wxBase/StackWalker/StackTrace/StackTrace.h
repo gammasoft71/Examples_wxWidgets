@@ -38,7 +38,7 @@ public:
   wxString ToString() const noexcept {
     auto result = wxString {};
     for (const auto& frame : frames)
-      result += wxString::Format(needFileInfo ? "   at %s [0x%08lX] in %s:line %lu\n" : "   at %s\n", frame.GetName(), frame.GetOffset(), frame.GetFileName(), frame.GetLine());
+      result += wxString::Format(needFileInfo ? "   at %s in %s:line %lu\n" : "   at %s\n", frame.GetName(), frame.GetFileName().empty() ? "<filename unknown>" : frame.GetFileName(), frame.GetLine());
     return result;
   }
   

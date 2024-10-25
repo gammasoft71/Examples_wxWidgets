@@ -12,11 +12,11 @@ Shows how to use wxStackWalker.
 
 ```
 Stack Trace :
-   at method3() [0x00000000] in StackTrace.cpp:line 63
-   at method2() [0x00000000] in StackTrace.cpp:line 68
-   at method1() [0x00000000] in StackTrace.cpp:line 72
-   at main [0x00000000] in StackTrace.cpp:line 76
-   at start [0x00000000] in :line 0
+   at method3() in StackTrace.cpp:line 63
+   at method2() in StackTrace.cpp:line 68
+   at method1() in StackTrace.cpp:line 72
+   at main in StackTrace.cpp:line 76
+   at start in <filename unknown>:line 0
 ```
 
 ## Build and run
