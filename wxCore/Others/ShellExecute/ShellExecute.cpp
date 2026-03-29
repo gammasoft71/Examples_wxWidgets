@@ -25,7 +25,7 @@ namespace ShellExecuteExample {
       boxSizer->Add(buttonOpenCalculator, 1, wxGROW);
 
       buttonWeb->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
-        wxShellExecute("https://gammasoft71.wixsite.com/gammasoft");
+        wxShellExecute("https://gammasoft71.github.io/");
       });
       
       buttonWriteMail->Bind(wxEVT_BUTTON, [&](wxCommandEvent& event) {
