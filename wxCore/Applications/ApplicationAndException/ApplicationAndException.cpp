@@ -50,7 +50,7 @@ namespace ApplicationAndExceptionExample {
       return true;
     }
 
-    bool OnInit() override {
+    auto OnInit() -> bool override {
       try {
         return (new MainFrame)->Show();
       } catch(const exception& e) {

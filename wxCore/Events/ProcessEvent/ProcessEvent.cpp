@@ -47,10 +47,7 @@ namespace ProcessEventExample {
       return wxApp::ProcessEvent(event);
     }
 
-    bool OnInit() override {
-      frame1 = new Frame1;
-      return frame1->Show();
-    }
+    auto OnInit() -> bool override {return (new Frame1)->Show();}
     
     Frame1* frame1 = nullptr;
   };

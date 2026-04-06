@@ -1,7 +1,7 @@
 #include <wx/wx.h>
 
 class Application : public wxApp {
-  bool OnInit() override {
+  auto OnInit() -> bool override {
     wxMessageDialog(nullptr, "Hello, World!").ShowModal();
     return false;
   }

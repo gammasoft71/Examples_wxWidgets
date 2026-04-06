@@ -18,7 +18,7 @@ namespace ApplictionIdleExample {
   };
 
   class Application : public wxApp {
-    bool OnInit() override {return (frame = new Frame())->Show();}
+    auto OnInit() -> bool override {return (frame = new Frame())->Show();}
    
     bool ProcessIdle() override {
       if (!frame->IsVisible()) return wxApp::ProcessIdle();

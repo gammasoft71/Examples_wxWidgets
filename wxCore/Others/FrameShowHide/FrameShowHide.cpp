@@ -54,7 +54,7 @@ private:
 };
 
 class Application : public wxApp {
-  bool OnInit() override {return (new Frame1())->Show();}
+  auto OnInit() -> bool override {return (new Frame1())->Show();}
 };
 
 wxIMPLEMENT_APP(Application);

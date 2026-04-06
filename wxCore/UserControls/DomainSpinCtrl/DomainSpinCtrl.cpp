@@ -24,7 +24,7 @@ namespace Examples {
   };
   
   class Application : public wxApp {
-    bool OnInit() override {
+    auto OnInit() -> bool override {
       (new Frame())->Show();
       return true;
     }

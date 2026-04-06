@@ -24,7 +24,7 @@ namespace DatePickerCtrlExample {
   };
 
   class Application : public wxApp {
-    bool OnInit() override {return (new Frame)->Show();}
+    auto OnInit() -> bool override {return (new Frame)->Show();}
   };
 }
 

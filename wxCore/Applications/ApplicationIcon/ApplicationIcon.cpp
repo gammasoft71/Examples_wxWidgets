@@ -6,7 +6,7 @@
 
 namespace ApplicationIconExample {
   class Application : public wxApp {
-    bool OnInit() override {
+    auto OnInit() -> bool override {
       auto frame = new wxFrame;
       wxImage::AddHandler(new wxPNGHandler);
       auto imagePath = wxFileName {wxStandardPaths::Get().GetExecutablePath()};

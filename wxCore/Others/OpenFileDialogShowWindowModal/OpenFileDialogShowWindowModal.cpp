@@ -42,7 +42,7 @@ namespace OpenFileDialogShowWindowModalExample {
   };
 
   class Application : public wxApp {
-    bool OnInit() override {
+    auto OnInit() -> bool override {
       wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
       return (new Frame)->Show();
     }

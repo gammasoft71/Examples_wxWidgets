@@ -49,7 +49,7 @@ namespace KeyEventsExample {
   };
 
   class Application : public wxApp {
-    bool OnInit() override {
+    auto OnInit() -> bool override {
       auto logWindow = new wxLogWindow {nullptr, "Debug"};
       logWindow->GetFrame()->SetSize(wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetLeft(), wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetTop() + wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetHeight() - wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetHeight() / 4, wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetWidth(), wxDisplay {static_cast<unsigned>(wxDisplay::GetFromWindow(logWindow->GetFrame()))}.GetClientArea().GetHeight() / 4);
       return (new Frame)->Show();

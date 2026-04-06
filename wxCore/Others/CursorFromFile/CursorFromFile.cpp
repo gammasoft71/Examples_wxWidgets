@@ -33,7 +33,7 @@ namespace CursorFromFileExample {
   };
 
   class Application : public wxApp {
-    bool OnInit() override {
+    auto OnInit() -> bool override {
       wxSystemOptions::SetOption("osx.openfiledialog.always-show-types", 1);
       wxInitAllImageHandlers();
       return (new Frame)->Show();

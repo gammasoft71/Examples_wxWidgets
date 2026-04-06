@@ -92,7 +92,7 @@ namespace NotificationMessageExample {
   };
   
   class Application : public wxApp {
-    bool OnInit() override {return (new MainFrame())->Show();}
+    auto OnInit() -> bool override {return (new MainFrame())->Show();}
   };
 }
 

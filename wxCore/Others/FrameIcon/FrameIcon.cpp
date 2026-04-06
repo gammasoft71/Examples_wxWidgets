@@ -3,7 +3,7 @@
 
 namespace FrameIconExample {
   class Application : public wxApp {
-    bool OnInit() override {
+    auto OnInit() -> bool override {
       wxFrame* frame = new wxFrame(nullptr, wxID_ANY, "Window Icon example");
       frame->SetIcon(GammasoftLogo32x32);
       return frame->Show();

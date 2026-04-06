@@ -31,7 +31,7 @@ namespace ApplicationAndAssertExample {
   };
   
   class Application : public wxApp {
-    bool OnInit() override {return (new MainFrame)->Show();}
+    auto OnInit() -> bool override {return (new MainFrame)->Show();}
     
   private:
     exception_ptr exceptionStored;
